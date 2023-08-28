@@ -1,0 +1,6 @@
+<div class="legend-root">
+    <div *ngFor="let legendItem of legendItems" class="legend-items">
+        <app-legend-item [legendItem]="legendItem" class="legend-item"></app-legend-item>
+    </div>
+    <button (click)="onClickButton()">Button</button>
+</div>

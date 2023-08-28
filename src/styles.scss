@@ -1,1 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+  --main-family: 'Poppins', sans-serif;
+//   --color-bg: linear-gradient(180deg, #FFFFFF 0%, #AEC6DC 100%);
+
+//   --color-special: rgb(147 23 107 / 100%);
+
+//   /* Controls the blob blur gradient colors within the main tag's svg */
+//   --top-right-blur-1: #20C6B7;
+//   --top-right-blur-2: #4D9ABF;
+//   --bttm-left-blur-1: #de3641;
+//   --bttm-left-blur-2: #e46b73;
+}
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--main-family);
+}

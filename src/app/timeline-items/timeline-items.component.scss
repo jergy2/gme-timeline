@@ -1,0 +1,16 @@
+.items-container{
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+    // padding: 10px; 
+    // border: 1px solid rgba(128, 128, 128, 0.26); 
+    border-radius: 5px;
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.timeline-item{
+    max-height: 310px;
+    margin: 2px;
+}

@@ -1,0 +1,11 @@
+.legend-root{
+    min-width: 220px;
+    width: 220px;
+    border: 2px solid blue;
+}
+.legend-items{
+    display:flex;flex-direction: column;
+}
+.legend-item{
+    margin: 2px;
+}
