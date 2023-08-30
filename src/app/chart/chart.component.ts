@@ -18,7 +18,7 @@ import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 })
 export class ChartComponent implements OnInit {
 
-  @ViewChild(BaseChartDirective) public chart: BaseChartDirective | undefined;
+  @ViewChild(BaseChartDirective) public baseChart: BaseChartDirective | undefined;
   @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) { }
 
   constructor(private _dataService: HistoricDataService, private _legendService: EventLegendService, private _timelineItemService: TimelineItemsService) { }
@@ -62,41 +62,40 @@ export class ChartComponent implements OnInit {
       },
 
       plugins: {
-          tooltip: {
-            backgroundColor: (context) => {
-              if (context.tooltipItems.length > 0) {
-                this._getTooltipBackgroundColor(context.tooltipItems[0])
-              }
-              return this._tooltipBackgroundColor;
-            },
-            borderColor: 'black',
-            borderWidth: 1,
-            displayColors: false,
-            bodyFont: {
-              size: 16,
-              weight: 'bold',
-            },
-            titleFont: {
-              weight: 'normal',
-            },
-            footerFont: {
-              weight: 'normal',
-            },
-            callbacks: {
-              label: (context) => { return this._getTooltipLabel(context.label) },
-              footer: (context) => { return this._getTooltipDescription(context[0].label) },
-              title: (context) => { return this._getDateString(context[0].label) + '  -  GME share price: $' + Number(context[0].raw).toFixed(2); }
-            },
+        tooltip: {
+          backgroundColor: (context) => {
+            if (context.tooltipItems.length > 0) {
+              this._getTooltipBackgroundColor(context.tooltipItems[0])
+            }
+            return this._tooltipBackgroundColor;
           },
-          legend: {
-            display: true,
-            labels: {
-              color: 'rgb(0, 0, 0)',
-              usePointStyle: true
-
-            },
-            position: 'left'
-          }
+          borderColor: 'black',
+          borderWidth: 1,
+          displayColors: false,
+          bodyFont: {
+            size: 16,
+            weight: 'bold',
+          },
+          titleFont: {
+            weight: 'normal',
+          },
+          footerFont: {
+            weight: 'normal',
+          },
+          callbacks: {
+            label: (context) => { return this._getTooltipLabel(context.label) },
+            footer: (context) => { return this._getTooltipDescription(context[0].label) },
+            title: (context) => { return this._getDateString(context[0].label) + '  -  GME share price: $' + Number(context[0].raw).toFixed(2); }
+          },
+        },
+        legend: {
+          display: true,
+          labels: {
+            color: 'rgb(0, 0, 0)',
+            usePointStyle: true
+          },
+          position: 'left'
+        }
       }
     };
 
@@ -105,10 +104,33 @@ export class ChartComponent implements OnInit {
     this._legendService.dataSets$.subscribe({
       next: (datasets) => {
         this.lineChartData.datasets = datasets;
+        this._timelineItemService.setChart(this.baseChart)
       },
       error: () => { },
       complete: () => { }
-    })
+    });
+
+    // this._timelineItemService.itemSelected$().subscribe({
+    //   next: (item) => {
+    //     console.log(item, this.baseChart)
+    //     if(this.baseChart !== undefined){
+    //       const chart = this.baseChart.chart
+    //       // chart.chart.tool
+    //       if(chart){
+    //         const tooltip = chart.tooltip;
+    //         if(tooltip){
+    //           console.log("TOOLTIP ACTIVE ELEMENTS:", tooltip.getActiveElements());
+    //           // tooltip.setActiveElements
+    //           this._legendService.lookupIndexByEvent(item);
+    //           // chart.update();
+    //         }
+            
+    //       }
+          
+    //     }
+        
+    //   }
+    // })
   }
 
   private _getTooltipLabel(providedLabel: string): string {

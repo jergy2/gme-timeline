@@ -16,10 +16,6 @@ export class TimelineItem{
     public get title(): string { return this._title; }
     public get dateYYYYMMDD(): string { return this._dateYYYYMMDD; }
     public get urls(): TimelineItemURL[] { return this._urls; }
-    // public get redditLinks(): string[] { return this._urlConfig.redditLinks; }
-    // public get archiveLinks(): string[] { return this._urlConfig.archiveLinks; }
-    // public get lemmyLinks(): string[] { return this._urlConfig.lemmyLinks; }
-    // public get youtubeUrl(): string { return this._urlConfig.youtubeUrl; }
     public get description(): string { return this._description; }
     public get type(): TimelineItemType { return this._type; }
     public get significance(): number { return this._significance; }

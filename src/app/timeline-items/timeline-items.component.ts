@@ -4,6 +4,7 @@ import { TimelineItemsService } from './timeline-items.service';
 import { TimelineItem } from './timeline-item/timeline-item.class';
 import { timelineItems } from './timeline-items';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { timer } from 'rxjs';
 
 type Position = 'start' | 'mid' | 'end';
 
@@ -13,7 +14,7 @@ type Position = 'start' | 'mid' | 'end';
   styleUrls: ['./timeline-items.component.scss']
 })
 export class TimelineItemsComponent implements OnInit {
-  constructor(private _itemService: TimelineItemsService, private scroller: ViewportScroller){}
+  constructor(private _itemService: TimelineItemsService, private scroller: ViewportScroller) { }
 
   // @ViewChild(CdkVirtualScrollViewport) viewPort: CdkVirtualScrollViewport | null = null
   // items = Array.from({ length: 100 }).map((_, i) => `Item #${i}`);
@@ -38,22 +39,38 @@ export class TimelineItemsComponent implements OnInit {
   public get selectedItem(): TimelineItem | null { return this._selectedItem; }
   public get timelineItems(): TimelineItem[] { return timelineItems; }
 
-  ngOnInit(){
-    console.log("ITEMS", this.timelineItems)
+  ngOnInit() {
     this._itemService.itemSelected$().subscribe({
-      next: (item)=>{
+      next: (item) => {
         this.timelineItems.forEach(item => item.unselect())
         item.select();
         // this.scroller.scrollToAnchor(this.itemId(item));
         const scrollToElement = document.getElementById(this.itemId(item));
-        scrollToElement?.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+        scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
 
       }
-    })
+    });
   }
 
   public itemId(item: TimelineItem): string {
-    return 'item'+timelineItems.indexOf(item);
+    return 'item' + timelineItems.indexOf(item);
+  }
+
+  private _hoveredItem: TimelineItem | null = null;
+  public onMouseEnter(item: TimelineItem) {
+    this._hoveredItem = item;
+    const milliseconds = 600;
+    timer(milliseconds).subscribe({
+      next: ()=>{
+        if(this._hoveredItem !== null){
+          this._itemService.selectItem(this._hoveredItem);
+        }
+      }
+    });
+    // this._itemService.selectItem(item);
+  }
+  public onMouseLeave(item: TimelineItem){
+    this._hoveredItem = null;
   }
 
 }

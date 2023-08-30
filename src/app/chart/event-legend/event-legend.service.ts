@@ -33,6 +33,9 @@ export class EventLegendService {
   public lookupEventByIndex(datasetIndex: number, index: number){
     return this._dataManager.lookupEventByIndex(datasetIndex, index);
   }
+  public lookupIndexByEvent(event: TimelineItem){
+    return this._dataManager.lookupIndexByEvent(event);
+  }
 
   public getTypeColor(type: TimelineItemType, transparency?: number): string {
     return this._dataManager.getTypeColor(type, transparency);

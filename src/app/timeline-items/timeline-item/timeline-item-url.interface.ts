@@ -4,4 +4,5 @@ export interface TimelineItemURL{
     url: string;
     type: urlType;
     label: string;
+    archiveLink: string;
 }

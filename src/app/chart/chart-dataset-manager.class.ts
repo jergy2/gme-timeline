@@ -1,5 +1,6 @@
 import { GmePriceEntry } from "../timeline-items/timeline-item/gme-price-entry.interface";
 import { TimelineItemType } from "../timeline-items/timeline-item/timeline-item-type.enum";
+import { TimelineItem } from "../timeline-items/timeline-item/timeline-item.class";
 import { timelineItems } from "../timeline-items/timeline-items";
 import { DatasetConfig } from "./dataset-config.class";
 import { LegendItem } from "./event-legend/legend-item/legend-item.class";
@@ -100,6 +101,14 @@ export class ChartDataSetManager {
     } else {
       return 'black';
     }
+  }
+
+  public lookupIndexByEvent(event: TimelineItem){
+    console.log("LOOKING UP INDEX: " , event);
+    this.datasetConfigs.forEach(datasetConfig => {
+      const datapoints = datasetConfig.dataPoints.filter(item => item !== null);
+      console.log("DATA POINTS:", datapoints)
+    })
   }
 
   public lookupEventByIndex(datasetIndex: number, index: number){

@@ -1,3 +1,7 @@
 <div class="items-container">
-    <app-timeline-item *ngFor="let timelineItem of timelineItems" [id]="itemId(timelineItem)" [item]="timelineItem" class="timeline-item"></app-timeline-item>
+    <app-timeline-item *ngFor="let timelineItem of timelineItems" [id]="itemId(timelineItem)" [item]="timelineItem"
+        class="timeline-item" 
+        (mouseenter)="onMouseEnter(timelineItem)"
+        (mouseleave)="onMouseLeave(timelineItem)">
+    </app-timeline-item>
 </div>
