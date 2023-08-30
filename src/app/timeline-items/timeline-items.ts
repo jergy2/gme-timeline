@@ -208,7 +208,27 @@ const timelineItemConfigs: TimelineItemConfig[] = [
     {
         title: 'Brokerages shut off the buy button',
         dateYYYYMMDD: '2021-01-28',
-        urls: [],
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/investing/comments/l6wvia/robinhood_and_other_brokers_literally_blocking/',
+                type: 'REDDIT',
+                label: 'r/investing thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.cnbc.com/2021/01/28/robinhood-interactive-brokers-restrict-trading-in-gamestop-s.html',
+                type: 'OTHER',
+                label: 'CNBC.com',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.benzinga.com/news/23/08/34086181/the-sec-releases-new-information-regarding-a-finra-rule-change-for-options-trading',
+                type: 'OTHER',
+                label: 'Benzinga.com',
+                archiveLink: '',
+            },
+            
+        ],
         description: '',
         type: TimelineItemType.EVENT,
         significance: 5,
