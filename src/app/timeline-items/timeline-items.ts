@@ -62,6 +62,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.RC,
         significance: 3,
+        imgSrc: 'assets/ryan-cohen-wikipedia.jpg'
     },
     {
         title: 'RC Ventures writes to the GameStop Board of Directors',
@@ -260,6 +261,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: 'In response to the statement: "There are a lot of short sellers borrowing stock that they didn`t have," Melissa Lee says:  "Naked shorts, yea."',
         type: TimelineItemType.MEDIA,
         significance: 2,
+        imgSrc: 'assets/melissa-lee-naked-shorts.png'
     },
     {
         title: 'Ryan Cohen becomes chairman of GameStop, Matt Furlong becomes CEO',
@@ -268,6 +270,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.CORP,
         significance: 4,
+        imgSrc: 'assets/ryan-cohen-wikipedia.jpg'
     },
     {
         title: 'SEC publishes the GameStop report',
@@ -593,7 +596,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2023-06-14',
         urls: [
             {
-                url: 'https://lemmy.whynotdrs.org/post/4179',
+                url: 'https://lemmy.whynotdrs.org/post/4183',
                 type: 'LEMMY',
                 label: 'Lemmy thread',
                 archiveLink: '',

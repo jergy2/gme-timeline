@@ -10,6 +10,7 @@ import { TimelineItem } from '../timeline-items/timeline-item/timeline-item.clas
 import { Subject } from 'rxjs';
 import { timelineItems } from '../timeline-items/timeline-items';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
+import { ScreeSizeService } from '../scree-size.service';
 
 @Component({
   selector: 'app-chart',
@@ -21,24 +22,29 @@ export class ChartComponent implements OnInit {
   @ViewChild(BaseChartDirective) public baseChart: BaseChartDirective | undefined;
   @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) { }
 
-  constructor(private _dataService: HistoricDataService, private _legendService: EventLegendService, private _timelineItemService: TimelineItemsService) { }
-  public lineChartData: ChartConfiguration<'line'>['data'] = {
-    labels: [
-    ],
-    datasets: [
-    ]
-  };
+  constructor(
+    private _dataService: HistoricDataService,
+    private _legendService: EventLegendService,
+    private _timelineItemService: TimelineItemsService,
+    private _sizeService: ScreeSizeService
+  ) { }
+  public lineChartData: ChartConfiguration<'line'>['data'] = { labels: [], datasets: [] };
   public lineChartOptions: ChartOptions<'line'> = {};
   public lineChartLegend = false;
-  public get canvasWidth(): number { return 1200; }
-  public get canvasHeight(): number { return 800; }
+  public lineChartDataMobile: ChartConfiguration<'line'>['data'] = { labels: [], datasets: [] };
+  public lineChartOptionsMobile: ChartOptions<'line'> = {};
+  public lineChartLegendMobile = false;
 
-  public subject$: Subject<boolean> = new Subject();
+  // public get canvasWidth(): number { return 1200; }
+  // public get canvasHeight(): number { return 800; }
+
+  public get isMobile(): boolean { return this._sizeService.isMobile; }
 
   ngOnInit() {
     let labels: string[] = this._dataService.priceEntries.map((entry) => { return entry.date.format('YYYY-MM-DD') });
     /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
     this.lineChartData.labels = labels;
+    this.lineChartDataMobile.labels = labels;
 
     this.lineChartOptions = {
       responsive: true,
@@ -51,16 +57,13 @@ export class ChartComponent implements OnInit {
         }
       },
       onClick: (event, array) => {
-        // if (array.length > 0) {
-        //   const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
-        //   if (timelineItem) {
-        //     this._timelineItemService.selectItem(timelineItem);
-        //     // this._onEventClicked(timelineItem);
-        //   }
-        // }  
-
+        if (array.length > 0) {
+          const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
+          if (timelineItem) {
+            this._timelineItemService.selectItem(timelineItem);
+          }
+        }
       },
-
       plugins: {
         tooltip: {
           backgroundColor: (context) => {
@@ -98,13 +101,28 @@ export class ChartComponent implements OnInit {
         }
       }
     };
-
+    this.lineChartOptionsMobile = this.lineChartOptions;
+    // this.lineChartOptionsMobile.plugins = {
+    //   legend: {
+    //     display: false,
+    //   }
+    // }
 
     this.lineChartData.datasets = this._legendService.dataSets;
+    this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
     this._legendService.dataSets$.subscribe({
       next: (datasets) => {
         this.lineChartData.datasets = datasets;
-        this._timelineItemService.setChart(this.baseChart)
+        this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
+        // this._timelineItemService.setChart(this.baseChart)
+      },
+      error: () => { },
+      complete: () => { }
+    });
+    this._legendService.dataSetsMobile$.subscribe({
+      next: (datasets) => {
+        this.lineChartDataMobile.datasets = datasets;
+        // this._timelineItemService.setChart(this.baseChart)
       },
       error: () => { },
       complete: () => { }
@@ -124,11 +142,11 @@ export class ChartComponent implements OnInit {
     //           this._legendService.lookupIndexByEvent(item);
     //           // chart.update();
     //         }
-            
+
     //       }
-          
+
     //     }
-        
+
     //   }
     // })
   }

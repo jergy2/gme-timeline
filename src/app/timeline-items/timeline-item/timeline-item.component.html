@@ -1,10 +1,44 @@
-<div class="timeline-item-root not-expanded" *ngIf="!item.isSelected" [ngStyle]="ngStyle">
+<div class="timeline-item-root not-expanded" *ngIf="!item.isSelected && !isMobile" [ngStyle]="ngStyle">
     <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
     <div>
         {{item.title}}
     </div>
 </div>
-<div class="timeline-item-root expanded" *ngIf="item.isSelected" [ngStyle]="ngStyle">
+<div class="timeline-item-root expanded" *ngIf="item.isSelected && !isMobile" [ngStyle]="ngStyle">
+    <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
+    <div>
+        {{item.title}}
+    </div>
+    <div>
+        <!-- <a [href]="item.url">{{item.url}}</a> -->
+    </div>
+    <div style="overflow-y: auto;">
+        <p>
+            {{item.description}}
+        </p>
+    </div>
+    <div *ngFor="let link of item.urls" class="link">
+        <a [href]="link.url" target="_blank">{{link.label}}</a>
+    </div>
+    <!-- <div *ngIf="item.urlConfig.youtubeUrl !== ''"> -->
+        <!-- <iframe width="400" height="300" src="https://www.youtube.com/embed/GZTr1-Gp74U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+        <!-- <iframe width="400" height="300" [src]="iframeSrc(item)" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+    
+        <!-- <iframe width="400" height="300" src="https://www.youtube.com/embed/GZTr1-Gp74U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+    <!-- </div> -->
+    <div *ngIf="item.hasImg" class="image-container">
+        <img [src]="item.imgSrc" class="image">
+    </div>
+</div>
+
+
+<div class="timeline-item-root mobile not-expanded" *ngIf="!item.isSelected && isMobile" [ngStyle]="ngStyle">
+    <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
+    <div>
+        {{item.title}}
+    </div>
+</div>
+<div class="timeline-item-root mobile expanded" *ngIf="item.isSelected && isMobile" [ngStyle]="ngStyle">
     <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
     <div>
         {{item.title}}

@@ -3,6 +3,7 @@ import { TimelineItem } from './timeline-item.class';
 import { TimelineItemType } from './timeline-item-type.enum';
 import * as dayjs from 'dayjs';
 import { EventLegendService } from 'src/app/chart/event-legend/event-legend.service';
+import { ScreeSizeService } from 'src/app/scree-size.service';
 
 @Component({
   selector: 'app-timeline-item',
@@ -11,7 +12,7 @@ import { EventLegendService } from 'src/app/chart/event-legend/event-legend.serv
 })
 export class TimelineItemComponent {
 
-  constructor(private _eventService: EventLegendService) {}
+  constructor(private _eventService: EventLegendService, private _sizeService: ScreeSizeService) {}
 
   private _item: TimelineItem = new TimelineItem({
     title:'',
@@ -24,6 +25,7 @@ export class TimelineItemComponent {
   @Input('item') public set item(item: TimelineItem) { this._item = item; }
   public get item(): TimelineItem { return this._item;}
 
+  public get isMobile(): boolean { return this._sizeService.isMobile; }
 
   public date(dateYYYYMMDD: string): string{
     return dayjs(dateYYYYMMDD).format('MMMM D, YYYY')

@@ -5,6 +5,7 @@ import { TimelineItem } from './timeline-item/timeline-item.class';
 import { timelineItems } from './timeline-items';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { timer } from 'rxjs';
+import { ScreeSizeService } from '../scree-size.service';
 
 type Position = 'start' | 'mid' | 'end';
 
@@ -14,7 +15,7 @@ type Position = 'start' | 'mid' | 'end';
   styleUrls: ['./timeline-items.component.scss']
 })
 export class TimelineItemsComponent implements OnInit {
-  constructor(private _itemService: TimelineItemsService, private scroller: ViewportScroller) { }
+  constructor(private _itemService: TimelineItemsService, private scroller: ViewportScroller, private _screenService: ScreeSizeService) { }
 
   // @ViewChild(CdkVirtualScrollViewport) viewPort: CdkVirtualScrollViewport | null = null
   // items = Array.from({ length: 100 }).map((_, i) => `Item #${i}`);
@@ -38,6 +39,8 @@ export class TimelineItemsComponent implements OnInit {
   private _selectedItem: TimelineItem | null = null;
   public get selectedItem(): TimelineItem | null { return this._selectedItem; }
   public get timelineItems(): TimelineItem[] { return timelineItems; }
+
+  public get isMobile(): boolean { return this._screenService.isMobile; }
 
   ngOnInit() {
     this._itemService.itemSelected$().subscribe({

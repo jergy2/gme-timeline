@@ -8,4 +8,5 @@ export interface TimelineItemConfig{
     description: string;
     type: TimelineItemType;
     significance: number;
+    imgSrc?: string;
 }

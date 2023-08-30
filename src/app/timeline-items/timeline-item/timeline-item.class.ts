@@ -10,6 +10,7 @@ export class TimelineItem{
     private _description: string;
     private _type: TimelineItemType;
     private _significance: number;
+    private _imgSrc: string = '';
 
     private _isSelected: boolean = false;
 
@@ -19,8 +20,11 @@ export class TimelineItem{
     public get description(): string { return this._description; }
     public get type(): TimelineItemType { return this._type; }
     public get significance(): number { return this._significance; }
+    public get imgSrc(): string { return this._imgSrc;}
 
     public get isSelected(): boolean { return this._isSelected; }
+    public get hasImg(): boolean { return this._imgSrc !== ''; }
+
 
     constructor(config: TimelineItemConfig){
         this._title = config.title;
@@ -29,6 +33,9 @@ export class TimelineItem{
         this._type = config.type;
         this._significance = config.significance
         this._description = config.description;
+        if(config.imgSrc){
+            this._imgSrc = config.imgSrc;
+        }
     }
 
     public select(){ this._isSelected = true; }

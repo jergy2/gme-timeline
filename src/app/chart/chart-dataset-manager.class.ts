@@ -9,22 +9,18 @@ export class ChartDataSetManager {
 
   private _priceEntries: GmePriceEntry[] = [];
   private _datasets: any[] = [];
+  private _datasetsMobile: any[] = [];
   private _datasetConfigs: DatasetConfig[] = [];
   private _legendItems: LegendItem[] = [];
 
   public get datasets(): any[] { return this._datasets; }
+  public get datasetsMobile(): any[] { return this._datasetsMobile; }
   public get datasetConfigs(): DatasetConfig[] { return this._datasetConfigs; }
   public get legendItems(): LegendItem[] { return this._legendItems; }
 
   constructor(priceEntries: GmePriceEntry[]) {
     this._priceEntries = priceEntries;
 
-  }
-
-  public clickButton() {
-    console.log("SPLICE", this._datasets.length)
-    this._datasets.splice(this._datasets.length - 1);
-    console.log(this._datasets.length)
   }
 
   public getDataSets(): any[] {
@@ -78,6 +74,58 @@ export class ChartDataSetManager {
     });
     this._datasetConfigs = datasetConfigs;
     return this._datasets;
+  }
+
+  public getDataSetsMobile(): any[] {
+    const closePrices: number[] = this._priceEntries.map((entry) => { return entry.close });
+    let datasetConfigs: DatasetConfig[] = [];
+    /** Get all datasets based on every combination of significance value and type. 
+    *  This will produce arrays that have no such events
+    */
+    const allPointTypes: TimelineItemType[] = [
+      TimelineItemType.EVENT, TimelineItemType.CORP, TimelineItemType.MEDIA, TimelineItemType.RC, TimelineItemType.DFV, TimelineItemType.UNRELATED, TimelineItemType.DRS,
+    ];
+    const allSignificances: number[] = [0, 1, 2, 3, 4, 5];
+    allPointTypes.forEach(pointType => {
+      allSignificances.forEach(significanceValue => {
+        const datasetConfig: DatasetConfig = this._getDatasetConfig(pointType, significanceValue);
+        datasetConfigs.push(datasetConfig);
+      });
+      // this._legendItems.push(new LegendItem(pointType, this.getTypeColor(pointType)));
+    });
+    /** Only use datasets that have events. */
+    datasetConfigs = datasetConfigs.filter(item => item.eventCount > 0);
+    this._datasetsMobile.push({
+      data: closePrices,
+      label: 'GME price $ ',
+      fill: true,
+      tension: 0.5,
+      borderColor: 'green',
+      backgroundColor: 'rgba(0,255,0,0.075)',
+      borderWidth: 0.8,
+      pointRadius: 0,
+      pointHitRadius: 0,
+      pointHoverRadius: 0,
+    });
+
+    datasetConfigs.forEach(datasetConfig => {
+      this._datasetsMobile.push({
+        data: datasetConfig.dataPoints,
+        label: datasetConfig.label,
+        fill: true,
+        tension: 0.5,
+        borderColor: 'black',
+        pointBackgroundColor: datasetConfig.color,
+        pointBorderColor: 'black',
+        pointBorderWidth: 1,
+        borderWidth: 0.1,
+        pointRadius: 1 + (1.5 * datasetConfig.significance),
+        pointHitRadius: 2 + (1.5 * datasetConfig.significance),
+        pointHoverRadius: 5 + (1.5 * datasetConfig.significance),
+        pointStyle: 'circle',
+      })
+    });
+    return this._datasetsMobile;
   }
 
   public getTypeColor(type: TimelineItemType, transparency?: number): string {

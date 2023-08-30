@@ -19,7 +19,4 @@ export class EventLegendComponent implements OnInit {
     console.log(this._legendItems)
   }
 
-  public onClickButton(){
-    this._legendService.clickButton();
-  }
 }

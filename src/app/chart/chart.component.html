@@ -1,16 +1,19 @@
 
 <div class="chart-area-root" >
-    <!-- <canvas baseChart class="chart"
-    [width]="canvasWidth" [height]="canvasHeight"
+
+    <canvas baseChart class="chart" *ngIf="isMobile"
+    height="400"
     [type]="'line'"
-    [data]="lineChartData"
-    [options]="lineChartOptions"
-    [legend]="lineChartLegend">
-    </canvas> -->
-    <canvas baseChart class="chart"
+    [data]="lineChartDataMobile"
+    [options]="lineChartOptionsMobile"
+    [legend]="lineChartLegendMobile">
+    </canvas>
+
+    <canvas baseChart class="chart" *ngIf="!isMobile"
     [type]="'line'"
     [data]="lineChartData"
     [options]="lineChartOptions"
     [legend]="lineChartLegend">
     </canvas>
+
 </div>
