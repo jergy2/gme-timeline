@@ -188,6 +188,12 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2021-01-27',
         urls: [
             {
+                url: 'https://lemmy.whynotdrs.org/post/156063',
+                type: 'LEMMY',
+                label: 'Lemmy chronicles thread - August 30, 2023',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/wallstreetbets/comments/l6ekdz/gme_yolo_update_jan_27_2021_guess_i_need_102/',
                 type: 'REDDIT',
                 label: 'GME YOLO update by DFV',
@@ -209,6 +215,14 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         title: 'Brokerages shut off the buy button',
         dateYYYYMMDD: '2021-01-28',
         urls: [
+
+            
+            {
+                url: 'https://lemmy.whynotdrs.org/post/156058',
+                type: 'LEMMY',
+                label: 'Lemmy chronicles thread - August 30, 2023',
+                archiveLink: '',
+            },
             {
                 url: 'https://www.reddit.com/r/investing/comments/l6wvia/robinhood_and_other_brokers_literally_blocking/',
                 type: 'REDDIT',
