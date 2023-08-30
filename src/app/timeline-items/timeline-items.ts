@@ -4,13 +4,35 @@ import { TimelineItemConfig } from "./timeline-item/timeline-item-config.interfa
 
 const timelineItemConfigs: TimelineItemConfig[] = [
     {
-        title: 'Michael Burry gets involved with GameStop',
-        dateYYYYMMDD: '2018-01-01',
+        title: 'Michael Burry files 13F showing position in GME',
+        dateYYYYMMDD: '2019-02-14',
         urls: [
             {
                 url: 'https://markets.businessinsider.com/news/stocks/big-short-investor-michael-burry-scion-gamestop-stock-price-frenzy-2021-2-1030050393',
                 type: 'OTHER',
-                label: 'Business Insider link',
+                label: 'Businessinsider.com',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000156761919004198/0001567619-19-004198-index.html',
+                type: 'OTHER',
+                label: 'SEC link',
+                archiveLink: '',
+            },
+            
+        ],
+        description: '',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+    },
+    {
+        title: 'Michael Burry increases GME position',
+        dateYYYYMMDD: '2019-05-15',
+        urls: [
+            {
+                url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000156761919010955/0001567619-19-010955-index.html',
+                type: 'OTHER',
+                label: 'SEC link',
                 archiveLink: '',
             },
         ],
@@ -18,6 +40,67 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.EVENT,
         significance: 1,
     },
+    {
+        title: 'Michael Burry writes to GameStop board of directors',
+        dateYYYYMMDD: '2019-08-16',
+        urls: [
+            {
+                url: 'https://www.businesswire.com/news/home/20190819005633/en/Scion-Asset-Management-Urges-GameStop-Buy-238?mod=article_inline',
+                type: 'OTHER',
+                label: 'Businesswire.com',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+    },
+    {
+        title: 'Michael Burry increases GME position',
+        dateYYYYMMDD: '2019-11-14',
+        urls: [
+            {
+                url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000156761919021303/0001567619-19-021303-index.html',
+                type: 'OTHER',
+                label: 'SEC link',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+    },
+    {
+        title: 'Michael Burry increases GME position',
+        dateYYYYMMDD: '2020-04-02',
+        urls: [
+            {
+                url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000090514820000491/efc20-335_sc13d.htm',
+                type: 'OTHER',
+                label: 'SEC link',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+    },
+    {
+        title: 'Michael Burry - Scion Asset Management Voted in Support of GameStop’s Board and Management',
+        dateYYYYMMDD: '2020-06-03',
+        urls: [
+            {
+                url: 'https://www.businesswire.com/news/home/20200603005929/en/Scion-Asset-Management-Voted-in-Support-of-GameStop%E2%80%99s-Board-and-Management',
+                type: 'OTHER',
+                label: 'Businesswire.com link',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+    },
+
     {
         title: 'Roaring Kitty - 100%+ short interest in GameStop stock (GME) – fundamental & technical deep value analysis',
         dateYYYYMMDD: '2020-07-27',
@@ -116,7 +199,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Wikipedia link',
                 archiveLink: '',
             },
-            
+
         ],
         description: '',
         type: TimelineItemType.EVENT,
@@ -206,7 +289,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
         ],
-       
+
         description: '',
         type: TimelineItemType.CORP,
         significance: 1,
@@ -222,7 +305,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: 'DFV`s final reddit post',
+        description: 'DFV’s final reddit post',
         type: TimelineItemType.DFV,
         significance: 3,
     },
@@ -270,7 +353,6 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.CORP,
         significance: 4,
-        imgSrc: 'assets/ryan-cohen-wikipedia.jpg'
     },
     {
         title: 'SEC publishes the GameStop report',
@@ -294,7 +376,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Superstonk thread regarding FOX business segment',
                 archiveLink: '',
             },
-            
+
         ],
         description: '',
         type: TimelineItemType.EVENT,
@@ -323,6 +405,18 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 url: 'https://home.treasury.gov/system/files/261/FSOC2021AnnualReport.pdf',
                 type: 'OTHER',
                 label: 'US Treasury link',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/rivizr/so_it_was_never_revealed_which_stock_had/',
+                type: 'REDDIT',
+                label: 'Superstonk thread - December 17, 2021',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/ztmutp/there_is_a_single_security_exhibiting/',
+                type: 'REDDIT',
+                label: 'Superstonk thread - December 23, 2022',
                 archiveLink: '',
             },
         ],
@@ -385,10 +479,17 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Reuters.com',
                 archiveLink: '',
             },
+
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/ussx2r/the_melvin_capital_shutdown_isnt_what_you_think/',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/ut71as/ken_takes_zero_accountability_again_puts_all_the/',
                 type: 'REDDIT',
-                label: 'Superstonk thread May 19',
+                label: 'Superstonk thread - May 19',
                 archiveLink: '',
             },
             {
@@ -398,7 +499,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
 
-            
+
         ],
         description: '',
         type: TimelineItemType.EVENT,
@@ -411,7 +512,25 @@ const timelineItemConfigs: TimelineItemConfig[] = [
             {
                 url: 'https://investor.gamestop.com/stock-split',
                 type: 'OTHER',
-                label: 'GameStop link',
+                label: 'GameStop guidance',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/wdqiu5/confusion_over_a_stock_split_vs_dividend/',
+                type: 'REDDIT',
+                label: 'Superstonk thread - August 1 ',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/wedhuw/this_is_a_stock_split_this_is_not_a_dividend_this/',
+                type: 'REDDIT',
+                label: 'Superstonk thread - August 2',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/wh760e/gamestop_statement_about_stock_split_in_the_form/',
+                type: 'REDDIT',
+                label: 'Superstonk thread - August 5',
                 archiveLink: '',
             },
         ],
@@ -466,6 +585,18 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'IMDB link',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/xcmvx3/eat_the_rich_the_gamestop_saga_netflix/',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/xt78an/boomer_dad_texted_me_if_ive_seen_the_movie_eat/',
+                type: 'REDDIT',
+                label: 'Superstonk thread - October 1',
+                archiveLink: '',
+            },
         ],
         description: 'A look at the layers of intrigue, from the supercharged power of digital communities to the gamification of trading.',
         type: TimelineItemType.MEDIA,
@@ -487,7 +618,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Superstonk thread',
                 archiveLink: '',
             },
-            
+
         ],
         description: 'A look at the layers of intrigue, from the supercharged power of digital communities to the gamification of trading.',
         type: TimelineItemType.UNRELATED,
@@ -524,7 +655,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Superstonk thread',
                 archiveLink: '',
             },
-            
+
         ],
         description: '',
         type: TimelineItemType.RC,
@@ -535,7 +666,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2023-02-14',
         urls: [
             {
-                url: 'www.whydrs.org',
+                url: 'https://www.whydrs.org',
                 type: 'OTHER',
                 label: 'WhyDRS.org',
                 archiveLink: '',
@@ -585,6 +716,20 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'IMDB link',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.youtube.com/watch?v=ZyzWdnl1jAg',
+                type: 'YOUTUBE',
+                label: 'CNBC explainer video',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13tof29/i_didnt_hear_about_this_until_now_making_of_the/',
+                type: 'REDDIT',
+                label: 'Superstonk thread - May 27',
+                archiveLink: '',
+            },
+
+
         ],
         description: 'Follows Ryan Cohen"s Rise from High School Graduate to Influential Force Behind the infamous GameStop Meme-Stock Phenomenon that exposed the need for market reform to protect retail investors from predatory shorting and corporate sabotage. ',
 
