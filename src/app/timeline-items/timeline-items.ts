@@ -282,6 +282,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: 'Game Stopped? Who Wins and Loses When Short Sellers, Social Media, and Retail Investors Collide. Keith Gill testifies before congress House Committee on Financial Services',
         type: TimelineItemType.EVENT,
         significance: 4,
+        imgSrc: 'assets/i-like-the-stock.png'
     },
     {
         title: 'GameStop Completes At-The-Market Equity Offering Program',
@@ -405,6 +406,12 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qavclr/official_link_to_the_sec_report_about_the_one/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },            
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/qbjhiv/fox_business_sec_gamestop_report_segment_2_with/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread regarding FOX business segment',
@@ -418,16 +425,22 @@ const timelineItemConfigs: TimelineItemConfig[] = [
     },
     {
         title: 'GameStop publishes 2021 Q3 financial report featuring 5.2 million (20.8 million post-split) shares directly registered',
-        dateYYYYMMDD: '2021-10-30',
+        dateYYYYMMDD: '2021-12-08',
         urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/rc1d5r/52_million_shares_registered_through_computershare/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '', 
+            },
             {
                 url: 'https://gamestop.gcs-web.com/sec-filings/sec-filing/10-q/0001326380-21-000129',
                 type: 'OTHER',
                 label: 'GameStop link',
                 archiveLink: '',
-            },
+            },  
         ],
-        description: 'GameStop reports for the first time the number of shares that have been directly registered ("DRSd")',
+        description: 'GameStop reports for the first time, as of October 30, 2021, the number of shares that have been directly registered ("DRSd")',
         type: TimelineItemType.DRS,
         significance: 5,
     },
