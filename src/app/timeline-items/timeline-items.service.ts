@@ -10,9 +10,10 @@ export class TimelineItemsService {
 
   constructor() { }
 
-  private _itemSelected$: Subject<TimelineItem> = new Subject();
-  public itemSelected$(): Observable<TimelineItem> { return this._itemSelected$.asObservable(); }
+  private _itemSelected$: Subject<TimelineItem | null> = new Subject();
+  public itemSelected$(): Observable<TimelineItem | null> { return this._itemSelected$.asObservable(); }
   public selectItem(item: TimelineItem){ this._itemSelected$.next(item); }
+  public unselectItem(){ this._itemSelected$.next(null); }
 
   public setChart(chart: BaseChartDirective | undefined){
     console.log("chart", chart)

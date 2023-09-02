@@ -31,7 +31,23 @@
             <img src="assets/youtube-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="YouTube" >
             <a [href]="link.url" target="_blank">{{link.label}}</a>
         </div>
-        <div *ngIf="link.type !== 'LEMMY' && link.type !== 'REDDIT'  && link.type !== 'WIKIPEDIA' && link.type !== 'YOUTUBE'">
+        <div *ngIf="link.type === 'DOCUMENT'" class="lemmy-discussion">
+            <img src="assets/document-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="Document" >
+            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        </div>
+        <div *ngIf="link.type === 'NEWS'" class="lemmy-discussion">
+            <img src="assets/newspaper-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="News" >
+            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        </div>
+        <div *ngIf="link.type === 'GAMESTOP'" class="lemmy-discussion">
+            <img src="assets/gs-logo.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="GameStop" >
+            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        </div>
+        <div *ngIf="link.type === 'X-TWITTER'" class="lemmy-discussion">
+            <img src="assets/x-twitter-logo.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="X-TWITTER" >
+            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        </div>
+        <div *ngIf="linkTypeIsOther(link.type)">
             <a [href]="link.url" target="_blank">{{link.label}}</a>
         </div>
         

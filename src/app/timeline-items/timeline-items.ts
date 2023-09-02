@@ -9,13 +9,13 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://markets.businessinsider.com/news/stocks/big-short-investor-michael-burry-scion-gamestop-stock-price-frenzy-2021-2-1030050393',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'Businessinsider.com',
                 archiveLink: '',
             },
             {
                 url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000156761919004198/0001567619-19-004198-index.html',
-                type: 'OTHER',
+                type: 'DOCUMENT',
                 label: 'SEC link',
                 archiveLink: '',
             },
@@ -31,7 +31,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000156761919010955/0001567619-19-010955-index.html',
-                type: 'OTHER',
+                type: 'DOCUMENT',
                 label: 'SEC link',
                 archiveLink: '',
             },
@@ -46,7 +46,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.businesswire.com/news/home/20190819005633/en/Scion-Asset-Management-Urges-GameStop-Buy-238?mod=article_inline',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'Businesswire.com',
                 archiveLink: '',
             },
@@ -61,7 +61,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000156761919021303/0001567619-19-021303-index.html',
-                type: 'OTHER',
+                type: 'DOCUMENT',
                 label: 'SEC link',
                 archiveLink: '',
             },
@@ -76,7 +76,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000090514820000491/efc20-335_sc13d.htm',
-                type: 'OTHER',
+                type: 'DOCUMENT',
                 label: 'SEC link',
                 archiveLink: '',
             },
@@ -91,7 +91,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.businesswire.com/news/home/20200603005929/en/Scion-Asset-Management-Voted-in-Support-of-GameStop%E2%80%99s-Board-and-Management',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'Businesswire.com link',
                 archiveLink: '',
             },
@@ -139,7 +139,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.sec.gov/Archives/edgar/data/1822844/000101359420000670/rc13d-082820.htm',
-                type: 'OTHER',
+                type: 'DOCUMENT',
                 label: 'SEC link',
                 archiveLink: '',
             },
@@ -164,16 +164,13 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.DFV,
         significance: 2,
     },
-
-
-    
     {
         title: 'RC Ventures writes to the GameStop Board of Directors',
         dateYYYYMMDD: '2020-11-16',
         urls: [
             {
                 url: 'https://www.sec.gov/Archives/edgar/data/1326380/000101359420000821/rc13da3-111620.pdf',
-                type: 'OTHER',
+                type: 'DOCUMENT',
                 label: 'SEC link',
                 archiveLink: '',
             },
@@ -188,13 +185,13 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://markets.businessinsider.com/news/stocks/gamestop-stock-price-chewy-cofounder-ryan-cohen-activist-investment-stake-2020-12-1029915366',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'Business Insider link',
                 archiveLink: '',
             },
             {
                 url: 'https://news.gamestop.com/static-files/89e3e0c1-e050-4511-887d-d1f9321703f8',
-                type: 'OTHER',
+                type: 'GAMESTOP',
                 label: 'GameStop link',
                 archiveLink: '',
             },
@@ -202,6 +199,22 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.RC,
         significance: 2,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-01-17',
+        urls: [
+            {
+                url: 'https://twitter.com/i/status/1350877969816956934',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            }
+        ],
+        description: '🥜',
+        type: TimelineItemType.RC,
+        significance: 1,
+        imgSrc: 'assets/rc-tweet-2021-01-17.PNG'
     },
     {
         title: 'Peak of the short sneeze',
@@ -251,13 +264,13 @@ const timelineItemConfigs: TimelineItemConfig[] = [
             },
             {
                 url: 'https://www.cnbc.com/2021/01/28/robinhood-interactive-brokers-restrict-trading-in-gamestop-s.html',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'CNBC.com',
                 archiveLink: '',
             },
             {
                 url: 'https://www.benzinga.com/news/23/08/34086181/the-sec-releases-new-information-regarding-a-finra-rule-change-for-options-trading',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'Benzinga.com',
                 archiveLink: '',
             },
@@ -273,7 +286,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.youtube.com/watch?v=_TPYuIRVfew&t=37s',
-                type: 'OTHER',
+                type: 'YOUTUBE',
                 label: 'YouTube link',
                 archiveLink: '',
             },
@@ -310,7 +323,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://news.gamestop.com/news-releases/news-release-details/gamestop-completes-market-equity-offering-program ',
-                type: 'OTHER',
+                type: 'GAMESTOP',
                 label: 'GameStop link',
                 archiveLink: '',
             },
@@ -333,21 +346,28 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.cnbc.com/2021/04/08/gamestop-stock-up-after-company-says-ryan-cohen-to-be-chairman.html',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'CNBC link',
                 archiveLink: '',
             },
             {
                 url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-announces-slate-director-candidates-2021-annual-meeting',
-                type: 'OTHER',
+                type: 'GAMESTOP',
                 label: 'GameStop link',
                 archiveLink: '',
             },
+            {
+                url: 'https://twitter.com/ryancohen/status/1380212953748676608?s=20',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            }
         ],
 
         description: '',
         type: TimelineItemType.CORP,
         significance: 1,
+        imgSrc: 'assets/rc-chairman.jpg'
     },
     {
         title: 'GME YOLO update — Apr 16 2021 — final update',
@@ -379,6 +399,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.UNRELATED,
         significance: 1,
+        imgSrc: 'assets/gensler-loading.png'
     },
     {
         title: 'Melissa Lee of CNBC:  "Naked Shorts, Yea"',
@@ -409,6 +430,57 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.CORP,
         significance: 4,
+        imgSrc: 'assets/rc-chairman.jpg'
+        
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-07-20',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1417315406272864258',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: 'PG-13',
+        type: TimelineItemType.RC,
+        significance: 1,
+        imgSrc: 'assets/rc-chopsticks.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-07-23',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1418751218566918146',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: 'Can’t stop, won’t stop.',
+        type: TimelineItemType.RC,
+        significance: 1,
+        imgSrc: 'assets/rc-computerchair.jpg'
+    },
+    
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-07-31',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1420940035042414595',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            }
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 1,
+        imgSrc: 'assets/rc-googly-eyes.jpg'
     },
     {
         title: 'SEC publishes the GameStop report',
@@ -416,7 +488,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.sec.gov/files/staff-report-equity-options-market-struction-conditions-early-2021.pdf',
-                type: 'OTHER',
+                type: 'DOCUMENT',
                 label: 'SEC link',
                 archiveLink: '',
             },
@@ -456,7 +528,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
             },
             {
                 url: 'https://gamestop.gcs-web.com/sec-filings/sec-filing/10-q/0001326380-21-000129',
-                type: 'OTHER',
+                type: 'GAMESTOP',
                 label: 'GameStop link',
                 archiveLink: '',
             },  
@@ -471,7 +543,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://home.treasury.gov/system/files/261/FSOC2021AnnualReport.pdf',
-                type: 'OTHER',
+                type: 'DOCUMENT',
                 label: 'US Treasury link',
                 archiveLink: '',
             },
@@ -599,7 +671,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.reuters.com/markets/us/hedge-fund-melvin-capital-tells-investors-it-plans-shut-down-letter-2022-05-18/',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'Reuters.com',
                 archiveLink: '',
             },
@@ -635,7 +707,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://investor.gamestop.com/stock-split',
-                type: 'OTHER',
+                type: 'GAMESTOP',
                 label: 'GameStop guidance',
                 archiveLink: '',
             },
@@ -676,7 +748,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://news.gamestop.com/news-releases/news-release-details/gamestop-forms-partnership-ftx',
-                type: 'OTHER',
+                type: 'GAMESTOP',
                 label: 'GameStop link',
                 archiveLink: '',
             },
@@ -719,6 +791,22 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2022-10-17',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1582212373985005569',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: 'Ryan Cohen tweets a picture of himself with Carl Icahn',
+        type: TimelineItemType.RC,
+        significance: 2,
+        imgSrc: 'assets/rc-icahn.jpg'
+    },
+    {
         title: 'Fidelity posts meme-stock guy',
         dateYYYYMMDD: '2022-11-12',
         urls: [
@@ -746,8 +834,8 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.bbc.co.uk/news/business-63601213',
-                type: 'OTHER',
-                label: 'BBC.co.uk link',
+                type: 'NEWS',
+                label: 'BBC.co.uk',
                 archiveLink: '',
             },
             {
@@ -763,9 +851,15 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
-        title: 'Ryan Cohen tweets he wants to be the book king',
+        title: 'Ryan Cohen tweet',
         dateYYYYMMDD: '2022-11-19',
         urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1593989511171784705',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
             {
                 url: 'https://www.teddy.com',
                 type: 'OTHER',
@@ -773,7 +867,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'I also want to be the Book King 👑',
         type: TimelineItemType.RC,
         significance: 2,
     },
@@ -798,6 +892,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.RC,
         significance: 4,
+        imgSrc: 'assets/rc-gmedd-interview.png'
     },
     {
         title: 'WhyDRS.org published',
@@ -820,7 +915,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://www.reuters.com/world/us/citadel-founder-ken-griffin-donates-300-million-more-alma-mater-harvard-2023-04-11/',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'Reuters.com',
                 archiveLink: '',
             },
@@ -901,7 +996,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         urls: [
             {
                 url: 'https://news.gamestop.com/news-releases/news-release-details/gamestop-announces-election-ryan-cohen-executive-chairman',
-                type: 'OTHER',
+                type: 'GAMESTOP',
                 label: 'GameStop link',
                 archiveLink: '',
             },

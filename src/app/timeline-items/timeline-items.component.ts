@@ -46,10 +46,16 @@ export class TimelineItemsComponent implements OnInit {
     this._itemService.itemSelected$().subscribe({
       next: (item) => {
         this.timelineItems.forEach(item => item.unselect())
-        item.select();
-        // this.scroller.scrollToAnchor(this.itemId(item));
-        const scrollToElement = document.getElementById(this.itemId(item));
-        scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+        if(item !== null){
+          
+          item.select();
+          // this.scroller.scrollToAnchor(this.itemId(item));
+          const scrollToElement = document.getElementById(this.itemId(item));
+          scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+        }else{
+
+        }
+        
 
       }
     });

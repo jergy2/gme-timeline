@@ -53,7 +53,11 @@ export class ChartComponent implements OnInit {
           const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
           if (timelineItem) {
             this._timelineItemService.selectItem(timelineItem);
+          }else{
+            // this._timelineItemService.unselectItem();
           }
+        }else{
+          // this._timelineItemService.unselectItem();
         }
       },
       onClick: (event, array) => {
