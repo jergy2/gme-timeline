@@ -559,6 +559,41 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 3,
     },
     {
+        title: 'Superstonk participates in r/place 2022',
+        dateYYYYMMDD: '2022-04-04',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/place/comments/twft1q/full_screenshot_of_rplace_2022/',
+                type: 'REDDIT',
+                label: 'Full screenshot of r/place 2022',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/tts2vw/updated_coordinates_for_rplace/',
+                type: 'REDDIT',
+                label: 'Superstonk thread April 1 2022',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/tur8b5/updated_rplace_design_alliances/',
+                type: 'REDDIT',
+                label: 'Superstonk thread April 2 2022',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/tvdw8n/i_recreated_the_rplace_image_on_ps_and_its/',
+                type: 'REDDIT',
+                label: 'Superstonk thread April 3 2022',
+                archiveLink: '',
+            },
+
+        ],
+        description: '',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+        imgSrc: 'assets/superstonk-r-place.png'
+    },
+    {
         title: 'Melvin Capital announces it will be shutting down',
         dateYYYYMMDD: '2022-05-18',
         urls: [
