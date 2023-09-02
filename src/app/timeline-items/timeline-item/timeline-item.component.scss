@@ -36,12 +36,22 @@
     margin-bottom: 5px;
 }
 
-// .link,
-// link>a {
-//     color: rgb(78, 127, 184);
-//     color: white;
-// }
+.lemmy-discussion{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 3px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
 
+.link{
+    display:flex;
+    flex-direction: row;
+}
 /* unvisited link */
 a:link {
     color: rgb(196, 217, 255);

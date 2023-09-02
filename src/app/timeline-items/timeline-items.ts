@@ -115,6 +115,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.DFV,
         significance: 2,
+        imgSrc: 'assets/dfv-short-interest.jpg'
     },
     {
         title: 'Roaring Kitty - 5 reasons GameStop stock (GME) is a roach not a cigar butt a la Warren Buffett & could short squeeze',
@@ -130,6 +131,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.DFV,
         significance: 2,
+        imgSrc: 'assets/dfv-cigar.jpg'
     },
     {
         title: 'RC Ventures LLC purchases 9% of GameStop',
@@ -145,8 +147,26 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.RC,
         significance: 3,
-        imgSrc: 'assets/ryan-cohen-wikipedia.jpg'
+        imgSrc: 'assets/ryan-cohen-loading.jpg'
     },
+    {
+        title: 'Roaring Kitty - The Big Short SQUEEZE from $5 to $50? Could GameStop stock (GME) explode higher?? Value investing!',
+        dateYYYYMMDD: '2020-08-21',
+        urls: [
+            {
+                url: 'https://www.youtube.com/watch?v=alntJzg0Um4',
+                type: 'YOUTUBE',
+                label: 'YouTube link',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.DFV,
+        significance: 2,
+    },
+
+
+    
     {
         title: 'RC Ventures writes to the GameStop Board of Directors',
         dateYYYYMMDD: '2020-11-16',
@@ -343,6 +363,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: 'DFV’s final reddit post',
         type: TimelineItemType.DFV,
         significance: 3,
+        imgSrc: 'assets/dfv-loading.jpg'
     },
     {
         title: 'Gary Gensler assumes position of chair of the SEC',
@@ -502,6 +523,27 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'SEC posts a video disparaging meme-stocks',
+        dateYYYYMMDD: '2022-05-31',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/v22zvj/the_official_sec_youtube_channel_just_shared_a/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.youtube.com/watch?v=av3k_lcGm9g',
+                type: 'YOUTUBE',
+                label: 'YouTube video',
+                archiveLink: '',
+            },
+        ],
+        description: 'What even is a meme stock and why would the SEC go out of their way to disparage people that invest in meme stocks?',
+        type: TimelineItemType.EVENT,
+        significance: 2,
+    },
+    {
         title: 'DRSGME.org published by GameStop investors',
         dateYYYYMMDD: '2022-03-18',
         urls: [
@@ -585,14 +627,6 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.CORP,
         significance: 4,
     },
-    // {
-    //     title: 'discussion of GME is banned from r/Wallstreetbets ???',
-    //     dateYYYYMMDD: '2022-08-00',
-    //     urls: [],
-    //     description: '',
-    //     type: TimelineItemType.DFV,
-    //     significance: 1,
-    // },
     {
         title: 'Citadel Securities raises $600m',
         dateYYYYMMDD: '2022-08-18',
@@ -650,6 +684,28 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'Fidelity posts meme-stock guy',
+        dateYYYYMMDD: '2022-11-12',
+        urls: [
+            {
+                url: 'https://lemmy.whynotdrs.org/post/4181',
+                type: 'LEMMY',
+                label: 'Lemmy discussion',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/yedjog/in_case_you_missed_it_fidelitys_meme_stock_guy/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: 'Fidelity, a major financial services company with trillions of dollars of assets under management, felt compelled to try and disparage DRSd shareholders of GME',
+        type: TimelineItemType.DRS,
+        significance: 2,
+        imgSrc: 'assets/meme-stock-guy.jpeg',
+    },
+    {
         title: 'Crypto giant FTX collapses into bankruptcy',
         dateYYYYMMDD: '2022-11-12',
         urls: [
@@ -667,7 +723,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
             },
 
         ],
-        description: 'A look at the layers of intrigue, from the supercharged power of digital communities to the gamification of trading.',
+        description: '',
         type: TimelineItemType.UNRELATED,
         significance: 2,
     },

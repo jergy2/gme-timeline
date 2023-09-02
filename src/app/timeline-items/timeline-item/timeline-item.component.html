@@ -9,23 +9,33 @@
     <div>
         {{item.title}}
     </div>
-    <div>
-        <!-- <a [href]="item.url">{{item.url}}</a> -->
-    </div>
     <div style="overflow-y: auto;">
         <p>
             {{item.description}}
         </p>
     </div>
     <div *ngFor="let link of item.urls" class="link">
-        <a [href]="link.url" target="_blank">{{link.label}}</a>
+        <div *ngIf="link.type === 'LEMMY'" class="lemmy-discussion" style="font-size: 1.1em;">
+            <img src="assets/lemmy-icon.png" style="width: 30px; height: 30px; margin-right: 10px;" alt="Lemmy discussion" >
+            <a [href]="link.url" target="_blank">Discuss this on Lemmy</a>
+        </div>
+        <div *ngIf="link.type === 'REDDIT'" class="lemmy-discussion">
+            <img src="assets/reddit-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="Reddit" >
+            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        </div>
+        <div *ngIf="link.type === 'WIKIPEDIA'" class="lemmy-discussion">
+            <img src="assets/wikipedia-logo.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="Wikipedia" >
+            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        </div>
+        <div *ngIf="link.type === 'YOUTUBE'" class="lemmy-discussion">
+            <img src="assets/youtube-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="YouTube" >
+            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        </div>
+        <div *ngIf="link.type !== 'LEMMY' && link.type !== 'REDDIT'  && link.type !== 'WIKIPEDIA' && link.type !== 'YOUTUBE'">
+            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        </div>
+        
     </div>
-    <!-- <div *ngIf="item.urlConfig.youtubeUrl !== ''"> -->
-        <!-- <iframe width="400" height="300" src="https://www.youtube.com/embed/GZTr1-Gp74U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-        <!-- <iframe width="400" height="300" [src]="iframeSrc(item)" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-    
-        <!-- <iframe width="400" height="300" src="https://www.youtube.com/embed/GZTr1-Gp74U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-    <!-- </div> -->
     <div *ngIf="item.hasImg" class="image-container">
         <img [src]="item.imgSrc" class="image">
     </div>
