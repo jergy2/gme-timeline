@@ -28,12 +28,28 @@
     margin: 5px;
 }
 
+.close-button{
+    border-radius: 4px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.close-button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 .not-expanded {}
 
 .date {
     font-weight: bold;
     font-size: 0.9em;
     margin-bottom: 5px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .lemmy-discussion{

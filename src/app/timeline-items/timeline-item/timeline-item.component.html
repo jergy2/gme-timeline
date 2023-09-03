@@ -1,11 +1,21 @@
-<div class="timeline-item-root not-expanded" *ngIf="!item.isSelected && !isMobile" [ngStyle]="ngStyle">
-    <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
+<div class="timeline-item-root not-expanded" *ngIf="!item.isSelected && !isMobile" [ngStyle]="ngStyle" (click)="onClickItem(item)">
+    <div class="date">
+        {{ date(item.dateYYYYMMDD) }}
+    </div>
     <div>
         {{item.title}}
     </div>
 </div>
 <div class="timeline-item-root expanded" *ngIf="item.isSelected && !isMobile" [ngStyle]="ngStyle">
-    <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
+    <div class="date">
+        <div>
+            {{ date(item.dateYYYYMMDD) }}
+        </div>
+        <div (click)="onClickClose()" class="close-button">
+            <img src="assets/close-button.png" style="width:16px;height:16px;" alt="Close">
+        </div>
+        
+    </div>
     <div>
         {{item.title}}
     </div>

@@ -268,13 +268,12 @@ const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'CNBC.com',
                 archiveLink: '',
             },
-            {
-                url: 'https://www.benzinga.com/news/23/08/34086181/the-sec-releases-new-information-regarding-a-finra-rule-change-for-options-trading',
-                type: 'NEWS',
-                label: 'Benzinga.com',
-                archiveLink: '',
-            },
-            
+            // {
+            //     url: 'https://www.benzinga.com/news/23/08/34086181/the-sec-releases-new-information-regarding-a-finra-rule-change-for-options-trading',
+            //     type: 'NEWS',
+            //     label: 'Benzinga.com',
+            //     archiveLink: '',
+            // },
         ],
         description: '',
         type: TimelineItemType.EVENT,

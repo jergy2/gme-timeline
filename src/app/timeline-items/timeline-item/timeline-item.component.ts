@@ -5,6 +5,7 @@ import * as dayjs from 'dayjs';
 import { EventLegendService } from 'src/app/chart/event-legend/event-legend.service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { urlType } from './timeline-item-url.interface';
+import { TimelineItemsService } from '../timeline-items.service';
 
 @Component({
   selector: 'app-timeline-item',
@@ -13,7 +14,7 @@ import { urlType } from './timeline-item-url.interface';
 })
 export class TimelineItemComponent {
 
-  constructor(private _eventService: EventLegendService, private _sizeService: ScreeSizeService) { }
+  constructor(private _eventService: EventLegendService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
 
   private _item: TimelineItem = new TimelineItem({
     title: '',
@@ -40,6 +41,14 @@ export class TimelineItemComponent {
     }
     return false;
   }
+
+  public onClickClose(){
+    this._itemService.unselectItem();
+  }
+
+  public onClickItem(item: TimelineItem){
+    this._itemService.selectItem(item);
+}
 
   public get ngStyle() {
     if (this.item.isSelected) {

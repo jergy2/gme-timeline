@@ -1,7 +1,5 @@
 <div class="items-container">
     <app-timeline-item *ngFor="let timelineItem of timelineItems" [id]="itemId(timelineItem)" [item]="timelineItem"
-        [ngClass]="{'.timeline-item': isMobile === false, '.timeline-item-mobile': isMobile === true}" 
-        (mouseenter)="onMouseEnter(timelineItem)"
-        (mouseleave)="onMouseLeave(timelineItem)">
+        [ngClass]="{'.timeline-item': isMobile === false, '.timeline-item-mobile': isMobile === true}" >
     </app-timeline-item>
 </div>
