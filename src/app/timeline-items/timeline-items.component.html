@@ -1,5 +1,14 @@
-<div class="items-container">
-    <app-timeline-item *ngFor="let timelineItem of timelineItems" [id]="itemId(timelineItem)" [item]="timelineItem"
-        [ngClass]="{'.timeline-item': isMobile === false, '.timeline-item-mobile': isMobile === true}" >
+<div class="items-container" *ngIf="!isMobile">
+    <app-timeline-item *ngFor="let timelineItem of timelineItems" [id]="itemId(timelineItem)" [item]="timelineItem" class="timeline-item">
+    </app-timeline-item>
+</div>
+
+
+<!-- <div *ngIf="isMobile" class="items-container-mobile">
+    ismobile
+</div> -->
+
+<div class="items-container-mobile" *ngIf="isMobile">
+    <app-timeline-item *ngFor="let timelineItem of timelineItemsMobile" [id]="itemId(timelineItem)" [item]="timelineItem" class="timeline-item-mobile">
     </app-timeline-item>
 </div>

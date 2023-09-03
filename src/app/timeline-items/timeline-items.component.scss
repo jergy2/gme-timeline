@@ -10,13 +10,23 @@
     align-items: flex-end;
 }
 
+.items-container-mobile{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .timeline-item{
-    max-height: 310px;
+    // max-height: 310px;
     margin: 2px;
 }
 .timeline-item-mobile{
-    max-height: 310px;
-    margin: 2px;
     max-width: 100%;
     width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5px;
 }

@@ -1,4 +1,4 @@
-<div class="timeline-item-root not-expanded" *ngIf="!item.isSelected && !isMobile" [ngStyle]="ngStyle" (click)="onClickItem(item)">
+<div [ngClass]="isMobile ? 'timeline-item-root-mobile' : 'timeline-item-root'" class="not-expanded" *ngIf="!item.isSelected" [ngStyle]="ngStyle" (click)="onClickItem(item)">
     <div class="date">
         {{ date(item.dateYYYYMMDD) }}
     </div>
@@ -6,7 +6,7 @@
         {{item.title}}
     </div>
 </div>
-<div class="timeline-item-root expanded" *ngIf="item.isSelected && !isMobile" [ngStyle]="ngStyle">
+<div [ngClass]="isMobile ? 'timeline-item-root-mobile' : 'timeline-item-root'" class="expanded" *ngIf="item.isSelected" [ngStyle]="ngStyle">
     <div class="date">
         <div>
             {{ date(item.dateYYYYMMDD) }}
@@ -14,7 +14,6 @@
         <div (click)="onClickClose()" class="close-button">
             <img src="assets/close-button.png" style="width:16px;height:16px;" alt="Close">
         </div>
-        
     </div>
     <div>
         {{item.title}}
@@ -67,20 +66,19 @@
     </div>
 </div>
 
-
-<div class="timeline-item-root mobile not-expanded" *ngIf="!item.isSelected && isMobile" [ngStyle]="ngStyle">
+<!-- 
+<div class="timeline-item-root-mobile not-expanded" *ngIf="!item.isSelected && isMobile" [ngStyle]="ngStyle" (click)="onClickItem(item)">
     <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
     <div>
         {{item.title}}
     </div>
 </div>
-<div class="timeline-item-root mobile expanded" *ngIf="item.isSelected && isMobile" [ngStyle]="ngStyle">
+<div class="timeline-item-root-mobile expanded" *ngIf="item.isSelected && isMobile" [ngStyle]="ngStyle">
     <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
     <div>
         {{item.title}}
     </div>
     <div>
-        <!-- <a [href]="item.url">{{item.url}}</a> -->
     </div>
     <div style="overflow-y: auto;">
         <p>
@@ -90,10 +88,4 @@
     <div *ngFor="let link of item.urls" class="link">
         <a [href]="link.url" target="_blank">{{link.label}}</a>
     </div>
-    <!-- <div *ngIf="item.urlConfig.youtubeUrl !== ''"> -->
-        <!-- <iframe width="400" height="300" src="https://www.youtube.com/embed/GZTr1-Gp74U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-        <!-- <iframe width="400" height="300" [src]="iframeSrc(item)" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-    
-        <!-- <iframe width="400" height="300" src="https://www.youtube.com/embed/GZTr1-Gp74U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-    <!-- </div> -->
-</div>
+</div> -->

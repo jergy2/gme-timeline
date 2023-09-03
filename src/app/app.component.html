@@ -1,12 +1,16 @@
-<div *ngIf="chartIsLoaded" class="app-component-root">
+<div *ngIf="dataIsLoaded && !isMobile" class="app-component-root">
   <div class="container-grid">
     <app-timeline-items class="app-timeline-items"></app-timeline-items>
     <app-chart class="app-chart"></app-chart>
   </div>
 </div>
 
-<!-- <div class="lds-ripple" *ngIf="!chartIsLoaded">
+<div class="app-component-root-mobile" *ngIf="dataIsLoaded && isMobile">
+  <app-timeline-items class="app-timeline-items-mobile"></app-timeline-items>
+</div>
+
+<div class="lds-ripple" *ngIf="!dataIsLoaded">
   <div></div>
   <div></div>
-</div> -->
+</div>
 

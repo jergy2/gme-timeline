@@ -16,7 +16,15 @@ export class TimelineItemsComponent implements OnInit {
   private _selectedItem: TimelineItem | null = null;
   public get selectedItem(): TimelineItem | null { return this._selectedItem; }
   public get timelineItems(): TimelineItem[] { return timelineItems; }
-
+  public get timelineItemsMobile(): TimelineItem[] { return timelineItems.sort((itemA, itemB)=>{
+    if(itemA.dateYYYYMMDD > itemB.dateYYYYMMDD){
+      return -1;
+    }else if(itemA.dateYYYYMMDD < itemB.dateYYYYMMDD){
+      return 1;
+    }else{
+      return 0;
+    }
+  })}
   public get isMobile(): boolean { return this._screenService.isMobile; }
 
   ngOnInit() {
@@ -26,7 +34,11 @@ export class TimelineItemsComponent implements OnInit {
         if(item !== null){
           item.select();
           const scrollToElement = document.getElementById(this.itemId(item));
-          scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+          if(!this.isMobile){
+            scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+          }else if(this.isMobile){
+            scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+          }
         }else{
         }
       }

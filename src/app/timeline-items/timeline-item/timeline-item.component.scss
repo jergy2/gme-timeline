@@ -1,4 +1,4 @@
-.timeline-item-root {
+.timeline-item-root{
     // max-height: 100%;
     // max-height: 270px;
     min-width: 400px;
@@ -16,12 +16,12 @@
     display:flex;
     flex-direction: column;
 }
-.mobile{
-    max-width: 100px;
+.timeline-item-root-mobile{
+    // max-width: 100%;
     background-color: black;
-    min-width: 320px;
-    width: 100%;
-    max-height: 270px;
+    // width: 100%;
+    flex-grow: 2;
+    padding: 5px;
 }
 
 .expanded {

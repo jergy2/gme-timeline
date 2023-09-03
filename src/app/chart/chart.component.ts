@@ -106,11 +106,6 @@ export class ChartComponent implements OnInit {
       }
     };
     this.lineChartOptionsMobile = this.lineChartOptions;
-    // this.lineChartOptionsMobile.plugins = {
-    //   legend: {
-    //     display: false,
-    //   }
-    // }
 
     this.lineChartData.datasets = this._legendService.dataSets;
     this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
@@ -131,28 +126,6 @@ export class ChartComponent implements OnInit {
       error: () => { },
       complete: () => { }
     });
-
-    // this._timelineItemService.itemSelected$().subscribe({
-    //   next: (item) => {
-    //     console.log(item, this.baseChart)
-    //     if(this.baseChart !== undefined){
-    //       const chart = this.baseChart.chart
-    //       // chart.chart.tool
-    //       if(chart){
-    //         const tooltip = chart.tooltip;
-    //         if(tooltip){
-    //           console.log("TOOLTIP ACTIVE ELEMENTS:", tooltip.getActiveElements());
-    //           // tooltip.setActiveElements
-    //           this._legendService.lookupIndexByEvent(item);
-    //           // chart.update();
-    //         }
-
-    //       }
-
-    //     }
-
-    //   }
-    // })
   }
 
   private _getTooltipLabel(providedLabel: string): string {
