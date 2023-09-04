@@ -56,17 +56,32 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 1,
     },
     {
+        title: 'DFV Posts his GME position for the time on Reddit',
+        dateYYYYMMDD: '2019-08-16',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/wallstreetbets/comments/d1g7x0/hey_burry_thanks_a_lot_for_jacking_up_my_cost/',
+                type: 'REDDIT',
+                label: 'DFV post on r/wallstreetbets',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.DFV,
+        significance: 1,
+    },
+    {
         title: 'Michael Burry increases GME position',
         dateYYYYMMDD: '2019-11-14',
         urls: [
             {
                 url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000156761919021303/0001567619-19-021303-index.html',
                 type: 'DOCUMENT',
-                label: 'SEC link',
+                label: '13F on SEC.gov',
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'Position value of approximately $16.6 million',
         type: TimelineItemType.EVENT,
         significance: 1,
     },
@@ -77,11 +92,26 @@ const timelineItemConfigs: TimelineItemConfig[] = [
             {
                 url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000090514820000491/efc20-335_sc13d.htm',
                 type: 'DOCUMENT',
-                label: 'SEC link',
+                label: '13D on SEC.gov',
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'Position value of approximately $9.7 million',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+    },
+    {
+        title: 'Michael Burry decreases GME position',
+        dateYYYYMMDD: '2020-05-04',
+        urls: [
+            {
+                url: 'https://www.sec.gov/Archives/edgar/data/0001649339/000090514820000563/efc20-411_sc13da.htm',
+                type: 'DOCUMENT',
+                label: '13D on SEC.gov',
+                archiveLink: '',
+            },
+        ],
+        description: 'Position value of approximately $15.4 million',
         type: TimelineItemType.EVENT,
         significance: 1,
     },
@@ -165,6 +195,21 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'Michael Burry decreases GME position',
+        dateYYYYMMDD: '2020-09-30',
+        urls: [
+            {
+                url: 'https://www.sec.gov/Archives/edgar/data/1649339/000156761920019679/xslForm13F_X01/form13fInfoTable.xml',
+                type: 'DOCUMENT',
+                label: '13F on SEC.gov',
+                archiveLink: '',
+            },
+        ],
+        description: 'Position value of approximately $17.4 million',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+    },
+    {
         title: 'RC Ventures writes to the GameStop Board of Directors',
         dateYYYYMMDD: '2020-11-16',
         urls: [
@@ -199,6 +244,21 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.RC,
         significance: 2,
+    },
+    {
+        title: 'Michael Burry closes entire GME position',
+        dateYYYYMMDD: '2020-12-31',
+        urls: [
+            {
+                url: 'https://www.sec.gov/Archives/edgar/data/1649339/000156761921003819/xslForm13F_X01/form13fInfoTable.xml',
+                type: 'DOCUMENT',
+                label: '13F on SEC.gov',
+                archiveLink: '',
+            },
+        ],
+        description: 'Some time between September 30th and December 31st, Michael Burry sells his entire GME position, evidenced by the absense of any position in GameStop in form 13F',
+        type: TimelineItemType.EVENT,
+        significance: 1,
     },
     {
         title: 'Ryan Cohen tweet',
@@ -243,6 +303,22 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.EVENT,
         significance: 2,
+    },
+    {
+        title: 'Michael Burry tweet',
+        dateYYYYMMDD: '2021-01-29',
+        urls: [
+            {
+                url: 'https://web.archive.org/web/20210130042803/https://twitter.com/michaeljburry/status/1355221824661983233',
+                type: 'X-TWITTER',
+                label: 'Michael Burry tweet (archive)',
+                archiveLink: 'https://web.archive.org/web/20210130042803/https://twitter.com/michaeljburry/status/1355221824661983233',
+            }
+        ],
+        description: 'May 2020, relatively sane times for $GME, I called in my lent-out GME shares. It took my brokers WEEKS to find my shares.  I cannot even imagine the sh*tstorm in settlement now. They may have to extend delivery timelines. #pigsgetslaughtered #nakedshorts',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+        imgSrc: 'assets/burry-tweet-2021-01-29.jpg'
     },
     {
         title: 'Brokerages shut off the buy button',
@@ -317,6 +393,23 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         imgSrc: 'assets/i-like-the-stock.png'
     },
     {
+        title: 'Michael Burry receives a visit from the SEC',
+        dateYYYYMMDD: '2021-03-18',
+        urls: [
+            {
+                url: 'https://markets.businessinsider.com/currencies/news/big-short-investor-michael-burry-stop-tweets-sec-regulators-visit-2021-3-1030222890                ',
+                type: 'NEWS',
+                label: 'businessinsider.com',
+                archiveLink: '',
+            },
+        ],
+        description: '"Tweeting and getting in the news lately apparently has caused the SEC to pay us a visit," the Scion Asset Management boss said in a now-deleted tweet.',
+        type: TimelineItemType.EVENT,
+        significance: 1,
+    },
+    
+
+    {
         title: 'GameStop Completes At-The-Market Equity Offering Program',
         dateYYYYMMDD: '2021-04-05',
         urls: [
@@ -375,7 +468,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
             {
                 url: 'https://www.reddit.com/r/wallstreetbets/comments/msblc3/gme_yolo_update_apr_16_2021_final_update/?sort=top',
                 type: 'REDDIT',
-                label: 'Reddit link',
+                label: 'Post on r/wallstreetbets',
                 archiveLink: '',
             },
         ],
@@ -399,6 +492,34 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.UNRELATED,
         significance: 1,
         imgSrc: 'assets/gensler-loading.png'
+    },
+    {
+        title: 'Roaring Kitty Tweet',
+        dateYYYYMMDD: '2021-06-01',
+        urls: [
+            {
+                url: 'https://twitter.com/theroaringkitty/status/1399727581369409539',
+                type: 'X-TWITTER',
+                label: 'Roaring Kitty tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/npupq3/roaring_kitty_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/npuu7r/for_anyone_having_trouble_viewing_the_video_in/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: 'DFV aka Roaring Kitty tweets an observing cat with background music of O Fortuna',
+        type: TimelineItemType.DFV,
+        significance: 1,
+        imgSrc: 'assets/dfv-tweet-2021-06-01.PNG'
     },
     {
         title: 'Melissa Lee of CNBC:  "Naked Shorts, Yea"',
@@ -430,8 +551,28 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.CORP,
         significance: 4,
         imgSrc: 'assets/rc-chairman.jpg'
-        
     },
+    {
+        title: 'Michael Burry tweet',
+        dateYYYYMMDD: '2021-06-15',
+        urls: [
+            {
+                url: 'https://web.archive.org/web/20210616051602/https://twitter.com/michaeljburry/status/1404803383589060618',
+                type: 'X-TWITTER',
+                label: 'Michael Burry tweet (archive)',
+                archiveLink: 'https://web.archive.org/web/20210616051602/https://twitter.com/michaeljburry/status/1404803383589060618',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/o0fdnl/michael_burry_vol2_jacked_to_the_tits/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk link',
+                archiveLink: '',
+            },
+        ],
+        description: '"People always ask me what is going on in the markets. It is simple. Greatest Speculative Bubble of All Time in All Things. By two orders of magnitude. #FlyingPigs360"',
+        type: TimelineItemType.EVENT,
+        significance: 1,        
+    },    
     {
         title: 'Ryan Cohen tweet',
         dateYYYYMMDD: '2021-07-20',
@@ -464,7 +605,6 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 1,
         imgSrc: 'assets/rc-computerchair.jpg'
     },
-    
     {
         title: 'Ryan Cohen tweet',
         dateYYYYMMDD: '2021-07-31',
@@ -480,6 +620,33 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.RC,
         significance: 1,
         imgSrc: 'assets/rc-googly-eyes.jpg'
+    },
+    {
+        title: 'DFVs former employer receives fine of $4.75 million from Massachusetts securities regulators',
+        dateYYYYMMDD: '2021-09-16',
+        urls: [
+            {
+                url: 'https://www.reuters.com/business/finance/massachusetts-fines-massmutual-475-mln-failing-supervise-roaring-kitty-other-2021-09-16/?taid=61438d2de56df4000174c11e&utm_campaign=trueAnthem:+Trending+Content&utm_medium=trueAnthem&utm_source=twitter',
+                type: 'NEWS',
+                label: 'reuters.com',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/ppfa9q/former_employer_of_roaring_kitty_fined_4_million/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread September 16',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/q6pfjj/dfvs_employer_fined_4m_for_inadequate_supervision/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread October 12',
+                archiveLink: '',
+            }
+        ],
+        description: '"State regulators found MassMutual failed to detect nearly 1,700 trades by Gill, who was able to execute at least two trades in GameStop in excess of $700,000, beyond a company limit."',
+        type: TimelineItemType.DFV,
+        significance: 1,
     },
     {
         title: 'SEC publishes the GameStop report',
@@ -613,6 +780,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: 'What even is a meme stock and why would the SEC go out of their way to disparage people that invest in meme stocks?',
         type: TimelineItemType.EVENT,
         significance: 2,
+        imgSrc: 'assets/sec-meme-stocks.PNG'
     },
     {
         title: 'DRSGME.org published by GameStop investors',
@@ -807,7 +975,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
     },
     {
         title: 'Fidelity posts meme-stock guy',
-        dateYYYYMMDD: '2022-11-12',
+        dateYYYYMMDD: '2022-10-26',
         urls: [
             {
                 url: 'https://lemmy.whynotdrs.org/post/4181',
