@@ -28,6 +28,14 @@ export class TimelineItemComponent {
   public get item(): TimelineItem { return this._item; }
 
   public get isMobile(): boolean { return this._sizeService.isMobile; }
+  public get gmeSharePrice(): string { 
+    const sharePrice = this._eventService.gmeSharePrice(this._item);
+    if(sharePrice !== -1){
+      return sharePrice.toFixed(2);
+    }else{
+      return '';
+    }
+  }
 
   public date(dateYYYYMMDD: string): string {
     return dayjs(dateYYYYMMDD).format('MMMM D, YYYY')

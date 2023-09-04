@@ -7,13 +7,16 @@
     </div>
 </div>
 <div [ngClass]="isMobile ? 'timeline-item-root-mobile' : 'timeline-item-root expanded'" *ngIf="item.isSelected" [ngStyle]="ngStyle">
-    <div class="date">
+    <div class="date" >
         <div>
             {{ date(item.dateYYYYMMDD) }}
         </div>
         <div (click)="onClickClose()" class="close-button">
             <img src="assets/close-button.png" style="width:16px;height:16px;" alt="Close">
         </div>
+    </div>
+    <div *ngIf="gmeSharePrice !== ''" style="font-size: 0.8em; margin-bottom: 10px; color: rgb(221, 221, 221);">
+        GME price per share:  <span style="font-weight: bold; color: rgb(138, 214, 138);">${{ gmeSharePrice }}</span>
     </div>
     <div>
         {{item.title}}

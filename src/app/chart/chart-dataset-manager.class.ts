@@ -1,3 +1,4 @@
+import * as dayjs from "dayjs";
 import { GmePriceEntry } from "../timeline-items/timeline-item/gme-price-entry.interface";
 import { TimelineItemType } from "../timeline-items/timeline-item/timeline-item-type.enum";
 import { TimelineItem } from "../timeline-items/timeline-item/timeline-item.class";
@@ -149,6 +150,14 @@ export class ChartDataSetManager {
     } else {
       return 'black';
     }
+  }
+
+  public gmeSharePrice(event :TimelineItem): number {
+    const foundItem = this._priceEntries.find(item => item.date.format('YYYY-MM-DD') === event.dateYYYYMMDD);
+    if(foundItem){
+      return foundItem.close;
+    }
+    return -1;
   }
 
   public lookupIndexByEvent(event: TimelineItem){

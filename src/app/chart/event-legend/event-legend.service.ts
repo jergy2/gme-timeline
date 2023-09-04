@@ -28,6 +28,10 @@ export class EventLegendService {
     this._dataSetsMobile$.next(this._dataManager.getDataSetsMobile())
   }
 
+  public gmeSharePrice(event :TimelineItem): number {
+    return this._dataManager.gmeSharePrice(event);
+  }
+
   public lookupEventByIndex(datasetIndex: number, index: number){
     return this._dataManager.lookupEventByIndex(datasetIndex, index);
   }
