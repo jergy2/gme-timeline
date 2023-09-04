@@ -1,13 +1,9 @@
-import { Component, HostListener, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { HistoricDataService } from '../historic-data.service';
-import { ChartDataSetManager } from './chart-dataset-manager.class';
 import { EventLegendService } from './event-legend/event-legend.service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
-import { TimelineItemType } from '../timeline-items/timeline-item/timeline-item-type.enum';
-import { TimelineItem } from '../timeline-items/timeline-item/timeline-item.class';
-import { Subject } from 'rxjs';
 import { timelineItems } from '../timeline-items/timeline-items';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 import { ScreeSizeService } from '../scree-size.service';
@@ -35,10 +31,16 @@ export class ChartComponent implements OnInit {
   public lineChartOptionsMobile: ChartOptions<'line'> = {};
   public lineChartLegendMobile = false;
 
-  // public get canvasWidth(): number { return 1200; }
-  // public get canvasHeight(): number { return 800; }
+  public get canvasWidth(): number { return this._canvasWidth; }
+  public get canvasHeight(): number { return this._canvasHeight; }
 
   public get isMobile(): boolean { return this._sizeService.isMobile; }
+
+  private _canvasWidth: number = 400;
+  private _canvasHeight: number = 300;
+  
+  private _chartContainerNgStyle: any = {};
+  public get chartContainerNgStyle(): any { return this._chartContainerNgStyle;}
 
   ngOnInit() {
     let labels: string[] = this._dataService.priceEntries.map((entry) => { return entry.date.format('YYYY-MM-DD') });
@@ -126,6 +128,27 @@ export class ChartComponent implements OnInit {
       error: () => { },
       complete: () => { }
     });
+    this._sizeService.screenDimensions$.subscribe({
+      next: ()=>{ this._updateScreenSize(); }
+    })
+  }
+
+  private _updateScreenSize(){
+    const gridBottomRowHeight = 180;
+    const width = this._sizeService.screenDimensions.width;
+    const height = this._sizeService.screenDimensions.height - gridBottomRowHeight;
+
+    const roundedWidth = Math.floor(width/20) * 20;
+    const roundedHeight = Math.floor(height/50) * 50;
+    // this._canvasWidth = width;
+    // this._canvasHeight = roundedHeight;
+    this._chartContainerNgStyle = {
+      'max-width': roundedWidth + 'px',
+      'height': roundedHeight + 'px',
+    };
+    console.log("updating", this._canvasWidth, this._canvasHeight)
+    // this.baseChart?.update();
+    console.log(this._chartContainerNgStyle)
   }
 
   private _getTooltipLabel(providedLabel: string): string {
@@ -157,8 +180,6 @@ export class ChartComponent implements OnInit {
     }
     return this._tooltipBackgroundColor;
   }
-
-
 
   private _lookupEvent(dateYYYYMMDD: string) {
     const foundItem = timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);

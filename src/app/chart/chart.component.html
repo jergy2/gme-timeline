@@ -1,5 +1,5 @@
 
-<div class="chart-area-root" >
+<div class="chart-root" >
 
     <!-- <canvas baseChart class="chart" *ngIf="isMobile"
     height="400"
@@ -9,11 +9,13 @@
     [legend]="lineChartLegendMobile">
     </canvas> -->
 
-    <canvas baseChart class="chart" *ngIf="!isMobile"
-    [type]="'line'"
-    [data]="lineChartData"
-    [options]="lineChartOptions"
-    [legend]="lineChartLegend">
-    </canvas>
-
+    <div class="chart-container" [ngStyle]="chartContainerNgStyle">
+        <canvas baseChart class="chart" *ngIf="!isMobile"
+        [height]="canvasHeight" [width]="canvasWidth"
+        [type]="'line'"
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+        [legend]="lineChartLegend">
+        </canvas>   
+    </div>
 </div>

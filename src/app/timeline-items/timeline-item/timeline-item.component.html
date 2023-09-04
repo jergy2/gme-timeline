@@ -6,7 +6,7 @@
         {{item.title}}
     </div>
 </div>
-<div [ngClass]="isMobile ? 'timeline-item-root-mobile' : 'timeline-item-root'" class="expanded" *ngIf="item.isSelected" [ngStyle]="ngStyle">
+<div [ngClass]="isMobile ? 'timeline-item-root-mobile' : 'timeline-item-root expanded'" *ngIf="item.isSelected" [ngStyle]="ngStyle">
     <div class="date">
         <div>
             {{ date(item.dateYYYYMMDD) }}
@@ -24,68 +24,23 @@
         </p>
     </div>
     <div *ngFor="let link of item.urls" class="link">
-        <div *ngIf="link.type === 'LEMMY'" class="lemmy-discussion" style="font-size: 1.1em;">
-            <img src="assets/lemmy-icon.png" style="width: 30px; height: 30px; margin-right: 10px;" alt="Lemmy discussion" >
-            <a [href]="link.url" target="_blank">Discuss this on Lemmy</a>
-        </div>
-        <div *ngIf="link.type === 'REDDIT'" class="lemmy-discussion">
-            <img src="assets/reddit-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="Reddit" >
-            <a [href]="link.url" target="_blank">{{link.label}}</a>
-        </div>
-        <div *ngIf="link.type === 'WIKIPEDIA'" class="lemmy-discussion">
-            <img src="assets/wikipedia-logo.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="Wikipedia" >
-            <a [href]="link.url" target="_blank">{{link.label}}</a>
-        </div>
-        <div *ngIf="link.type === 'YOUTUBE'" class="lemmy-discussion">
-            <img src="assets/youtube-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="YouTube" >
-            <a [href]="link.url" target="_blank">{{link.label}}</a>
-        </div>
-        <div *ngIf="link.type === 'DOCUMENT'" class="lemmy-discussion">
-            <img src="assets/document-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="Document" >
-            <a [href]="link.url" target="_blank">{{link.label}}</a>
-        </div>
-        <div *ngIf="link.type === 'NEWS'" class="lemmy-discussion">
-            <img src="assets/newspaper-icon.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="News" >
-            <a [href]="link.url" target="_blank">{{link.label}}</a>
-        </div>
-        <div *ngIf="link.type === 'GAMESTOP'" class="lemmy-discussion">
-            <img src="assets/gs-logo.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="GameStop" >
-            <a [href]="link.url" target="_blank">{{link.label}}</a>
-        </div>
-        <div *ngIf="link.type === 'X-TWITTER'" class="lemmy-discussion">
-            <img src="assets/x-twitter-logo.png" style="width: 28px; height: 28px; margin-right: 10px;" alt="X-TWITTER" >
-            <a [href]="link.url" target="_blank">{{link.label}}</a>
+        <div *ngIf="!linkTypeIsOther(link.type)" class="link-container">
+            <img *ngIf="link.type === 'LEMMY'" src="assets/lemmy-icon.png" class="logo" alt="Lemmy discussion" >
+            <img *ngIf="link.type === 'REDDIT'" src="assets/reddit-icon.png" class="logo" alt="Reddit" >
+            <img *ngIf="link.type === 'WIKIPEDIA'" src="assets/wikipedia-logo.png" class="logo" alt="Wikipedia" >
+            <img *ngIf="link.type === 'YOUTUBE'" src="assets/youtube-icon.png" class="logo" alt="YouTube" >
+            <img *ngIf="link.type === 'DOCUMENT'" src="assets/document-icon.png" class="logo" alt="Document" >
+            <img *ngIf="link.type === 'NEWS'" src="assets/newspaper-icon.png" class="logo" alt="News" >
+            <img *ngIf="link.type === 'GAMESTOP'" src="assets/gs-logo.png" class="logo" alt="GameStop" >
+            <img *ngIf="link.type === 'X-TWITTER'" src="assets/x-twitter-logo.png" class="logo" alt="X-TWITTER" >
+            <a [href]="link.url" *ngIf="link.type !== 'LEMMY'" target="_blank">{{link.label}}</a>
+            <a [href]="link.url" *ngIf="link.type === 'LEMMY'" target="_blank">Discuss this on Lemmy</a>
         </div>
         <div *ngIf="linkTypeIsOther(link.type)">
             <a [href]="link.url" target="_blank">{{link.label}}</a>
         </div>
-        
     </div>
     <div *ngIf="item.hasImg" class="image-container">
         <img [src]="item.imgSrc" class="image">
     </div>
 </div>
-
-<!-- 
-<div class="timeline-item-root-mobile not-expanded" *ngIf="!item.isSelected && isMobile" [ngStyle]="ngStyle" (click)="onClickItem(item)">
-    <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
-    <div>
-        {{item.title}}
-    </div>
-</div>
-<div class="timeline-item-root-mobile expanded" *ngIf="item.isSelected && isMobile" [ngStyle]="ngStyle">
-    <div class="date">{{ date(item.dateYYYYMMDD) }}</div>
-    <div>
-        {{item.title}}
-    </div>
-    <div>
-    </div>
-    <div style="overflow-y: auto;">
-        <p>
-            {{item.description}}
-        </p>
-    </div>
-    <div *ngFor="let link of item.urls" class="link">
-        <a [href]="link.url" target="_blank">{{link.label}}</a>
-    </div>
-</div> -->
