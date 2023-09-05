@@ -23,7 +23,12 @@
     flex-grow: 2;
     padding: 5px;
 }
-
+.top-row{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .expanded {
     margin: 5px;
 }

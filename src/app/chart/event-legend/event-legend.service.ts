@@ -10,7 +10,7 @@ import { TimelineItemType } from 'src/app/timeline-items/timeline-item/timeline-
 export class EventLegendService {
 
   constructor() { 
-    this._dataManager = new ChartDataSetManager([]);
+    this._dataManager = new ChartDataSetManager([], []);
   }
 
   private _dataSets$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
@@ -26,10 +26,6 @@ export class EventLegendService {
     this._dataManager = dataManager;
     this._dataSets$.next(this._dataManager.getDataSets());
     this._dataSetsMobile$.next(this._dataManager.getDataSetsMobile())
-  }
-
-  public gmeSharePrice(event :TimelineItem): number {
-    return this._dataManager.gmeSharePrice(event);
   }
 
   public lookupEventByIndex(datasetIndex: number, index: number){

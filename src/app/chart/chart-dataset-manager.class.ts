@@ -2,7 +2,6 @@ import * as dayjs from "dayjs";
 import { GmePriceEntry } from "../timeline-items/timeline-item/gme-price-entry.interface";
 import { TimelineItemType } from "../timeline-items/timeline-item/timeline-item-type.enum";
 import { TimelineItem } from "../timeline-items/timeline-item/timeline-item.class";
-import { timelineItems } from "../timeline-items/timeline-items";
 import { DatasetConfig } from "./dataset-config.class";
 import { LegendItem } from "./event-legend/legend-item/legend-item.class";
 
@@ -13,15 +12,16 @@ export class ChartDataSetManager {
   private _datasetsMobile: any[] = [];
   private _datasetConfigs: DatasetConfig[] = [];
   private _legendItems: LegendItem[] = [];
+  private _timelineItems: TimelineItem[] = [];
 
   public get datasets(): any[] { return this._datasets; }
   public get datasetsMobile(): any[] { return this._datasetsMobile; }
   public get datasetConfigs(): DatasetConfig[] { return this._datasetConfigs; }
   public get legendItems(): LegendItem[] { return this._legendItems; }
 
-  constructor(priceEntries: GmePriceEntry[]) {
+  constructor(priceEntries: GmePriceEntry[], timelineItems: TimelineItem[]) {
     this._priceEntries = priceEntries;
-
+    this._timelineItems = timelineItems;
   }
 
   public getDataSets(): any[] {
@@ -152,14 +152,6 @@ export class ChartDataSetManager {
     }
   }
 
-  public gmeSharePrice(event :TimelineItem): number {
-    const foundItem = this._priceEntries.find(item => item.date.format('YYYY-MM-DD') === event.dateYYYYMMDD);
-    if(foundItem){
-      return foundItem.close;
-    }
-    return -1;
-  }
-
   public lookupIndexByEvent(event: TimelineItem){
     console.log("LOOKING UP INDEX: " , event);
     this.datasetConfigs.forEach(datasetConfig => {
@@ -195,7 +187,7 @@ export class ChartDataSetManager {
 
   /** finds a timeline item by date */
   private _lookupEventByDate(dateYYYYMMDD: string) {
-    const foundItem = timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
+    const foundItem = this._timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
     return foundItem;
   }
 

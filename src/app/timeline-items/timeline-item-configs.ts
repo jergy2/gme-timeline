@@ -1,8 +1,7 @@
-import { TimelineItem } from "./timeline-item/timeline-item.class";
 import { TimelineItemType } from "./timeline-item/timeline-item-type.enum";
 import { TimelineItemConfig } from "./timeline-item/timeline-item-config.interface";
 
-const timelineItemConfigs: TimelineItemConfig[] = [
+export const timelineItemConfigs: TimelineItemConfig[] = [
     {
         title: 'Michael Burry files 13F showing position in GME',
         dateYYYYMMDD: '2019-02-14',
@@ -900,6 +899,7 @@ const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.CORP,
         significance: 4,
+        specialIdentifier: 'STOCK-SPLIT',
     },
     {
         title: 'Citadel Securities raises $600m',
@@ -1189,4 +1189,4 @@ const timelineItemConfigs: TimelineItemConfig[] = [
     },
 ];
 
-export const timelineItems: TimelineItem[] = timelineItemConfigs.map(item => new TimelineItem(item));
+// export const timelineItems: TimelineItem[] = timelineItemConfigs.map(item => new TimelineItem(item));

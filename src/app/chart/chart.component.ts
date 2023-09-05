@@ -4,7 +4,6 @@ import { HistoricDataService } from '../historic-data.service';
 import { EventLegendService } from './event-legend/event-legend.service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
-import { timelineItems } from '../timeline-items/timeline-items';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 import { ScreeSizeService } from '../scree-size.service';
 
@@ -22,7 +21,7 @@ export class ChartComponent implements OnInit {
     private _dataService: HistoricDataService,
     private _legendService: EventLegendService,
     private _timelineItemService: TimelineItemsService,
-    private _sizeService: ScreeSizeService
+    private _sizeService: ScreeSizeService,
   ) { }
   public lineChartData: ChartConfiguration<'line'>['data'] = { labels: [], datasets: [] };
   public lineChartOptions: ChartOptions<'line'> = {};
@@ -182,7 +181,7 @@ export class ChartComponent implements OnInit {
   }
 
   private _lookupEvent(dateYYYYMMDD: string) {
-    const foundItem = timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
+    const foundItem = this._timelineItemService.timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
     return foundItem;
   }
   private _lookupEventByIndex(datasetIndex: number, index: number) {

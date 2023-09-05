@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { TimelineItem } from './timeline-item/timeline-item.class';
-import { BaseChartDirective } from 'ng2-charts';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +14,12 @@ export class TimelineItemsService {
   public selectItem(item: TimelineItem){ this._itemSelected$.next(item); }
   public unselectItem(){ this._itemSelected$.next(null); }
 
-  public setChart(chart: BaseChartDirective | undefined){
-    console.log("chart", chart)
+  private _timelineItems$: BehaviorSubject<TimelineItem[]> = new BehaviorSubject<TimelineItem[]>([]);
+  public setTimelineItems(items: TimelineItem[]){
+    this._timelineItems$.next(items);
   }
+  public get timelineItems$(): Observable<TimelineItem[]> { return this._timelineItems$.asObservable(); }
+  public get timelineItems(): TimelineItem[] { return this._timelineItems$.getValue(); }
+
 
 }
