@@ -21,7 +21,8 @@ export class HistoricDataService {
 
   private _fileName = 'assets/gme-data.csv';
   private _priceEntries: GmePriceEntry[] = [];
-  public get priceEntries(): GmePriceEntry[] { return this._priceEntries; }
+  public get allPriceEntries(): GmePriceEntry[] { return this._priceEntries; }
+  public get priceEntriesAfterCutoff(): GmePriceEntry[] { return this._priceEntries.filter(item => item.date.format('YYYY-MM-DD') > '2020-07-01'); }
 
   public loadHistoricData$(): Observable<boolean> {
     const subject$ = new Subject<boolean>();
@@ -83,7 +84,7 @@ export class HistoricDataService {
 
   /** We don't need to see data all the way back from 2013 */
   private _trimData() {
-    const cutoffDate = dayjs('2020-06-01');
+    const cutoffDate = dayjs('2019-01-01');
     this._priceEntries = this._priceEntries.filter((item) => {
       return item.date.isAfter(cutoffDate);
     });

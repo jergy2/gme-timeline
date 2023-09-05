@@ -30,6 +30,8 @@ export class TimelineItemComponent {
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
 
+  public onClickSplit(){ this._itemService.onClickStockSplitItem(); }
+
   public date(dateYYYYMMDD: string): string {
     return dayjs(dateYYYYMMDD).format('MMMM D, YYYY')
   }

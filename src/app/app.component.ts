@@ -38,7 +38,7 @@ export class AppComponent {
       next: () => { },
       error: () => { },
       complete: () => {
-        const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(timelineItemConfigs, this._dataService.priceEntries);
+        const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(timelineItemConfigs, this._dataService.allPriceEntries);
         this._timelineItemsService.setTimelineItems(timelineItems);
         this._updateChartData();
       },
@@ -48,7 +48,7 @@ export class AppComponent {
 
   private _updateChartData() {
     this._dataIsLoaded = true;
-    const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.priceEntries, this._timelineItemsService.timelineItems);
+    const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.priceEntriesAfterCutoff, this._timelineItemsService.timelineItems);
     this._legendService.registerDataManager(dataManager);
   }
 

@@ -42,7 +42,7 @@ export class ChartComponent implements OnInit {
   public get chartContainerNgStyle(): any { return this._chartContainerNgStyle;}
 
   ngOnInit() {
-    let labels: string[] = this._dataService.priceEntries.map((entry) => { return entry.date.format('YYYY-MM-DD') });
+    let labels: string[] = this._dataService.priceEntriesAfterCutoff.map((entry) => { return entry.date.format('YYYY-MM-DD') });
     /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
     this.lineChartData.labels = labels;
     this.lineChartDataMobile.labels = labels;
@@ -145,9 +145,9 @@ export class ChartComponent implements OnInit {
       'max-width': roundedWidth + 'px',
       'height': roundedHeight + 'px',
     };
-    console.log("updating", this._canvasWidth, this._canvasHeight)
+    // console.log("updating", this._canvasWidth, this._canvasHeight)
     // this.baseChart?.update();
-    console.log(this._chartContainerNgStyle)
+    // console.log(this._chartContainerNgStyle)
   }
 
   private _getTooltipLabel(providedLabel: string): string {

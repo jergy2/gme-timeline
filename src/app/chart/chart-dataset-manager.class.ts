@@ -19,27 +19,31 @@ export class ChartDataSetManager {
   public get datasetConfigs(): DatasetConfig[] { return this._datasetConfigs; }
   public get legendItems(): LegendItem[] { return this._legendItems; }
 
+  // public get chartCutoffDate(): string { return '2020-07-01'; }
+
   constructor(priceEntries: GmePriceEntry[], timelineItems: TimelineItem[]) {
     this._priceEntries = priceEntries;
     this._timelineItems = timelineItems;
   }
 
   public getDataSets(): any[] {
-    const closePrices: number[] = this._priceEntries.map((entry) => { return entry.close });
+    let closePrices: number[] = this._priceEntries
+      // .filter(entry => entry.date.format('YYYY-MM-DD') > this.chartCutoffDate)
+      .map((entry: GmePriceEntry) => { return entry.close });
     let datasetConfigs: DatasetConfig[] = [];
     /** Get all datasets based on every combination of significance value and type. 
     *  This will produce arrays that have no such events
     */
-    const allPointTypes: TimelineItemType[] = [
+    const allEventTypes: TimelineItemType[] = [
       TimelineItemType.EVENT, TimelineItemType.CORP, TimelineItemType.MEDIA, TimelineItemType.RC, TimelineItemType.DFV, TimelineItemType.UNRELATED, TimelineItemType.DRS,
     ];
     const allSignificances: number[] = [0, 1, 2, 3, 4, 5];
-    allPointTypes.forEach(pointType => {
+    allEventTypes.forEach(eventType => {
       allSignificances.forEach(significanceValue => {
-        const datasetConfig: DatasetConfig = this._getDatasetConfig(pointType, significanceValue);
+        const datasetConfig: DatasetConfig = this._getDatasetConfig(eventType, significanceValue);
         datasetConfigs.push(datasetConfig);
       });
-      this._legendItems.push(new LegendItem(pointType, this.getTypeColor(pointType)));
+      this._legendItems.push(new LegendItem(eventType, this.getTypeColor(eventType)));
     });
     /** Only use datasets that have events. */
     datasetConfigs = datasetConfigs.filter(item => item.eventCount > 0);
@@ -78,7 +82,7 @@ export class ChartDataSetManager {
   }
 
   public getDataSetsMobile(): any[] {
-    const closePrices: number[] = this._priceEntries.map((entry) => { return entry.close });
+    let closePrices: number[] = this._priceEntries.map((entry) => { return entry.close });
     let datasetConfigs: DatasetConfig[] = [];
     /** Get all datasets based on every combination of significance value and type. 
     *  This will produce arrays that have no such events
@@ -130,7 +134,7 @@ export class ChartDataSetManager {
   }
 
   public getTypeColor(type: TimelineItemType, transparency?: number): string {
-    if(!transparency){
+    if (!transparency) {
       transparency = 0.8;
     }
     if (type === TimelineItemType.CORP) {
@@ -152,18 +156,18 @@ export class ChartDataSetManager {
     }
   }
 
-  public lookupIndexByEvent(event: TimelineItem){
-    console.log("LOOKING UP INDEX: " , event);
+  public lookupIndexByEvent(event: TimelineItem) {
+    console.log("LOOKING UP INDEX: ", event);
     this.datasetConfigs.forEach(datasetConfig => {
       const datapoints = datasetConfig.dataPoints.filter(item => item !== null);
       console.log("DATA POINTS:", datapoints)
     })
   }
 
-  public lookupEventByIndex(datasetIndex: number, index: number){
-    const config = this._datasetConfigs[datasetIndex-1];
+  public lookupEventByIndex(datasetIndex: number, index: number) {
+    const config = this._datasetConfigs[datasetIndex - 1];
     const entry: GmePriceEntry | null = config.priceEntries[index];
-    if(entry !== null){
+    if (entry !== null) {
       const event = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'));
       return event;
     }
@@ -171,15 +175,17 @@ export class ChartDataSetManager {
   }
 
   private _getDatasetConfig(type: TimelineItemType, significanceValue: number): DatasetConfig {
-    const dataSet = this._priceEntries.map((entry) => {
-      const foundEvent = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'));
-      if (foundEvent) {
-        if (foundEvent.type === type && foundEvent.significance === significanceValue) {
-          return entry;
+    const dataSet = this._priceEntries
+      // .filter(entry => entry.date.format('YYYY-MM-DD') > this.chartCutoffDate)
+      .map((entry) => {
+        const foundEvent = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'));
+        if (foundEvent) {
+          if (foundEvent.type === type && foundEvent.significance === significanceValue) {
+            return entry;
+          }
         }
-      }
-      return null;
-    });
+        return null;
+      });
     const datasetConfig = new DatasetConfig(dataSet, type, type, this.getTypeColor(type), significanceValue);
     return datasetConfig;
   }

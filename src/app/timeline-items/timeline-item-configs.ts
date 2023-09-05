@@ -314,7 +314,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: 'https://web.archive.org/web/20210130042803/https://twitter.com/michaeljburry/status/1355221824661983233',
             }
         ],
-        description: 'May 2020, relatively sane times for $GME, I called in my lent-out GME shares. It took my brokers WEEKS to find my shares.  I cannot even imagine the sh*tstorm in settlement now. They may have to extend delivery timelines. #pigsgetslaughtered #nakedshorts',
+        description: '"May 2020, relatively sane times for $GME, I called in my lent-out GME shares. It took my brokers WEEKS to find my shares.  I cannot even imagine the sh*tstorm in settlement now. They may have to extend delivery timelines. #pigsgetslaughtered #nakedshorts"',
         type: TimelineItemType.EVENT,
         significance: 1,
         imgSrc: 'assets/burry-tweet-2021-01-29.jpg'
