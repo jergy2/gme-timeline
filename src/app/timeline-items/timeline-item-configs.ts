@@ -775,6 +775,12 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'YouTube video',
                 archiveLink: '',
             },
+            {
+                url: 'https://en.wikipedia.org/wiki/Meme_stock',
+                type: 'WIKIPEDIA',
+                label: 'Meme stock - Wikipedia',
+                archiveLink: '',
+            }
         ],
         description: 'What even is a meme stock and why would the SEC go out of their way to disparage people that invest in meme stocks?',
         type: TimelineItemType.EVENT,

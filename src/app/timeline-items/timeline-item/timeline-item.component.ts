@@ -55,16 +55,39 @@ export class TimelineItemComponent {
 
   public get ngStyle() {
     if (this.item.isSelected) {
-      return {
-        'background-color': this._eventService.getTypeColor(this.item.type, 0.8),
-        'border': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
-        'color': 'white',
+      if(this.isMobile){
+        return { // if is selected and is mobile
+          'background-color': this._eventService.getTypeColor(this.item.type, 0.8),
+          'border-left': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
+          'border-right': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
+          'color': 'white',
+          'padding-top': '15px',
+          'padding-bottom': '15px',
+        }
+      }else{
+        return { // if is selected and is not mobile
+          'background-color': this._eventService.getTypeColor(this.item.type, 0.8),
+          'border': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
+          'color': 'white',
+        }
       }
-    } else {
-      return {
-        'background-color': this._eventService.getTypeColor(this.item.type, 0.05),
-        'border': '1px solid ' + this._eventService.getTypeColor(this.item.type, 0.5),
+      
+    } else { // if not selected
+      if(this.isMobile){ // if mobile and not selected
+        return {
+          'background-color': this._eventService.getTypeColor(this.item.type, 0.05),
+          'border-left': '1px solid ' + this._eventService.getTypeColor(this.item.type, 0.5),
+          'border-right': '1px solid ' + this._eventService.getTypeColor(this.item.type, 0.5),
+          'padding-top': '15px',
+          'padding-bottom': '15px',
+        }
+      }else{
+        return { // if not mobile and not selected
+          'background-color': this._eventService.getTypeColor(this.item.type, 0.05),
+          'border': '1px solid ' + this._eventService.getTypeColor(this.item.type, 0.5),
+        }
       }
+
     }
 
   }
