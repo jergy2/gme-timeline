@@ -37,7 +37,7 @@ export class TimelineItemsComponent implements OnInit {
           if(!this.isMobile){
             scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
           }else if(this.isMobile){
-            scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            // scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
           }
         }else{
         }
