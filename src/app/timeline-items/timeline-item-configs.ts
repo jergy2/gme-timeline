@@ -129,7 +129,27 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.EVENT,
         significance: 1,
     },
-
+    {
+        title: 'GameStop Reports First Quarter 2020 Results',
+        dateYYYYMMDD: '2020-06-09',
+        urls: [
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-first-quarter-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-20-000060',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.CORP,
+        significance: 1,
+    },
     {
         title: 'Roaring Kitty - 100%+ short interest in GameStop stock (GME) – fundamental & technical deep value analysis',
         dateYYYYMMDD: '2020-07-27',
@@ -194,6 +214,27 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'GameStop Reports Second Quarter 2020 Results',
+        dateYYYYMMDD: '2020-09-09',
+        urls: [
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-second-quarter-results-and-strong-progress',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-20-000119',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.CORP,
+        significance: 1,
+    },
+    {
         title: 'Michael Burry decreases GME position',
         dateYYYYMMDD: '2020-09-30',
         urls: [
@@ -222,6 +263,27 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         description: 'Subject: Maximizing Stockholder Value by Becoming the Ultimate Destination for Gamers, “GAMESTOP’S LEADERSHIP MUST PROMPTLY PIVOT FROM A BRICK-AND-MORTAR MINDSET TO A TECHNOLOGY-DRIVEN VISION”',
         type: TimelineItemType.RC,
         significance: 4,
+    },
+    {
+        title: 'GameStop Reports Third Quarter 2020 Results',
+        dateYYYYMMDD: '2020-12-08',
+        urls: [
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-third-quarter-results-positive-start-fourth',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-20-000134',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q3 2020',
+        type: TimelineItemType.CORP,
+        significance: 1,
     },
     {
         title: 'Through RC Ventures, Cohen now owns a 12.9% stake in GameStop worth $140 million as of Monday"s close, according to an SEC filing. ',
@@ -406,7 +468,27 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.EVENT,
         significance: 1,
     },
-    
+    {
+        title: 'GameStop Reports Fourth Quarter and Fiscal 2020 Results',
+        dateYYYYMMDD: '2021-03-23',
+        urls: [
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-fourth-quarter-and-fiscal-2020-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-k/0001326380-21-000032',
+                type: 'DOCUMENT',
+                label: 'Form 10-K',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q4 2020',
+        type: TimelineItemType.CORP,
+        significance: 1,
+    },
 
     {
         title: 'GameStop Completes At-The-Market Equity Offering Program',
@@ -543,10 +625,23 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         imgSrc: 'assets/melissa-lee-naked-shorts.png'
     },
     {
-        title: 'Ryan Cohen becomes chairman of GameStop, Matt Furlong becomes CEO',
+        title: 'GameStop Releases First Quarter 2021 Financial Results',
         dateYYYYMMDD: '2021-06-09',
-        urls: [],
-        description: '',
+        urls: [
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-releases-first-quarter-2021-financial-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-21-000066',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q1 2021 Ryan Cohen becomes chairman of GameStop, Matt Furlong becomes CEO',
         type: TimelineItemType.CORP,
         significance: 4,
         imgSrc: 'assets/rc-chairman.jpg'
@@ -621,6 +716,27 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         imgSrc: 'assets/rc-googly-eyes.jpg'
     },
     {
+        title: 'GameStop Reports Financial Results for Q2 2021',
+        dateYYYYMMDD: '2021-09-08',
+        urls: [
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-financial-results-q2-2021',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-21-000090',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q2 2021',
+        type: TimelineItemType.CORP,
+        significance: 1,
+    },
+    {
         title: 'DFVs former employer receives fine of $4.75 million from Massachusetts securities regulators',
         dateYYYYMMDD: '2021-09-16',
         urls: [
@@ -692,16 +808,23 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '', 
             },
             {
-                url: 'https://gamestop.gcs-web.com/sec-filings/sec-filing/10-q/0001326380-21-000129',
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-financial-results-q2-2021',
                 type: 'GAMESTOP',
-                label: 'GameStop link',
+                label: 'Earnings Release',
                 archiveLink: '',
-            },  
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-21-000090',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
         ],
         description: 'GameStop reports for the first time, as of October 30, 2021, the number of shares that have been directly registered ("DRSd")',
         type: TimelineItemType.DRS,
         significance: 5,
     },
+
     {
         title: 'Financial Stability Oversight Council publishes Annual Report, saying that a single security exhibited idiosyncratic risk ',
         dateYYYYMMDD: '2021-12-17',
@@ -760,32 +883,31 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
-        title: 'SEC posts a video disparaging meme-stocks',
-        dateYYYYMMDD: '2022-05-31',
+        title: 'GameStop Reports Fourth Quarter and Fiscal Year 2021 Results',
+        dateYYYYMMDD: '2022-03-17',
         urls: [
+            // {
+            //     url: '',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk thread',
+            //     archiveLink: '', 
+            // },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/v22zvj/the_official_sec_youtube_channel_just_shared_a/?sort=top',
-                type: 'REDDIT',
-                label: 'Superstonk thread',
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-fourth-quarter-and-fiscal-year-2021-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
                 archiveLink: '',
             },
             {
-                url: 'https://www.youtube.com/watch?v=av3k_lcGm9g',
-                type: 'YOUTUBE',
-                label: 'YouTube video',
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-k/0001326380-22-000021',
+                type: 'DOCUMENT',
+                label: 'Form 10-K',
                 archiveLink: '',
             },
-            {
-                url: 'https://en.wikipedia.org/wiki/Meme_stock',
-                type: 'WIKIPEDIA',
-                label: 'Meme stock - Wikipedia',
-                archiveLink: '',
-            }
         ],
-        description: 'What even is a meme stock and why would the SEC go out of their way to disparage people that invest in meme stocks?',
-        type: TimelineItemType.EVENT,
-        significance: 2,
-        imgSrc: 'assets/sec-meme-stocks.PNG'
+        description: 'Q4 2021',
+        type: TimelineItemType.CORP,
+        significance: 1,
     },
     {
         title: 'DRSGME.org published by GameStop investors',
@@ -874,6 +996,61 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'SEC posts a video disparaging meme-stocks',
+        dateYYYYMMDD: '2022-05-31',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/v22zvj/the_official_sec_youtube_channel_just_shared_a/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.youtube.com/watch?v=av3k_lcGm9g',
+                type: 'YOUTUBE',
+                label: 'YouTube video',
+                archiveLink: '',
+            },
+            {
+                url: 'https://en.wikipedia.org/wiki/Meme_stock',
+                type: 'WIKIPEDIA',
+                label: 'Meme stock - Wikipedia',
+                archiveLink: '',
+            }
+        ],
+        description: 'What even is a meme stock and why would the SEC go out of their way to disparage people that invest in meme stocks?',
+        type: TimelineItemType.EVENT,
+        significance: 2,
+        imgSrc: 'assets/sec-meme-stocks.PNG'
+    },
+    {
+        title: 'GameStop Reports First Quarter Fiscal Year 2022 Results',
+        dateYYYYMMDD: '2022-06-01',
+        urls: [
+            // {
+            //     url: '',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk thread',
+            //     archiveLink: '', 
+            // },
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-first-quarter-fiscal-year-2022-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-22-000072',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q1 2022',
+        type: TimelineItemType.CORP,
+        significance: 1,
+    },
+    {
         title: 'GameStop does a 4-for-1 stock split in the form of a stock dividend',
         dateYYYYMMDD: '2022-07-21',
         urls: [
@@ -914,6 +1091,33 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.UNRELATED,
         significance: 2,
+    },
+    {
+        title: 'GameStop Reports Second Quarter Fiscal Year 2022 Results',
+        dateYYYYMMDD: '2022-09-07',
+        urls: [
+            // {
+            //     url: '',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk thread',
+            //     archiveLink: '', 
+            // },
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-second-quarter-fiscal-year-2022-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-22-000126',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q2 2022',
+        type: TimelineItemType.CORP,
+        significance: 1,
     },
     {
         title: 'GameStop Forms Partnership with FTX',
@@ -1068,6 +1272,33 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         imgSrc: 'assets/rc-gmedd-interview.png'
     },
     {
+        title: 'GameStop Reports Third Quarter Fiscal Year 2022 Results',
+        dateYYYYMMDD: '2022-12-07',
+        urls: [
+            // {
+            //     url: '',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk thread',
+            //     archiveLink: '', 
+            // },
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-third-quarter-fiscal-year-2022-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-22-000137',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q3 2022',
+        type: TimelineItemType.CORP,
+        significance: 1,
+    },
+    {
         title: 'WhyDRS.org published',
         dateYYYYMMDD: '2023-02-14',
         urls: [
@@ -1081,6 +1312,54 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         description: 'Website created by the team that made the drsgme.org website as a more neutral non-GME focused information site',
         type: TimelineItemType.DRS,
         significance: 2,
+    },
+    {
+        title: 'GameStop Reports Fourth Quarter and Fiscal Year 2022 Results',
+        dateYYYYMMDD: '2023-03-21',
+        urls: [
+            // {
+            //     url: '',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk thread',
+            //     archiveLink: '', 
+            // },
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-fourth-quarter-and-fiscal-year-2022-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-k/0001326380-23-000019',
+                type: 'DOCUMENT',
+                label: 'Form 10-K',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q4 2022',
+        type: TimelineItemType.CORP,
+        significance: 1,
+    },
+    {
+        title: 'GameStop publishes 2022 Report',
+        dateYYYYMMDD: '2023-03-28',
+        urls: [
+            // {
+            //     url: '',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk thread',
+            //     archiveLink: '', 
+            // },
+            {
+                url: 'https://investor.gamestop.com/static-files/fe325562-c087-4fad-809c-efd183364196',
+                type: 'GAMESTOP',
+                label: '2022 Report',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.CORP,
+        significance: 1,
     },
     {
         title: 'Citadel founder Ken Griffin donates $300 million more to alma mater Harvard',
@@ -1143,6 +1422,33 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'GameStop Discloses First Quarter 2023 Results',
+        dateYYYYMMDD: '2023-06-07',
+        urls: [
+            // {
+            //     url: '',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk thread',
+            //     archiveLink: '', 
+            // },
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-discloses-first-quarter-2023-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-23-000028',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q1 2023',
+        type: TimelineItemType.CORP,
+        significance: 1,
+    },
+    {
         title: 'Reddit permanently bans the r/DRSyourGME subreddit',
         dateYYYYMMDD: '2023-06-14',
         urls: [
@@ -1177,6 +1483,33 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: TimelineItemType.CORP,
         significance: 3,
+    },
+    {
+        title: 'GameStop Discloses Second Quarter 2023 Results',
+        dateYYYYMMDD: '2023-09-06',
+        urls: [
+            // {
+            //     url: '',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk thread',
+            //     archiveLink: '', 
+            // },
+            {
+                url: '',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: '',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+        ],
+        description: 'Q2 2023',
+        type: TimelineItemType.CORP,
+        significance: 1,
     },
     {
         title: 'Dumb Money movie released',
