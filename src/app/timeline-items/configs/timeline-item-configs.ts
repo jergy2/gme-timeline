@@ -714,7 +714,6 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Reuters.com',
                 archiveLink: '',
             },
-
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/ussx2r/the_melvin_capital_shutdown_isnt_what_you_think/',
                 type: 'REDDIT',
@@ -733,8 +732,6 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Melvin Capital - Wikipedia',
                 archiveLink: '',
             },
-
-
         ],
         description: '',
         type: TimelineItemType.EVENT,

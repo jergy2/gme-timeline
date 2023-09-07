@@ -9,6 +9,7 @@ import { timelineItemConfigs } from './timeline-items/configs/timeline-item-conf
 import { TimelineItemsService } from './timeline-items/timeline-items.service';
 import { rcTweetsConfigs } from './timeline-items/configs/rc-tweets-configs';
 import { corporateEventConfigs } from './timeline-items/configs/gamestop-corporate-configs';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -35,21 +36,27 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    timer(200).subscribe({
+      next: ()=>{},
+      error: ()=>{},
+      complete: ()=>{
+        this._dataService.loadHistoricData$().subscribe({
+          next: () => { },
+          error: () => { },
+          complete: () => {
+            const allConfigs = [
+              timelineItemConfigs,
+              rcTweetsConfigs,
+              corporateEventConfigs,
+            ];
+            const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
+            this._timelineItemsService.setTimelineItems(timelineItems);
+            this._updateChartData();
+          },
+        });
+      }
+    })
     
-    this._dataService.loadHistoricData$().subscribe({
-      next: () => { },
-      error: () => { },
-      complete: () => {
-        const allConfigs = [
-          timelineItemConfigs,
-          rcTweetsConfigs,
-          corporateEventConfigs,
-        ];
-        const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
-        this._timelineItemsService.setTimelineItems(timelineItems);
-        this._updateChartData();
-      },
-    });
     
   }
 

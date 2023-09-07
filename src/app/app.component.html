@@ -9,8 +9,10 @@
   <app-timeline-items class="app-timeline-items-mobile"></app-timeline-items>
 </div>
 
-<div class="lds-ripple" *ngIf="!dataIsLoaded">
-  <div></div>
-  <div></div>
+<div class="app-component-root" *ngIf="!dataIsLoaded">
+  <div class="lds-ripple" >
+    <div></div>
+    <div></div>
+  </div>  
 </div>
 

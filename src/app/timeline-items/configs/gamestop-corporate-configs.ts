@@ -478,6 +478,12 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://lemmy.whynotdrs.org/post/179071?scrollToComments=true',
+                type: 'LEMMY',
+                label: 'GameStop Discloses Second Quarter 2023 Results Gamestop Corp.',
+                archiveLink: '', 
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/16bwilc/holy_schmoly_i_just_compared_all_form_10q_from/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread - HOLY SCHMOLY: I just compared all form 10-Q from 2021-2023',

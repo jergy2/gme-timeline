@@ -309,22 +309,22 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-24.jpg'
     },
-    {
-        title: 'RC Tweet',
-        dateYYYYMMDD: '2021-04-25',
-        urls: [
-            {
-                url: 'https://twitter.com/ryancohen/status/1386485746916380673',
-                type: 'X-TWITTER',
-                label: 'RC Tweet',
-                archiveLink: '',
-            },
-        ],
-        description: '"😲"',
-        type: TimelineItemType.RC,
-        significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-25.PNG'
-    },
+    // {
+    //     title: 'RC Tweet',
+    //     dateYYYYMMDD: '2021-04-25',
+    //     urls: [
+    //         {
+    //             url: 'https://twitter.com/ryancohen/status/1386485746916380673',
+    //             type: 'X-TWITTER',
+    //             label: 'RC Tweet',
+    //             archiveLink: '',
+    //         },
+    //     ],
+    //     description: '"😲"',
+    //     type: TimelineItemType.RC,
+    //     significance: 0,
+    //     imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-25.PNG'
+    // },
     {
         title: 'RC Tweet',
         dateYYYYMMDD: '2021-04-29',
@@ -391,21 +391,21 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-18.jpg'
     },
-    {
-        title: 'RC Tweet',
-        dateYYYYMMDD: '2021-05-19',
-        urls: [
-            {
-                url: 'https://twitter.com/ryancohen/status/1395047208748261379',
-                type: 'X-TWITTER',
-                label: 'RC Tweet',
-                archiveLink: '',
-            },
-        ],
-        description: '"❤️"',
-        type: TimelineItemType.RC,
-        significance: 0,
-    },
+    // {
+    //     title: 'RC Tweet',
+    //     dateYYYYMMDD: '2021-05-19',
+    //     urls: [
+    //         {
+    //             url: 'https://twitter.com/ryancohen/status/1395047208748261379',
+    //             type: 'X-TWITTER',
+    //             label: 'RC Tweet',
+    //             archiveLink: '',
+    //         },
+    //     ],
+    //     description: '"❤️"',
+    //     type: TimelineItemType.RC,
+    //     significance: 0,
+    // },
     {
         title: 'RC Tweet',
         dateYYYYMMDD: '2021-05-24',
@@ -610,25 +610,25 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-computerchair.jpg'
     },
-    {
-        title: 'RC Tweet',
-        dateYYYYMMDD: '2021-07-28',
-        urls: [
-            {
-                url: 'https://twitter.com/ryancohen/status/1420411942846361612',
-                type: 'X-TWITTER',
-                label: 'RC Tweet',
-                archiveLink: '',
-            },
-        ],
-        description: '"Power to the Players 🇺🇸 🇨🇦"',
-        type: TimelineItemType.RC,
-        significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-28.jpg'
-    },
+    // {
+    //     title: 'RC Tweet',
+    //     dateYYYYMMDD: '2021-07-28',
+    //     urls: [
+    //         {
+    //             url: 'https://twitter.com/ryancohen/status/1420411942846361612',
+    //             type: 'X-TWITTER',
+    //             label: 'RC Tweet',
+    //             archiveLink: '',
+    //         },
+    //     ],
+    //     description: '"Power to the Players 🇺🇸 🇨🇦"',
+    //     type: TimelineItemType.RC,
+    //     significance: 0,
+    //     imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-28.jpg'
+    // },
     {
         title: 'Ryan Cohen tweet',
-        dateYYYYMMDD: '2021-07-31',
+        dateYYYYMMDD: '2021-07-29',
         urls: [
             {
                 url: 'https://twitter.com/ryancohen/status/1420940035042414595',
@@ -642,6 +642,439 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-googly-eyes.jpg'
     },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-08-06',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1423766191311519747',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-08-11',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1425606429574979584',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-08-11.PNG'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-08-19',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1428518642937892868',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-08-19.PNG'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-08-27',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1431433651414306825',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/pd0wc4/rc/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk',
+                archiveLink: '',
+            },
+        ],
+        description: '"Time for pillow fights and 60s music 🎶"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-09-26',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1431433651414306825',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: '"Talk is cheap, it takes money to buy whiskey."',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-10-10',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1447407898905268225',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/q5nlap/shorts_funeral_new_balance/',
+                type: 'REDDIT',
+                label: 'Shorts. Funeral. New Balance.',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-10-10.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-10-26',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1453174821072801794',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-10-26.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-10-31',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1454841759104749574',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: '"MGGA"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-11-08',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1457902069206163460',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qpzk9r/theory_rc_last_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Theory: RC Last Tweet - Nov 9 2021',
+                archiveLink: '',
+            },
+        ],
+        description: '"Deciding between two options for my GME shares: HOLD or HODL…"',
+        type: TimelineItemType.RC,
+        significance: 2,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-11-14',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1460127511619252230',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qudfa5/theory_on_why_ryan_cohen_tweeted_backwards/?sort=top',
+                type: 'REDDIT',
+                label: 'THEORY ON WHY RYAN COHEN TWEETED BACKWARDS  - Nov 15 2021',
+                archiveLink: '',
+            },
+        ],
+        description: '"eew eew llams a evah I"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-11-21',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1462612474071502848',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qzbago/rcs_bedtime_stories_come_in_an_interestingly/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/DDintoGME/comments/qzb4cy/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'r/DDintoGME thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Bedtime stories by Dr. Ruth 🐱"',
+        type: TimelineItemType.RC,
+        significance: 2,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-11-21.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-11-29',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1465518039055622148',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: '"Only interested in speaking with candidates who want to actually WORK…"',
+        type: TimelineItemType.RC,
+        significance: 1,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-12-10',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1469395426839302145',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/rdq2v1/im_cooler_online_than_in_real_life/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"I’m cooler online than in real life"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-12-13',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1470333397662896130',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://twitter.com/ryancohen/status/1470363505027129346',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet - picture of a Sugar Daddy candy',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/GME/comments/rfggqp/rc_sugar_daddy_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'r/GME - RC Sugar daddy tweet ',
+                archiveLink: '',
+            },
+        ],
+        description: '"I miss you"',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-12-13.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-12-17',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1471901513723387915',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/rimx1d/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk - Ryan Cohen on Twitter ',
+                archiveLink: '',
+            },
+        ],
+        description: '"💩"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2021-12-27',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1475551106071732227',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/rpvctw/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk - Ryan Cohen on Twitter ',
+                archiveLink: '',
+            },
+        ],
+        description: '"Taking a dump in the metaverse."',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-12-27.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2022-01-03',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1475551106071732227',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/rvf4n2/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Ryan Cohen on Twitter - Superstonk',
+                archiveLink: '',
+            },
+        ],
+        description: '"Never overestimate a man who underestimates himself"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2022-01-11',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1480918109510852610',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/s1ex69/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Ryan Cohen on Twitter - Superstonk',
+                archiveLink: '',
+            },
+        ],
+        description: '"Happy Anniversary 💩"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2022-01-27',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1486867794650087427',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/seeoh5/rcs_tweet_why_waste_money_on_college_when/?sort=top',
+                type: 'REDDIT',
+                label: ' RC never went to college',
+                archiveLink: '',
+            },
+            {
+                url: 'https://en.m.wikipedia.org/wiki/69_(sex_position)',
+                type: 'WIKIPEDIA',
+                label: '69 (sex position) - Wikipedia',
+                archiveLink: '',
+            },
+        ],
+        description: '"Why waste money on college when Wikipedia is free…"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    // {
+    //     title: 'Ryan Cohen tweet',
+    //     dateYYYYMMDD: '2022-01-28',
+    //     urls: [
+    //         {
+    //             url: 'https://twitter.com/ryancohen/status/1487204839591485453',
+    //             type: 'X-TWITTER',
+    //             label: 'Ryan Cohen tweet',
+    //             archiveLink: '',
+    //         },
+    //     ],
+    //     description: '"Anyone going to the movies tonight? 🍿"',
+    //     type: TimelineItemType.RC,
+    //     significance: 0,
+    // },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2022-02-08',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1487204839591485453',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://apps.apple.com/us/app/gamestop/id406033647',
+                type: 'OTHER',
+                label: 'GameStop on the App Store',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/sojoyr/on_feb_8th_a_tuesday_morning_ryan_cohen_tweeted/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/GME/comments/snjro0/ryan_cohen_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'r/GME thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"The 21st century ☎️"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+
+
+
     {
         title: 'Ryan Cohen tweet',
         dateYYYYMMDD: '2022-10-17',
