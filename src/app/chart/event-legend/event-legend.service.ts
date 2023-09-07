@@ -14,18 +14,18 @@ export class EventLegendService {
   }
 
   private _dataSets$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
-  private _dataSetsMobile$: BehaviorSubject<any> = new BehaviorSubject([]);
+  // private _dataSetsMobile$: BehaviorSubject<any> = new BehaviorSubject([]);
   private _dataManager: ChartDataSetManager;
   public get dataSets(): any[] { return this._dataSets$.getValue(); }
   public get dataSets$(): Observable<any[]> { return this._dataSets$.asObservable(); }
-  public get dataSetsMobile(): any[] { return this._dataSetsMobile$.getValue(); }
-  public get dataSetsMobile$(): Observable<any[]> { return this._dataSetsMobile$.asObservable(); }
+  // public get dataSetsMobile(): any[] { return this._dataSetsMobile$.getValue(); }
+  // public get dataSetsMobile$(): Observable<any[]> { return this._dataSetsMobile$.asObservable(); }
   public get dataManager(): ChartDataSetManager { return this._dataManager; }
 
   public registerDataManager(dataManager: ChartDataSetManager) {
     this._dataManager = dataManager;
     this._dataSets$.next(this._dataManager.getDataSets());
-    this._dataSetsMobile$.next(this._dataManager.getDataSetsMobile())
+    // this._dataSetsMobile$.next(this._dataManager.getDataSetsMobile())
   }
 
   public lookupEventByIndex(datasetIndex: number, index: number){

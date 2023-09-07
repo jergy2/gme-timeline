@@ -59,7 +59,6 @@ export class ChartDataSetManager {
       pointHitRadius: 0,
       pointHoverRadius: 0,
     });
-
     datasetConfigs.forEach(datasetConfig => {
       this._datasets.push({
         data: datasetConfig.dataPoints,
@@ -71,66 +70,14 @@ export class ChartDataSetManager {
         pointBorderColor: 'black',
         pointBorderWidth: 1,
         borderWidth: 0.1,
-        pointRadius: 1 + (3 * datasetConfig.significance),
-        pointHitRadius: 2 + (3 * datasetConfig.significance),
+        pointRadius: this._getPointRadius(datasetConfig.significance),
+        pointHitRadius: 5 + (3 * datasetConfig.significance),
         pointHoverRadius: 5 + (4 * datasetConfig.significance),
         pointStyle: 'circle',
       })
     });
     this._datasetConfigs = datasetConfigs;
     return this._datasets;
-  }
-
-  public getDataSetsMobile(): any[] {
-    let closePrices: number[] = this._priceEntries.map((entry) => { return entry.close });
-    let datasetConfigs: DatasetConfig[] = [];
-    /** Get all datasets based on every combination of significance value and type. 
-    *  This will produce arrays that have no such events
-    */
-    const allPointTypes: TimelineItemType[] = [
-      TimelineItemType.EVENT, TimelineItemType.CORP, TimelineItemType.MEDIA, TimelineItemType.RC, TimelineItemType.DFV, TimelineItemType.UNRELATED, TimelineItemType.DRS,
-    ];
-    const allSignificances: number[] = [0, 1, 2, 3, 4, 5];
-    allPointTypes.forEach(pointType => {
-      allSignificances.forEach(significanceValue => {
-        const datasetConfig: DatasetConfig = this._getDatasetConfig(pointType, significanceValue);
-        datasetConfigs.push(datasetConfig);
-      });
-      // this._legendItems.push(new LegendItem(pointType, this.getTypeColor(pointType)));
-    });
-    /** Only use datasets that have events. */
-    datasetConfigs = datasetConfigs.filter(item => item.eventCount > 0);
-    this._datasetsMobile.push({
-      data: closePrices,
-      label: 'GME price $ ',
-      fill: true,
-      tension: 0.5,
-      borderColor: 'green',
-      backgroundColor: 'rgba(0,255,0,0.075)',
-      borderWidth: 0.8,
-      pointRadius: 0,
-      pointHitRadius: 0,
-      pointHoverRadius: 0,
-    });
-
-    datasetConfigs.forEach(datasetConfig => {
-      this._datasetsMobile.push({
-        data: datasetConfig.dataPoints,
-        label: datasetConfig.label,
-        fill: true,
-        tension: 0.5,
-        borderColor: 'black',
-        pointBackgroundColor: datasetConfig.color,
-        pointBorderColor: 'black',
-        pointBorderWidth: 1,
-        borderWidth: 0.1,
-        pointRadius: 1 + (1.5 * datasetConfig.significance),
-        pointHitRadius: 2 + (1.5 * datasetConfig.significance),
-        pointHoverRadius: 5 + (1.5 * datasetConfig.significance),
-        pointStyle: 'circle',
-      })
-    });
-    return this._datasetsMobile;
   }
 
   public getTypeColor(type: TimelineItemType, transparency?: number): string {
@@ -195,6 +142,25 @@ export class ChartDataSetManager {
   private _lookupEventByDate(dateYYYYMMDD: string) {
     const foundItem = this._timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
     return foundItem;
+  }
+
+
+
+  private _getPointRadius(significance: number): number{
+    if(significance === 0){
+      return 2;
+    }else if(significance === 1){
+      return 4;
+    }else if(significance === 2){
+      return 6;
+    }else if(significance === 3){
+      return 9;
+    }else if(significance === 4){
+      return 13;
+    }else if(significance === 5){
+      return 18;
+    }
+    return 1;
   }
 
 

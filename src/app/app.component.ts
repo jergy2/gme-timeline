@@ -1,12 +1,14 @@
 import { Component, HostListener } from '@angular/core';
-import { HistoricDataService } from './historic-data.service';
+import { HistoricGMEDataService } from './historic-data.service';
 import { ChartDataSetManager } from './chart/chart-dataset-manager.class';
 import { EventLegendService } from './chart/event-legend/event-legend.service';
 import { ScreeSizeService } from './scree-size.service';
 import { TimelineItem } from './timeline-items/timeline-item/timeline-item.class';
 import { TimelineItemsBuilder } from './timeline-items/timeline-items-builder.class';
-import { timelineItemConfigs } from './timeline-items/timeline-item-configs';
+import { timelineItemConfigs } from './timeline-items/configs/timeline-item-configs';
 import { TimelineItemsService } from './timeline-items/timeline-items.service';
+import { rcTweetsConfigs } from './timeline-items/configs/rc-tweets-configs';
+import { corporateEventConfigs } from './timeline-items/configs/gamestop-corporate-configs';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ export class AppComponent {
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
   constructor(
-    private _dataService: HistoricDataService, 
+    private _dataService: HistoricGMEDataService, 
     private _sizeService: ScreeSizeService,
     private _legendService: EventLegendService,
     private _timelineItemsService: TimelineItemsService) {
@@ -38,7 +40,12 @@ export class AppComponent {
       next: () => { },
       error: () => { },
       complete: () => {
-        const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(timelineItemConfigs, this._dataService.allPriceEntries);
+        const allConfigs = [
+          timelineItemConfigs,
+          rcTweetsConfigs,
+          corporateEventConfigs,
+        ];
+        const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
         this._timelineItemsService.setTimelineItems(timelineItems);
         this._updateChartData();
       },

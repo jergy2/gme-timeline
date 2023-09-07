@@ -7,7 +7,7 @@ import * as dayjs from 'dayjs';
 @Injectable({
   providedIn: 'root'
 })
-export class HistoricDataService {
+export class HistoricGMEDataService {
 
   constructor(private _httpClient: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class HistoricDataService {
    * 
    */
 
-  private _fileName = 'assets/gme-data.csv';
+  private _fileName = 'assets/data/gme-data.csv';
   private _priceEntries: GmePriceEntry[] = [];
   public get allPriceEntries(): GmePriceEntry[] { return this._priceEntries; }
   public get priceEntriesAfterCutoff(): GmePriceEntry[] { return this._priceEntries.filter(item => item.date.format('YYYY-MM-DD') > '2020-07-01'); }

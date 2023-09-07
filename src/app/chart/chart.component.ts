@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
-import { HistoricDataService } from '../historic-data.service';
+import { HistoricGMEDataService } from '../historic-data.service';
 import { EventLegendService } from './event-legend/event-legend.service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
@@ -18,7 +18,7 @@ export class ChartComponent implements OnInit {
   @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) { }
 
   constructor(
-    private _dataService: HistoricDataService,
+    private _dataService: HistoricGMEDataService,
     private _legendService: EventLegendService,
     private _timelineItemService: TimelineItemsService,
     private _sizeService: ScreeSizeService,
@@ -26,9 +26,9 @@ export class ChartComponent implements OnInit {
   public lineChartData: ChartConfiguration<'line'>['data'] = { labels: [], datasets: [] };
   public lineChartOptions: ChartOptions<'line'> = {};
   public lineChartLegend = false;
-  public lineChartDataMobile: ChartConfiguration<'line'>['data'] = { labels: [], datasets: [] };
-  public lineChartOptionsMobile: ChartOptions<'line'> = {};
-  public lineChartLegendMobile = false;
+  // public lineChartDataMobile: ChartConfiguration<'line'>['data'] = { labels: [], datasets: [] };
+  // public lineChartOptionsMobile: ChartOptions<'line'> = {};
+  // public lineChartLegendMobile = false;
 
   public get canvasWidth(): number { return this._canvasWidth; }
   public get canvasHeight(): number { return this._canvasHeight; }
@@ -45,7 +45,7 @@ export class ChartComponent implements OnInit {
     let labels: string[] = this._dataService.priceEntriesAfterCutoff.map((entry) => { return entry.date.format('YYYY-MM-DD') });
     /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
     this.lineChartData.labels = labels;
-    this.lineChartDataMobile.labels = labels;
+    // this.lineChartDataMobile.labels = labels;
 
     this.lineChartOptions = {
       responsive: true,
@@ -106,27 +106,27 @@ export class ChartComponent implements OnInit {
         }
       }
     };
-    this.lineChartOptionsMobile = this.lineChartOptions;
+    // this.lineChartOptionsMobile = this.lineChartOptions;
 
     this.lineChartData.datasets = this._legendService.dataSets;
-    this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
+    // this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
     this._legendService.dataSets$.subscribe({
       next: (datasets) => {
         this.lineChartData.datasets = datasets;
-        this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
+        // this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
         // this._timelineItemService.setChart(this.baseChart)
       },
       error: () => { },
       complete: () => { }
     });
-    this._legendService.dataSetsMobile$.subscribe({
-      next: (datasets) => {
-        this.lineChartDataMobile.datasets = datasets;
-        // this._timelineItemService.setChart(this.baseChart)
-      },
-      error: () => { },
-      complete: () => { }
-    });
+    // this._legendService.dataSetsMobile$.subscribe({
+    //   next: (datasets) => {
+    //     this.lineChartDataMobile.datasets = datasets;
+    //     // this._timelineItemService.setChart(this.baseChart)
+    //   },
+    //   error: () => { },
+    //   complete: () => { }
+    // });
     this._sizeService.screenDimensions$.subscribe({
       next: ()=>{ this._updateScreenSize(); }
     })

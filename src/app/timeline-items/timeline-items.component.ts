@@ -3,7 +3,7 @@ import { ViewportScroller } from '@angular/common';
 import { TimelineItemsService } from './timeline-items.service';
 import { TimelineItem } from './timeline-item/timeline-item.class';
 import { ScreeSizeService } from '../scree-size.service';
-import { HistoricDataService as GmePriceDataService } from '../historic-data.service';
+import { HistoricGMEDataService as GmePriceDataService } from '../historic-data.service';
 
 @Component({
   selector: 'app-timeline-items',
