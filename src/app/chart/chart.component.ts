@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { HistoricGMEDataService } from '../historic-data.service';
-import { EventLegendService } from './event-legend/event-legend.service';
+import { DataManagerService } from './data-manager-service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
@@ -19,7 +19,7 @@ export class ChartComponent implements OnInit {
 
   constructor(
     private _dataService: HistoricGMEDataService,
-    private _legendService: EventLegendService,
+    private _dataManagerService: DataManagerService,
     private _timelineItemService: TimelineItemsService,
     private _sizeService: ScreeSizeService,
   ) { }
@@ -108,11 +108,12 @@ export class ChartComponent implements OnInit {
     };
     // this.lineChartOptionsMobile = this.lineChartOptions;
 
-    this.lineChartData.datasets = this._legendService.dataSets;
+    this.lineChartData.datasets = this._dataManagerService.dataSets;
     // this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
-    this._legendService.dataSets$.subscribe({
+    this._dataManagerService.dataSets$.subscribe({
       next: (datasets) => {
         this.lineChartData.datasets = datasets;
+        this.baseChart?.update();
         // this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
         // this._timelineItemService.setChart(this.baseChart)
       },
@@ -175,7 +176,7 @@ export class ChartComponent implements OnInit {
   private _getTooltipBackgroundColor(context: any) {
     const foundEvent = this._lookupEvent(context.label);
     if (foundEvent) {
-      this._tooltipBackgroundColor = this._legendService.getTypeColor(foundEvent.type);
+      this._tooltipBackgroundColor = this._dataManagerService.getTypeColor(foundEvent.type);
     }
     return this._tooltipBackgroundColor;
   }
@@ -185,7 +186,7 @@ export class ChartComponent implements OnInit {
     return foundItem;
   }
   private _lookupEventByIndex(datasetIndex: number, index: number) {
-    return this._legendService.lookupEventByIndex(datasetIndex, index);
+    return this._dataManagerService.lookupEventByIndex(datasetIndex, index);
   }
   private _getDateString(dateYYYYMMDD: string): string {
     return dayjs(dateYYYYMMDD).format('MMMM D, YYYY');

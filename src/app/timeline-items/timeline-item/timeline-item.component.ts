@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TimelineItem } from './timeline-item.class';
 import { TimelineItemType } from './timeline-item-type.enum';
 import * as dayjs from 'dayjs';
-import { EventLegendService } from 'src/app/chart/event-legend/event-legend.service';
+import { DataManagerService } from 'src/app/chart/data-manager-service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { urlType } from './timeline-item-url.interface';
 import { TimelineItemsService } from '../timeline-items.service';
@@ -14,7 +14,7 @@ import { TimelineItemsService } from '../timeline-items.service';
 })
 export class TimelineItemComponent {
 
-  constructor(private _eventService: EventLegendService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
+  constructor(private _eventService: DataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
 
   private _item: TimelineItem = new TimelineItem({
     title: '',

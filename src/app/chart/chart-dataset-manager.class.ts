@@ -3,21 +3,23 @@ import { GmePriceEntry } from "../timeline-items/timeline-item/gme-price-entry.i
 import { TimelineItemType } from "../timeline-items/timeline-item/timeline-item-type.enum";
 import { TimelineItem } from "../timeline-items/timeline-item/timeline-item.class";
 import { DatasetConfig } from "./dataset-config.class";
-import { LegendItem } from "./event-legend/legend-item/legend-item.class";
+import {BehaviorSubject, Observable} from 'rxjs';
+
 
 export class ChartDataSetManager {
 
   private _priceEntries: GmePriceEntry[] = [];
-  private _datasets: any[] = [];
+  private _datasets$: BehaviorSubject<any[]> = new BehaviorSubject<any>([]);
   private _datasetsMobile: any[] = [];
   private _datasetConfigs: DatasetConfig[] = [];
-  private _legendItems: LegendItem[] = [];
   private _timelineItems: TimelineItem[] = [];
+  private _signifianceValue: number = 1;
 
-  public get datasets(): any[] { return this._datasets; }
+  public get datasets(): any[] { return this._datasets$.getValue(); }
+  public get datasets$(): Observable<any[]> { return this._datasets$.asObservable(); }
   public get datasetsMobile(): any[] { return this._datasetsMobile; }
   public get datasetConfigs(): DatasetConfig[] { return this._datasetConfigs; }
-  public get legendItems(): LegendItem[] { return this._legendItems; }
+  public get significanceValue(): number { return this._signifianceValue; }
 
   // public get chartCutoffDate(): string { return '2020-07-01'; }
 
@@ -26,7 +28,12 @@ export class ChartDataSetManager {
     this._timelineItems = timelineItems;
   }
 
-  public getDataSets(): any[] {
+  public updateSignificanceValue(value: number){
+    this._signifianceValue = value;
+    this.getAndUpdateDatasets();
+  }
+
+  public getAndUpdateDatasets() {
     let closePrices: number[] = this._priceEntries
       // .filter(entry => entry.date.format('YYYY-MM-DD') > this.chartCutoffDate)
       .map((entry: GmePriceEntry) => { return entry.close });
@@ -37,17 +44,18 @@ export class ChartDataSetManager {
     const allEventTypes: TimelineItemType[] = [
       TimelineItemType.EVENT, TimelineItemType.CORP, TimelineItemType.MEDIA, TimelineItemType.RC, TimelineItemType.DFV, TimelineItemType.UNRELATED, TimelineItemType.DRS,
     ];
-    const allSignificances: number[] = [0, 1, 2, 3, 4, 5];
+    const allSignificances: number[] = this._getSignificances();
     allEventTypes.forEach(eventType => {
       allSignificances.forEach(significanceValue => {
         const datasetConfig: DatasetConfig = this._getDatasetConfig(eventType, significanceValue);
         datasetConfigs.push(datasetConfig);
       });
-      this._legendItems.push(new LegendItem(eventType, this.getTypeColor(eventType)));
     });
     /** Only use datasets that have events. */
     datasetConfigs = datasetConfigs.filter(item => item.eventCount > 0);
-    this._datasets.push({
+    const datasets: {}[] = [];
+
+    datasets.push({
       data: closePrices,
       label: 'GME price $ ',
       fill: true,
@@ -60,7 +68,7 @@ export class ChartDataSetManager {
       pointHoverRadius: 0,
     });
     datasetConfigs.forEach(datasetConfig => {
-      this._datasets.push({
+      datasets.push({
         data: datasetConfig.dataPoints,
         label: datasetConfig.label,
         fill: true,
@@ -77,7 +85,7 @@ export class ChartDataSetManager {
       })
     });
     this._datasetConfigs = datasetConfigs;
-    return this._datasets;
+    this._datasets$.next(datasets);
   }
 
   public getTypeColor(type: TimelineItemType, transparency?: number): string {
@@ -119,6 +127,16 @@ export class ChartDataSetManager {
       return event;
     }
     return undefined;
+  }
+
+  private _getSignificances(): number[] {
+    let value = this._signifianceValue;
+    const maxSignificanceValue = 5;
+    let significances: number[] = [];
+    for(let i=value; i<=maxSignificanceValue; i++){
+      significances.push(i);
+    }
+    return significances;
   }
 
   private _getDatasetConfig(type: TimelineItemType, significanceValue: number): DatasetConfig {

@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { HistoricGMEDataService } from './historic-data.service';
 import { ChartDataSetManager } from './chart/chart-dataset-manager.class';
-import { EventLegendService } from './chart/event-legend/event-legend.service';
+import { DataManagerService } from './chart/data-manager-service';
 import { ScreeSizeService } from './scree-size.service';
 import { TimelineItem } from './timeline-items/timeline-item/timeline-item.class';
 import { TimelineItemsBuilder } from './timeline-items/timeline-items-builder.class';
@@ -24,7 +24,7 @@ export class AppComponent {
   constructor(
     private _dataService: HistoricGMEDataService, 
     private _sizeService: ScreeSizeService,
-    private _legendService: EventLegendService,
+    private _dataManagerService: DataManagerService,
     private _timelineItemsService: TimelineItemsService) {
   }
 
@@ -63,7 +63,7 @@ export class AppComponent {
   private _updateChartData() {
     this._dataIsLoaded = true;
     const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.priceEntriesAfterCutoff, this._timelineItemsService.timelineItems);
-    this._legendService.registerDataManager(dataManager);
+    this._dataManagerService.registerDataManager(dataManager);
   }
 
 }

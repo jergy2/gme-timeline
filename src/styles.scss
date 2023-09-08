@@ -3,9 +3,9 @@
 
 :root {
   --main-family: 'Poppins', sans-serif;
-//   --color-bg: linear-gradient(180deg, #FFFFFF 0%, #AEC6DC 100%);
+  // --color-bg: linear-gradient(180deg, #FFFFFF 0%, #AEC6DC 100%);
 
-//   --color-special: rgb(147 23 107 / 100%);
+  --color-special: rgb(147 23 107 / 100%);
 
 //   /* Controls the blob blur gradient colors within the main tag's svg */
 //   --top-right-blur-1: #20C6B7;
@@ -18,4 +18,17 @@ html, body {
     margin: 0px;
     padding: 0px;
     font-family: var(--main-family);
+}
+
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Safari */
+  -khtml-user-select: none;    /* Konqueror HTML */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+.shadow {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }

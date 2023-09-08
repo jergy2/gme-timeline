@@ -41,6 +41,14 @@
     flex-direction: row;
     align-items: flex-end;
 }
+
+.app-controls-container{
+  position: fixed;
+  left: 0;
+  top: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 .app-timeline-items-mobile{
     display:flex;
     flex-direction: column;
