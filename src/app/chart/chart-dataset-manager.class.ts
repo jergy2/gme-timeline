@@ -3,7 +3,7 @@ import { GmePriceEntry } from "../timeline-items/timeline-item/gme-price-entry.i
 import { TimelineItemType } from "../timeline-items/timeline-item/timeline-item-type.enum";
 import { TimelineItem } from "../timeline-items/timeline-item/timeline-item.class";
 import { DatasetConfig } from "./dataset-config.class";
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 
 
 export class ChartDataSetManager {
@@ -15,6 +15,10 @@ export class ChartDataSetManager {
   private _timelineItems: TimelineItem[] = [];
   private _signifianceValue: number = 1;
 
+  private _isUpdating$: Subject<boolean> = new Subject();
+  public get isUpdating$(): Observable<boolean> { return this._isUpdating$.asObservable(); }
+
+  
   public get datasets(): any[] { return this._datasets$.getValue(); }
   public get datasets$(): Observable<any[]> { return this._datasets$.asObservable(); }
   public get datasetsMobile(): any[] { return this._datasetsMobile; }
@@ -29,8 +33,10 @@ export class ChartDataSetManager {
   }
 
   public updateSignificanceValue(value: number){
+    this._isUpdating$.next(true);
     this._signifianceValue = value;
     this.getAndUpdateDatasets();
+    this._isUpdating$.next(false);
   }
 
   public getAndUpdateDatasets() {
@@ -39,7 +45,7 @@ export class ChartDataSetManager {
       .map((entry: GmePriceEntry) => { return entry.close });
     let datasetConfigs: DatasetConfig[] = [];
     /** Get all datasets based on every combination of significance value and type. 
-    *  This will produce arrays that have no such events
+    *  This will produce arrays that have no events that match the significance and type
     */
     const allEventTypes: TimelineItemType[] = [
       TimelineItemType.EVENT, TimelineItemType.CORP, TimelineItemType.MEDIA, TimelineItemType.RC, TimelineItemType.DFV, TimelineItemType.UNRELATED, TimelineItemType.DRS,
@@ -111,20 +117,28 @@ export class ChartDataSetManager {
     }
   }
 
-  public lookupIndexByEvent(event: TimelineItem) {
-    console.log("LOOKING UP INDEX: ", event);
-    this.datasetConfigs.forEach(datasetConfig => {
-      const datapoints = datasetConfig.dataPoints.filter(item => item !== null);
-      console.log("DATA POINTS:", datapoints)
-    })
+  public lookupIndexByTimelineItem(timelineItem: TimelineItem): {datasetIndex: number, itemIndex: number} {
+    const indexValue = {
+      datasetIndex: -1, itemIndex: -1,
+    }
+    this._datasetConfigs.forEach(config => {
+      const itemIndex = config.getIndexOfTimelineItem(timelineItem);
+      if(itemIndex > -1){
+        indexValue.datasetIndex = this._datasetConfigs.indexOf(config) + 1;
+        indexValue.itemIndex = itemIndex;
+      }
+    });
+    return indexValue;
   }
 
-  public lookupEventByIndex(datasetIndex: number, index: number) {
+  public lookupTimelineItemByIndex(datasetIndex: number, index: number) {
     const config = this._datasetConfigs[datasetIndex - 1];
-    const entry: GmePriceEntry | null = config.priceEntries[index];
-    if (entry !== null) {
-      const event = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'));
-      return event;
+    const timelineItem: TimelineItem | null = config.timelineItems[index];
+    if (timelineItem !== null) {
+      if(timelineItem.gmePriceEntry){
+        const event = this._lookupEventByDate(timelineItem.gmePriceEntry.date.format('YYYY-MM-DD'));
+        return event;
+      }
     }
     return undefined;
   }
@@ -140,13 +154,13 @@ export class ChartDataSetManager {
   }
 
   private _getDatasetConfig(type: TimelineItemType, significanceValue: number): DatasetConfig {
-    const dataSet = this._priceEntries
+    const dataSet: (TimelineItem| null)[] = this._priceEntries
       // .filter(entry => entry.date.format('YYYY-MM-DD') > this.chartCutoffDate)
       .map((entry) => {
         const foundEvent = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'));
         if (foundEvent) {
           if (foundEvent.type === type && foundEvent.significance === significanceValue) {
-            return entry;
+            return foundEvent;
           }
         }
         return null;
@@ -157,7 +171,7 @@ export class ChartDataSetManager {
 
 
   /** finds a timeline item by date */
-  private _lookupEventByDate(dateYYYYMMDD: string) {
+  private _lookupEventByDate(dateYYYYMMDD: string): TimelineItem | undefined {
     const foundItem = this._timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
     return foundItem;
   }

@@ -1,18 +1,19 @@
-import { Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
-import { HistoricGMEDataService } from '../historic-data.service';
+import { HistoricGMEDataService } from '../historic-gme-data.service';
 import { DataManagerService } from './data-manager-service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 import { ScreeSizeService } from '../scree-size.service';
+import { TimelineItem } from '../timeline-items/timeline-item/timeline-item.class';
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent implements OnInit, AfterViewInit {
 
   @ViewChild(BaseChartDirective) public baseChart: BaseChartDirective | undefined;
   @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) { }
@@ -37,37 +38,76 @@ export class ChartComponent implements OnInit {
 
   private _canvasWidth: number = 400;
   private _canvasHeight: number = 300;
-  
+
   private _chartContainerNgStyle: any = {};
-  public get chartContainerNgStyle(): any { return this._chartContainerNgStyle;}
+  public get chartContainerNgStyle(): any { return this._chartContainerNgStyle; }
 
   ngOnInit() {
     let labels: string[] = this._dataService.priceEntriesAfterCutoff.map((entry) => { return entry.date.format('YYYY-MM-DD') });
     /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
     this.lineChartData.labels = labels;
     // this.lineChartDataMobile.labels = labels;
+    this._setLineChartOptions();
+    this.lineChartData.datasets = this._dataManagerService.dataSets;
+  }
 
-    this.lineChartOptions = {
+  ngAfterViewInit() {
+    /**
+     * This subscription is required to update the chart after datasets are modified.
+     * For example, if the user changes a filter value such as significance value, 
+     * this subscription will fire and the chart must be updated here.
+     */
+    this._dataManagerService.dataSets$.subscribe({
+      next: (datasets) => {
+        this.lineChartData.datasets = datasets;
+        this.baseChart?.update();
+      },
+      error: () => { },
+      complete: () => { }
+    });
+    this._sizeService.screenDimensions$.subscribe({
+      next: () => { this._updateScreenSize(); }
+    });
+    this._timelineItemService.itemSelected$.subscribe({
+      next: (selected) => {
+        if (selected.item) {
+          if(selected.source !== 'CHART'){
+            this._openToolTip(selected.item);
+          }
+        }
+      },
+      error: () => { },
+      complete: () => { }
+    });
+  }
+
+  private _setLineChartOptions(){
+    this.lineChartOptions =  {
       responsive: true,
       onHover: (event, array) => {
         if (array.length > 0) {
-          const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
-          if (timelineItem) {
-            this._timelineItemService.selectItem(timelineItem);
+          if(!this._tooltipOpenedFromTimelineItems){
+            const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
+            if (timelineItem) {
+              this._timelineItemService.selectItem(timelineItem, 'CHART');
+            } else {
+              // this._timelineItemService.unselectItem();
+            }
           }else{
-            // this._timelineItemService.unselectItem();
-          }
-        }else{
+            this._tooltipOpenedFromTimelineItems = false;
+          }          
+        } else {
           // this._timelineItemService.unselectItem();
         }
       },
       onClick: (event, array) => {
-        if (array.length > 0) {
-          const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
-          if (timelineItem) {
-            this._timelineItemService.selectItem(timelineItem);
-          }
-        }
+        // console.log(event, array)
+        // if (array.length > 0) {
+        //   const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
+        //   if (timelineItem) {
+        //     this._timelineItemService.selectItem(timelineItem);
+        //   }
+        // }
       },
       plugins: {
         tooltip: {
@@ -106,49 +146,44 @@ export class ChartComponent implements OnInit {
         }
       }
     };
-    // this.lineChartOptionsMobile = this.lineChartOptions;
-
-    this.lineChartData.datasets = this._dataManagerService.dataSets;
-    // this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
-    this._dataManagerService.dataSets$.subscribe({
-      next: (datasets) => {
-        this.lineChartData.datasets = datasets;
-        this.baseChart?.update();
-        // this.lineChartDataMobile.datasets = this._legendService.dataSetsMobile;
-        // this._timelineItemService.setChart(this.baseChart)
-      },
-      error: () => { },
-      complete: () => { }
-    });
-    // this._legendService.dataSetsMobile$.subscribe({
-    //   next: (datasets) => {
-    //     this.lineChartDataMobile.datasets = datasets;
-    //     // this._timelineItemService.setChart(this.baseChart)
-    //   },
-    //   error: () => { },
-    //   complete: () => { }
-    // });
-    this._sizeService.screenDimensions$.subscribe({
-      next: ()=>{ this._updateScreenSize(); }
-    })
   }
 
-  private _updateScreenSize(){
+  private _tooltipOpenedFromTimelineItems: boolean = false;
+
+  private _openToolTip(item: TimelineItem) {
+    var mouseMoveEvent, meta, point;
+    const itemIndex = this._dataManagerService.lookupIndexByEvent(item);
+    if(this.baseChart?.chart){
+      this.baseChart?.chart?.setActiveElements([{
+        datasetIndex: itemIndex.datasetIndex,
+        index: itemIndex.itemIndex,
+      }]);
+    }
+    meta = this.baseChart?.chart?.getDatasetMeta(itemIndex.datasetIndex);
+    if (meta) {
+      // console.log(meta.data)
+      point = meta.data[itemIndex.itemIndex];
+    }
+    if (point) {
+      mouseMoveEvent = new MouseEvent('mousemove', {
+        clientX: point.x,
+        clientY: point.y,
+      });
+      this._tooltipOpenedFromTimelineItems = true;
+      this.baseChart?.chart?.canvas.dispatchEvent(mouseMoveEvent);
+    }
+  }
+
+  private _updateScreenSize() {
     const gridBottomRowHeight = 180;
     const width = this._sizeService.screenDimensions.width;
     const height = this._sizeService.screenDimensions.height - gridBottomRowHeight;
-
-    const roundedWidth = Math.floor(width/20) * 20;
-    const roundedHeight = Math.floor(height/50) * 50;
-    // this._canvasWidth = width;
-    // this._canvasHeight = roundedHeight;
+    const roundedWidth = Math.floor(width / 20) * 20;
+    const roundedHeight = Math.floor(height / 50) * 50;
     this._chartContainerNgStyle = {
       'max-width': roundedWidth + 'px',
       'height': roundedHeight + 'px',
     };
-    // console.log("updating", this._canvasWidth, this._canvasHeight)
-    // this.baseChart?.update();
-    // console.log(this._chartContainerNgStyle)
   }
 
   private _getTooltipLabel(providedLabel: string): string {
@@ -182,7 +217,7 @@ export class ChartComponent implements OnInit {
   }
 
   private _lookupEvent(dateYYYYMMDD: string) {
-    const foundItem = this._timelineItemService.timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
+    const foundItem = this._timelineItemService.allTimelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
     return foundItem;
   }
   private _lookupEventByIndex(datasetIndex: number, index: number) {

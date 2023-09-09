@@ -19,9 +19,12 @@ export class TimelineItemsBuilder{
                 return 0;
             }
         });
+        let itemIndex: number = 0;
         const items = allItemConfigs.map(config => {
             const gmePriceEntry: GmePriceEntry | undefined = gmeData.find(entry => entry.date.format('YYYY-MM-DD') === config.dateYYYYMMDD);
-            return new TimelineItem(config, gmePriceEntry)
+            itemIndex++;
+            return new TimelineItem(config, gmePriceEntry, itemIndex);
+            
         });
         return items;
     }

@@ -1,9 +1,9 @@
 <div class="control-root">
     <div class="label">Include events by significance</div>
     <div class="control-buttons">
-        <div class="label">Low</div>
+        <div class="label">Less</div>
         <div *ngFor="let button of controlButtons" class="control-button"
             [ngClass]="button.isSelected? 'selected' : 'not-selected'" (click)="onClickButton(button.value)"></div>
-        <div class="label">High</div>
+        <div class="label">More</div>
     </div>
 </div>

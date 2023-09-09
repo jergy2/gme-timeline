@@ -23,7 +23,7 @@ export class TimelineItemComponent {
     description: '',
     type: TimelineItemType.EVENT,
     significance: 0,
-  }, undefined)
+  }, undefined, -1)
   @Input('item') public set item(item: TimelineItem) { this._item = item; }
   public get item(): TimelineItem { return this._item; }
 
@@ -50,7 +50,7 @@ export class TimelineItemComponent {
   }
 
   public onClickItem(item: TimelineItem){
-    this._itemService.selectItem(item);
+    this._itemService.selectItem(item, 'ITEMS');
 }
 
   public get ngStyle() {

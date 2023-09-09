@@ -150,7 +150,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/108ib1f/what_happened_on_feb_24_2021_when_the_fedwire/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/108ib1f/what_happened_on_feb_24_2021_when_the_fedwire/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread Jan 23 2023',
                 archiveLink: '',
@@ -172,7 +172,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/t11w2a/anyone_remember_this_tweet_from_rc/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/t11w2a/anyone_remember_this_tweet_from_rc/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread Feb 25 2022',
                 archiveLink: '',
@@ -194,13 +194,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/GME/comments/m3d7nl/what_is_happening_right_now_and_why_we_are_not/',
+                url: 'https://www.reddit.com/r/GME/comments/m3d7nl/what_is_happening_right_now_and_why_we_are_not/?sort=top',
                 type: 'REDDIT',
                 label: 'r/GME thread',
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/GME/comments/m3h3bc/buckle_the_fuck_up/',
+                url: 'https://www.reddit.com/r/GME/comments/m3h3bc/buckle_the_fuck_up/?sort=top',
                 type: 'REDDIT',
                 label: 'r/GME thread',
                 archiveLink: '',
@@ -222,7 +222,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/t925jg/march_17_isnt_just_an_earnings_date_its_a_special/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/t925jg/march_17_isnt_just_an_earnings_date_its_a_special/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread March 7 2022',
                 archiveLink: '',
@@ -244,7 +244,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/GME/comments/md8868/ryan_cohen_tweet_2503_ted/',
+                url: 'https://www.reddit.com/r/GME/comments/md8868/ryan_cohen_tweet_2503_ted/?sort=top',
                 type: 'REDDIT',
                 label: 'r/GME thread',
                 archiveLink: '',
@@ -266,7 +266,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/mqd0ow/connecting_the_dots_between_todays_announcement/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/mqd0ow/connecting_the_dots_between_todays_announcement/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread April 13 2021',
                 archiveLink: '',
@@ -336,7 +336,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/n19wsf/ryan_cohens_tweet/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/n19wsf/ryan_cohens_tweet/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
                 archiveLink: '',
@@ -358,13 +358,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/nbt2v9/decrypted_rc_latest_tweet_its_about_time/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/nbt2v9/decrypted_rc_latest_tweet_its_about_time/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/nh4tg6/a_different_take_on_an_rc_tweet_from_last_week/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/nh4tg6/a_different_take_on_an_rc_tweet_from_last_week/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread May 20 2021',
                 archiveLink: '',
@@ -417,7 +417,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/nklmno/the_daily_stonk_05252021/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/nkh5kc/rc_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/nklmno/the_daily_stonk_05252021/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread May 25 2021',
                 archiveLink: '',
@@ -455,7 +461,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/o81hz0/rc_sears_tweet/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/o81hz0/rc_sears_tweet/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread June 25 2021',
                 archiveLink: '',
@@ -599,6 +605,12 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://www.reddit.com/r/Superstonk/comments/pnrtdn/revisited_rc_tweets_computerchair_computershare/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread - September 13 2021',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/GMEJungle/comments/oqgky0/ryan_cohen_tweet/?sort=top',
                 type: 'REDDIT',
                 label: 'r/GMEJungle thread',
@@ -620,6 +632,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'RC Tweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/otcpt0/rc_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            
         ],
         description: '"Power to the Players 🇺🇸 🇨🇦"',
         type: TimelineItemType.RC,
@@ -702,7 +721,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/pd0wc4/rc/?sort=top',
                 type: 'REDDIT',
-                label: 'Superstonk',
+                label: 'Superstonk thread',
                 archiveLink: '',
             },
         ],
@@ -720,6 +739,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
+            {
+                url:  'https://www.reddit.com/r/Superstonk/comments/pw0hnp/rc_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+           
         ],
         description: '"Talk is cheap, it takes money to buy whiskey."',
         type: TimelineItemType.RC,
@@ -736,7 +762,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/q5nlap/shorts_funeral_new_balance/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/q5nhi5/rc_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/q5nlap/shorts_funeral_new_balance/?sort=top',
                 type: 'REDDIT',
                 label: 'Shorts. Funeral. New Balance.',
                 archiveLink: '',
@@ -757,6 +789,12 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qglkui/rc_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
         ],
         description: '',
         type: TimelineItemType.RC,
@@ -773,6 +811,12 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qju9wy/rc_tweet_mgga_revealed_to_the_moon/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
         ],
         description: '"MGGA"',
         type: TimelineItemType.RC,
@@ -786,6 +830,12 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 url: 'https://twitter.com/ryancohen/status/1457902069206163460',
                 type: 'X-TWITTER',
                 label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qpty7e/rc_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
                 archiveLink: '',
             },
             {
@@ -828,6 +878,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 url: 'https://twitter.com/ryancohen/status/1462612474071502848',
                 type: 'X-TWITTER',
                 label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qzb1ge/rc_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
                 archiveLink: '',
             },
             {
@@ -885,7 +942,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 0,
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets',
         dateYYYYMMDD: '2021-12-13',
         urls: [
             {
@@ -894,6 +951,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/rfcedi/rc_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+
             {
                 url: 'https://twitter.com/ryancohen/status/1470363505027129346',
                 type: 'X-TWITTER',
@@ -1056,9 +1120,15 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/sojoyr/on_feb_8th_a_tuesday_morning_ryan_cohen_tweeted/?sort=top',
+                url: 'https://www.reddit.com/r/Superstonk/comments/snjrf6/rc_in_twitter/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/sojoyr/on_feb_8th_a_tuesday_morning_ryan_cohen_tweeted/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread - February 9 2022',
                 archiveLink: '',
             },
             {
@@ -1217,7 +1287,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 0,
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets',
         dateYYYYMMDD: '2022-03-08',
         urls: [
             {
@@ -1244,6 +1314,13 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'Ryan Cohen tweet - 4:12 PM',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/t9utjo/rc_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread - RC on Twitter',
+                archiveLink: '',
+            },
+
         ],
         description: '"Sent letter to $BBBY board, got no response. Sent email to CEO asking for a discussion, haven’t gotten a prompt response. Too busy talking to expensive consultants?"',
         type: TimelineItemType.RC,
@@ -1259,9 +1336,15 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
-            
+
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/tegdsu/guys_i_think_ryan_cohen_has_all_his_ducks_in_a/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/teezts/ryan_cohen_on_twitter/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
                 archiveLink: '',
@@ -1287,7 +1370,12 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
-            
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/tf7bvx/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/tg1lwy/ryan_cohen_is_about_to_pull_a_st_patrick_on_st/?sort=top',
                 type: 'REDDIT',
@@ -1310,9 +1398,15 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://www.reddit.com/r/Superstonk/comments/tkeu98/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread - Ryan Cohen on Twitter',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/tkegpe/rc_ventures_buy_100000_new_shares_of_gme_today/?sort=top',
                 type: 'REDDIT',
-                label: 'Superstonk thread',
+                label: 'Superstonk thread - RC Ventures buy 100,000 new shares of GME today',
                 archiveLink: '',
             },
             {
@@ -1366,7 +1460,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'Superstonk thread - March 25 2022',
                 archiveLink: '',
             },
-            
+
         ],
         description: '"The overpriced consultants at BCG are picking a fight with the wrong company…🥊 @BCG", "The only ones more useless than overpriced consultants are those who hire them."',
         type: TimelineItemType.RC,
@@ -1906,13 +2000,23 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://www.reddit.com/r/Superstonk/comments/y6vjdu/ryan_cohen_again/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/y6wqvm/holy_fuck_the_meaning_of_the_new_rc_tweet_1_icahn/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/147r4y5/ryan_cohens_meeting_with_carl_icahn_cracked/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread - June 12 2023',
                 archiveLink: '',
             },
-
-            
         ],
         description: 'Ryan Cohen tweets a picture of himself with Carl Icahn',
         type: TimelineItemType.RC,

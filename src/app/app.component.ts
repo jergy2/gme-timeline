@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { HistoricGMEDataService } from './historic-data.service';
+import { HistoricGMEDataService } from './historic-gme-data.service';
 import { ChartDataSetManager } from './chart/chart-dataset-manager.class';
 import { DataManagerService } from './chart/data-manager-service';
 import { ScreeSizeService } from './scree-size.service';
@@ -18,8 +18,13 @@ import { timer } from 'rxjs';
 })
 export class AppComponent {
   private _dataIsLoaded: boolean = false;
+
+  private _chartIsLoading: boolean = false; 
+
   public get dataIsLoaded(): boolean { return this._dataIsLoaded; }
   public get isMobile(): boolean { return this._sizeService.isMobile; }
+
+  public get showChart(): boolean { return !this._chartIsLoading; } 
 
   constructor(
     private _dataService: HistoricGMEDataService, 
@@ -51,7 +56,30 @@ export class AppComponent {
             ];
             const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
             this._timelineItemsService.setTimelineItems(timelineItems);
+            this._timelineItemsService.updateSignificanceValue(1);
             this._updateChartData();
+
+            this._dataManagerService.isUpdating$.subscribe({
+              next: (isUpdating)=>{
+                // console.log("isupdating", isUpdating)
+                this._chartIsLoading = isUpdating
+               }
+            })
+
+            // this._dataManagerService.dataSets$.subscribe({
+            //   next: (datasets) => {
+            //     // this._chartIsLoading = true;
+            //     // timer(200).subscribe({
+            //     //   next: ()=>{
+            //     //     console.log("DATA SET UPDATED")
+            //     //     this._chartIsLoading = false;
+            //     //   }
+            //     // })
+
+            //   },
+            //   error: () => { },
+            //   complete: () => { }
+            // });
           },
         });
       }
@@ -61,9 +89,10 @@ export class AppComponent {
   }
 
   private _updateChartData() {
-    this._dataIsLoaded = true;
-    const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.priceEntriesAfterCutoff, this._timelineItemsService.timelineItems);
+
+    const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.priceEntriesAfterCutoff, this._timelineItemsService.allTimelineItems);
     this._dataManagerService.registerDataManager(dataManager);
+    this._dataIsLoaded = true;
   }
 
 }

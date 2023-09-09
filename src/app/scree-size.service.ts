@@ -15,6 +15,5 @@ export class ScreeSizeService {
 
   public updateScreenSize(width: number, height: number){
     this._screenDimensions$.next({width: width, height: height});
-    console.log({width: width, height: height})
   }
 }

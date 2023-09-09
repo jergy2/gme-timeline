@@ -23,6 +23,8 @@ export class DataManagerService {
   // public get dataSetsMobile$(): Observable<any[]> { return this._dataSetsMobile$.asObservable(); }
   // public get dataManager(): ChartDataSetManager { return this._dataManager; }
 
+  public get isUpdating$(): Observable<boolean> { return this._dataManager.isUpdating$; }
+
   public registerDataManager(dataManager: ChartDataSetManager) {
     this._dataManager = dataManager;
     this._dataManager.getAndUpdateDatasets();
@@ -40,10 +42,10 @@ export class DataManagerService {
   }
 
   public lookupEventByIndex(datasetIndex: number, index: number){
-    return this._dataManager.lookupEventByIndex(datasetIndex, index);
+    return this._dataManager.lookupTimelineItemByIndex(datasetIndex, index);
   }
-  public lookupIndexByEvent(event: TimelineItem){
-    return this._dataManager.lookupIndexByEvent(event);
+  public lookupIndexByEvent(event: TimelineItem): {datasetIndex: number, itemIndex: number} {
+    return this._dataManager.lookupIndexByTimelineItem(event);
   }
 
   public getTypeColor(type: TimelineItemType, transparency?: number): string {

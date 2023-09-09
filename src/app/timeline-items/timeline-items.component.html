@@ -1,5 +1,5 @@
 <div class="items-container" *ngIf="!isMobile">
-    <app-timeline-item *ngFor="let timelineItem of timelineItems" [id]="itemId(timelineItem)" [item]="timelineItem" class="timeline-item">
+    <app-timeline-item *ngFor="let timelineItem of displayedTimelineItems" [id]="itemId(timelineItem)" [item]="timelineItem" class="timeline-item">
     </app-timeline-item>
 </div>
 

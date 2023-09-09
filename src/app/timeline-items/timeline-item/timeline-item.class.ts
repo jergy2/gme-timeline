@@ -18,6 +18,7 @@ export class TimelineItem{
     private _gmePrice: number = -1;
     private _gmePricePreSplit: string = '';
     private _specialIdentifier: string = '';
+    private _itemIndex: number = -1;
 
     public get title(): string { return this._title; }
     public get dateYYYYMMDD(): string { return this._dateYYYYMMDD; }
@@ -34,8 +35,10 @@ export class TimelineItem{
     public get gmePrice(): number { return this._gmePrice; }
     public get gmePricePreSplit(): string { return this._gmePricePreSplit; }
     public get specialIdentifier(): string { return this._specialIdentifier; }
+    
+    public get itemIndex(): number { return this._itemIndex; }
 
-    constructor(config: TimelineItemConfig, gmePriceEntry: GmePriceEntry | undefined){
+    constructor(config: TimelineItemConfig, gmePriceEntry: GmePriceEntry | undefined, index: number){
         this._title = config.title;
         this._dateYYYYMMDD = config.dateYYYYMMDD;
         this._urls = config.urls;
@@ -56,6 +59,7 @@ export class TimelineItem{
         if(config.specialIdentifier === 'STOCK-SPLIT'){
             this._specialIdentifier = config.specialIdentifier;
         }
+        this._itemIndex = index;
     }
 
     public select(){ this._isSelected = true; }

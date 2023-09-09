@@ -3,7 +3,7 @@ import { ViewportScroller } from '@angular/common';
 import { TimelineItemsService } from './timeline-items.service';
 import { TimelineItem } from './timeline-item/timeline-item.class';
 import { ScreeSizeService } from '../scree-size.service';
-import { HistoricGMEDataService as GmePriceDataService } from '../historic-data.service';
+import { HistoricGMEDataService as GmePriceDataService } from '../historic-gme-data.service';
 
 @Component({
   selector: 'app-timeline-items',
@@ -15,8 +15,8 @@ export class TimelineItemsComponent implements OnInit {
 
   private _selectedItem: TimelineItem | null = null;
   public get selectedItem(): TimelineItem | null { return this._selectedItem; }
-  public get timelineItems(): TimelineItem[] { return this._itemService.timelineItems; }
-  public get timelineItemsMobile(): TimelineItem[] { return this.timelineItems.sort((itemA, itemB)=>{
+  public get displayedTimelineItems(): TimelineItem[] { return this._itemService.displayedTimelineItems; }
+  public get timelineItemsMobile(): TimelineItem[] { return this.displayedTimelineItems.sort((itemA, itemB)=>{
     if(itemA.dateYYYYMMDD > itemB.dateYYYYMMDD){
       return -1;
     }else if(itemA.dateYYYYMMDD < itemB.dateYYYYMMDD){
@@ -28,12 +28,12 @@ export class TimelineItemsComponent implements OnInit {
   public get isMobile(): boolean { return this._screenService.isMobile; }
 
   ngOnInit() {
-    this._itemService.itemSelected$().subscribe({
-      next: (item) => {
-        this.timelineItems.forEach(item => item.unselect())
-        if(item !== null){
-          item.select();
-          const scrollToElement = document.getElementById(this.itemId(item));
+    this._itemService.itemSelected$.subscribe({
+      next: (selected) => {
+        this.displayedTimelineItems.forEach(timelineItem => timelineItem.unselect())
+        if(selected.item !== null){
+          selected.item.select();
+          const scrollToElement = document.getElementById(this.itemId(selected.item));
           if(!this.isMobile){
             scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
           }else if(this.isMobile){
@@ -46,6 +46,6 @@ export class TimelineItemsComponent implements OnInit {
   }
 
   public itemId(item: TimelineItem): string {
-    return 'item' + this.timelineItems.indexOf(item);
+    return 'item' + this.displayedTimelineItems.indexOf(item);
   }
 }
