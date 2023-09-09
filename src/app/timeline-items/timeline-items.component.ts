@@ -35,7 +35,12 @@ export class TimelineItemsComponent implements OnInit {
           selected.item.select();
           const scrollToElement = document.getElementById(this.itemId(selected.item));
           if(!this.isMobile){
-            scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            if(this._isChromeBrowser()){
+              scrollToElement?.scrollIntoView({ behavior: "instant", block: "center", inline: "center" });
+            }else{
+              scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            }
+            
           }else if(this.isMobile){
             // scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
           }
@@ -47,5 +52,10 @@ export class TimelineItemsComponent implements OnInit {
 
   public itemId(item: TimelineItem): string {
     return 'item' + this.displayedTimelineItems.indexOf(item);
+  }
+
+  private _isChromeBrowser(): boolean { 
+    const agent = window.navigator.userAgent.toLowerCase()
+    return (agent.indexOf('chrome') > -1 && !!(<any>window).chrome);
   }
 }

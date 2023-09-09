@@ -81,6 +81,8 @@ export class ChartComponent implements OnInit, AfterViewInit {
     });
   }
 
+
+
   private _setLineChartOptions(){
     this.lineChartOptions =  {
       responsive: true,
