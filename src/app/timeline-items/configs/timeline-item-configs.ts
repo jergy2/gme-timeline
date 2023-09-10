@@ -964,6 +964,22 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 3,
     },
     {
+        title: 'CNBC panelists (paid actors) put out a hit piece about Ryan Cohen, Bed Bath and Beyond, Teddy',
+        dateYYYYMMDD: '2023-07-06',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/14sarx9/sea_bscuit_talkin_bout_rc_lots_to_take_apart/',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"I called and reached out, or tried to reach out to Teddy`s patent lawyer, but didn`t hear back in time for this hit."',
+        type: TimelineItemType.MEDIA,
+        significance: 2,
+        imgSrc: 'assets/cnbc-hit-2023-07-06.PNG'
+    },
+    {
         title: 'Dumb Money movie released',
         dateYYYYMMDD: '2023-09-22',
         urls: [
