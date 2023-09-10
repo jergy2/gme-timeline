@@ -1,26 +1,9 @@
-
-<div class="controls shadow" [ngClass]="isExpanded ? 'expanded' : 'not-expanded'" *ngIf="!isPinned" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+<div class="controls-root shadow" [ngClass]="isExpanded ? 'expanded' : 'not-expanded'" *ngIf="!isPinned"
+    (mouseenter)="onMouseEnterControls()" (mouseleave)="onMouseLeaveControls()">
     <div class="icon-container">
         <fa-icon [icon]="faSliders" style="font-size: 2em;"></fa-icon>
     </div>
-    <div>
-        <div class="controls-expanded" *ngIf="isExpanded"
-            [@appear]="'appear'">
-            <div>
-                <div class="controls-expanded">
-                    <app-significance-control></app-significance-control>
-                    <!-- <div>item 2</div>
-                    <div>item 3</div>
-                    <div>item 4</div>
-                    <div>item 5</div> -->
-                </div>
-            </div>
-        
-        
-        </div>
+    <div class="controls-expanded" *ngIf="isExpanded" [@appear]="'appear'">
+        <app-significance-control></app-significance-control>
     </div>
-</div>
-
-<div class="controls-minimized shadow" *ngIf="isPinned" style="background-color: purple;">
-    <fa-icon [icon]="faSliders" style="font-size: 2em;"></fa-icon>
 </div>

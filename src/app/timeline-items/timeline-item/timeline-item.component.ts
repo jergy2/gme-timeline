@@ -57,7 +57,7 @@ export class TimelineItemComponent {
     if (this.item.isSelected) {
       if(this.isMobile){
         return { // if is selected and is mobile
-          'background-color': this._eventService.getTypeColor(this.item.type, 0.8),
+          'background-color': this._eventService.getTypeColor(this.item.type, 0.9),
           'border-left': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
           'border-right': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
           'color': 'white',
@@ -66,7 +66,7 @@ export class TimelineItemComponent {
         }
       }else{
         return { // if is selected and is not mobile
-          'background-color': this._eventService.getTypeColor(this.item.type, 0.8),
+          'background-color': this._eventService.getTypeColor(this.item.type, 0.9),
           'border': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
           'color': 'white',
         }

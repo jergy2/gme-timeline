@@ -9,10 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChartComponent } from './chart/chart.component';
 import { CustomTooltipComponent } from './chart/custom-tooltip/custom-tooltip.component';
 import { TimelineItemsComponent } from './timeline-items/timeline-items.component';
-import { ControlsComponent } from './layout/controls/controls.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignificanceControlComponent } from './layout/controls/significance-control/significance-control.component';
+import { AboutComponent } from './layout/about/about.component';
+import { ControlsComponent } from './layout/controls/controls.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import { SignificanceControlComponent } from './layout/controls/significance-con
     ChartComponent,
     CustomTooltipComponent,
     TimelineItemsComponent,
-    ControlsComponent,
     SignificanceControlComponent,
+    AboutComponent,
+    ControlsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

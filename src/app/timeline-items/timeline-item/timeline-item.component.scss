@@ -32,10 +32,10 @@
     justify-content: space-between;
 }
 
-// .not-expanded {
-//     max-width: 200px;
-//     width: 200px;
-// }
+.not-expanded {
+    min-height: 150px;
+    min-width: 200px;
+}
 
 .expanded {
     margin: 5px;

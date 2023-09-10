@@ -1,0 +1,21 @@
+<div class="about-root shadow" [ngClass]="aboutIsExpanded ? 'expanded' : 'not-expanded'"
+    (mouseenter)="onMouseEnterAbout()" (mouseleave)="onMouseLeaveAbout()">
+    <div class="icon-container">
+        <fa-icon [icon]="faQuestion" style="font-size: 2em;"></fa-icon>
+    </div>
+    <div>
+        <div class="about-section" *ngIf="aboutIsExpanded" [@appear]="'appear'">
+            <div class="title">About gmetimeline.org</div>
+            <div class="content">
+                <p>
+                    This website was created for the purpose of providing information about the
+                    GameStop saga from a chronological perspective.
+                </p>
+                <p>
+                    For more information about this website and contents of the GameStop story, join the discussion on
+                    <a href="https://lemmy.whynotdrs.org/post/155883" target="_blank">Lemmy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

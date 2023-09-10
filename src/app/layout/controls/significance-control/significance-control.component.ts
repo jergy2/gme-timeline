@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ControlsService } from '../../controls.service';
+import { SidebarService } from '../../sidebar/sidebar.service';
 import { DataManagerService } from 'src/app/chart/data-manager-service';
 import { TimelineItemsService } from 'src/app/timeline-items/timeline-items.service';
 

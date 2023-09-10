@@ -1,6 +1,6 @@
 <div *ngIf="dataIsLoaded && !isMobile" class="app-component-root">
   <div class="container-grid">
-    <app-controls class="app-controls-container"></app-controls>
+    <app-sidebar class="app-sidebar"></app-sidebar>
     <app-timeline-items class="app-timeline-items"></app-timeline-items>
     <app-chart class="app-chart" *ngIf="showChart"></app-chart>
     <div class="chart-loading" *ngIf="!showChart">

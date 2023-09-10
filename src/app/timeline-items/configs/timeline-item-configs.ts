@@ -799,6 +799,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         description: 'A look at the layers of intrigue, from the supercharged power of digital communities to the gamification of trading.',
         type: TimelineItemType.MEDIA,
         significance: 2,
+        imgSrc: 'assets/eat-the-rich.PNG'
     },
     {
         title: 'Fidelity posts meme-stock guy',
@@ -987,6 +988,12 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 url: 'https://www.youtube.com/watch?v=bmr8YmwnZ3w',
                 type: 'YOUTUBE',
                 label: 'YouTube link',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/85996',
+                type: 'LEMMY',
+                label: 'Dumb Money movie trailer',
                 archiveLink: '',
             },
         ],
