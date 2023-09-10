@@ -228,7 +228,14 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 type: 'DOCUMENT',
                 label: 'SEC link',
                 archiveLink: '',
+            },            
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/nd18ee/ryan_cohens_letter_to_the_boardmy_north_star/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread - May 15 2021',
+                archiveLink: '',
             },
+            
         ],
         description: 'Subject: Maximizing Stockholder Value by Becoming the Ultimate Destination for Gamers, “GAMESTOP’S LEADERSHIP MUST PROMPTLY PIVOT FROM A BRICK-AND-MORTAR MINDSET TO A TECHNOLOGY-DRIVEN VISION”',
         type: TimelineItemType.RC,
