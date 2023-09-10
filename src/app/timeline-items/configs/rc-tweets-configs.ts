@@ -2039,6 +2039,31 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 label: 'teddy.com',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/yzeeo0/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/yzhsc0/ryan_is_now_the_book_king_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/4182',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.wsj.com/articles/gamestops-ryan-cohen-wants-to-be-more-than-a-meme-stock-king-11668834015',
+                type: 'OTHER',
+                label: 'GameStop’s Ryan Cohen Wants to Be More Than a Meme-Stock King - WSJ',
+                archiveLink: '',
+            },
+            
         ],
         description: 'I also want to be the Book King 👑',
         type: TimelineItemType.RC,
