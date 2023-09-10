@@ -982,7 +982,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '"I called and reached out, or tried to reach out to Teddy`s patent lawyer, but didn`t hear back in time for this hit."',
+        description: '"I called and reached out, or tried to reach out to Teddy’s patent lawyer, but didn’t hear back in time for this hit."',
         type: TimelineItemType.MEDIA,
         significance: 2,
         imgSrc: 'assets/cnbc-hit-2023-07-06.PNG'

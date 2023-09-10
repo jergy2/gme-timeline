@@ -2883,7 +2883,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-11-23.jpg'
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweet',
         dateYYYYMMDD: '2022-12-30',
         urls: [
             {
@@ -2909,4 +2909,539 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         type: TimelineItemType.RC,
         significance: 1,
     },
+
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-01-09',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1612408869845889025',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/107c0bh/ryan_cohen_on_twitter_jack_i_want_you_to_draw_me/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Jack, I want you to draw me like one of your French girls. Wearing this. Wearing only this."',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-01-18',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1615752534013902857',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/10fc2cf/ryan_cohen_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/10esd47/breaking_news_ryan_cohen_buys_all_the_stocks/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: 'RC Tweets a meme that originated on Superstonk',
+        type: TimelineItemType.RC,
+        significance: 1,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-01-18.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-01-25',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1618308520499359744',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/10l52jb/ryan_cohen_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"You know you’ve made it when you buy a turtleneck"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-02-14',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1625507240831553537',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/11275b7/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"someone tell the government to stop shooting down my balloons🎈"',
+        type: TimelineItemType.RC,
+        significance: 1,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-03-08',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1633552435267379202',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/11m5soh/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"你好"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-03-09',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1633994613429092352',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/11n9qi5/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Does this mean I don’t have to pay back Silicon Valley Bank?"',
+        type: TimelineItemType.RC,
+        significance: 1,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-03-12',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1635047829067677696',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/11ps8i9/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Odd that treasury isn’t interested in investing in banks today when in 2009 those TARP bailouts yielded some of the best returns for taxpayers.."',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-04-12',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1646267634420154368',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/12k0fzq/ryan_cohen_on_twitter_i_just_got_off_the_phone/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/12pn78j/rc_ventures_buys_nordstrom_shares_page_79/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"I just got off the phone with what was once a great American brand. Lots of problems, no accountability for high paid execs and little interest in my help (at no cost). This could get interesting."',
+        type: TimelineItemType.RC,
+        significance: 1,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-04-20',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1649146077335941122',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/12tdvvs/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"It’s 420 everyday in Corporate America"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-04-26',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1651286148486922252',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/12zs3uf/ryan_cohen_on_the_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"America is littered with managers making millions in risk free compensation"',
+        type: TimelineItemType.RC,
+        significance: 1,
+    },
+    {
+        title: 'Ryan Cohen tweets',
+        dateYYYYMMDD: '2023-04-27',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1651567249965084673',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/130kwqq/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://twitter.com/ryancohen/status/1651613326957223936',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/130snj8/ryan_cohen_on_the_bird/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Corporate America is a wolf in liberal’s clothing"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-05-02',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1653455058745294854',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/135uwlx/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"The Fed may have to choose between fighting inflation or bank contagion"',
+        type: TimelineItemType.RC,
+        significance: 1,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-05-11',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1656745897064034311',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13ey463/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13eyjv6/rcs_latest_tweet_is_a_quote_from_this_letter_to/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 1,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-11.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-05-14',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1657795512395874305',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13hhmo7/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Show Mom love. There’s nothing more special than a GameStop gift card for Mother’s Day."',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-05-21',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1660396946991857665',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13o7e11/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-21.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-05-23',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1661111283431645228',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13q0816/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-23.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-06-03',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1665074233888710657',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13zmevx/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"My gastro once told me it is a terrible mistake that people often mistake kindness for weakness"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-06-07',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1666541652821917701',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/143nwc3/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Not for long"',
+        type: TimelineItemType.RC,
+        significance: 1,
+    }, 
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-06-18',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1670558014678654983',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+        ],
+        description: '"Happy Father’s Day"',
+        type: TimelineItemType.RC,
+        significance: 0,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-06-18.jpg'
+    },
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-06-22',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1671965203855204352',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/14gcoxf/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"My boss doubled my pay and made me employee of the month ⭐️"',
+        type: TimelineItemType.RC,
+        significance: 1,
+    }, 
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-06-23',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1672363242004582400',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/14hb231/rc_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"I challenge Warren Buffett to a thumb war 👍"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    }, 
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-06-29',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1674573778196758528',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/14ml7hb/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Work hard or please leave"',
+        type: TimelineItemType.RC,
+        significance: 1,
+    }, 
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-07-25',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1684016228938190848',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/159rziw/rip_tylee/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Tylee passed away today. She is the reason Chewy exists and her legacy lives forever."',
+        type: TimelineItemType.RC,
+        significance: 1,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-07-25.jpg'
+    }, 
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-08-02',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1686913920630484992',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/15gqflg/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"There is nothing more foolish than cat litter and video games"',
+        type: TimelineItemType.RC,
+        significance: 0,
+    }, 
 ];
