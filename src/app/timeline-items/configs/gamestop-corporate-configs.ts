@@ -184,6 +184,13 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         title: 'GameStop publishes 2021 Q3 financial report featuring 5.2 million (20.8 million post-split) shares directly registered',
         dateYYYYMMDD: '2021-12-08',
         urls: [
+            
+            {
+                url: 'https://lemmy.whynotdrs.org/post/193107',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/rc1d5r/52_million_shares_registered_through_computershare/?sort=top',
                 type: 'REDDIT',
@@ -191,13 +198,13 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-financial-results-q2-2021',
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-financial-results-q3-2021',
                 type: 'GAMESTOP',
                 label: 'Earnings Release',
                 archiveLink: '',
             },
             {
-                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-21-000090',
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-21-000129',
                 type: 'DOCUMENT',
                 label: 'Form 10-Q',
                 archiveLink: '',

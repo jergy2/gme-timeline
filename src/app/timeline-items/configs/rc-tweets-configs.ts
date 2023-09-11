@@ -3212,7 +3212,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         ],
         description: '',
         type: TimelineItemType.RC,
-        significance: 1,
+        significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-11.jpg'
     },
     {
