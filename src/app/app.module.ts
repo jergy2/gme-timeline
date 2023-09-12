@@ -15,6 +15,8 @@ import { SignificanceControlComponent } from './layout/controls/significance-con
 import { AboutComponent } from './layout/about/about.component';
 import { ControlsComponent } from './layout/controls/controls.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { LayoutComponent } from './layout/layout.component';
+import { CategoryControlComponent } from './layout/controls/category-control/category-control.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
     SignificanceControlComponent,
     AboutComponent,
     ControlsComponent,
-    SidebarComponent
+    SidebarComponent,
+    LayoutComponent,
+    CategoryControlComponent
   ],
   imports: [
     BrowserModule,

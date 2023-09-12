@@ -6,7 +6,7 @@ export interface TimelineItemConfig{
     dateYYYYMMDD: string;
     urls: TimelineItemURL[]; 
     description: string;
-    type: TimelineItemType;
+    type: TimelineItemType[];
     significance: number;
     imgSrc?: string;
     specialIdentifier?: string;

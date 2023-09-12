@@ -1,0 +1,16 @@
+<div class="layout-root">
+    <div class="container-grid" *ngIf="!isMobile">
+        <app-sidebar class="app-sidebar"></app-sidebar>
+        <app-timeline-items class="app-timeline-items"></app-timeline-items>
+        <app-chart class="app-chart" *ngIf="showChart"></app-chart>
+        <div class="chart-loading" *ngIf="!showChart">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-container" *ngIf="isMobile">
+        <app-timeline-items class="app-timeline-items-mobile"></app-timeline-items>
+    </div>
+</div>

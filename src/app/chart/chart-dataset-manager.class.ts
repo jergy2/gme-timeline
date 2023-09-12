@@ -3,7 +3,7 @@ import { GmePriceEntry } from "../timeline-items/timeline-item/gme-price-entry.i
 import { TimelineItemType } from "../timeline-items/timeline-item/timeline-item-type.enum";
 import { TimelineItem } from "../timeline-items/timeline-item/timeline-item.class";
 import { DatasetConfig } from "./dataset-config.class";
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 
 export class ChartDataSetManager {
@@ -13,17 +13,23 @@ export class ChartDataSetManager {
   private _datasetsMobile: any[] = [];
   private _datasetConfigs: DatasetConfig[] = [];
   private _timelineItems: TimelineItem[] = [];
+
+
   private _signifianceValue: number = 1;
+  private _timelineCategories: TimelineItemType[] = [
+    TimelineItemType.CORP, TimelineItemType.DFV, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC
+  ];
 
   private _isUpdating$: Subject<boolean> = new Subject();
   public get isUpdating$(): Observable<boolean> { return this._isUpdating$.asObservable(); }
 
-  
+
   public get datasets(): any[] { return this._datasets$.getValue(); }
   public get datasets$(): Observable<any[]> { return this._datasets$.asObservable(); }
   public get datasetsMobile(): any[] { return this._datasetsMobile; }
   public get datasetConfigs(): DatasetConfig[] { return this._datasetConfigs; }
   public get significanceValue(): number { return this._signifianceValue; }
+  public get categories(): TimelineItemType[] { return this._timelineCategories; }
 
   // public get chartCutoffDate(): string { return '2020-07-01'; }
 
@@ -32,9 +38,16 @@ export class ChartDataSetManager {
     this._timelineItems = timelineItems;
   }
 
-  public updateSignificanceValue(value: number){
+  public updateSignificanceValue(value: number) {
     this._isUpdating$.next(true);
     this._signifianceValue = value;
+    this.getAndUpdateDatasets();
+    this._isUpdating$.next(false);
+  }
+
+  public updateCategories(categories: TimelineItemType[]) {
+    this._isUpdating$.next(true);
+    this._timelineCategories = categories;
     this.getAndUpdateDatasets();
     this._isUpdating$.next(false);
   }
@@ -47,11 +60,8 @@ export class ChartDataSetManager {
     /** Get all datasets based on every combination of significance value and type. 
     *  This will produce arrays that have no events that match the significance and type
     */
-    const allEventTypes: TimelineItemType[] = [
-      TimelineItemType.EVENT, TimelineItemType.CORP, TimelineItemType.MEDIA, TimelineItemType.RC, TimelineItemType.DFV, TimelineItemType.UNRELATED, TimelineItemType.DRS,
-    ];
     const allSignificances: number[] = this._getSignificances();
-    allEventTypes.forEach(eventType => {
+    this._timelineCategories.forEach(eventType => {
       allSignificances.forEach(significanceValue => {
         const datasetConfig: DatasetConfig = this._getDatasetConfig(eventType, significanceValue);
         datasetConfigs.push(datasetConfig);
@@ -85,7 +95,7 @@ export class ChartDataSetManager {
         pointBorderWidth: 1,
         borderWidth: 0.1,
         pointRadius: this._getPointRadius(datasetConfig.significance),
-        pointHitRadius: 5 + (3 * datasetConfig.significance),
+        pointHitRadius: this._getPointHitRadius(datasetConfig.significance),
         pointHoverRadius: 5 + (4 * datasetConfig.significance),
         pointStyle: 'circle',
       })
@@ -100,16 +110,14 @@ export class ChartDataSetManager {
     }
     if (type === TimelineItemType.CORP) {
       return 'rgba(128,0,0,' + String(transparency) + ')';
-    } else if (type === TimelineItemType.EVENT) {
-      return 'rgba(75,75,75,' + String(transparency) + ')';
     } else if (type === TimelineItemType.MEDIA) {
       return 'rgba(230,110,0,' + String(transparency) + ')';
     } else if (type === TimelineItemType.RC) {
       return 'rgba(0,0,255,' + String(transparency) + ')';
     } else if (type === TimelineItemType.DFV) {
       return 'rgba(255,0,0,' + String(transparency) + ')';
-    } else if (type === TimelineItemType.UNRELATED) {
-      return 'rgba(0,0,0,' + String(transparency) + ')';
+    } else if (type === TimelineItemType.OTHER) {
+      return 'rgba(128,128,128,' + String(transparency) + ')';
     } else if (type === TimelineItemType.DRS) {
       return 'rgba(148,23,106,' + String(transparency) + ')';
     } else {
@@ -117,13 +125,13 @@ export class ChartDataSetManager {
     }
   }
 
-  public lookupIndexByTimelineItem(timelineItem: TimelineItem): {datasetIndex: number, itemIndex: number} {
+  public lookupIndexByTimelineItem(timelineItem: TimelineItem): { datasetIndex: number, itemIndex: number } {
     const indexValue = {
       datasetIndex: -1, itemIndex: -1,
     }
     this._datasetConfigs.forEach(config => {
       const itemIndex = config.getIndexOfTimelineItem(timelineItem);
-      if(itemIndex > -1){
+      if (itemIndex > -1) {
         indexValue.datasetIndex = this._datasetConfigs.indexOf(config) + 1;
         indexValue.itemIndex = itemIndex;
       }
@@ -135,7 +143,7 @@ export class ChartDataSetManager {
     const config = this._datasetConfigs[datasetIndex - 1];
     const timelineItem: TimelineItem | null = config.timelineItems[index];
     if (timelineItem !== null) {
-      if(timelineItem.gmePriceEntry){
+      if (timelineItem.gmePriceEntry) {
         const event = this._lookupEventByDate(timelineItem.gmePriceEntry.date.format('YYYY-MM-DD'));
         return event;
       }
@@ -147,14 +155,14 @@ export class ChartDataSetManager {
     let value = this._signifianceValue;
     const maxSignificanceValue = 5;
     let significances: number[] = [];
-    for(let i=value; i<=maxSignificanceValue; i++){
+    for (let i = value; i <= maxSignificanceValue; i++) {
       significances.push(i);
     }
     return significances;
   }
 
   private _getDatasetConfig(type: TimelineItemType, significanceValue: number): DatasetConfig {
-    const dataSet: (TimelineItem| null)[] = this._priceEntries
+    const dataSet: (TimelineItem | null)[] = this._priceEntries
       // .filter(entry => entry.date.format('YYYY-MM-DD') > this.chartCutoffDate)
       .map((entry) => {
         const foundEvent = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'));
@@ -178,19 +186,36 @@ export class ChartDataSetManager {
 
 
 
-  private _getPointRadius(significance: number): number{
-    if(significance === 0){
+  private _getPointRadius(significance: number): number {
+    if (significance === 0) {
       return 2;
-    }else if(significance === 1){
+    } else if (significance === 1) {
       return 4;
-    }else if(significance === 2){
+    } else if (significance === 2) {
       return 6;
-    }else if(significance === 3){
+    } else if (significance === 3) {
       return 9;
-    }else if(significance === 4){
+    } else if (significance === 4) {
       return 13;
-    }else if(significance === 5){
+    } else if (significance === 5) {
       return 18;
+    }
+    return 1;
+  }
+
+  private _getPointHitRadius(significance: number): number {
+    if (significance === 0) {
+      return 2;
+    } else if (significance === 1) {
+      return 4;
+    } else if (significance === 2) {
+      return 5;
+    } else if (significance === 3) {
+      return 7;
+    } else if (significance === 4) {
+      return 10;
+    } else if (significance === 5) {
+      return 15;
     }
     return 1;
   }

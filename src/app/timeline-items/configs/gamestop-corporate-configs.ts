@@ -20,7 +20,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -41,7 +41,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -62,7 +62,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q3 2020',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
 
@@ -84,7 +84,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2020',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -99,7 +99,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'The Company ultimately sold 3,500,000 shares of common stock and generated aggregate gross proceeds before commissions and offering expenses of approximately $551,000,000 ',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 4,
     },
 
@@ -133,7 +133,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
         imgSrc: 'assets/rc-chairman.jpg'
     },
@@ -155,7 +155,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2021 Ryan Cohen becomes chairman of GameStop, Matt Furlong becomes CEO',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 4,
         imgSrc: 'assets/rc-chairman.jpg'
     },
@@ -177,7 +177,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2021',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -211,7 +211,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'GameStop reports for the first time, as of October 30, 2021, the number of shares that have been directly registered ("DRSd")',
-        type: TimelineItemType.DRS,
+        type: [TimelineItemType.DRS, TimelineItemType.CORP],
         significance: 5,
     },
     {
@@ -238,7 +238,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2021',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -265,7 +265,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2022',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -298,7 +298,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 4,
         specialIdentifier: 'STOCK-SPLIT',
     },
@@ -326,7 +326,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2022',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -347,7 +347,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'The partnership is intended to introduce more GameStop customers to FTX’s community and its marketplaces for digital assets. In addition to collaborating with FTX on new ecommerce and online marketing initiatives, GameStop will begin carrying FTX gift cards in select stores. ',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 2,
     },
 
@@ -375,7 +375,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q3 2022',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -402,7 +402,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2022',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -423,7 +423,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -450,7 +450,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2023',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 1,
     },
     {
@@ -465,7 +465,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 3,
     },
     {
@@ -516,7 +516,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2023',
-        type: TimelineItemType.CORP,
+        type: [TimelineItemType.CORP],
         significance: 2,
     },
 ];

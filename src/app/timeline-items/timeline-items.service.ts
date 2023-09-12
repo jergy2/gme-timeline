@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { TimelineItem } from './timeline-item/timeline-item.class';
+import { TimelineItemType } from './timeline-item/timeline-item-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,11 @@ import { TimelineItem } from './timeline-item/timeline-item.class';
 export class TimelineItemsService {
 
   constructor() { }
+
+  private _significanceValue: number = 1;
+  private _itemCategories: TimelineItemType[] = [
+    TimelineItemType.CORP, TimelineItemType.DFV, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC,
+  ];
 
   private _itemSelected$: Subject<{item: TimelineItem | null, source: 'CHART' | 'ITEMS' | 'NULL'}> = new Subject();
   public get itemSelected$(): Observable<{item: TimelineItem | null, source: 'CHART' | 'ITEMS' | 'NULL'}> { return this._itemSelected$.asObservable(); }
@@ -36,7 +42,20 @@ export class TimelineItemsService {
   }
 
   public updateSignificanceValue(value: number){
-    const displayedItems = this.allTimelineItems.filter(item => item.significance >= value);
+    this._significanceValue = value;
+    this._update();
+  }
+  public updateCategories(categories: TimelineItemType[]){
+    this._itemCategories = categories;
+    this._update();
+  }
+
+  private _update(){
+    const displayedItems = this.allTimelineItems.filter(item => {
+      const showBySignificance: boolean = item.significance >= this._significanceValue;
+      const showByCategory: boolean = this._itemCategories.indexOf(item.type) > -1;
+      return showBySignificance && showByCategory;
+    });
     this._displayedTimelineItems$.next(displayedItems);
   }
 

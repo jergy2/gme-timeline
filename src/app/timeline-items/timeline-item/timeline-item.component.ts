@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TimelineItem } from './timeline-item.class';
 import { TimelineItemType } from './timeline-item-type.enum';
 import * as dayjs from 'dayjs';
-import { DataManagerService } from 'src/app/chart/data-manager-service';
+import { ChartDataManagerService } from 'src/app/chart/chart-data-manager-service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { urlType } from './timeline-item-url.interface';
 import { TimelineItemsService } from '../timeline-items.service';
@@ -14,14 +14,14 @@ import { TimelineItemsService } from '../timeline-items.service';
 })
 export class TimelineItemComponent {
 
-  constructor(private _eventService: DataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
+  constructor(private _eventService: ChartDataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
 
   private _item: TimelineItem = new TimelineItem({
     title: '',
     dateYYYYMMDD: '',
     urls: [],
     description: '',
-    type: TimelineItemType.EVENT,
+    type: [TimelineItemType.OTHER],
     significance: 0,
   }, undefined, -1)
   @Input('item') public set item(item: TimelineItem) { this._item = item; }

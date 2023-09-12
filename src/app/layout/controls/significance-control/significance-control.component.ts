@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SidebarService } from '../../sidebar/sidebar.service';
-import { DataManagerService } from 'src/app/chart/data-manager-service';
+import { ChartDataManagerService } from 'src/app/chart/chart-data-manager-service';
 import { TimelineItemsService } from 'src/app/timeline-items/timeline-items.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { TimelineItemsService } from 'src/app/timeline-items/timeline-items.serv
 })
 export class SignificanceControlComponent {
 
-  constructor(private _dataManagerService: DataManagerService, private _itemService: TimelineItemsService){
+  constructor(private _dataManagerService: ChartDataManagerService, private _itemService: TimelineItemsService){
     
     const initialValue = this._dataManagerService.significanceValue;
     this._controlButtons = [

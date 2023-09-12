@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { HistoricGMEDataService } from '../historic-gme-data.service';
-import { DataManagerService } from './data-manager-service';
+import { ChartDataManagerService } from './chart-data-manager-service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
@@ -20,7 +20,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
 
   constructor(
     private _dataService: HistoricGMEDataService,
-    private _dataManagerService: DataManagerService,
+    private _dataManagerService: ChartDataManagerService,
     private _timelineItemService: TimelineItemsService,
     private _sizeService: ScreeSizeService,
   ) { }

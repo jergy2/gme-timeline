@@ -9,7 +9,7 @@ export class TimelineItem{
     private _dateYYYYMMDD: string;
     private _urls: TimelineItemURL[];
     private _description: string;
-    private _type: TimelineItemType;
+    private _type: TimelineItemType[];
     private _significance: number;
     private _imgSrc: string = '';
 
@@ -24,7 +24,7 @@ export class TimelineItem{
     public get dateYYYYMMDD(): string { return this._dateYYYYMMDD; }
     public get urls(): TimelineItemURL[] { return this._urls; }
     public get description(): string { return this._description; }
-    public get type(): TimelineItemType { return this._type; }
+    public get type(): TimelineItemType { return this._type[0]; }
     public get significance(): number { return this._significance; }
     public get imgSrc(): string { return this._imgSrc;}
 

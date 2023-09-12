@@ -21,7 +21,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -36,7 +36,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -51,7 +51,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -66,7 +66,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.DFV,
+        type: [TimelineItemType.DFV],
         significance: 1,
     },
     {
@@ -81,7 +81,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $16.6 million',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -96,7 +96,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $9.7 million',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -117,7 +117,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             // },
         ],
         description: 'Position value of approximately $15.4 million',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -132,7 +132,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -147,7 +147,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.DFV,
+        type: [TimelineItemType.DFV],
         significance: 2,
         imgSrc: 'assets/dfv-short-interest.jpg'
     },
@@ -169,7 +169,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: '',
-        type: TimelineItemType.DFV,
+        type: [TimelineItemType.DFV],
         significance: 2,
         imgSrc: 'assets/dfv-cigar.jpg'
     },
@@ -185,7 +185,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.RC,
+        type: [TimelineItemType.RC],
         significance: 3,
         imgSrc: 'assets/ryan-cohen-loading.jpg'
     },
@@ -201,7 +201,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.DFV,
+        type: [TimelineItemType.DFV],
         significance: 2,
     },
     {
@@ -216,7 +216,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $17.4 million',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -238,7 +238,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             
         ],
         description: 'Subject: Maximizing Stockholder Value by Becoming the Ultimate Destination for Gamers, “GAMESTOP’S LEADERSHIP MUST PROMPTLY PIVOT FROM A BRICK-AND-MORTAR MINDSET TO A TECHNOLOGY-DRIVEN VISION”',
-        type: TimelineItemType.RC,
+        type: [TimelineItemType.RC],
         significance: 4,
     },
     {
@@ -259,7 +259,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.RC,
+        type: [TimelineItemType.RC],
         significance: 2,
     },
     {
@@ -280,7 +280,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Some time between September 30th and December 31st, Michael Burry sells his entire GME position, evidenced by the absense of any position in GameStop in form 13F',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -290,7 +290,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             {
                 url: 'https://lemmy.whynotdrs.org/post/156063',
                 type: 'LEMMY',
-                label: 'Lemmy chronicles thread - August 30, 2023',
+                label: '',
                 archiveLink: '',
             },
             {
@@ -308,7 +308,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -323,7 +323,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: '"May 2020, relatively sane times for $GME, I called in my lent-out GME shares. It took my brokers WEEKS to find my shares.  I cannot even imagine the sh*tstorm in settlement now. They may have to extend delivery timelines. #pigsgetslaughtered #nakedshorts"',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
         imgSrc: 'assets/burry-tweet-2021-01-29.jpg'
     },
@@ -331,12 +331,10 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         title: 'Brokerages shut off the buy button',
         dateYYYYMMDD: '2021-01-28',
         urls: [
-
-
             {
                 url: 'https://lemmy.whynotdrs.org/post/156058',
                 type: 'LEMMY',
-                label: 'Lemmy chronicles thread - August 30, 2023',
+                label: '',
                 archiveLink: '',
             },
             {
@@ -359,7 +357,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             // },
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 5,
     },
     {
@@ -374,7 +372,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
@@ -395,7 +393,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Game Stopped? Who Wins and Loses When Short Sellers, Social Media, and Retail Investors Collide. Keith Gill testifies before congress House Committee on Financial Services',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 4,
         imgSrc: 'assets/i-like-the-stock.png'
     },
@@ -411,7 +409,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"Tweeting and getting in the news lately apparently has caused the SEC to pay us a visit," the Scion Asset Management boss said in a now-deleted tweet.',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     // new TimelineItem(
@@ -419,7 +417,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
     //     '2021-04-08',
     //     'https://www.imdb.com/title/tt14439472/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_gamestop',
     //     'Low impact movie:: A group of young, risk-embracing day traders used social media to organize a massive stock buy-up. Jordan Belfort provides details about the story, exploring how it shook the world""s markets.',
-    //     TimelineItemType.MEDIA,
+    //     [TimelineItemType.MEDIA],
     //     1,
     // ),
     {
@@ -446,7 +444,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'DFV’s final reddit post',
-        type: TimelineItemType.DFV,
+        type: [TimelineItemType.DFV],
         significance: 3,
         imgSrc: 'assets/dfv-loading.jpg'
     },
@@ -462,7 +460,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.UNRELATED,
+        type: [TimelineItemType.OTHER],
         significance: 1,
         imgSrc: 'assets/gensler-loading.png'
     },
@@ -496,7 +494,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'DFV aka Roaring Kitty tweets an observing cat with background music of O Fortuna',
-        type: TimelineItemType.DFV,
+        type: [TimelineItemType.DFV],
         significance: 1,
         imgSrc: 'assets/dfv-tweet-2021-06-01.PNG'
     },
@@ -518,7 +516,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'In response to the statement: "There are a lot of short sellers borrowing stock that they didn`t have," Melissa Lee says:  "Naked shorts, yea."',
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/melissa-lee-naked-shorts.png'
     },
@@ -540,8 +538,23 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"People always ask me what is going on in the markets. It is simple. Greatest Speculative Bubble of All Time in All Things. By two orders of magnitude. #FlyingPigs360"',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
+    },
+    {
+        title: '"Sell the stock first and ask questions later" says Anthony Chukumba',
+        dateYYYYMMDD: '2021-09-09',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/pkvxdz/cnbc_interview_trying_hard_to_create_a_narrative/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread with video',
+                archiveLink: '',
+            }
+        ],
+        description: 'Two months after stating that "I will never cover GameStop ever again, there is just no point", Anthony Chukumba of Loop Capital goes on CNBC and says of GameStops recent earnings call: "That earnings call was shameful.  Absolutely positively shameful... it is shameful.  It was disrespectful to their shareholders...".  Followed soon after by: "Sell the stock first and ask questions later"',
+        type: [TimelineItemType.MEDIA],
+        significance: 2,
     },
     {
         title: 'DFVs former employer receives fine of $4.75 million from Massachusetts securities regulators',
@@ -567,7 +580,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: '"State regulators found MassMutual failed to detect nearly 1,700 trades by Gill, who was able to execute at least two trades in GameStop in excess of $700,000, beyond a company limit."',
-        type: TimelineItemType.DFV,
+        type: [TimelineItemType.DFV],
         significance: 1,
     },
     {
@@ -601,7 +614,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -628,7 +641,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -643,7 +656,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"The David-and-Goliath story about the group of amateur investors who bought stock in the failing video game chain, GameStop."',
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
@@ -658,7 +671,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Explores the stock market frenzy of GameStop, and how a group of armchair investors and online vigilantes ultimately helped expose the dark underbelly of Wall Street.',
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
@@ -673,7 +686,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Website created by members of the r/superstonk community',
-        type: TimelineItemType.DRS,
+        type: [TimelineItemType.DRS],
         significance: 3,
     },
     {
@@ -707,7 +720,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 1,
         imgSrc: 'assets/superstonk-r-place.png'
     },
@@ -741,7 +754,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 3,
     },
     {
@@ -768,7 +781,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: 'What even is a meme stock and why would the SEC go out of their way to disparage people that invest in meme stocks?',
-        type: TimelineItemType.EVENT,
+        type: [TimelineItemType.OTHER],
         significance: 2,
         imgSrc: 'assets/sec-meme-stocks.PNG'
     },
@@ -777,7 +790,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2022-08-18',
         urls: [],
         description: '',
-        type: TimelineItemType.UNRELATED,
+        type: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -804,7 +817,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'A look at the layers of intrigue, from the supercharged power of digital communities to the gamification of trading.',
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/eat-the-rich.PNG'
     },
@@ -826,7 +839,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Fidelity, a major financial services company with trillions of dollars of assets under management, felt compelled to try and disparage DRSd shareholders of GME',
-        type: TimelineItemType.DRS,
+        type: [TimelineItemType.DRS],
         significance: 2,
         imgSrc: 'assets/meme-stock-guy.jpeg',
     },
@@ -849,7 +862,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: TimelineItemType.UNRELATED,
+        type: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -871,7 +884,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: TimelineItemType.RC,
+        type: [TimelineItemType.RC],
         significance: 4,
         imgSrc: 'assets/rc-gmedd-interview.png'
     },
@@ -887,7 +900,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Website created by the team that made the drsgme.org website as a more neutral non-GME focused information site',
-        type: TimelineItemType.DRS,
+        type: [TimelineItemType.DRS],
         significance: 2,
     },
     {
@@ -902,7 +915,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.UNRELATED,
+        type: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -917,7 +930,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'the documentary was released 2 weeks early, therefore original scheduled date of June 5 2023',
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 1,
     },
     {
@@ -947,7 +960,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         ],
         description: 'Follows Ryan Cohen"s Rise from High School Graduate to Influential Force Behind the infamous GameStop Meme-Stock Phenomenon that exposed the need for market reform to protect retail investors from predatory shorting and corporate sabotage. ',
 
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
@@ -968,7 +981,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: TimelineItemType.DRS,
+        type: [TimelineItemType.DRS],
         significance: 3,
     },
     {
@@ -983,9 +996,25 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"I called and reached out, or tried to reach out to Teddy’s patent lawyer, but didn’t hear back in time for this hit."',
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/cnbc-hit-2023-07-06.PNG'
+    },
+    {
+        title: 'CNBC personality Joe Kernan grimaces upon the mention of GameStop',
+        dateYYYYMMDD: '2023-09-11',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/16furge/they_hate_when_gamestop_is_brought_up/',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: 'Guest: "...I saw Dumb Money on Friday night, which is the GameStop movie, and uh..." Joe Kernan:  *grimaces* ',
+        type: [TimelineItemType.MEDIA],
+        significance: 1,
+        imgSrc: 'assets/cnbc-joe-kernan-2023-09-11.PNG'
     },
     {
         title: 'Dumb Money movie released',
@@ -1005,7 +1034,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Dumb Money is the ultimate David vs. Goliath tale, based on the insane true story of everyday people who flipped the script on Wall Street and got rich by turning GameStop (yes, the mall videogame store) into the world"s hottest company.',
-        type: TimelineItemType.MEDIA,
+        type: [TimelineItemType.MEDIA],
         significance: 3,
     },
 ]; 

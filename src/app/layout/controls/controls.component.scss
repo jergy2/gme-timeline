@@ -1,7 +1,6 @@
 .controls-root{
     background-color: black;
     padding: 10px;
-    margin-top: 10px;
     display:flex;
     flex-direction: column;
     // justify-content: flex-start;
@@ -27,4 +26,11 @@
     width: 280px;
     display:flex;
     flex-direction: column;
+}
+
+.control{
+    margin: 2px;
+    background-color: rgb(241, 241, 241);
+    border-radius:  5px;
+    padding: 5px;
 }

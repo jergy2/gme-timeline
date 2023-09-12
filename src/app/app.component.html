@@ -1,25 +1,7 @@
-<div *ngIf="dataIsLoaded && !isMobile" class="app-component-root">
-  <div class="container-grid">
-    <app-sidebar class="app-sidebar"></app-sidebar>
-    <app-timeline-items class="app-timeline-items"></app-timeline-items>
-    <app-chart class="app-chart" *ngIf="showChart"></app-chart>
-    <div class="chart-loading" *ngIf="!showChart">
-      <div class="lds-ripple" >
-        <div></div>
-        <div></div>
-      </div>  
-    </div>
-  </div>
-</div>
-
-<div class="app-component-root-mobile" *ngIf="dataIsLoaded && isMobile">
-  <app-timeline-items class="app-timeline-items-mobile"></app-timeline-items>
-</div>
-
-<div class="app-component-root" *ngIf="!dataIsLoaded">
-  <div class="lds-ripple" >
+<div class="app-component-root">
+  <app-layout *ngIf="dataIsLoaded" class="app-layout"></app-layout>
+  <div class="lds-ripple" *ngIf="!dataIsLoaded">
     <div></div>
     <div></div>
   </div>  
 </div>
-
