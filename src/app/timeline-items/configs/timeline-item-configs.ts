@@ -85,6 +85,21 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 1,
     },
     {
+        title: 'Naked, Short and Greedy: Wall Streets Failure to Deliver published',
+        dateYYYYMMDD: '2019-12-02',
+        urls: [
+            {
+                url: 'https://www.goodreads.com/book/show/49089890-naked-short-and-greedy',
+                type: 'OTHER',
+                label: 'goodreads.com',
+                archiveLink: '',
+            },
+        ],
+        description: 'Susanne Trimbath publishes a book that eventually becomes foundational to GameStop investors understanding of the market',
+        type: [TimelineItemType.DRS],
+        significance: 2,
+    },
+    {
         title: 'Michael Burry increases GME position',
         dateYYYYMMDD: '2020-04-02',
         urls: [
@@ -696,6 +711,12 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 url: 'https://www.reddit.com/r/Superstonk/comments/13smw84/i_would_illegally_naked_short_sale_stocks_every/',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/197163',
+                type: 'LEMMY',
+                label: '',
                 archiveLink: '',
             }
         ],
