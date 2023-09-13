@@ -153,9 +153,15 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 label: 'Form 10-Q',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.youtube.com/watch?v=lB43u38BV8o',
+                type: 'YOUTUBE',
+                label: 'CNBC confirms that naked short selling is a real and prevalent problem',
+                archiveLink: '',
+            },
         ],
         description: 'Q1 2021 Ryan Cohen becomes chairman of GameStop, Matt Furlong becomes CEO',
-        type: [TimelineItemType.CORP],
+        type: [TimelineItemType.CORP, TimelineItemType.MEDIA],
         significance: 4,
         imgSrc: 'assets/rc-chairman.jpg'
     },

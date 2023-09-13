@@ -519,7 +519,24 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         type: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/melissa-lee-naked-shorts.png'
-    },
+    },    
+    // {
+    //     title: 'CNBC confirms that naked short selling is a real and prevalent problem',
+    //     dateYYYYMMDD: '2021-06-09',
+    //     urls: [
+    //         {
+    //             url: 'https://www.youtube.com/watch?v=lB43u38BV8o',
+    //             type: 'YOUTUBE',
+    //             label: 'CNBC confirms that naked short selling is a real and prevalent problem',
+    //             archiveLink: '',
+    //         },
+    //     ],
+    //     description: '', 
+    //     type: [TimelineItemType.MEDIA],
+    //     significance: 1,
+    // },    
+
+
     {
         title: 'Michael Burry tweet',
         dateYYYYMMDD: '2021-06-15',
@@ -669,25 +686,22 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Wikipedia link',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.youtube.com/watch?v=i-tKiiHWGkE',
+                type: 'YOUTUBE',
+                label: '"I would illegally naked short sell stocks every day.  Every day."',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13smw84/i_would_illegally_naked_short_sale_stocks_every/',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            }
         ],
         description: 'Explores the stock market frenzy of GameStop, and how a group of armchair investors and online vigilantes ultimately helped expose the dark underbelly of Wall Street.',
         type: [TimelineItemType.MEDIA],
         significance: 2,
-    },
-    {
-        title: 'DRSGME.org published by GameStop investors',
-        dateYYYYMMDD: '2022-03-18',
-        urls: [
-            {
-                url: 'https://www.DRSGME.org',
-                type: 'OTHER',
-                label: 'DRSGME.org link',
-                archiveLink: '',
-            },
-        ],
-        description: 'Website created by members of the r/superstonk community',
-        type: [TimelineItemType.DRS],
-        significance: 3,
     },
     {
         title: 'Superstonk participates in r/place 2022',
@@ -781,7 +795,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: 'What even is a meme stock and why would the SEC go out of their way to disparage people that invest in meme stocks?',
-        type: [TimelineItemType.OTHER],
+        type: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/sec-meme-stocks.PNG'
     },
@@ -792,6 +806,34 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         description: '',
         type: [TimelineItemType.OTHER],
         significance: 2,
+    },
+    {
+        title: 'An example of rot within the system',
+        dateYYYYMMDD: '2022-09-21',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/xkiiog/this_moment_from_the_house_committee_on_financial/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/xmujd3/the_big_short_director_adam_mckay_tweeted_a/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread about Adam Mckay tweeting this',
+                archiveLink: '',
+            },
+            {
+                url: 'https://jacobin.com/2022/09/trey-hollingsworth-bank-of-america-revolving-door-lobbying/',
+                type: 'NEWS',
+                label: 'jacobin.com',
+                archiveLink: '',
+            },
+        ],
+        description: 'A team member of congressional representative Trey Hollingsworth goes from overseeing the banks to joining Bank of America where her father already works.',
+        type: [TimelineItemType.OTHER],
+        significance: 1,
+        imgSrc: 'assets/2022-09-21-boa-subversion.PNG'
     },
     {
         title: 'Eat the Rich: The GameStop Saga - Netflix 3 episode series',
@@ -820,28 +862,6 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         type: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/eat-the-rich.PNG'
-    },
-    {
-        title: 'Fidelity posts meme-stock guy',
-        dateYYYYMMDD: '2022-10-26',
-        urls: [
-            {
-                url: 'https://lemmy.whynotdrs.org/post/4181',
-                type: 'LEMMY',
-                label: 'Lemmy discussion',
-                archiveLink: '',
-            },
-            {
-                url: 'https://www.reddit.com/r/Superstonk/comments/yedjog/in_case_you_missed_it_fidelitys_meme_stock_guy/?sort=top',
-                type: 'REDDIT',
-                label: 'Superstonk thread',
-                archiveLink: '',
-            },
-        ],
-        description: 'Fidelity, a major financial services company with trillions of dollars of assets under management, felt compelled to try and disparage DRSd shareholders of GME',
-        type: [TimelineItemType.DRS],
-        significance: 2,
-        imgSrc: 'assets/meme-stock-guy.jpeg',
     },
     {
         title: 'Crypto giant FTX collapses into bankruptcy',
@@ -888,21 +908,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 4,
         imgSrc: 'assets/rc-gmedd-interview.png'
     },
-    {
-        title: 'WhyDRS.org published',
-        dateYYYYMMDD: '2023-02-14',
-        urls: [
-            {
-                url: 'https://www.whydrs.org',
-                type: 'OTHER',
-                label: 'WhyDRS.org',
-                archiveLink: '',
-            },
-        ],
-        description: 'Website created by the team that made the drsgme.org website as a more neutral non-GME focused information site',
-        type: [TimelineItemType.DRS],
-        significance: 2,
-    },
+
     {
         title: 'Citadel founder Ken Griffin donates $300 million more to alma mater Harvard',
         dateYYYYMMDD: '2023-04-11',
@@ -919,7 +925,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 1,
     },
     {
-        title: 'GameStop investors (Mulligan bros) release of Apes Together Strong',
+        title: 'Apes Together Strong released',
         dateYYYYMMDD: '2023-05-22',
         urls: [
             {
@@ -928,10 +934,22 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'Superstonk thread',
                 archiveLink: '',
             },
+            {
+                url: 'https://vimeo.com/ondemand/433664',
+                type: 'OTHER',
+                label: 'Apes Together Strong on Vimeo',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.youtube.com/watch?v=TwNzVWDDb6s',
+                type: 'YOUTUBE',
+                label: 'Apes Together Strong trailer',
+                archiveLink: '',
+            },
         ],
-        description: 'the documentary was released 2 weeks early, therefore original scheduled date of June 5 2023',
+        description: 'After 2 years, GameStop investors (Mulligan bros) release Apes Together Strong, a documentary documentary about the endemic corruption on Wall Street and the “Apes” fighting for transparency and accountability in our capital markets.',
         type: [TimelineItemType.MEDIA],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'Making of the Meme King - CNBC documentary',
@@ -962,27 +980,6 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         type: [TimelineItemType.MEDIA],
         significance: 2,
-    },
-    {
-        title: 'Reddit permanently bans the r/DRSyourGME subreddit',
-        dateYYYYMMDD: '2023-06-14',
-        urls: [
-            {
-                url: 'https://lemmy.whynotdrs.org/post/4183',
-                type: 'LEMMY',
-                label: 'Lemmy thread',
-                archiveLink: '',
-            },
-            {
-                url: 'https://www.drsgme.org/the-stockholder-list-summary',
-                type: 'OTHER',
-                label: 'DRSGME.org',
-                archiveLink: '',
-            },
-        ],
-        description: '',
-        type: [TimelineItemType.DRS],
-        significance: 3,
     },
     {
         title: 'CNBC panelists (paid actors) put out a hit piece about Ryan Cohen, Bed Bath and Beyond, Teddy',
