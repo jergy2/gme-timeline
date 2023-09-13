@@ -15,7 +15,7 @@ export class ChartDataSetManager {
   private _timelineItems: TimelineItem[] = [];
 
 
-  private _signifianceValue: number = 1;
+  private _signifianceValue: number = 2;
   private _timelineCategories: TimelineItemType[] = [
     TimelineItemType.CORP, TimelineItemType.DFV, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC
   ];

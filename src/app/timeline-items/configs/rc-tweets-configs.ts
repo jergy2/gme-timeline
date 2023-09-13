@@ -2611,39 +2611,39 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         type: [TimelineItemType.RC],
         significance: 1,
     },
-    {
-        title: 'Ryan Cohen tweets',
-        dateYYYYMMDD: '2022-07-21',
-        urls: [
-            {
-                url: 'https://twitter.com/ryancohen/status/1550285404149952513',
-                type: 'X-TWITTER',
-                label: 'Ryan Cohen tweet',
-                archiveLink: '',
-            },
-            {
-                url: 'https://twitter.com/ryancohen/status/1550293000344899584',
-                type: 'X-TWITTER',
-                label: 'Ryan Cohen tweet',
-                archiveLink: '',
-            },
-            {
-                url: 'https://www.reddit.com/r/Superstonk/comments/w4x62m/ryan_cohen_on_twitter_happy_splividend_week/?sort=top',
-                type: 'REDDIT',
-                label: 'Superstonk thread',
-                archiveLink: '',
-            },
-            {
-                url: 'https://www.reddit.com/r/Superstonk/comments/w4xt2u/ryan_cohen_on_twitter_the_people_who_work_hardest/?sort=top',
-                type: 'REDDIT',
-                label: 'Superstonk thread',
-                archiveLink: '',
-            },
-        ],
-        description: '"Unless you sweat on the job you don’t know hard work. I have much respect for everyone working on the ground in our stores.", "The people who work hardest usually complain the least."',
-        type: [TimelineItemType.RC],
-        significance: 0,
-    },
+    // {
+    //     title: 'Ryan Cohen tweets',
+    //     dateYYYYMMDD: '2022-07-21',
+    //     urls: [
+    //         {
+    //             url: 'https://twitter.com/ryancohen/status/1550285404149952513',
+    //             type: 'X-TWITTER',
+    //             label: 'Ryan Cohen tweet',
+    //             archiveLink: '',
+    //         },
+    //         {
+    //             url: 'https://twitter.com/ryancohen/status/1550293000344899584',
+    //             type: 'X-TWITTER',
+    //             label: 'Ryan Cohen tweet',
+    //             archiveLink: '',
+    //         },
+    //         {
+    //             url: 'https://www.reddit.com/r/Superstonk/comments/w4x62m/ryan_cohen_on_twitter_happy_splividend_week/?sort=top',
+    //             type: 'REDDIT',
+    //             label: 'Superstonk thread',
+    //             archiveLink: '',
+    //         },
+    //         {
+    //             url: 'https://www.reddit.com/r/Superstonk/comments/w4xt2u/ryan_cohen_on_twitter_the_people_who_work_hardest/?sort=top',
+    //             type: 'REDDIT',
+    //             label: 'Superstonk thread',
+    //             archiveLink: '',
+    //         },
+    //     ],
+    //     description: '"Unless you sweat on the job you don’t know hard work. I have much respect for everyone working on the ground in our stores.", "The people who work hardest usually complain the least."',
+    //     type: [TimelineItemType.RC],
+    //     significance: 0,
+    // },
     {
         title: 'Ryan Cohen tweet',
         dateYYYYMMDD: '2022-07-27',

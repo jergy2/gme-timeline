@@ -21,7 +21,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: '',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop Reports Second Quarter 2020 Results',
@@ -42,7 +42,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: '',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop Reports Third Quarter 2020 Results',
@@ -63,7 +63,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q3 2020',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
 
     {
@@ -85,7 +85,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q4 2020',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop Completes At-The-Market Equity Offering Program',
@@ -184,7 +184,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q2 2021',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop publishes 2021 Q3 financial report featuring 5.2 million (20.8 million post-split) shares directly registered',
@@ -245,7 +245,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q4 2021',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop Reports First Quarter Fiscal Year 2022 Results',
@@ -272,7 +272,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q1 2022',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop does a 4-for-1 stock split in the form of a stock dividend',
@@ -305,7 +305,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: '',
         type: [TimelineItemType.CORP],
-        significance: 4,
+        significance: 3,
         specialIdentifier: 'STOCK-SPLIT',
     },
     {
@@ -333,7 +333,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q2 2022',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop Forms Partnership with FTX',
@@ -382,7 +382,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q3 2022',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop Reports Fourth Quarter and Fiscal Year 2022 Results',
@@ -409,7 +409,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q4 2022',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop publishes 2022 Report',
@@ -430,7 +430,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: '',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop Discloses First Quarter 2023 Results',
@@ -457,7 +457,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
         ],
         description: 'Q1 2023',
         type: [TimelineItemType.CORP],
-        significance: 1,
+        significance: 2,
     },
     {
         title: 'GameStop Announces Election of Ryan Cohen as Executive Chairman',
