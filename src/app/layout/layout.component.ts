@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ScreeSizeService } from '../scree-size.service';
-import { ChartDataManagerService } from '../chart/chart-data-manager-service';
+import { DisplayService } from '../display.service';
+import { ChartDataManagerService } from '../pages/display-timeline/chart/chart-data-manager-service';
 
 @Component({
   selector: 'app-layout',
@@ -9,18 +10,13 @@ import { ChartDataManagerService } from '../chart/chart-data-manager-service';
 })
 export class LayoutComponent {
 
-  constructor(private _sizeService: ScreeSizeService, private _dataManagerService: ChartDataManagerService) { }
+  constructor(private _sizeService: ScreeSizeService, private _dataManagerService: ChartDataManagerService, private _displayService: DisplayService) { }
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
-  private _chartIsLoading: boolean = false;
-  public get showChart(): boolean { return !this._chartIsLoading; }
 
-  ngOnInit() {
-    this._dataManagerService.isUpdating$.subscribe({
-      next: (isUpdating) => {
-        // console.log("isupdating", isUpdating)
-        this._chartIsLoading = isUpdating
-      }
-    });
-  }
+  public get displayIsTimeline(): boolean { return this._displayService.displayIsTimeline; }
+  public get displayIsFinancials(): boolean { return this._displayService.displayIsFinancials; }
+  
+
+
 }

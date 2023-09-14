@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 import { TimelineItem } from './timeline-item.class';
 import { TimelineItemType } from './timeline-item-type.enum';
 import * as dayjs from 'dayjs';
-import { ChartDataManagerService } from 'src/app/chart/chart-data-manager-service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { urlType } from './timeline-item-url.interface';
 import { TimelineItemsService } from '../timeline-items.service';
+import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 
 @Component({
   selector: 'app-timeline-item',

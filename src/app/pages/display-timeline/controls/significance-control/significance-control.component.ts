@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { SidebarService } from '../../sidebar/sidebar.service';
-import { ChartDataManagerService } from 'src/app/chart/chart-data-manager-service';
-import { TimelineItemsService } from 'src/app/timeline-items/timeline-items.service';
+import { ChartDataManagerService } from 'src/app/pages/display-timeline/chart/chart-data-manager-service';
+import { TimelineItemsService } from 'src/app/pages/display-timeline/timeline-items/timeline-items.service';
 
 @Component({
   selector: 'app-significance-control',

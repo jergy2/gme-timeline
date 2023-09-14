@@ -1,0 +1,53 @@
+.controls-root{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls-bar-container{
+    height: 50px;
+    width: 300px;
+}
+.controls-bar{
+
+    border-radius: 50px;
+    padding: 5px;
+    padding-left:20px;
+    padding-right: 20px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.controls-bar:hover{
+    border: 1px solid var(--color-special);
+}
+
+.expanded{
+    border-radius: 15px;
+    padding-bottom: 10px;
+}
+
+.icon-container{
+    width: 100%;
+    display:flex;
+}
+
+.controls-expanded{
+    width: 280px;
+    display:flex;
+    flex-direction: column;
+}
+
+.control{
+    margin: 2px;
+    background-color: rgb(241, 241, 241);
+    border-radius:  5px;
+    padding: 5px;
+}

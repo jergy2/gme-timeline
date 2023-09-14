@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
-import { HistoricGMEDataService } from '../historic-gme-data.service';
 import { ChartDataManagerService } from './chart-data-manager-service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
-import { ScreeSizeService } from '../scree-size.service';
 import { TimelineItem } from '../timeline-items/timeline-item/timeline-item.class';
+import { HistoricGMEDataService } from 'src/app/historic-gme-data.service';
+import { ScreeSizeService } from 'src/app/scree-size.service';
 
 @Component({
   selector: 'app-chart',

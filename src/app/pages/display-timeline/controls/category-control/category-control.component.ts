@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TimelineItemType } from 'src/app/timeline-items/timeline-item/timeline-item-type.enum';
 import { CategoryButtons as CategoryButtonManager } from './category-button-manager.class';
 import { CategoryButton } from './category-button.interface';
-import { ChartDataManagerService } from 'src/app/chart/chart-data-manager-service';
-import { TimelineItemsService } from 'src/app/timeline-items/timeline-items.service';
-
+import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
+import { TimelineItemsService } from '../../timeline-items/timeline-items.service';
+import { TimelineItemType } from '../../timeline-items/timeline-item/timeline-item-type.enum';
 @Component({
   selector: 'app-category-control',
   templateUrl: './category-control.component.html',

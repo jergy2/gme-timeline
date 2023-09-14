@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ChartDataSetManager } from './chart-dataset-manager.class';
-import { TimelineItem } from 'src/app/timeline-items/timeline-item/timeline-item.class';
-import { TimelineItemType } from 'src/app/timeline-items/timeline-item/timeline-item-type.enum';
+import { TimelineItemType } from '../timeline-items/timeline-item/timeline-item-type.enum';
+import { TimelineItem } from '../timeline-items/timeline-item/timeline-item.class';
 
 @Injectable({
   providedIn: 'root'

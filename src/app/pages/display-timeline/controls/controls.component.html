@@ -1,0 +1,16 @@
+<div class="controls-root"
+    (mouseenter)="onMouseEnterControls()" (mouseleave)="onMouseLeaveControls()" >
+    <div class="controls-bar-container" >
+        <div class="controls-bar shadow" [ngClass]="isExpanded ? 'expanded' : 'not-expanded'">
+            <div class="icon-container">
+                <fa-icon [icon]="faSliders" style="font-size: 1.7em;"></fa-icon>
+            </div>
+            <div class="controls-expanded" *ngIf="isExpanded" [@appear]="'appear'">
+                <app-significance-control class="control"></app-significance-control>
+                <app-category-control class="control"></app-category-control>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>

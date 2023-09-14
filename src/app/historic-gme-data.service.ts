@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { GmePriceEntry } from './timeline-items/timeline-item/gme-price-entry.interface';
 import * as dayjs from 'dayjs';
+import { GmePriceEntry } from './pages/display-timeline/timeline-items/timeline-item/gme-price-entry.interface';
 
 @Injectable({
   providedIn: 'root'

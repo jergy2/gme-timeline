@@ -1,4 +1,5 @@
-import { TimelineItemType } from "src/app/timeline-items/timeline-item/timeline-item-type.enum";
+
+import { TimelineItemType } from "../../timeline-items/timeline-item/timeline-item-type.enum";
 import { CategoryButton } from "./category-button.interface";
 import { BehaviorSubject, Observable } from 'rxjs';
 

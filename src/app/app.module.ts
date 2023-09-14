@@ -4,19 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgChartsModule } from 'ng2-charts';
-import { TimelineItemComponent } from './timeline-items/timeline-item/timeline-item.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ChartComponent } from './chart/chart.component';
-import { CustomTooltipComponent } from './chart/custom-tooltip/custom-tooltip.component';
-import { TimelineItemsComponent } from './timeline-items/timeline-items.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SignificanceControlComponent } from './layout/controls/significance-control/significance-control.component';
-import { AboutComponent } from './layout/about/about.component';
-import { ControlsComponent } from './layout/controls/controls.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { LayoutComponent } from './layout/layout.component';
-import { CategoryControlComponent } from './layout/controls/category-control/category-control.component';
+import { TimelineItemComponent } from './pages/display-timeline/timeline-items/timeline-item/timeline-item.component';
+import { ChartComponent } from './pages/display-timeline/chart/chart.component';
+import { CustomTooltipComponent } from './pages/display-timeline/chart/custom-tooltip/custom-tooltip.component';
+import { TimelineItemsComponent } from './pages/display-timeline/timeline-items/timeline-items.component';
+import { AboutComponent } from './layout/about/about.component';
+import { FinancialsComponent } from './pages/financials/financials.component';
+import { DisplayTimelineComponent } from './pages/display-timeline/display-timeline.component';
+import { OwnershipComponent } from './pages/ownership/ownership.component';
+import { SignificanceControlComponent } from './pages/display-timeline/controls/significance-control/significance-control.component';
+import { ControlsComponent } from './pages/display-timeline/controls/controls.component';
+import { CategoryControlComponent } from './pages/display-timeline/controls/category-control/category-control.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { CategoryControlComponent } from './layout/controls/category-control/cat
     ControlsComponent,
     SidebarComponent,
     LayoutComponent,
-    CategoryControlComponent
+    CategoryControlComponent,
+    FinancialsComponent,
+    DisplayTimelineComponent,
+    OwnershipComponent
   ],
   imports: [
     BrowserModule,

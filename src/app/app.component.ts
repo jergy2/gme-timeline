@@ -1,17 +1,18 @@
 import { Component, HostListener } from '@angular/core';
 import { HistoricGMEDataService } from './historic-gme-data.service';
-import { ChartDataSetManager } from './chart/chart-dataset-manager.class';
-import { ChartDataManagerService } from './chart/chart-data-manager-service';
 import { ScreeSizeService } from './scree-size.service';
-import { TimelineItem } from './timeline-items/timeline-item/timeline-item.class';
-import { TimelineItemsBuilder } from './timeline-items/timeline-items-builder.class';
-import { timelineItemConfigs } from './timeline-items/configs/timeline-item-configs';
-import { TimelineItemsService } from './timeline-items/timeline-items.service';
-import { rcTweetsConfigs } from './timeline-items/configs/rc-tweets-configs';
-import { corporateEventConfigs } from './timeline-items/configs/gamestop-corporate-configs';
 import { timer } from 'rxjs';
-import { drsItemConfigs } from './timeline-items/configs/drs-configs';
-import { mediaItemConfigs } from './timeline-items/configs/media-configs';
+import { DisplayService } from './display.service';
+import { timelineItemConfigs } from './pages/display-timeline/timeline-items/configs/timeline-item-configs';
+import { rcTweetsConfigs } from './pages/display-timeline/timeline-items/configs/rc-tweets-configs';
+import { corporateEventConfigs } from './pages/display-timeline/timeline-items/configs/gamestop-corporate-configs';
+import { drsItemConfigs } from './pages/display-timeline/timeline-items/configs/drs-configs';
+import { mediaItemConfigs } from './pages/display-timeline/timeline-items/configs/media-configs';
+import { TimelineItem } from './pages/display-timeline/timeline-items/timeline-item/timeline-item.class';
+import { TimelineItemsBuilder } from './pages/display-timeline/timeline-items/timeline-items-builder.class';
+import { ChartDataManagerService } from './pages/display-timeline/chart/chart-data-manager-service';
+import { TimelineItemsService } from './pages/display-timeline/timeline-items/timeline-items.service';
+import { ChartDataSetManager } from './pages/display-timeline/chart/chart-dataset-manager.class';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,8 @@ export class AppComponent {
     private _dataService: HistoricGMEDataService, 
     private _sizeService: ScreeSizeService,
     private _dataManagerService: ChartDataManagerService,
-    private _timelineItemsService: TimelineItemsService) {
+    private _timelineItemsService: TimelineItemsService,
+    private _displayService: DisplayService) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -50,6 +52,8 @@ export class AppComponent {
           next: () => { },
           error: () => { },
           complete: () => {
+
+            this._displayService.setDisplay('TIMELINE');
             const allConfigs = [
               timelineItemConfigs,
               rcTweetsConfigs,
