@@ -52,8 +52,7 @@ export class AppComponent {
           next: () => { },
           error: () => { },
           complete: () => {
-
-            this._displayService.setDisplay('TIMELINE');
+            // this._displayService.setDisplay('TIMELINE');
             const allConfigs = [
               timelineItemConfigs,
               rcTweetsConfigs,

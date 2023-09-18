@@ -1,5 +1,4 @@
-<div [ngClass]="isMobile ? 'timeline-item-root-mobile' : 'timeline-item-root'" class="not-expanded"
-    *ngIf="!item.isSelected" [ngStyle]="ngStyle" (click)="onClickItem(item)">
+<div [ngClass]="ngClass" *ngIf="!item.isSelected" [ngStyle]="ngStyle" (click)="onClickItem(item)">
     <div class="top-row">
         <div class="date">
             {{ date(item.dateYYYYMMDD) }}
@@ -13,8 +12,7 @@
     </div>
 
 </div>
-<div [ngClass]="isMobile ? 'timeline-item-root-mobile' : 'timeline-item-root expanded'" *ngIf="item.isSelected"
-    [ngStyle]="ngStyle">
+<div [ngClass]="ngClass" [ngStyle]="ngStyle" *ngIf="item.isSelected">
     <div class="date">
         <div>
             {{ date(item.dateYYYYMMDD) }}

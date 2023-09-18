@@ -1,10 +1,7 @@
-<div class="layout-root">
-
-    <div *ngIf="isMobile" class="top-bar">TopBar</div>
+<div class="layout-root" [ngClass]="isMobile === true ? 'mobile-root' : ''">
+    <app-mobile-top-bar *ngIf="isMobile" class="top-bar"></app-mobile-top-bar>
     <app-sidebar class="app-sidebar" *ngIf="!isMobile"></app-sidebar>
     <div class="router-outlet">
         <router-outlet></router-outlet>
     </div>
-    
-
 </div>

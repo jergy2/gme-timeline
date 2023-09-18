@@ -1,8 +1,8 @@
 <div class="sidebar-column">
     <!-- <div class="sidebar-button shadow"  [routerLink]="'timeline'" [routerLinkActive]="'active-link'">
         <fa-icon [icon]="faChartLine"></fa-icon>
-    </div> -->
-    <!-- <div class="sidebar-button shadow" [routerLink]="'financials'" 
+    </div>
+    <div class="sidebar-button shadow" [routerLink]="'financials'" 
     [routerLinkActive]="'active-link'">
         <fa-icon [icon]="faCoins"></fa-icon>
     </div> -->
@@ -10,5 +10,23 @@
     [routerLinkActive]="'active-link'">
         <fa-icon [icon]="faChartPie"></fa-icon>
     </div> -->
-    <app-about ></app-about>
+    <div class="sidebar-button shadow" (mouseenter)="onMouseEnterAbout()" (mouseleave)="onMouseLeaveAbout()" >
+        <div style="display:flex;flex-direction: row; justify-content: flex-end; width: 100%;" *ngIf="!isOverAbout">
+            <fa-icon [icon]="faQuestion" style="font-size: 1.9em;"></fa-icon>
+        </div>
+        <div style="display:flex;flex-direction: column; width: 100%; max-width: 300px;" *ngIf="isOverAbout">
+            <div style="display:flex;flex-direction: row; justify-content: space-between; align-items: center; width: 100%;">
+                <div style="font-size: 1.2em; color: black;">
+                    About gmetimeline.org
+                </div>
+                <fa-icon [icon]="faQuestion" style="font-size: 1.9em;"></fa-icon>
+            </div>
+            <div  [@appear]="'appear'">
+                <app-about ></app-about>
+            </div>
+        </div>
+        
+        
+    </div>
+    
 </div>

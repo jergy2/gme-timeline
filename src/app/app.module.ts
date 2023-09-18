@@ -20,6 +20,9 @@ import { OwnershipComponent } from './pages/ownership/ownership.component';
 import { SignificanceControlComponent } from './pages/display-timeline/controls/significance-control/significance-control.component';
 import { ControlsComponent } from './pages/display-timeline/controls/controls.component';
 import { CategoryControlComponent } from './pages/display-timeline/controls/category-control/category-control.component';
+import { BalanceSheetComponent } from './pages/financials/balance-sheet/balance-sheet.component';
+import { BalanceSheetBarChartComponent } from './pages/financials/balance-sheet-bar-chart/balance-sheet-bar-chart.component';
+import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { CategoryControlComponent } from './pages/display-timeline/controls/cate
     CategoryControlComponent,
     FinancialsComponent,
     DisplayTimelineComponent,
-    OwnershipComponent
+    OwnershipComponent,
+    BalanceSheetComponent,
+    BalanceSheetBarChartComponent,
+    MobileTopBarComponent
   ],
   imports: [
     BrowserModule,

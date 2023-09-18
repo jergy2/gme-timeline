@@ -155,6 +155,22 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         imgSrc: 'assets/sec-meme-stocks.PNG'
     },
     
+    {
+        title: 'Jim Cramer gets dunked on by Victor from California',
+        dateYYYYMMDD: '2022-08-23',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/ww2czg/guy_calls_into_jim_cramers_mad_money_and_says/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: 'Victor from California calls in to Mad Money and mentions the forbidden stock',
+        type: [TimelineItemType.MEDIA],
+        significance: 2,
+        imgSrc: 'assets/cramer-2022-08-23.PNG'
+    },
 
 
     {
@@ -210,6 +226,21 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         type: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/eat-the-rich.PNG'
+    },
+    {
+        title: 'Jim Cramer admits that the stock market is rigged',
+        dateYYYYMMDD: '2023-02-03',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/10siamz/a_new_hero_is_born_shoutout_to_nathan_in_florida/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: 'Nathan: "...you’re pretty adamant that crypto is a big scam, it’s all rigged, but as we saw with GameStop back a few years ago, that big firms have the power to shut down trading if they’re losing money, like when Robinhood got shut down.  How is that less rigged than crypto with what we saw with FTX?" Cramer:  "It was totally rigged. It’s okay. It was rigged.  I called it out, in one of those movies I called it out.  I don’t want any touching that.  I like great American stories.  I don’t like the hokum."',
+        type: [TimelineItemType.MEDIA],
+        significance: 2,
     },
     {
         title: 'Apes Together Strong released',

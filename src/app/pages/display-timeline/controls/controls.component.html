@@ -1,6 +1,6 @@
-<div class="controls-root"
-    (mouseenter)="onMouseEnterControls()" (mouseleave)="onMouseLeaveControls()" >
-    <div class="controls-bar-container" >
+<div class="controls-root" *ngIf="!isMobile" (mouseenter)="onMouseEnterControls()"
+    (mouseleave)="onMouseLeaveControls()">
+    <div class="controls-bar-container">
         <div class="controls-bar shadow" [ngClass]="isExpanded ? 'expanded' : 'not-expanded'">
             <div class="icon-container">
                 <fa-icon [icon]="faSliders" style="font-size: 1.7em;"></fa-icon>
@@ -11,6 +11,13 @@
             </div>
         </div>
     </div>
-    
-    
+
+
+</div>
+
+<div class="controls-root-mobile" *ngIf="isMobile">
+    <div class="controls-expanded">
+        <app-significance-control class="control"></app-significance-control>
+        <app-category-control class="control"></app-category-control>
+    </div>
 </div>

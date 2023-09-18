@@ -1,0 +1,21 @@
+<div class="mobile-top-bar-root" (mouseleave)="onMouseLeave()" (mouseenter)="onMouseEnter()">
+    <div class="mobile-bar-minimized">
+        <div>
+            <div class="icon-container" *ngIf="isTimeline" style="margin-left: 3px;" (click)="onClickControls()">
+                <fa-icon [icon]="faSliders" style="font-size:1.6em;" class="button"></fa-icon>
+            </div>
+            
+        </div>
+        <div style="margin-right: 3px;" class="icon-container" (click)="onClickAbout()">
+            <fa-icon [icon]="faQuestion" style="font-size: 1.4em;" class="button"></fa-icon>
+        </div> 
+    </div>
+    <div class="mobile-bar-expanded shadow" *ngIf="isExpanded">
+        <div *ngIf="showTimeline" style="padding: 10px;">
+            <app-controls></app-controls>
+        </div>
+        <div *ngIf="showAbout" style="width: 100%;">
+            <app-about style="width: 100%;"></app-about>
+        </div>
+    </div>
+</div>

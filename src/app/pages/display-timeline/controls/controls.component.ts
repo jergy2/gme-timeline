@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { faSliders } from '@fortawesome/free-solid-svg-icons';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
 import { SidebarService } from 'src/app/layout/sidebar/sidebar.service';
+import { ScreeSizeService } from 'src/app/scree-size.service';
 
 @Component({
   selector: 'app-controls',
@@ -77,13 +78,15 @@ import { SidebarService } from 'src/app/layout/sidebar/sidebar.service';
 })
 export class ControlsComponent {
 
-  constructor(private _sidebarService: SidebarService){}
+  constructor(private _sidebarService: SidebarService, private _sizeService: ScreeSizeService){}
 
   public get faSliders() { return faSliders; }
 
   public get isMinimized(): boolean { return this._sidebarService.controlsState === 'MINIMIZED'; }
   public get isExpanded(): boolean { return this._sidebarService.controlsState === 'EXPANDED'; }
   public get isPinned(): boolean { return this._sidebarService.controlsState === 'PINNED'; }
+
+  public get isMobile(): boolean { return this._sizeService.isMobile; }
 
   public onMouseEnterControls(){
     this._sidebarService.changeControlsState('EXPANDED');

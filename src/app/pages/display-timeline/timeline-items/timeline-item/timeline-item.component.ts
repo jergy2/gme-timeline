@@ -29,6 +29,22 @@ export class TimelineItemComponent {
 
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
+  public get ngClass(): any { 
+    const mobileExpanded = this.isMobile && this.item.isSelected;
+    const mobileNotExpanded = this.isMobile && !this.item.isSelected;
+    const notMobileExpanded = !this.isMobile && this.item.isSelected;
+    const notMobileNotExpanded = !this.isMobile && !this.item.isSelected;
+    if(mobileExpanded){
+      return 'mobile-expanded';
+    }else if(mobileNotExpanded){
+      return 'mobile-not-expanded';
+    }else if(notMobileExpanded){
+      return 'not-mobile-expanded';
+    }else if(notMobileNotExpanded){
+      return 'not-mobile-not-expanded';
+    }
+  }
+
 
   public onClickSplit(){ this._itemService.onClickStockSplitItem(); }
 

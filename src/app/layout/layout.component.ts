@@ -14,8 +14,8 @@ export class LayoutComponent {
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
 
-  public get displayIsTimeline(): boolean { return this._displayService.displayIsTimeline; }
-  public get displayIsFinancials(): boolean { return this._displayService.displayIsFinancials; }
+  // public get displayIsTimeline(): boolean { return this._displayService.displayIsTimeline; }
+  // public get displayIsFinancials(): boolean { return this._displayService.displayIsFinancials; }
   
 
 

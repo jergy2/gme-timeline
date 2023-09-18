@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { TimelineItemsService } from './timeline-items.service';
 import { TimelineItem } from './timeline-item/timeline-item.class';
@@ -9,7 +9,7 @@ import { ScreeSizeService } from 'src/app/scree-size.service';
   templateUrl: './timeline-items.component.html',
   styleUrls: ['./timeline-items.component.scss']
 })
-export class TimelineItemsComponent implements OnInit {
+export class TimelineItemsComponent implements OnInit, AfterViewInit {
   constructor(private _itemService: TimelineItemsService, private _screenService: ScreeSizeService) { }
 
   private _selectedItem: TimelineItem | null = null;
@@ -34,12 +34,7 @@ export class TimelineItemsComponent implements OnInit {
           selected.item.select();
           const scrollToElement = document.getElementById(this.itemId(selected.item));
           if(!this.isMobile){
-            if(this._isChromeBrowser()){
-              scrollToElement?.scrollIntoView({ behavior: "instant", block: "center", inline: "center" });
-            }else{
-              scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-            }
-            
+            this._scrollIntoView(scrollToElement);
           }else if(this.isMobile){
             // scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
           }
@@ -47,6 +42,23 @@ export class TimelineItemsComponent implements OnInit {
         }
       }
     });
+    
+  }
+
+  ngAfterViewInit(){
+    if(!this.isMobile){
+      const finalItem = this.displayedTimelineItems[this.displayedTimelineItems.length-1];
+      const scrollToElement = document.getElementById(this.itemId(finalItem));
+      this._scrollIntoView(scrollToElement);
+    }
+  }
+
+  private _scrollIntoView(scrollElement: HTMLElement | null){
+    if(this._isChromeBrowser()){
+      scrollElement?.scrollIntoView({ behavior: "instant", block: "center", inline: "center" });
+    }else{
+      scrollElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    }
   }
 
   public itemId(item: TimelineItem): string {
