@@ -178,15 +178,21 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2022-08-29',
         urls: [
             {
+                url: 'https://lemmy.whynotdrs.org/post/217801',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/x0o988/cnbc_cuts_off_guest_immediately_for_mentioning/',
                 type: 'REDDIT',
-                label: 'Superstonk - CNBC cuts off guest immediately for mentioning “shorts covering”',
+                label: 'Superstonk August 29 - CNBC cuts off guest immediately for mentioning “shorts covering”',
                 archiveLink: '',
             },
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/x1qgr9/its_glorious_cnbc_feeling_the_need_to_explain/',
                 type: 'REDDIT',
-                label: 'Superstonk - Its glorious! CNBC feeling the need to explain themselves. ',
+                label: 'Superstonk August 30 - Its glorious! CNBC feeling the need to explain themselves. ',
                 archiveLink: '',
             },
         ],
@@ -195,10 +201,6 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         significance: 2,
         imgSrc: 'assets/cnbc-2022-08-30.PNG'
     },
-
-
-    
-
     {
         title: 'Eat the Rich: The GameStop Saga - Netflix 3 episode series',
         dateYYYYMMDD: '2022-09-28',
