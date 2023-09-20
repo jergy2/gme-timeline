@@ -5,10 +5,11 @@ import { DisplayTimelineComponent } from './pages/display-timeline/display-timel
 import { OwnershipComponent } from './pages/ownership/ownership.component';
 
 const routes: Routes = [
-  { path: 'timeline', component: DisplayTimelineComponent},
+  { path: '*', redirectTo: 'timeline' },
+  { path: 'timeline', component: DisplayTimelineComponent },
   { path: 'financials', component: FinancialsComponent },
   { path: 'ownership', component: OwnershipComponent },
-  { path: '**', redirectTo: 'timeline' }   
+  { path: '**', redirectTo: 'timeline' }
 ];
 
 @NgModule({

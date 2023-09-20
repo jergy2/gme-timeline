@@ -2,7 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { HistoricGMEDataService } from './historic-gme-data.service';
 import { ScreeSizeService } from './scree-size.service';
 import { timer } from 'rxjs';
-import { DisplayService } from './display.service';
+import { DisplayService } from './pages/display-timeline/display.service';
 import { timelineItemConfigs } from './pages/display-timeline/timeline-items/configs/timeline-item-configs';
 import { rcTweetsConfigs } from './pages/display-timeline/timeline-items/configs/rc-tweets-configs';
 import { corporateEventConfigs } from './pages/display-timeline/timeline-items/configs/gamestop-corporate-configs';

@@ -24,9 +24,15 @@ export const drsItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2022-10-26',
         urls: [
             {
+                url: 'https://lemmy.whynotdrs.org/post/221351',
+                type: 'LEMMY',
+                label: 'What is a meme stock?',
+                archiveLink: '',
+            },
+            {
                 url: 'https://lemmy.whynotdrs.org/post/4181',
                 type: 'LEMMY',
-                label: 'Lemmy discussion',
+                label: 'Discuss this on Lemmy',
                 archiveLink: '',
             },
             {

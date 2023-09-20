@@ -131,6 +131,12 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2022-05-31',
         urls: [
             {
+                url: 'https://lemmy.whynotdrs.org/post/221351',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/v22zvj/the_official_sec_youtube_channel_just_shared_a/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
@@ -168,7 +174,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         ],
         description: 'Victor from California calls in to Mad Money and mentions the forbidden stock',
         type: [TimelineItemType.MEDIA],
-        significance: 2,
+        significance: 1,
         imgSrc: 'assets/cramer-2022-08-23.PNG'
     },
 
@@ -198,7 +204,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         ],
         description: 'CNBC noticed conversations that were critical of them that were happening on superstonk and felt the need to make a segment the next day explaining themselves',
         type: [TimelineItemType.MEDIA],
-        significance: 2,
+        significance: 3,
         imgSrc: 'assets/cnbc-2022-08-30.PNG'
     },
     {
@@ -276,6 +282,12 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2023-06-06',
         urls: [
             {
+                url: 'https://lemmy.whynotdrs.org/post/221351',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.imdb.com/title/tt27903262/',
                 type: 'OTHER',
                 label: 'IMDB link',
@@ -321,6 +333,12 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         title: 'CNBC personality Joe Kernan grimaces upon the mention of GameStop',
         dateYYYYMMDD: '2023-09-11',
         urls: [
+            {
+                url: 'https://lemmy.whynotdrs.org/post/221351',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/16furge/they_hate_when_gamestop_is_brought_up/',
                 type: 'REDDIT',

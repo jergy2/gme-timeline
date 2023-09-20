@@ -23,6 +23,7 @@ import { CategoryControlComponent } from './pages/display-timeline/controls/cate
 import { BalanceSheetComponent } from './pages/financials/balance-sheet/balance-sheet.component';
 import { BalanceSheetBarChartComponent } from './pages/financials/balance-sheet-bar-chart/balance-sheet-bar-chart.component';
 import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.component';
+import { ViewControlComponent } from './pages/display-timeline/controls/view-control/view-control.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.co
     OwnershipComponent,
     BalanceSheetComponent,
     BalanceSheetBarChartComponent,
-    MobileTopBarComponent
+    MobileTopBarComponent,
+    ViewControlComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { ViewportScroller } from '@angular/common';
 import { TimelineItemsService } from './timeline-items.service';
 import { TimelineItem } from './timeline-item/timeline-item.class';
 import { ScreeSizeService } from 'src/app/scree-size.service';
+import { DisplayService } from '../display.service';
 
 @Component({
   selector: 'app-timeline-items',
@@ -10,7 +11,7 @@ import { ScreeSizeService } from 'src/app/scree-size.service';
   styleUrls: ['./timeline-items.component.scss']
 })
 export class TimelineItemsComponent implements OnInit, AfterViewInit {
-  constructor(private _itemService: TimelineItemsService, private _screenService: ScreeSizeService) { }
+  constructor(private _itemService: TimelineItemsService, private _screenService: ScreeSizeService, private _displayService: DisplayService) { }
 
   private _selectedItem: TimelineItem | null = null;
   public get selectedItem(): TimelineItem | null { return this._selectedItem; }
@@ -25,6 +26,7 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
     }
   })}
   public get isMobile(): boolean { return this._screenService.isMobile; }
+  public get isListView(): boolean { return this._displayService.showAsList; }
 
   ngOnInit() {
     this._itemService.itemSelected$.subscribe({
