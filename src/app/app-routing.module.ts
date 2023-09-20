@@ -5,7 +5,7 @@ import { DisplayTimelineComponent } from './pages/display-timeline/display-timel
 import { OwnershipComponent } from './pages/ownership/ownership.component';
 
 const routes: Routes = [
-  { path: '*', redirectTo: 'timeline' },
+  { path: '*', component: DisplayTimelineComponent },
   { path: 'timeline', component: DisplayTimelineComponent },
   { path: 'financials', component: FinancialsComponent },
   { path: 'ownership', component: OwnershipComponent },
