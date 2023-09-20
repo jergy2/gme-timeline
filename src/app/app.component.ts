@@ -13,6 +13,7 @@ import { TimelineItemsBuilder } from './pages/display-timeline/timeline-items/ti
 import { ChartDataManagerService } from './pages/display-timeline/chart/chart-data-manager-service';
 import { TimelineItemsService } from './pages/display-timeline/timeline-items/timeline-items.service';
 import { ChartDataSetManager } from './pages/display-timeline/chart/chart-dataset-manager.class';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,8 @@ export class AppComponent {
     private _sizeService: ScreeSizeService,
     private _dataManagerService: ChartDataManagerService,
     private _timelineItemsService: TimelineItemsService,
-    private _displayService: DisplayService) {
+    private _displayService: DisplayService,
+    private _router: Router) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -44,6 +46,15 @@ export class AppComponent {
   }
 
   ngOnInit() {
+
+    this._router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/') {
+          this._router.navigate(['/timeline']);
+        }
+      }
+    });
+
     timer(200).subscribe({
       next: ()=>{},
       error: ()=>{},
@@ -64,11 +75,13 @@ export class AppComponent {
             this._timelineItemsService.setTimelineItems(timelineItems);
             this._timelineItemsService.updateSignificanceValue(1);
             this._updateChartData();
+            
           },
         });
       }
-    })
-    
+    });
+
+  
     
   }
 
