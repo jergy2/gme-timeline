@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'timeline', component: DisplayTimelineComponent },
   { path: 'financials', component: FinancialsComponent },
   { path: 'ownership', component: OwnershipComponent },
-  { path: '**', redirectTo: 'timeline' }
+  { path: '**', component: DisplayTimelineComponent }
 ];
 
 @NgModule({
