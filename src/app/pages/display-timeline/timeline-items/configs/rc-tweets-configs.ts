@@ -2793,7 +2793,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         ],
         description: 'Ryan Cohen tweets a picture of himself with Carl Icahn',
         type: [TimelineItemType.RC],
-        significance: 2,
+        significance: 3,
         imgSrc: 'assets/rc-tweets/rc-icahn.jpg'
     },
     {

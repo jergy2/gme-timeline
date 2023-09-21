@@ -766,19 +766,56 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/z0e1fq/gmedd_interview_with_ryan_cohen/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/z0e1fq/gmedd_interview_with_ryan_cohen/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
                 archiveLink: '',
             },
-
+            {
+                url: 'https://www.reddit.com/r/wallstreetbets/comments/z0g9qb/a_ryan_cohen_interview/?sort=top',
+                type: 'REDDIT',
+                label: 'r/wallstreetbets thread',
+                archiveLink: '',
+            },
         ],
         description: '',
         type: [TimelineItemType.RC],
         significance: 4,
         imgSrc: 'assets/rc-gmedd-interview.png'
     },
-
+    {
+        title: 'r/wallstreetbets bans GME',
+        dateYYYYMMDD: '2022-11-22',
+        urls: [
+            {
+                url: 'https://lemmy.whynotdrs.org/post/226948',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/wallstreetbets/comments/z24vou/gamestop_megathread/?sort=top',
+                type: 'REDDIT',
+                label: 'GameStop Megathread - Nov 22',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/wallstreetbets/comments/z26nr2/wsb_is_now_a_gmefree_zone/?sort=top',
+                type: 'REDDIT',
+                label: 'WSB is now a GME-free zone - Nov 22',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/wallstreetbets/comments/z2tk7s/the_ban_of_gme/?sort=top',
+                type: 'REDDIT',
+                label: 'The Ban of GME - Nov 23',
+                archiveLink: '',
+            },
+        ],
+        description: '"WSB is a trading sub, not a place to baghold for years. Apes are no longer welcome."',
+        type: [TimelineItemType.OTHER],
+        significance: 2,
+    },
     {
         title: 'Citadel founder Ken Griffin donates $300 million more to alma mater Harvard',
         dateYYYYMMDD: '2023-04-11',

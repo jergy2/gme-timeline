@@ -1,3 +1,4 @@
+import * as dayjs from "dayjs";
 import { GmePriceEntry } from "./gme-price-entry.interface";
 import { TimelineItemConfig } from "./timeline-item-config.interface";
 import { TimelineItemType } from "./timeline-item-type.enum";
@@ -22,6 +23,7 @@ export class TimelineItem{
 
     public get title(): string { return this._title; }
     public get dateYYYYMMDD(): string { return this._dateYYYYMMDD; }
+    public get dateMMMDDYYYY(): string { return dayjs(this.dateYYYYMMDD).format('MMM DD, YYYY')}
     public get urls(): TimelineItemURL[] { return this._urls; }
     public get description(): string { return this._description; }
     public get type(): TimelineItemType { return this._type[0]; }

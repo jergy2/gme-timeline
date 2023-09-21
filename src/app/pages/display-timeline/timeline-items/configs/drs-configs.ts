@@ -18,7 +18,6 @@ export const drsItemConfigs: TimelineItemConfig[] = [
         type: [TimelineItemType.DRS],
         significance: 3,
     },
-
     {
         title: 'Fidelity posts meme-stock guy',
         dateYYYYMMDD: '2022-10-26',
@@ -27,12 +26,6 @@ export const drsItemConfigs: TimelineItemConfig[] = [
                 url: 'https://lemmy.whynotdrs.org/post/221351',
                 type: 'LEMMY',
                 label: 'What is a meme stock?',
-                archiveLink: '',
-            },
-            {
-                url: 'https://lemmy.whynotdrs.org/post/4181',
-                type: 'LEMMY',
-                label: 'Discuss this on Lemmy',
                 archiveLink: '',
             },
             {

@@ -133,7 +133,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             {
                 url: 'https://lemmy.whynotdrs.org/post/221351',
                 type: 'LEMMY',
-                label: '',
+                label: 'What is a meme stock?',
                 archiveLink: '',
             },
             {
@@ -284,7 +284,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             {
                 url: 'https://lemmy.whynotdrs.org/post/221351',
                 type: 'LEMMY',
-                label: '',
+                label: 'What is a meme stock?',
                 archiveLink: '',
             },
             {

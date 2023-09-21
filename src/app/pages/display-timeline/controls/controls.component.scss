@@ -1,15 +1,15 @@
 .controls-root{
-    width: 100%;
+    // width: 100%;
     height: 100%;
     display:flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
 }
 
 .controls-bar-container{
     height: 50px;
     width: 300px;
+    // margin-left: 20px;
 }
 .controls-bar{
 

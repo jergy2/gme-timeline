@@ -16,7 +16,7 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
   private _selectedItem: TimelineItem | null = null;
   public get selectedItem(): TimelineItem | null { return this._selectedItem; }
   public get displayedTimelineItems(): TimelineItem[] { return this._itemService.displayedTimelineItems; }
-  public get timelineItemsMobile(): TimelineItem[] { return this.displayedTimelineItems.sort((itemA, itemB)=>{
+  public get timelineItemsDescending(): TimelineItem[] { return this.displayedTimelineItems.sort((itemA, itemB)=>{
     if(itemA.dateYYYYMMDD > itemB.dateYYYYMMDD){
       return -1;
     }else if(itemA.dateYYYYMMDD < itemB.dateYYYYMMDD){
