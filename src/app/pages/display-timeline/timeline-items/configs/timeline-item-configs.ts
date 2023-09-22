@@ -766,6 +766,12 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://lemmy.whynotdrs.org/post/231867',
+                type: 'LEMMY',
+                label: 'Full transcript, discussion',
+                archiveLink: '',    
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/z0e1fq/gmedd_interview_with_ryan_cohen/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',

@@ -160,9 +160,8 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         significance: 2,
         imgSrc: 'assets/sec-meme-stocks.PNG'
     },
-    
     {
-        title: 'Jim Cramer gets dunked on by Victor from California',
+        title: 'Jim Cramer inspires Victor from California',
         dateYYYYMMDD: '2022-08-23',
         urls: [
             {
@@ -177,8 +176,6 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         significance: 1,
         imgSrc: 'assets/cramer-2022-08-23.PNG'
     },
-
-
     {
         title: 'CNBC watches Superstonk',
         dateYYYYMMDD: '2022-08-29',
@@ -202,7 +199,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: 'CNBC noticed conversations that were critical of them that were happening on superstonk and felt the need to make a segment the next day explaining themselves',
+        description: 'Despite never acknowledging the existence of GME investor subreddits like Superstonk, CNBC noticed conversations that were critical of them that were happening on superstonk and felt the need to make a segment the next day explaining themselves',
         type: [TimelineItemType.MEDIA],
         significance: 3,
         imgSrc: 'assets/cnbc-2022-08-30.PNG'
@@ -248,7 +245,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         ],
         description: 'Nathan: "...you’re pretty adamant that crypto is a big scam, it’s all rigged, but as we saw with GameStop back a few years ago, that big firms have the power to shut down trading if they’re losing money, like when Robinhood got shut down.  How is that less rigged than crypto with what we saw with FTX?" Cramer:  "It was totally rigged. It’s okay. It was rigged.  I called it out, in one of those movies I called it out.  I don’t want any touching that.  I like great American stories.  I don’t like the hokum."',
         type: [TimelineItemType.MEDIA],
-        significance: 2,
+        significance: 3,
     },
     {
         title: 'Apes Together Strong released',
@@ -305,16 +302,13 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
                 label: 'Superstonk thread - May 27',
                 archiveLink: '',
             },
-
-
         ],
         description: 'Follows Ryan Cohen"s Rise from High School Graduate to Influential Force Behind the infamous GameStop Meme-Stock Phenomenon that exposed the need for market reform to protect retail investors from predatory shorting and corporate sabotage. ',
-
         type: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
-        title: 'CNBC panelists (paid actors) put out a hit piece about Ryan Cohen, Bed Bath and Beyond, Teddy',
+        title: 'CNBC panelists put out a hit piece about Ryan Cohen, Bed Bath and Beyond, Teddy',
         dateYYYYMMDD: '2023-07-06',
         urls: [
             {
