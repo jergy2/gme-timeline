@@ -220,6 +220,31 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'DFV learning about RC for the first time',
+        dateYYYYMMDD: '2020-08-28',
+        urls: [
+            {
+                url: 'https://youtu.be/2Af9T8TU2OM?t=3468',
+                type: 'YOUTUBE',
+                label: 'DFV live stream - August 28, 2020',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/qz501o/dfv_learning_about_rc_is_the_most_heartwarming/?sort=top',
+                type: 'REDDIT',
+                label: 'DFV learning about RC is the most HEARTWARMING AND BULLISH thing you’ll see - November 21, 2021',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        type: [TimelineItemType.DFV],
+        significance: 1,
+    },
+
+    
+
+
+    {
         title: 'Michael Burry decreases GME position',
         dateYYYYMMDD: '2020-09-30',
         urls: [

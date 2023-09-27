@@ -26,7 +26,8 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
   public get isMobile(): boolean { return this._screenService.isMobile; }
   public get isListView(): boolean { return this._settingsService.showAsList; }
 
-  ngOnInit() {
+
+  private _updateItems(){
     this._descendingItems = Object.assign([], this.displayedTimelineItems);
     this._descendingItems = this._descendingItems.sort((itemA, itemB)=>{
       if(itemA.dateYYYYMMDD > itemB.dateYYYYMMDD){
@@ -36,6 +37,16 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
       }else{
         return 0;
       }})
+  }
+
+
+  ngOnInit() {
+    this._updateItems();
+    this._itemService.displayedTimelineItems$.subscribe({
+      next: ()=>{
+        this._updateItems();
+      }
+    })
     this._itemService.itemSelected$.subscribe({
       next: (selected) => {
         this.displayedTimelineItems.forEach(timelineItem => timelineItem.unselect())

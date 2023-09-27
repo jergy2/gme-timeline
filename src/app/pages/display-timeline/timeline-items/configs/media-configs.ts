@@ -3,6 +3,21 @@ import { TimelineItemType } from "../timeline-item/timeline-item-type.enum";
 
 export const mediaItemConfigs: TimelineItemConfig[] = [
     {
+        title: 'CNBC now running Ads promoting that Melvin Capital closed their short positions on $GME',
+        dateYYYYMMDD: '2021-01-29',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/wallstreetbets/comments/l8539h/cnbc_now_running_ads_promoting_that_melvin/',
+                type: 'REDDIT',
+                label: 'wallstreetbets post',
+                archiveLink: '',
+            },
+        ],
+        description: 'Promoted post:  "BREAKING:  Melvin Capital closes out of its GameStop position $GME"',
+        type: [TimelineItemType.MEDIA],
+        significance: 1,
+    },
+    {
         title: 'Thomas Peterffy says “we came dangerously close to the collapse of the entire system”',
         dateYYYYMMDD: '2021-02-17',
         urls: [

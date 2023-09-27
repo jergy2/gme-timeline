@@ -4,7 +4,7 @@ import { ScreeSizeService } from './scree-size.service';
 import { timer } from 'rxjs';
 import { DisplayService } from './pages/display-timeline/display.service';
 import { timelineItemConfigs } from './pages/display-timeline/timeline-items/configs/timeline-item-configs';
-import { rcTweetsConfigs } from './pages/display-timeline/timeline-items/configs/rc-tweets-configs';
+import { rcTweetsConfigs } from './pages/display-timeline/timeline-items/configs/rc-events-configs';
 import { corporateEventConfigs } from './pages/display-timeline/timeline-items/configs/gamestop-corporate-configs';
 import { drsItemConfigs } from './pages/display-timeline/timeline-items/configs/drs-configs';
 import { mediaItemConfigs } from './pages/display-timeline/timeline-items/configs/media-configs';
