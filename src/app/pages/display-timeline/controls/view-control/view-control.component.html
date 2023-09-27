@@ -1,8 +1,13 @@
 <div class="view-control-root">
-    <div class="button" (click)="onClickToggle()">
-        <div>
-            <fa-icon [icon]="faList"></fa-icon>
-        </div>
-        Togglie display
+    <div class="icon-container">
+
+        <fa-icon [icon]="faList" class="icon"></fa-icon>
+        List
+    </div>
+    <div class="button" [ngClass]="showAsList === true ? 'selected': ''" (click)="onClickVertical()">
+        Vertical
+    </div>
+    <div class="button"  [ngClass]="showAsList !== true ? 'selected': ''" (click)="onClickHorizontal()">
+        Horizontal
     </div>
 </div>

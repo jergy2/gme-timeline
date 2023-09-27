@@ -7,6 +7,7 @@ import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 import { TimelineItem } from '../timeline-items/timeline-item/timeline-item.class';
 import { HistoricGMEDataService } from 'src/app/historic-gme-data.service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
+import { SettingsService } from 'src/app/settings.service';
 
 @Component({
   selector: 'app-chart',
@@ -23,18 +24,17 @@ export class ChartComponent implements OnInit, AfterViewInit {
     private _dataManagerService: ChartDataManagerService,
     private _timelineItemService: TimelineItemsService,
     private _sizeService: ScreeSizeService,
+    private _settingsService: SettingsService
   ) { }
   public lineChartData: ChartConfiguration<'line'>['data'] = { labels: [], datasets: [] };
   public lineChartOptions: ChartOptions<'line'> = {};
   public lineChartLegend = false;
-  // public lineChartDataMobile: ChartConfiguration<'line'>['data'] = { labels: [], datasets: [] };
-  // public lineChartOptionsMobile: ChartOptions<'line'> = {};
-  // public lineChartLegendMobile = false;
 
   public get canvasWidth(): number { return this._canvasWidth; }
   public get canvasHeight(): number { return this._canvasHeight; }
 
   public get isMobile(): boolean { return this._sizeService.isMobile; }
+  public get isListView(): boolean { return this._settingsService.showAsList; }
 
   private _canvasWidth: number = 400;
   private _canvasHeight: number = 300;
@@ -43,6 +43,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
   public get chartContainerNgStyle(): any { return this._chartContainerNgStyle; }
 
   ngOnInit() {
+    this._updateChartContainerStyle()
     let labels: string[] = this._dataService.priceEntriesAfterCutoff.map((entry) => { return entry.date.format('YYYY-MM-DD') });
     /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
     this.lineChartData.labels = labels;
@@ -66,7 +67,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
       complete: () => { }
     });
     this._sizeService.screenDimensions$.subscribe({
-      next: () => { this._updateScreenSize(); }
+      next: () => { this._updateChartContainerStyle(); }
     });
     this._timelineItemService.itemSelected$.subscribe({
       next: (selected) => {
@@ -150,6 +151,9 @@ export class ChartComponent implements OnInit, AfterViewInit {
     };
   }
 
+  public onClick(event: Event){
+  }
+
   private _tooltipOpenedFromTimelineItems: boolean = false;
 
   private _openToolTip(item: TimelineItem) {
@@ -167,25 +171,51 @@ export class ChartComponent implements OnInit, AfterViewInit {
       point = meta.data[itemIndex.itemIndex];
     }
     if (point) {
-      mouseMoveEvent = new MouseEvent('mousemove', {
-        clientX: point.x,
-        clientY: point.y,
-      });
-      this._tooltipOpenedFromTimelineItems = true;
-      this.baseChart?.chart?.canvas.dispatchEvent(mouseMoveEvent);
+      if(this.isListView){
+        const containerEl = document.getElementById('chartContainer');
+        const chartEl = document.getElementById('chartCanvas')
+        if(containerEl && chartEl){
+          const gap = (containerEl.clientHeight - chartEl.clientHeight) / 2;
+          mouseMoveEvent = new MouseEvent('mousemove', {
+            clientX: point.x,
+            clientY: point.y + 80 + gap,
+          });
+          this._tooltipOpenedFromTimelineItems = true;
+          this.baseChart?.chart?.canvas.dispatchEvent(mouseMoveEvent);
+        }
+        
+      }else{
+        mouseMoveEvent = new MouseEvent('mousemove', {
+          clientX: point.x,
+          clientY: point.y,
+        });
+        this._tooltipOpenedFromTimelineItems = true;
+        this.baseChart?.chart?.canvas.dispatchEvent(mouseMoveEvent);
+      }
+      
     }
   }
 
-  private _updateScreenSize() {
-    const gridBottomRowHeight = 180;
-    const width = this._sizeService.screenDimensions.width;
-    const height = this._sizeService.screenDimensions.height - gridBottomRowHeight;
-    const roundedWidth = Math.floor(width / 20) * 20;
-    const roundedHeight = Math.floor(height / 50) * 50;
-    this._chartContainerNgStyle = {
-      'max-width': roundedWidth + 'px',
-      'height': roundedHeight + 'px',
-    };
+  private _updateChartContainerStyle() {
+    if(this.isListView){
+      let width = this._sizeService.screenDimensions.width - 500;
+      const maxHeight = this._sizeService.screenDimensions.height - 80;
+      this._chartContainerNgStyle = {
+        'max-width': width + 'px',
+        'height': maxHeight + 'px',
+      };
+    }else{
+      const gridBottomRowHeight = 180;
+      const width = this._sizeService.screenDimensions.width;
+      const height = this._sizeService.screenDimensions.height - gridBottomRowHeight;
+      const roundedWidth = Math.floor(width / 20) * 20;
+      const roundedHeight = Math.floor(height / 50) * 50;
+      this._chartContainerNgStyle = {
+        'max-width': roundedWidth + 'px',
+        'height': roundedHeight + 'px',
+      };
+    }
+    
   }
 
   private _getTooltipLabel(providedLabel: string): string {

@@ -14,6 +14,7 @@ import { ChartDataManagerService } from './pages/display-timeline/chart/chart-da
 import { TimelineItemsService } from './pages/display-timeline/timeline-items/timeline-items.service';
 import { ChartDataSetManager } from './pages/display-timeline/chart/chart-dataset-manager.class';
 import { NavigationEnd, Router } from '@angular/router';
+import { SettingsService } from './settings.service';
 
 @Component({
   selector: 'app-root',
@@ -30,12 +31,13 @@ export class AppComponent {
 
 
   constructor(
-    private _dataService: HistoricGMEDataService, 
+    private _dataService: HistoricGMEDataService,
     private _sizeService: ScreeSizeService,
     private _dataManagerService: ChartDataManagerService,
     private _timelineItemsService: TimelineItemsService,
     private _displayService: DisplayService,
-    private _router: Router) {
+    private _router: Router,
+    private _settingsService: SettingsService) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -46,7 +48,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-
+    this._settingsService.getSettings();
     this._router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (event.url === '/') {
@@ -56,37 +58,38 @@ export class AppComponent {
     });
 
     timer(200).subscribe({
-      next: ()=>{},
-      error: ()=>{},
-      complete: ()=>{
+      next: () => { },
+      error: () => { },
+      complete: () => {
         this._dataService.loadHistoricData$().subscribe({
           next: () => { },
           error: () => { },
           complete: () => {
             // this._displayService.setDisplay('TIMELINE');
             const allConfigs = [
-              timelineItemConfigs,
-              rcTweetsConfigs,
+              timelineItemConfigs,             
               corporateEventConfigs,
               drsItemConfigs,
               mediaItemConfigs,
+              rcTweetsConfigs,
             ];
             const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
             this._timelineItemsService.setTimelineItems(timelineItems);
-            this._timelineItemsService.updateSignificanceValue(1);
+            this._timelineItemsService.updateSignificanceValue(this._settingsService.significanceValue);
+            this._timelineItemsService.updateCategories(this._settingsService.categories);
             this._updateChartData();
-            
+
           },
         });
       }
     });
 
-  
-    
+
+
   }
 
   private _updateChartData() {
-    const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.priceEntriesAfterCutoff, this._timelineItemsService.allTimelineItems);
+    const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.priceEntriesAfterCutoff, this._timelineItemsService.allTimelineItems, this._settingsService.categories, this._settingsService.significanceValue);
     this._dataManagerService.registerDataManager(dataManager);
     this._dataIsLoaded = true;
   }

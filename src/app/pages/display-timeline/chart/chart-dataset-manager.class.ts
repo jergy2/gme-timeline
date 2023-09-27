@@ -15,10 +15,8 @@ export class ChartDataSetManager {
   private _timelineItems: TimelineItem[] = [];
 
 
-  private _signifianceValue: number = 2;
-  private _timelineCategories: TimelineItemType[] = [
-    TimelineItemType.CORP, TimelineItemType.DFV, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC
-  ];
+  private _signifianceValue: number = -1;
+  private _timelineCategories: TimelineItemType[] = [];
 
   private _isUpdating$: Subject<boolean> = new Subject();
   public get isUpdating$(): Observable<boolean> { return this._isUpdating$.asObservable(); }
@@ -28,14 +26,13 @@ export class ChartDataSetManager {
   public get datasets$(): Observable<any[]> { return this._datasets$.asObservable(); }
   public get datasetsMobile(): any[] { return this._datasetsMobile; }
   public get datasetConfigs(): DatasetConfig[] { return this._datasetConfigs; }
-  public get significanceValue(): number { return this._signifianceValue; }
-  public get categories(): TimelineItemType[] { return this._timelineCategories; }
+  // public get significanceValue(): number { return this._signifianceValue; }
 
-  // public get chartCutoffDate(): string { return '2020-07-01'; }
-
-  constructor(priceEntries: GmePriceEntry[], timelineItems: TimelineItem[]) {
+  constructor(priceEntries: GmePriceEntry[], timelineItems: TimelineItem[], categories: TimelineItemType[], significanceValue: number) {
     this._priceEntries = priceEntries;
     this._timelineItems = timelineItems;
+    this._timelineCategories = categories;
+    this._signifianceValue = significanceValue;
   }
 
   public updateSignificanceValue(value: number) {

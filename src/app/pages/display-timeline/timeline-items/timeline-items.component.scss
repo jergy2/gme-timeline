@@ -27,7 +27,10 @@
 
 .timeline-item-list-view{
     // max-height: 310px;
-    
+    padding: 2px;
+    margin-right: 2px;
+    display:flex;
+    flex-direction: row;
 }
 
 

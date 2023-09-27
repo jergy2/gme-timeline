@@ -14,7 +14,7 @@ import { ChartDataManagerService } from '../../chart/chart-data-manager-service'
 })
 export class TimelineItemComponent {
 
-  constructor(private _eventService: ChartDataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
+  constructor(private _chartDataService: ChartDataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
 
   private _item: TimelineItem = new TimelineItem({
     title: '',
@@ -73,17 +73,17 @@ export class TimelineItemComponent {
     if (this.item.isSelected) {
       if(this.isMobile){
         return { // if is selected and is mobile
-          'background-color': this._eventService.getTypeColor(this.item.type, 0.9),
-          'border-left': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
-          'border-right': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
+          'background-color': this._chartDataService.getTypeColor(this.item.type, 0.9),
+          'border-left': '3px solid ' + this._chartDataService.getTypeColor(this.item.type, 1),
+          'border-right': '3px solid ' + this._chartDataService.getTypeColor(this.item.type, 1),
           'color': 'white',
           'padding-top': '15px',
           'padding-bottom': '15px',
         }
       }else{
         return { // if is selected and is not mobile
-          'background-color': this._eventService.getTypeColor(this.item.type, 0.9),
-          'border': '3px solid ' + this._eventService.getTypeColor(this.item.type, 1),
+          'background-color': this._chartDataService.getTypeColor(this.item.type, 0.9),
+          'border': '3px solid ' + this._chartDataService.getTypeColor(this.item.type, 1),
           'color': 'white',
         }
       }
@@ -91,16 +91,16 @@ export class TimelineItemComponent {
     } else { // if not selected
       if(this.isMobile){ // if mobile and not selected
         return {
-          'background-color': this._eventService.getTypeColor(this.item.type, 0.05),
-          'border-left': '1px solid ' + this._eventService.getTypeColor(this.item.type, 0.5),
-          'border-right': '1px solid ' + this._eventService.getTypeColor(this.item.type, 0.5),
+          'background-color': this._chartDataService.getTypeColor(this.item.type, 0.05),
+          'border-left': '1px solid ' + this._chartDataService.getTypeColor(this.item.type, 0.5),
+          'border-right': '1px solid ' + this._chartDataService.getTypeColor(this.item.type, 0.5),
           'padding-top': '15px',
           'padding-bottom': '15px',
         }
       }else{
         return { // if not mobile and not selected
-          'background-color': this._eventService.getTypeColor(this.item.type, 0.05),
-          'border': '1px solid ' + this._eventService.getTypeColor(this.item.type, 0.5),
+          'background-color': this._chartDataService.getTypeColor(this.item.type, 0.05),
+          'border': '1px solid ' + this._chartDataService.getTypeColor(this.item.type, 0.5),
         }
       }
 

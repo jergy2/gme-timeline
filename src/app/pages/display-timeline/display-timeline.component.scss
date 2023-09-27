@@ -65,17 +65,49 @@
 .list-view-grid{
   height: 100%;
   width: 100%;
+  max-width: 100%;
   display:grid;
-  grid-template-columns: auto 500px;
+  grid-template-columns: 1fr 500px;
   grid-template-rows: 80px auto;
 
 }
-.app-chart-list-view{
-  grid-row: 1 / span 2;
-  grid-column: 1 / span 1;
 
-  max-height: 100%;
+
+.list-view-narrow{
+  height: 100%;
   width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.app-controls-list-view{
+  // grid-row: 1 / span 1;
+  // grid-column: 1 / span 2;
+  // height: 100%;
+  // display:flex;
+  // flex-direction: row;
+  // align-items: center;
+  // padding-left: 15px;
+  padding: 3px;
+  position: fixed;
+}
+.app-controls-list-view-narrow{
+  
+  margin-bottom: 5px;
+  // height: 50px;
+  padding: 3px;
+  position: fixed;
+}
+.app-timeline-items-list-view-narrow{
+  margin-top: 60px;
+}
+
+.app-chart-list-view{
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  max-width: 100%;
+  max-height: 100%;
+  // width: 100%;
   height: 100%;
   display:flex;
   flex-direction: row;
@@ -91,15 +123,7 @@
   display:flex;
   flex-direction: column;
 }
-.app-controls-list-view{
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 2;
-  height: 100%;
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 15px;
-}
+
 
 
 .chart-loading{

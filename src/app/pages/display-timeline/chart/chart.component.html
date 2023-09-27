@@ -1,17 +1,7 @@
 
-<div class="chart-root" >
-
-    <!-- <canvas baseChart class="chart" *ngIf="isMobile"
-    height="400"
-    [type]="'line'"
-    [data]="lineChartDataMobile"
-    [options]="lineChartOptionsMobile"
-    [legend]="lineChartLegendMobile">
-    </canvas> -->
-
-    <div class="chart-container" [ngStyle]="chartContainerNgStyle">
-        <canvas baseChart class="chart" *ngIf="!isMobile"
-        [height]="canvasHeight" [width]="canvasWidth"
+<div [ngClass]="isListView ? 'chart-root-list' : 'chart-root'" (click)="onClick($event)">
+    <div class="chart-container" [ngStyle]="chartContainerNgStyle" id="chartContainer">
+        <canvas baseChart class="chart" id="chartCanvas"
         [type]="'line'"
         [data]="lineChartData"
         [options]="lineChartOptions"

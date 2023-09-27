@@ -9,6 +9,6 @@ export class DisplayService {
   constructor() { }
 
   private _showAsList: boolean = false;
-  public get showAsList(): boolean { return this._showAsList; }
+  // public get showAsList(): boolean { return this._showAsList; }
   public toggleDisplay(){ this._showAsList = !this._showAsList; }
 }

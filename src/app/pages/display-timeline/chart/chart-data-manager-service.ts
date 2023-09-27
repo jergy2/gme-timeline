@@ -13,7 +13,7 @@ export class ChartDataManagerService {
    * The ChartDataManagerService manages the datasets for the chart.  As filters are applied, the datasets need to be updated.
    */
   constructor() {
-    this._dataManager = new ChartDataSetManager([], []);
+    this._dataManager = new ChartDataSetManager([], [], [], -1);
   }
 
   private _dataSets$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
@@ -21,8 +21,8 @@ export class ChartDataManagerService {
   private _dataManager: ChartDataSetManager;
   public get dataSets(): any[] { return this._dataSets$.getValue(); }
   public get dataSets$(): Observable<any[]> { return this._dataSets$.asObservable(); }
-  public get significanceValue(): number { return this._dataManager.significanceValue; }
-  public get categories(): TimelineItemType[] { return this._dataManager.categories; }
+  // public get significanceValue(): number { return this._dataManager.significanceValue; }
+  // public get categories(): TimelineItemType[] { return this._dataManager.categories; }
   // public get dataSetsMobile(): any[] { return this._dataSetsMobile$.getValue(); }
   // public get dataSetsMobile$(): Observable<any[]> { return this._dataSetsMobile$.asObservable(); }
   // public get dataManager(): ChartDataSetManager { return this._dataManager; }

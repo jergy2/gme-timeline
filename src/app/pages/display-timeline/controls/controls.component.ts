@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { faSliders } from '@fortawesome/free-solid-svg-icons';
+import { faQuestion, faSliders } from '@fortawesome/free-solid-svg-icons';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
 import { SidebarService } from 'src/app/layout/sidebar/sidebar.service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
+import { SettingsService } from 'src/app/settings.service';
 
 @Component({
   selector: 'app-controls',
@@ -78,15 +79,20 @@ import { ScreeSizeService } from 'src/app/scree-size.service';
 })
 export class ControlsComponent {
 
-  constructor(private _sidebarService: SidebarService, private _sizeService: ScreeSizeService){}
+  constructor(private _sidebarService: SidebarService, private _sizeService: ScreeSizeService, private _settingsService: SettingsService){}
 
   public get faSliders() { return faSliders; }
+  public get faQuestion() { return faQuestion; }
 
   public get isMinimized(): boolean { return this._sidebarService.controlsState === 'MINIMIZED'; }
   public get isExpanded(): boolean { return this._sidebarService.controlsState === 'EXPANDED'; }
   public get isPinned(): boolean { return this._sidebarService.controlsState === 'PINNED'; }
 
   public get isMobile(): boolean { return this._sizeService.isMobile; }
+  public get showAsList(): boolean { return this._settingsService.showAsList; }
+
+  private _showAbout: boolean = false;
+  public get showAbout(): boolean { return this._showAbout; }
 
   public onMouseEnterControls(){
     this._sidebarService.changeControlsState('EXPANDED');
@@ -97,4 +103,10 @@ export class ControlsComponent {
     }
   }
 
+  public onClickAbout(){
+    this._showAbout = !this._showAbout;
+  }
+  public onClickCloseAbout(){
+    this._showAbout = false;
+  }
 }

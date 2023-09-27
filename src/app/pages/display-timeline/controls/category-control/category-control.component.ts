@@ -4,6 +4,7 @@ import { CategoryButton } from './category-button.interface';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 import { TimelineItemsService } from '../../timeline-items/timeline-items.service';
 import { TimelineItemType } from '../../timeline-items/timeline-item/timeline-item-type.enum';
+import { SettingsService } from 'src/app/settings.service';
 @Component({
   selector: 'app-category-control',
   templateUrl: './category-control.component.html',
@@ -11,14 +12,18 @@ import { TimelineItemType } from '../../timeline-items/timeline-item/timeline-it
 })
 export class CategoryControlComponent implements OnInit {
 
-  constructor(private _dataManagerService: ChartDataManagerService, private _itemService: TimelineItemsService) { }
+  constructor(
+    private _dataManagerService: ChartDataManagerService, 
+    private _itemService: TimelineItemsService, 
+    private _settingsService: SettingsService) { }
 
   private _buttonManager: CategoryButtonManager = new CategoryButtonManager();
   public get buttonManager(): CategoryButtonManager { return this._buttonManager; }
   public get categoryButtons(): CategoryButton[] { return this.buttonManager.categoryButtons; }
 
   ngOnInit() {
-    const existingCategoriesFilter: TimelineItemType[] = this._dataManagerService.categories;
+    // const existingCategoriesFilter: TimelineItemType[] = this._dataManagerService.categories;
+    const existingCategoriesFilter = this._settingsService.categories;
     this._buttonManager.setCategories(existingCategoriesFilter);
   }
 
@@ -36,7 +41,9 @@ export class CategoryControlComponent implements OnInit {
   }
 
   private _makeUpdates(){
+    
     const selectedCategories = this.buttonManager.selectedCategories;
+    this._settingsService.updateCategories(selectedCategories);
     this._dataManagerService.updateCategories(selectedCategories);
     this._itemService.updateCategories(selectedCategories);
   }

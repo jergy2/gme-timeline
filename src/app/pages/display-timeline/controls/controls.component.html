@@ -1,17 +1,27 @@
-<div class="controls-root" *ngIf="!isMobile" (mouseenter)="onMouseEnterControls()"
-    (mouseleave)="onMouseLeaveControls()">
-    <div class="controls-bar-container">
+<div class="controls-root" *ngIf="!isMobile">
+    <div class="controls-bar-container" (mouseenter)="onMouseEnterControls()" (mouseleave)="onMouseLeaveControls()">
         <div class="controls-bar shadow" [ngClass]="isExpanded ? 'expanded' : 'not-expanded'">
             <div class="icon-container">
                 <fa-icon [icon]="faSliders" style="font-size: 1.7em;"></fa-icon>
             </div>
             <div class="controls-expanded" *ngIf="isExpanded" [@appear]="'appear'">
-                <!-- <app-view-control class="control"></app-view-control> -->
                 <app-significance-control class="control"></app-significance-control>
                 <app-category-control class="control"></app-category-control>
+                <app-view-control class="control"></app-view-control>
             </div>
         </div>
     </div>
+    <div *ngIf="showAsList" class="about-button-container shadow" (click)="onClickAbout()"
+        [ngClass]="showAbout ? 'about-expanded': ''">
+        <fa-icon [icon]="faQuestion" style="font-size: 1.7em;"></fa-icon>
+    </div>
+</div>
+<div *ngIf="!isMobile && showAsList && showAbout" class="about-container shadow" style="background-color: purple;">
+    <div class="close-button-bar">
+        <div class="close-button" (click)="onClickCloseAbout()">X</div>
+    </div>
+
+    <app-about></app-about>
 </div>
 
 <div class="controls-root-mobile" *ngIf="isMobile">

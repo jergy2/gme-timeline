@@ -3,6 +3,7 @@ import { SidebarService } from '../sidebar/sidebar.service';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
 import { DisplayService } from 'src/app/pages/display-timeline/display.service';
 import { faCoins, faChartLine, faChartPie, faSliders, faQuestion, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { SettingsService } from 'src/app/settings.service';
 
 
 @Component({
@@ -40,13 +41,13 @@ import { faCoins, faChartLine, faChartPie, faSliders, faQuestion, IconDefinition
 })
 export class SidebarComponent {
 
-  constructor(private _sidebarService: SidebarService, private _displayService: DisplayService){}
-
-  // public get displayIsTimeline(): boolean { return this._displayService.displayIsTimeline; }
+  constructor(private _settingsService: SettingsService){}
   public get faCoins(): IconDefinition { return faCoins; }
   public get faChartLine(): IconDefinition { return faChartLine; }
   public get faChartPie(): IconDefinition { return faChartPie; }
   public get faQuestion(): IconDefinition { return faQuestion; }
+
+  public get showAsList(): boolean { return this._settingsService.showAsList; }
 
   private _isOverAbout: boolean = false;
   public get isOverAbout(): boolean { return this._isOverAbout; }

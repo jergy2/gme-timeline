@@ -1,16 +1,6 @@
 <div class="sidebar-column">
-    <!-- <div class="sidebar-button shadow"  [routerLink]="'timeline'" [routerLinkActive]="'active-link'">
-        <fa-icon [icon]="faChartLine"></fa-icon>
-    </div>
-    <div class="sidebar-button shadow" [routerLink]="'financials'" 
-    [routerLinkActive]="'active-link'">
-        <fa-icon [icon]="faCoins"></fa-icon>
-    </div> -->
-    <!-- <div class="sidebar-button shadow" [routerLink]="'ownership'" 
-    [routerLinkActive]="'active-link'">
-        <fa-icon [icon]="faChartPie"></fa-icon>
-    </div> -->
-    <div class="sidebar-button shadow" (mouseenter)="onMouseEnterAbout()" (mouseleave)="onMouseLeaveAbout()" >
+
+    <div class="sidebar-button shadow" (mouseenter)="onMouseEnterAbout()" (mouseleave)="onMouseLeaveAbout()" *ngIf="!showAsList" >
         <div style="display:flex;flex-direction: row; justify-content: flex-end; width: 100%;" *ngIf="!isOverAbout">
             <fa-icon [icon]="faQuestion" style="font-size: 1.9em;"></fa-icon>
         </div>
@@ -21,7 +11,7 @@
                 </div>
                 <fa-icon [icon]="faQuestion" style="font-size: 1.9em;"></fa-icon>
             </div>
-            <div  [@appear]="'appear'">
+            <div [@appear]="'appear'">
                 <app-about ></app-about>
             </div>
         </div>
