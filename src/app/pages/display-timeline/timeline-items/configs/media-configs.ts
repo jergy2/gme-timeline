@@ -14,7 +14,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Promoted post:  "BREAKING:  Melvin Capital closes out of its GameStop position $GME"',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 1,
     },
     {
@@ -29,7 +29,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
     },
         // new TimelineItem(
@@ -58,7 +58,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'In response to the statement: "There are a lot of short sellers borrowing stock that they didn`t have," Melissa Lee says:  "Naked shorts, yea."',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/melissa-lee-naked-shorts.png'
     },    
@@ -89,7 +89,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: 'Two months after stating that "I will never cover GameStop ever again, there is just no point", Anthony Chukumba of Loop Capital goes on CNBC and says of GameStops recent earnings call: "That earnings call was shameful.  Absolutely positively shameful... it is shameful.  It was disrespectful to their shareholders...".  Followed soon after by: "Sell the stock first and ask questions later"',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/cnbc-2021-09-09.PNG'
     },
@@ -105,7 +105,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"The David-and-Goliath story about the group of amateur investors who bought stock in the failing video game chain, GameStop."',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
@@ -138,7 +138,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: 'Explores the stock market frenzy of GameStop, and how a group of armchair investors and online vigilantes ultimately helped expose the dark underbelly of Wall Street.',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
@@ -171,7 +171,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: 'What even is a meme stock and why would the SEC go out of their way to disparage people that invest in meme stocks?',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/sec-meme-stocks.PNG'
     },
@@ -187,7 +187,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Victor from California calls in to Mad Money and mentions the forbidden stock',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 1,
         imgSrc: 'assets/cramer-2022-08-23.PNG'
     },
@@ -215,7 +215,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Despite never acknowledging the existence of GME investor subreddits like Superstonk, CNBC noticed conversations that were critical of them that were happening on superstonk and felt the need to make a segment the next day explaining themselves',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 3,
         imgSrc: 'assets/cnbc-2022-08-30.PNG'
     },
@@ -243,7 +243,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'A look at the layers of intrigue, from the supercharged power of digital communities to the gamification of trading.',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/eat-the-rich.PNG'
     },
@@ -259,7 +259,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Nathan: "...you’re pretty adamant that crypto is a big scam, it’s all rigged, but as we saw with GameStop back a few years ago, that big firms have the power to shut down trading if they’re losing money, like when Robinhood got shut down.  How is that less rigged than crypto with what we saw with FTX?" Cramer:  "It was totally rigged. It’s okay. It was rigged.  I called it out, in one of those movies I called it out.  I don’t want any touching that.  I like great American stories.  I don’t like the hokum."',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 3,
     },
     {
@@ -286,7 +286,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'After 2 years, GameStop investors (Mulligan bros) release Apes Together Strong, a documentary documentary about the endemic corruption on Wall Street and the “Apes” fighting for transparency and accountability in our capital markets.',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
@@ -319,7 +319,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Follows Ryan Cohen"s Rise from High School Graduate to Influential Force Behind the infamous GameStop Meme-Stock Phenomenon that exposed the need for market reform to protect retail investors from predatory shorting and corporate sabotage. ',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
     },
     {
@@ -334,7 +334,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"I called and reached out, or tried to reach out to Teddy’s patent lawyer, but didn’t hear back in time for this hit."',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 2,
         imgSrc: 'assets/cnbc-hit-2023-07-06.PNG'
     },
@@ -356,7 +356,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Guest: "...I saw Dumb Money on Friday night, which is the GameStop movie, and uh..." Joe Kernan:  *grimaces* ',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 1,
         imgSrc: 'assets/cnbc-joe-kernan-2023-09-11.PNG'
     },
@@ -378,7 +378,7 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Dumb Money is the ultimate David vs. Goliath tale, based on the insane true story of everyday people who flipped the script on Wall Street and got rich by turning GameStop (yes, the mall videogame store) into the world"s hottest company.',
-        type: [TimelineItemType.MEDIA],
+        types: [TimelineItemType.MEDIA],
         significance: 3,
     },
 

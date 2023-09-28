@@ -21,7 +21,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -36,7 +36,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -51,7 +51,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -66,7 +66,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.DFV],
+        types: [TimelineItemType.DFV],
         significance: 1,
     },
     {
@@ -81,7 +81,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $16.6 million',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -96,7 +96,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Susanne Trimbath publishes a book that eventually becomes foundational to GameStop investors understanding of the market',
-        type: [TimelineItemType.DRS],
+        types: [TimelineItemType.DRS],
         significance: 2,
     },
     {
@@ -111,7 +111,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $9.7 million',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -132,7 +132,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             // },
         ],
         description: 'Position value of approximately $15.4 million',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -147,7 +147,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -162,7 +162,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.DFV],
+        types: [TimelineItemType.DFV],
         significance: 2,
         imgSrc: 'assets/dfv-short-interest.jpg'
     },
@@ -184,7 +184,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: '',
-        type: [TimelineItemType.DFV],
+        types: [TimelineItemType.DFV],
         significance: 2,
         imgSrc: 'assets/dfv-cigar.jpg'
     },
@@ -200,7 +200,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.RC],
+        types: [TimelineItemType.RC],
         significance: 3,
         imgSrc: 'assets/ryan-cohen-loading.jpg'
     },
@@ -216,7 +216,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.DFV],
+        types: [TimelineItemType.DFV],
         significance: 2,
     },
     {
@@ -237,7 +237,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.DFV],
+        types: [TimelineItemType.DFV],
         significance: 1,
     },
 
@@ -256,7 +256,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $17.4 million',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -278,7 +278,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: 'Subject: Maximizing Stockholder Value by Becoming the Ultimate Destination for Gamers, “GAMESTOP’S LEADERSHIP MUST PROMPTLY PIVOT FROM A BRICK-AND-MORTAR MINDSET TO A TECHNOLOGY-DRIVEN VISION”',
-        type: [TimelineItemType.RC],
+        types: [TimelineItemType.RC],
         significance: 4,
     },
     {
@@ -299,7 +299,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.RC],
+        types: [TimelineItemType.RC],
         significance: 2,
     },
     {
@@ -320,7 +320,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Some time between September 30th and December 31st, Michael Burry sells his entire GME position, evidenced by the absense of any position in GameStop in form 13F',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -348,7 +348,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -363,7 +363,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: '"May 2020, relatively sane times for $GME, I called in my lent-out GME shares. It took my brokers WEEKS to find my shares.  I cannot even imagine the sh*tstorm in settlement now. They may have to extend delivery timelines. #pigsgetslaughtered #nakedshorts"',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
         imgSrc: 'assets/burry-tweet-2021-01-29.jpg'
     },
@@ -397,7 +397,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             // },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 5,
     },
 
@@ -419,7 +419,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Game Stopped? Who Wins and Loses When Short Sellers, Social Media, and Retail Investors Collide. Keith Gill testifies before congress House Committee on Financial Services',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 4,
         imgSrc: 'assets/i-like-the-stock.png'
     },
@@ -435,7 +435,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"Tweeting and getting in the news lately apparently has caused the SEC to pay us a visit," the Scion Asset Management boss said in a now-deleted tweet.',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
 
@@ -463,7 +463,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'DFV’s final reddit post',
-        type: [TimelineItemType.DFV],
+        types: [TimelineItemType.DFV],
         significance: 3,
         imgSrc: 'assets/dfv-loading.jpg'
     },
@@ -479,7 +479,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
         imgSrc: 'assets/gensler-loading.png'
     },
@@ -513,7 +513,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'DFV aka Roaring Kitty tweets an observing cat with background music of O Fortuna',
-        type: [TimelineItemType.DFV],
+        types: [TimelineItemType.DFV],
         significance: 1,
         imgSrc: 'assets/dfv-tweet-2021-06-01.PNG'
     },
@@ -538,7 +538,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"People always ask me what is going on in the markets. It is simple. Greatest Speculative Bubble of All Time in All Things. By two orders of magnitude. #FlyingPigs360"',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -565,7 +565,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: '"State regulators found MassMutual failed to detect nearly 1,700 trades by Gill, who was able to execute at least two trades in GameStop in excess of $700,000, beyond a company limit."',
-        type: [TimelineItemType.DFV],
+        types: [TimelineItemType.DFV],
         significance: 1,
     },
     {
@@ -599,7 +599,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -626,7 +626,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -660,7 +660,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
         imgSrc: 'assets/superstonk-r-place.png'
     },
@@ -683,7 +683,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: 'After engaging with Ryan Cohen on Twitter in discussions about BCG, Pulte begins to engage with Superstonk',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 3,
         imgSrc: 'assets/bill-pulte.jpg'
     },
@@ -717,7 +717,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 3,
     },
 
@@ -726,7 +726,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         dateYYYYMMDD: '2022-08-18',
         urls: [],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -753,7 +753,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'A team member of congressional representative Trey Hollingsworth goes from overseeing the banks to joining Bank of America where her father already works.',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
         imgSrc: 'assets/2022-09-21-boa-subversion.PNG'
     },
@@ -777,7 +777,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
 
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -810,7 +810,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.RC],
+        types: [TimelineItemType.RC],
         significance: 4,
         imgSrc: 'assets/rc-gmedd-interview.png'
     },
@@ -844,7 +844,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '"WSB is a trading sub, not a place to baghold for years. Apes are no longer welcome."',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 2,
     },
     {
@@ -859,7 +859,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -886,7 +886,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
     {
@@ -908,7 +908,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             
         ],
         description: '"I really urge you to get these equity markets proposals in order and to rely on data and not just emotion or one meme stock event to make policy"',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 2,
         tags: ['meme stock', 'politics', 'Gary Gensler', ],
     },

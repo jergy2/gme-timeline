@@ -15,7 +15,7 @@ export const drsItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Website created by members of the r/superstonk community',
-        type: [TimelineItemType.DRS],
+        types: [TimelineItemType.DRS],
         significance: 3,
     },
     {
@@ -36,7 +36,7 @@ export const drsItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Fidelity, a major financial services company with trillions of dollars of assets under management, felt compelled to try and disparage DRSd shareholders of GME',
-        type: [TimelineItemType.DRS],
+        types: [TimelineItemType.DRS],
         significance: 2,
         imgSrc: 'assets/meme-stock-guy.jpeg',
     },
@@ -52,7 +52,7 @@ export const drsItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Website created by the team that made the drsgme.org website as a more neutral non-GME focused information site',
-        type: [TimelineItemType.DRS],
+        types: [TimelineItemType.DRS],
         significance: 2,
     },
     {
@@ -80,7 +80,7 @@ export const drsItemConfigs: TimelineItemConfig[] = [
             
         ],
         description: 'Superstonk mods wield their authority to spread false information and mischaracterizations with respect to recent actions taken by the DRSGME.org team.',
-        type: [TimelineItemType.DRS],
+        types: [TimelineItemType.DRS],
         significance: 1,
     },
     {
@@ -101,7 +101,7 @@ export const drsItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.DRS],
+        types: [TimelineItemType.DRS],
         significance: 3,
     },
 ]

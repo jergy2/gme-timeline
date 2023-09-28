@@ -249,7 +249,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
   private _getTooltipBackgroundColor(context: any) {
     const foundEvent = this._lookupEvent(context.label);
     if (foundEvent) {
-      this._tooltipBackgroundColor = this._dataManagerService.getTypeColor(foundEvent.type);
+      this._tooltipBackgroundColor = this._dataManagerService.getTypeColor(foundEvent.mainType);
     }
     return this._tooltipBackgroundColor;
   }

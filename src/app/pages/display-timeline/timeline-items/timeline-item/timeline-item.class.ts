@@ -11,7 +11,7 @@ export class TimelineItem{
     private _dateYYYYMMDD: string;
     private _urls: TimelineItemURL[];
     private _description: string;
-    private _type: TimelineItemType[];
+    private _types: TimelineItemType[];
     private _significance: number;
     private _imgSrc: string = '';
 
@@ -29,7 +29,8 @@ export class TimelineItem{
     public get dateMMMDDYYYY(): string { return dayjs(this.dateYYYYMMDD).format('MMM DD, YYYY')}
     public get urls(): TimelineItemURL[] { return this._urls; }
     public get description(): string { return this._description; }
-    public get type(): TimelineItemType { return this._type[0]; }
+    public get mainType(): TimelineItemType { return this._types[0]; }
+    public get types(): TimelineItemType[] { return this._types; }
     public get significance(): number { return this._significance; }
     public get imgSrc(): string { return this._imgSrc;}
 
@@ -48,7 +49,7 @@ export class TimelineItem{
         this._title = config.title;
         this._dateYYYYMMDD = config.dateYYYYMMDD;
         this._urls = config.urls;
-        this._type = config.type;
+        this._types = config.types;
         this._significance = config.significance
         this._description = config.description;
         if(config.imgSrc){

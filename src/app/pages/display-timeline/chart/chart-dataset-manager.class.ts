@@ -164,7 +164,7 @@ export class ChartDataSetManager {
       .map((entry) => {
         const foundEvent = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'));
         if (foundEvent) {
-          if (foundEvent.type === type && foundEvent.significance === significanceValue) {
+          if (foundEvent.mainType === type && foundEvent.significance === significanceValue) {
             return foundEvent;
           }
         }

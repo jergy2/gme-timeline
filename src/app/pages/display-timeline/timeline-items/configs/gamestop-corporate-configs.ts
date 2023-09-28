@@ -20,7 +20,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -41,7 +41,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -62,7 +62,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q3 2020',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
 
@@ -84,7 +84,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2020',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -97,9 +97,15 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 label: 'GameStop link',
                 archiveLink: '',
             },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/251006',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            }
         ],
         description: 'The Company ultimately sold 3,500,000 shares of common stock and generated aggregate gross proceeds before commissions and offering expenses of approximately $551,000,000 ',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 4,
     },
 
@@ -133,7 +139,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 1,
         imgSrc: 'assets/rc-chairman.jpg'
     },
@@ -161,9 +167,30 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2021 Ryan Cohen becomes chairman of GameStop, Matt Furlong becomes CEO',
-        type: [TimelineItemType.CORP, TimelineItemType.MEDIA],
+        types: [TimelineItemType.CORP, TimelineItemType.MEDIA],
         significance: 4,
-        imgSrc: 'assets/rc-chairman.jpg'
+        // imgSrc: 'assets/rc-chairman.jpg'
+    },
+    {
+        title: 'GameStop Completes At-The-Market Equity Offering Program',
+        dateYYYYMMDD: '2021-06-22',
+        urls: [
+            {
+                url: 'https://news.gamestop.com/news-releases/news-release-details/gamestop-completes-market-equity-offering-program-0',
+                type: 'GAMESTOP',
+                label: 'GameStop link',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/251006',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            }
+        ],
+        description: 'The Company ultimately sold 5,000,000 shares of common stock and generated aggregate gross proceeds before commissions and offering expenses of approximately $1,126,000,000.',
+        types: [TimelineItemType.CORP],
+        significance: 4,
     },
     {
         title: 'GameStop Reports Financial Results for Q2 2021',
@@ -183,7 +210,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2021',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -217,7 +244,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'GameStop reports for the first time, as of October 30, 2021, the number of shares that have been directly registered ("DRSd")',
-        type: [TimelineItemType.DRS, TimelineItemType.CORP],
+        types: [TimelineItemType.DRS, TimelineItemType.CORP],
         significance: 5,
     },
     {
@@ -244,7 +271,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2021',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -271,7 +298,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2022',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -304,7 +331,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 3,
         specialIdentifier: 'STOCK-SPLIT',
     },
@@ -332,7 +359,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2022',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -353,7 +380,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'The partnership is intended to introduce more GameStop customers to FTX’s community and its marketplaces for digital assets. In addition to collaborating with FTX on new ecommerce and online marketing initiatives, GameStop will begin carrying FTX gift cards in select stores. ',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
 
@@ -381,7 +408,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q3 2022',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -414,7 +441,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2022',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -441,7 +468,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2023',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
     {
@@ -456,7 +483,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
         significance: 3,
     },
     {
@@ -507,7 +534,41 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2023',
-        type: [TimelineItemType.CORP],
+        types: [TimelineItemType.CORP],
+        significance: 2,
+    },
+
+    {
+        title: 'GameStop Announces Election of Ryan Cohen as Chief Executive Officer',
+        dateYYYYMMDD: '2023-09-28',
+        urls: [
+            {
+                url: 'https://gamestop.gcs-web.com/news-releases/news-release-details/gamestop-announces-election-ryan-cohen-chief-executive-officer?fbclid=IwAR2UTugbErkjZ5hmWfx6DywYdHPG446WNUGUJFSFgwcmFr1ixzW-xKmOxzY',
+                type: 'GAMESTOP',
+                label: 'GameStop Announcement',
+                archiveLink: '',
+            },
+            {
+                url: 'https://gamestop.gcs-web.com/node/20241/html',
+                type: 'GAMESTOP',
+                label: 'Form 8-K',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/16uc4ve/gamestop_board_elected_ryan_cohen_as_ceo/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '', 
+            },
+            // {
+            //     url: 'https://www.reddit.com/r/ThePPShow/comments/16uc0li/ryan_cohen_elected_game_stop_ceo_immediately/?sort=top',
+            //     type: 'REDDIT',
+            //     label: 'thePPshow thread',
+            //     archiveLink: '', 
+            // },            
+        ],
+        description: '',
+        types: [TimelineItemType.CORP],
         significance: 2,
     },
 ];

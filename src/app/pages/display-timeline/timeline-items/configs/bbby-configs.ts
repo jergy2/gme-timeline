@@ -26,7 +26,7 @@ export const bbbyConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        type: [TimelineItemType.OTHER],
+        types: [TimelineItemType.OTHER],
         significance: 1,
     },
 ]; 

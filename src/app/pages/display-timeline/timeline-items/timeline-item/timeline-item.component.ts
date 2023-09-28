@@ -21,7 +21,7 @@ export class TimelineItemComponent {
     dateYYYYMMDD: '',
     urls: [],
     description: '',
-    type: [TimelineItemType.OTHER],
+    types: [TimelineItemType.OTHER],
     significance: 0,
   }, undefined, -1)
   @Input('item') public set item(item: TimelineItem) { this._item = item; }
@@ -73,17 +73,17 @@ export class TimelineItemComponent {
     if (this.item.isSelected) {
       if(this.isMobile){
         return { // if is selected and is mobile
-          'background-color': this._chartDataService.getTypeColor(this.item.type, 0.9),
-          'border-left': '3px solid ' + this._chartDataService.getTypeColor(this.item.type, 1),
-          'border-right': '3px solid ' + this._chartDataService.getTypeColor(this.item.type, 1),
+          'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.9),
+          'border-left': '3px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
+          'border-right': '3px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
           'color': 'white',
           'padding-top': '15px',
           'padding-bottom': '15px',
         }
       }else{
         return { // if is selected and is not mobile
-          'background-color': this._chartDataService.getTypeColor(this.item.type, 0.9),
-          'border': '3px solid ' + this._chartDataService.getTypeColor(this.item.type, 1),
+          'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.9),
+          'border': '3px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
           'color': 'white',
         }
       }
@@ -91,16 +91,16 @@ export class TimelineItemComponent {
     } else { // if not selected
       if(this.isMobile){ // if mobile and not selected
         return {
-          'background-color': this._chartDataService.getTypeColor(this.item.type, 0.05),
-          'border-left': '1px solid ' + this._chartDataService.getTypeColor(this.item.type, 0.5),
-          'border-right': '1px solid ' + this._chartDataService.getTypeColor(this.item.type, 0.5),
+          'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.05),
+          'border-left': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
+          'border-right': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
           'padding-top': '15px',
           'padding-bottom': '15px',
         }
       }else{
         return { // if not mobile and not selected
-          'background-color': this._chartDataService.getTypeColor(this.item.type, 0.05),
-          'border': '1px solid ' + this._chartDataService.getTypeColor(this.item.type, 0.5),
+          'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.05),
+          'border': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
         }
       }
 

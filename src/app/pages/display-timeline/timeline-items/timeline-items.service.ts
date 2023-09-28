@@ -54,7 +54,7 @@ export class TimelineItemsService {
   private _update(){
     const displayedItems = this.allTimelineItems.filter(item => {
       const showBySignificance: boolean = item.significance >= this._significanceValue;
-      const showByCategory: boolean = this._itemCategories.indexOf(item.type) > -1;
+      const showByCategory: boolean = this._itemCategories.indexOf(item.mainType) > -1;
       return showBySignificance && showByCategory;
     });
     this._displayedTimelineItems$.next(displayedItems);
@@ -63,7 +63,7 @@ export class TimelineItemsService {
   public setQuarterlyFinancialResults(results: QuarterlyResult[]){
     this.allTimelineItems.forEach(item =>{ 
       results.forEach(result =>{
-        if(item.dateYYYYMMDD === result.filingDateYYYYMMDD && item.type === TimelineItemType.CORP){
+        if(item.dateYYYYMMDD === result.filingDateYYYYMMDD && item.types.indexOf(TimelineItemType.CORP) > -1){
           item.setQuarterlyFinancialResult(result);
         }
       });
