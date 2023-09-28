@@ -25,6 +25,7 @@ import { BalanceSheetBarChartComponent } from './pages/financials/balance-sheet-
 import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.component';
 import { ViewControlComponent } from './pages/display-timeline/controls/view-control/view-control.component';
 import { TimelineListItemComponent } from './pages/display-timeline/timeline-items/timeline-list-item/timeline-list-item.component';
+import { QuarterlyResultComponent } from './pages/display-timeline/timeline-items/quarterly-result/quarterly-result.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TimelineListItemComponent } from './pages/display-timeline/timeline-ite
     BalanceSheetBarChartComponent,
     MobileTopBarComponent,
     ViewControlComponent,
-    TimelineListItemComponent
+    TimelineListItemComponent,
+    QuarterlyResultComponent
   ],
   imports: [
     BrowserModule,

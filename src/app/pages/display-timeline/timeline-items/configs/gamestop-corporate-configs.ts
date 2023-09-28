@@ -222,7 +222,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
     },
     {
         title: 'GameStop Reports Fourth Quarter and Fiscal Year 2021 Results',
-        dateYYYYMMDD: '2022-03-17',
+        dateYYYYMMDD: '2022-03-28',
         urls: [
             // {
             //     url: '',
@@ -406,21 +406,6 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 label: 'Form 10-K',
                 archiveLink: '',
             },
-        ],
-        description: 'Q4 2022',
-        type: [TimelineItemType.CORP],
-        significance: 2,
-    },
-    {
-        title: 'GameStop publishes 2022 Report',
-        dateYYYYMMDD: '2023-03-28',
-        urls: [
-            // {
-            //     url: '',
-            //     type: 'REDDIT',
-            //     label: 'Superstonk thread',
-            //     archiveLink: '', 
-            // },
             {
                 url: 'https://investor.gamestop.com/static-files/fe325562-c087-4fad-809c-efd183364196',
                 type: 'GAMESTOP',
@@ -428,7 +413,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'Q4 2022',
         type: [TimelineItemType.CORP],
         significance: 2,
     },

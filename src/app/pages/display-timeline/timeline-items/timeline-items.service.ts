@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { TimelineItem } from './timeline-item/timeline-item.class';
 import { TimelineItemType } from './timeline-item/timeline-item-type.enum';
+import { QuarterlyResult } from '../../financials/quarterly-results/quarterly-result.class';
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +58,16 @@ export class TimelineItemsService {
       return showBySignificance && showByCategory;
     });
     this._displayedTimelineItems$.next(displayedItems);
+  }
+
+  public setQuarterlyFinancialResults(results: QuarterlyResult[]){
+    this.allTimelineItems.forEach(item =>{ 
+      results.forEach(result =>{
+        if(item.dateYYYYMMDD === result.filingDateYYYYMMDD && item.type === TimelineItemType.CORP){
+          item.setQuarterlyFinancialResult(result);
+        }
+      });
+    });
   }
 
 }

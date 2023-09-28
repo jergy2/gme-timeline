@@ -889,6 +889,30 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         type: [TimelineItemType.OTHER],
         significance: 1,
     },
+    {
+        title: 'U.S. representative French Hill told Gary Gensler that he shouldn’t pursue market reforms based on “one meme stock event”',
+        dateYYYYMMDD: '2023-09-27',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/16txiqj/this_is_the_part_where_french_hill_told_gensler/',
+                type: 'REDDIT',
+                label: 'Superstonk post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/221351',
+                type: 'LEMMY',
+                label: 'What is a meme stock?',
+                archiveLink: '',
+            },
+            
+        ],
+        description: '"I really urge you to get these equity markets proposals in order and to rely on data and not just emotion or one meme stock event to make policy"',
+        type: [TimelineItemType.OTHER],
+        significance: 2,
+        tags: ['meme stock', 'politics', 'Gary Gensler', ],
+    },
 
+    
 
 ]; 

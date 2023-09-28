@@ -3,6 +3,7 @@ import { GmePriceEntry } from "./gme-price-entry.interface";
 import { TimelineItemConfig } from "./timeline-item-config.interface";
 import { TimelineItemType } from "./timeline-item-type.enum";
 import { TimelineItemURL } from "./timeline-item-url.interface";
+import { QuarterlyResult } from "src/app/pages/financials/quarterly-results/quarterly-result.class";
 
 export class TimelineItem{
 
@@ -20,6 +21,8 @@ export class TimelineItem{
     private _gmePricePreSplit: string = '';
     private _specialIdentifier: string = '';
     private _itemIndex: number = -1;
+    
+    private _quarterlyFinancialResult: QuarterlyResult | null = null;
 
     public get title(): string { return this._title; }
     public get dateYYYYMMDD(): string { return this._dateYYYYMMDD; }
@@ -37,8 +40,9 @@ export class TimelineItem{
     public get gmePrice(): number { return this._gmePrice; }
     public get gmePricePreSplit(): string { return this._gmePricePreSplit; }
     public get specialIdentifier(): string { return this._specialIdentifier; }
-    
     public get itemIndex(): number { return this._itemIndex; }
+
+    public get quarterlyFinancialResult():  QuarterlyResult | null { return this._quarterlyFinancialResult; }
 
     constructor(config: TimelineItemConfig, gmePriceEntry: GmePriceEntry | undefined, index: number){
         this._title = config.title;
@@ -67,4 +71,8 @@ export class TimelineItem{
     public select(){ this._isSelected = true; }
     public unselect() { this._isSelected = false;}
 
+
+    public setQuarterlyFinancialResult(result: QuarterlyResult){
+        this._quarterlyFinancialResult = result;
+    }
 }

@@ -15,6 +15,7 @@ import { TimelineItemsService } from './pages/display-timeline/timeline-items/ti
 import { ChartDataSetManager } from './pages/display-timeline/chart/chart-dataset-manager.class';
 import { NavigationEnd, Router } from '@angular/router';
 import { SettingsService } from './settings.service';
+import { FinancialsService } from './pages/financials/financials.service';
 
 @Component({
   selector: 'app-root',
@@ -37,7 +38,8 @@ export class AppComponent {
     private _timelineItemsService: TimelineItemsService,
     private _displayService: DisplayService,
     private _router: Router,
-    private _settingsService: SettingsService) {
+    private _settingsService: SettingsService,
+    private _financialsService: FinancialsService) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -49,6 +51,7 @@ export class AppComponent {
 
   ngOnInit() {
     this._settingsService.getSettings();
+    
     this._router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (event.url === '/') {
@@ -57,7 +60,7 @@ export class AppComponent {
       }
     });
 
-    timer(200).subscribe({
+    this._financialsService.loadFinancialResults$().subscribe({
       next: () => { },
       error: () => { },
       complete: () => {
@@ -78,7 +81,7 @@ export class AppComponent {
             this._timelineItemsService.updateSignificanceValue(this._settingsService.significanceValue);
             this._timelineItemsService.updateCategories(this._settingsService.categories);
             this._updateChartData();
-
+            this._timelineItemsService.setQuarterlyFinancialResults(this._financialsService.quarterlyResults);
           },
         });
       }

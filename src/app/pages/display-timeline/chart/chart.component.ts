@@ -50,6 +50,12 @@ export class ChartComponent implements OnInit, AfterViewInit {
     // this.lineChartDataMobile.labels = labels;
     this._setLineChartOptions();
     this.lineChartData.datasets = this._dataManagerService.dataSets;
+
+    this._settingsService.showAsList$.subscribe({
+      next: ()=>{
+        
+      }
+    });
   }
 
   ngAfterViewInit() {
