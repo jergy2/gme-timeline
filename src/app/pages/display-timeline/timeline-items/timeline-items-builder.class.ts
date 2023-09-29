@@ -26,6 +26,12 @@ export class TimelineItemsBuilder{
             return new TimelineItem(config, gmePriceEntry, itemIndex);
             
         });
+        console.log("Items", items)
+        for(let i=1; i<items.length;i++){
+            if(items[i].dateMMMDDYYYY === items[i-1].dateMMMDDYYYY){
+                console.log("Match:", items[i], items[i-1])
+            }
+        }
         return items;
     }
 }

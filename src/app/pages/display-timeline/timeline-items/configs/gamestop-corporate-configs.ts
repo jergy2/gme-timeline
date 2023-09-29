@@ -555,11 +555,18 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://lemmy.whynotdrs.org/post/251667?scrollToComments=true',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/16uc4ve/gamestop_board_elected_ryan_cohen_as_ceo/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
                 archiveLink: '', 
             },
+            // https://www.youtube.com/watch?v=KZ5gskJY3LM
             // {
             //     url: 'https://www.reddit.com/r/ThePPShow/comments/16uc0li/ryan_cohen_elected_game_stop_ceo_immediately/?sort=top',
             //     type: 'REDDIT',

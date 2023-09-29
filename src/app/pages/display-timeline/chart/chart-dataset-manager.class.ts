@@ -162,7 +162,7 @@ export class ChartDataSetManager {
     const dataSet: (TimelineItem | null)[] = this._priceEntries
       // .filter(entry => entry.date.format('YYYY-MM-DD') > this.chartCutoffDate)
       .map((entry) => {
-        const foundEvent = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'));
+        const foundEvent = this._lookupEventByDate(entry.date.format('YYYY-MM-DD'), type, significanceValue);
         if (foundEvent) {
           if (foundEvent.mainType === type && foundEvent.significance === significanceValue) {
             return foundEvent;
@@ -171,14 +171,24 @@ export class ChartDataSetManager {
         return null;
       });
     const datasetConfig = new DatasetConfig(dataSet, type, type, this.getTypeColor(type), significanceValue);
+    console.log(datasetConfig);
     return datasetConfig;
   }
 
 
   /** finds a timeline item by date */
-  private _lookupEventByDate(dateYYYYMMDD: string): TimelineItem | undefined {
+  private _lookupEventByDate(dateYYYYMMDD: string, type?: TimelineItemType, significance?: number): TimelineItem | undefined {
     const foundItem = this._timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
     return foundItem;
+    // if(type !== null && significance !== null){
+    //   const foundItem = this._timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD && item.mainType === type && item.significance === significance);
+    //   return foundItem;
+    // }else{
+    //   const foundItem = this._timelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
+    //   return foundItem;
+    // }
+    
+    
   }
 
 

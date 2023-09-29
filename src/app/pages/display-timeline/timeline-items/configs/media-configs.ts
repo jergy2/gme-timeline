@@ -371,15 +371,22 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://www.drsgme.org/dumb-money',
+                type: 'OTHER',
+                label: 'DRSGME.org - Dumb Money',
+                archiveLink: '',
+            },
+            {
                 url: 'https://lemmy.whynotdrs.org/post/85996',
                 type: 'LEMMY',
                 label: 'Dumb Money movie trailer',
                 archiveLink: '',
             },
+
         ],
         description: 'Dumb Money is the ultimate David vs. Goliath tale, based on the insane true story of everyday people who flipped the script on Wall Street and got rich by turning GameStop (yes, the mall videogame store) into the world"s hottest company.',
         types: [TimelineItemType.MEDIA],
-        significance: 3,
+        significance: 4,
     },
 
 ]
