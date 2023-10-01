@@ -2199,27 +2199,6 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 0,
     },
     {
-        title: 'Ryan Cohen tweet',
-        dateYYYYMMDD: '2022-06-10',
-        urls: [
-            {
-                url: 'https://twitter.com/ryancohen/status/1535247081249595392',
-                type: 'X-TWITTER',
-                label: 'Ryan Cohen tweet',
-                archiveLink: '',
-            },
-            {
-                url: 'https://www.reddit.com/r/Superstonk/comments/v97dhk/ryan_cohen_tweet/?sort=top',
-                type: 'REDDIT',
-                label: 'Superstonk thread',
-                archiveLink: '',
-            },
-        ],
-        description: '"Poll: Did coronavirus lockdowns and economic stimulus spark inflation?"',
-        types: [TimelineItemType.RC],
-        significance: 0,
-    },
-    {
         title: 'Ryan Cohen tweets',
         dateYYYYMMDD: '2022-06-12',
         urls: [

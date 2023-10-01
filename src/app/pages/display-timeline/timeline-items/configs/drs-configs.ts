@@ -61,7 +61,7 @@ export const drsItemConfigs: TimelineItemConfig[] = [
     },
     {
         title: 'Superstonk’s 3rd AMA with Paul Conn',
-        dateYYYYMMDD: '2021-11-04',
+        dateYYYYMMDD: '2022-11-21',
         urls: [
             {
                 url: 'https://www.youtube.com/watch?v=xFQmiLWiv5Y',

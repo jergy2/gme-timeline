@@ -73,20 +73,34 @@ export class SettingsService {
   public getCategories(): TimelineItemType[] {
     const categoriesString = localStorage.getItem('categories');
     const categoriesSplit = categoriesString?.split(", ");
-    const categories: TimelineItemType[] = [];
+    let categories: TimelineItemType[] = [];
     categoriesSplit?.forEach(category => {
       category = category.substring(1, category.length - 1)
       categories.push(this._resolveCategory(category));
     });
     if (categories.length === 0) {
-      categories.push(TimelineItemType.CORP);
       categories.push(TimelineItemType.DRS);
-      categories.push(TimelineItemType.MEDIA);
+      categories.push(TimelineItemType.CORP);
       categories.push(TimelineItemType.RC);
+      categories.push(TimelineItemType.MEDIA);
       categories.push(TimelineItemType.DFV);
       categories.push(TimelineItemType.OTHER);
     }
+    categories = this._sortCategories(categories);
     return categories;
+  }
+
+  private _sortCategories(categories: TimelineItemType[]){
+    const priority = [
+      TimelineItemType.DRS, TimelineItemType.CORP, TimelineItemType.RC, TimelineItemType.MEDIA, TimelineItemType.DFV, TimelineItemType.OTHER,     
+    ];
+    const newCategories: TimelineItemType[] = [];
+    priority.forEach(priorityItem =>{
+      if(categories.indexOf(priorityItem) > -1){
+        newCategories.push(priorityItem);
+      }
+    })
+    return newCategories;
   }
 
   private _resolveCategory(categoryString: string): TimelineItemType {

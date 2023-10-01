@@ -54,9 +54,19 @@ export class TimelineItemsService {
   private _update(){
     const displayedItems = this.allTimelineItems.filter(item => {
       const showBySignificance: boolean = item.significance >= this._significanceValue;
-      const showByCategory: boolean = this._itemCategories.indexOf(item.mainType) > -1;
+      let showByCategory: boolean = false;
+      item.types.forEach(type =>{
+        if(this._itemCategories.indexOf(type) > -1){
+          showByCategory = true;
+        }
+      });
       return showBySignificance && showByCategory;
     });
+    // displayedItems.forEach(item => {
+    //   if(item.types.length > 1){
+    //     // console.log("ITEM has more than 1 type:", item.title, item.types)
+    //   }
+    // })
     this._displayedTimelineItems$.next(displayedItems);
   }
 

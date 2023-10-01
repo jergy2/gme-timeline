@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartOptions } from 'chart.js';
+import { ChartConfiguration, ChartOptions, TooltipItem } from 'chart.js';
 import { ChartDataManagerService } from './chart-data-manager-service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
@@ -20,8 +20,8 @@ export class ChartComponent implements OnInit, AfterViewInit {
   @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) { }
 
   constructor(
-    private _dataService: HistoricGMEDataService,
-    private _dataManagerService: ChartDataManagerService,
+    private _historicGMEDataService: HistoricGMEDataService,
+    private _chartDataService: ChartDataManagerService,
     private _timelineItemService: TimelineItemsService,
     private _sizeService: ScreeSizeService,
     private _settingsService: SettingsService
@@ -44,16 +44,16 @@ export class ChartComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this._updateChartContainerStyle()
-    let labels: string[] = this._dataService.priceEntriesAfterCutoff.map((entry) => { return entry.date.format('YYYY-MM-DD') });
+    let labels: string[] = this._historicGMEDataService.priceEntriesAfterCutoff.map((entry) => { return entry.date.format('YYYY-MM-DD') });
     /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
     this.lineChartData.labels = labels;
     // this.lineChartDataMobile.labels = labels;
     this._setLineChartOptions();
-    this.lineChartData.datasets = this._dataManagerService.dataSets;
+    this.lineChartData.datasets = this._chartDataService.dataSets;
 
     this._settingsService.showAsList$.subscribe({
-      next: ()=>{
-        
+      next: () => {
+
       }
     });
   }
@@ -64,7 +64,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
      * For example, if the user changes a filter value such as significance value, 
      * this subscription will fire and the chart must be updated here.
      */
-    this._dataManagerService.dataSets$.subscribe({
+    this._chartDataService.dataSets$.subscribe({
       next: (datasets) => {
         this.lineChartData.datasets = datasets;
         this.baseChart?.update();
@@ -78,7 +78,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
     this._timelineItemService.itemSelected$.subscribe({
       next: (selected) => {
         if (selected.item) {
-          if(selected.source !== 'CHART'){
+          if (selected.source !== 'CHART') {
             this._openToolTip(selected.item);
           }
         }
@@ -90,26 +90,27 @@ export class ChartComponent implements OnInit, AfterViewInit {
 
 
 
-  private _setLineChartOptions(){
-    this.lineChartOptions =  {
+  private _setLineChartOptions() {
+    this.lineChartOptions = {
       responsive: true,
       onHover: (event, array) => {
         if (array.length > 0) {
-          if(!this._tooltipOpenedFromTimelineItems){
-            const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
+          if (!this._tooltipOpenedFromTimelineItems) {
+            const timelineItem = this._chartDataService.lookupEventByIndex(array[0].datasetIndex, array[0].index);
             if (timelineItem) {
               this._timelineItemService.selectItem(timelineItem, 'CHART');
             } else {
               // this._timelineItemService.unselectItem();
             }
-          }else{
+          } else {
             this._tooltipOpenedFromTimelineItems = false;
-          }          
+          }
         } else {
           // this._timelineItemService.unselectItem();
         }
       },
       onClick: (event, array) => {
+        console.log("item clicked");
         // console.log(event, array)
         // if (array.length > 0) {
         //   const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
@@ -140,9 +141,9 @@ export class ChartComponent implements OnInit, AfterViewInit {
             weight: 'normal',
           },
           callbacks: {
-            label: (context) => { return this._getTooltipLabel(context.label) },
-            footer: (context) => { return this._getTooltipDescription(context[0].label) },
-            title: (context) => { return this._getDateString(context[0].label) + '  -  GME share price: $' + Number(context[0].raw).toFixed(2); }
+            label: (context) => { return this._labelContext(context) },
+            footer: (context) => { return this._footerContext(context) },
+            title: (context) => { return this._titleContext(context) }
           },
         },
         legend: {
@@ -157,15 +158,34 @@ export class ChartComponent implements OnInit, AfterViewInit {
     };
   }
 
-  public onClick(event: Event){
+  private _labelContext(context: TooltipItem<"line">) {
+    const event = this._chartDataService.lookupEventByIndex(context.datasetIndex, context.dataIndex)
+    return '' + event?.title;
+  }
+  private _footerContext(context: TooltipItem<"line">[]) {
+    const event = this._chartDataService.lookupEventByIndex(context[0].datasetIndex, context[0].dataIndex)
+    if(event){
+      if(event.description.length > 120){
+        return event.description.substring(0, 120) + '...';
+      }else{
+        return event.description;
+      }
+    }
+    return '';
+  }
+  private _titleContext(context: TooltipItem<"line">[]) {
+    const event = this._chartDataService.lookupEventByIndex(context[0].datasetIndex, context[0].dataIndex)
+    return '' + dayjs(event?.dateYYYYMMDD).format('MMMM D, YYYY') + " - GME share price: $" + Number(context[0].raw).toFixed(2);
+  }
+
+  public onClick(event: Event) {
   }
 
   private _tooltipOpenedFromTimelineItems: boolean = false;
-
   private _openToolTip(item: TimelineItem) {
     var mouseMoveEvent, meta, point;
-    const itemIndex = this._dataManagerService.lookupIndexByEvent(item);
-    if(this.baseChart?.chart){
+    const itemIndex = this._chartDataService.lookupIndexByEvent(item);
+    if (this.baseChart?.chart) {
       this.baseChart?.chart?.setActiveElements([{
         datasetIndex: itemIndex.datasetIndex,
         index: itemIndex.itemIndex,
@@ -177,10 +197,10 @@ export class ChartComponent implements OnInit, AfterViewInit {
       point = meta.data[itemIndex.itemIndex];
     }
     if (point) {
-      if(this.isListView){
+      if (this.isListView) {
         const containerEl = document.getElementById('chartContainer');
         const chartEl = document.getElementById('chartCanvas')
-        if(containerEl && chartEl){
+        if (containerEl && chartEl) {
           const gap = (containerEl.clientHeight - chartEl.clientHeight) / 2;
           mouseMoveEvent = new MouseEvent('mousemove', {
             clientX: point.x,
@@ -189,8 +209,8 @@ export class ChartComponent implements OnInit, AfterViewInit {
           this._tooltipOpenedFromTimelineItems = true;
           this.baseChart?.chart?.canvas.dispatchEvent(mouseMoveEvent);
         }
-        
-      }else{
+
+      } else {
         mouseMoveEvent = new MouseEvent('mousemove', {
           clientX: point.x,
           clientY: point.y,
@@ -198,19 +218,19 @@ export class ChartComponent implements OnInit, AfterViewInit {
         this._tooltipOpenedFromTimelineItems = true;
         this.baseChart?.chart?.canvas.dispatchEvent(mouseMoveEvent);
       }
-      
+
     }
   }
 
   private _updateChartContainerStyle() {
-    if(this.isListView){
+    if (this.isListView) {
       let width = this._sizeService.screenDimensions.width - 500;
       const maxHeight = this._sizeService.screenDimensions.height - 80;
       this._chartContainerNgStyle = {
         'max-width': width + 'px',
         'height': maxHeight + 'px',
       };
-    }else{
+    } else {
       const gridBottomRowHeight = 180;
       const width = this._sizeService.screenDimensions.width;
       const height = this._sizeService.screenDimensions.height - gridBottomRowHeight;
@@ -221,48 +241,16 @@ export class ChartComponent implements OnInit, AfterViewInit {
         'height': roundedHeight + 'px',
       };
     }
-    
-  }
-
-  private _getTooltipLabel(providedLabel: string): string {
-    const foundEvent = this._lookupEvent(providedLabel);
-    if (foundEvent) {
-      return foundEvent.title;
-    } else {
-      return '';
-    }
-  }
-  private _getTooltipDescription(providedLabel: string): string {
-    const foundEvent = this._lookupEvent(providedLabel);
-    if (foundEvent) {
-      const description = foundEvent.description;
-      if (description.length > 100) {
-        return description.substring(0, 100) + "...";
-      }
-      return foundEvent.description;
-    } else {
-      return '';
-    }
   }
 
   private _tooltipBackgroundColor: string = 'rgba(0,0,0,0.8)';
-  private _getTooltipBackgroundColor(context: any) {
-    const foundEvent = this._lookupEvent(context.label);
+  private _getTooltipBackgroundColor(context: TooltipItem<"line">) {
+    const foundEvent = this._chartDataService.lookupEventByIndex(context.datasetIndex, context.dataIndex);
+    const dataset = this._chartDataService.lookupDataset(context.datasetIndex);
     if (foundEvent) {
-      this._tooltipBackgroundColor = this._dataManagerService.getTypeColor(foundEvent.mainType);
+      this._tooltipBackgroundColor = this._chartDataService.getTypeColor(dataset.itemType);
     }
     return this._tooltipBackgroundColor;
-  }
-
-  private _lookupEvent(dateYYYYMMDD: string) {
-    const foundItem = this._timelineItemService.allTimelineItems.find(item => item.dateYYYYMMDD === dateYYYYMMDD);
-    return foundItem;
-  }
-  private _lookupEventByIndex(datasetIndex: number, index: number) {
-    return this._dataManagerService.lookupEventByIndex(datasetIndex, index);
-  }
-  private _getDateString(dateYYYYMMDD: string): string {
-    return dayjs(dateYYYYMMDD).format('MMMM D, YYYY');
   }
 
 }

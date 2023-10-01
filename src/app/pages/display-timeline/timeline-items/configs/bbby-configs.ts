@@ -20,7 +20,7 @@ export const bbbyConfigs: TimelineItemConfig[] = [
             },
             {
                 url: 'https://twitter.com/kaismaalej/status/1705623469386309955',
-                type: 'REDDIT',
+                type: 'X-TWITTER',
                 label: 'Bottles signed by Jim Cramer - Sept 23',
                 archiveLink: '',
             },
