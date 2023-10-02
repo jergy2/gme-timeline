@@ -4,6 +4,7 @@ import { trigger, state, style, animate, transition, keyframes, } from '@angular
 import { SidebarService } from 'src/app/layout/sidebar/sidebar.service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { SettingsService } from 'src/app/settings.service';
+import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 
 @Component({
   selector: 'app-controls',
@@ -79,7 +80,11 @@ import { SettingsService } from 'src/app/settings.service';
 })
 export class ControlsComponent {
 
-  constructor(private _sidebarService: SidebarService, private _sizeService: ScreeSizeService, private _settingsService: SettingsService){}
+  constructor(
+    private _sidebarService: SidebarService, 
+    private _sizeService: ScreeSizeService, 
+    private _settingsService: SettingsService,
+    private _timelineItemService: TimelineItemsService){}
 
   public get faSliders() { return faSliders; }
   public get faQuestion() { return faQuestion; }
@@ -96,6 +101,7 @@ export class ControlsComponent {
 
   public onMouseEnterControls(){
     this._sidebarService.changeControlsState('EXPANDED');
+    this._timelineItemService.unselectItem();
   }
   public onMouseLeaveControls(){
     if(!this.isPinned){

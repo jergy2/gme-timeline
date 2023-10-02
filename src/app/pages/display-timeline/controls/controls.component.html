@@ -16,7 +16,7 @@
         <fa-icon [icon]="faQuestion" style="font-size: 1.7em;"></fa-icon>
     </div>
 </div>
-<div *ngIf="!isMobile && showAsList && showAbout" class="about-container shadow" style="background-color: purple;">
+<div *ngIf="!isMobile && showAsList && showAbout" class="about-container shadow" style="background-color: purple;" (mouseenter)="onMouseEnterControls()">
     <div class="close-button-bar">
         <div class="close-button" (click)="onClickCloseAbout()">X</div>
     </div>

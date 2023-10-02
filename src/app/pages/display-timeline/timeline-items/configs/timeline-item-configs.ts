@@ -198,6 +198,12 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 label: 'SEC link',
                 archiveLink: '',
             },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/261607',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
         ],
         description: '',
         types: [TimelineItemType.RC],
@@ -267,6 +273,12 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
                 url: 'https://www.sec.gov/Archives/edgar/data/1326380/000101359420000821/rc13da3-111620.pdf',
                 type: 'DOCUMENT',
                 label: 'SEC link',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/261607',
+                type: 'LEMMY',
+                label: '',
                 archiveLink: '',
             },
             {
