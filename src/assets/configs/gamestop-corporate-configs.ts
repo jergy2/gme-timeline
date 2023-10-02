@@ -1,5 +1,5 @@
-import { TimelineItemType } from "../timeline-item/timeline-item-type.enum";
-import { TimelineItemConfig } from "../timeline-item/timeline-item-config.interface";
+import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
+import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
 
 export const corporateEventConfigs: TimelineItemConfig[] = [
     {
@@ -249,7 +249,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
     },
     {
         title: 'GameStop Reports Fourth Quarter and Fiscal Year 2021 Results',
-        dateYYYYMMDD: '2022-03-28',
+        dateYYYYMMDD: '2022-03-17',
         urls: [
             // {
             //     url: '',

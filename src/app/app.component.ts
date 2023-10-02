@@ -3,11 +3,6 @@ import { HistoricGMEDataService } from './historic-gme-data.service';
 import { ScreeSizeService } from './scree-size.service';
 import { timer } from 'rxjs';
 import { DisplayService } from './pages/display-timeline/display.service';
-import { timelineItemConfigs } from './pages/display-timeline/timeline-items/configs/timeline-item-configs';
-import { rcTweetsConfigs } from './pages/display-timeline/timeline-items/configs/rc-events-configs';
-import { corporateEventConfigs } from './pages/display-timeline/timeline-items/configs/gamestop-corporate-configs';
-import { drsItemConfigs } from './pages/display-timeline/timeline-items/configs/drs-configs';
-import { mediaItemConfigs } from './pages/display-timeline/timeline-items/configs/media-configs';
 import { TimelineItem } from './pages/display-timeline/timeline-items/timeline-item/timeline-item.class';
 import { TimelineItemsBuilder } from './pages/display-timeline/timeline-items/timeline-items-builder.class';
 import { ChartDataManagerService } from './pages/display-timeline/chart/chart-data-manager-service';
@@ -16,6 +11,11 @@ import { ChartDataSetManager } from './pages/display-timeline/chart/chart-datase
 import { NavigationEnd, Router } from '@angular/router';
 import { SettingsService } from './settings.service';
 import { FinancialsService } from './pages/financials/financials.service';
+import { timelineItemConfigs } from 'src/assets/configs/timeline-item-configs';
+import { corporateEventConfigs } from 'src/assets/configs/gamestop-corporate-configs';
+import { drsItemConfigs } from 'src/assets/configs/drs-configs';
+import { mediaItemConfigs } from 'src/assets/configs/media-configs';
+import { rcTweetsConfigs } from 'src/assets/configs/rc-events-configs';
 
 @Component({
   selector: 'app-root',

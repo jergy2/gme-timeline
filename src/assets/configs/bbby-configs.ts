@@ -1,5 +1,5 @@
-import { TimelineItemType } from "../timeline-item/timeline-item-type.enum";
-import { TimelineItemConfig } from "../timeline-item/timeline-item-config.interface";
+import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
+import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
 
 export const bbbyConfigs: TimelineItemConfig[] = [
     {
