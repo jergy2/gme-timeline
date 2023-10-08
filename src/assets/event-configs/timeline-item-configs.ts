@@ -894,7 +894,40 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         significance: 2,
         tags: ['meme stock', 'politics', 'Gary Gensler', ],
     },
-
+    {
+        title: 'This is Financial Advice',
+        dateYYYYMMDD: '2023-10-01',
+        urls: [
+            {
+                url: 'https://www.youtube.com/watch?v=5pYeoZaoWrA',
+                type: 'YOUTUBE',
+                label: 'This is Financial Advice',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/videos/comments/16wmlpz/this_is_financial_advice_folding_ideas/',
+                type: 'REDDIT',
+                label: 'r/videos post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/266502',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            // {
+            //     url: 'https://www.reddit.com/r/ThePPShow/comments/16xl3ie/dan_olsen_calling_pp_a_grifter_wonder_how_much_he/',
+            //     type: 'REDDIT',
+            //     label: 'thePPshow',
+            //     archiveLink: '',
+            // },   
+        ],
+        description: 'A video is published about GME and BBBY investors.  "Conspiracy theorists flock together and constantly try and rope each other into the orbit of their personal hobby horse conspiracy"',
+        types: [TimelineItemType.MEDIA],
+        significance: 2,
+        tags: ['propaganda', 'FUD', 'media', 'documentary', 'BBBY', 'theppshow'],
+    }
     
 
 ]; 
