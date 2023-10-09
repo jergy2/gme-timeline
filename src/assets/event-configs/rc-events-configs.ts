@@ -1668,6 +1668,12 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://lemmy.whynotdrs.org/post/285313',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/u2vvxa/ryan_cohen_is_now_warren_icahn_on_twitter_could/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',
