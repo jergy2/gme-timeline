@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class CategoryButtons {
   constructor() {
     this._buildCategoryButtons([
-      TimelineItemType.CORP, TimelineItemType.DFV, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC
+      TimelineItemType.CORP, TimelineItemType.SOCIAL_MEDIA, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC
     ]);
     const selectedCategories: TimelineItemType[] = [];
     this._categoryButtons.forEach(item => {
@@ -122,7 +122,7 @@ export class CategoryButtons {
   
   private _buildCategoryButtons(categories: TimelineItemType[]) {
     const allCategories: TimelineItemType[] = [
-      TimelineItemType.CORP, TimelineItemType.DFV, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC
+      TimelineItemType.CORP, TimelineItemType.SOCIAL_MEDIA, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC
     ];
     if(categories.length === allCategories.length){
       this._allButton.showActivated = true;
@@ -154,9 +154,9 @@ export class CategoryButtons {
         hideActivated: !(categories.indexOf(TimelineItemType.RC) > -1),
       },
       {
-        category: TimelineItemType.DFV,
-        showActivated: categories.indexOf(TimelineItemType.DFV) > -1,
-        hideActivated: !(categories.indexOf(TimelineItemType.DFV) > -1),
+        category: TimelineItemType.SOCIAL_MEDIA,
+        showActivated: categories.indexOf(TimelineItemType.SOCIAL_MEDIA) > -1,
+        hideActivated: !(categories.indexOf(TimelineItemType.SOCIAL_MEDIA) > -1),
       },
       {
         category: TimelineItemType.MEDIA,

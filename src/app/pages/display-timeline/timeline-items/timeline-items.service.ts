@@ -13,7 +13,7 @@ export class TimelineItemsService {
 
   private _significanceValue: number = 1;
   private _itemCategories: TimelineItemType[] = [
-    TimelineItemType.CORP, TimelineItemType.DFV, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC,
+    TimelineItemType.CORP, TimelineItemType.SOCIAL_MEDIA, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC,
   ];
 
   private _itemSelected$: Subject<{item: TimelineItem | null, source: 'CHART' | 'ITEMS' | 'NULL'}> = new Subject();

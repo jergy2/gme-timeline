@@ -3423,4 +3423,63 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         types: [TimelineItemType.RC],
         significance: 0,
     }, 
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-09-03',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1698440106053337444',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen reply tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/1698689/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Big win for consumers. Consumers have also invested their hard earned money in to physical video games. Disk drives should be required on consoles."',
+        types: [TimelineItemType.RC],
+        significance: 1,
+    }, 
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-10-04',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1709785201763582158',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen reply tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/1708i2k/ryan_cohen_on_x/?sort=top',
+                type: 'REDDIT',
+                label: 'r/Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/ThePPShow/comments/1708iir/new_rc_post/?sort=top',
+                type: 'REDDIT',
+                label: 'r/ThePPShow thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/272817',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            
+        ],
+        description: '',
+        types: [TimelineItemType.RC],
+        significance: 1,
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-10-04.jpg'
+    }, 
+
+    
+
 ];

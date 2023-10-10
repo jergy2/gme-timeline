@@ -83,7 +83,7 @@ export class SettingsService {
       categories.push(TimelineItemType.CORP);
       categories.push(TimelineItemType.RC);
       categories.push(TimelineItemType.MEDIA);
-      categories.push(TimelineItemType.DFV);
+      categories.push(TimelineItemType.SOCIAL_MEDIA);
       categories.push(TimelineItemType.OTHER);
     }
     categories = this._sortCategories(categories);
@@ -92,7 +92,7 @@ export class SettingsService {
 
   private _sortCategories(categories: TimelineItemType[]){
     const priority = [
-      TimelineItemType.DRS, TimelineItemType.CORP, TimelineItemType.RC, TimelineItemType.MEDIA, TimelineItemType.DFV, TimelineItemType.OTHER,     
+      TimelineItemType.DRS, TimelineItemType.CORP, TimelineItemType.RC, TimelineItemType.MEDIA, TimelineItemType.SOCIAL_MEDIA, TimelineItemType.OTHER,     
     ];
     const newCategories: TimelineItemType[] = [];
     priority.forEach(priorityItem =>{
@@ -113,8 +113,8 @@ export class SettingsService {
       type = TimelineItemType.MEDIA;
     } else if (categoryString === 'Ryan Cohen') {
       type = TimelineItemType.RC;
-    } else if (categoryString === 'DFV') {
-      type = TimelineItemType.DFV;
+    } else if (categoryString === 'Social Media') {
+      type = TimelineItemType.SOCIAL_MEDIA;
     } else if (categoryString === 'Other') {
       type = TimelineItemType.OTHER;
     }

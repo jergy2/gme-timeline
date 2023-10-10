@@ -566,6 +566,18 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 label: 'Superstonk thread',
                 archiveLink: '', 
             },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/252364?scrollToComments=true',
+                type: 'LEMMY',
+                label: 'Ryan Cohens email to corporate employees',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/16urjos/ryan_cohens_email_to_corporate_employees_and/',
+                type: 'REDDIT',
+                label: 'Ryan Cohens email to corporate employees',
+                archiveLink: '',
+            },
             // https://www.youtube.com/watch?v=KZ5gskJY3LM
             // {
             //     url: 'https://www.reddit.com/r/ThePPShow/comments/16uc0li/ryan_cohen_elected_game_stop_ceo_immediately/?sort=top',
@@ -575,7 +587,8 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             // },            
         ],
         description: '',
-        types: [TimelineItemType.CORP],
-        significance: 2,
+        types: [TimelineItemType.CORP, TimelineItemType.RC],
+        significance: 3,
     },
+    
 ];

@@ -66,7 +66,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.DFV],
+        types: [TimelineItemType.SOCIAL_MEDIA],
         significance: 1,
     },
     {
@@ -162,7 +162,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.DFV],
+        types: [TimelineItemType.SOCIAL_MEDIA],
         significance: 2,
         imgSrc: 'assets/dfv-short-interest.jpg'
     },
@@ -184,7 +184,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: '',
-        types: [TimelineItemType.DFV],
+        types: [TimelineItemType.SOCIAL_MEDIA],
         significance: 2,
         imgSrc: 'assets/dfv-cigar.jpg'
     },
@@ -222,7 +222,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.DFV],
+        types: [TimelineItemType.SOCIAL_MEDIA],
         significance: 2,
     },
     {
@@ -243,7 +243,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.DFV],
+        types: [TimelineItemType.SOCIAL_MEDIA],
         significance: 1,
     },
 
@@ -472,7 +472,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'DFV’s final reddit post',
-        types: [TimelineItemType.DFV],
+        types: [TimelineItemType.SOCIAL_MEDIA],
         significance: 3,
         imgSrc: 'assets/dfv-loading.jpg'
     },
@@ -522,7 +522,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'DFV aka Roaring Kitty tweets an observing cat with background music of O Fortuna',
-        types: [TimelineItemType.DFV],
+        types: [TimelineItemType.SOCIAL_MEDIA],
         significance: 1,
         imgSrc: 'assets/dfv-tweet-2021-06-01.PNG'
     },
@@ -574,7 +574,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
             }
         ],
         description: '"State regulators found MassMutual failed to detect nearly 1,700 trades by Gill, who was able to execute at least two trades in GameStop in excess of $700,000, beyond a company limit."',
-        types: [TimelineItemType.DFV],
+        types: [TimelineItemType.SOCIAL_MEDIA],
         significance: 1,
     },
     {

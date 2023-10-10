@@ -97,7 +97,7 @@ export class ChartDataSetManager {
       return 'rgba(230,110,0,' + String(transparency) + ')';
     } else if (type === TimelineItemType.RC) {
       return 'rgba(0,0,255,' + String(transparency) + ')';
-    } else if (type === TimelineItemType.DFV) {
+    } else if (type === TimelineItemType.SOCIAL_MEDIA) {
       return 'rgba(255,0,0,' + String(transparency) + ')';
     } else if (type === TimelineItemType.OTHER) {
       return 'rgba(128,128,128,' + String(transparency) + ')';
@@ -262,7 +262,7 @@ export class ChartDataSetManager {
     TimelineItemType.CORP,
     TimelineItemType.RC,
     TimelineItemType.MEDIA,
-    TimelineItemType.DFV,
+    TimelineItemType.SOCIAL_MEDIA,
     TimelineItemType.OTHER];
     for (let i = 0; i < priorityTypes.length; i++) {
       const index = bothItems.findIndex(item => item.mainType === priorityTypes[i]);

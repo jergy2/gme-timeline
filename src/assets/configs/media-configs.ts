@@ -384,9 +384,39 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
             },
 
         ],
-        description: 'Dumb Money is the ultimate David vs. Goliath tale, based on the insane true story of everyday people who flipped the script on Wall Street and got rich by turning GameStop (yes, the mall videogame store) into the world"s hottest company.',
+        description: '"Dumb Money is the ultimate David vs. Goliath tale, based on the insane true story of everyday people who flipped the script on Wall Street and got rich by turning GameStop (yes, the mall videogame store) into the world"s hottest company."',
         types: [TimelineItemType.MEDIA],
         significance: 4,
     },
+    {
+        title: 'This is Financial Advice',
+        dateYYYYMMDD: '2023-09-30',
+        urls: [
+            {
+                url: 'https://youtu.be/5pYeoZaoWrA',
+                type: 'YOUTUBE',
+                label: 'YouTube link',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/videos/comments/16wmlpz/this_is_financial_advice_folding_ideas/?sort=top',
+                type: 'REDDIT',
+                label: 'r/videos discussion',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/266502',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+
+        ],
+        description: '"Conspiracy theorists flock together and constantly try and rope each other into the orbit of their personal hobby horse conspiracy, so once you break the surface suddenly you’re digging through endless side stories, each with their own cast of characters, trying to figure out if some tertiary claim is true, was maybe true in the past but is no longer true, or was never true, and discover that the only sources on the matter are the same three people quoting each other in an endless circle of false legitimacy."',
+        types: [TimelineItemType.MEDIA],
+        significance: 2,
+    },
+
+
 
 ]

@@ -16,6 +16,7 @@ import { corporateEventConfigs } from 'src/assets/configs/gamestop-corporate-con
 import { drsItemConfigs } from 'src/assets/configs/drs-configs';
 import { mediaItemConfigs } from 'src/assets/configs/media-configs';
 import { rcTweetsConfigs } from 'src/assets/configs/rc-events-configs';
+import { socialMediaConfigs } from 'src/assets/configs/social-media-configs';
 
 @Component({
   selector: 'app-root',
@@ -75,6 +76,7 @@ export class AppComponent {
               drsItemConfigs,
               mediaItemConfigs,
               rcTweetsConfigs,
+              socialMediaConfigs,
             ];
             const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
             this._timelineItemsService.setTimelineItems(timelineItems);

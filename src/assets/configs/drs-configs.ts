@@ -177,7 +177,7 @@ export const drsItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: 'Superstonk mods wield their authority to spread false information and mischaracterizations with respect to recent actions taken by the DRSGME.org team.',
-        types: [TimelineItemType.DRS],
+        types: [TimelineItemType.DRS, TimelineItemType.SOCIAL_MEDIA],
         significance: 1,
     },
     {
@@ -198,7 +198,7 @@ export const drsItemConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.DRS],
+        types: [TimelineItemType.DRS, TimelineItemType.SOCIAL_MEDIA],
         significance: 3,
     },
 ]
