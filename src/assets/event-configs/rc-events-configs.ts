@@ -2752,6 +2752,12 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
+                url: 'https://lemmy.whynotdrs.org/post/285313',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+            {
                 url: 'https://www.reddit.com/r/Superstonk/comments/y6vjdu/ryan_cohen_again/?sort=top',
                 type: 'REDDIT',
                 label: 'Superstonk thread',

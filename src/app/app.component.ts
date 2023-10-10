@@ -11,12 +11,12 @@ import { ChartDataSetManager } from './pages/display-timeline/chart/chart-datase
 import { NavigationEnd, Router } from '@angular/router';
 import { SettingsService } from './settings.service';
 import { FinancialsService } from './pages/financials/financials.service';
-import { timelineItemConfigs } from 'src/assets/configs/timeline-item-configs';
-import { corporateEventConfigs } from 'src/assets/configs/gamestop-corporate-configs';
-import { drsItemConfigs } from 'src/assets/configs/drs-configs';
-import { mediaItemConfigs } from 'src/assets/configs/media-configs';
-import { rcTweetsConfigs } from 'src/assets/configs/rc-events-configs';
-import { socialMediaConfigs } from 'src/assets/configs/social-media-configs';
+import { timelineItemConfigs } from 'src/assets/event-configs/timeline-item-configs';
+import { corporateEventConfigs } from 'src/assets/event-configs/gamestop-corporate-configs';
+import { drsItemConfigs } from 'src/assets/event-configs/drs-configs';
+import { mediaItemConfigs } from 'src/assets/event-configs/media-configs';
+import { rcTweetsConfigs } from 'src/assets/event-configs/rc-events-configs';
+import { socialMediaConfigs } from 'src/assets/event-configs/social-media-configs';
 
 @Component({
   selector: 'app-root',
@@ -71,7 +71,7 @@ export class AppComponent {
           complete: () => {
             // this._displayService.setDisplay('TIMELINE');
             const allConfigs = [
-              timelineItemConfigs,             
+              timelineItemConfigs,           
               corporateEventConfigs,
               drsItemConfigs,
               mediaItemConfigs,
