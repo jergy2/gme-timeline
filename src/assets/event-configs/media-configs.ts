@@ -410,13 +410,18 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
                 label: '',
                 archiveLink: '',
             },
+                        // {
+            //     url: 'https://www.reddit.com/r/ThePPShow/comments/16xl3ie/dan_olsen_calling_pp_a_grifter_wonder_how_much_he/',
+            //     type: 'REDDIT',
+            //     label: 'thePPshow',
+            //     archiveLink: '',
+            // },   
 
         ],
         description: '"Conspiracy theorists flock together and constantly try and rope each other into the orbit of their personal hobby horse conspiracy, so once you break the surface suddenly you’re digging through endless side stories, each with their own cast of characters, trying to figure out if some tertiary claim is true, was maybe true in the past but is no longer true, or was never true, and discover that the only sources on the matter are the same three people quoting each other in an endless circle of false legitimacy."',
         types: [TimelineItemType.MEDIA],
         significance: 2,
+        tags: ['propaganda', 'FUD', 'media', 'documentary', 'BBBY', 'theppshow'],
     },
-
-
 
 ]
