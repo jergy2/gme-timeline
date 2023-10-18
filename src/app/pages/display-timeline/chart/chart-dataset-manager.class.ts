@@ -216,6 +216,7 @@ export class ChartDataSetManager {
         currentDate = dayjs(currentDate).add(1, 'days');
       }
     }
+
     const configs = datapointSets.map(set => {
       return new DatasetConfig(set.datapoints, set.type, set.type, this.getTypeColor(set.type), set.significance);
     });

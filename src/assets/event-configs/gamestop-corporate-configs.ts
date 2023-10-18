@@ -573,7 +573,7 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
                 archiveLink: '',
             },
             {
-                url: 'https://www.reddit.com/r/Superstonk/comments/16urjos/ryan_cohens_email_to_corporate_employees_and/',
+                url: 'https://www.reddit.com/r/Superstonk/comments/16urjos/ryan_cohens_email_to_corporate_employees_and/?sort=top',
                 type: 'REDDIT',
                 label: 'Ryan Cohens email to corporate employees',
                 archiveLink: '',
@@ -585,18 +585,6 @@ export const corporateEventConfigs: TimelineItemConfig[] = [
             //     label: 'thePPshow thread',
             //     archiveLink: '', 
             // },            
-            {
-                url: 'https://www.reddit.com/r/Superstonk/comments/16urjos/ryan_cohens_email_to_corporate_employees_and/?sort=top',
-                type: 'REDDIT',
-                label: 'Ryan Cohen writes a letter as CEO - Superstonk',
-                archiveLink: ''
-            },
-            {
-                url: 'https://lemmy.whynotdrs.org/post/252364',
-                type: 'LEMMY',
-                label: 'Ryan’s Letter',
-                archiveLink: ''
-            },
         ],
         description: '',
         types: [TimelineItemType.CORP, TimelineItemType.RC],

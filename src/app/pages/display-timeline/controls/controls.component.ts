@@ -11,41 +11,6 @@ import { TimelineItemsService } from '../timeline-items/timeline-items.service';
   templateUrl: './controls.component.html',
   styleUrls: ['./controls.component.scss'],
   animations: [
-    // trigger('expandShrink', [
-    //   state('expand', style({
-    //     opacity: 1,
-    //     backgroundColor: 'yellow',
-    //     borderRadius: '15px',
-    //   })),
-    //   state('shrink', style({
-    //     opacity: 0.5,
-    //     backgroundColor: 'green',
-    //     borderRadius: '50px',
-    //   })),
-    //   transition('expand => shrink', [
-    //     animate('1s')
-    //   ]),
-    //   transition('shrink => expand', [
-    //     animate('0.5s')
-    //   ]),
-    //   transition('* => shrink', [
-    //     animate('1s')
-    //   ]),
-    //   transition('* => expand', [
-    //     animate('0.5s')
-    //   ]),
-    //   transition('expand <=> shrink', [
-    //     animate('0.5s')
-    //   ]),
-    //   transition ('* => expand', [
-    //     animate ('1s',
-    //       style ({ opacity: '*' }),
-    //     ),
-    //   ]),
-    //   transition('* => *', [
-    //     animate('1s')
-    //   ]),
-    // ]),
     trigger('appear', [
       state('appear', style({
         transform: 'translateX(0)',

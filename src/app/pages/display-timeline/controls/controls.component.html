@@ -11,18 +11,8 @@
             </div>
         </div>
     </div>
-    <div *ngIf="showAsList" class="about-button-container shadow" (click)="onClickAbout()"
-        [ngClass]="showAbout ? 'about-expanded': ''">
-        <fa-icon [icon]="faQuestion" style="font-size: 1.7em;"></fa-icon>
-    </div>
 </div>
-<div *ngIf="!isMobile && showAsList && showAbout" class="about-container shadow" style="background-color: purple;" (mouseenter)="onMouseEnterControls()">
-    <div class="close-button-bar">
-        <div class="close-button" (click)="onClickCloseAbout()">X</div>
-    </div>
 
-    <app-about></app-about>
-</div>
 
 <div class="controls-root-mobile" *ngIf="isMobile">
     <div class="controls-expanded">

@@ -1,0 +1,32 @@
+<div class="table-root">
+    <table class="table">
+        <tr style="font-size:0.9em;font-weight: 500;">
+            <td style="border-top: none;border-left:none;"></td>
+            <td>Quarter</td>
+            <td>Report Date</td>
+            <td>Revenue<br>(billions)</td>
+            <td>Net income<br>(millions)</td>
+            <td>Assets<br>(billions)</td>
+            <td>Liabilities<br>(billions)</td>
+            <td>Stockholder Equity<br>(billions)</td>
+            <!-- <td>Operating Loss / Gain<br>(millions)</td> -->
+            <td>Earnings / Loss per share<br>$</td>
+            <td>DRS shares <br>% of issued shares</td>
+        </tr>
+        <tr *ngFor="let result of quarterlyResults" [style.border-bottom]="result.quarter === 'Q1' ? '2px solid rgb(200,200,200)': '1px solid gray'">
+            <td>
+                <a [href]="result.tenQKformLink" target="_blank"><img src="assets/icons/document-icon.png" alt="" style="width: 18px;height: 18px;"></a>
+            </td>
+            <td>{{ result.quarter }} {{ trimmedYear(result.fiscalYear) }}</td>
+            <td style="font-size: 0.8em;">{{ date(result.reportDateYYYYMMDD) }} </td>
+            <td [style.backgroundColor]="backgroundColor(result, 'REVENUE')">$ {{ ((result.revenue)/1000).toFixed(1) }} </td>
+            <td [style.backgroundColor]="backgroundColor(result, 'NETINCOME')">$ {{ ((result.netIncome)).toFixed(0)}} </td>
+            <td [style.backgroundColor]="backgroundColor(result, 'ASSETS')">$ {{ ((result.assetsMillions)/1000).toFixed(1)}}</td>
+            <td [style.backgroundColor]="backgroundColor(result, 'LIABILITIES')">$ {{ ((result.liabilitiesMillions)/1000).toFixed(1)}}</td>
+            <td [style.backgroundColor]="backgroundColor(result, 'EQUITY')">$ {{ ((result.stockholderEquityMillions)/1000).toFixed(1)}}</td>
+            <!-- <td [style.backgroundColor]="backgroundColor(result, 'OPERATINGLOSSGAIN')">$ {{ result.operatingLossGainMillions.toFixed(0)}} </td> -->
+            <td [style.backgroundColor]="backgroundColor(result, 'EPS')">$ {{result.netEarningsLossPerShare.toFixed(2)}}</td>
+            <td [style.backgroundColor]="backgroundColor(result, 'DRS')">{{ ((result.DRSMillions / result.sharesOutstandingMillions)*100).toFixed(1)}} %</td>
+        </tr>
+    </table>
+</div>

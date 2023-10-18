@@ -13,7 +13,7 @@ import { TimelineItemComponent } from './pages/display-timeline/timeline-items/t
 import { ChartComponent } from './pages/display-timeline/chart/chart.component';
 import { CustomTooltipComponent } from './pages/display-timeline/chart/custom-tooltip/custom-tooltip.component';
 import { TimelineItemsComponent } from './pages/display-timeline/timeline-items/timeline-items.component';
-import { AboutComponent } from './layout/about/about.component';
+import { AboutComponent } from './pages/about/about.component';
 import { FinancialsComponent } from './pages/financials/financials.component';
 import { DisplayTimelineComponent } from './pages/display-timeline/display-timeline.component';
 import { OwnershipComponent } from './pages/ownership/ownership.component';
@@ -26,6 +26,7 @@ import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.co
 import { ViewControlComponent } from './pages/display-timeline/controls/view-control/view-control.component';
 import { TimelineListItemComponent } from './pages/display-timeline/timeline-items/timeline-list-item/timeline-list-item.component';
 import { QuarterlyResultComponent } from './pages/display-timeline/timeline-items/quarterly-result/quarterly-result.component';
+import { EarningsTableComponent } from './pages/financials/earnings-table/earnings-table.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { QuarterlyResultComponent } from './pages/display-timeline/timeline-item
     MobileTopBarComponent,
     ViewControlComponent,
     TimelineListItemComponent,
-    QuarterlyResultComponent
+    QuarterlyResultComponent,
+    EarningsTableComponent
   ],
   imports: [
     BrowserModule,

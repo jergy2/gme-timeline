@@ -11,9 +11,7 @@ export class FinancialsService {
 
   constructor(private _httpClient: HttpClient) { }
 
-
   private _fileName = 'assets/data/quarterly-results.csv';
-  private _csvData: QuarterlyResultInterface[] = [];
   private _results: QuarterlyResult[] = [];
   public get quarterlyResults(): QuarterlyResult[] { return this._results; }
 
@@ -40,25 +38,43 @@ export class FinancialsService {
 
   /** Convert CSV table into an array of objects */
   private _parseCSV(data: any) {
-    // console.log(data);
+    /**
+        0 - Year (number)
+        1 - Quarter (string)
+        2 - link (string)
+        3 - link (string)
+        4 - date (string)
+        5 - date (string)
+        6 - revenue (number)
+        7 - (number)
+        8 - (number)
+        9 - (number)
+        10 - (number)
+        11 - (number)
+        12 - (number)
+        13 - (number)
+        14 - (number)
+        15 - (number)
+        16 - (number)
+     */
     const rows = data.split('\n');
     const headers = rows[0].split(',');
-    const rowCount = rows.length - 1;
+    const rowCount = rows.length;
     const cellRows: QuarterlyResultInterface[] = [];
     for (let rowIndex = 1; rowIndex < rowCount; rowIndex++) {
       const splitRow: string[] = rows[rowIndex].split(',');
-      const cells: string[] = [];
-      splitRow.forEach(cell => {
-        cell = cell.trim();
-        let newCell: string = "";
-        for (let charIndex = 0; charIndex < cell.length; charIndex++) {
-          const charValue = cell[charIndex];
-          if (charValue !== "\"") {
-            newCell += charValue;
+      const cells: (string | number)[] = [];
+      for(let column = 0; column < splitRow.length; column++){
+        if(column < 6){
+          if(column === 0){
+            cells.push(Number(splitRow[column]))
+          }else{
+            cells.push(String(splitRow[column]))
           }
+        }else{
+          cells.push(Number(splitRow[column]))
         }
-        cells.push(newCell);
-      });
+      }
       cellRows.push(this._getResult(cells))
     }
     const results = cellRows.map(row => new QuarterlyResult(row));
