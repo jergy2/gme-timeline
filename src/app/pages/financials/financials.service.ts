@@ -88,7 +88,7 @@ export class FinancialsService {
       tenQKformLink: cells[2],
       newsReleaseLink: cells[3],
       filingDateYYYYMMDD: cells[4],
-      reportDateYYYYMMDD: cells[5],
+      documentDateYYYYMMDD: cells[5],
       assetsMillions: cells[6],
       liabilitiesMillions: cells[7],
       stockholderEquityMillions: cells[8],

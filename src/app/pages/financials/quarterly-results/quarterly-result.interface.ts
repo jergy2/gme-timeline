@@ -4,7 +4,7 @@ export interface QuarterlyResultInterface{
     tenQKformLink: string;
     newsReleaseLink: string;
     filingDateYYYYMMDD: string;
-    reportDateYYYYMMDD: string;
+    documentDateYYYYMMDD: string;
     assetsMillions: number;
     liabilitiesMillions: number;
     stockholderEquityMillions: number;

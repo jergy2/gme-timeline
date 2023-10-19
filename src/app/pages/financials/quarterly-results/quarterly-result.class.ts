@@ -12,7 +12,7 @@ export class QuarterlyResult{
     public get tenQKformLink(): string { return this._values.tenQKformLink; }
     public get newsReleaseLink(): string { return this._values.newsReleaseLink; }
     public get filingDateYYYYMMDD(): string { return this._values.filingDateYYYYMMDD; }
-    public get reportDateYYYYMMDD(): string { return this._values.reportDateYYYYMMDD; }
+    public get documentDateYYYYMMDD(): string { return this._values.documentDateYYYYMMDD; }
     public get assetsMillions(): number { return this._values.assetsMillions; }
     public get liabilitiesMillions(): number { return this._values.liabilitiesMillions; }
     public get stockholderEquityMillions(): number { return this._values.stockholderEquityMillions; }
