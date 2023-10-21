@@ -34,7 +34,7 @@ export class YearlyResult{
             tenQKformLink: finalQuarter.tenQKformLink,
             newsReleaseLink: finalQuarter.newsReleaseLink,
             filingDateYYYYMMDD: finalQuarter.filingDateYYYYMMDD,
-            documentDateYYYYMMDD: finalQuarter.filingDateYYYYMMDD,
+            documentDateYYYYMMDD: finalQuarter.documentDateYYYYMMDD,
             assetsMillions: finalQuarter.assetsMillions,
             liabilitiesMillions: finalQuarter.liabilitiesMillions,
             stockholderEquityMillions: finalQuarter.stockholderEquityMillions,

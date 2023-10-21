@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SidebarService } from '../sidebar/sidebar.service';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
 import { DisplayService } from 'src/app/pages/display-timeline/display.service';
-import { faCoins, faChartLine, faChartPie, faSliders, faQuestion, faBars, faCircleInfo, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faCoins, faChartLine, faChartPie, faSliders, faQuestion, faBars, faCircleInfo, faTableList, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { SettingsService } from 'src/app/settings.service';
 
 
@@ -48,6 +48,7 @@ export class SidebarComponent {
   public get faQuestion(): IconDefinition { return faQuestion; }
   public get faBars(): IconDefinition { return faBars; }
   public get faCircleInfo(): IconDefinition { return faCircleInfo; }
+  public get faTableList(): IconDefinition { return faTableList; }
 
   public get showAsList(): boolean { return this._settingsService.showAsList; }
 
