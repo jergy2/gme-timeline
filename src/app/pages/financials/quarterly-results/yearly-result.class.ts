@@ -3,7 +3,6 @@ import { QuarterlyResultInterface } from "./quarterly-result.interface";
 
 export class YearlyResult{
     constructor(quarters: QuarterlyResult[]){
-
         let finalQuarter = quarters[0];
         let allEarnings = 0;
         quarters.forEach(quarter =>{
@@ -12,7 +11,6 @@ export class YearlyResult{
             }
             allEarnings += quarter.netIncome;
         });
-    
         let netsales = 0;
         let netLossGain = 0;
         let costOfSales = 0;
@@ -24,8 +22,7 @@ export class YearlyResult{
             costOfSales += quarter.costOfSalesMillions;
             grossProfit += quarter.grossProfitMillions;
             operatingLossGain += quarter.operatingLossGainMillions;
-        })
-    
+        });
         let values: QuarterlyResultInterface = {
             year: finalQuarter.fiscalYear,
             quarter: finalQuarter.quarter,

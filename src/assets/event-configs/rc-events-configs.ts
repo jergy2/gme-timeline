@@ -3457,7 +3457,7 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
             {
                 url: 'https://twitter.com/ryancohen/status/1709785201763582158',
                 type: 'X-TWITTER',
-                label: 'Ryan Cohen reply tweet',
+                label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
             {
@@ -3485,7 +3485,40 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-10-04.jpg'
     }, 
-
+    {
+        title: 'Ryan Cohen tweet',
+        dateYYYYMMDD: '2023-10-25',
+        urls: [
+            {
+                url: 'https://x.com/ryancohen/status/1717337273262313603?s=46&t=1kgf16QwDp2Ydp9mdZLBYw',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17gjs2o/ryan_cohen_on_x/?sort=top',
+                type: 'REDDIT',
+                label: 'r/Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/ThePPShow/comments/17gjs9b/ryan_cohen_on_twitter/?sort=top',
+                type: 'REDDIT',
+                label: 'r/ThePPShow thread',
+                archiveLink: '',
+            },
+            // {
+            //     url: '',
+            //     type: 'LEMMY',
+            //     label: '',
+            //     archiveLink: '',
+            // },
+            
+        ],
+        description: '“The most important thing to remember is that inflation is not an act of God, that inflation is not a catastrophe of the elements or a disease that comes like the plague. Inflation is a policy.” -- Ludwig von Mises',
+        types: [TimelineItemType.RC],
+        significance: 2,
+    }, 
     
 
 ];
