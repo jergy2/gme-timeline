@@ -2,9 +2,7 @@ import { QuarterlyResultInterface } from "./quarterly-result.interface";
 
 export class QuarterlyResult{
 
-
     private _values: QuarterlyResultInterface;
-
     public get fiscalYear(): number { return this._values.year; }
     public get quarter(): 'Q1' | 'Q2' | 'Q3' | 'Q4' { return this._values.quarter; }
     public get revenue(): number { return this._values.netSalesMillions; }
@@ -22,7 +20,6 @@ export class QuarterlyResult{
     public get sharesOutstandingMillions(): number { return this._values.sharesOutstandingMillions; }
     public get DRSMillions(): number { return this._values.DRSMillions; }
     public get netEarningsLossPerShare(): number { return this._values.netEarningsLossPerShare; }
-
 
     constructor(values: QuarterlyResultInterface){
         this._values = values;

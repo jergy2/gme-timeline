@@ -3,6 +3,9 @@ import { FinancialsService } from '../financials.service';
 import { QuarterlyResult } from '../quarterly-results/quarterly-result.class';
 import * as dayjs from 'dayjs';
 import { YearlyResult } from '../quarterly-results/yearly-result.class';
+import { IconDefinition, faNoteSticky, faSquareMinus, faSquarePlus, faLink, faFile } from '@fortawesome/free-solid-svg-icons';
+import { EarningsTableRow } from './earnings-table-row.class';
+import { releaseOverviews } from './release-overview/release-overviews';
 
 @Component({
   selector: 'app-earnings-table',
@@ -13,19 +16,37 @@ export class EarningsTableComponent {
 
   constructor(private _financialsService: FinancialsService) { }
 
+
+  public get faNoteSticky(): IconDefinition { return faNoteSticky; }
+  public get faSquarePlus(): IconDefinition { return faSquarePlus; }
+  public get faSquareMinus(): IconDefinition { return faSquareMinus; }
+  public get faLink(): IconDefinition { return faLink; }
+  public get faFile(): IconDefinition { return faFile; }
+
   private _showQuarters: boolean = true;
   public get showQuarters(): boolean { return this._showQuarters; }
   public get showYears(): boolean { return !this._showQuarters; }
 
-  private _quarterlyResults: QuarterlyResult[] = [];
-  public get quarterlyResults(): QuarterlyResult[] { return this._quarterlyResults; }
-
-  private _yearlyResults: YearlyResult[] = [];
-  public get yearlyResults(): YearlyResult[] { return this._yearlyResults; }
+  private _tableRows: EarningsTableRow[] = [];
+  public get tableRows(): EarningsTableRow[] { return this._tableRows; }
 
   ngOnInit() {
-    this._quarterlyResults = Object.assign([], this._financialsService.quarterlyResults);
-    this._quarterlyResults = this._quarterlyResults.sort((item1, item2) => {
+    this._buildTableRows();
+  }
+
+  private _buildTableRows(){
+    let results: QuarterlyResult[] | YearlyResult[];
+    if(this._showQuarters){
+      results = this._buildQuarterlyResults();
+    }else{
+      results = this._buildYearlyResults();
+    }
+    this._tableRows = results.map(result => new EarningsTableRow(result, releaseOverviews));
+  }
+
+  private _buildQuarterlyResults(){
+    let quarterlyResults: QuarterlyResult[] = Object.assign([], this._financialsService.quarterlyResults);
+    quarterlyResults = quarterlyResults.sort((item1, item2) => {
       if (item1.filingDateYYYYMMDD > item2.filingDateYYYYMMDD) {
         return -1;
       } else if (item1.filingDateYYYYMMDD < item2.filingDateYYYYMMDD) {
@@ -34,24 +55,24 @@ export class EarningsTableComponent {
         return 0;
       }
     });
-
-    this._buildYearlyResults();
+    return quarterlyResults;
   }
 
-  private _buildYearlyResults() {
+  private _buildYearlyResults(): YearlyResult[] {
+    let quarterlyResults: QuarterlyResult[] = this._buildQuarterlyResults();
     let years: number[] = [];
     const yearlyResults: YearlyResult[] = [];
-    this._quarterlyResults.map(result => result.fiscalYear).forEach(year => {
+    quarterlyResults.map(result => result.fiscalYear).forEach(year => {
       if (years.indexOf(year) === -1) {
         years.push(year);
       }
     });
     years.forEach(year => {
-      let yearQuarters = this._quarterlyResults.filter(result => result.fiscalYear === year)
+      let yearQuarters = quarterlyResults.filter(result => result.fiscalYear === year)
       const fullYear = new YearlyResult(yearQuarters);
       yearlyResults.push(fullYear);
     });
-    this._yearlyResults = yearlyResults;
+    return yearlyResults;
   }
 
   public onClickQuartersYears(value: 'QUARTERS' | 'YEARS') {
@@ -60,6 +81,7 @@ export class EarningsTableComponent {
     }else{
       this._showQuarters = false;
     }
+    this._buildTableRows();
   }
 
   public date(dateYYYYMMDD: string): string {
@@ -77,7 +99,7 @@ export class EarningsTableComponent {
     let propertyValue = quarterResult.revenue;
     let minMax: { min: number, max: number } = { min: 0, max: 0 };
 
-    const results: QuarterlyResult[] | YearlyResult[] = quarterResult instanceof QuarterlyResult ?  this._quarterlyResults  : this._yearlyResults; 
+    const results: (QuarterlyResult | YearlyResult)[] = this.tableRows.map(row => row.earningsResult);
 
     if (column === 'REVENUE') {
       propertyValue = quarterResult.revenue;

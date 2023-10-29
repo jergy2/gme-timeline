@@ -11,6 +11,9 @@ td{
 
 .toolbar{
     margin-bottom: 15px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .tool-button{
     font-size: 1.2em;
@@ -29,4 +32,51 @@ td{
 
 .selected-time{
     font-weight: 600;
+}
+
+.earnings-release-cell{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.earnings-button{
+    border: 1px solid rgb(133, 133, 133);
+    border-style: none;
+    background-color: white;
+    font-size: 1.1em;
+    color: rgb(197, 197, 197);
+}
+.earnings-button:hover{
+    cursor: pointer;
+    color: var(--color-special);
+}
+
+.earnings-content{
+    max-height: 360px; 
+    overflow-y: scroll;
+    font-size:0.85em;
+    background-color: rgb(245, 245, 245);
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+}
+
+.earnings-top-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.earnings-release-button{
+    border: 1px solid rgba(212, 212, 212, 0);
+    text-decoration: none;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 4px;
+}
+.earnings-release-button:hover{
+    text-decoration: none;
+    border: 1px solid rgb(212, 212, 212);
 }

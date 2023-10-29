@@ -64,5 +64,4 @@ export class YearlyResult{
     public get sharesOutstandingMillions(): number { return this._values.sharesOutstandingMillions; }
     public get DRSMillions(): number { return this._values.DRSMillions; }
     public get netEarningsLossPerShare(): number { return this._values.netEarningsLossPerShare; }
-
 }
