@@ -27,6 +27,7 @@ import { ViewControlComponent } from './pages/display-timeline/controls/view-con
 import { TimelineListItemComponent } from './pages/display-timeline/timeline-items/timeline-list-item/timeline-list-item.component';
 import { QuarterlyResultComponent } from './pages/display-timeline/timeline-items/quarterly-result/quarterly-result.component';
 import { EarningsTableComponent } from './pages/financials/earnings-table/earnings-table.component';
+import { GuideComponent } from './pages/guide/guide.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { EarningsTableComponent } from './pages/financials/earnings-table/earnin
     ViewControlComponent,
     TimelineListItemComponent,
     QuarterlyResultComponent,
-    EarningsTableComponent
+    EarningsTableComponent,
+    GuideComponent
   ],
   imports: [
     BrowserModule,
