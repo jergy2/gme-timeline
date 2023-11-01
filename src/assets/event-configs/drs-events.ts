@@ -1,7 +1,7 @@
 import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
 import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
 
-export const drsItemConfigs: TimelineItemConfig[] = [
+export const drsItemEvents: TimelineItemConfig[] = [
     {
         title: 'r/Superstonk Live - Dr. Susanne Trimbath, PhD - April 29, 2021',
         dateYYYYMMDD: '2021-04-29',

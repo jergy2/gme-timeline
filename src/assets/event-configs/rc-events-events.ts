@@ -1,7 +1,7 @@
 import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
 import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
 
-export const rcTweetsConfigs: TimelineItemConfig[] = [
+export const rcTweetsEvents: TimelineItemConfig[] = [
     {
         title: 'RC Tweet',
         dateYYYYMMDD: '2019-07-02',
@@ -3520,5 +3520,4 @@ export const rcTweetsConfigs: TimelineItemConfig[] = [
         significance: 2,
     }, 
     
-
 ];

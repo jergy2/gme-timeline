@@ -1,7 +1,7 @@
 import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
 import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
 
-export const socialMediaConfigs: TimelineItemConfig[] = [
+export const socialMediaEvents: TimelineItemConfig[] = [
     {
         title: 'Cellar Boxing DD published in Superstonk',
         dateYYYYMMDD: '2021-09-11',

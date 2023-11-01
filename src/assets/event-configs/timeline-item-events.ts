@@ -1,7 +1,7 @@
 import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
 import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
 
-export const timelineItemConfigs: TimelineItemConfig[] = [
+export const timelineEvents: TimelineItemConfig[] = [
     {
         title: 'Michael Burry files 13F showing position in GME',
         dateYYYYMMDD: '2019-02-14',
@@ -729,15 +729,7 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         types: [TimelineItemType.OTHER],
         significance: 3,
     },
-
-    {
-        title: 'Citadel Securities raises $600m',
-        dateYYYYMMDD: '2022-08-18',
-        urls: [],
-        description: '',
-        types: [TimelineItemType.OTHER],
-        significance: 2,
-    },
+    
     {
         title: 'An example of rot within the system',
         dateYYYYMMDD: '2022-09-21',
@@ -822,21 +814,6 @@ export const timelineItemConfigs: TimelineItemConfig[] = [
         types: [TimelineItemType.RC],
         significance: 4,
         imgSrc: 'assets/rc-gmedd-interview.png'
-    },
-    {
-        title: 'Citadel founder Ken Griffin donates $300 million more to alma mater Harvard',
-        dateYYYYMMDD: '2023-04-11',
-        urls: [
-            {
-                url: 'https://www.reuters.com/world/us/citadel-founder-ken-griffin-donates-300-million-more-alma-mater-harvard-2023-04-11/',
-                type: 'NEWS',
-                label: 'Reuters.com',
-                archiveLink: '',
-            },
-        ],
-        description: '',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
     },
     {
         title: 'U.S. representative French Hill told Gary Gensler that he shouldn’t pursue market reforms based on “one meme stock event”',

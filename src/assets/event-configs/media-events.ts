@@ -1,7 +1,7 @@
 import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
 import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
 
-export const mediaItemConfigs: TimelineItemConfig[] = [
+export const mediaItemEvents: TimelineItemConfig[] = [
     {
         title: 'CNBC now running Ads promoting that Melvin Capital closed their short positions on $GME',
         dateYYYYMMDD: '2021-01-29',
@@ -431,5 +431,33 @@ export const mediaItemConfigs: TimelineItemConfig[] = [
         significance: 2,
         tags: ['propaganda', 'FUD', 'media', 'documentary', 'BBBY', 'theppshow'],
     },
+    {
+        title: 'Damian Sassower on Bloomberg suggests Citadel is the next Long Term Capital Management',
+        dateYYYYMMDD: '2023-10-31',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17knzel/damian_sassower_on_bloomberg_103123_discussing/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17kl8oz/bloomberg_reporter_says_the_quiet_thing_out_loud/',
+                type: 'REDDIT',
+                label: 'Superstonk post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.investopedia.com/terms/l/longtermcapital.asp',
+                type: 'OTHER',
+                label: 'Investopedia.com - Long Term Capital Management',
+                archiveLink: '',
+            }
+        ],
+        description: '',
+        types: [TimelineItemType.MEDIA],
+        tags: ['Citadel', 'Ken Griffin', 'bloomberg'],
+        significance: 2,
+    }
 
 ]

@@ -11,12 +11,13 @@ import { ChartDataSetManager } from './pages/display-timeline/chart/chart-datase
 import { NavigationEnd, Router } from '@angular/router';
 import { SettingsService } from './settings.service';
 import { FinancialsService } from './pages/financials/financials.service';
-import { timelineItemConfigs } from 'src/assets/event-configs/timeline-item-configs';
-import { corporateEventConfigs } from 'src/assets/event-configs/gamestop-corporate-configs';
-import { drsItemConfigs } from 'src/assets/event-configs/drs-configs';
-import { mediaItemConfigs } from 'src/assets/event-configs/media-configs';
-import { rcTweetsConfigs } from 'src/assets/event-configs/rc-events-configs';
-import { socialMediaConfigs } from 'src/assets/event-configs/social-media-configs';
+import { timelineEvents } from 'src/assets/event-configs/timeline-item-events';
+import { corporateEvents } from 'src/assets/event-configs/gamestop-corporate-events';
+import { drsItemEvents } from 'src/assets/event-configs/drs-events';
+import { mediaItemEvents } from 'src/assets/event-configs/media-events';
+import { rcTweetsEvents } from 'src/assets/event-configs/rc-events-events';
+import { socialMediaEvents } from 'src/assets/event-configs/social-media-events';
+import { citadelEvents } from 'src/assets/event-configs/citadel-events';
 
 @Component({
   selector: 'app-root',
@@ -71,12 +72,13 @@ export class AppComponent {
           complete: () => {
             // this._displayService.setDisplay('TIMELINE');
             const allConfigs = [
-              timelineItemConfigs,           
-              corporateEventConfigs,
-              drsItemConfigs,
-              mediaItemConfigs,
-              rcTweetsConfigs,
-              socialMediaConfigs,
+              timelineEvents,           
+              corporateEvents,
+              drsItemEvents,
+              mediaItemEvents,
+              rcTweetsEvents,
+              socialMediaEvents,
+              citadelEvents,
             ];
             const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
             this._timelineItemsService.setTimelineItems(timelineItems);

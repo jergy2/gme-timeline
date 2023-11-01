@@ -1,7 +1,7 @@
 import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
 import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
 
-export const corporateEventConfigs: TimelineItemConfig[] = [
+export const corporateEvents: TimelineItemConfig[] = [
     {
         title: 'GameStop Reports First Quarter 2020 Results',
         dateYYYYMMDD: '2020-06-09',
