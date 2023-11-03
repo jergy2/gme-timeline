@@ -838,7 +838,70 @@ export const timelineEvents: TimelineItemConfig[] = [
         significance: 2,
         tags: ['meme stock', 'politics', 'Gary Gensler', ],
     },
-
+    {
+        title: 'Sam Bankman-Fried found guilty of fraud',
+        dateYYYYMMDD: '2023-11-02',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17mhjeh/sbf_found_guilty/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17milh5/sam_bankmanfried_has_been_found_guilty_he_faces/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/CryptoCurrency/comments/17mhie4/excrypto_mogul_sam_bankmanfried_convicted_of/?sort=top',
+                type: 'REDDIT',
+                label: 'r/crytocurrency post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/CryptoCurrency/comments/17m4xc5/sam_bankmanfried_on_verge_of_tears_as_his_lawyer/?sort=top',
+                type: 'REDDIT',
+                label: 'r/crytocurrency post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.cbc.ca/news/world/bankman-fried-convicted-1.7017241',
+                type: 'NEWS',
+                label: 'CBC',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.cnbc.com/2023/11/02/sam-bankman-fried-found-guilty-on-all-seven-criminal-fraud-counts.html',
+                type: 'NEWS',
+                label: 'CNBC',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.npr.org/2023/11/02/1210100678/sam-bankman-fried-trial-verdict-ftx-crypto',
+                type: 'NEWS',
+                label: 'NPR',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.theguardian.com/business/2023/nov/02/sam-bankman-guilty-ftx-alameda',
+                type: 'NEWS',
+                label: 'The Guardian',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/356880',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        types: [TimelineItemType.OTHER],
+        significance: 3,
+        tags: ['SBF', 'Sam Bankman-Fried', 'FTX', 'fraud', 'crime', 'cryptocurrency' ],
+    }
     
 
 ]; 

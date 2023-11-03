@@ -28,6 +28,7 @@ import { TimelineListItemComponent } from './pages/display-timeline/timeline-ite
 import { QuarterlyResultComponent } from './pages/display-timeline/timeline-items/quarterly-result/quarterly-result.component';
 import { EarningsTableComponent } from './pages/financials/earnings-table/earnings-table.component';
 import { GuideComponent } from './pages/guide/guide.component';
+import { InformationPointComponent } from './pages/guide/information-point/information-point.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { GuideComponent } from './pages/guide/guide.component';
     TimelineListItemComponent,
     QuarterlyResultComponent,
     EarningsTableComponent,
-    GuideComponent
+    GuideComponent,
+    InformationPointComponent
   ],
   imports: [
     BrowserModule,

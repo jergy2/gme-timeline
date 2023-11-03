@@ -1,0 +1,12 @@
+<div class="infopoint-root">
+
+    <div>
+        {{infoPoint?.title}}
+    </div>
+    <div>
+        {{infoPoint?.content}}
+    </div>
+    <div *ngFor="let item of infoPoint?.subPoints">
+        <app-information-point [infoPoint]="item" style="width: 100%;"></app-information-point>
+    </div>
+</div>
