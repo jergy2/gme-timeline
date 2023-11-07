@@ -1,12 +1,12 @@
 <div class="infopoint-root">
 
-    <div>
+    <div [ngClass]="titleNgClass">
         {{infoPoint?.title}}
     </div>
-    <div>
+    <div [ngClass]="contentNgClass" *ngIf="infoPoint?.content">
         {{infoPoint?.content}}
     </div>
-    <div *ngFor="let item of infoPoint?.subPoints">
-        <app-information-point [infoPoint]="item" style="width: 100%;"></app-information-point>
+    <div *ngFor="let item of infoPoint?.subPoints" style="width: 100%; background-color: red;" >
+        <app-information-point [infoPoint]="item" [depth]="depth+1"  [style.padding-left]="marginLeft" style="width: 100%;"></app-information-point>
     </div>
 </div>

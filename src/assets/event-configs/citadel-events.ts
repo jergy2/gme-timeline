@@ -13,6 +13,12 @@ export const citadelEvents: TimelineItemConfig[] = [
                 label: 'Superstonk OC by u/-einfachman-',
                 archiveLink: '',
             },
+            {
+                url: 'https://en.wikipedia.org/wiki/Edward_O._Thorp',
+                type: 'WIKIPEDIA',
+                label: 'Edward O. Thorp - Wikipedia',
+                archiveLink: '',
+            }
         ],
         description: '',
         types: [TimelineItemType.OTHER],
@@ -72,4 +78,21 @@ export const citadelEvents: TimelineItemConfig[] = [
         significance: 1,
         tags: ['Citadel', 'Ken Griffin', 'propaganda'],
     },
+    {
+        title: 'Spotted Ken Griffin sitting next to prince Harry and Megan Markle at Katy Perry’s last performance of her Las Vegas residency',
+        dateYYYYMMDD: '2023-11-06',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17pcj14/spotted_ken_griffin_sitting_next_to_prince_harry/',
+                type: 'REDDIT',
+                label: 'Spotted Ken Griffin sitting next to prince Harry and Megan Markle at Katy Perry’s last performance of her Las Vegas residency',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        types: [TimelineItemType.OTHER],
+        significance: 0,
+        tags: ['Ken Griffin'],
+        imgSrc: 'assets/other/ken-griffin-2023-11-06.PNG'
+    }
 ]

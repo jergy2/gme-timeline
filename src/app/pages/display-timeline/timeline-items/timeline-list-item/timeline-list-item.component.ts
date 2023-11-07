@@ -57,7 +57,7 @@ export class TimelineListItemComponent {
         }
       }else{
         return { // if is selected and is not mobile
-          'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.9),
+          'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.7),
           'border': '3px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
           'color': 'white',
         }

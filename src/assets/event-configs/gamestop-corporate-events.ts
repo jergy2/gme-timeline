@@ -21,7 +21,7 @@ export const corporateEvents: TimelineItemConfig[] = [
         ],
         description: '',
         types: [TimelineItemType.CORP],
-        significance: 2,
+        significance: 1,
     },
     {
         title: 'GameStop Reports Second Quarter 2020 Results',
@@ -42,7 +42,7 @@ export const corporateEvents: TimelineItemConfig[] = [
         ],
         description: '',
         types: [TimelineItemType.CORP],
-        significance: 2,
+        significance: 1,
     },
     {
         title: 'GameStop Reports Third Quarter 2020 Results',
@@ -63,7 +63,7 @@ export const corporateEvents: TimelineItemConfig[] = [
         ],
         description: 'Q3 2020',
         types: [TimelineItemType.CORP],
-        significance: 2,
+        significance: 1,
     },
 
     {
@@ -211,7 +211,7 @@ export const corporateEvents: TimelineItemConfig[] = [
         ],
         description: 'Q2 2021',
         types: [TimelineItemType.CORP],
-        significance: 2,
+        significance: 1,
     },
     {
         title: 'GameStop publishes 2021 Q3 financial report featuring 5.2 million (20.8 million post-split) shares directly registered',
@@ -275,6 +275,27 @@ export const corporateEvents: TimelineItemConfig[] = [
         significance: 2,
     },
     {
+        title: 'GameStop Launches Wallet for Cryptocurrencies and NFTs',
+        dateYYYYMMDD: '2022-05-23',
+        urls:[
+            {
+                url: 'https://news.gamestop.com/news-releases/news-release-details/gamestop-launches-wallet-cryptocurrencies-and-nfts',
+                type: 'GAMESTOP',
+                label: 'GameStop Launches Wallet for Cryptocurrencies and NFTs',
+                archiveLink: ''
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/uvxmks/gamestop_launches_wallet_for_cryptocurrencies_and/?sort=top',
+                type: 'REDDIT',
+                label: 'GameStop Launches Wallet for Cryptocurrencies and NFTs',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        types: [TimelineItemType.CORP],
+        significance: 2,
+    },
+    {
         title: 'GameStop Reports First Quarter Fiscal Year 2022 Results',
         dateYYYYMMDD: '2022-06-01',
         urls: [
@@ -299,7 +320,7 @@ export const corporateEvents: TimelineItemConfig[] = [
         ],
         description: 'Q1 2022',
         types: [TimelineItemType.CORP],
-        significance: 2,
+        significance: 1,
     },
     {
         title: 'GameStop does a 4-for-1 stock split in the form of a stock dividend',
@@ -338,13 +359,7 @@ export const corporateEvents: TimelineItemConfig[] = [
     {
         title: 'GameStop Reports Second Quarter Fiscal Year 2022 Results',
         dateYYYYMMDD: '2022-09-07',
-        urls: [
-            // {
-            //     url: '',
-            //     type: 'REDDIT',
-            //     label: 'Superstonk thread',
-            //     archiveLink: '', 
-            // },
+        urls: [    
             {
                 url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-second-quarter-fiscal-year-2022-results',
                 type: 'GAMESTOP',
@@ -357,32 +372,25 @@ export const corporateEvents: TimelineItemConfig[] = [
                 label: 'Form 10-Q',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/x8f6yw/gamestop_forms_partnership_with_ftx/',
+                type: 'REDDIT',
+                label: 'GameStop forms partnership with FTX',
+                archiveLink: '',
+            },
+            {
+                url: 'https://news.gamestop.com/news-releases/news-release-details/gamestop-forms-partnership-ftx',
+                type: 'GAMESTOP',
+                label: 'GameStop forms partnership with FTX',
+                archiveLink: '',
+            },
         ],
         description: 'Q2 2022',
         types: [TimelineItemType.CORP],
         significance: 2,
+        tags: ['FTX', 'partnership']
     },
-    {
-        title: 'GameStop Forms Partnership with FTX',
-        dateYYYYMMDD: '2022-09-07',
-        urls: [
-            {
-                url: 'https://news.gamestop.com/news-releases/news-release-details/gamestop-forms-partnership-ftx',
-                type: 'GAMESTOP',
-                label: 'GameStop link',
-                archiveLink: '',
-            },
-            {
-                url: 'https://www.reddit.com/r/Superstonk/comments/x8f6yw/gamestop_forms_partnership_with_ftx/',
-                type: 'REDDIT',
-                label: 'Superstonk thread',
-                archiveLink: '',
-            },
-        ],
-        description: 'The partnership is intended to introduce more GameStop customers to FTX’s community and its marketplaces for digital assets. In addition to collaborating with FTX on new ecommerce and online marketing initiatives, GameStop will begin carrying FTX gift cards in select stores. ',
-        types: [TimelineItemType.CORP],
-        significance: 2,
-    },
+
 
     {
         title: 'GameStop Reports Third Quarter Fiscal Year 2022 Results',
@@ -409,7 +417,7 @@ export const corporateEvents: TimelineItemConfig[] = [
         ],
         description: 'Q3 2022',
         types: [TimelineItemType.CORP],
-        significance: 2,
+        significance: 1,
     },
     {
         title: 'GameStop Reports Fourth Quarter and Fiscal Year 2022 Results',
@@ -469,7 +477,7 @@ export const corporateEvents: TimelineItemConfig[] = [
         ],
         description: 'Q1 2023',
         types: [TimelineItemType.CORP],
-        significance: 2,
+        significance: 1,
     },
     {
         title: 'GameStop Announces Election of Ryan Cohen as Executive Chairman',

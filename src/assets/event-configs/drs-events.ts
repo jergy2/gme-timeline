@@ -59,27 +59,7 @@ export const drsItemEvents: TimelineItemConfig[] = [
         types: [TimelineItemType.DRS],
         significance: 2,
     },
-    {
-        title: 'Superstonk’s 3rd AMA with Paul Conn',
-        dateYYYYMMDD: '2022-11-21',
-        urls: [
-            {
-                url: 'https://www.youtube.com/watch?v=xFQmiLWiv5Y',
-                type: 'YOUTUBE',
-                label: 'Computershare AMA with r/SuperStonk - Part 1',
-                archiveLink: '',
-            },
-            {
-                url: 'https://www.reddit.com/r/Superstonk/comments/z16nw3/superstonks_3rd_ama_with_paul_conn_president_of/',
-                type: 'REDDIT',
-                label: 'Superstonk’s 3rd AMA with Paul Conn',
-                archiveLink: '',
-            },
-        ],
-        description: '',
-        types: [TimelineItemType.DRS],
-        significance: 2,
-    },
+
     {
         title: 'DRSGME.org published by GameStop investors',
         dateYYYYMMDD: '2022-03-18',
@@ -116,6 +96,48 @@ export const drsItemEvents: TimelineItemConfig[] = [
         types: [TimelineItemType.DRS],
         significance: 2,
         imgSrc: 'assets/meme-stock-guy.jpeg',
+    },
+    {
+        title: 'Superstonk’s 3rd AMA with Paul Conn',
+        dateYYYYMMDD: '2022-11-21',
+        urls: [
+            {
+                url: 'https://www.youtube.com/watch?v=xFQmiLWiv5Y',
+                type: 'YOUTUBE',
+                label: 'Computershare AMA with r/SuperStonk - Part 1',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/z16nw3/superstonks_3rd_ama_with_paul_conn_president_of/',
+                type: 'REDDIT',
+                label: 'Superstonk’s 3rd AMA with Paul Conn',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        types: [TimelineItemType.DRS],
+        significance: 2,
+    },
+    {
+        title: 'A Conversation with Gary Gensler on Equity Market Structure Reform',
+        dateYYYYMMDD: '2023-01-10',
+        urls: [
+            {
+                url: 'https://www.youtube.com/watch?v=we7voEJ1lLU',
+                type: 'YOUTUBE',
+                label: 'We The Investors - A Conversation with Gary Gensler on Equity Market Structure Reform',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/108m7or/if_you_missed_it_retail_talked_to_gary_gensler/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: 'Gary Gensler engages with retail investors',
+        types: [TimelineItemType.OTHER],
+        significance: 1,
     },
     {
         title: 'WhyDRS.org published',
@@ -206,5 +228,34 @@ export const drsItemEvents: TimelineItemConfig[] = [
         description: '',
         types: [TimelineItemType.DRS, TimelineItemType.SOCIAL_MEDIA],
         significance: 3,
+    },
+    {
+        title: 'Gary Gensler mentions DRS',
+        dateYYYYMMDD: '2023-07-18',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/1534yk2/gary_gensler_mentions_drs_on_bird_app_kinda/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://twitter.com/GaryGensler/status/1681348108603514880',
+                type: 'X-TWITTER',
+                label: 'Gary Gensler tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-97',
+                type: 'OTHER',
+                label: 'investor.gov - Investor Bulletin: Holding Your Securities',
+                archiveLink: '',
+            },
+            
+        ],
+        description: '',
+        types: [TimelineItemType.DRS, TimelineItemType.OTHER],
+        significance: 2,
+        tags: ['Gary Gensler', 'DRS']
     },
 ]

@@ -32,14 +32,6 @@ export const mediaItemEvents: TimelineItemConfig[] = [
         types: [TimelineItemType.MEDIA],
         significance: 2,
     },
-        // new TimelineItem(
-    //     'GameStop: The Wall Street Hijack',
-    //     '2021-04-08',
-    //     'https://www.imdb.com/title/tt14439472/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_gamestop',
-    //     'Low impact movie:: A group of young, risk-embracing day traders used social media to organize a massive stock buy-up. Jordan Belfort provides details about the story, exploring how it shook the world""s markets.',
-    //     [TimelineItemType.MEDIA],
-    //     1,
-    // ),
     {
         title: 'Melissa Lee of CNBC:  "Naked Shorts, Yea"',
         dateYYYYMMDD: '2021-06-04',
@@ -62,21 +54,29 @@ export const mediaItemEvents: TimelineItemConfig[] = [
         significance: 2,
         imgSrc: 'assets/melissa-lee-naked-shorts.png'
     },    
-        // {
-    //     title: 'CNBC confirms that naked short selling is a real and prevalent problem',
-    //     dateYYYYMMDD: '2021-06-09',
-    //     urls: [
-    //         {
-    //             url: 'https://www.youtube.com/watch?v=lB43u38BV8o',
-    //             type: 'YOUTUBE',
-    //             label: 'CNBC confirms that naked short selling is a real and prevalent problem',
-    //             archiveLink: '',
-    //         },
-    //     ],
-    //     description: '', 
-    //     type: [TimelineItemType.MEDIA],
-    //     significance: 1,
-    // },    
+    
+    {
+        title: 'CNBC Full 15 Minute Interview with Garry Gensler HD',
+        dateYYYYMMDD: '2021-08-04',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/oxtx4j/cnbc_full_15_minute_interview_with_garry_gensler/',
+                type: 'REDDIT',
+                label: 'Superstonk link',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/oy0tef/cnbc_has_removed_genslers_recent_interview_from/',
+                type: 'REDDIT',
+                label: 'CNBC has removed Gensler’s recent interview from their YouTube channel',
+                archiveLink: '',
+            }
+        ],
+        description: '',
+        types: [TimelineItemType.MEDIA, TimelineItemType.OTHER],
+        significance: 1,
+        tags: ['Gary Gensler', 'SEC', 'propaganda', 'CNBC']
+    },    
     {
         title: '"Sell the stock first and ask questions later" says Anthony Chukumba',
         dateYYYYMMDD: '2021-09-09',
@@ -389,6 +389,23 @@ export const mediaItemEvents: TimelineItemConfig[] = [
         significance: 4,
     },
     {
+        title: 'CNBC interviews the author of Dumb Money',
+        dateYYYYMMDD: '2023-09-29',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/16v9v8q/interview_w_dumb_money_author_all_3_cnbc_anchors/',
+                type: 'YOUTUBE',
+                label: 'YouTube link',
+                archiveLink: '',
+            },
+        ],
+        description: '"Are they lemmings?", "bagholders"',
+        types: [TimelineItemType.MEDIA],
+        significance: 1,
+        tags: ['propaganda', 'cnbc', 'dumb money'],
+    },
+    
+    {
         title: 'This is Financial Advice',
         dateYYYYMMDD: '2023-09-30',
         urls: [
@@ -416,15 +433,6 @@ export const mediaItemEvents: TimelineItemConfig[] = [
                 label: 'A Review of Dan Olson’s “documentary” This is Financial Advice AKA The World Series of Lies || Part 1: The Prologue',
                 archiveLink: '',
             },
-                        // {
-            //     url: 'https://www.reddit.com/r/ThePPShow/comments/16xl3ie/dan_olsen_calling_pp_a_grifter_wonder_how_much_he/',
-            //     type: 'REDDIT',
-            //     label: 'thePPshow',
-            //     archiveLink: '',
-            // },   
-
-            
-
         ],
         description: '"Conspiracy theorists flock together and constantly try and rope each other into the orbit of their personal hobby horse conspiracy, so once you break the surface suddenly you’re digging through endless side stories, each with their own cast of characters, trying to figure out if some tertiary claim is true, was maybe true in the past but is no longer true, or was never true, and discover that the only sources on the matter are the same three people quoting each other in an endless circle of false legitimacy."',
         types: [TimelineItemType.MEDIA],

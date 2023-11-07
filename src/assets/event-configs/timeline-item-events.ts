@@ -486,11 +486,18 @@ export const timelineEvents: TimelineItemConfig[] = [
                 label: 'Wikipedia link',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/mqub8k/gary_gensler_confirmed_as_new_sec_chairman/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            }
         ],
         description: '',
         types: [TimelineItemType.OTHER],
         significance: 1,
-        imgSrc: 'assets/gensler-loading.png'
+        imgSrc: 'assets/gensler-loading.png',
+        tags: ['Gary Gensler', 'SEC'],
     },
     {
         title: 'Roaring Kitty Tweet',
@@ -835,8 +842,8 @@ export const timelineEvents: TimelineItemConfig[] = [
         ],
         description: '"I really urge you to get these equity markets proposals in order and to rely on data and not just emotion or one meme stock event to make policy"',
         types: [TimelineItemType.OTHER],
-        significance: 2,
-        tags: ['meme stock', 'politics', 'Gary Gensler', ],
+        significance: 1,
+        tags: ['meme stock', 'politics', 'Gary Gensler', 'congress' ],
     },
     {
         title: 'Sam Bankman-Fried found guilty of fraud',
@@ -864,6 +871,18 @@ export const timelineEvents: TimelineItemConfig[] = [
                 url: 'https://www.reddit.com/r/CryptoCurrency/comments/17m4xc5/sam_bankmanfried_on_verge_of_tears_as_his_lawyer/?sort=top',
                 type: 'REDDIT',
                 label: 'r/crytocurrency post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/news/comments/17mhkec/ftx_founder_sambankmanfried_convicted_of/?sort=top',
+                type: 'REDDIT',
+                label: 'r/news post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/technology/comments/17mhspy/sam_bankmanfried_found_guilty_on_all_seven_counts/?sort=top',
+                type: 'REDDIT',
+                label: 'r/technology post',
                 archiveLink: '',
             },
             {
@@ -901,7 +920,36 @@ export const timelineEvents: TimelineItemConfig[] = [
         types: [TimelineItemType.OTHER],
         significance: 3,
         tags: ['SBF', 'Sam Bankman-Fried', 'FTX', 'fraud', 'crime', 'cryptocurrency' ],
+    },
+    {
+        title: 'US to lower barriers on imposing "too big to fail" label on firms',
+        dateYYYYMMDD: '2023-11-04',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17n3vqa/here_is_the_too_big_to_fail_meeting_discussion/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk - Here is the Too Big to Fail meeting discussion',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17nfl54/regulators_make_it_easier_to_label_nonbanks_such/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk - Regulators make it easier to label non-banks (such as hedge funds and brokers) as "too big to fail", in latest oversight move.',
+                archiveLink: '',
+            },
+            {
+                url: 'https://news.yahoo.com/us-lower-barriers-imposing-too-194059890.html',
+                type: 'NEWS',
+                label: 'US to lower barriers on imposing "too big to fail" label on firms',
+                archiveLink: '',
+            },
+            
+        ],
+        description: '',
+        types: [TimelineItemType.OTHER],
+        significance: 2,
+        tags: ['regulators', 'fsoc', 'treasury', 'yellen', 'banks', 'banking', 'finance', 'wall street', 'too big to fail' ],
+        
     }
-    
 
 ]; 

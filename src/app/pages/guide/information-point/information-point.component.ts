@@ -12,4 +12,18 @@ export class InformationPointComponent {
   @Input('infoPoint') public set infoPoint(infoPoint: InformationPoint) { this._infoPoint = infoPoint; }
   public get infoPoint(): InformationPoint | null { return this._infoPoint; }
 
+  @Input('depth') public depth: number = 0;
+
+  public titleNgClass(){
+
+  }
+  public contentNgClass(){
+
+  }
+
+  public marginLeft(): string{
+    const value = this.depth * 5;
+    return value + "px";
+  }
+
 }

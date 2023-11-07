@@ -61,9 +61,9 @@ export class SettingsService {
 
   public getShowAsList(): boolean { 
     const displayValue = localStorage.getItem('displaymode');
-    let showAsList: boolean = false;
+    let showAsList: boolean = true;
     if(displayValue !== null){
-      if(displayValue === 'LIST'){
+      if(displayValue === 'CHART'){
         showAsList = true;
       }
     }
