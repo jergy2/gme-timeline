@@ -1,6 +1,6 @@
 <div class="layout-root">
     <div class="container-grid" *ngIf="!isMobile && !showAsList">
-        <app-controls class="app-controls"></app-controls>
+        <app-timeline-controls class="app-controls"></app-timeline-controls>
         <app-timeline-items class="app-timeline-items"></app-timeline-items>
         <app-chart class="app-chart"></app-chart>
         <!-- <div class="chart-loading" *ngIf="!showChart">
@@ -11,12 +11,12 @@
         </div> -->
     </div>
     <div class="list-view-grid" *ngIf="!isMobile && showAsList && !isNarrow">
-        <app-controls class="app-controls-list-view"></app-controls>
+        <app-timeline-controls class="app-controls-list-view"></app-timeline-controls>
         <app-timeline-items class="app-timeline-items-list-view"></app-timeline-items>
         <app-chart class="app-chart-list-view" *ngIf="!isNarrow"></app-chart>
     </div>
     <div class="list-view-narrow" *ngIf="!isMobile && showAsList && isNarrow">
-        <app-controls class="app-controls-list-view-narrow"></app-controls>
+        <app-timeline-controls class="app-controls-list-view-narrow"></app-timeline-controls>
         <app-timeline-items class="app-timeline-items-list-view-narrow"></app-timeline-items>
     </div>
     <div class="mobile-container" *ngIf="isMobile">

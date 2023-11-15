@@ -1,7 +1,7 @@
-import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
-import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
+import { TimelineEventConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface";
+import { TimelineEventType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum";
 
-export const timelineEvents: TimelineItemConfig[] = [
+export const timelineEvents: TimelineEventConfig[] = [
     {
         title: 'Michael Burry files 13F showing position in GME',
         dateYYYYMMDD: '2019-02-14',
@@ -21,8 +21,9 @@ export const timelineEvents: TimelineItemConfig[] = [
 
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry', '13f', ]
     },
     {
         title: 'Michael Burry increases GME position',
@@ -36,8 +37,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry']
     },
     {
         title: 'Michael Burry writes to GameStop board of directors',
@@ -51,8 +53,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry', 'letter']
     },
     {
         title: 'DFV Posts his GME position for the time on Reddit',
@@ -66,8 +69,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['dfv', 'wallstreetbets', 'burry']
     },
     {
         title: 'Michael Burry increases GME position',
@@ -81,8 +85,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $16.6 million',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry']
     },
     {
         title: 'Naked, Short and Greedy: Wall Streets Failure to Deliver published',
@@ -96,8 +101,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Susanne Trimbath publishes a book that eventually becomes foundational to GameStop investors understanding of the market',
-        types: [TimelineItemType.DRS],
-        significance: 2,
+        types: [TimelineEventType.DRS],
+        significance: 3,
+        tags: ['trimbath', 'naked short selling', 'ftds', 'stock lending', 'dtc', 'dtcc', 'drs', 'regulators', 'drsgme'],
     },
     {
         title: 'Michael Burry increases GME position',
@@ -111,8 +117,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $9.7 million',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry'],
     },
     {
         title: 'Michael Burry decreases GME position',
@@ -132,8 +139,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             // },
         ],
         description: 'Position value of approximately $15.4 million',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry'],
     },
     {
         title: 'Michael Burry - Scion Asset Management Voted in Support of GameStop’s Board and Management',
@@ -147,8 +155,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry', 'letter']
     },
     {
         title: 'Roaring Kitty - 100%+ short interest in GameStop stock (GME) – fundamental & technical deep value analysis',
@@ -162,9 +171,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 2,
-        imgSrc: 'assets/dfv-short-interest.jpg'
+        imgSrc: 'assets/dfv-short-interest.jpg',
+        tags: ['dfv','dumb money'],
     },
     {
         title: 'Roaring Kitty - 5 reasons GameStop stock (GME) is a roach not a cigar butt a la Warren Buffett & could short squeeze',
@@ -184,9 +194,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             }
         ],
         description: '',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 2,
-        imgSrc: 'assets/dfv-cigar.jpg'
+        imgSrc: 'assets/dfv-cigar.jpg',
+        tags: ['dfv', 'dumb money'],
     },
     {
         title: 'RC Ventures LLC purchases 9% of GameStop',
@@ -206,9 +217,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 3,
-        imgSrc: 'assets/ryan-cohen-loading.jpg'
+        imgSrc: 'assets/ryan-cohen-loading.jpg',
+        tags: ['ryan cohen', 'insiders']
     },
     {
         title: 'Roaring Kitty - The Big Short SQUEEZE from $5 to $50? Could GameStop stock (GME) explode higher?? Value investing!',
@@ -222,8 +234,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 2,
+        tags: ['roaring kitty', 'squeeze', 'investing'],
     },
     {
         title: 'DFV learning about RC for the first time',
@@ -243,8 +256,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['dfv', 'ryan cohen']
     },
 
     {
@@ -259,8 +273,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Position value of approximately $17.4 million',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry'],
     },
     {
         title: 'RC Ventures writes to the GameStop Board of Directors',
@@ -287,8 +302,9 @@ export const timelineEvents: TimelineItemConfig[] = [
 
         ],
         description: 'Subject: Maximizing Stockholder Value by Becoming the Ultimate Destination for Gamers, “GAMESTOP’S LEADERSHIP MUST PROMPTLY PIVOT FROM A BRICK-AND-MORTAR MINDSET TO A TECHNOLOGY-DRIVEN VISION”',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 4,
+        tags: ['ryan cohen', 'letter', ],
     },
     {
         title: 'Through RC Ventures, Cohen now owns a 12.9% stake in GameStop worth $140 million as of Monday"s close, according to an SEC filing. ',
@@ -308,8 +324,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 2,
+        tags: ['ryan cohen', ],
     },
     {
         title: 'Michael Burry closes entire GME position',
@@ -329,8 +346,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Some time between September 30th and December 31st, Michael Burry sells his entire GME position, evidenced by the absense of any position in GameStop in form 13F',
-        types: [TimelineItemType.OTHER],
-        significance: 1,
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['michael burry', ],
     },
     {
         title: 'Peak of the short sneeze',
@@ -357,8 +375,9 @@ export const timelineEvents: TimelineItemConfig[] = [
 
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 2,
+        tags: ['short squeeze', 'sneeze', 'squeeze', 'gme yolo update', 'meme stocks', 'dumb money',],
     },
     {
         title: 'Michael Burry tweet',
@@ -372,9 +391,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             }
         ],
         description: '"May 2020, relatively sane times for $GME, I called in my lent-out GME shares. It took my brokers WEEKS to find my shares.  I cannot even imagine the sh*tstorm in settlement now. They may have to extend delivery timelines. #pigsgetslaughtered #nakedshorts"',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
-        imgSrc: 'assets/burry-tweet-2021-01-29.jpg'
+        imgSrc: 'assets/burry-tweet-2021-01-29.jpg',
+        tags: ['michael burry', 'settlement', 'dtc', 'corruption', 'naked shorts', 'broker-dealers']
     },
     {
         title: 'Brokerages shut off the buy button',
@@ -406,8 +426,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             // },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 5,
+        tags: ['broker-dealers', 'corruption', 'crime', 'abuse of power', 'cheating', 'wall st',]
     },
 
     {
@@ -428,9 +449,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Game Stopped? Who Wins and Loses When Short Sellers, Social Media, and Retail Investors Collide. Keith Gill testifies before congress House Committee on Financial Services',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 4,
-        imgSrc: 'assets/i-like-the-stock.png'
+        imgSrc: 'assets/i-like-the-stock.png',
+        tags: ['short sellers', 'dfv', 'social media', 'congress', 'regulators', 'oversight']
     },
     {
         title: 'Michael Burry receives a visit from the SEC',
@@ -444,8 +466,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Tweeting and getting in the news lately apparently has caused the SEC to pay us a visit," the Scion Asset Management boss said in a now-deleted tweet.',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
+        tags: ['michael burry', 'sec', 'tweets', 'social media']
     },
 
     {
@@ -472,9 +495,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'DFV’s final reddit post',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 3,
-        imgSrc: 'assets/dfv-loading.jpg'
+        imgSrc: 'assets/dfv-loading.jpg',
+        tags: ['dfv', 'gme yolo update', 'wallstreetbets', ]
     },
     {
         title: 'Gary Gensler assumes position of chair of the SEC',
@@ -494,7 +518,7 @@ export const timelineEvents: TimelineItemConfig[] = [
             }
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
         imgSrc: 'assets/gensler-loading.png',
         tags: ['Gary Gensler', 'SEC'],
@@ -529,9 +553,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'DFV aka Roaring Kitty tweets an observing cat with background music of O Fortuna',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
-        imgSrc: 'assets/dfv-tweet-2021-06-01.PNG'
+        imgSrc: 'assets/dfv-tweet-2021-06-01.PNG',
+        tags: ['dfv']
     },
 
 
@@ -554,8 +579,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"People always ask me what is going on in the markets. It is simple. Greatest Speculative Bubble of All Time in All Things. By two orders of magnitude. #FlyingPigs360"',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
+        tags: ['michael burry', 'bubble', 'markets']
     },
     {
         title: 'DFVs former employer receives fine of $4.75 million from Massachusetts securities regulators',
@@ -581,8 +607,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             }
         ],
         description: '"State regulators found MassMutual failed to detect nearly 1,700 trades by Gill, who was able to execute at least two trades in GameStop in excess of $700,000, beyond a company limit."',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['dfv', 'mass mutual', 'opposition', 'regulation', 'Massachusetts']
     },
     {
         title: 'SEC publishes the GameStop report',
@@ -615,8 +642,9 @@ export const timelineEvents: TimelineItemConfig[] = [
 
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
-        significance: 2,
+        types: [TimelineEventType.OTHER],
+        significance: 3,
+        tags: ['SEC', 'gamma squeeze', 'short squeeze', 'squeeze', 'cover', 'short sellers', 'sentiment', 'naked', 'naked short selling', 'xrt', 'etf', 'short interest', 'exchange act', 'broker-dealers', 'finra', 't+2', 'options',]
     },
     {
         title: 'Financial Stability Oversight Council publishes Annual Report, saying that a single security exhibited idiosyncratic risk ',
@@ -642,8 +670,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 2,
+        tags: ['fsoc', 'idiosyncratic risk', 'treasury', 'usa',]
     },
     {
         title: 'Superstonk participates in r/place 2022',
@@ -676,9 +705,10 @@ export const timelineEvents: TimelineItemConfig[] = [
 
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
-        imgSrc: 'assets/superstonk-r-place.png'
+        imgSrc: 'assets/superstonk-r-place.png',
+        tags: ['reddit', 'suerstonk', 'community', 'place']
     },
     {
         title: 'Pulte enters the fray',
@@ -699,9 +729,10 @@ export const timelineEvents: TimelineItemConfig[] = [
 
         ],
         description: 'After engaging with Ryan Cohen on Twitter in discussions about BCG, Pulte begins to engage with Superstonk',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 3,
-        imgSrc: 'assets/bill-pulte.jpg'
+        imgSrc: 'assets/bill-pulte.jpg',
+        tags: ['pulte', 'bcg', 'superstonk']
     },
     {
         title: 'Melvin Capital announces it will be shutting down',
@@ -733,8 +764,9 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 3,
+        tags: ['melvin capital', 'gabe plotkin', 'hedge fund', 'failure', 'collapse'],
     },
     
     {
@@ -761,9 +793,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'A team member of congressional representative Trey Hollingsworth goes from overseeing the banks to joining Bank of America where her father already works.',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
-        imgSrc: 'assets/2022-09-21-boa-subversion.PNG'
+        imgSrc: 'assets/2022-09-21-boa-subversion.PNG',
+        tags: ['corruption', 'congress', 'trey hollingsworth', 'bank of america', 'regulatory capture', 'regulation', 'lobbying' ],
     },
 
     {
@@ -785,8 +818,9 @@ export const timelineEvents: TimelineItemConfig[] = [
 
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 2,
+        tags: ['ftx', 'web3', 'crypto' ],
     },
     {
         title: 'The Ryan Cohen Interview with Joe Fonicello of GMEdd.com',
@@ -818,9 +852,10 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 4,
-        imgSrc: 'assets/rc-gmedd-interview.png'
+        imgSrc: 'assets/rc-gmedd-interview.png',
+        tags: ['ryan cohen', 'gmedd', 'joe fonicello', 'interview', 'chewy', 'bbby', 'tweets' ],
     },
     {
         title: 'U.S. representative French Hill told Gary Gensler that he shouldn’t pursue market reforms based on “one meme stock event”',
@@ -841,7 +876,7 @@ export const timelineEvents: TimelineItemConfig[] = [
             
         ],
         description: '"I really urge you to get these equity markets proposals in order and to rely on data and not just emotion or one meme stock event to make policy"',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
         tags: ['meme stock', 'politics', 'Gary Gensler', 'congress' ],
     },
@@ -917,8 +952,8 @@ export const timelineEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
-        significance: 3,
+        types: [TimelineEventType.OTHER],
+        significance: 2,
         tags: ['SBF', 'Sam Bankman-Fried', 'FTX', 'fraud', 'crime', 'cryptocurrency' ],
     },
     {
@@ -946,10 +981,32 @@ export const timelineEvents: TimelineItemConfig[] = [
             
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 2,
         tags: ['regulators', 'fsoc', 'treasury', 'yellen', 'banks', 'banking', 'finance', 'wall street', 'too big to fail' ],
+    },
+    {
         
-    }
+        title: "Moody’s changes outlook on United States’ ratings to 'negative'",
+        dateYYYYMMDD: '2023-11-10',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Economics/comments/17sf7vj/moodys_changes_outlook_on_united_states_ratings/?sort=top',
+                type: 'REDDIT',
+                label: 'r/Economics',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17sexdr/moodys_cuts_usa_outlook_to_negative_citing_higher/?sort=top',
+                type: 'REDDIT',
+                label: 'r/superstonk',
+                archiveLink: '',
+            },           
+        ],
+        description: '',
+        types: [TimelineEventType.OTHER],
+        significance: 2,
+        tags: ['moodys', 'credit rating', 'credit', 'rating', 'USA' ],
+    },
 
 ]; 

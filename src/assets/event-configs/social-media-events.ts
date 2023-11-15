@@ -1,7 +1,7 @@
-import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
-import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
+import { TimelineEventConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface";
+import { TimelineEventType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum";
 
-export const socialMediaEvents: TimelineItemConfig[] = [
+export const socialMediaEvents: TimelineEventConfig[] = [
     {
         title: 'NO BRIGADING',
         dateYYYYMMDD: '2021-06-25',
@@ -14,8 +14,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'The approximate beginning of Superstonk’s issues with "brigading"',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 0,
+        tags: ['superstonk', 'brigading', 'opposition', 'reddit'],
     },
     {
         title: 'Cellar Boxing DD published in Superstonk',
@@ -41,8 +42,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             }
         ],
         description: '',
-        types: [TimelineItemType.SOCIAL_MEDIA],
-        significance: 3,
+        types: [TimelineEventType.SOCIAL_MEDIA],
+        significance: 2,
+        tags: ['superstonk', 'cellar box', 'dd', 'naked short selling'],
     },
     {
         title: 'Superstonk - We have a lot of eyes on this sub right now. Please comment with caution.',
@@ -56,8 +58,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 0,
+        tags: ['superstonk', 'reddit', 'opposition'],
     },
     {
         title: 'Gary Gensler: Resign',
@@ -77,9 +80,10 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Wall Street doesn’t like Gary Gensler, as written in a now deleted, archived post from forbes.com',
-        types: [TimelineItemType.MEDIA, TimelineItemType.OTHER],
+        types: [TimelineEventType.MEDIA, TimelineEventType.OTHER],
         significance: 1,
         tags: ['Gary Gensler', 'SEC'],
+        
     },
     {
         title: 'r/wallstreetbets bans GME',
@@ -111,12 +115,10 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"WSB is a trading sub, not a place to baghold for years. Apes are no longer welcome."',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 2,
+        tags: ['wallstreetbets', 'bagholders', 'opposition', 'reddit'],
     },
-
-    
-
     {
         title: 'Attention Superstonk',
         dateYYYYMMDD: '2022-12-09',
@@ -129,8 +131,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Superstonk isn’t the right place to discuss other subreddits or people there. As well: no more usernames/snoos in screenshots"',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['superstonk', 'censorship', 'brigading', 'reddit', 'opposition'],
     },
     {
         title: 'Superstonk - Brief Community Update - Tagging Users',
@@ -144,8 +147,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Apprently Reddit implemented a change that prevented superstonk users from tagging other users',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['superstonk', 'censorship', 'brigading', 'reddit', 'opposition'],
     },
     {
         title: 'Superstonk - State of the Stonk: December 26, 2022',
@@ -159,8 +163,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Due to apparent brigading, there shall be no more mentioning of usernames or their avatars',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['superstonk', 'censorship', 'brigading', 'reddit', 'opposition'],
     },
     {
         title: 'WeTheInvestors 2nd Q&A With SEC Chair Gary Gensler',
@@ -174,7 +179,7 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'We The Investors sit down with SEC Chair Gary Gensler for our second Q&A. We will discuss FTDs, DRS, the new SEC rule proposals, and other topics suggested by the community.',
-        types: [TimelineItemType.DRS, TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.DRS, TimelineEventType.SOCIAL_MEDIA],
         significance: 2,
         tags: ['WeTheInvestors', 'Gary Gensler', 'SEC', 'FTDs', 'DRS', 'whydrs.org', 'whydrs', 'computershare'],
     },
@@ -190,8 +195,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Superstonk mods say, referring to r/DRSyourGME: "you might feel more comfortable on a subreddit without any review standards that allow baseless accusations and speculation without proof which masquerade as fact."',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['superstonk', 'censorship', 'brigading', 'reddit', 'drsyourgme', 'division'],
     },
     {
         title: 'Reminder on Superstonk’s screenshots, brigading and partisan politics rules',
@@ -205,8 +211,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"The reddit admins expect us to enforce the SPIRIT of the rules not just the LETTER."',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['superstonk', 'censorship', 'brigading', 'reddit', 'politics'],
     },
     {
         title: 'Censorship, Mods r Sus and Brigading',
@@ -220,8 +227,9 @@ export const socialMediaEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Superstonk mods address censorship and brigading. "We have people actively encouraging traffic being sent to other subreddits, award bombing and mass voting."',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['superstonk', 'censorship', 'brigading', 'reddit'],
     },
     {
         title: '@GameStop posts butterflies on X',
@@ -248,7 +256,36 @@ export const socialMediaEvents: TimelineItemConfig[] = [
 
         ],
         description: '',
-        types: [TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['butterfly', 'superstonk', 'theppshow'],
     },
-]
+    {
+        title: 'Meme Stock Meltdown: How Deranged Bed Bath & Beyond Retail Investors Spawned a Bagholder Cargo Cult',
+        dateYYYYMMDD: '2023-10-17',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/ThePPShow/comments/17tmd7n/what_is_this_shill_shit/',
+                type: 'REDDIT',
+                label: 'r/ThePPShow thread - November 12 2023',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.linkedin.com/pulse/how-unwavering-conviction-turned-bed-bath-beyond-meme-tony-dong-msc-2swyc',
+                type: 'OTHER',
+                label: 'LinkedIn post - Meme Stock Meltdown: How Deranged Bed Bath & Beyond Retail Investors Spawned a Bagholder Cargo Cult',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/221351',
+                type: 'LEMMY',
+                label: 'What is a meme stock?',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        types: [TimelineEventType.SOCIAL_MEDIA],
+        significance: 1,
+        tags: ['linkedin', 'meme stock', 'propaganda', 'fud', 'bbby', 'cult', 'bagholder', 'delusional', 'bashing', 'theppshow'],
+    },
+];

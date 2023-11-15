@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { TimelineItem } from '../timeline-item/timeline-item.class';
-import { TimelineItemType } from '../timeline-item/timeline-item-type.enum';
+import { TimelineEvent } from '../timeline-item/timeline-event';
+import { TimelineEventType } from '../timeline-item/timeline-event-type.enum';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { TimelineItemsService } from '../timeline-items.service';
-import { urlType } from '../timeline-item/timeline-item-url.interface';
+import { urlType } from '../timeline-item/timeline-event-url.interface';
 
 @Component({
   selector: 'app-timeline-list-item',
@@ -18,20 +18,20 @@ export class TimelineListItemComponent {
     private _itemService: TimelineItemsService){
 
   }
-  private _item: TimelineItem= new TimelineItem({
+  private _item: TimelineEvent= new TimelineEvent({
     title: '',
     dateYYYYMMDD: '',
     urls: [],
     description: '',
-    types: [TimelineItemType.OTHER],
-    significance: 0,
+    types: [TimelineEventType.OTHER],
+    significance: 0, tags: [],
   }, undefined, -1)
-  @Input('item') public set item(item: TimelineItem) { this._item = item; }
-  public get item(): TimelineItem { return this._item; }
+  @Input('item') public set item(item: TimelineEvent) { this._item = item; }
+  public get item(): TimelineEvent { return this._item; }
 
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
-  public onClickItem(item: TimelineItem){
+  public onClickItem(item: TimelineEvent){
     this._itemService.selectItem(item, 'ITEMS');
   }
 
@@ -49,8 +49,8 @@ export class TimelineListItemComponent {
       if(this.isMobile){
         return { // if is selected and is mobile
           'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.9),
-          'border-left': '3px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
-          'border-right': '3px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
+          'border-left': '2px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
+          'border-right': '2px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
           'color': 'white',
           'padding-top': '15px',
           'padding-bottom': '15px',
@@ -58,7 +58,7 @@ export class TimelineListItemComponent {
       }else{
         return { // if is selected and is not mobile
           'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.7),
-          'border': '3px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
+          'border': '2px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 1),
           'color': 'white',
         }
       }

@@ -50,7 +50,7 @@ export class SidebarComponent {
   public get faCircleInfo(): IconDefinition { return faCircleInfo; }
   public get faTableList(): IconDefinition { return faTableList; }
 
-  public get showAsList(): boolean { return this._settingsService.showAsList; }
+  public get showAsList(): boolean { return this._settingsService.chartListIsVertical; }
 
   private _isOver: boolean = false;
   public get isOver(): boolean { return this._isOver; }

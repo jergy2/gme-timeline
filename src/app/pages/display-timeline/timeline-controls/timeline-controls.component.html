@@ -1,0 +1,40 @@
+<div class="controls-root" *ngIf="!isMobile">
+    <div class="controls-bar-container">
+        <div class="controls-area shadow" [ngClass]="controlsExpanded ? 'expanded' : 'not-expanded'"
+            (mouseleave)="onMouseLeaveControls()">
+
+
+            <div class="icon-container">
+                <fa-icon [icon]="faSliders" class="control-icon" [ngClass]="settingsOpen ? 'settings-open' : ''"
+                    (click)="onMouseEnterControls()"></fa-icon>
+                <div class="search-bar">
+                    <fa-icon [icon]="faMagnifyingGlass" class="control-icon"
+                        [ngClass]="showSearchResults ? 'settings-open' : ''" (click)="onClickSearchButton()"></fa-icon>
+                    <!-- <input type="text" (keydown)="onKey($event)" class="search-input" (click)="onClickSearchText()"
+                        (focus)="onClickSearchText()"> -->
+
+                    <input [value]="searchInputValue" #searchbox type="text" class="search-input" placeholder="Search" (click)="onClickSearchText()" (focus)="onClickSearchText()" (keyup)="onKey($event)">
+                </div>
+            </div>
+
+            <app-settings-controls class="controls-expanded" *ngIf="controlsExpanded"
+               ></app-settings-controls>
+            <app-search-control *ngIf="showSearchResults" [searchValue]="searchValue" (searchValueChanged)="onSearchInputValueChanged($event)" (searchResultsApplied)="onMouseLeaveControls()"></app-search-control>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Mobile -->
+
+<div class="controls-root-mobile" *ngIf="isMobile">
+    <div class="controls-expanded">
+        <app-significance-control class="control"></app-significance-control>
+        <app-category-control class="control"></app-category-control>
+    </div>
+</div>

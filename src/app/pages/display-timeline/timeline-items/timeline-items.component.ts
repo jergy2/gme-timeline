@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { TimelineItemsService } from './timeline-items.service';
-import { TimelineItem } from './timeline-item/timeline-item.class';
+import { TimelineEvent } from './timeline-item/timeline-event';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { DisplayService } from '../display.service';
 import { SettingsService } from 'src/app/settings.service';
@@ -18,13 +18,13 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
     private _displayService: DisplayService,
     private _settingsService: SettingsService) { }
 
-  private _selectedItem: TimelineItem | null = null;
-  private _descendingItems: TimelineItem[] = [];
-  public get selectedItem(): TimelineItem | null { return this._selectedItem; }
-  public get displayedTimelineItems(): TimelineItem[] { return this._itemService.displayedTimelineItems; }
-  public get timelineItemsDescending(): TimelineItem[] { return this._descendingItems; }
+  private _selectedItem: TimelineEvent | null = null;
+  private _descendingItems: TimelineEvent[] = [];
+  public get selectedItem(): TimelineEvent | null { return this._selectedItem; }
+  public get displayedTimelineItems(): TimelineEvent[] { return this._itemService.displayedTimelineItems; }
+  public get timelineItemsDescending(): TimelineEvent[] { return this._descendingItems; }
   public get isMobile(): boolean { return this._screenService.isMobile; }
-  public get isListView(): boolean { return this._settingsService.showAsList; }
+  public get isListView(): boolean { return this._settingsService.chartListIsVertical; }
 
 
   private _updateItems(){
@@ -62,7 +62,7 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
         }
       }
     });
-    this._settingsService.showAsList$.subscribe({
+    this._settingsService.chartListIsVertical$.subscribe({
       next: ()=>{ this._itemService.displayedTimelineItems}
     })
   }
@@ -83,7 +83,7 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
     }
   }
 
-  public itemId(item: TimelineItem): string {
+  public itemId(item: TimelineEvent): string {
     return 'item' + this.displayedTimelineItems.indexOf(item);
   }
 

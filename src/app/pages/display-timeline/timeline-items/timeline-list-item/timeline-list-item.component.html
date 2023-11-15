@@ -1,4 +1,4 @@
-<div class="item-root" [ngClass]="item.isSelected ? 'expanded' : ''" [ngStyle]="ngStyle" (click)="onClickItem(item)">
+<div class="item-root shadow" [ngClass]="item.isSelected ? 'expanded' : ''" [ngStyle]="ngStyle" (click)="onClickItem(item)">
     <div class="top-row">
         <div class="date">{{ item.dateMMMDDYYYY }}</div>
         <div class="gme-price">$<span></span>{{ item.gmePrice.toFixed(2) }}</div>

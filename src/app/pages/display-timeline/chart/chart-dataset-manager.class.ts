@@ -1,7 +1,7 @@
 import * as dayjs from "dayjs";
 import { GmePriceEntry } from "../timeline-items/timeline-item/gme-price-entry.interface";
-import { TimelineItemType } from "../timeline-items/timeline-item/timeline-item-type.enum";
-import { TimelineItem } from "../timeline-items/timeline-item/timeline-item.class";
+import { TimelineEventType } from "../timeline-items/timeline-item/timeline-event-type.enum";
+import { TimelineEvent } from "../timeline-items/timeline-item/timeline-event";
 import { DatasetConfig } from "./dataset-config.class";
 import { BehaviorSubject, Observable, Subject, first } from 'rxjs';
 
@@ -12,22 +12,22 @@ export class ChartDataSetManager {
   private _datasets$: BehaviorSubject<any[]> = new BehaviorSubject<any>([]);
   private _datasetsMobile: any[] = [];
   private _datasetConfigs: DatasetConfig[] = [];
-  private _timelineItems: TimelineItem[] = [];
+  private _timelineEvents: TimelineEvent[] = [];
 
 
   private _signifianceValue: number = -1;
-  private _timelineCategories: TimelineItemType[] = [];
+  private _timelineCategories: TimelineEventType[] = [];
   // private _isUpdating$: Subject<boolean> = new Subject();
-  
+
   // public get isUpdating$(): Observable<boolean> { return this._isUpdating$.asObservable(); }
   public get datasets(): any[] { return this._datasets$.getValue(); }
   public get datasets$(): Observable<any[]> { return this._datasets$.asObservable(); }
   public get datasetsMobile(): any[] { return this._datasetsMobile; }
   public get datasetConfigs(): DatasetConfig[] { return this._datasetConfigs; }
 
-  constructor(priceEntries: GmePriceEntry[], timelineItems: TimelineItem[], categories: TimelineItemType[], significanceValue: number) {
+  constructor(priceEntries: GmePriceEntry[], timelineItems: TimelineEvent[], categories: TimelineEventType[], significanceValue: number) {
     this._priceEntries = priceEntries;
-    this._timelineItems = timelineItems;
+    this._timelineEvents = timelineItems;
     this._timelineCategories = categories;
     this._signifianceValue = significanceValue;
   }
@@ -40,12 +40,30 @@ export class ChartDataSetManager {
     // this._isUpdating$.next(false);
   }
 
-  public updateCategories(categories: TimelineItemType[]) {
+  public updateCategories(categories: TimelineEventType[]) {
     // console.log("updating categories")
     // this._isUpdating$.next(true);
     this._timelineCategories = categories;
     this.getAndUpdateDatasets();
     // this._isUpdating$.next(false);
+  }
+  public updateDisplayedEvents(events: TimelineEvent[]) {
+    this._timelineEvents = events;
+    this._signifianceValue = 0;
+    this._timelineCategories = [TimelineEventType.DRS,
+    TimelineEventType.CORP,
+    TimelineEventType.RC,
+    TimelineEventType.MEDIA,
+    TimelineEventType.SOCIAL_MEDIA,
+    TimelineEventType.OTHER];
+
+    this.getAndUpdateDatasets();
+  }
+  public clearSearchResults(significance: number, categories: TimelineEventType[], allEvents: TimelineEvent[]){
+    this._signifianceValue = significance;
+    this._timelineCategories = categories;
+    this._timelineEvents = Object.assign([], allEvents);
+    this.getAndUpdateDatasets();
   }
 
   public getAndUpdateDatasets() {
@@ -87,28 +105,28 @@ export class ChartDataSetManager {
     this._datasets$.next(datasets);
   }
 
-  public getTypeColor(type: TimelineItemType, transparency?: number): string {
+  public getTypeColor(type: TimelineEventType, transparency?: number): string {
     if (!transparency) {
       transparency = 0.8;
     }
-    if (type === TimelineItemType.CORP) {
+    if (type === TimelineEventType.CORP) {
       return 'rgba(128,0,0,' + String(transparency) + ')';
-    } else if (type === TimelineItemType.MEDIA) {
+    } else if (type === TimelineEventType.MEDIA) {
       return 'rgba(230,110,0,' + String(transparency) + ')';
-    } else if (type === TimelineItemType.RC) {
+    } else if (type === TimelineEventType.RC) {
       return 'rgba(0,0,255,' + String(transparency) + ')';
-    } else if (type === TimelineItemType.SOCIAL_MEDIA) {
+    } else if (type === TimelineEventType.SOCIAL_MEDIA) {
       return 'rgba(255,0,0,' + String(transparency) + ')';
-    } else if (type === TimelineItemType.OTHER) {
+    } else if (type === TimelineEventType.OTHER) {
       return 'rgba(128,128,128,' + String(transparency) + ')';
-    } else if (type === TimelineItemType.DRS) {
+    } else if (type === TimelineEventType.DRS) {
       return 'rgba(148,23,106,' + String(transparency) + ')';
     } else {
       return 'black';
     }
   }
 
-  public lookupIndexByTimelineItem(timelineItem: TimelineItem): { datasetIndex: number, itemIndex: number } {
+  public lookupIndexByTimelineItem(timelineItem: TimelineEvent): { datasetIndex: number, itemIndex: number } {
     const indexValue = {
       datasetIndex: -1, itemIndex: -1,
     }
@@ -124,7 +142,7 @@ export class ChartDataSetManager {
 
   public lookupTimelineItemByIndex(datasetIndex: number, index: number) {
     const config = this._datasetConfigs[datasetIndex - 1];
-    const timelineItem: TimelineItem | null = config.timelineItems[index];
+    const timelineItem: TimelineEvent | null = config.timelineItems[index];
     if (timelineItem !== null) {
       if (timelineItem.gmePriceEntry) {
         const event = this._lookupEvent(timelineItem.gmePriceEntry.date.format('YYYY-MM-DD'), config.itemType, config.significance);
@@ -134,7 +152,7 @@ export class ChartDataSetManager {
     return undefined;
   }
 
-  public lookupDataset(datasetIndex:number){
+  public lookupDataset(datasetIndex: number) {
     const config = this._datasetConfigs[datasetIndex - 1];
     return config;
   }
@@ -145,17 +163,17 @@ export class ChartDataSetManager {
 */
     const startTime = dayjs();
     const datapointSets: {
-      type: TimelineItemType,
+      type: TimelineEventType,
       significance: number,
-      datapoints: (TimelineItem | null)[]
+      datapoints: (TimelineEvent | null)[]
     }[] = [];
     const allSignificances: number[] = this._getSignificances();
-    let filteredTimelineEvents: TimelineItem[] = [];
+    let filteredTimelineEvents: TimelineEvent[] = [];
     this._timelineCategories.forEach(eventType => {
       allSignificances.forEach(significanceValue => {
-        this._timelineItems.forEach(item => {
+        this._timelineEvents.forEach(item => {
           if (item.types.indexOf(eventType) > -1 && item.significance === significanceValue) {
-              filteredTimelineEvents.push(item);
+            filteredTimelineEvents.push(item);
           }
         });
         datapointSets.push({
@@ -184,8 +202,8 @@ export class ChartDataSetManager {
     if (filteredTimelineEvents.length > 0) {
       let eventIndex = 0;
       let nextEventDate = filteredTimelineEvents[eventIndex].dateYYYYMMDD;
-      if(nextEventDate < currentDate.format('YYYY-MM-DD')){
-        while(dayjs(nextEventDate).isBefore(currentDate)){
+      if (nextEventDate < currentDate.format('YYYY-MM-DD')) {
+        while (dayjs(nextEventDate).isBefore(currentDate)) {
           eventIndex++;
           nextEventDate = filteredTimelineEvents[eventIndex].dateYYYYMMDD;
         }
@@ -196,7 +214,7 @@ export class ChartDataSetManager {
           let eventAreadyAdded = false;
           datapointSets.forEach(datapointSet => {
             if (datapointSet.significance === event.significance && (event.types.indexOf(datapointSet.type) > -1)) {
-              if(eventAreadyAdded === false){
+              if (eventAreadyAdded === false) {
                 datapointSet.datapoints.push(event);
                 eventAreadyAdded = true;
               }
@@ -205,7 +223,7 @@ export class ChartDataSetManager {
             }
           });
           eventIndex++;
-          if(eventIndex < filteredTimelineEvents.length){
+          if (eventIndex < filteredTimelineEvents.length) {
             nextEventDate = filteredTimelineEvents[eventIndex].dateYYYYMMDD;
           }
         } else {
@@ -225,9 +243,9 @@ export class ChartDataSetManager {
     return configs
   }
 
-  private _removeSameDateEvents(events: TimelineItem[]): TimelineItem[] {
+  private _removeSameDateEvents(events: TimelineEvent[]): TimelineEvent[] {
     if (events.length > 1) {
-      const newEvents: TimelineItem[] = [];
+      const newEvents: TimelineEvent[] = [];
       for (let i = 1; i < events.length; i++) {
         const firstEvent = events[i - 1];
         const secondEvent = events[i]
@@ -257,14 +275,14 @@ export class ChartDataSetManager {
     }
   }
 
-  private _getPriorityType(firstEvent: TimelineItem, secondEvent: TimelineItem): TimelineItem {
+  private _getPriorityType(firstEvent: TimelineEvent, secondEvent: TimelineEvent): TimelineEvent {
     const bothItems = [firstEvent, secondEvent];
-    const priorityTypes = [TimelineItemType.DRS,
-    TimelineItemType.CORP,
-    TimelineItemType.RC,
-    TimelineItemType.MEDIA,
-    TimelineItemType.SOCIAL_MEDIA,
-    TimelineItemType.OTHER];
+    const priorityTypes = [TimelineEventType.DRS,
+    TimelineEventType.CORP,
+    TimelineEventType.RC,
+    TimelineEventType.MEDIA,
+    TimelineEventType.SOCIAL_MEDIA,
+    TimelineEventType.OTHER];
     for (let i = 0; i < priorityTypes.length; i++) {
       const index = bothItems.findIndex(item => item.mainType === priorityTypes[i]);
       if (index > -1) {
@@ -278,14 +296,14 @@ export class ChartDataSetManager {
     let value = this._signifianceValue;
     const maxSignificanceValue = 5;
     let significances: number[] = [];
-    for(let i = maxSignificanceValue; i>= value; i--){
+    for (let i = maxSignificanceValue; i >= value; i--) {
       significances.push(i);
     }
     return significances;
   }
 
-  private _lookupEvent(dateYYYYMMDD: string, type: TimelineItemType, significance: number): TimelineItem | undefined {
-    const foundItem = this._timelineItems.find(item => (item.dateYYYYMMDD === dateYYYYMMDD) && (item.types.indexOf(type) > -1) && item.significance === significance);
+  private _lookupEvent(dateYYYYMMDD: string, type: TimelineEventType, significance: number): TimelineEvent | undefined {
+    const foundItem = this._timelineEvents.find(item => (item.dateYYYYMMDD === dateYYYYMMDD) && (item.types.indexOf(type) > -1) && item.significance === significance);
     return foundItem;
   }
 

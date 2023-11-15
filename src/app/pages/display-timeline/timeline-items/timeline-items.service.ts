@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
-import { TimelineItem } from './timeline-item/timeline-item.class';
-import { TimelineItemType } from './timeline-item/timeline-item-type.enum';
+import { TimelineEvent } from './timeline-item/timeline-event';
+import { TimelineEventType } from './timeline-item/timeline-event-type.enum';
 import { QuarterlyResult } from '../../financials/quarterly-results/quarterly-result.class';
 
 @Injectable({
@@ -12,29 +12,38 @@ export class TimelineItemsService {
   constructor() { }
 
   private _significanceValue: number = 1;
-  private _itemCategories: TimelineItemType[] = [
-    TimelineItemType.CORP, TimelineItemType.SOCIAL_MEDIA, TimelineItemType.DRS, TimelineItemType.MEDIA, TimelineItemType.OTHER, TimelineItemType.RC,
+  private _itemCategories: TimelineEventType[] = [
+    TimelineEventType.CORP, TimelineEventType.SOCIAL_MEDIA, TimelineEventType.DRS, TimelineEventType.MEDIA, TimelineEventType.OTHER, TimelineEventType.RC,
   ];
 
-  private _itemSelected$: Subject<{item: TimelineItem | null, source: 'CHART' | 'ITEMS' | 'NULL'}> = new Subject();
-  public get itemSelected$(): Observable<{item: TimelineItem | null, source: 'CHART' | 'ITEMS' | 'NULL'}> { return this._itemSelected$.asObservable(); }
-  public selectItem(item: TimelineItem, source: 'CHART' | 'ITEMS') { this._itemSelected$.next({item: item, source: source}); }
+  private _itemSelected$: Subject<{item: TimelineEvent | null, source: 'CHART' | 'ITEMS' | 'NULL'}> = new Subject();
+  public get itemSelected$(): Observable<{item: TimelineEvent | null, source: 'CHART' | 'ITEMS' | 'NULL'}> { return this._itemSelected$.asObservable(); }
+  public selectItem(item: TimelineEvent, source: 'CHART' | 'ITEMS') { this._itemSelected$.next({item: item, source: source}); }
   public unselectItem() { this._itemSelected$.next({item: null, source: 'NULL'}); }
 
-  private _allTimelineItems$: BehaviorSubject<TimelineItem[]> = new BehaviorSubject<TimelineItem[]>([]);
-  private _displayedTimelineItems$: BehaviorSubject<TimelineItem[]> = new BehaviorSubject<TimelineItem[]>([]);
-  public setTimelineItems(items: TimelineItem[]) {
+  private _allTimelineItems$: BehaviorSubject<TimelineEvent[]> = new BehaviorSubject<TimelineEvent[]>([]);
+  private _displayedTimelineItems$: BehaviorSubject<TimelineEvent[]> = new BehaviorSubject<TimelineEvent[]>([]);
+  public setAllTimelineEvents(items: TimelineEvent[]) {
     this._allTimelineItems$.next(items);
     this._displayedTimelineItems$.next(items);
   }
-  public get allTimelineItems$(): Observable<TimelineItem[]> { return this._allTimelineItems$.asObservable(); }
-  public get allTimelineItems(): TimelineItem[] { return this._allTimelineItems$.getValue(); }
 
-  public get displayedTimelineItems$(): Observable<TimelineItem[]> { return this._displayedTimelineItems$.asObservable(); }
-  public get displayedTimelineItems(): TimelineItem[] { return this._displayedTimelineItems$.getValue(); }
+  public setDisplayedTimelineEvents(events: TimelineEvent[]){
+    this._displayedTimelineItems$.next(events);
+  }
+
+  public resetTimelineEvents(){
+    this._displayedTimelineItems$.next(this.allTimelineItems);
+  }
+
+  // public get allTimelineItems$(): Observable<TimelineEvent[]> { return this._allTimelineItems$.asObservable(); }
+  public get allTimelineItems(): TimelineEvent[] { return this._allTimelineItems$.getValue(); }
+
+  public get displayedTimelineItems$(): Observable<TimelineEvent[]> { return this._displayedTimelineItems$.asObservable(); }
+  public get displayedTimelineItems(): TimelineEvent[] { return this._displayedTimelineItems$.getValue(); }
 
 
-  public get stockSplitItem(): TimelineItem | undefined { return this.allTimelineItems.find(item => item.specialIdentifier === 'STOCK-SPLIT'); }
+  public get stockSplitItem(): TimelineEvent | undefined { return this.allTimelineItems.find(item => item.specialIdentifier === 'STOCK-SPLIT'); }
 
   public onClickStockSplitItem() {
     if (this.stockSplitItem) {
@@ -46,7 +55,7 @@ export class TimelineItemsService {
     this._significanceValue = value;
     this._update();
   }
-  public updateCategories(categories: TimelineItemType[]){
+  public updateCategories(categories: TimelineEventType[]){
     this._itemCategories = categories;
     this._update();
   }
@@ -73,7 +82,7 @@ export class TimelineItemsService {
   public setQuarterlyFinancialResults(results: QuarterlyResult[]){
     this.allTimelineItems.forEach(item =>{ 
       results.forEach(result =>{
-        if(item.dateYYYYMMDD === result.filingDateYYYYMMDD && item.types.indexOf(TimelineItemType.CORP) > -1){
+        if(item.dateYYYYMMDD === result.filingDateYYYYMMDD && item.types.indexOf(TimelineEventType.CORP) > -1){
           item.setQuarterlyFinancialResult(result);
         }
       });

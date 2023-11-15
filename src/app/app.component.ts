@@ -3,7 +3,7 @@ import { HistoricGMEDataService } from './historic-gme-data.service';
 import { ScreeSizeService } from './scree-size.service';
 import { timer } from 'rxjs';
 import { DisplayService } from './pages/display-timeline/display.service';
-import { TimelineItem } from './pages/display-timeline/timeline-items/timeline-item/timeline-item.class';
+import { TimelineEvent } from './pages/display-timeline/timeline-items/timeline-item/timeline-event';
 import { TimelineItemsBuilder } from './pages/display-timeline/timeline-items/timeline-items-builder.class';
 import { ChartDataManagerService } from './pages/display-timeline/chart/chart-data-manager-service';
 import { TimelineItemsService } from './pages/display-timeline/timeline-items/timeline-items.service';
@@ -18,6 +18,8 @@ import { mediaItemEvents } from 'src/assets/event-configs/media-events';
 import { rcTweetsEvents } from 'src/assets/event-configs/rc-events-events';
 import { socialMediaEvents } from 'src/assets/event-configs/social-media-events';
 import { citadelEvents } from 'src/assets/event-configs/citadel-events';
+import { EventSearchService } from './pages/display-timeline/timeline-controls/search/event-search.service';
+import { bbbyConfigs } from 'src/assets/event-configs/bbby-events';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +43,8 @@ export class AppComponent {
     private _displayService: DisplayService,
     private _router: Router,
     private _settingsService: SettingsService,
-    private _financialsService: FinancialsService) {
+    private _financialsService: FinancialsService,
+    private _searchService: EventSearchService) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -79,9 +82,11 @@ export class AppComponent {
               rcTweetsEvents,
               socialMediaEvents,
               citadelEvents,
+              bbbyConfigs,
             ];
-            const timelineItems: TimelineItem[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
-            this._timelineItemsService.setTimelineItems(timelineItems);
+            const timelineItems: TimelineEvent[] = TimelineItemsBuilder.getTimelineItems(allConfigs, this._dataService.allPriceEntries);
+            this._timelineItemsService.setAllTimelineEvents(timelineItems);
+            this._searchService.setTimelineItems(timelineItems);
             this._timelineItemsService.updateSignificanceValue(this._settingsService.significanceValue);
             this._timelineItemsService.updateCategories(this._settingsService.categories);
             this._updateChartData();

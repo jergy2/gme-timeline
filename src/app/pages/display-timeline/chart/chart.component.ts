@@ -4,7 +4,7 @@ import { ChartDataManagerService } from './chart-data-manager-service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
-import { TimelineItem } from '../timeline-items/timeline-item/timeline-item.class';
+import { TimelineEvent } from '../timeline-items/timeline-item/timeline-event';
 import { HistoricGMEDataService } from 'src/app/historic-gme-data.service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { SettingsService } from 'src/app/settings.service';
@@ -34,7 +34,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
   public get canvasHeight(): number { return this._canvasHeight; }
 
   public get isMobile(): boolean { return this._sizeService.isMobile; }
-  public get isListView(): boolean { return this._settingsService.showAsList; }
+  public get isListView(): boolean { return this._settingsService.chartListIsVertical; }
 
   private _canvasWidth: number = 400;
   private _canvasHeight: number = 300;
@@ -50,12 +50,6 @@ export class ChartComponent implements OnInit, AfterViewInit {
     // this.lineChartDataMobile.labels = labels;
     this._setLineChartOptions();
     this.lineChartData.datasets = this._chartDataService.dataSets;
-
-    this._settingsService.showAsList$.subscribe({
-      next: () => {
-
-      }
-    });
   }
 
   ngAfterViewInit() {
@@ -110,7 +104,6 @@ export class ChartComponent implements OnInit, AfterViewInit {
         }
       },
       onClick: (event, array) => {
-        console.log("item clicked");
         // console.log(event, array)
         // if (array.length > 0) {
         //   const timelineItem = this._lookupEventByIndex(array[0].datasetIndex, array[0].index);
@@ -182,7 +175,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
   }
 
   private _tooltipOpenedFromTimelineItems: boolean = false;
-  private _openToolTip(item: TimelineItem) {
+  private _openToolTip(item: TimelineEvent) {
     var mouseMoveEvent, meta, point;
     const itemIndex = this._chartDataService.lookupIndexByEvent(item);
     if (this.baseChart?.chart) {

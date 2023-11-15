@@ -1,7 +1,7 @@
-import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
-import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
+import { TimelineEventConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface";
+import { TimelineEventType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum";
 
-export const bbbyConfigs: TimelineItemConfig[] = [
+export const bbbyConfigs: TimelineEventConfig[] = [
     {
         title: 'Kais delivers bottles of wine signed by Jim Cramer to Bill Pulte',
         dateYYYYMMDD: '2023-09-25',
@@ -26,7 +26,20 @@ export const bbbyConfigs: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
+        tags: [ 'bbby', 'kais', 'cramer', 'pulte', 'ryan cohen', 'bottles', 'wine'],
     },
 ]; 
+
+
+
+/**
+ * 
+ *             {
+                url: 'https://www.reuters.com/legal/government/column-meme-king-ryan-cohen-moves-toss-novel-insider-trading-case-by-bed-bath-2023-11-09/',
+                type: 'NEWS',
+                label: 'reuters.com - ‘Meme king’ Ryan Cohen moves to toss novel insider trading case by Bed Bath shareholders',
+                archiveLink: '',
+            },
+ */

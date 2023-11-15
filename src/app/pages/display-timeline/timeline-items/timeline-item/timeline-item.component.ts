@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { TimelineItem } from './timeline-item.class';
-import { TimelineItemType } from './timeline-item-type.enum';
+import { TimelineEvent } from './timeline-event';
+import { TimelineEventType } from './timeline-event-type.enum';
 import * as dayjs from 'dayjs';
 import { ScreeSizeService } from 'src/app/scree-size.service';
-import { urlType } from './timeline-item-url.interface';
+import { urlType } from './timeline-event-url.interface';
 import { TimelineItemsService } from '../timeline-items.service';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 
@@ -16,16 +16,16 @@ export class TimelineItemComponent {
 
   constructor(private _chartDataService: ChartDataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
 
-  private _item: TimelineItem = new TimelineItem({
+  private _item: TimelineEvent = new TimelineEvent({
     title: '',
     dateYYYYMMDD: '',
     urls: [],
     description: '',
-    types: [TimelineItemType.OTHER],
-    significance: 0,
+    types: [TimelineEventType.OTHER],
+    significance: 0, tags: [],
   }, undefined, -1)
-  @Input('item') public set item(item: TimelineItem) { this._item = item; }
-  public get item(): TimelineItem { return this._item; }
+  @Input('item') public set item(item: TimelineEvent) { this._item = item; }
+  public get item(): TimelineEvent { return this._item; }
 
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
@@ -65,7 +65,7 @@ export class TimelineItemComponent {
     this._itemService.unselectItem();
   }
 
-  public onClickItem(item: TimelineItem){
+  public onClickItem(item: TimelineEvent){
     this._itemService.selectItem(item, 'ITEMS');
 }
 

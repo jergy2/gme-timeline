@@ -1,12 +1,12 @@
 import { GmePriceEntry } from "./timeline-item/gme-price-entry.interface";
-import { TimelineItemConfig } from "./timeline-item/timeline-item-config.interface";
-import { TimelineItem } from "./timeline-item/timeline-item.class";
+import { TimelineEventConfig } from "./timeline-item/timeline-event-config.interface";
+import { TimelineEvent } from "./timeline-item/timeline-event";
 
 export class TimelineItemsBuilder{
 
-    public static getTimelineItems(configs :TimelineItemConfig[][], gmeData: GmePriceEntry[]): TimelineItem[] {
+    public static getTimelineItems(configs :TimelineEventConfig[][], gmeData: GmePriceEntry[]): TimelineEvent[] {
 
-        let allItemConfigs: TimelineItemConfig[] = [];
+        let allItemConfigs: TimelineEventConfig[] = [];
         configs.forEach(configSet =>{
             allItemConfigs = allItemConfigs.concat(configSet)
         });
@@ -23,7 +23,7 @@ export class TimelineItemsBuilder{
         const items = allItemConfigs.map(config => {
             const gmePriceEntry: GmePriceEntry | undefined = gmeData.find(entry => entry.date.format('YYYY-MM-DD') === config.dateYYYYMMDD);
             itemIndex++;
-            return new TimelineItem(config, gmePriceEntry, itemIndex);
+            return new TimelineEvent(config, gmePriceEntry, itemIndex);
             
         });
         // for(let i=1; i<items.length;i++){

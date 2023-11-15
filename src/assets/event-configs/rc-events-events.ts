@@ -1,7 +1,7 @@
-import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
-import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
+import { TimelineEventConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface";
+import { TimelineEventType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum";
 
-export const rcTweetsEvents: TimelineItemConfig[] = [
+export const rcTweetsEvents: TimelineEventConfig[] = [
     {
         title: 'RC Tweet',
         dateYYYYMMDD: '2019-07-02',
@@ -14,8 +14,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Hello Twitter! #myfirstTweet"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Retweet',
@@ -29,8 +30,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Retweet',
@@ -44,8 +46,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -59,8 +62,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Retweet',
@@ -74,8 +78,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Retweet',
@@ -89,8 +94,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -104,8 +110,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"😳" https://t.co/hcp4kNNMbz',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -119,9 +126,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"💩"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-01-06.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-01-06.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -135,9 +143,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             }
         ],
         description: '🥜',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-01-17.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-01-17.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -157,9 +166,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"🐸"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-02-24.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-02-24.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -179,9 +189,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"🤢"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-04.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-04.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -207,9 +218,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-11.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-11.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -229,9 +241,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Superman lives forever 🙏"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-17.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-17.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -251,9 +264,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-25.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-25.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -273,9 +287,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Culver City, CA @GameStop👍"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-12.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-12.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -289,9 +304,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-20.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-20.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -305,9 +321,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-24.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-24.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -321,9 +338,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"😲"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-25.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-25.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -343,9 +361,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-29.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-29.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -371,9 +390,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-13.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-13.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -387,9 +407,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"“Ryan, I love you but I don’t like you” (My Grandma)"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-18.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-18.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -403,8 +424,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"❤️"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -430,9 +452,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Don’t try this at home"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-24.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-24.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -446,9 +469,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-29.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-29.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -468,9 +492,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"💀"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-03.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-03.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -484,9 +509,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-20.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-20.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -500,9 +526,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-23.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-23.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -516,8 +543,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Brick By Brick 🧱"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -531,8 +559,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Power to the Players 🇺🇸"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -552,9 +581,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I ❤️ this"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-08.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-08.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -568,9 +598,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-10.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-10.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -590,9 +621,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"PG-13"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-chopsticks.jpg'
+        imgSrc: 'assets/rc-tweets/rc-chopsticks.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -618,9 +650,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Can’t stop, won’t stop.',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-computerchair.jpg'
+        imgSrc: 'assets/rc-tweets/rc-computerchair.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'RC Tweet',
@@ -641,9 +674,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
 
         ],
         description: '"Power to the Players 🇺🇸 🇨🇦"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-28.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-28.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -657,9 +691,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             }
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-googly-eyes.jpg'
+        imgSrc: 'assets/rc-tweets/rc-googly-eyes.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -673,8 +708,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -688,9 +724,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-08-11.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-08-11.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -704,9 +741,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-08-19.PNG'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-08-19.PNG',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -726,8 +764,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Time for pillow fights and 60s music 🎶"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -748,8 +787,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
 
         ],
         description: '"Talk is cheap, it takes money to buy whiskey."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'talk is cheap', 'it takes money to buy whiskey'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -775,9 +815,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-10-10.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-10-10.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -797,9 +838,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-10-26.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-10-26.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -819,8 +861,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"MGGA"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -846,8 +889,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Deciding between two options for my GME shares: HOLD or HODL…"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 2,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -867,8 +911,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"eew eew llams a evah I"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -901,9 +946,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Bedtime stories by Dr. Ruth 🐱"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 2,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-11-21.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-11-21.jpg',
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -917,8 +963,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Only interested in speaking with candidates who want to actually WORK…"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen','ryan cohen tweet', 'work'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -938,8 +985,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I’m cooler online than in real life"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'shitposting'],
     },
     {
         title: 'Ryan Cohen tweets',
@@ -972,9 +1020,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I miss you"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-12-13.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-12-13.jpg',
+        tags: ['ryan cohen','ryan cohen tweet', 'ted cohen'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -994,8 +1043,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"💩"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'poop tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1015,9 +1065,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Taking a dump in the metaverse."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2021-12-27.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2021-12-27.jpg',
+        tags: ['ryan cohen','ryan cohen tweet', 'poop tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1037,8 +1088,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Never overestimate a man who underestimates himself"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'shitposting'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1058,8 +1110,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Happy Anniversary 💩"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'poop tweet', 'shitposting'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1085,8 +1138,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Why waste money on college when Wikipedia is free…"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'college', 'wikipedia', '69', 'shitposting'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1100,8 +1154,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Anyone going to the movies tonight? 🍿"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1139,8 +1194,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"The 21st century ☎️"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1160,8 +1216,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Who will be the piñata for all this inflation? 🤨"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'inflation'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1187,8 +1244,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"The reverberations of fiscal and monetary policy are likely to be more severe to humans than any climate or societal disaster 💀"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'climate change', 'society', 'inflation', 'politics', 'fiscal policy', 'monetary policy', 'disaster', 'fed'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1208,8 +1266,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"God Bless Gmerica 🏴‍☠️"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen','ryan cohen tweet', 'gmerica', 'god bless gmerica'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1235,8 +1294,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"🩳"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen','ryan cohen tweet', 'shorts'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1262,8 +1322,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"The apple doesn’t fall far from the tree 🍏"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'apple',],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1283,8 +1344,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"No overpaid execs in the metaverse 🔨"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'overpaid', 'consultants', 'metaverse'],
     },
     {
         title: 'Ryan Cohen tweets',
@@ -1323,8 +1385,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
 
         ],
         description: '"Sent letter to $BBBY board, got no response. Sent email to CEO asking for a discussion, haven’t gotten a prompt response. Too busy talking to expensive consultants?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 2,
+        tags: ['ryan cohen','ryan cohen tweet', 'bbby', 'letter', 'consultants'],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1357,8 +1420,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Short sellers are the dumb stormtroopers of the investing galaxy"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen','ryan cohen tweet', 'short sellers', 'dumb stormtroopers',],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1384,8 +1448,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Good use of taxpayer $ is the government cracking down on hedge fund short sellers"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen','ryan cohen tweet', 'government', 'hedge funds', 'short sellers', 'regulation'],
     },
     {
         title: 'Ryan Cohen buys 100,000 shares of GME',
@@ -1429,8 +1494,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I put my money where my mouth is"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 2,
+        tags: ['ryan cohen','ryan cohen tweet', 'gme', 'purchase', 'i put my money where my mouth is'],
     },
     {
         title: 'Ryan Cohen tweets',
@@ -1463,8 +1529,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
 
         ],
         description: '"The overpriced consultants at BCG are picking a fight with the wrong company…🥊 @BCG", "The only ones more useless than overpriced consultants are those who hire them."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['overpaid', 'overpriced', 'consultants', 'bcg', 'fight', 'ryan cohen', 'ryan cohen tweet',],
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1484,8 +1551,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"💩@BCG💩"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet', 'bcg', 'consultants']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1499,8 +1567,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I’m proud of the GameStop team. They rock. 🏴‍☠️🔥"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -1538,8 +1607,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Who is more reprehensible, hedge fund short sellers or overpriced consultants?", "Children and animals must be protected at all costs", "I was born to work", "gas prices are outrageous. Wonder if BCG has a view…"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet', 'hedge funds', 'short sellers', 'overpriced', 'consultants', 'work', 'gas', 'bcg', 'inflation']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1553,9 +1623,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"The last time people were excited to see me"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-03.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-03.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet', 'bbby', 'baby', 'buybuybaby']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1575,8 +1646,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"You know what happens when I eat too much fruit…"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet', 'fruit', 'apple', 'poop tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1590,9 +1662,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-07.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-07.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1618,8 +1691,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Show me your funniest memes please!"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1633,8 +1707,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Inflated compensation across Corporate America is deplorable. Is this connected to over a decade of negative real interest rates and massive stimulus?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1648,8 +1723,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Who is more arrogant and elitist: a high priced consultant or a Wall Street analyst?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1675,8 +1751,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Ryan Cohen by day, Warren Icahn by night"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1696,8 +1773,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Life is like a box of condoms"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1717,9 +1795,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-20.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-20.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1733,9 +1812,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Party extremism and divisiveness, deglobalization, civil unrest and inflation are byproducts of govts printing huge sums of money"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: ''
+        imgSrc: '',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1755,9 +1835,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"hola"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: ''
+        imgSrc: '',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1777,9 +1858,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"🗽"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-25.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-25.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -1811,8 +1893,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"In my office 🚽", "iToilet is imperative to the future of humanity", "What should Apple make next?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1832,9 +1915,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"We could say they spend like drunken sailors, but that would be unfair to drunken sailors, because the sailors are spending their own money"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-29.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-29.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1854,8 +1938,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"General Tso’s Chicken is the official spelling"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1869,9 +1954,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"What’s 30 trillion between friends…"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-05-04.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-05-04.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -1903,8 +1989,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"weaning the economy off cheap money is like breaking a coke addiction", "i use twitter to overcompensate for my small weewee 🔎"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1918,8 +2005,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Death and interest rates are the greatest equalizers. In that order."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1939,8 +2027,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I got my 8th booster and now I’m fully vaccinated and 2 inches taller"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1960,8 +2049,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I’m really upset with Putin for causing all this inflation"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -1981,8 +2071,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Fair markets are free markets"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2002,8 +2093,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I love the spice girls"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2035,8 +2127,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"All the “experts” pontificating about when the next recession will begin because equities are declining due to interest rates normalizing is amusing", "Politicians and diapers must be changed often, and for the same reason" ',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2068,8 +2161,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I just played with my dad. Dreams with him are the best.", "It’s official! The GameStop Wallet is here."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2089,8 +2183,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"It is critical for humanity that we expand our civilization to Uranus"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2110,9 +2205,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Lurking…🇨🇦"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-05-27.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-05-27.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2132,8 +2228,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Life is for working, loving, and laughing"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2153,8 +2250,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Power to the players"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2174,8 +2272,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Work is so sexy"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2195,8 +2294,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Poll: Did coronavirus lockdowns and economic stimulus spark inflation?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2228,8 +2328,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"China is a sleeping giant. Let her sleep, for when she wakes she will move the world", "Politics is the gentle art of getting votes from the poor and campaign funds from the rich, by promising to protect each from the other"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2249,8 +2350,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"The hell with the left and the right. Stop dividing the people 💜"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2270,8 +2372,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Apple pie and ice cream make me happy"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2315,9 +2418,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Inflation is as violent as a mugger, as frightening as an armed robber and as deadly as a hit man", "Power to the players 🏴‍☠️"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-06-17.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-06-17.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2337,9 +2441,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Happy Father’s Day. Why do the good die young?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-06-19.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-06-19.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2371,8 +2476,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Flatulence is the best icebreaker", "Preferably on the first date to efficiently assess devotion"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2404,8 +2510,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Nobody sane can defend today’s compensation for the Corporate Power Brokers (most of which is risk free)","Correct. In power with no personal money at risk and perverse financial incentives. It’s head they win, tails you lose."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2461,8 +2568,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I have a crush on China 🇨🇳 🍜", "This is a testament to the hard working people of China 🇨🇳", "China has a nationwide high-speed rail network that spans almost 22,000 miles. This is an amazing achievement."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2476,8 +2584,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Wall Street charges lofty fees, doesn’t risk its own money, consistently underperforms and wins regardless of how the economy does. Meanwhile, Main Street faces inflation and a growing wealth gap. What’s the solution?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2497,8 +2606,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I’m sick of seeing failed executives make millions in risk free compensation while shareholders are left holding the bag"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2518,8 +2628,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"In general, when an executive gets paid millions of dollars and leaves a company in shambles, they should be forced to return the money"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2539,8 +2650,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Whoops", "That left for dead retailer just launched something new 😳"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2566,8 +2678,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I love coke"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2587,8 +2700,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Are dingleberries fruit?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     // {
     //     title: 'Ryan Cohen tweets',
@@ -2635,8 +2749,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"The best time to be alive in human history is now"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2656,8 +2771,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Ask not what your company can do for you – ask what you can do for your company"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2683,8 +2799,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"if we print a few trillion more, it should bring inflation down #taxtherich #wealthtax", "💜"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2704,8 +2821,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"GameStop store leaders ❤️"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2738,8 +2856,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
 
         ],
         description: '"Low interest rates may prove to be like easy sex — tempting but possibly fatal", "I think my tweets are being suppressed"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2777,9 +2896,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Ryan Cohen tweets a picture of himself with Carl Icahn',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 3,
-        imgSrc: 'assets/rc-tweets/rc-icahn.jpg'
+        imgSrc: 'assets/rc-tweets/rc-icahn.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2830,8 +2950,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
 
         ],
         description: 'I also want to be the Book King 👑',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 2,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2863,9 +2984,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Teddy making Thanksgiving great again", "My tweets seem to be suppressed."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2022-11-23.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-11-23.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2891,8 +3013,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Has inflation cured the land from covid?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
 
     {
@@ -2913,8 +3036,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Jack, I want you to draw me like one of your French girls. Wearing this. Wearing only this."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2940,9 +3064,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'RC Tweets a meme that originated on Superstonk',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2023-01-18.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-01-18.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2962,8 +3087,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"You know you’ve made it when you buy a turtleneck"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2983,8 +3109,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"someone tell the government to stop shooting down my balloons🎈"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3004,8 +3131,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"你好"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3025,8 +3153,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Does this mean I don’t have to pay back Silicon Valley Bank?"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3046,8 +3175,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Odd that treasury isn’t interested in investing in banks today when in 2009 those TARP bailouts yielded some of the best returns for taxpayers.."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3073,8 +3203,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I just got off the phone with what was once a great American brand. Lots of problems, no accountability for high paid execs and little interest in my help (at no cost). This could get interesting."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3094,8 +3225,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"It’s 420 everyday in Corporate America"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3115,8 +3247,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"America is littered with managers making millions in risk free compensation"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -3148,8 +3281,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Corporate America is a wolf in liberal’s clothing"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3169,8 +3303,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"The Fed may have to choose between fighting inflation or bank contagion"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3196,9 +3331,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-11.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-11.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3218,8 +3354,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Show Mom love. There’s nothing more special than a GameStop gift card for Mother’s Day."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3239,9 +3376,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-21.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-21.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3261,9 +3399,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-23.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-23.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3283,8 +3422,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"My gastro once told me it is a terrible mistake that people often mistake kindness for weakness"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3304,8 +3444,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Not for long"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     {
         title: 'Ryan Cohen tweet',
@@ -3319,9 +3460,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Happy Father’s Day"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2023-06-18.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-06-18.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -3341,8 +3483,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"My boss doubled my pay and made me employee of the month ⭐️"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     {
         title: 'Ryan Cohen tweet',
@@ -3362,8 +3505,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"I challenge Warren Buffett to a thumb war 👍"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     {
         title: 'Ryan Cohen tweet',
@@ -3383,8 +3527,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Work hard or please leave"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     {
         title: 'Ryan Cohen tweet',
@@ -3404,9 +3549,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Tylee passed away today. She is the reason Chewy exists and her legacy lives forever."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2023-07-25.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-07-25.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     {
         title: 'Ryan Cohen tweet',
@@ -3426,8 +3572,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"There is nothing more foolish than cat litter and video games"',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 0,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     {
         title: 'Ryan Cohen tweet',
@@ -3447,8 +3594,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Big win for consumers. Consumers have also invested their hard earned money in to physical video games. Disk drives should be required on consoles."',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     {
         title: 'Ryan Cohen tweet',
@@ -3481,9 +3629,10 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             
         ],
         description: '',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 1,
-        imgSrc: 'assets/rc-tweets/rc-tweet-2023-10-04.jpg'
+        imgSrc: 'assets/rc-tweets/rc-tweet-2023-10-04.jpg',
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     {
         title: 'Ryan Cohen tweet',
@@ -3516,8 +3665,9 @@ export const rcTweetsEvents: TimelineItemConfig[] = [
             
         ],
         description: '“The most important thing to remember is that inflation is not an act of God, that inflation is not a catastrophe of the elements or a disease that comes like the plague. Inflation is a policy.” -- Ludwig von Mises',
-        types: [TimelineItemType.RC],
+        types: [TimelineEventType.RC],
         significance: 2,
+        tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
     
 ];

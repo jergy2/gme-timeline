@@ -1,7 +1,7 @@
-import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
-import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
+import { TimelineEventConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface";
+import { TimelineEventType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum";
 
-export const drsItemEvents: TimelineItemConfig[] = [
+export const drsItemEvents: TimelineEventConfig[] = [
     {
         title: 'r/Superstonk Live - Dr. Susanne Trimbath, PhD - April 29, 2021',
         dateYYYYMMDD: '2021-04-29',
@@ -14,8 +14,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'A conversation which gave attention to the idea of DRS for the first time',
-        types: [TimelineItemType.DRS],
+        types: [TimelineEventType.DRS],
         significance: 3,
+        tags: ['drs', 'superstonk', 'trimbath', 'interview', 'ama',]
     },
     {
         title: 'Computershare AMA Part 1 with Paul Conn',
@@ -35,8 +36,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.DRS],
+        types: [TimelineEventType.DRS],
         significance: 2,
+        tags: ['drs', 'paul conn', 'superstonk', 'ama', 'interview', 'computershare',]
     },
     {
         title: 'Computershare AMA Part 2 with Paul Conn',
@@ -56,8 +58,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"When people are buying shares through the plan, we record their names on a subclass within the register, so the names are visible to the issuer. So just like the regular common shares, they’re visible. In a technical sense, we are holding a portion of those shares in a Computershare nominee, purely so that we can affect efficient settlement within the market through DTC."',
-        types: [TimelineItemType.DRS],
+        types: [TimelineEventType.DRS],
         significance: 2,
+        tags: ['drs', 'paul conn', 'superstonk', 'ama', 'interview', 'computershare',]
     },
 
     {
@@ -72,11 +75,12 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Website created by members of the r/superstonk community',
-        types: [TimelineItemType.DRS],
+        types: [TimelineEventType.DRS],
         significance: 3,
+        tags: ['drs', 'drsgme', 'superstonk', 'community', 'investors']
     },
     {
-        title: 'Fidelity posts meme-stock guy',
+        title: 'Fidelity posts meme stock guy',
         dateYYYYMMDD: '2022-10-26',
         urls: [
             {
@@ -93,9 +97,10 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Fidelity, a major financial services company with trillions of dollars of assets under management, felt compelled to try and disparage DRSd shareholders of GME',
-        types: [TimelineItemType.DRS],
+        types: [TimelineEventType.DRS],
         significance: 2,
         imgSrc: 'assets/meme-stock-guy.jpeg',
+        tags: ['fidelity', 'meme stock', 'linkedin', 'drs', 'purple circle', 'propaganda', 'opposition']
     },
     {
         title: 'Superstonk’s 3rd AMA with Paul Conn',
@@ -115,8 +120,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.DRS],
+        types: [TimelineEventType.DRS],
         significance: 2,
+        tags: ['drs', 'paul conn', 'superstonk', 'ama', 'interview', 'computershare',]
     },
     {
         title: 'A Conversation with Gary Gensler on Equity Market Structure Reform',
@@ -136,8 +142,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Gary Gensler engages with retail investors',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
+        tags: ['gary gensler', 'we the investors', 'investors', 'markets', 'market structure', 'reform', 'regulators']
     },
     {
         title: 'WhyDRS.org published',
@@ -151,8 +158,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Website created by the team that made the drsgme.org website as a more neutral non-GME focused information site',
-        types: [TimelineItemType.DRS],
+        types: [TimelineEventType.DRS],
         significance: 2,
+        tags: ['drsgme', 'whydrs', 'community', 'investors', 'drs', 'resource'],
     },
     {
         title: 'An update on Fractional and Plan Shares from Computershare’s Paul Conn',
@@ -172,8 +180,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             // },
         ],
         description: '"We need to maintain a small portion of inventory at DTC so that we can have effective settlement when people are selling"',
-        types: [TimelineItemType.DRS],
+        types: [TimelineEventType.DRS],
         significance: 2,
+        tags: ['drs', 'paul conn', 'ama', 'interview', 'computershare', 'dtc', 'settlement']
     },
     {
         title: 'Superstonk mods publicly denounce recent actions of the DRSGME.org team',
@@ -199,8 +208,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Superstonk mods wield their authority to spread false information and mischaracterizations with respect to recent actions taken by the DRSGME.org team.',
-        types: [TimelineItemType.DRS, TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.DRS, TimelineEventType.SOCIAL_MEDIA],
         significance: 1,
+        tags: ['superstonk', 'drsgme', 'reddit', 'community', 'division', 'opposition', 'stockholders list', 'investors', 'misinformation', 'corruption', 'abuse', 'grapevine']
     },
     {
         title: 'Reddit permanently bans the r/DRSyourGME subreddit',
@@ -226,8 +236,9 @@ export const drsItemEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.DRS, TimelineItemType.SOCIAL_MEDIA],
+        types: [TimelineEventType.DRS, TimelineEventType.SOCIAL_MEDIA],
         significance: 3,
+        tags: ['drsgme', 'reddit', 'community', 'division', 'opposition', 'stockholders list', 'investors', 'corruption', 'abuse', 'grapevine']
     },
     {
         title: 'Gary Gensler mentions DRS',
@@ -254,8 +265,8 @@ export const drsItemEvents: TimelineItemConfig[] = [
             
         ],
         description: '',
-        types: [TimelineItemType.DRS, TimelineItemType.OTHER],
+        types: [TimelineEventType.DRS, TimelineEventType.OTHER],
         significance: 2,
-        tags: ['Gary Gensler', 'DRS']
+        tags: ['Gary Gensler', 'DRS',]
     },
 ]

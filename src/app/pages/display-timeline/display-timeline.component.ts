@@ -19,7 +19,7 @@ export class DisplayTimelineComponent implements OnInit{
     private _settingsService: SettingsService){}
 
   public get isMobile(): boolean { return this._sizeService.isMobile}
-  public get showAsList(): boolean { return this._settingsService.showAsList; }
+  public get showAsList(): boolean { return this._settingsService.chartListIsVertical; }
 
   public get isNarrow(): boolean { return this._sizeService.screenDimensions.width < 1050; }
 

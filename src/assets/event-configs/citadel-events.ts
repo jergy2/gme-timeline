@@ -1,8 +1,8 @@
 
-import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
-import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
+import { TimelineEventConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface";
+import { TimelineEventType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum";
 
-export const citadelEvents: TimelineItemConfig[] = [
+export const citadelEvents: TimelineEventConfig[] = [
     {
         title: 'Interview with former Citadel client Edward Thorp',
         dateYYYYMMDD: '2022-06-04',
@@ -21,7 +21,7 @@ export const citadelEvents: TimelineItemConfig[] = [
             }
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         tags: ['Citadel'],
         significance: 2,
     },
@@ -31,8 +31,9 @@ export const citadelEvents: TimelineItemConfig[] = [
         dateYYYYMMDD: '2022-08-18',
         urls: [],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 2,
+        tags: ['citadel'],
     },
     {
         title: 'Citadel Advisors LLC information Brochure',
@@ -58,7 +59,7 @@ export const citadelEvents: TimelineItemConfig[] = [
             },
         ],
         description: '"Hedge funds that trade securities that are considered "meme stocks" may be particularly prone to short squeezes related to such stocks."',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 3,
         tags: ['Citadel', 'meme stocks', 'short squeeze', 'Ken Griffin']
     },
@@ -74,7 +75,7 @@ export const citadelEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 1,
         tags: ['Citadel', 'Ken Griffin', 'propaganda'],
     },
@@ -88,11 +89,26 @@ export const citadelEvents: TimelineItemConfig[] = [
                 label: 'Spotted Ken Griffin sitting next to prince Harry and Megan Markle at Katy Perry’s last performance of her Las Vegas residency',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17qlmya/its_official_they_actually_credited_superstonk/',
+                type: 'REDDIT',
+                label: 'Spotted Ken Griffin sitting next to prince Harry and Megan Markle at Katy Perry’s last performance of her Las Vegas residency',
+                archiveLink: '',
+            },
+            {
+                url: 'https://pagesix.com/2023/11/07/royal-family/prince-harry-meghan-markle-party-with-ken-griffin-michael-kives/',
+                type: 'REDDIT',
+                label: 'pagesix.com',
+                archiveLink: '',
+            },
         ],
         description: '',
-        types: [TimelineItemType.OTHER],
+        types: [TimelineEventType.OTHER],
         significance: 0,
         tags: ['Ken Griffin'],
         imgSrc: 'assets/other/ken-griffin-2023-11-06.PNG'
-    }
-]
+    },
+    // {
+    //     https://www.reddit.com/r/Superstonk/comments/17tvyfs/kenny_g_sitting_with_former_president_bush/
+    // }
+];

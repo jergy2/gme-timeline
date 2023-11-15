@@ -17,18 +17,20 @@ import { AboutComponent } from './pages/about/about.component';
 import { FinancialsComponent } from './pages/financials/financials.component';
 import { DisplayTimelineComponent } from './pages/display-timeline/display-timeline.component';
 import { OwnershipComponent } from './pages/ownership/ownership.component';
-import { SignificanceControlComponent } from './pages/display-timeline/controls/significance-control/significance-control.component';
-import { ControlsComponent } from './pages/display-timeline/controls/controls.component';
-import { CategoryControlComponent } from './pages/display-timeline/controls/category-control/category-control.component';
 import { BalanceSheetComponent } from './pages/financials/balance-sheet/balance-sheet.component';
 import { BalanceSheetBarChartComponent } from './pages/financials/balance-sheet-bar-chart/balance-sheet-bar-chart.component';
 import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.component';
-import { ViewControlComponent } from './pages/display-timeline/controls/view-control/view-control.component';
 import { TimelineListItemComponent } from './pages/display-timeline/timeline-items/timeline-list-item/timeline-list-item.component';
 import { QuarterlyResultComponent } from './pages/display-timeline/timeline-items/quarterly-result/quarterly-result.component';
 import { EarningsTableComponent } from './pages/financials/earnings-table/earnings-table.component';
 import { GuideComponent } from './pages/guide/guide.component';
 import { InformationPointComponent } from './pages/guide/information-point/information-point.component';
+import { SignificanceControlComponent } from './pages/display-timeline/timeline-controls/significance-control/significance-control.component';
+import { ControlsComponent } from './pages/display-timeline/timeline-controls/timeline-controls.component';
+import { CategoryControlComponent } from './pages/display-timeline/timeline-controls/category-control/category-control.component';
+import { ViewControlComponent } from './pages/display-timeline/timeline-controls/view-control/view-control.component';
+import { SearchControlComponent } from './pages/display-timeline/timeline-controls/search-control/search-control.component';
+import { SettingsControlsComponent } from './pages/display-timeline/timeline-controls/settings-controls/settings-controls.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { InformationPointComponent } from './pages/guide/information-point/infor
     QuarterlyResultComponent,
     EarningsTableComponent,
     GuideComponent,
-    InformationPointComponent
+    InformationPointComponent,
+    SearchControlComponent,
+    SettingsControlsComponent
   ],
   imports: [
     BrowserModule,

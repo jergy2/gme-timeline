@@ -1,7 +1,7 @@
-import { TimelineItemConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-config.interface";
-import { TimelineItemType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-item-type.enum";
+import { TimelineEventConfig } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface";
+import { TimelineEventType } from "src/app/pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum";
 
-export const corporateEvents: TimelineItemConfig[] = [
+export const corporateEvents: TimelineEventConfig[] = [
     {
         title: 'GameStop Reports First Quarter 2020 Results',
         dateYYYYMMDD: '2020-06-09',
@@ -20,8 +20,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 1,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop Reports Second Quarter 2020 Results',
@@ -41,8 +42,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 1,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop Reports Third Quarter 2020 Results',
@@ -62,8 +64,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q3 2020',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 1,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
 
     {
@@ -84,8 +87,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2020',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 2,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop Completes At-The-Market Equity Offering Program',
@@ -105,8 +109,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             }
         ],
         description: 'The Company ultimately sold 3,500,000 shares of common stock and generated aggregate gross proceeds before commissions and offering expenses of approximately $551,000,000 ',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 4,
+        tags: ['corporate', 'atm'],
     },
 
     {
@@ -139,9 +144,10 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 1,
-        imgSrc: 'assets/rc-chairman.jpg'
+        imgSrc: 'assets/rc-chairman.jpg',
+        tags: ['corporate', 'announcement', 'ryan cohen', 'board of directors', 'chairman'],
     },
     {
         title: 'GameStop Releases First Quarter 2021 Financial Results',
@@ -167,9 +173,10 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2021 Ryan Cohen becomes chairman of GameStop, Matt Furlong becomes CEO',
-        types: [TimelineItemType.CORP, TimelineItemType.MEDIA],
+        types: [TimelineEventType.CORP, TimelineEventType.MEDIA],
         significance: 4,
         // imgSrc: 'assets/rc-chairman.jpg'
+        tags: ['corporate', 'earnings', 'ryan cohen', 'board of directors', 'chairman', 'ceo', 'matt furlong'],
     },
     {
         title: 'GameStop Completes At-The-Market Equity Offering Program',
@@ -189,8 +196,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             }
         ],
         description: 'The Company ultimately sold 5,000,000 shares of common stock and generated aggregate gross proceeds before commissions and offering expenses of approximately $1,126,000,000.',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 4,
+        tags: ['corporate', 'atm']
     },
     {
         title: 'GameStop Reports Financial Results for Q2 2021',
@@ -210,8 +218,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2021',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 1,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop publishes 2021 Q3 financial report featuring 5.2 million (20.8 million post-split) shares directly registered',
@@ -244,8 +253,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'GameStop reports for the first time, as of October 30, 2021, the number of shares that have been directly registered ("DRSd")',
-        types: [TimelineItemType.DRS, TimelineItemType.CORP],
+        types: [TimelineEventType.DRS, TimelineEventType.CORP],
         significance: 5,
+        tags: ['corporate', 'earnings', '10-Q', 'drs'],
     },
     {
         title: 'GameStop Reports Fourth Quarter and Fiscal Year 2021 Results',
@@ -271,8 +281,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2021',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 2,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop Launches Wallet for Cryptocurrencies and NFTs',
@@ -292,8 +303,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 2,
+        tags: ['corporate', 'announcement', 'crypto', 'wallet', 'web3', 'nfts', 'launch']
     },
     {
         title: 'GameStop Reports First Quarter Fiscal Year 2022 Results',
@@ -319,8 +331,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2022',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 1,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop does a 4-for-1 stock split in the form of a stock dividend',
@@ -352,9 +365,10 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 3,
         specialIdentifier: 'STOCK-SPLIT',
+        tags: ['corporate', 'stock split', 'split'],
     },
     {
         title: 'GameStop Reports Second Quarter Fiscal Year 2022 Results',
@@ -386,9 +400,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2022',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 2,
-        tags: ['FTX', 'partnership']
+        tags: ['FTX', 'partnership', 'earnings', 'corporate']
     },
 
 
@@ -416,8 +430,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q3 2022',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 1,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop Reports Fourth Quarter and Fiscal Year 2022 Results',
@@ -449,8 +464,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q4 2022',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 2,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop Discloses First Quarter 2023 Results',
@@ -476,8 +492,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q1 2023',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 1,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
     {
         title: 'GameStop Announces Election of Ryan Cohen as Executive Chairman',
@@ -491,8 +508,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: '',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 3,
+        tags: ['corporate', 'announcement', 'ryan cohen', 'executive chairman', 'chairman', 'ceo', 'furlong'],
     },
     {
         title: 'GameStop Discloses Second Quarter 2023 Results',
@@ -542,8 +560,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             },
         ],
         description: 'Q2 2023',
-        types: [TimelineItemType.CORP],
+        types: [TimelineEventType.CORP],
         significance: 2,
+        tags: ['corporate', 'earnings', '10-Q'],
     },
 
     {
@@ -595,8 +614,9 @@ export const corporateEvents: TimelineItemConfig[] = [
             // },            
         ],
         description: '',
-        types: [TimelineItemType.CORP, TimelineItemType.RC],
+        types: [TimelineEventType.CORP, TimelineEventType.RC],
         significance: 3,
+        tags: ['corporate', 'announcement', 'ceo', 'ryan cohen', '8k'],
     },
     
 ];
