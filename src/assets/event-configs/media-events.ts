@@ -53,7 +53,7 @@ export const mediaItemEvents: TimelineEventConfig[] = [
         ],
         description: 'In response to the statement: "There are a lot of short sellers borrowing stock that they didn`t have," Melissa Lee says:  "Naked shorts, yea."',
         types: [TimelineEventType.MEDIA],
-        significance: 2,
+        significance: 3,
         imgSrc: 'assets/melissa-lee-naked-shorts.png',
         tags: ['media', 'propaganda', 'naked short selling', 'shorts', 'wall street', 'hedge funds'],
     },    
