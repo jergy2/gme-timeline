@@ -25,6 +25,13 @@ export class ChartDataSetManager {
   public get datasetsMobile(): any[] { return this._datasetsMobile; }
   public get datasetConfigs(): DatasetConfig[] { return this._datasetConfigs; }
 
+  /**
+   * 
+   * @param priceEntries price entries provided by HistoricGMEDataService
+   * @param timelineItems 
+   * @param categories 
+   * @param significanceValue 
+   */
   constructor(priceEntries: GmePriceEntry[], timelineItems: TimelineEvent[], categories: TimelineEventType[], significanceValue: number) {
     this._priceEntries = priceEntries;
     this._timelineEvents = timelineItems;

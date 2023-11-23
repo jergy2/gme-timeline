@@ -238,7 +238,8 @@ export const drsItemEvents: TimelineEventConfig[] = [
         description: '',
         types: [TimelineEventType.DRS, TimelineEventType.SOCIAL_MEDIA],
         significance: 3,
-        tags: ['drsgme', 'reddit', 'community', 'division', 'opposition', 'stockholders list', 'investors', 'corruption', 'abuse', 'grapevine']
+        tags: ['drsgme', 'reddit', 'community', 'division', 'opposition', 'stockholders list', 'investors', 'corruption', 'abuse', 'grapevine'],
+        imgSrc: 'assets/DRSyourGME-banned.PNG'
     },
     {
         title: 'Gary Gensler mentions DRS',

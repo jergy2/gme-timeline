@@ -288,4 +288,47 @@ export const socialMediaEvents: TimelineEventConfig[] = [
         significance: 1,
         tags: ['linkedin', 'meme stock', 'propaganda', 'fud', 'bbby', 'cult', 'bagholder', 'delusional', 'bashing', 'theppshow'],
     },
+    {
+        title: 'Community Update Post: On the topic of *Brigading*',
+        dateYYYYMMDD: '2023-10-09',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17wdr9t/community_update_post_on_the_topic_of_brigading/?sort=top',
+                type: 'REDDIT',
+                label: 'r/Superstonk thread',
+                archiveLink: '',
+            },
+
+        ],
+        description: 'Stay in your designated protest zone.  Any deviation from the program will result in consequences.',
+        types: [TimelineEventType.SOCIAL_MEDIA],
+        significance: 0,
+        tags: ['superstonk', 'reddit', 'brigading', 'censorship'],
+    },
+    {
+        title: 'r/ThePPShow permanently banned from Reddit',
+        dateYYYYMMDD: '2023-11-21',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/BBBY/comments/180posy/theppshow_subreddit_was_taken_down_heres_where_we/',
+                type: 'REDDIT',
+                label: 'r/BBBY - ThePPShow subreddit was taken down heres where we are now.',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Teddy/comments/180swgn/theppshow_sub_was_banned/',
+                type: 'REDDIT',
+                label: 'r/Teddy - ThePPShow sub was banned',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        types: [TimelineEventType.SOCIAL_MEDIA],
+        significance: 3,
+        tags: [ 'theppshow', 'reddit', 'censorship', 'bbby'],
+        imgSrc: 'assets/bbby/pp-show-banned.PNG'
+    },
 ];
+
+
+

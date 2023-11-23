@@ -3669,5 +3669,26 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         significance: 2,
         tags: ['ryan cohen', 'ryan cohen tweet']
     }, 
-    
+    {
+        title: '5 new Teddy books listed on teddy.com',
+        dateYYYYMMDD: '2023-11-21',
+        urls: [
+            {
+                url: 'https://teddy.com/collections/all',
+                type: 'OTHER',
+                label: 'teddy.com',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/428636',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            }
+        ],
+        description: 'Ryan Cohen, children’s book author, publishes 5 new Teddy books',
+        types: [TimelineEventType.RC],
+        significance: 3,
+        tags: ['ryan cohen', 'teddy', 'teddy books']
+    }, 
 ];
