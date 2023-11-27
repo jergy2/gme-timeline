@@ -101,7 +101,7 @@ export class AppComponent {
   }
 
   private _updateChartData() {
-    const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.priceEntriesAfterCutoff, this._timelineItemsService.allTimelineItems, this._settingsService.categories, this._settingsService.significanceValue);
+    const dataManager: ChartDataSetManager = new ChartDataSetManager(this._dataService.allPriceEntries, this._timelineItemsService.allTimelineItems, this._settingsService.categories, this._settingsService.significanceValue);
     this._dataManagerService.registerDataManager(dataManager);
     this._dataIsLoaded = true;
   }

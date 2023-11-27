@@ -8,11 +8,17 @@ import { BehaviorSubject, Observable, Subject, first } from 'rxjs';
 
 export class ChartDataSetManager {
 
-  private _priceEntries: GmePriceEntry[] = [];
+  private _allPriceEntries: GmePriceEntry[] = [];
   private _datasets$: BehaviorSubject<any[]> = new BehaviorSubject<any>([]);
   private _datasetsMobile: any[] = [];
   private _datasetConfigs: DatasetConfig[] = [];
   private _timelineEvents: TimelineEvent[] = [];
+
+  private _startDateYYYYMMDD: string = '2020-07-01';
+  private _endDateYYYYMMDD: string = dayjs().format('YYYY-MM-DD');
+
+  public get startDateYYYYMMDD(): string { return this._startDateYYYYMMDD; }
+  public get endDateYYYYMMDD(): string { return this._endDateYYYYMMDD; }
 
 
   private _signifianceValue: number = -1;
@@ -33,7 +39,7 @@ export class ChartDataSetManager {
    * @param significanceValue 
    */
   constructor(priceEntries: GmePriceEntry[], timelineItems: TimelineEvent[], categories: TimelineEventType[], significanceValue: number) {
-    this._priceEntries = priceEntries;
+    this._allPriceEntries = priceEntries;
     this._timelineEvents = timelineItems;
     this._timelineCategories = categories;
     this._signifianceValue = significanceValue;
@@ -54,6 +60,13 @@ export class ChartDataSetManager {
     this.getAndUpdateDatasets();
     // this._isUpdating$.next(false);
   }
+
+  public updateDateRange(startDateYYYYMMDD: string, endDateYYYYMMDD: string) {
+    this._startDateYYYYMMDD = startDateYYYYMMDD;
+    this._endDateYYYYMMDD = endDateYYYYMMDD;
+    this.getAndUpdateDatasets();
+  }
+
   public updateDisplayedEvents(events: TimelineEvent[]) {
     this._timelineEvents = events;
     this._signifianceValue = 0;
@@ -66,7 +79,7 @@ export class ChartDataSetManager {
 
     this.getAndUpdateDatasets();
   }
-  public clearSearchResults(significance: number, categories: TimelineEventType[], allEvents: TimelineEvent[]){
+  public clearSearchResults(significance: number, categories: TimelineEventType[], allEvents: TimelineEvent[]) {
     this._signifianceValue = significance;
     this._timelineCategories = categories;
     this._timelineEvents = Object.assign([], allEvents);
@@ -74,8 +87,8 @@ export class ChartDataSetManager {
   }
 
   public getAndUpdateDatasets() {
-    let closePrices: number[] = this._priceEntries
-      // .filter(entry => entry.date.format('YYYY-MM-DD') > this.chartCutoffDate)
+    let closePrices: number[] = this._allPriceEntries
+      .filter(entry => entry.date.format('YYYY-MM-DD') >= this.startDateYYYYMMDD && entry.date.format('YYYY-MM-DD') <= this.endDateYYYYMMDD)
       .map((entry: GmePriceEntry) => { return entry.close });
     let datasetConfigs = this._getDatasetConfigs();
     const datasets: {}[] = [];
@@ -168,7 +181,6 @@ export class ChartDataSetManager {
     /** Get all datasets based on every combination of significance value and type. 
 *  This will produce arrays that have no events that match the significance and type
 */
-    const startTime = dayjs();
     const datapointSets: {
       type: TimelineEventType,
       significance: number,
@@ -200,12 +212,16 @@ export class ChartDataSetManager {
         return 0;
       }
     });
+    filteredTimelineEvents = filteredTimelineEvents.filter(event => {
+      return event.dateYYYYMMDD >= this.startDateYYYYMMDD && event.dateYYYYMMDD <= this.endDateYYYYMMDD;
+    })
     // console.log("ALL ITEM EVENTS", this._timelineItems)
     // console.log("FILTERED TIMELINE ITEM EVENTS", filteredTimelineEvents)
     filteredTimelineEvents = this._removeSameDateEvents(filteredTimelineEvents);
     // console.log("DUPLICATES REMOVED", filteredTimelineEvents)
-    let currentDate = this._priceEntries[0].date;
-    const endDate = this._priceEntries[this._priceEntries.length - 1].date;
+    let currentDate: dayjs.Dayjs = dayjs(this.startDateYYYYMMDD);
+    // const endDate = this._allPriceEntries[this._allPriceEntries.length - 1].date;
+    const endDate:dayjs.Dayjs = dayjs(this.endDateYYYYMMDD);
     if (filteredTimelineEvents.length > 0) {
       let eventIndex = 0;
       let nextEventDate = filteredTimelineEvents[eventIndex].dateYYYYMMDD;
@@ -245,8 +261,6 @@ export class ChartDataSetManager {
     const configs = datapointSets.map(set => {
       return new DatasetConfig(set.datapoints, set.type, set.type, this.getTypeColor(set.type), set.significance);
     });
-    const endTime = dayjs();
-    const duration = endTime.diff(startTime, 'milliseconds');
     return configs
   }
 

@@ -2,7 +2,7 @@
     <div >Significance</div>
     <div class="control-buttons">
         <div class="label">Less</div>
-        <div *ngFor="let button of controlButtons" class="control-button"
+        <div *ngFor="let button of controlButtons" class="control-button" [ngStyle]="ngStyle(button)"
             [ngClass]="button.isSelected? 'selected' : 'not-selected'" (click)="onClickButton(button.value)"></div>
         <div class="label">More</div>
     </div>

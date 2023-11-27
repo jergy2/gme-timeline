@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SidebarService } from '../sidebar/sidebar.service';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
 import { DisplayService } from 'src/app/pages/display-timeline/display.service';
 import { faCoins, faChartLine, faChartPie, faSliders, faQuestion, faBars, faCircleInfo, faTableList, IconDefinition } from '@fortawesome/free-solid-svg-icons';

@@ -62,6 +62,15 @@ export class EventSearchService {
   }
 
 
+  public getEventsByDates(startDateYYYYMMDD: string, endDateYYYYMMDD: string){
+    const results: TimelineEvent[] = [];
+    this.allTimelineEvents
+      .filter(event => event.dateYYYYMMDD >= startDateYYYYMMDD && event.dateYYYYMMDD <= endDateYYYYMMDD)
+      .filter(event => event.significance >= 1)
+      .forEach(event => results.push(event));
+    this._eventResults = results;
+    return results;
+  }
 
 
 }

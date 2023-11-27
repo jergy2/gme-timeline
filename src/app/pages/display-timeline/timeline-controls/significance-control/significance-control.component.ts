@@ -44,4 +44,22 @@ export class SignificanceControlComponent {
     }
   }
 
+  public ngStyle(button:  {value:number, isSelected: boolean}){
+    let radius = (button.value+1) * 4;
+    let isSelected = this._settingsService.significanceValue <= button.value;
+    let backgroundColor = 'white';
+    if(isSelected){
+      backgroundColor = 'rgba(204, 82, 165, 0.325)';
+    }
+    return {
+      'min-width': radius + 'px',
+      'max-width': radius + 'px',
+      'width': radius + 'px',
+      'min-height': radius + 'px',
+      'max-height': radius + 'px',
+      'height': radius + 'px',
+      'background-color': backgroundColor,
+    }
+  }
+
 }

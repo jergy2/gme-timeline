@@ -30,26 +30,30 @@ export class ChartComponent implements OnInit, AfterViewInit {
   public lineChartOptions: ChartOptions<'line'> = {};
   public lineChartLegend = false;
 
-  public get canvasWidth(): number { return this._canvasWidth; }
-  public get canvasHeight(): number { return this._canvasHeight; }
-
   public get isMobile(): boolean { return this._sizeService.isMobile; }
   public get isListView(): boolean { return this._settingsService.chartListIsVertical; }
 
-  private _canvasWidth: number = 400;
-  private _canvasHeight: number = 300;
 
   private _chartContainerNgStyle: any = {};
   public get chartContainerNgStyle(): any { return this._chartContainerNgStyle; }
 
   ngOnInit() {
     this._updateChartContainerStyle()
-    let labels: string[] = this._historicGMEDataService.priceEntriesAfterCutoff.map((entry) => { return entry.date.format('YYYY-MM-DD') });
-    /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
-    this.lineChartData.labels = labels;
+    this._updateLabels();
     // this.lineChartDataMobile.labels = labels;
     this._setLineChartOptions();
     this.lineChartData.datasets = this._chartDataService.dataSets;
+  }
+
+  private _updateLabels(){
+    const gmePriceData = this._historicGMEDataService.allPriceEntries;
+    const startDateYYYYMMDD = this._chartDataService.viewStartDateYYYYMMDD;
+    const endDateYYYYMMDD = this._chartDataService.viewEndDateYYYYMMDD;
+    let labels: string[] = gmePriceData
+      .filter((entry) => { return entry.date.format('YYYY-MM-DD') >= startDateYYYYMMDD && entry.date.format('YYYY-MM-DD') <= endDateYYYYMMDD })
+      .map((entry) => { return entry.date.format('YYYY-MM-DD') });
+    /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
+    this.lineChartData.labels = labels;
   }
 
   ngAfterViewInit() {
@@ -60,6 +64,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
      */
     this._chartDataService.dataSets$.subscribe({
       next: (datasets) => {
+        this._updateLabels();
         this.lineChartData.datasets = datasets;
         this.baseChart?.update();
       },
@@ -157,10 +162,10 @@ export class ChartComponent implements OnInit, AfterViewInit {
   }
   private _footerContext(context: TooltipItem<"line">[]) {
     const event = this._chartDataService.lookupEventByIndex(context[0].datasetIndex, context[0].dataIndex)
-    if(event){
-      if(event.description.length > 120){
+    if (event) {
+      if (event.description.length > 120) {
         return event.description.substring(0, 120) + '...';
-      }else{
+      } else {
         return event.description;
       }
     }

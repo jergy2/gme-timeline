@@ -21,6 +21,9 @@ export class ChartDataManagerService {
   public get dataSets(): any[] { return this._dataSets$.getValue(); }
   public get dataSets$(): Observable<any[]> { return this._dataSets$.asObservable(); }
 
+  public get viewStartDateYYYYMMDD(): string { return this._dataManager.startDateYYYYMMDD; }
+  public get viewEndDateYYYYMMDD(): string { return this._dataManager.endDateYYYYMMDD; }
+
   public registerDataManager(dataManager: ChartDataSetManager) {
     this._dataManager = dataManager;
     // console.log('register data manager')
@@ -43,6 +46,11 @@ export class ChartDataManagerService {
   public updateDisplayedEvents(events: TimelineEvent[]) {
     this._dataManager.updateDisplayedEvents(events);
   }
+  public updateDateRange(startDateYYYYMMDD: string, endDateYYYYMMDD: string) {
+    this._dataManager.updateDateRange(startDateYYYYMMDD, endDateYYYYMMDD);
+  }
+
+
   public clearSearchResults(significance: number, categories: TimelineEventType[], allEvents: TimelineEvent[]){
     this._dataManager.clearSearchResults(significance, categories, allEvents);
   }

@@ -1,7 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { faQuestion, faSliders, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faQuestion, faSliders, faMagnifyingGlass, faL } from '@fortawesome/free-solid-svg-icons';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
-import { SidebarService } from 'src/app/layout/sidebar/sidebar.service';
 import { ScreeSizeService } from 'src/app/scree-size.service';
 import { SettingsService } from 'src/app/settings.service';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
@@ -47,7 +46,6 @@ import { EventSearchService } from './search/event-search.service';
 export class ControlsComponent {
 
   constructor(
-    private _sidebarService: SidebarService,
     private _sizeService: ScreeSizeService,
     private _settingsService: SettingsService,
     private _timelineItemService: TimelineItemsService,
@@ -57,60 +55,58 @@ export class ControlsComponent {
   public get faQuestion() { return faQuestion; }
   public get faMagnifyingGlass() { return faMagnifyingGlass; }
 
-  public get isMinimized(): boolean { return this._sidebarService.controlsState === 'MINIMIZED'; }
-  public get controlsExpanded(): boolean { return this._sidebarService.controlsState === 'EXPANDED'; }
-  public get isPinned(): boolean { return this._sidebarService.controlsState === 'PINNED'; }
-
   public get isMobile(): boolean { return this._sizeService.isMobile; }
   public get showAsList(): boolean { return this._settingsService.chartListIsVertical; }
 
-  private _isSearching: boolean = false;
   private _showSearchResults: boolean = false;
+  // private _searchIsOpen: boolean = false;
   private _settingsOpen: boolean = false;
+  private _storyChaptersOpen: boolean = false;
   
   private _searchValue: string = '';
   private _searchInputValue: string = '';
   
-  public get searchOpen(): boolean { return this._showSearchResults; }
+  // public get searchIsOpen(): boolean { return this._searchIsOpen; }
   public get settingsOpen(): boolean { return this._settingsOpen; }
-  public get showSearchResults(): boolean { return this._isSearching; }
+  public get storyChaptersOpen(): boolean { return this._storyChaptersOpen; }
+  public get showSearchResults(): boolean { return this._showSearchResults; }
   public get searchInputValue(): string { return this._searchInputValue; }
   public get searchValue(): string { return this._searchValue;}
 
-  public onMouseEnterControls() {
-    this._sidebarService.changeControlsState('EXPANDED');
+  public onClickSettings() {
     this._timelineItemService.unselectItem();
     this._settingsOpen = true;
+    this._storyChaptersOpen = false;
     this._showSearchResults = false;
-    this._isSearching = false;
-    
     this.searchbox.nativeElement.blur();
   }
   public onMouseLeaveControls() {
-    this._sidebarService.changeControlsState('MINIMIZED');
     this._settingsOpen = false;
+    this._storyChaptersOpen = false;
     this._showSearchResults = false;
-    this._isSearching = false;
     this._searchValue = this._searchInputValue;
   }
 
   public onClickSearchText() {
-    this._sidebarService.changeControlsState('MINIMIZED');
     this._settingsOpen = false;
+    this._storyChaptersOpen = false;
     this._showSearchResults = true;
-    this._isSearching = true;
   }
   public onClickSearchButton(){
-    this._sidebarService.changeControlsState('MINIMIZED');
     this._settingsOpen = false;
+    this._storyChaptersOpen = false;
     this._showSearchResults = true;
-    this._isSearching = true;
+  }
+  public onClickStory(){
+    this._storyChaptersOpen = true;
+    this._settingsOpen = false;
+    this._showSearchResults = false;
   }
 
   @ViewChild('searchbox') searchbox: ElementRef = new ElementRef('');
 
   public onKey(event: any) {
-    this._isSearching = true;
+    this._showSearchResults = true;
     const inputValue: string = event.target.value;
     this._searchInputValue = inputValue;
     this._searchValue = inputValue;
@@ -122,4 +118,17 @@ export class ControlsComponent {
       this._searchValue = '';
     }
   }
+
+
+
+  private _isOverStoryIcon:  boolean = false;
+  public get isOverStoryIcon(): boolean { return this._isOverStoryIcon; }
+
+  public onMouseEnterStory()  {
+    this._isOverStoryIcon = true;
+  }
+  public onMouseLeaveStory()  {
+    this._isOverStoryIcon = false;
+  }
+
 }

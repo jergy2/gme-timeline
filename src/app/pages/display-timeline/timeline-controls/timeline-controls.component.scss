@@ -50,16 +50,28 @@
     width: 100%;
     display:flex;
     justify-content: center;
+    align-items: center;
     padding: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
 }
 
+.story-icon-container{
+    margin: 3px; margin-right: 8px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.story-icon-container:hover{
+    cursor: pointer;
+}
+
 .controls-expanded{
     margin-top: 10px;
-    width: 280px;
+    // width: 280px;
     display:flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .control{

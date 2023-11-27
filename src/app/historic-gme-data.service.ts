@@ -22,7 +22,7 @@ export class HistoricGMEDataService {
   private _fileName = 'assets/data/gme-data.csv';
   private _priceEntries: GmePriceEntry[] = [];
   public get allPriceEntries(): GmePriceEntry[] { return this._priceEntries; }
-  public get priceEntriesAfterCutoff(): GmePriceEntry[] { return this._priceEntries.filter(item => item.date.format('YYYY-MM-DD') > '2020-07-01'); }
+  // public get priceEntriesAfterCutoff(): GmePriceEntry[] { return this._priceEntries.filter(item => item.date.format('YYYY-MM-DD') > '2020-07-01'); }
 
   public loadHistoricData$(): Observable<boolean> {
     const subject$ = new Subject<boolean>();

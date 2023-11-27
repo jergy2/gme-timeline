@@ -1,25 +1,33 @@
 <div class="controls-root" *ngIf="!isMobile">
     <div class="controls-bar-container">
-        <div class="controls-area shadow" [ngClass]="controlsExpanded ? 'expanded' : 'not-expanded'"
+        <div class="controls-area shadow" [ngClass]="settingsOpen ? 'expanded' : 'not-expanded'"
             (mouseleave)="onMouseLeaveControls()">
 
 
             <div class="icon-container">
+                <div class="story-icon-container" (mouseenter)="onMouseEnterStory()" (mouseleave)="onMouseLeaveStory()" (click)="onClickStory()">
+                    <img src="assets/flaticon/story.png" alt="" style="width:30px;height:30px;" *ngIf="isOverStoryIcon || storyChaptersOpen">
+                    <img src="assets/flaticon/story-black-and-white.png" alt="" style="width:30px;height:30px;" *ngIf="!isOverStoryIcon && !storyChaptersOpen ">
+                </div>
+                
                 <fa-icon [icon]="faSliders" class="control-icon" [ngClass]="settingsOpen ? 'settings-open' : ''"
-                    (click)="onMouseEnterControls()"></fa-icon>
+                    (click)="onClickSettings()"></fa-icon>
                 <div class="search-bar">
                     <fa-icon [icon]="faMagnifyingGlass" class="control-icon"
                         [ngClass]="showSearchResults ? 'settings-open' : ''" (click)="onClickSearchButton()"></fa-icon>
                     <!-- <input type="text" (keydown)="onKey($event)" class="search-input" (click)="onClickSearchText()"
                         (focus)="onClickSearchText()"> -->
 
-                    <input [value]="searchInputValue" #searchbox type="text" class="search-input" placeholder="Search" (click)="onClickSearchText()" (focus)="onClickSearchText()" (keyup)="onKey($event)">
+                    <input [value]="searchInputValue" #searchbox type="text" class="search-input" placeholder="Search"
+                        (click)="onClickSearchText()" (focus)="onClickSearchText()" (keyup)="onKey($event)">
                 </div>
             </div>
 
-            <app-settings-controls class="controls-expanded" *ngIf="controlsExpanded"
-               ></app-settings-controls>
-            <app-search-control *ngIf="showSearchResults" [searchValue]="searchValue" (searchValueChanged)="onSearchInputValueChanged($event)" (searchResultsApplied)="onMouseLeaveControls()"></app-search-control>
+            <app-chapters-control class="controls-expanded" *ngIf="storyChaptersOpen"></app-chapters-control>
+            <app-settings-controls class="controls-expanded" *ngIf="settingsOpen"></app-settings-controls>
+            <app-search-control *ngIf="showSearchResults" [searchValue]="searchValue"
+                (searchValueChanged)="onSearchInputValueChanged($event)"
+                (searchResultsApplied)="onMouseLeaveControls()"></app-search-control>
 
         </div>
     </div>
