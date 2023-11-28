@@ -351,7 +351,7 @@ export const timelineEvents: TimelineEventConfig[] = [
         tags: ['michael burry', ],
     },
     {
-        title: 'Peak of the short sneeze',
+        title: 'Peak of the sneeze',
         dateYYYYMMDD: '2021-01-27',
         urls: [
             {

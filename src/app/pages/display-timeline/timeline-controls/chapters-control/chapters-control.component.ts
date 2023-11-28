@@ -5,6 +5,7 @@ import { EventSearchService } from '../search/event-search.service';
 import { TimelineItemsService } from '../../timeline-items/timeline-items.service';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 import * as dayjs from 'dayjs';
+import { SettingsService } from 'src/app/settings.service';
 
 @Component({
   selector: 'app-chapters-control',
@@ -19,9 +20,12 @@ export class ChaptersControlComponent implements OnInit {
   private _chaptersGroupedByYear: {year: string, chapters: Chapter[]}[] = [];
   public get chaptersGroupedByYear(): {year: string, chapters: Chapter[]}[] { return this._chaptersGroupedByYear; }
 
+  public get showOverviewButton(): boolean { return this._searchService.showStoryOverviewButton; }
+
   constructor(private _searchService: EventSearchService,
     private _eventService: TimelineItemsService,
-    private _chartService: ChartDataManagerService,) { }
+    private _chartService: ChartDataManagerService,
+    private _settingsService: SettingsService) { }
 
   ngOnInit(): void {
     this._chapters = chapterConfigs.map(cc => new Chapter(cc))
@@ -54,22 +58,31 @@ export class ChaptersControlComponent implements OnInit {
       }else{
         return 0;
       }
-    });;
+    });
   }
 
   public onClickChapter(chapter: Chapter) {
-
     const today = dayjs().format('YYYY-MM-DD');
     let endDate = today;
     if(chapter.dateEndYYYYMMDD !== ''){
       endDate = chapter.dateEndYYYYMMDD
     }
+    this._searchService.onClickChapter();
     const chapterEvents = this._searchService.getEventsByDates(chapter.dateStartYYYYMMDD, endDate);
     this._eventService.setDisplayedTimelineEvents(chapterEvents);
-
-
     this._chartService.updateDateRange(chapter.dateStartYYYYMMDD, chapter.dateEndYYYYMMDD);
     this._chartService.updateDisplayedEvents(chapterEvents);
-    
+  }
+
+  public onClickOverview(){
+    const startDateYYYYMMDD = '2020-07-01';
+    const endDateDateYYYYMMDD = dayjs().format('YYYY-MM-DD');
+    const overviewEvents = this._searchService.getEventsByDates(startDateYYYYMMDD, endDateDateYYYYMMDD);
+    const significance = this._settingsService.significanceValue;
+    const filteredEvents = overviewEvents.filter(event => event.significance >= significance);
+    this._searchService.onClickStoryOverviewButton();
+    this._eventService.setDisplayedTimelineEvents(filteredEvents);
+    this._chartService.updateDateRange(startDateYYYYMMDD, endDateDateYYYYMMDD);
+    this._chartService.updateDisplayedEvents(filteredEvents);
   }
 }

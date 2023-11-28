@@ -17,6 +17,9 @@ export class EventSearchService {
 
   private _tagAssociations: TagAssociation[] = [];
 
+  private _showStoryOverviewButton: boolean = false;
+  public get showStoryOverviewButton(): boolean { return this._showStoryOverviewButton; }
+
   public setTimelineItems(timelineItems: TimelineEvent[]) {
     this._initiate();
     this._timelineItems = timelineItems;
@@ -70,6 +73,13 @@ export class EventSearchService {
       .forEach(event => results.push(event));
     this._eventResults = results;
     return results;
+  }
+
+  public onClickChapter(){
+    this._showStoryOverviewButton = true;
+  }
+  public onClickStoryOverviewButton(){
+    this._showStoryOverviewButton = false;
   }
 
 

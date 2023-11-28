@@ -6,8 +6,8 @@
 
             <div class="icon-container">
                 <div class="story-icon-container" (mouseenter)="onMouseEnterStory()" (mouseleave)="onMouseLeaveStory()" (click)="onClickStory()">
-                    <img src="assets/flaticon/story.png" alt="" style="width:30px;height:30px;" *ngIf="isOverStoryIcon || storyChaptersOpen">
-                    <img src="assets/flaticon/story-black-and-white.png" alt="" style="width:30px;height:30px;" *ngIf="!isOverStoryIcon && !storyChaptersOpen ">
+                    <img src="assets/flaticon/story.png" alt="" class="story-icon"   [ngClass]="{'active-story': (isOverStoryIcon || storyChaptersOpen)}" >
+                    <img src="assets/flaticon/story-black-and-white.png" alt="" class="story-icon-bnw" [ngClass]="{'inactive-story': (!isOverStoryIcon && !storyChaptersOpen)}">
                 </div>
                 
                 <fa-icon [icon]="faSliders" class="control-icon" [ngClass]="settingsOpen ? 'settings-open' : ''"
