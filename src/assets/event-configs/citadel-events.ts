@@ -51,12 +51,12 @@ export const citadelEvents: TimelineEventConfig[] = [
                 label: 'Superstonk post Oct 28 2023',
                 archiveLink: '',
             },
-            {
-                url: 'https://www.reddit.com/r/ThePPShow/comments/17ig718/at_least_kenny_is_warning_his_investors_now_i/?sort=top',
-                type: 'REDDIT',
-                label: 'Superstonk post Oct 28 2023',
-                archiveLink: '',
-            },
+            // {
+            //     url: 'https://www.reddit.com/r/ThePPShow/comments/17ig718/at_least_kenny_is_warning_his_investors_now_i/?sort=top',
+            //     type: 'REDDIT',
+            //     label: 'Superstonk post Oct 28 2023',
+            //     archiveLink: '',
+            // },
         ],
         description: '"Hedge funds that trade securities that are considered "meme stocks" may be particularly prone to short squeezes related to such stocks."',
         types: [TimelineEventType.OTHER],
