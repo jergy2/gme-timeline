@@ -79,10 +79,10 @@ export class ChaptersControlComponent implements OnInit {
     const endDateDateYYYYMMDD = dayjs().format('YYYY-MM-DD');
     const overviewEvents = this._searchService.getEventsByDates(startDateYYYYMMDD, endDateDateYYYYMMDD);
     const significance = this._settingsService.significanceValue;
-    const filteredEvents = overviewEvents.filter(event => event.significance >= significance);
+    // const filteredEvents = overviewEvents.filter(event => event.significance >= significance);
     this._searchService.onClickStoryOverviewButton();
-    this._eventService.setDisplayedTimelineEvents(filteredEvents);
+    this._eventService.setDisplayedTimelineEvents(overviewEvents);
     this._chartService.updateDateRange(startDateYYYYMMDD, endDateDateYYYYMMDD);
-    this._chartService.updateDisplayedEvents(filteredEvents);
+    this._chartService.updateDisplayedEvents(overviewEvents);
   }
 }
