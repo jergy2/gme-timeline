@@ -67,10 +67,10 @@ export const socialMediaEvents: TimelineEventConfig[] = [
         dateYYYYMMDD: '2022-08-25',
         urls: [
             {
-                url: 'https://web.archive.org/web/20220825185629/https://www.forbes.com/sites/roslynlayton/2022/08/25/gary-gensler-resign/?sh=213d22a23727',
+                url: 'https://web.archive.org/web/20220825230545/https://www.forbes.com/sites/roslynlayton/2022/08/25/gary-gensler-resign/',
                 type: 'NEWS',
                 label: 'Gary Gensler: Resign',
-                archiveLink: 'https://web.archive.org/web/20220825185629/https://www.forbes.com/sites/roslynlayton/2022/08/25/gary-gensler-resign/?sh=213d22a23727',
+                archiveLink: 'https://web.archive.org/web/20220825230545/https://www.forbes.com/sites/roslynlayton/2022/08/25/gary-gensler-resign/',
             },
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/wxi2ey/gary_gensler_resign/',
@@ -79,7 +79,7 @@ export const socialMediaEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: 'Wall Street doesn’t like Gary Gensler, as written in a now deleted, archived post from forbes.com',
+        description: 'Wall Street doesn’t like Gary Gensler, as written in a now deleted, archived post from forbes.com - "The SEC under the Gensler disrespects Congress and the courts and imperils investors and innovators. Gensler is leading himself and the SEC into ruin. He should resign now to avoid further damage."',
         types: [TimelineEventType.MEDIA, TimelineEventType.OTHER],
         significance: 1,
         tags: ['Gary Gensler', 'SEC'],

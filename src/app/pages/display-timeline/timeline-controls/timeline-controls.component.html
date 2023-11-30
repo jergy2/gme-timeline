@@ -5,11 +5,14 @@
 
 
             <div class="icon-container">
-                <div class="story-icon-container" (mouseenter)="onMouseEnterStory()" (mouseleave)="onMouseLeaveStory()" (click)="onClickStory()">
-                    <img src="assets/flaticon/story.png" alt="" class="story-icon"   [ngClass]="{'active-story': (isOverStoryIcon || storyChaptersOpen)}" >
-                    <img src="assets/flaticon/story-black-and-white.png" alt="" class="story-icon-bnw" [ngClass]="{'inactive-story': (!isOverStoryIcon && !storyChaptersOpen)}">
+                <div class="story-icon-container" (mouseenter)="onMouseEnterStory()" (mouseleave)="onMouseLeaveStory()"
+                    (click)="onClickStory()">
+                    <img src="assets/flaticon/story.png" alt="" class="story-icon"
+                        [ngClass]="{'active-story': (isOverStoryIcon || storyChaptersOpen)}">
+                    <img src="assets/flaticon/story-black-and-white.png" alt="" class="story-icon-bnw"
+                        [ngClass]="{'inactive-story': (!isOverStoryIcon && !storyChaptersOpen)}">
                 </div>
-                
+
                 <fa-icon [icon]="faSliders" class="control-icon" [ngClass]="settingsOpen ? 'settings-open' : ''"
                     (click)="onClickSettings()"></fa-icon>
                 <div class="search-bar">
@@ -41,8 +44,33 @@
 <!-- Mobile -->
 
 <div class="controls-root-mobile" *ngIf="isMobile">
-    <div class="controls-expanded">
-        <app-significance-control class="control"></app-significance-control>
-        <app-category-control class="control"></app-category-control>
+    <div class="icon-container-mobile">
+        <div class="story-icon-container" (mouseenter)="onMouseEnterStory()" (mouseleave)="onMouseLeaveStory()"
+            (click)="onClickStory()">
+            <img src="assets/flaticon/story.png" alt="" class="story-icon"
+                [ngClass]="{'active-story': (isOverStoryIcon || storyChaptersOpen)}">
+            <img src="assets/flaticon/story-black-and-white.png" alt="" class="story-icon-bnw"
+                [ngClass]="{'inactive-story': (!isOverStoryIcon && !storyChaptersOpen)}">
+        </div>
+
+        <fa-icon [icon]="faSliders" class="control-icon" [ngClass]="settingsOpen ? 'settings-open' : ''"
+            (click)="onClickSettings()"></fa-icon>
+        <div class="search-bar">
+            <fa-icon [icon]="faMagnifyingGlass" class="control-icon"
+                [ngClass]="showSearchResults ? 'settings-open' : ''" (click)="onClickSearchButton()"></fa-icon>
+            <!-- <input type="text" (keydown)="onKey($event)" class="search-input" (click)="onClickSearchText()"
+                (focus)="onClickSearchText()"> -->
+
+            <input [value]="searchInputValue" #searchbox type="text" class="search-input-mobile" placeholder="Search"
+                (click)="onClickSearchText()" (focus)="onClickSearchText()" (keyup)="onKey($event)">
+        </div>
     </div>
+    <div class="mobile-timeline-controls" *ngIf="storyChaptersOpen || settingsOpen || showSearchResults">
+        <app-chapters-control class="controls-expanded-mobile" *ngIf="storyChaptersOpen"></app-chapters-control>
+        <app-settings-controls class="controls-expanded-mobile" *ngIf="settingsOpen"></app-settings-controls>
+        <app-search-control *ngIf="showSearchResults" [searchValue]="searchValue"
+            (searchValueChanged)="onSearchInputValueChanged($event)"
+            (searchResultsApplied)="onMouseLeaveControls()"></app-search-control>
+    </div>
+    
 </div>

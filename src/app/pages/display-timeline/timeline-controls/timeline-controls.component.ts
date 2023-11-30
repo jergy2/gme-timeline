@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { faQuestion, faSliders, faMagnifyingGlass, faL } from '@fortawesome/free-solid-svg-icons';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
 import { ScreeSizeService } from 'src/app/scree-size.service';
@@ -43,13 +43,23 @@ import { EventSearchService } from './search/event-search.service';
     ]),
   ]
 })
-export class ControlsComponent {
+export class ControlsComponent implements OnInit {
 
   constructor(
     private _sizeService: ScreeSizeService,
     private _settingsService: SettingsService,
     private _timelineItemService: TimelineItemsService,
     private _searchService: EventSearchService) { }
+
+  ngOnInit(): void {
+    this._searchService.closeControls$.subscribe({
+      next: ()=>{
+        this._settingsOpen = false;
+        this._storyChaptersOpen = false;
+        this._showSearchResults = false;
+      }
+    })
+  }
 
   public get faSliders() { return faSliders; }
   public get faQuestion() { return faQuestion; }
@@ -62,23 +72,28 @@ export class ControlsComponent {
   // private _searchIsOpen: boolean = false;
   private _settingsOpen: boolean = false;
   private _storyChaptersOpen: boolean = false;
-  
+
   private _searchValue: string = '';
   private _searchInputValue: string = '';
-  
+
   // public get searchIsOpen(): boolean { return this._searchIsOpen; }
   public get settingsOpen(): boolean { return this._settingsOpen; }
   public get storyChaptersOpen(): boolean { return this._storyChaptersOpen; }
   public get showSearchResults(): boolean { return this._showSearchResults; }
   public get searchInputValue(): string { return this._searchInputValue; }
-  public get searchValue(): string { return this._searchValue;}
+  public get searchValue(): string { return this._searchValue; }
 
   public onClickSettings() {
-    this._timelineItemService.unselectItem();
-    this._settingsOpen = true;
-    this._storyChaptersOpen = false;
-    this._showSearchResults = false;
-    this.searchbox.nativeElement.blur();
+    if (this._settingsOpen === true) {
+      this._settingsOpen = false;
+    } else {
+      this._timelineItemService.unselectItem();
+      this._settingsOpen = true;
+      this._storyChaptersOpen = false;
+      this._showSearchResults = false;
+      this.searchbox.nativeElement.blur();
+    }
+
   }
   public onMouseLeaveControls() {
     this._settingsOpen = false;
@@ -92,15 +107,25 @@ export class ControlsComponent {
     this._storyChaptersOpen = false;
     this._showSearchResults = true;
   }
-  public onClickSearchButton(){
-    this._settingsOpen = false;
-    this._storyChaptersOpen = false;
-    this._showSearchResults = true;
+  public onClickSearchButton() {
+    if (this._showSearchResults === true) {
+      this._showSearchResults = false;
+    } else {
+      this._settingsOpen = false;
+      this._storyChaptersOpen = false;
+      this._showSearchResults = true;
+    }
+
   }
-  public onClickStory(){
-    this._storyChaptersOpen = true;
-    this._settingsOpen = false;
-    this._showSearchResults = false;
+  public onClickStory() {
+    if (this._storyChaptersOpen === true) {
+      this._storyChaptersOpen = false;
+    } else {
+      this._storyChaptersOpen = true;
+      this._settingsOpen = false;
+      this._showSearchResults = false;
+    }
+
   }
 
   @ViewChild('searchbox') searchbox: ElementRef = new ElementRef('');
@@ -112,22 +137,22 @@ export class ControlsComponent {
     this._searchValue = inputValue;
   }
 
-  public onSearchInputValueChanged(value: string){
+  public onSearchInputValueChanged(value: string) {
     this._searchInputValue = value;
-    if(value === ''){
+    if (value === '') {
       this._searchValue = '';
     }
   }
 
 
 
-  private _isOverStoryIcon:  boolean = false;
+  private _isOverStoryIcon: boolean = false;
   public get isOverStoryIcon(): boolean { return this._isOverStoryIcon; }
 
-  public onMouseEnterStory()  {
+  public onMouseEnterStory() {
     this._isOverStoryIcon = true;
   }
-  public onMouseLeaveStory()  {
+  public onMouseLeaveStory() {
     this._isOverStoryIcon = false;
   }
 

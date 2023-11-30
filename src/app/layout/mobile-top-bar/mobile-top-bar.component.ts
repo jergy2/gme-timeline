@@ -1,6 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { IconDefinition, faSliders, faQuestion, faCoins, faChartLine, faChartPie } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faSliders, faQuestion, faCoins, faChartLine, faChartPie, faInfo } from '@fortawesome/free-solid-svg-icons';
+import { MobileMenuItem } from './mobile-menu-item.class';
+import { mobileMenuItems } from './mobile-menu-items';
 
 @Component({
   selector: 'app-mobile-top-bar',
@@ -11,66 +13,48 @@ export class MobileTopBarComponent {
 
   constructor(private router: Router){}
 
-  private _mouseIsIn: boolean = false;
-  private _isMinimized: boolean = true;
-  private _showAbout: boolean = false;
-  private _showTimeline: boolean = false;
-  public get isMinimized(): boolean { return this._isMinimized; }
-  public get isExpanded(): boolean { return !this._isMinimized; }
-
-  public get isTimeline(): boolean { return this.router.url === '/timeline'; }
-  public get showTimeline(): boolean { return this.router.url === '/timeline' && this._showTimeline; }
-
+  public get faInfo(): IconDefinition { return faInfo; }
   public get faSliders(): IconDefinition { return faSliders; }
   public get faQuestion(): IconDefinition { return faQuestion; }
-  public get showAbout(): boolean { return this._showAbout; }
+  public get mobileMenuItems(): MobileMenuItem[] { return mobileMenuItems; }
 
+  private _menuIsExpanded: boolean = false;
+  public get menuIsExpanded(): boolean { return this._menuIsExpanded;}
+  public get selectedMenuItem(): MobileMenuItem { 
+    let selectedItem: MobileMenuItem = this.mobileMenuItems[0];
+    this.mobileMenuItems.forEach(item => {
+      if(item.isSelected){
+        selectedItem = item;
+      }
+    });
+    return selectedItem;
+  }
 
   ngOnInit(){
+    this.mobileMenuItems.forEach(item => item.unselect());
+    this.mobileMenuItems.forEach(item => {
+      if(item.routerLink === this.router.url){
+        item.select();
+      }
+    });
   }
 
-  public onClickAbout(){
-    this._showTimeline = false;
-    if(this._isMinimized === false){
-      this._isMinimized = true;
-      this._showAbout = false;
-    }else{
-      this._isMinimized = false;
-      this._showAbout = true;
-    }
-  }
 
-  public onClickControls(){
-    this._showAbout = false;
-    if(this._isMinimized === false){
-      this._isMinimized = true;
-      this._showTimeline = false;
-    }else{
-      this._isMinimized = false;
-      this._showTimeline = true;
+  public onClickMenuItem(item: MobileMenuItem){
+    this.mobileMenuItems.forEach(item => item.unselect());
+    item.onClick(this.router);
+    this._menuIsExpanded = false;
+  }
+  public onClickImage(){
+    if(this.selectedMenuItem.routerLink === '/timeline'){
+      this._menuIsExpanded = !this._menuIsExpanded;
     }
   }
-    
-  public onMouseLeave(){
-    this._mouseIsIn = false;
-  }
-  public onMouseEnter(){
-    this._mouseIsIn = true;
-  }
-  @HostListener('document:mousedown', ['$event'])
-  onMouseDown(event: MouseEvent): void {
-    if(!this._mouseIsIn){
-      event.preventDefault();
-      this._isMinimized = true;
-      this._showAbout = false;
+  
+  public onClickTopBar(){
+    if(this.selectedMenuItem.routerLink !== '/timeline'){
+      this._menuIsExpanded = !this._menuIsExpanded;
     }
-  }
-  @HostListener('document:click', ['$event'])
-  onClick(event: MouseEvent): void {
-    // if(!this._mouseIsIn){
-    //   // event.preventDefault();
-    //   this._isMinimized = true;
-    // }
   }
 
 

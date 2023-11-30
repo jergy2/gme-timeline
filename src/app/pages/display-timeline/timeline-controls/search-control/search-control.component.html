@@ -1,8 +1,8 @@
-<div class="search-root" *ngIf="searchValue.length === 0">
+<div class="search-root" *ngIf="searchValue.length === 0"  [ngClass]="{'search-root-mobile': isMobile}">
     Search for something
 </div>
 
-<div class="search-root" *ngIf="searchValue.length > 0">
+<div class="search-root" *ngIf="searchValue.length > 0" [ngClass]="{'search-root-mobile': isMobile}">
     <div class="top-result-bar" *ngIf="tagResults.length !== 1">
         <div>
             Search results for <span style="font-weight: bold;">{{ searchValue}}</span>

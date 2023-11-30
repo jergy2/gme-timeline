@@ -5,6 +5,7 @@ import { TagAssociation, TagAssociation as string } from './tag-association.inte
 import { TagAssociationLoader } from './tag-association-loader';
 import { TagSearchManager } from './tag-search-manager.class';
 import { TagSearchable } from './tag-searchable.class';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,9 @@ export class EventSearchService {
 
   private _showStoryOverviewButton: boolean = false;
   public get showStoryOverviewButton(): boolean { return this._showStoryOverviewButton; }
+  
+  private _closeControls$: Subject<boolean> = new Subject();
+  public get closeControls$(): Observable<boolean> { return this._closeControls$.asObservable(); }
 
   public setTimelineItems(timelineItems: TimelineEvent[]) {
     this._initiate();
@@ -58,6 +62,7 @@ export class EventSearchService {
     this._tagSearchManager.clearSearch();
     this._tagResults = [];
     this._eventResults = [];
+    this._closeControls$.next(true);
   }
   public onClickTagSearchable(tag: TagSearchable){
     this._tagResults = this._tagSearchManager.setTagSearchable(tag);
@@ -77,9 +82,11 @@ export class EventSearchService {
 
   public onClickChapter(){
     this._showStoryOverviewButton = true;
+    this._closeControls$.next(true);
   }
   public onClickStoryOverviewButton(){
     this._showStoryOverviewButton = false;
+    this._closeControls$.next(true);
   }
 
 

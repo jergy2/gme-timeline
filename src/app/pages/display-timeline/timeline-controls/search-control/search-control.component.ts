@@ -7,6 +7,7 @@ import { TimelineEventType } from '../../timeline-items/timeline-item/timeline-e
 import { SettingsService } from 'src/app/settings.service';
 import { TagAssociation } from '../search/tag-association.interface';
 import { TagSearchable } from '../search/tag-searchable.class';
+import { ScreeSizeService } from 'src/app/scree-size.service';
 
 @Component({
   selector: 'app-search-control',
@@ -34,8 +35,11 @@ export class SearchControlComponent {
     private _searchService: EventSearchService,
     private _chartService: ChartDataManagerService,
     private _settingsService: SettingsService,
+    private _sizeService: ScreeSizeService
   ){
   }
+
+  public get isMobile(): boolean { return this._sizeService.isMobile; }
 
   public onClickTagResult(tag: TagSearchable){
     this.searchValueChanged.emit(tag.displayName);
