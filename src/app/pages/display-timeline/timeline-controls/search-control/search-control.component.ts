@@ -4,10 +4,11 @@ import { EventSearchService } from '../search/event-search.service';
 import { TimelineEvent } from '../../timeline-items/timeline-item/timeline-event';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 import { TimelineEventType } from '../../timeline-items/timeline-item/timeline-event-type.enum';
-import { SettingsService } from 'src/app/settings.service';
+import { SettingsService } from 'src/app/services/settings.service';
 import { TagAssociation } from '../search/tag-association.interface';
 import { TagSearchable } from '../search/tag-searchable.class';
-import { ScreeSizeService } from 'src/app/scree-size.service';
+import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { DdEntry } from 'src/app/services/dd-entry.interface';
 
 @Component({
   selector: 'app-search-control',
@@ -28,6 +29,7 @@ export class SearchControlComponent {
   @Output() searchResultsApplied: EventEmitter<boolean> = new EventEmitter(); 
 
   public get tagResults(): TagSearchable[] { return this._searchService.tagResults; }
+  public get ddResults(): DdEntry[] { return this._searchService.ddResults; }
   public get eventResults(): TimelineEvent[] { return this._searchService.eventResults;}
 
   constructor(
@@ -58,6 +60,10 @@ export class SearchControlComponent {
     this._searchService.clearSearch();
     this._eventService.setDisplayedTimelineEvents(this._searchService.allTimelineEvents);
     this._chartService.clearSearchResults(this._settingsService.significanceValue, this._settingsService.categories, this._eventService.allTimelineItems);
+  }
+
+  public onClickDD(ddResult: DdEntry){
+    window.open(ddResult.link, "_blank");
   }
 
 }

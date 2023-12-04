@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import * as dayjs from 'dayjs';
-import { GmePriceEntry } from './pages/display-timeline/timeline-items/timeline-item/gme-price-entry.interface';
+import { GmePriceEntry } from './gme-price-entry.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +24,8 @@ export class HistoricGMEDataService {
   public get allPriceEntries(): GmePriceEntry[] { return this._priceEntries; }
   // public get priceEntriesAfterCutoff(): GmePriceEntry[] { return this._priceEntries.filter(item => item.date.format('YYYY-MM-DD') > '2020-07-01'); }
 
-  public loadHistoricData$(): Observable<boolean> {
-    const subject$ = new Subject<boolean>();
+  public loadHistoricData$(): Observable<GmePriceEntry[]> {
+    const subject$ = new Subject<GmePriceEntry[]>();
     this._httpClient.get(this._fileName, { responseType: 'text' },).subscribe(
       (data) => {
         this._parseCSV(data);
@@ -33,7 +33,7 @@ export class HistoricGMEDataService {
         this._fillGaps();
         this._trimData();
 
-        subject$.next(true);
+        subject$.next(this._priceEntries);
         subject$.complete();
       },
       (error) => {
@@ -84,7 +84,7 @@ export class HistoricGMEDataService {
 
   /** We don't need to see data all the way back from 2013 */
   private _trimData() {
-    const cutoffDate = dayjs('2019-01-01');
+    const cutoffDate = dayjs('2018-01-01');
     this._priceEntries = this._priceEntries.filter((item) => {
       return item.date.isAfter(cutoffDate);
     });

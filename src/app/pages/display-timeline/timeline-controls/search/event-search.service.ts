@@ -6,6 +6,8 @@ import { TagAssociationLoader } from './tag-association-loader';
 import { TagSearchManager } from './tag-search-manager.class';
 import { TagSearchable } from './tag-searchable.class';
 import { Observable, Subject } from 'rxjs';
+import { DdSearchManager } from './dd-search-manager.class';
+import { DdEntry } from 'src/app/services/dd-entry.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,7 @@ export class EventSearchService {
 
   private _timelineItems: TimelineEvent[] = [];
   private _tagSearchManager: TagSearchManager = new TagSearchManager([],[]);
+  private _ddSearchManager: DdSearchManager = new DdSearchManager([]);
 
   private _tagAssociations: TagAssociation[] = [];
 
@@ -24,9 +27,10 @@ export class EventSearchService {
   private _closeControls$: Subject<boolean> = new Subject();
   public get closeControls$(): Observable<boolean> { return this._closeControls$.asObservable(); }
 
-  public setTimelineItems(timelineItems: TimelineEvent[]) {
-    this._initiate();
+  public setTimelineItems(timelineItems: TimelineEvent[], ddEntries: DdEntry[]) {
     this._timelineItems = timelineItems;
+    this._ddSearchManager = new DdSearchManager(ddEntries);
+    this._initiate();
   }
 
   private _isInitiated: boolean = false;
@@ -51,12 +55,20 @@ export class EventSearchService {
   private _eventResults: TimelineEvent[] = [];
   public get eventResults(): TimelineEvent[] { return this._eventResults; }
 
+  private _ddResults: DdEntry[] = [];
+  public get ddResults(): DdEntry[] { return this._ddResults; }
+
 
   public search(searchValue: string){
     this._tagResults = this._tagSearchManager.search(searchValue);
     if(this._tagResults.length === 1){
       this._eventResults = this.tagResults[0].events;
     }
+    this._ddResults = [];
+    if(searchValue.length > 1){
+      this._ddResults = this._ddSearchManager.search(searchValue);
+    }
+    
   }
   public clearSearch(){
     this._tagSearchManager.clearSearch();

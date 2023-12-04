@@ -5,9 +5,9 @@ import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 import { TimelineEvent } from '../timeline-items/timeline-item/timeline-event';
-import { HistoricGMEDataService } from 'src/app/historic-gme-data.service';
-import { ScreeSizeService } from 'src/app/scree-size.service';
-import { SettingsService } from 'src/app/settings.service';
+import { HistoricGMEDataService } from 'src/app/services/historic-gme-data.service';
+import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-chart',

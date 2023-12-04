@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TimelineEvent } from './timeline-event';
 import { TimelineEventType } from './timeline-event-type.enum';
 import * as dayjs from 'dayjs';
-import { ScreeSizeService } from 'src/app/scree-size.service';
+import { ScreeSizeService } from 'src/app/services/scree-size.service';
 import { urlType } from './timeline-event-url.interface';
 import { TimelineItemsService } from '../timeline-items.service';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';

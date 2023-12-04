@@ -4,7 +4,7 @@ import { CategoryButton } from './category-button.interface';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 import { TimelineItemsService } from '../../timeline-items/timeline-items.service';
 import { TimelineEventType } from '../../timeline-items/timeline-item/timeline-event-type.enum';
-import { SettingsService } from 'src/app/settings.service';
+import { SettingsService } from 'src/app/services/settings.service';
 @Component({
   selector: 'app-category-control',
   templateUrl: './category-control.component.html',

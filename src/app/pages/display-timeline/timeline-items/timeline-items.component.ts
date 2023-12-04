@@ -2,9 +2,9 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { TimelineItemsService } from './timeline-items.service';
 import { TimelineEvent } from './timeline-item/timeline-event';
-import { ScreeSizeService } from 'src/app/scree-size.service';
+import { ScreeSizeService } from 'src/app/services/scree-size.service';
 import { DisplayService } from '../display.service';
-import { SettingsService } from 'src/app/settings.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-timeline-items',

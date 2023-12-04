@@ -3691,4 +3691,32 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         significance: 3,
         tags: ['ryan cohen', 'teddy', 'teddy books']
     }, 
+    {
+        title: 'Ryan Cohen tweet - pigeons',
+        dateYYYYMMDD: '2023-12-03',
+        urls: [
+            {
+                url: 'https://x.com/ryancohen/status/1731444926787834343?s=46&t=nOPBbpiKX7W0ruDEeUuUnQ',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet - pigeons',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18a5ob0/ryan_cohen_on_x/?sort=top',
+                type: 'REDDIT',
+                label: 'Ryan Cohen on X!',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/470823',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '',
+            }
+        ],
+        description: '“I don’t understand why people would want to get rid of pigeons. They don’t bother no one.”— Mike Tyson',
+        types: [TimelineEventType.RC],
+        significance: 1,
+        tags: ['ryan cohen', 'ryan cohen tweet']
+    }, 
 ];

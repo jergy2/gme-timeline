@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ScreeSizeService } from '../scree-size.service';
+import { ScreeSizeService } from '../services/scree-size.service';
 import { DisplayService } from '../pages/display-timeline/display.service';
 import { ChartDataManagerService } from '../pages/display-timeline/chart/chart-data-manager-service';
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { timer } from 'rxjs';
-import { ScreeSizeService } from 'src/app/scree-size.service';
+import { ScreeSizeService } from 'src/app/services/scree-size.service';
 import { ChartDataManagerService } from './chart/chart-data-manager-service';
 import { DisplayService } from './display.service';
-import { SettingsService } from 'src/app/settings.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-display-timeline',

@@ -15,15 +15,15 @@ export class FinancialsService {
   private _results: QuarterlyResult[] = [];
   public get quarterlyResults(): QuarterlyResult[] { return this._results; }
 
-  public loadFinancialResults$(): Observable<boolean> {
-    const subject$ = new Subject<boolean>();
+  public loadFinancialResults$(): Observable<QuarterlyResult[]> {
+    const subject$ = new Subject<QuarterlyResult[]>();
     this._httpClient.get(this._fileName, { responseType: 'text' },).subscribe(
       (data) => {
-        this._parseCSV(data);
-        this._sortData();
-        this._trimData();
+        const results = this._parseCSV(data);
+        // this._sortData();
+        // this._trimData();
 
-        subject$.next(true);
+        subject$.next(results);
         subject$.complete();
       },
       (error) => {
@@ -79,6 +79,7 @@ export class FinancialsService {
     }
     const results = cellRows.map(row => new QuarterlyResult(row));
     this._results = results;
+    return results
   }
 
   private _getResult(cells: any[]): QuarterlyResultInterface {

@@ -1,4 +1,4 @@
-import { GmePriceEntry } from "./timeline-item/gme-price-entry.interface";
+import { GmePriceEntry } from "../../../services/gme-price-entry.interface";
 import { TimelineEventConfig } from "./timeline-item/timeline-event-config.interface";
 import { TimelineEvent } from "./timeline-item/timeline-event";
 

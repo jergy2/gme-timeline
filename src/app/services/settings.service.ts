@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TimelineEventType } from './pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum';
+import { TimelineEventType } from '../pages/display-timeline/timeline-items/timeline-item/timeline-event-type.enum';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({

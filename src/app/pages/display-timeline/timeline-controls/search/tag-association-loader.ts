@@ -1,5 +1,5 @@
 import { TagAssociation } from "./tag-association.interface";
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, lastValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 export class TagAssociationLoader{
@@ -10,6 +10,11 @@ export class TagAssociationLoader{
    * @param _httpClient 
    */
   constructor(private _httpClient: HttpClient){}
+
+  public async loadTagAssocationsCSV(){
+    
+    await lastValueFrom(this.loadTagAssociationsCSV$());
+  }
 
   public loadTagAssociationsCSV$(): Observable<TagAssociation[]> {
     const subject$ = new Subject<TagAssociation[]>();

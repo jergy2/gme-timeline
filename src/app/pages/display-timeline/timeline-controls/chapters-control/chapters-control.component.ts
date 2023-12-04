@@ -5,7 +5,7 @@ import { EventSearchService } from '../search/event-search.service';
 import { TimelineItemsService } from '../../timeline-items/timeline-items.service';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 import * as dayjs from 'dayjs';
-import { SettingsService } from 'src/app/settings.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-chapters-control',

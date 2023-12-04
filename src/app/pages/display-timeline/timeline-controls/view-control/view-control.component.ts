@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IconDefinition, faList } from '@fortawesome/free-solid-svg-icons';
-import { SettingsService } from 'src/app/settings.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-view-control',

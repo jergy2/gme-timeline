@@ -1,5 +1,5 @@
 import * as dayjs from "dayjs";
-import { GmePriceEntry } from "../timeline-items/timeline-item/gme-price-entry.interface";
+import { GmePriceEntry } from "../../../services/gme-price-entry.interface";
 import { TimelineEventType } from "../timeline-items/timeline-item/timeline-event-type.enum";
 import { TimelineEvent } from "../timeline-items/timeline-item/timeline-event";
 import { DatasetConfig } from "./dataset-config.class";
