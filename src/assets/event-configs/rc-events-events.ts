@@ -3,7 +3,7 @@ import { TimelineEventType } from "src/app/pages/display-timeline/timeline-items
 
 export const rcTweetsEvents: TimelineEventConfig[] = [
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen’s first tweet',
         dateYYYYMMDD: '2019-07-02',
         urls: [
             {
@@ -16,10 +16,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Hello Twitter! #myfirstTweet"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet'],
     },
     {
-        title: 'RC Retweet',
+        title: 'RC retweets a BusinessInsider article',
         dateYYYYMMDD: '2019-11-30',
         urls: [
             {
@@ -28,14 +28,20 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 label: 'RC Retweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.businessinsider.com/chewy-cofounder-how-he-created-multibillion-dollar-empire-2019-11',
+                type: 'NEWS',
+                label: 'businessinsider.com',
+                archiveLink: '',
+            }
         ],
         description: '',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet'],
     },
     {
-        title: 'RC Retweet',
+        title: 'RC retweets an HBR article',
         dateYYYYMMDD: '2020-01-01',
         urls: [
             {
@@ -44,6 +50,12 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 label: 'RC Retweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://hbr.org/2020/01/the-founder-of-chewy-com-on-finding-the-financing-to-achieve-scale?utm_source=twitter&utm_medium=social&utm_campaign=hbr',
+                type: 'NEWS',
+                label: 'hbr.org',
+                archiveLink: '',
+            }
         ],
         description: '',
         types: [TimelineEventType.RC],
@@ -51,7 +63,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
-        title: 'RC Tweet',
+        title: 'RC tweets a forbes article',
         dateYYYYMMDD: '2020-01-26',
         urls: [
             {
@@ -60,6 +72,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 label: 'RC Tweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.forbes.com/sites/joanverdon/2020/01/26/ryan-cohen-started-a-company-that-took-on-amazon-and-sold-it-for-3-billion-now-hes-thinking-about-whats-next/?sh=46da78975579',
+                type: 'NEWS',
+                label: 'forbes.com'
+            }
         ],
         description: '',
         types: [TimelineEventType.RC],

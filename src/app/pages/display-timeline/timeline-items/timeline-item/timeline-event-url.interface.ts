@@ -4,5 +4,5 @@ export interface TimelineEventURL{
     url: string;
     type: urlType;
     label: string;
-    archiveLink: string;
+    archiveLink?: string;
 }
