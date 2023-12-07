@@ -618,5 +618,50 @@ export const corporateEvents: TimelineEventConfig[] = [
         significance: 3,
         tags: ['corporate', 'announcement', 'ceo', 'ryan cohen', '8k'],
     },
-    
+    {
+        title: 'GameStop Discloses Second Quarter 2023 Results',
+        dateYYYYMMDD: '2023-12-06',
+        urls: [
+            {
+                url: 'https://investor.gamestop.com/news-releases/news-release-details/gamestop-discloses-third-quarter-2023-results',
+                type: 'GAMESTOP',
+                label: 'Earnings Release',
+                archiveLink: '',
+            },
+            {
+                url: 'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-23-000063',
+                type: 'DOCUMENT',
+                label: 'Form 10-Q',
+                archiveLink: '',
+            },
+            {
+                url: 'https://lemmy.whynotdrs.org/post/455516',
+                type: 'LEMMY',
+                label: '',
+                archiveLink: '', 
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18ce8e1/earnings/',
+                type: 'REDDIT',
+                label: 'Earnings',
+                archiveLink: '', 
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18cgyk6/gamestop_board_approves_investment_policy/',
+                type: 'REDDIT',
+                label: 'GameStop board approves Investment Policy delegating portfolio management to CEO Ryan Cohen',
+                archiveLink: '', 
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18ceosw/still_stuck_at_25_drs_something_is_not_adding_up/',
+                type: 'REDDIT',
+                label: 'Still stuck at 25% DRS... Something is not adding up',
+                archiveLink: '', 
+            },
+        ],
+        description: 'Q3 2023',
+        types: [TimelineEventType.CORP],
+        significance: 2,
+        tags: ['corporate', 'earnings', '10-Q'],
+    },
 ];

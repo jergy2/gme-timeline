@@ -74,9 +74,7 @@ export class DdImportService {
         wayback_machine: cells[6],
       }
       ddEntries.push(ddEntry);
-
     }
-    console.log(ddEntries);
     return ddEntries;
     // this._priceEntries = entries;
   }
