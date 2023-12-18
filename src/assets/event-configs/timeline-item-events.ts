@@ -858,6 +858,32 @@ export const timelineEvents: TimelineEventConfig[] = [
         tags: ['ryan cohen', 'gmedd', 'joe fonicello', 'interview', 'chewy', 'bbby', 'tweets' ],
     },
     {
+        
+        
+        title: 'Zelda Tears of the Kingdom Midnight Release',
+        dateYYYYMMDD: '2023-05-13',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/13fa1bm/midnight_release_for_the_legend_of_zelda_tears_of/',
+                type: 'REDDIT',
+                label: 'Midnight Release For The Legend of Zelda: Tears of the Kingdom - Vancouver Island',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.tiktok.com/@blogto/video/7232273953799064837?lang=en',
+                type: 'OTHER',
+                label: 'the lineup went AROUND the block 😬🎮 ⚔️ #toronto ',
+                archiveLink: '',
+            },
+            
+        ],
+        description: 'GameStop: a thriving brick and mortar retailer',
+        types: [TimelineEventType.OTHER],
+        significance: 2,
+        tags: ['gaming', 'nintendo', 'release', 'zelda'],
+    },
+    {
+        
         title: 'U.S. representative French Hill told Gary Gensler that he shouldn’t pursue market reforms based on “one meme stock event”',
         dateYYYYMMDD: '2023-09-27',
         urls: [

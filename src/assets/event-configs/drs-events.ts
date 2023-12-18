@@ -62,7 +62,21 @@ export const drsItemEvents: TimelineEventConfig[] = [
         significance: 2,
         tags: ['drs', 'paul conn', 'superstonk', 'ama', 'interview', 'computershare',]
     },
-
+    {
+        title: 'GME Jungle AMA with Paul Conn, President of Global Capital Markets at Computershare',
+        dateYYYYMMDD: '2021-12-22',
+        urls: [
+            {
+                url: 'https://www.youtube.com/watch?v=zc2_Zmvf8ZU',
+                type: 'YOUTUBE',
+                label: 'GME Jungle AMA with Paul Conn, President of Global Capital Markets at Computershare'
+            }
+        ],
+        description: 'https://www.youtube.com/watch?v=zc2_Zmvf8ZU',
+        types: [TimelineEventType.DRS],
+        significance: 2,
+        tags: ['drs', 'paul conn', 'ama', 'interview', 'computershare',]
+    },
     {
         title: 'DRSGME.org published by GameStop investors',
         dateYYYYMMDD: '2022-03-18',

@@ -108,7 +108,50 @@ export const citadelEvents: TimelineEventConfig[] = [
         tags: ['Ken Griffin'],
         imgSrc: 'assets/other/ken-griffin-2023-11-06.PNG'
     },
-    // {
-    //     https://www.reddit.com/r/Superstonk/comments/17tvyfs/kenny_g_sitting_with_former_president_bush/
-    // }
+    {
+        title: 'Philanthropist Ken Griffin',
+        dateYYYYMMDD: '2023-11-06',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17tvyfs/kenny_g_sitting_with_former_president_bush/?sort=top',
+                type: 'REDDIT',
+                label: 'Kenny G sitting with former President Bush',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/17twehm/wait_for_itand_here_we_see_philanthropist_ken/?sort=top',
+                type: 'REDDIT',
+                label: '"and here we see philanthropist Ken Griffin with Pres. Bush."',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        types: [TimelineEventType.OTHER],
+        significance: 0,
+        tags: ['Ken Griffin'],
+        
+    },
+    {
+        title: 'Ken Griffin says they set the prices of securities publicly.',
+        dateYYYYMMDD: '2023-11-10',
+        urls: [
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18f0wpy/ken_griffin_says_they_set_the_prices_of/?sort=top',
+                type: 'REDDIT',
+                label: 'Ken Griffin says they set the prices of securities publicly.',
+                archiveLink: '',
+            },
+            {
+                url: 'https://youtu.be/FID0BLkZXuY?t=2028',
+                type: 'YOUTUBE',
+                label: 'The Business of America: Democracy and Capitalism - George Washington’s Mount Vernon',
+                archiveLink: '',
+            },
+        ],
+        description: '',
+        types: [TimelineEventType.OTHER],
+        significance: 2,
+        tags: ['Ken Griffin', 'fraud', 'crime', 'manipulation'],
+        imgSrc: 'assets/other/ken-griffin-2023-11-10.png',
+    }
 ];
