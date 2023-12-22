@@ -31,6 +31,7 @@ import { ViewControlComponent } from './pages/display-timeline/timeline-controls
 import { SearchControlComponent } from './pages/display-timeline/timeline-controls/search-control/search-control.component';
 import { SettingsControlsComponent } from './pages/display-timeline/timeline-controls/settings-controls/settings-controls.component';
 import { ChaptersControlComponent } from './pages/display-timeline/timeline-controls/chapters-control/chapters-control.component';
+import { CalendarComponent } from './pages/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ChaptersControlComponent } from './pages/display-timeline/timeline-cont
     InformationPointComponent,
     SearchControlComponent,
     SettingsControlsComponent,
-    ChaptersControlComponent
+    ChaptersControlComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

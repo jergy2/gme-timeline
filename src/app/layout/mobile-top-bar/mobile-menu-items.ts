@@ -2,6 +2,13 @@ import { faCircleInfo, faInfoCircle, faTableList } from "@fortawesome/free-solid
 import { MobileMenuItem } from "./mobile-menu-item.class";
 
 export const mobileMenuItems: MobileMenuItem[] = [
+    // new MobileMenuItem(
+    //     'IMAGE',
+    //     null,
+    //     '/calendar',
+    //     'assets/flaticon/calendar.png',
+    //     'Calendar'
+    // ),
     new MobileMenuItem(
         'IMAGE',
         null,
@@ -10,11 +17,11 @@ export const mobileMenuItems: MobileMenuItem[] = [
         'Timeline'
     ),
     new MobileMenuItem(
-        'ICON',
-        faTableList,
-        '/financials',
-        '',
-        'Quarterly Results'
+        'IMAGE',
+        null,
+        '/earnings',
+        'assets/flaticon/spreadsheet.png',
+        'Earnings'
     ),
     new MobileMenuItem(
         'IMAGE',

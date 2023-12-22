@@ -1034,5 +1034,32 @@ export const timelineEvents: TimelineEventConfig[] = [
         significance: 2,
         tags: ['moodys', 'credit rating', 'credit', 'rating', 'USA' ],
     },
-
+    {
+        
+        title: "Larry Cheng, GameStop board member, gives a brief interview with Bill Pulte on the PP Show",
+        dateYYYYMMDD: '2023-12-14',
+        urls: [
+            {
+                url: 'https://lemmy.whynotdrs.org/post/511231',
+                type: 'LEMMY',
+                label: 'Full trancript, discussion on Lemmy',
+                archiveLink: '',
+            },
+            {
+                url: 'https://youtu.be/9GCGn_STx-o?t=7932',
+                type: 'YOUTUBE',
+                label: 'Pulte + PP LIVE 2023 Feat. Larry Cheng!!',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.thestreet.com/memestocks/gme/gamestops-director-advocates-for-retail-investors-during-dedicated-community-event',
+                type: 'NEWS',
+                label: 'GameStop’s Director Advocates for Retail Investors During Dedicated Community Event'
+            }
+        ],
+        description: 'Larry Cheng gives a brief interview with Bill Pulte on the PP Show.  For some reason, this conversation is not found in any GME subreddits.',
+        types: [TimelineEventType.SOCIAL_MEDIA],
+        significance: 2,
+        tags: ['larry cheng', 'bill pulte', 'theppshow', 'community' ],
+    },
 ]; 

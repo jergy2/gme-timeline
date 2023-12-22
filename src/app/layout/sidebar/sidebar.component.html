@@ -9,22 +9,33 @@
                 <fa-icon [icon]="faBars" style="font-size: 1.9em;"></fa-icon>
             </div>
             <div [@appear]="'appear'">
+                <!-- <div class="sidebar-item" [routerLink]="'/calendar'" [routerLinkActive]="'active-link'">
+                    <div class="sidebar-item-icon">
+                        <img src="assets/flaticon/calendar.png"
+                            style="width: 30px; height: 30px;">
+                    </div>
+                    <div class="sidebar-item-title">
+                        Calendar
+                    </div>
+                </div> -->
                 <div class="sidebar-item" [routerLink]="'/timeline'" [routerLinkActive]="'active-link'">
                     <div class="sidebar-item-icon">
-                        <img src="assets/icons/timeline-icon.png" alt="computershared.net"
+                        <img src="assets/icons/timeline-icon.png" 
                             style="width: 30px; height: 30px;">
                     </div>
                     <div class="sidebar-item-title">
                         Timeline
                     </div>
                 </div>
-                <div class="sidebar-item" [routerLink]="'/financials'" [routerLinkActive]="'active-link'">
+                <div class="sidebar-item" [routerLink]="'/earnings'" [routerLinkActive]="'active-link'">
                     <div class="sidebar-item-icon">
-                        <fa-icon [icon]="faTableList"
-                            style="width: 30px; height: 30px; font-size:1.7em; color: rgb(91, 116, 91);"></fa-icon>
+                        <img src="assets/flaticon/spreadsheet.png" 
+                        style="width: 30px; height: 30px;">
+                        <!-- <fa-icon [icon]="faTableList"
+                            style="width: 30px; height: 30px; font-size:1.7em; color: rgb(91, 116, 91);"></fa-icon> -->
                     </div>
                     <div class="sidebar-item-title">
-                        Quarterly Results
+                        Earnings
                     </div>
                 </div>
                 <a class="sidebar-item" href="https://www.computershared.net" target="_blank">

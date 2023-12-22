@@ -117,6 +117,9 @@ export class ChartComponent implements OnInit, AfterViewInit {
         //   }
         // }
       },
+      animation: {
+        duration: 0
+      },
       plugins: {
         tooltip: {
           backgroundColor: (context) => {
