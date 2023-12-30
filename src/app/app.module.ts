@@ -32,6 +32,7 @@ import { SearchControlComponent } from './pages/display-timeline/timeline-contro
 import { SettingsControlsComponent } from './pages/display-timeline/timeline-controls/settings-controls/settings-controls.component';
 import { ChaptersControlComponent } from './pages/display-timeline/timeline-controls/chapters-control/chapters-control.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { ResearchComponent } from './pages/research/research.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     SearchControlComponent,
     SettingsControlsComponent,
     ChaptersControlComponent,
-    CalendarComponent
+    CalendarComponent,
+    ResearchComponent
   ],
   imports: [
     BrowserModule,

@@ -38,7 +38,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'pets', 'animals', 'chewy'],
     },
     {
         title: 'RC retweets an HBR article',
@@ -60,7 +60,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'chewy'],
     },
     {
         title: 'RC tweets a forbes article',
@@ -81,7 +81,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'chewy', 'amazon'],
     },
     {
         title: 'RC Retweet',
@@ -97,26 +97,26 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'chewy'],
     },
     {
-        title: 'RC Retweet',
+        title: 'RC Retweet: Former Chewy CEO tries to push GameStop to become the Amazon of the video-game industry',
         dateYYYYMMDD: '2020-11-21',
         urls: [
             {
                 url: 'https://twitter.com/CNBC/status/1330134444183871488',
                 type: 'X-TWITTER',
-                label: 'RC ReTweet',
+                label: 'Former Chewy CEO tries to push GameStop to become the Amazon of the video-game industry',
                 archiveLink: '',
             },
         ],
         description: '',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'amazon', 'video games', 'chewy', 'cnbc'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "😳"',
         dateYYYYMMDD: '2020-12-09',
         urls: [
             {
@@ -125,14 +125,19 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 label: 'RC Tweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://t.co/hcp4kNNMbz',
+                type: 'NEWS',
+                label: 'Why Jim Cramer Compares GameStop to Blockbuster'
+            }
         ],
         description: '"😳" https://t.co/hcp4kNNMbz',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'cramer', 'blockbuster'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "💩"',
         dateYYYYMMDD: '2021-01-06',
         urls: [
             {
@@ -142,14 +147,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '"💩"',
+        description: 'RE: Blockbuster: "💩"',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-01-06.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'poop', 'blockbuster'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "🥜"',
         dateYYYYMMDD: '2021-01-17',
         urls: [
             {
@@ -163,10 +168,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-01-17.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'squeeze'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "🐸"',
         dateYYYYMMDD: '2021-02-24',
         urls: [
             {
@@ -186,10 +191,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-02-24.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'frog', 'ice cream', 'mcdonalds'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet:  "🤢"',
         dateYYYYMMDD: '2021-03-04',
         urls: [
             {
@@ -205,14 +210,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '"🤢"',
+        description: 'Regarding an image of the pets.com sock puppet:  "🤢"',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-04.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'pets', 'animals'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweets a GIF of Harry Dunne on the toilet',
         dateYYYYMMDD: '2021-03-11',
         urls: [
             {
@@ -238,10 +243,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-11.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'poop', 'toilet'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "Superman lives forever 🙏"',
         dateYYYYMMDD: '2021-03-17',
         urls: [
             {
@@ -261,14 +266,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-17.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'ted cohen', 'superman'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweets a meme of a teddy bear',
         dateYYYYMMDD: '2021-03-25',
         urls: [
             {
-                url: 'https://twitter.com/ryancohen/status/1372270634374467587',
+                url: 'https://twitter.com/ryancohen/status/1375159657166209031',
                 type: 'X-TWITTER',
                 label: 'RC Tweet',
                 archiveLink: '',
@@ -284,10 +289,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-03-25.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'teddy'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet:  Culver City, CA @GameStop👍',
         dateYYYYMMDD: '2021-04-12',
         urls: [
             {
@@ -307,10 +312,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-12.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'california'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweets a meme of a teddy bear',
         dateYYYYMMDD: '2021-04-20',
         urls: [
             {
@@ -324,10 +329,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-20.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'teddy'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweets a US flag at half mast',
         dateYYYYMMDD: '2021-04-24',
         urls: [
             {
@@ -344,7 +349,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweets a South Park meme',
         dateYYYYMMDD: '2021-04-25',
         urls: [
             {
@@ -361,11 +366,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         tags: ['ryan cohen','ryan cohen tweet'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweets a South Park meme',
         dateYYYYMMDD: '2021-04-29',
         urls: [
             {
-                url: 'https://twitter.com/ryancohen/status/1386485746916380673',
+                url: 'https://twitter.com/ryancohen/status/1387822832558788614',
                 type: 'X-TWITTER',
                 label: 'RC Tweet',
                 archiveLink: '',
@@ -381,10 +386,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-04-29.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'south park', 'poop'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "Arlington, VA @GameStop👍"',
         dateYYYYMMDD: '2021-05-13',
         urls: [
             {
@@ -406,14 +411,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: '"Arlington, VA @GameStop👍"',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-13.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'virginia', 'covid'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "Ryan, I love you but I don’t like you” (My Grandma)"',
         dateYYYYMMDD: '2021-05-18',
         urls: [
             {
@@ -423,14 +428,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '"“Ryan, I love you but I don’t like you” (My Grandma)"',
+        description: '"Ryan, I love you but I don’t like you” (My Grandma)',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-18.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'grandma'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "❤️"',
         dateYYYYMMDD: '2021-05-19',
         urls: [
             {
@@ -443,10 +448,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"❤️"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "Don’t try this at home"',
         dateYYYYMMDD: '2021-05-24',
         urls: [
             {
@@ -472,10 +477,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-24.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'shorts', 'penis'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: Ryan Cohen: R.I.P. Dumb Ass',
         dateYYYYMMDD: '2021-05-29',
         urls: [
             {
@@ -485,14 +490,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'Ryan Cohen: R.I.P. Dumb Ass',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-05-29.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'tombstone'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "💀"',
         dateYYYYMMDD: '2021-06-03',
         urls: [
             {
@@ -512,10 +517,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-03.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'sears'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweets a photo of his father Ted Cohen at the Hollywood Walk of Fame',
         dateYYYYMMDD: '2021-06-20',
         urls: [
             {
@@ -529,10 +534,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-20.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'ted cohen', 'godzilla'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweets a South Park meme',
         dateYYYYMMDD: '2021-06-23',
         urls: [
             {
@@ -546,10 +551,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-06-23.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'flatulence', 'poop', 'south park'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "Brick By Brick 🧱"',
         dateYYYYMMDD: '2021-06-30',
         urls: [
             {
@@ -562,10 +567,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Brick By Brick 🧱"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'brick', 'lego'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "Power to the Players 🇺🇸"',
         dateYYYYMMDD: '2021-07-04',
         urls: [
             {
@@ -578,10 +583,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Power to the Players 🇺🇸"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'power to the players'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "I ❤️ this" - Lego GameStop building',
         dateYYYYMMDD: '2021-07-08',
         urls: [
             {
@@ -601,10 +606,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-08.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'lego'],
     },
     {
-        title: 'RC Tweet',
+        title: 'Ryan Cohen tweet: "I heard Ryan doesn’t cry when stepping on Lego"',
         dateYYYYMMDD: '2021-07-10',
         urls: [
             {
@@ -614,14 +619,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'I heard Ryan doesn’t cry when stepping on Lego',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-10.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'lego'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "PG-13"',
         dateYYYYMMDD: '2021-07-19',
         urls: [
             {
@@ -641,10 +646,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-chopsticks.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'stock split', 'chopsticks'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Can’t stop, won’t stop."',
         dateYYYYMMDD: '2021-07-23',
         urls: [
             {
@@ -668,12 +673,12 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: 'Can’t stop, won’t stop.',
         types: [TimelineEventType.RC],
-        significance: 0,
+        significance: 1,
         imgSrc: 'assets/rc-tweets/rc-computerchair.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'computershare', 'poop', 'DRS'],
     },
     {
-        title: 'RC Tweet',
+        title: 'RC Tweet: "Power to the Players 🇺🇸 🇨🇦"',
         dateYYYYMMDD: '2021-07-28',
         urls: [
             {
@@ -694,10 +699,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-07-28.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'power to the players', 'canada', 'mario', 'olympics', 'hockey'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets googly eyes',
         dateYYYYMMDD: '2021-07-29',
         urls: [
             {
@@ -711,10 +716,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-googly-eyes.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'shitposting'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets a face swap meme',
         dateYYYYMMDD: '2021-08-06',
         urls: [
             {
@@ -727,10 +732,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'swap'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets a South Park meme',
         dateYYYYMMDD: '2021-08-11',
         urls: [
             {
@@ -740,14 +745,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'Drugs are bad, you shoudn’t do drugs mkay',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-08-11.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'south park'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets a face swap meme',
         dateYYYYMMDD: '2021-08-19',
         urls: [
             {
@@ -761,10 +766,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-08-19.PNG',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'swap', 'shorts'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Time for pillow fights and 60s music 🎶"',
         dateYYYYMMDD: '2021-08-27',
         urls: [
             {
@@ -783,10 +788,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Time for pillow fights and 60s music 🎶"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'pillow', 'music'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Talk is cheap, it takes money to buy whiskey."',
         dateYYYYMMDD: '2021-09-26',
         urls: [
             {
@@ -805,17 +810,17 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"Talk is cheap, it takes money to buy whiskey."',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'talk is cheap', 'it takes money to buy whiskey'],
+        significance: 1,
+        tags: ['ryan cohen tweet', 'talk is cheap', 'whiskey', 'money'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets a photo of himself at a GameStop store in Florida',
         dateYYYYMMDD: '2021-10-10',
         urls: [
             {
                 url: 'https://twitter.com/ryancohen/status/1447407898905268225',
                 type: 'X-TWITTER',
-                label: 'Ryan Cohen tweet',
+                label: 'Ryan Cohen tweet: "Florida ☀️👍"',
                 archiveLink: '',
             },
             {
@@ -831,14 +836,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: '"Florida ☀️👍"',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-10-10.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'florida'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets a picture of a small sumo wrestler pushing a much larger sumo wrestler',
         dateYYYYMMDD: '2021-10-26',
         urls: [
             {
@@ -854,14 +859,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'Ryan Cohen tweets a picture of a small sumo wrestler pushing a much larger sumo wrestler',
         types: [TimelineEventType.RC],
-        significance: 0,
+        significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-10-26.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'fight', 'struggle', 'wall st', 'sumo'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "MGGA"',
         dateYYYYMMDD: '2021-10-31',
         urls: [
             {
@@ -880,10 +885,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"MGGA"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'presidential rc'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Deciding between two options for my GME shares: HOLD or HODL…"',
         dateYYYYMMDD: '2021-11-08',
         urls: [
             {
@@ -908,10 +913,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Deciding between two options for my GME shares: HOLD or HODL…"',
         types: [TimelineEventType.RC],
         significance: 2,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'hold', 'gme'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "eew eew llams a evah I"',
         dateYYYYMMDD: '2021-11-14',
         urls: [
             {
@@ -930,10 +935,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"eew eew llams a evah I"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'penis'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Bedtime stories by Dr. Ruth 🐱"',
         dateYYYYMMDD: '2021-11-21',
         urls: [
             {
@@ -966,10 +971,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 2,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-11-21.jpg',
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet', 'DRS'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Only interested in speaking with candidates who want to actually WORK…"',
         dateYYYYMMDD: '2021-11-29',
         urls: [
             {
@@ -982,10 +987,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Only interested in speaking with candidates who want to actually WORK…"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen','ryan cohen tweet', 'work'],
+        tags: ['ryan cohen tweet', 'work'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "I’m cooler online than in real life"',
         dateYYYYMMDD: '2021-12-10',
         urls: [
             {
@@ -1004,10 +1009,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I’m cooler online than in real life"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'shitposting'],
+        tags: ['ryan cohen tweet', 'shitposting'],
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweet: "I miss you"',
         dateYYYYMMDD: '2021-12-13',
         urls: [
             {
@@ -1040,10 +1045,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-12-13.jpg',
-        tags: ['ryan cohen','ryan cohen tweet', 'ted cohen'],
+        tags: ['ryan cohen tweet', 'ted cohen', 'sugar daddy'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "💩"',
         dateYYYYMMDD: '2021-12-17',
         urls: [
             {
@@ -1055,17 +1060,17 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/rimx1d/ryan_cohen_on_twitter/?sort=top',
                 type: 'REDDIT',
-                label: 'Superstonk - Ryan Cohen on Twitter ',
+                label: 'Superstonk - Ryan Cohen on Twitter',
                 archiveLink: '',
             },
         ],
         description: '"💩"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'poop tweet'],
+        tags: ['ryan cohen tweet', 'poop'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Taking a dump in the metaverse."',
         dateYYYYMMDD: '2021-12-27',
         urls: [
             {
@@ -1085,10 +1090,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2021-12-27.jpg',
-        tags: ['ryan cohen','ryan cohen tweet', 'poop tweet'],
+        tags: ['ryan cohen tweet', 'poop', 'metaverse'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Never overestimate a man who underestimates himself"',
         dateYYYYMMDD: '2022-01-03',
         urls: [
             {
@@ -1107,10 +1112,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Never overestimate a man who underestimates himself"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'shitposting'],
+        tags: ['ryan cohen tweet', 'shitposting'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Happy Anniversary 💩"',
         dateYYYYMMDD: '2022-01-11',
         urls: [
             {
@@ -1129,10 +1134,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Happy Anniversary 💩"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'poop tweet', 'shitposting'],
+        tags: ['ryan cohen tweet', 'poop', 'shitposting'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Why waste money on college when Wikipedia is free…"',
         dateYYYYMMDD: '2022-01-27',
         urls: [
             {
@@ -1157,10 +1162,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Why waste money on college when Wikipedia is free…"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'college', 'wikipedia', '69', 'shitposting'],
+        tags: ['ryan cohen tweet', 'college', 'wikipedia', '69', 'shitposting'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Anyone going to the movies tonight? 🍿"',
         dateYYYYMMDD: '2022-01-28',
         urls: [
             {
@@ -1169,14 +1174,20 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://en.wikipedia.org/wiki/GameStop:_Rise_of_the_Players',
+                type: 'WIKIPEDIA',
+                label: 'GameStop: Rise of the Players'
+            }
         ],
-        description: '"Anyone going to the movies tonight? 🍿"',
+        description: '"Anyone going to the movies tonight? 🍿" - in reference to GameStop Rise of the Players',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        tags: ['ryan cohen tweet'],
+        imgSrc: 'assets/rc-tweets/rc-tweet-2022-01-28.jpg'
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "The 21st century ☎️"',
         dateYYYYMMDD: '2022-02-08',
         urls: [
             {
@@ -1212,11 +1223,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"The 21st century ☎️"',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet'],
+        significance: 1,
+        tags: ['ryan cohen tweet'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Who will be the piñata for all this inflation? 🤨"',
         dateYYYYMMDD: '2022-02-09',
         urls: [
             {
@@ -1235,10 +1246,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Who will be the piñata for all this inflation? 🤨"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'inflation'],
+        tags: ['ryan cohen tweet', 'inflation'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about fiscal and monetary policy',
         dateYYYYMMDD: '2022-02-11',
         urls: [
             {
@@ -1263,10 +1274,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"The reverberations of fiscal and monetary policy are likely to be more severe to humans than any climate or societal disaster 💀"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'climate change', 'society', 'inflation', 'politics', 'fiscal policy', 'monetary policy', 'disaster', 'fed'],
+        tags: ['ryan cohen tweet', 'climate change', 'society', 'inflation', 'politics', 'fiscal policy', 'monetary policy', 'disaster', 'fed'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "God Bless Gmerica 🏴‍☠️"',
         dateYYYYMMDD: '2022-02-16',
         urls: [
             {
@@ -1285,10 +1296,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"God Bless Gmerica 🏴‍☠️"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen','ryan cohen tweet', 'gmerica', 'god bless gmerica'],
+        tags: ['ryan cohen tweet', 'gmerica', 'pirate'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet - "🩳"',
         dateYYYYMMDD: '2022-02-22',
         urls: [
             {
@@ -1313,10 +1324,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"🩳"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen','ryan cohen tweet', 'shorts'],
+        tags: ['ryan cohen tweet', 'shorts'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "The apple doesn’t fall far from the tree 🍏"',
         dateYYYYMMDD: '2022-03-02',
         urls: [
             {
@@ -1341,10 +1352,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"The apple doesn’t fall far from the tree 🍏"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'apple',],
+        tags: ['ryan cohen tweet', 'apple',],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet - "No overpaid execs in the metaverse 🔨"',
         dateYYYYMMDD: '2022-03-07',
         urls: [
             {
@@ -1363,10 +1374,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"No overpaid execs in the metaverse 🔨"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'overpaid', 'consultants', 'metaverse'],
+        tags: ['ryan cohen','ryan cohen tweet', 'overpaid', 'consultants', 'metaverse', 'overpaid executives'],
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen sends a letter to Bed Bath and Beyond',
         dateYYYYMMDD: '2022-03-08',
         urls: [
             {
@@ -1399,7 +1410,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 label: 'Superstonk thread - RC on Twitter',
                 archiveLink: '',
             },
-
+            {
+                url: 'https://lemmy.whynotdrs.org/post/449785',
+                type: 'LEMMY',
+                label: 'March 6, 2022 - Ryan Cohen writes letter to Bed Bath and Beyond board of directors'
+            }
         ],
         description: '"Sent letter to $BBBY board, got no response. Sent email to CEO asking for a discussion, haven’t gotten a prompt response. Too busy talking to expensive consultants?"',
         types: [TimelineEventType.RC],
@@ -1407,7 +1422,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         tags: ['ryan cohen','ryan cohen tweet', 'bbby', 'letter', 'consultants'],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Short sellers are the dumb stormtroopers of the investing galaxy"',
         dateYYYYMMDD: '2022-03-14',
         urls: [
             {
@@ -1442,7 +1457,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         tags: ['ryan cohen','ryan cohen tweet', 'short sellers', 'dumb stormtroopers',],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Good use of taxpayer $ is the government cracking down on hedge fund short sellers"',
         dateYYYYMMDD: '2022-03-15',
         urls: [
             {
@@ -1467,16 +1482,16 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Good use of taxpayer $ is the government cracking down on hedge fund short sellers"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen','ryan cohen tweet', 'government', 'hedge funds', 'short sellers', 'regulation'],
+        tags: ['ryan cohen','ryan cohen tweet', 'us government', 'hedge funds', 'short sellers', 'regulation', 'taxes'],
     },
     {
-        title: 'Ryan Cohen buys 100,000 shares of GME',
+        title: 'Ryan Cohen: "I put my money where my mouth is"',
         dateYYYYMMDD: '2022-03-22',
         urls: [
             {
                 url: 'https://twitter.com/ryancohen/status/1506395956832612354',
                 type: 'X-TWITTER',
-                label: 'Ryan Cohen tweet',
+                label: 'Ryan Cohen tweet - "I put my money where my mouth is"',
                 archiveLink: '',
             },
             {
@@ -1513,7 +1528,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I put my money where my mouth is"',
         types: [TimelineEventType.RC],
         significance: 2,
-        tags: ['ryan cohen','ryan cohen tweet', 'gme', 'purchase', 'i put my money where my mouth is'],
+        tags: ['ryan cohen tweet', 'gme', 'purchase',],
     },
     {
         title: 'Ryan Cohen tweets',
@@ -1551,7 +1566,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         tags: ['overpaid', 'overpriced', 'consultants', 'bcg', 'fight', 'ryan cohen', 'ryan cohen tweet',],
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "💩@BCG💩"',
         dateYYYYMMDD: '2022-03-26',
         urls: [
             {
@@ -1570,10 +1585,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"💩@BCG💩"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet', 'bcg', 'consultants']
+        tags: ['ryan cohen tweet', 'bcg', 'consultants', 'poop']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "I’m proud of the GameStop team. They rock. 🏴‍☠️🔥"',
         dateYYYYMMDD: '2022-03-27',
         urls: [
             {
@@ -1586,10 +1601,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I’m proud of the GameStop team. They rock. 🏴‍☠️🔥"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'pirate']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets about consultants',
         dateYYYYMMDD: '2022-03-30',
         urls: [
             {
@@ -1626,10 +1641,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Who is more reprehensible, hedge fund short sellers or overpriced consultants?", "Children and animals must be protected at all costs", "I was born to work", "gas prices are outrageous. Wonder if BCG has a view…"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet', 'hedge funds', 'short sellers', 'overpriced', 'consultants', 'work', 'gas', 'bcg', 'inflation']
+        tags: ['ryan cohen tweet', 'hedge funds', 'short sellers', 'overpaid', 'consultants', 'work', 'gas', 'bcg', 'inflation', 'flatulence']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "The last time people were excited to see me"',
         dateYYYYMMDD: '2022-04-03',
         urls: [
             {
@@ -1643,10 +1658,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-03.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet', 'bbby', 'baby', 'buybuybaby']
+        tags: ['ryan cohen tweet', 'bbby', 'baby', 'buybuybaby']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "You know what happens when I eat too much fruit…"',
         dateYYYYMMDD: '2022-04-04',
         urls: [
             {
@@ -1665,10 +1680,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"You know what happens when I eat too much fruit…"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet', 'fruit', 'apple', 'poop tweet']
+        tags: ['ryan cohen tweet', 'fruit', 'apple', 'poop']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about Boston Consulting Group',
         dateYYYYMMDD: '2022-04-07',
         urls: [
             {
@@ -1678,14 +1693,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: 'Ew, I stepped in shit: BCG',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-07.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'boston consulting group', 'poop']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Show me your funniest memes please!"',
         dateYYYYMMDD: '2022-04-09',
         urls: [
             {
@@ -1710,10 +1725,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Show me your funniest memes please!"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about inflated compensation in corporate America',
         dateYYYYMMDD: '2022-04-11',
         urls: [
             {
@@ -1726,10 +1741,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Inflated compensation across Corporate America is deplorable. Is this connected to over a decade of negative real interest rates and massive stimulus?"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'overpaid executives', 'corporate america', 'interest rates']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Who is more arrogant and elitist: a high priced consultant or a Wall Street analyst?"',
         dateYYYYMMDD: '2022-04-12',
         urls: [
             {
@@ -1738,14 +1753,25 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 label: 'Ryan Cohen tweet',
                 archiveLink: '',
             },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/u2eqog/ryan_cohen_tweet/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+            },
+            {
+                url: 'https://finance.yahoo.com/news/bed-bath-beyond-earnings-will-be-very-terrible-strategist-says-210648992.html?.tsrc=fin-srch&guccounter=1',
+                type: 'NEWS',
+                label: 'Loop Capital’s Anthony Chukumba on GameStop’s new CEO',
+                archiveLink: '',
+            }
         ],
-        description: '"Who is more arrogant and elitist: a high priced consultant or a Wall Street analyst?"',
+        description: 'In an implicit response to Anthony Chukumba:  "Who is more arrogant and elitist: a high priced consultant or a Wall Street analyst?"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'consultants', 'wall st', 'chukumba', 'bbby', 'meme stock']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Ryan Cohen by day, Warren Icahn by night"',
         dateYYYYMMDD: '2022-04-13',
         urls: [
             {
@@ -1757,7 +1783,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/u2vw5p/warren_icahn_on_twitter/?sort=top',
                 type: 'REDDIT',
-                label: 'Superstonk thread',
+                label: 'Warren Icahn on twitter',
                 archiveLink: '',
             },
             {
@@ -1770,10 +1796,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Ryan Cohen by day, Warren Icahn by night"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'carl icahn', 'warren buffet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Life is like a box of condoms"',
         dateYYYYMMDD: '2022-04-18',
         urls: [
             {
@@ -1792,10 +1818,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Life is like a box of condoms"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'penis']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about inflation',
         dateYYYYMMDD: '2022-04-20',
         urls: [
             {
@@ -1815,10 +1841,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-20.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'federal reserve', 'money printing', 'inflation', 'russia']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about money printing',
         dateYYYYMMDD: '2022-04-21',
         urls: [
             {
@@ -1832,10 +1858,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: '',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'politics', 'inflation', 'us government', 'federal reserve', 'interest rates', 'money printing']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "hola"',
         dateYYYYMMDD: '2022-04-24',
         urls: [
             {
@@ -1855,10 +1881,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: '',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "🗽"',
         dateYYYYMMDD: '2022-04-25',
         urls: [
             {
@@ -1874,14 +1900,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '"🗽"',
+        description: 'If freedom of speech is taken away, then dumb and silent we may be led, like sheep to the slaughter.',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-25.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'liberty', 'presidential RC', 'freedom']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets about toilets',
         dateYYYYMMDD: '2022-04-27',
         urls: [
             {
@@ -1912,10 +1938,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"In my office 🚽", "iToilet is imperative to the future of humanity", "What should Apple make next?"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'toilet', 'apple']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about government spending',
         dateYYYYMMDD: '2022-04-29',
         urls: [
             {
@@ -1935,10 +1961,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-04-29.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'us government', 'debt', 'poop']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "General Tso’s Chicken is the official spelling"',
         dateYYYYMMDD: '2022-05-03',
         urls: [
             {
@@ -1957,10 +1983,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"General Tso’s Chicken is the official spelling"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'tso']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet:  "What’s 30 trillion between friends…"',
         dateYYYYMMDD: '2022-05-04',
         urls: [
             {
@@ -1974,10 +2000,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-05-04.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'us government', 'debt', 'federal reserve']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets: "weaning the economy off cheap money is like breaking a coke addiction"',
         dateYYYYMMDD: '2022-05-06',
         urls: [
             {
@@ -2008,10 +2034,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"weaning the economy off cheap money is like breaking a coke addiction", "i use twitter to overcompensate for my small weewee 🔎"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'coke', 'interest rates', 'federal reserve', 'penis']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets: "Death and interest rates are the greatest equalizers. In that order."',
         dateYYYYMMDD: '2022-05-08',
         urls: [
             {
@@ -2024,10 +2050,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Death and interest rates are the greatest equalizers. In that order."',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'interest rates', 'federal reserve']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets:  "I got my 8th booster and now I’m fully vaccinated and 2 inches taller"',
         dateYYYYMMDD: '2022-05-10',
         urls: [
             {
@@ -2046,10 +2072,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I got my 8th booster and now I’m fully vaccinated and 2 inches taller"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen', 'ryan cohen tweet', 'covid']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about inflation',
         dateYYYYMMDD: '2022-05-11',
         urls: [
             {
@@ -2068,7 +2094,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I’m really upset with Putin for causing all this inflation"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'russia', 'ukraine', 'inflation']
     },
     {
         title: 'Ryan Cohen tweet',
@@ -2090,10 +2116,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Fair markets are free markets"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'capitalism', 'markets', 'corruption']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets: "I love the spice girls"',
         dateYYYYMMDD: '2022-05-16',
         urls: [
             {
@@ -2112,7 +2138,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I love the spice girls"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'spice girls', 'tinfoil']
     },
     {
         title: 'Ryan Cohen tweets',
@@ -2146,10 +2172,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"All the “experts” pontificating about when the next recession will begin because equities are declining due to interest rates normalizing is amusing", "Politicians and diapers must be changed often, and for the same reason" ',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'interest rates', 'politics']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets: "I just played with my dad. Dreams with him are the best."',
         dateYYYYMMDD: '2022-05-23',
         urls: [
             {
@@ -2180,10 +2206,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I just played with my dad. Dreams with him are the best.", "It’s official! The GameStop Wallet is here."',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'ted cohen', 'dream', 'wallet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets:  "It is critical for humanity that we expand our civilization to Uranus"',
         dateYYYYMMDD: '2022-05-25',
         urls: [
             {
@@ -2202,10 +2228,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"It is critical for humanity that we expand our civilization to Uranus"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'uranus']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Lurking…🇨🇦"',
         dateYYYYMMDD: '2022-05-27',
         urls: [
             {
@@ -2225,10 +2251,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-05-27.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Life is for working, loving, and laughing"',
         dateYYYYMMDD: '2022-05-30',
         urls: [
             {
@@ -2247,10 +2273,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Life is for working, loving, and laughing"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'life', 'work']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Power to the players"',
         dateYYYYMMDD: '2022-06-03',
         urls: [
             {
@@ -2269,10 +2295,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Power to the players"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'power to the players']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Work is so sexy"',
         dateYYYYMMDD: '2022-06-06',
         urls: [
             {
@@ -2291,10 +2317,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Work is so sexy"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'work']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen poll tweet: "Did coronavirus lockdowns and economic stimulus spark inflation?"',
         dateYYYYMMDD: '2022-06-10',
         urls: [
             {
@@ -2313,10 +2339,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Poll: Did coronavirus lockdowns and economic stimulus spark inflation?"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen', 'ryan cohen tweet', 'covid', 'inflation']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets about China and politics',
         dateYYYYMMDD: '2022-06-12',
         urls: [
             {
@@ -2347,10 +2373,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"China is a sleeping giant. Let her sleep, for when she wakes she will move the world", "Politics is the gentle art of getting votes from the poor and campaign funds from the rich, by promising to protect each from the other"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'china', 'politics']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets: "The hell with the left and the right. Stop dividing the people 💜"',
         dateYYYYMMDD: '2022-06-13',
         urls: [
             {
@@ -2368,11 +2394,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"The hell with the left and the right. Stop dividing the people 💜"',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        significance: 1,
+        tags: ['ryan cohen tweet', 'politics']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets:  "Apple pie and ice cream make me happy"',
         dateYYYYMMDD: '2022-06-14',
         urls: [
             {
@@ -2391,10 +2417,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Apple pie and ice cream make me happy"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'apple', 'ice cream']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets about inflation',
         dateYYYYMMDD: '2022-06-17',
         urls: [
             {
@@ -2438,10 +2464,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-06-17.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'inflation', 'presidential rc', 'pirate', 'power to the players']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets: "Happy Father’s Day. Why do the good die young?"',
         dateYYYYMMDD: '2022-06-19',
         urls: [
             {
@@ -2461,10 +2487,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-06-19.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'ted cohen']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets about flatulence',
         dateYYYYMMDD: '2022-06-20',
         urls: [
             {
@@ -2495,10 +2521,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Flatulence is the best icebreaker", "Preferably on the first date to efficiently assess devotion"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'flatulence']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets about corporate America:  "It’s head they win, tails you lose."',
         dateYYYYMMDD: '2022-06-21',
         urls: [
             {
@@ -2529,10 +2555,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Nobody sane can defend today’s compensation for the Corporate Power Brokers (most of which is risk free)","Correct. In power with no personal money at risk and perverse financial incentives. It’s head they win, tails you lose."',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'corporate america', 'overpaid executives', 'risk-free compensation']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets about China',
         dateYYYYMMDD: '2022-06-24',
         urls: [
             {
@@ -2587,10 +2613,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I have a crush on China 🇨🇳 🍜", "This is a testament to the hard working people of China 🇨🇳", "China has a nationwide high-speed rail network that spans almost 22,000 miles. This is an amazing achievement."',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'china']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about risk-free compensation',
         dateYYYYMMDD: '2022-06-27',
         urls: [
             {
@@ -2603,10 +2629,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Wall Street charges lofty fees, doesn’t risk its own money, consistently underperforms and wins regardless of how the economy does. Meanwhile, Main Street faces inflation and a growing wealth gap. What’s the solution?"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'corporate america', 'wall street', 'inflation', 'overpaid executives', 'risk-free compensation']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about overpaid executives',
         dateYYYYMMDD: '2022-06-29',
         urls: [
             {
@@ -2625,10 +2651,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I’m sick of seeing failed executives make millions in risk free compensation while shareholders are left holding the bag"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'overpaid executives', 'corporate america', 'risk-free compensation']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about overpaid executives',
         dateYYYYMMDD: '2022-07-05',
         urls: [
             {
@@ -2646,11 +2672,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"In general, when an executive gets paid millions of dollars and leaves a company in shambles, they should be forced to return the money"',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        significance: 1,
+        tags: ['ryan cohen tweet', 'overpaid executives', 'corporate america']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets about a new launch',
         dateYYYYMMDD: '2022-07-11',
         urls: [
             {
@@ -2668,11 +2694,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"Whoops", "That left for dead retailer just launched something new 😳"',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        significance: 1,
+        tags: ['ryan cohen tweet', 'nft marketplace']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about coke',
         dateYYYYMMDD: '2022-07-13',
         urls: [
             {
@@ -2697,10 +2723,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I love coke"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'coke']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about dingleberries',
         dateYYYYMMDD: '2022-07-15',
         urls: [
             {
@@ -2719,43 +2745,44 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Are dingleberries fruit?"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'drs', 'computershare', 'dspp', 'fruit']
     },
-    // {
-    //     title: 'Ryan Cohen tweets',
-    //     dateYYYYMMDD: '2022-07-21',
-    //     urls: [
-    //         {
-    //             url: 'https://twitter.com/ryancohen/status/1550285404149952513',
-    //             type: 'X-TWITTER',
-    //             label: 'Ryan Cohen tweet',
-    //             archiveLink: '',
-    //         },
-    //         {
-    //             url: 'https://twitter.com/ryancohen/status/1550293000344899584',
-    //             type: 'X-TWITTER',
-    //             label: 'Ryan Cohen tweet',
-    //             archiveLink: '',
-    //         },
-    //         {
-    //             url: 'https://www.reddit.com/r/Superstonk/comments/w4x62m/ryan_cohen_on_twitter_happy_splividend_week/?sort=top',
-    //             type: 'REDDIT',
-    //             label: 'Superstonk thread',
-    //             archiveLink: '',
-    //         },
-    //         {
-    //             url: 'https://www.reddit.com/r/Superstonk/comments/w4xt2u/ryan_cohen_on_twitter_the_people_who_work_hardest/?sort=top',
-    //             type: 'REDDIT',
-    //             label: 'Superstonk thread',
-    //             archiveLink: '',
-    //         },
-    //     ],
-    //     description: '"Unless you sweat on the job you don’t know hard work. I have much respect for everyone working on the ground in our stores.", "The people who work hardest usually complain the least."',
-    //     type: [TimelineItemType.RC],
-    //     significance: 0,
-    // },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about work',
+        dateYYYYMMDD: '2022-07-21',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1550285404149952513',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://twitter.com/ryancohen/status/1550293000344899584',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/w4x62m/ryan_cohen_on_twitter_happy_splividend_week/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/w4xt2u/ryan_cohen_on_twitter_the_people_who_work_hardest/?sort=top',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+        ],
+        description: '"Unless you sweat on the job you don’t know hard work. I have much respect for everyone working on the ground in our stores.", "The people who work hardest usually complain the least."',
+        types: [TimelineEventType.RC],
+        significance: 1,
+        tags: ['ryan cohen tweet', 'work',],
+    },
+    {
+        title: 'Ryan Cohen tweet: "The best time to be alive in human history is now"',
         dateYYYYMMDD: '2022-07-27',
         urls: [
             {
@@ -2768,10 +2795,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"The best time to be alive in human history is now"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'life']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "Ask not what your company can do for you – ask what you can do for your company"',
         dateYYYYMMDD: '2022-08-05',
         urls: [
             {
@@ -2790,10 +2817,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Ask not what your company can do for you – ask what you can do for your company"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'jfk', 'presidential rc']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "if we print a few trillion more, it should bring inflation down #taxtherich #wealthtax"',
         dateYYYYMMDD: '2022-08-10',
         urls: [
             {
@@ -2818,10 +2845,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"if we print a few trillion more, it should bring inflation down #taxtherich #wealthtax", "💜"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen', 'ryan cohen tweet', 'federal reserve', 'inflation', 'taxes']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "GameStop store leaders ❤️"',
         dateYYYYMMDD: '2022-08-24',
         urls: [
             {
@@ -2875,10 +2902,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Low interest rates may prove to be like easy sex — tempting but possibly fatal", "I think my tweets are being suppressed"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'federal reserve', 'interest rates', 'inflation', 'censorship']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets a picture of himself with Carl Icahn',
         dateYYYYMMDD: '2022-10-17',
         urls: [
             {
@@ -2916,10 +2943,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 3,
         imgSrc: 'assets/rc-tweets/rc-icahn.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen', 'ryan cohen tweet', 'carl icahn']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet:  "I also want to be the Book King 👑"',
         dateYYYYMMDD: '2022-11-19',
         urls: [
             {
@@ -2960,7 +2987,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
             },
             {
                 url: 'https://www.wsj.com/articles/gamestops-ryan-cohen-wants-to-be-more-than-a-meme-stock-king-11668834015',
-                type: 'OTHER',
+                type: 'NEWS',
                 label: 'GameStop’s Ryan Cohen Wants to Be More Than a Meme-Stock King - WSJ',
                 archiveLink: '',
             },
@@ -2969,10 +2996,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: 'I also want to be the Book King 👑',
         types: [TimelineEventType.RC],
         significance: 2,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen', 'ryan cohen tweet', 'book', 'teddy', 'king', 'meme stock']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweet: "Teddy making Thanksgiving great again"',
         dateYYYYMMDD: '2022-11-23',
         urls: [
             {
@@ -3004,10 +3031,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2022-11-23.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'teddy', 'censorship']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets:  "Has inflation cured the land from covid?"',
         dateYYYYMMDD: '2022-12-30',
         urls: [
             {
@@ -3032,11 +3059,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Has inflation cured the land from covid?"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'inflation', 'covid']
     },
 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about a scene from the movie Titanic',
         dateYYYYMMDD: '2023-01-09',
         urls: [
             {
@@ -3055,10 +3082,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Jack, I want you to draw me like one of your French girls. Wearing this. Wearing only this."',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet:  RYAN COHEN BUYS ALL STOCKS',
         dateYYYYMMDD: '2023-01-18',
         urls: [
             {
@@ -3076,18 +3103,18 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
             {
                 url: 'https://www.reddit.com/r/Superstonk/comments/10esd47/breaking_news_ryan_cohen_buys_all_the_stocks/?sort=top',
                 type: 'REDDIT',
-                label: 'Superstonk thread',
+                label: 'Meme posted in superstonk January 17',
                 archiveLink: '',
             },
         ],
-        description: 'RC Tweets a meme that originated on Superstonk',
+        description: 'Ryan Cohen buys all stocks - a meme first posted in superstonk',
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-01-18.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'superstonk']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about a turtleneck',
         dateYYYYMMDD: '2023-01-25',
         urls: [
             {
@@ -3106,10 +3133,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"You know you’ve made it when you buy a turtleneck"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about balloons',
         dateYYYYMMDD: '2023-02-14',
         urls: [
             {
@@ -3128,10 +3155,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"someone tell the government to stop shooting down my balloons🎈"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'us government']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets "Hello" in Chinese',
         dateYYYYMMDD: '2023-03-08',
         urls: [
             {
@@ -3150,10 +3177,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"你好"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'china']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about Silicon Valley Bank',
         dateYYYYMMDD: '2023-03-09',
         urls: [
             {
@@ -3172,10 +3199,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Does this mean I don’t have to pay back Silicon Valley Bank?"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about TARP bailouts',
         dateYYYYMMDD: '2023-03-12',
         urls: [
             {
@@ -3194,10 +3221,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Odd that treasury isn’t interested in investing in banks today when in 2009 those TARP bailouts yielded some of the best returns for taxpayers.."',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'us government', 'bailouts', 'ukraine']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about a once a great American brand',
         dateYYYYMMDD: '2023-04-12',
         urls: [
             {
@@ -3222,10 +3249,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"I just got off the phone with what was once a great American brand. Lots of problems, no accountability for high paid execs and little interest in my help (at no cost). This could get interesting."',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'corporate america', 'overpaid executives']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet: "It’s 420 everyday in Corporate America"',
         dateYYYYMMDD: '2023-04-20',
         urls: [
             {
@@ -3244,10 +3271,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"It’s 420 everyday in Corporate America"',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'corporate america']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets: "America is littered with managers making millions in risk free compensation"',
         dateYYYYMMDD: '2023-04-26',
         urls: [
             {
@@ -3266,10 +3293,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"America is littered with managers making millions in risk free compensation"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'overpaid executives', 'corporate america']
     },
     {
-        title: 'Ryan Cohen tweets',
+        title: 'Ryan Cohen tweets "Corporate America is a wolf in liberal’s clothing"',
         dateYYYYMMDD: '2023-04-27',
         urls: [
             {
@@ -3299,11 +3326,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"Corporate America is a wolf in liberal’s clothing"',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        significance: 1,
+        tags: ['ryan cohen tweet', 'corporate america', 'politics']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet about inflation the Federal Reserve',
         dateYYYYMMDD: '2023-05-02',
         urls: [
             {
@@ -3322,10 +3349,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"The Fed may have to choose between fighting inflation or bank contagion"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'inflation', 'federal reserve']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about liberty',
         dateYYYYMMDD: '2023-05-11',
         urls: [
             {
@@ -3347,14 +3374,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: '"Give me liberty or give me death!!!  Unless there’s a virus with a 99% recovery rate in which case strip me of my freedoms, my job, my constiitutional rights and put me under house arrest."',
         types: [TimelineEventType.RC],
         significance: 0,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-11.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'covid', 'bbby']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about Mother’s Day',
         dateYYYYMMDD: '2023-05-14',
         urls: [
             {
@@ -3373,10 +3400,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Show Mom love. There’s nothing more special than a GameStop gift card for Mother’s Day."',
         types: [TimelineEventType.RC],
         significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about DAVE',
         dateYYYYMMDD: '2023-05-21',
         urls: [
             {
@@ -3392,14 +3419,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: '"Due to cutbacks, we’re gonna have to fire Dave',
         types: [TimelineEventType.RC],
-        significance: 0,
+        significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-21.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'corporate america']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about CEO pay',
         dateYYYYMMDD: '2023-05-23',
         urls: [
             {
@@ -3415,14 +3442,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
                 archiveLink: '',
             },
         ],
-        description: '',
+        description: '"The average CEO is paid 351 times as much as a typical worker in their industry."',
         types: [TimelineEventType.RC],
-        significance: 0,
+        significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-05-23.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'overpaid executives', 'corporate america']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about his gastro',
         dateYYYYMMDD: '2023-06-03',
         urls: [
             {
@@ -3440,11 +3467,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"My gastro once told me it is a terrible mistake that people often mistake kindness for weakness"',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        significance: 1,
+        tags: ['ryan cohen tweet', 'gastro', 'flatulence']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets: "Not for long"',
         dateYYYYMMDD: '2023-06-07',
         urls: [
             {
@@ -3463,10 +3490,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Not for long"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'matt furlong']
     }, 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets "Happy Father’s Day"',
         dateYYYYMMDD: '2023-06-18',
         urls: [
             {
@@ -3478,12 +3505,12 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"Happy Father’s Day"',
         types: [TimelineEventType.RC],
-        significance: 0,
+        significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-06-18.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'ted cohen']
     },
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets that his pay has doubled',
         dateYYYYMMDD: '2023-06-22',
         urls: [
             {
@@ -3502,10 +3529,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"My boss doubled my pay and made me employee of the month ⭐️"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     }, 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet:  "I challenge Warren Buffett to a thumb war 👍"',
         dateYYYYMMDD: '2023-06-23',
         urls: [
             {
@@ -3523,11 +3550,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"I challenge Warren Buffett to a thumb war 👍"',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        significance: 1,
+        tags: ['ryan cohen tweet', 'warren buffet']
     }, 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweet:  "Work hard or please leave"',
         dateYYYYMMDD: '2023-06-29',
         urls: [
             {
@@ -3546,10 +3573,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Work hard or please leave"',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet', 'work']
     }, 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets that his dog Tylee passed away',
         dateYYYYMMDD: '2023-07-25',
         urls: [
             {
@@ -3569,10 +3596,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-07-25.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     }, 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about cat litter and video games',
         dateYYYYMMDD: '2023-08-02',
         urls: [
             {
@@ -3590,11 +3617,11 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         ],
         description: '"There is nothing more foolish than cat litter and video games"',
         types: [TimelineEventType.RC],
-        significance: 0,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        significance: 1,
+        tags: ['ryan cohen tweet']
     }, 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about physical disk drives',
         dateYYYYMMDD: '2023-09-03',
         urls: [
             {
@@ -3613,10 +3640,10 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '"Big win for consumers. Consumers have also invested their hard earned money in to physical video games. Disk drives should be required on consoles."',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     }, 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets a picture of himself as an old man',
         dateYYYYMMDD: '2023-10-04',
         urls: [
             {
@@ -3645,14 +3672,14 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
             },
             
         ],
-        description: '',
+        description: 'Ryan Cohen has aged',
         types: [TimelineEventType.RC],
         significance: 1,
         imgSrc: 'assets/rc-tweets/rc-tweet-2023-10-04.jpg',
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     }, 
     {
-        title: 'Ryan Cohen tweet',
+        title: 'Ryan Cohen tweets about inflation',
         dateYYYYMMDD: '2023-10-25',
         urls: [
             {
@@ -3684,7 +3711,7 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '“The most important thing to remember is that inflation is not an act of God, that inflation is not a catastrophe of the elements or a disease that comes like the plague. Inflation is a policy.” -- Ludwig von Mises',
         types: [TimelineEventType.RC],
         significance: 2,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen', 'ryan cohen tweet', 'inflation']
     }, 
     {
         title: '5 new Teddy books listed on teddy.com',
@@ -3734,6 +3761,31 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         description: '“I don’t understand why people would want to get rid of pigeons. They don’t bother no one.”— Mike Tyson',
         types: [TimelineEventType.RC],
         significance: 1,
-        tags: ['ryan cohen', 'ryan cohen tweet']
+        tags: ['ryan cohen tweet']
     }, 
+    {
+        title: 'Ryan Cohen customer service reply tweet',
+        dateYYYYMMDD: '2023-12-03',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1740502410194473412?t=1kgf16QwDp2Ydp9mdZLBYw',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen customer service reply tweet',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18t6rzf/customer_service_ceo_ryan_cohen_ryancohen_on_x/',
+                type: 'REDDIT',
+                label: 'Customer Service CEO Ryan Cohen (@ryancohen) on X',
+                archiveLink: '',
+            },
+        ],
+        description: 'Please send order details. I will DM you.',
+        types: [TimelineEventType.RC],
+        significance: 1,
+        tags: ['ryan cohen tweet']
+    }, 
+
+
+    
 ];

@@ -274,6 +274,26 @@ export const mediaItemEvents: TimelineEventConfig[] = [
         tags: ['propaganda', 'Jim Cramer', 'scam', 'fraud', 'crime', 'FTX', 'sneeze', 'robinhood', 'media', 'corruption'],
     },
     {
+        title: 'Thomas Peterffy says:  "There will be a final [market] crash, a final crash from which there is no return."',
+        dateYYYYMMDD: '2023-05-06',
+        urls:  [
+            {
+                url: 'https://www.youtube.com/watch?v=dsl5A6AR1KA&t=521s',
+                type: 'YOUTUBE',
+                label: 'Meet The $300 Billion Man',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18oi1kp/thomas_peterffy_knows_whats_coming/',
+                type: 'REDDIT',
+                label: 'Thomas Peterffy knows what’s coming.'
+            }
+        ],
+        description: 'There will be a final [market] crash, a final crash from which there is no return.',
+        types: [TimelineEventType.MEDIA],
+        significance: 2,
+        tags: ['thomas peterffy', 'crash'],
+    },
+    {
         title: 'Apes Together Strong released',
         dateYYYYMMDD: '2023-05-22',
         urls: [
