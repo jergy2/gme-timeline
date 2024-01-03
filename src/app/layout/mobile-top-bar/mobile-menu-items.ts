@@ -2,13 +2,13 @@ import { faCircleInfo, faInfoCircle, faTableList } from "@fortawesome/free-solid
 import { MobileMenuItem } from "./mobile-menu-item.class";
 
 export const mobileMenuItems: MobileMenuItem[] = [
-        new MobileMenuItem(
-        'IMAGE',
-        null,
-        '/research',
-        'assets/flaticon/search-1.png',
-        'Research'
-    ),
+    //     new MobileMenuItem(
+    //     'IMAGE',
+    //     null,
+    //     '/research',
+    //     'assets/flaticon/search-1.png',
+    //     'Research'
+    // ),
     // new MobileMenuItem(
     //     'IMAGE',
     //     null,
