@@ -1,1 +1,23 @@
-<p>calendar works!</p>
+<div class="calendar-root">
+    <div class="title">
+        GME Calendar
+    </div>
+    <div class="view-buttons-bar">
+        <div class="view-button">
+            Year
+        </div>
+        <div class="view-button">Month</div>
+        <div class="view-button">
+            Day
+        </div>
+    </div>
+
+    <div class="year-view">
+        <div class="months-container">
+            <app-year-view-month [month]="month" *ngFor="let month of months"
+                class="year-view-month"></app-year-view-month>
+        </div>
+    </div>
+
+
+</div>

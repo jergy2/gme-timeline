@@ -33,6 +33,8 @@ import { SettingsControlsComponent } from './pages/display-timeline/timeline-con
 import { ChaptersControlComponent } from './pages/display-timeline/timeline-controls/chapters-control/chapters-control.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { ResearchComponent } from './pages/research/research.component';
+import { MonthComponent } from './pages/calendar/month/month.component';
+import { YearViewMonthComponent } from './pages/calendar/year-view-month/year-view-month.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { ResearchComponent } from './pages/research/research.component';
     SettingsControlsComponent,
     ChaptersControlComponent,
     CalendarComponent,
-    ResearchComponent
+    ResearchComponent,
+    MonthComponent,
+    YearViewMonthComponent
   ],
   imports: [
     BrowserModule,

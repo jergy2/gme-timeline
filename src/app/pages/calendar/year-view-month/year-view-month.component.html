@@ -1,0 +1,26 @@
+<div class="month-root">
+    <div class="month-title">
+        {{ month.monthName }}
+    </div>
+
+    <div class="month-day-grid">
+        <div class="day-of-week-label">S</div>
+        <div class="day-of-week-label">M</div>
+        <div class="day-of-week-label">T</div>
+        <div class="day-of-week-label">W</div>
+        <div class="day-of-week-label">T</div>
+        <div class="day-of-week-label">F</div>
+        <div class="day-of-week-label">S</div>
+        <div *ngFor="let day of month.daysOfMonth" class="day-of-week"
+            [ngClass]="day.isDayOfThisMonth ? 'day-is-this-month' : 'day-is-not-this-month'">
+            <div class="label-container" *ngIf="day.mouseIsOver">
+                <div class="label" *ngIf="day.label">
+                    {{ day.label }}
+                </div>
+            </div>
+            <div class="day-number" [ngClass]="day.ngClass"
+                (mouseover)="day.onMouseOver()" (mouseleave)="day.onMouseLeave()">{{ day.date.format('D') }}
+            </div>
+        </div>
+    </div>
+</div>

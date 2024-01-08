@@ -3736,6 +3736,34 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         tags: ['ryan cohen', 'teddy', 'teddy books']
     }, 
     {
+        title: 'Ryan Cohen replies to Pulte:  "Overpaid executives"',
+        dateYYYYMMDD: '2023-11-27',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1729258757715317013',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen replies to Pulte"',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Teddy/comments/185f56o/rc_money_buys_overpaid_executives/',
+                type: 'REDDIT',
+                label: 'r/Teddy thread'
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/185f39l/rc/',
+                type: 'REDDIT',
+                label: 'contextless r/superstonk post - RC on Twitter',
+                archiveLink: '',
+            },
+        ],
+        description: 'RC replies to Pulte',
+        types: [TimelineEventType.RC],
+        significance: 1,
+        tags: ['ryan cohen tweet', 'overpaid executives', 'pulte'],
+        imgSrc: 'assets/rc-tweets/rc-reply-2023-11-27.PNG'
+    },
+    {
         title: 'Ryan Cohen tweet - pigeons',
         dateYYYYMMDD: '2023-12-03',
         urls: [
@@ -3764,8 +3792,31 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         tags: ['ryan cohen tweet']
     }, 
     {
+        title: 'Ryan Cohen replies to Kanye:  "Teddy Says Words Can Never Hurt You',
+        dateYYYYMMDD: '2023-12-26',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1739822783532515434',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen replies to Kanye"',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18rocby/rc_on_twitter/',
+                type: 'REDDIT',
+                label: 'Superstonk - RC on Twitter',
+                archiveLink: '',
+            },
+        ],
+        description: 'RC replies to Kanye West',
+        types: [TimelineEventType.RC],
+        significance: 1,
+        tags: ['ryan cohen tweet', 'teddy'],
+        imgSrc: 'assets/rc-tweets/rc-reply-2023-12-26.PNG'
+    },
+        {
         title: 'Ryan Cohen customer service reply tweet',
-        dateYYYYMMDD: '2023-12-03',
+        dateYYYYMMDD: '2023-12-28',
         urls: [
             {
                 url: 'https://twitter.com/ryancohen/status/1740502410194473412?t=1kgf16QwDp2Ydp9mdZLBYw',
@@ -3785,7 +3836,66 @@ export const rcTweetsEvents: TimelineEventConfig[] = [
         significance: 1,
         tags: ['ryan cohen tweet']
     }, 
-
-
-    
+    {
+        title: 'Ryan Cohen replies to Nintendo',
+        dateYYYYMMDD: '2024-01-05',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1740502410194473412?t=1kgf16QwDp2Ydp9mdZLBYw',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen replies to Nintendo:  "親愛なる任天堂さん、俊太郎さんに会うために日本に行きたいと思っています"',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/18zkjes/ryan_cohen_new_tweet/',
+                type: 'REDDIT',
+                label: 'Superstonk thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Teddy/comments/18zkmjm/new_rc_x_reply_to_nintendo/',
+                type: 'REDDIT',
+                label: 'r/Teddy thread'
+            }
+        ],
+        description: '"Dear Nintendo, I would like to go to Japan to meet Shuntaro."',
+        types: [TimelineEventType.RC],
+        significance: 1,
+        tags: ['ryan cohen tweet'],
+        imgSrc: 'assets/rc-tweets/rc-reply-2024-01-05.PNG'
+    }, 
+    {
+        title: 'Ryan Cohen makes a post about Cheerios - "wtf"',
+        dateYYYYMMDD: '2024-01-07',
+        urls: [
+            {
+                url: 'https://twitter.com/ryancohen/status/1744191091186806842',
+                type: 'X-TWITTER',
+                label: 'Ryan Cohen post',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Teddy/comments/191aor1/rc_tweet/',
+                type: 'REDDIT',
+                label: 'r/Teddy thread',
+                archiveLink: '',
+            },
+            {
+                url: 'https://www.reddit.com/r/Superstonk/comments/191anpp/ryan_cohen_on_twitter/',
+                type: 'REDDIT',
+                label: 'r/Superstonk thread',
+            },
+            {
+                url: 'https://www.reddit.com/r/BBBY/comments/191aphr/rc_tweet/',
+                type: 'REDDIT',
+                label: 'r/BBBY thread'
+            }
+        ],
+        description: '"wtf"',
+        types: [TimelineEventType.RC],
+        significance: 1,
+        tags: ['ryan cohen tweet', 'inflation'],
+        imgSrc: 'assets/rc-tweets/rc-tweet-2024-01-07.jpg'
+    },
 ];
+

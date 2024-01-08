@@ -1,0 +1,116 @@
+
+.month-root{
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    background-color: rgb(253, 253, 253);
+    
+
+    flex-grow: 2;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: rgb(250, 250, 250);
+
+    padding: 10px;
+    width: 280px;
+    height: 250px;
+}
+.month-root:hover{
+    border: 1px solid gray;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+}
+
+.month-day-grid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+
+
+}
+
+
+.day-of-week, .day-of-week-label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.day-of-week-label{
+    color: rgb(88, 88, 88);
+    font-size: 0.6em;
+}
+.day-of-week{
+    color: rgb(36, 36, 36);
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    padding: 2px;
+}
+.day-of-week:hover{
+
+}
+
+.day-is-this-month{
+    font-weight:420;
+    font-size: 0.8em;
+}
+.day-is-not-this-month{
+    color: rgb(170, 170, 170);
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0);
+}
+
+
+.label-container{
+    position:relative;
+    width: 0px;
+    height: 0px;
+    top: -50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.label{
+    min-width: 100px;
+    min-height: 20px;
+    padding: 5px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(198, 198, 255);   
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+
+.day-number{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.day-number:hover{
+    cursor: pointer;
+    border: 1px solid purple;
+    background-color: rgb(251, 251, 251);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.has-event{
+    background-color: rgb(198, 198, 255);   
+}
+.no-event{
+    
+}
