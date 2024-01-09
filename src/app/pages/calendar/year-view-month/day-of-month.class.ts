@@ -1,4 +1,5 @@
 import * as dayjs from "dayjs";
+import { CalendarEventType } from "./calendar-event-type.enum";
 
 export class DayOfMonth{
     
@@ -24,12 +25,21 @@ export class DayOfMonth{
         this._ngClass.push('no-event');
     }
 
-    public setLabel(label: string){
-        this._label = label;
+    public setCalendarEvent(type: CalendarEventType){
+        if(type === CalendarEventType.CS_BUY_DATE){
+            this._label = "Computershare buy date";
+        }else if(type === CalendarEventType.EARNINGS_DATE){
+            this._label = "Assumed earnings date";
+        }
         const foundNoEventIndex = this._ngClass.findIndex(cssClass => cssClass === 'no-event');
         if(this.isDayOfThisMonth){
             if(foundNoEventIndex > -1){
-                this._ngClass[foundNoEventIndex] = 'has-event';
+                if(type === CalendarEventType.CS_BUY_DATE){
+                    this._ngClass[foundNoEventIndex] = 'cs-buy-date';
+                }else if(type === CalendarEventType.EARNINGS_DATE){
+                    this._ngClass[foundNoEventIndex] = 'earnings-date';
+                }
+                
             }else{
                 this._ngClass.push('has-event');
             }

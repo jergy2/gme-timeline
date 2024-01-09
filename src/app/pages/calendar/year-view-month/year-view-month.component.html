@@ -18,9 +18,11 @@
                     {{ day.label }}
                 </div>
             </div>
-            <div class="day-number" [ngClass]="day.ngClass"
+            <div class="day-number" *ngIf="day.isDayOfThisMonth" [ngClass]="day.ngClass"
                 (mouseover)="day.onMouseOver()" (mouseleave)="day.onMouseLeave()">{{ day.date.format('D') }}
             </div>
+            <div class="day-number-not-this-month" *ngIf="!day.isDayOfThisMonth">
+        </div>
         </div>
     </div>
 </div>

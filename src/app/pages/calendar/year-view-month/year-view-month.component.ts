@@ -4,6 +4,8 @@ import { ScreeSizeService } from 'src/app/services/scree-size.service';
 import { csBuyDatesYYYYMMDD } from './computershare-buy-dates';
 import * as dayjs from 'dayjs';
 import { DayOfMonth } from './day-of-month.class';
+import { CalendarEventType } from './calendar-event-type.enum';
+import { earningsDates } from './earnings-dates';
 
 @Component({
   selector: 'app-year-view-month',
@@ -14,26 +16,21 @@ export class YearViewMonthComponent implements OnInit {
 
   @Input('month') public month: CalendarMonth = new CalendarMonth('2020-01-01');
 
-  private _daysOfMonth: string[] = [];
-
-  constructor(private _screenService: ScreeSizeService){}
+  constructor(){}
 
   ngOnInit(){
-    this._screenService.screenDimensions$.subscribe(()=>{
-      this._update();
-    })
-    const monthStartDate = dayjs(this.month.startDateYYYYMMDD).format('YYYY-MM-DD');
-    const monthEndDate = dayjs(this.month.startDateYYYYMMDD).endOf('month').format('YYYY-MM-DD');
     csBuyDatesYYYYMMDD.forEach(date => {
       const foundDayOfMonth = this.month.daysOfMonth.find(day => day.dateYYYYMMDD === date);
       if(foundDayOfMonth){
-        foundDayOfMonth.setLabel("Computershare recurring buy")
+        foundDayOfMonth.setCalendarEvent(CalendarEventType.CS_BUY_DATE);
       }
     });
-  }
-
-  private _update(){
-    
+    earningsDates.forEach(date => {
+      const foundDayOfMonth = this.month.daysOfMonth.find(day => day.dateYYYYMMDD === date);
+      if(foundDayOfMonth){
+        foundDayOfMonth.setCalendarEvent(CalendarEventType.EARNINGS_DATE);
+      }
+    })
   }
 
 }

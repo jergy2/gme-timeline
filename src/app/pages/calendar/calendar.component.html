@@ -1,8 +1,8 @@
 <div class="calendar-root">
     <div class="title">
-        GME Calendar
+        GME Calendar 2024
     </div>
-    <div class="view-buttons-bar">
+    <!-- <div class="view-buttons-bar">
         <div class="view-button">
             Year
         </div>
@@ -10,10 +10,10 @@
         <div class="view-button">
             Day
         </div>
-    </div>
+    </div> -->
 
     <div class="year-view">
-        <div class="months-container">
+        <div class="months-container" [ngStyle]="monthGridStyle"> 
             <app-year-view-month [month]="month" *ngFor="let month of months"
                 class="year-view-month"></app-year-view-month>
         </div>
