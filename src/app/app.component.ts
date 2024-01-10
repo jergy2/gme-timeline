@@ -20,7 +20,7 @@ import { TimelineEvent } from './pages/display-timeline/timeline-items/timeline-
 import { timelineEvents } from 'src/assets/event-configs/timeline-item-events';
 import { TimelineItemsBuilder } from './pages/display-timeline/timeline-items/timeline-items-builder.class';
 import { TimelineItemsService } from './pages/display-timeline/timeline-items/timeline-items.service';
-import { tinfoilEvents } from 'dist/assets/event-configs/tinfoil-events';
+import { tinfoilEvents } from 'src/assets/event-configs/tinfoil-events';
 
 @Component({
   selector: 'app-root',
