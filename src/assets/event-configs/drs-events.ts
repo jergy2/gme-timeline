@@ -281,7 +281,7 @@ export const drsItemEvents: TimelineEventConfig[] = [
         ],
         description: '',
         types: [TimelineEventType.DRS, TimelineEventType.OTHER],
-        significance: 2,
+        significance: 1,
         tags: ['Gary Gensler', 'DRS',]
     },
 ]

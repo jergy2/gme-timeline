@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'calendar', component: CalendarComponent },
   { path: 'timeline', component: DisplayTimelineComponent },
   { path: 'earnings', component: FinancialsComponent },
+  { path: 'financials', component: FinancialsComponent },
   { path: 'guide', component: GuideComponent },
   { path: 'about', component: AboutComponent },
   { path: 'research', component: ResearchComponent },
