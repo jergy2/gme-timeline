@@ -458,6 +458,11 @@ export const releaseOverviews: ReleaseOverview[] = [
         ],
         quarterOverviewPoints: [],
     },
-
+    {
+        quarter: 'Q3',
+        year: 2023,
+        summaryPoints: [],
+        quarterOverviewPoints: [],
+    },
 
 ];

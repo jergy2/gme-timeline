@@ -96,6 +96,9 @@
                                     <span *ngIf="row.earningsResult.quarter === 'Q4'">10-K</span>
                                 </a>
                             </div>
+                            <div *ngIf="row.earningsResult.sankeyImg !== ''" class="sankey-chart-container">
+                                <img [src]="row.earningsResult.sankeyImg" alt="" class="sankey-chart">
+                            </div>
                             <div *ngIf="row.earningsRelease.summaryPoints.length > 0">
                                 Summary
                                 <ul *ngFor="let point of row.earningsRelease.summaryPoints">

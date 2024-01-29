@@ -56,6 +56,7 @@ export class FinancialsService {
         14 - (number)
         15 - (number)
         16 - (number)
+        17 - (string)
      */
     const rows = data.split('\n');
     const headers = rows[0].split(',');
@@ -67,14 +68,22 @@ export class FinancialsService {
       for(let column = 0; column < splitRow.length; column++){
         if(column < 6){
           if(column === 0){
-            cells.push(Number(splitRow[column]))
+            cells.push(Number(splitRow[column]));
           }else{
-            cells.push(String(splitRow[column]))
+            cells.push(String(splitRow[column]));
+          }
+        }else if(column === 17){
+          const sankeySrc = String(splitRow[column]);
+          if(sankeySrc.length > 1){
+            cells.push(sankeySrc);
+          }else{
+            cells.push('');
           }
         }else{
-          cells.push(Number(splitRow[column]))
+          cells.push(Number(splitRow[column]));
         }
       }
+      // console.log("CELLS", cells)
       cellRows.push(this._getResult(cells))
     }
     const results = cellRows.map(row => new QuarterlyResult(row));
@@ -101,6 +110,7 @@ export class FinancialsService {
       sharesOutstandingMillions: cells[14],
       DRSMillions: cells[15],
       netEarningsLossPerShare: cells[16],
+      sankeyChartImg: cells[17],
     }
   }
 

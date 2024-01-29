@@ -41,6 +41,7 @@ export class YearlyResult{
             sharesOutstandingMillions: finalQuarter.sharesOutstandingMillions,
             DRSMillions: finalQuarter.DRSMillions,
             netEarningsLossPerShare: allEarnings / finalQuarter.sharesOutstandingMillions,
+            sankeyChartImg: finalQuarter.sankeyImg,
         }
         this._values = values;
     }
@@ -64,4 +65,5 @@ export class YearlyResult{
     public get sharesOutstandingMillions(): number { return this._values.sharesOutstandingMillions; }
     public get DRSMillions(): number { return this._values.DRSMillions; }
     public get netEarningsLossPerShare(): number { return this._values.netEarningsLossPerShare; }
+    public get sankeyImg(): string { return this._values.sankeyChartImg; }
 }

@@ -20,9 +20,12 @@ export class QuarterlyResult{
     public get sharesOutstandingMillions(): number { return this._values.sharesOutstandingMillions; }
     public get DRSMillions(): number { return this._values.DRSMillions; }
     public get netEarningsLossPerShare(): number { return this._values.netEarningsLossPerShare; }
+    public get sankeyImg(): string {return this._values.sankeyChartImg; }
 
     constructor(values: QuarterlyResultInterface){
         this._values = values;
     }
+
+    
 
 }

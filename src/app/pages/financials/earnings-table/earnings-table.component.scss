@@ -54,7 +54,7 @@ td{
 }
 
 .earnings-content{
-    max-height: 360px; 
+    max-height: 600px; 
     overflow-y: scroll;
     font-size:0.85em;
     background-color: rgb(245, 245, 245);
@@ -79,4 +79,22 @@ td{
 .earnings-release-button:hover{
     text-decoration: none;
     border: 1px solid rgb(212, 212, 212);
+}
+
+
+
+.sankey-chart-container{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sankey-chart{
+    min-width: 340px;
+    max-height: 550px;
+    border-radius: 10px;
+    border: 1px solid rgb(192, 192, 192);
 }

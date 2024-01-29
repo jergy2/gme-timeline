@@ -28,7 +28,7 @@ export const bbbyConfigs: TimelineEventConfig[] = [
         description: '',
         types: [TimelineEventType.OTHER],
         significance: 1,
-        tags: [ 'bbby', 'kais', 'cramer', 'pulte', 'ryan cohen', 'bottles', 'wine'],
+        tags: [ 'bbby', 'kais', 'cramer', 'pulte', 'bottles', 'wine'],
     },
 
 ]; 

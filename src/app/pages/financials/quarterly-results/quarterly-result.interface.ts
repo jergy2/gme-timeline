@@ -16,4 +16,5 @@ export interface QuarterlyResultInterface{
     sharesOutstandingMillions: number;
     DRSMillions: number;
     netEarningsLossPerShare: number;
+    sankeyChartImg: string;
 }
