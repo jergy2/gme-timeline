@@ -35,6 +35,7 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { ResearchComponent } from './pages/research/research.component';
 import { MonthComponent } from './pages/calendar/month/month.component';
 import { YearViewMonthComponent } from './pages/calendar/year-view-month/year-view-month.component';
+import { SeoComponent } from './pages/about/seo/seo.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { YearViewMonthComponent } from './pages/calendar/year-view-month/year-vi
     CalendarComponent,
     ResearchComponent,
     MonthComponent,
-    YearViewMonthComponent
+    YearViewMonthComponent,
+    SeoComponent
   ],
   imports: [
     BrowserModule,
