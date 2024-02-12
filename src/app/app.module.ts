@@ -36,6 +36,9 @@ import { ResearchComponent } from './pages/research/research.component';
 import { MonthComponent } from './pages/calendar/month/month.component';
 import { YearViewMonthComponent } from './pages/calendar/year-view-month/year-view-month.component';
 import { SeoComponent } from './pages/about/seo/seo.component';
+import { SuperstonkComponent } from './pages/info-pages/superstonk/superstonk.component';
+import { RedditComponent } from './pages/info-pages/reddit/reddit.component';
+import { DrsComponent } from './pages/info-pages/drs/drs.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,10 @@ import { SeoComponent } from './pages/about/seo/seo.component';
     ResearchComponent,
     MonthComponent,
     YearViewMonthComponent,
-    SeoComponent
+    SeoComponent,
+    SuperstonkComponent,
+    RedditComponent,
+    DrsComponent
   ],
   imports: [
     BrowserModule,
