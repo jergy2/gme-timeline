@@ -12,7 +12,7 @@ import { HistoricGMEDataService } from './services/historic-gme-data.service';
 import { lastValueFrom, timer } from 'rxjs';
 import { mediaItemEvents } from 'src/assets/event-configs/media-events';
 import { NavigationEnd, Router } from '@angular/router';
-import { rcTweetsEvents } from 'src/assets/event-configs/rc-events-events';
+import { rcTweetsEvents } from 'src/assets/event-configs/rc-events';
 import { ScreeSizeService } from './services/scree-size.service';
 import { SettingsService } from './services/settings.service';
 import { socialMediaEvents } from 'src/assets/event-configs/social-media-events';
