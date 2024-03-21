@@ -1,0 +1,28 @@
+<div style="height:100%;width: 100%; background-color: rgba(128, 0, 128, 0.144);">
+    <table style="width: 100%; height:100%;background-color: rgba(0, 0, 255, 0.212);" class="table">
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Date YYYYMMDD</td>
+            <td>Significance</td>
+            <td>SpecialIdentifier</td>
+            <td>imgSrc</td>
+            <td>Tags </td>
+            <td>Urls</td>
+            <td>Types</td>
+        </tr>
+
+        <tr *ngFor="let item of items">
+            <td>{{ item.title}}</td>
+            <td>{{ item.description}} </td>
+            <td>{{ item.dateYYYYMMDD}} </td>
+            <td>{{ item.significance}} </td>
+            <td>{{ item.specialIdentifier }}</td>
+            <td>{{ item.imgSrc}}</td>
+            <td>{{ tags(item.tags) }} </td>
+            <td>{{ urls(item.urls) }}</td>
+            <td>{{types(item.types)}}</td>
+        </tr>
+    </table>
+
+</div>

@@ -26,7 +26,7 @@ export class SettingsService {
   }
 
   public updateCategories(selectedCategories: TimelineEventType[]) {
-    console.log(selectedCategories);
+    // console.log(selectedCategories);
     let categoriesString = '';
     selectedCategories.forEach(category => {
       categoriesString += "'" + category + "', ";

@@ -39,6 +39,7 @@ import { SeoComponent } from './pages/about/seo/seo.component';
 import { SuperstonkComponent } from './pages/info-pages/superstonk/superstonk.component';
 import { RedditComponent } from './pages/info-pages/reddit/reddit.component';
 import { DrsComponent } from './pages/info-pages/drs/drs.component';
+import { SandboxComponent } from './pages/sandbox/sandbox.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { DrsComponent } from './pages/info-pages/drs/drs.component';
     SeoComponent,
     SuperstonkComponent,
     RedditComponent,
-    DrsComponent
+    DrsComponent,
+    SandboxComponent
   ],
   imports: [
     BrowserModule,

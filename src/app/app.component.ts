@@ -1,26 +1,28 @@
-import { bbbyConfigs } from 'src/assets/event-configs/bbby-events';
+import { bbbyConfigs } from 'src/assets/event-configs/to-delete/bbby-events';
 import { ChartDataManagerService } from './pages/display-timeline/chart/chart-data-manager-service';
 import { ChartDataSetManager } from './pages/display-timeline/chart/chart-dataset-manager.class';
-import { citadelEvents } from 'src/assets/event-configs/citadel-events';
+import { citadelEvents } from 'src/assets/event-configs/to-delete/citadel-events';
 import { Component, HostListener } from '@angular/core';
-import { corporateEvents } from 'src/assets/event-configs/gamestop-corporate-events';
+import { corporateEvents } from 'src/assets/event-configs/to-delete/gamestop-corporate-events';
 import { DdImportService } from './services/dd-import.service';
-import { drsItemEvents } from 'src/assets/event-configs/drs-events';
+import { drsItemEvents } from 'src/assets/event-configs/to-delete/drs-events';
 import { EventSearchService } from './pages/display-timeline/timeline-controls/search/event-search.service';
 import { FinancialsService } from './pages/financials/financials.service';
 import { HistoricGMEDataService } from './services/historic-gme-data.service';
 import { lastValueFrom, timer } from 'rxjs';
-import { mediaItemEvents } from 'src/assets/event-configs/media-events';
+import { mediaItemEvents } from 'src/assets/event-configs/to-delete/media-events';
 import { NavigationEnd, Router } from '@angular/router';
-import { rcTweetsEvents } from 'src/assets/event-configs/rc-events';
+import { rcTweetsEvents } from 'src/assets/event-configs/to-delete/rc-events';
 import { ScreeSizeService } from './services/scree-size.service';
 import { SettingsService } from './services/settings.service';
-import { socialMediaEvents } from 'src/assets/event-configs/social-media-events';
+import { socialMediaEvents } from 'src/assets/event-configs/to-delete/social-media-events';
 import { TimelineEvent } from './pages/display-timeline/timeline-items/timeline-item/timeline-event';
-import { timelineEvents } from 'src/assets/event-configs/timeline-item-events';
+import { timelineEvents } from 'src/assets/event-configs/to-delete/timeline-item-events';
 import { TimelineItemsBuilder } from './pages/display-timeline/timeline-items/timeline-items-builder.class';
 import { TimelineItemsService } from './pages/display-timeline/timeline-items/timeline-items.service';
-import { tinfoilEvents } from 'src/assets/event-configs/tinfoil-events';
+import { tinfoilEvents } from 'src/assets/event-configs/to-delete/tinfoil-events';
+import { ImportEventsService } from './services/import-events.service';
+import { TimelineEventConfig } from './pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface';
 
 @Component({
   selector: 'app-root',
@@ -42,7 +44,8 @@ export class AppComponent {
     private _settingsService: SettingsService,
     private _financialsService: FinancialsService,
     private _searchService: EventSearchService,
-    private _ddService: DdImportService) {
+    private _ddService: DdImportService,
+    private _importEventsService: ImportEventsService) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -66,17 +69,24 @@ export class AppComponent {
     const quarterlyResults = await lastValueFrom(this._financialsService.loadFinancialResults$());
     const priceEntries = await lastValueFrom(this._gmeDataService.loadHistoricData$())
 
-    const allConfigs = [
-      timelineEvents,
-      corporateEvents,
-      drsItemEvents,
-      mediaItemEvents,
-      rcTweetsEvents,
-      socialMediaEvents,
-      citadelEvents,
-      bbbyConfigs,
-      tinfoilEvents,
-    ];
+    // const allConfigs = [
+    //   timelineEvents,
+    //   corporateEvents,
+    //   drsItemEvents,
+    //   mediaItemEvents,
+    //   rcTweetsEvents,
+    //   socialMediaEvents,
+    //   citadelEvents,
+    //   bbbyConfigs,
+    //   tinfoilEvents,
+    // ];
+
+
+    // console.log("Getting from google")
+    const allConfigs: TimelineEventConfig[] = await lastValueFrom(this._importEventsService.importEventsFromGoogleSheet$());
+    // console.log("ALL CONFIGS:", allConfigs)
+
+
     const timelineItems: TimelineEvent[] = TimelineItemsBuilder.getTimelineItems(allConfigs, priceEntries);
     this._timelineItemsService.setAllTimelineEvents(timelineItems);
     this._searchService.setTimelineItems(timelineItems, ddEntries);

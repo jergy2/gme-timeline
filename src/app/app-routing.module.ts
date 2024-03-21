@@ -6,6 +6,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { GuideComponent } from './pages/guide/guide.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { ResearchComponent } from './pages/research/research.component';
+import { SandboxComponent } from './pages/sandbox/sandbox.component';
 
 const routes: Routes = [
   { path: '*', component: DisplayTimelineComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'guide', component: GuideComponent },
   { path: 'about', component: AboutComponent },
   { path: 'research', component: ResearchComponent },
+  { path: 'sandbox', component: SandboxComponent },
   { path: '**', redirectTo: 'timeline' }
 ];
 

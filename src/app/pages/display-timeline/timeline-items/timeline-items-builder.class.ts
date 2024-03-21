@@ -4,13 +4,13 @@ import { TimelineEvent } from "./timeline-item/timeline-event";
 
 export class TimelineItemsBuilder{
 
-    public static getTimelineItems(configs :TimelineEventConfig[][], gmeData: GmePriceEntry[]): TimelineEvent[] {
+    public static getTimelineItems(configs :TimelineEventConfig[], gmeData: GmePriceEntry[]): TimelineEvent[] {
 
         let allItemConfigs: TimelineEventConfig[] = [];
-        configs.forEach(configSet =>{
-            allItemConfigs = allItemConfigs.concat(configSet)
-        });
-        allItemConfigs = allItemConfigs.sort((item1, item2)=>{
+        // configs.forEach(configSet =>{
+        //     allItemConfigs = allItemConfigs.concat(configSet)
+        // });
+        allItemConfigs = configs.sort((item1, item2)=>{
             if(item1.dateYYYYMMDD < item2.dateYYYYMMDD){
                 return -1;
             }else if(item1.dateYYYYMMDD > item2.dateYYYYMMDD){
