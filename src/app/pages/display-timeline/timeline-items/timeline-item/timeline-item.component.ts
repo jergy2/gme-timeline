@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TimelineEvent } from './timeline-event';
+import { TimelineEvent } from './timeline-event.class';
 import { TimelineEventType } from './timeline-event-type.enum';
 import * as dayjs from 'dayjs';
 import { ScreeSizeService } from 'src/app/services/scree-size.service';
@@ -92,15 +92,15 @@ export class TimelineItemComponent {
       if(this.isMobile){ // if mobile and not selected
         return {
           'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.05),
-          'border-left': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
-          'border-right': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
+          // 'border-left': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
+          // 'border-right': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
           'padding-top': '15px',
           'padding-bottom': '15px',
         }
       }else{
         return { // if not mobile and not selected
           'background-color': this._chartDataService.getTypeColor(this.item.mainType, 0.05),
-          'border': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
+          // 'border': '1px solid ' + this._chartDataService.getTypeColor(this.item.mainType, 0.5),
         }
       }
 

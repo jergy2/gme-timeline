@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TimelineItemsService } from '../display-timeline/timeline-items/timeline-items.service';
-import { TimelineEvent } from '../display-timeline/timeline-items/timeline-item/timeline-event';
+import { TimelineEvent } from '../display-timeline/timeline-items/timeline-item/timeline-event.class';
 import { TimelineEventURL } from '../display-timeline/timeline-items/timeline-item/timeline-event-url.interface';
 import { TimelineEventType } from '../display-timeline/timeline-items/timeline-item/timeline-event-type.enum';
 import { HttpClient } from '@angular/common/http';

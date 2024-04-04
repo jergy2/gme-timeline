@@ -1,4 +1,4 @@
-import { TimelineEvent } from "../../timeline-items/timeline-item/timeline-event";
+import { TimelineEvent } from "../../timeline-items/timeline-item/timeline-event.class";
 import { TagAssociation } from "./tag-association.interface";
 import { TagSearchable } from "./tag-searchable.class";
 

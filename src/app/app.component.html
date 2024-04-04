@@ -1,9 +1,15 @@
 <div class="app-component-root">
   <app-layout *ngIf="dataIsLoaded" class="app-layout"></app-layout>
-  <div class="lds-ripple" *ngIf="!dataIsLoaded">
-    <div></div>
-    <div></div>
-  </div>  
+  <div *ngIf="!dataIsLoaded" class="loading-container no-select">
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="loading-message">
+      {{ loadingMessage }}
+    </div>
+    
+  </div>
 </div>
 
 <div style="background-color: white;" style="width: 2px; height: 2px; position: fixed;" *ngIf="!dataIsLoaded">

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TimelineEvent } from '../../timeline-items/timeline-item/timeline-event';
+import { TimelineEvent } from '../../timeline-items/timeline-item/timeline-event.class';
 import { HttpClient } from '@angular/common/http';
 import { TagAssociation, TagAssociation as string } from './tag-association.interface';
 import { TagAssociationLoader } from './tag-association-loader';

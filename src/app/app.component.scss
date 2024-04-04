@@ -20,6 +20,17 @@
   justify-content: center;
 }
 
+.loading-container, .loading-message{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.loading-message{
+  color: gray;
+}
+
 .lds-ripple {
   display: inline-block;
   position: relative;

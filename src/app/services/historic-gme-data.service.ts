@@ -10,92 +10,52 @@ import { GmePriceEntry } from './gme-price-entry.interface';
 export class HistoricGMEDataService {
 
   constructor(private _httpClient: HttpClient) { }
-
-
-  /**
-   * Data source:
-   * 
-   * https://www.nasdaq.com/market-activity/stocks/gme/historical
-   * 
-   */
-
-  private _fileName = 'assets/data/gme-data.csv';
   private _priceEntries: GmePriceEntry[] = [];
   public get allPriceEntries(): GmePriceEntry[] { return this._priceEntries; }
-  // public get priceEntriesAfterCutoff(): GmePriceEntry[] { return this._priceEntries.filter(item => item.date.format('YYYY-MM-DD') > '2020-07-01'); }
 
-  public loadHistoricData$(): Observable<GmePriceEntry[]> {
-    const subject$ = new Subject<GmePriceEntry[]>();
-    this._httpClient.get(this._fileName, { responseType: 'text' },).subscribe(
-      (data) => {
-        this._parseCSV(data);
+  public loadGmeData$(): Observable<GmePriceEntry[]>{
+    const gmeSubject$ = new Subject<GmePriceEntry[]>();
+    /**
+     *  Google Sheet needs to be publish as tsv (tab-separated values) and not csv.
+     *  TSV output is far more simple to parse. 
+     */
+    /**
+     * Data source:  https://www.nasdaq.com/market-activity/stocks/gme/historical
+     */
+    const eventsGoogleSheetTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQixUOsD8VuEXI06nXbOqMGsDbQiofVAYlbL9_-fh6xo21SSt84x2e0iqDBqWmj_e--CXKpKtiPbjOq/pub?gid=1551713069&single=true&output=tsv';
+    const priceEntries: GmePriceEntry[] = [];
+    this._httpClient.get(eventsGoogleSheetTsvUrl, { responseType: 'text' }).subscribe({
+      next: (response) => {
+        let lines = response.split('\n');
+        lines = lines.slice(1);
+        lines.forEach(line => {
+          let tabSplitLine = line.split('\t');
+          const priceEntry: GmePriceEntry = {
+            dateYYYYMMDD: this._convertToDate(tabSplitLine[0]),
+            close: this._convertToNumber(tabSplitLine[1]),
+            volume: this._convertToNumber(tabSplitLine[2]),
+            open: this._convertToNumber(tabSplitLine[3]),
+            high: this._convertToNumber(tabSplitLine[4]),
+            low: this._convertToNumber(tabSplitLine[5]),
+          }
+          priceEntries.push(priceEntry);
+        });
+        this._priceEntries = priceEntries;
         this._sortData();
         this._fillGaps();
-        this._trimData();
-
-        subject$.next(this._priceEntries);
-        subject$.complete();
+        gmeSubject$.next(this._priceEntries);
+        gmeSubject$.complete();
       },
-      (error) => {
-        console.log("error:", error)
-      },
-      () => {
-        subject$.complete();
-      }
-    );
-    return subject$.asObservable();
-  }
-
-  /** Convert CSV table into an array of objects */
-  private _parseCSV(data: any) {
-    // console.log(data);
-    const rows = data.split('\n');
-    const headers = rows[0].split(',');
-    const rowCount = rows.length - 1;
-    const entries = [];
-    for (let rowIndex = 1; rowIndex < rowCount; rowIndex++) {
-      const splitRow: string[] = rows[rowIndex].split(',');
-      const cells: string[] = [];
-      splitRow.forEach(cell => {
-        cell = cell.trim();
-        let newCell: string = "";
-        for (let charIndex = 0; charIndex < cell.length; charIndex++) {
-          const charValue = cell[charIndex];
-          if (charValue !== "\"") {
-            newCell += charValue;
-          }
-        }
-        cells.push(newCell);
-      });
-      const priceEntry: GmePriceEntry = {
-        date: this._convertToDate(cells[0]),
-        close: this._convertToNumber(cells[1]),
-        volume: Number(cells[2]),
-        open: cells[3],
-        high: cells[4],
-        low: cells[5],
-      }
-      entries.push(priceEntry);
-
-    }
-    this._priceEntries = entries;
-  }
-
-
-  /** We don't need to see data all the way back from 2013 */
-  private _trimData() {
-    const cutoffDate = dayjs('2018-01-01');
-    this._priceEntries = this._priceEntries.filter((item) => {
-      return item.date.isAfter(cutoffDate);
-    });
+    })
+    return gmeSubject$.asObservable();
   }
 
   /** The data comes in with date descending, needs to be reverse to ascending */
   private _sortData() {
     this._priceEntries = this._priceEntries.sort((item1, item2) => {
-      if (item1.date.isAfter(item2.date)) {
+      if (item1.dateYYYYMMDD > item2.dateYYYYMMDD) {
         return 1;
-      } else if (item1.date.isBefore(item2.date)) {
+      } else if (item1.dateYYYYMMDD < item2.dateYYYYMMDD) {
         return -1;
       } else {
         return 0;
@@ -106,20 +66,20 @@ export class HistoricGMEDataService {
   /** Not every day has a trading price (e.g. Saturdays, Sundays, holidays) 
    *  so an entry needs to be created for those dates in order to maintain 1 entry per date */
   private _fillGaps() {
-    const startDate: dayjs.Dayjs = dayjs(this._priceEntries[0].date);
-    const endDate: dayjs.Dayjs = dayjs(this._priceEntries[this._priceEntries.length - 1].date);
+    const startDate: dayjs.Dayjs = dayjs(this._priceEntries[0].dateYYYYMMDD);
+    const endDate: dayjs.Dayjs = dayjs(this._priceEntries[this._priceEntries.length - 1].dateYYYYMMDD);
     const newEntries: GmePriceEntry[] = [];
-    let currentDate: dayjs.Dayjs = dayjs(startDate);
+    let currentDateYYYYMMDD: string = dayjs(startDate).format('YYYY-MM-DD');
     let currentIndex: number = 0;
-    while (currentDate.isBefore(endDate)) {
-      const hasEntry = this._priceEntries[currentIndex].date.isSame(currentDate);
+    while (currentDateYYYYMMDD < endDate.format('YYYY-MM-DD')) {
+      const hasEntry = this._priceEntries[currentIndex].dateYYYYMMDD === currentDateYYYYMMDD;
       if (hasEntry) {
         newEntries.push(this._priceEntries[currentIndex]);
         currentIndex++;
       } else {
         const prevEntry = this._priceEntries[currentIndex-1]
         newEntries.push({
-          date: currentDate,
+          dateYYYYMMDD: currentDateYYYYMMDD,
           close: prevEntry.close,
           volume: prevEntry.volume,
           open: prevEntry.open,
@@ -127,7 +87,7 @@ export class HistoricGMEDataService {
           low: prevEntry.low,
         });
       }
-      currentDate = currentDate.add(1, 'days');
+      currentDateYYYYMMDD = dayjs(currentDateYYYYMMDD).add(1, 'days').format('YYYY-MM-DD');
     }
     newEntries.push(this._priceEntries[this._priceEntries.length - 1]);
     this._priceEntries = newEntries;
@@ -135,17 +95,17 @@ export class HistoricGMEDataService {
 
   private _convertToNumber(value: string): number {
     const num = Number(value.substring(1));
-    // console.log(num);
     return num;
   }
 
-  private _convertToDate(value: string): dayjs.Dayjs {
+  /** date comes in formatted as as MM/DD/YYYY */
+  private _convertToDate(value: string): string {
     const month = value.substring(0, 2);
     const day = value.substring(3, 5);
     const year = value.substring(6, 10);
     const dateYYYYMMDD: string = String(year) + '-' + String(month) + '-' + String(day);
     const date: dayjs.Dayjs = dayjs(dateYYYYMMDD);
-    return date;
+    return dateYYYYMMDD;
   }
 
 }

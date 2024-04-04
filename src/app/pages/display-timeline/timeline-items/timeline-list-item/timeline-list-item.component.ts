@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TimelineEvent } from '../timeline-item/timeline-event';
+import { TimelineEvent } from '../timeline-item/timeline-event.class';
 import { TimelineEventType } from '../timeline-item/timeline-event-type.enum';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 import { ScreeSizeService } from 'src/app/services/scree-size.service';

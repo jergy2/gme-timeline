@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
-import { TimelineEvent } from './timeline-item/timeline-event';
+import { TimelineEvent } from './timeline-item/timeline-event.class';
 import { TimelineEventType } from './timeline-item/timeline-event-type.enum';
 import { QuarterlyResult } from '../../financials/quarterly-results/quarterly-result.class';
 

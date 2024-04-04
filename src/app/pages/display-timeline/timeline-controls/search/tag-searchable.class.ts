@@ -1,4 +1,4 @@
-import { TimelineEvent } from "../../timeline-items/timeline-item/timeline-event";
+import { TimelineEvent } from "../../timeline-items/timeline-item/timeline-event.class";
 import { TagSearchResult } from "./tag-search-result.class";
 
 export class TagSearchable{

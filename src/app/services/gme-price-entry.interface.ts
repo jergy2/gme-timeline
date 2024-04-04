@@ -1,9 +1,9 @@
 import * as dayjs from 'dayjs';
 export interface GmePriceEntry{
-    date: dayjs.Dayjs,
+    dateYYYYMMDD: string,
     close: number,
     volume: number,
-    open: string,
-    high: string,
-    low: string
+    open: number,
+    high: number,
+    low: number
 }

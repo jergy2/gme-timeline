@@ -4,7 +4,7 @@ import { ChartDataManagerService } from './chart-data-manager-service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
-import { TimelineEvent } from '../timeline-items/timeline-item/timeline-event';
+import { TimelineEvent } from '../timeline-items/timeline-item/timeline-event.class';
 import { HistoricGMEDataService } from 'src/app/services/historic-gme-data.service';
 import { ScreeSizeService } from 'src/app/services/scree-size.service';
 import { SettingsService } from 'src/app/services/settings.service';
@@ -38,20 +38,16 @@ export class ChartComponent implements OnInit, AfterViewInit {
   public get chartContainerNgStyle(): any { return this._chartContainerNgStyle; }
 
   ngOnInit() {
+    // ngOnInit will complete before ngAfterViewInit starts
+    // so here we can set values that ngAfterViewInit will be able to assume are available
     this._updateChartContainerStyle()
     this._updateLabels();
-    // this.lineChartDataMobile.labels = labels;
     this._setLineChartOptions();
     this.lineChartData.datasets = this._chartDataService.dataSets;
   }
 
-  private _updateLabels(){
-    const gmePriceData = this._historicGMEDataService.allPriceEntries;
-    const startDateYYYYMMDD = this._chartDataService.viewStartDateYYYYMMDD;
-    const endDateYYYYMMDD = this._chartDataService.viewEndDateYYYYMMDD;
-    let labels: string[] = gmePriceData
-      .filter((entry) => { return entry.date.format('YYYY-MM-DD') >= startDateYYYYMMDD && entry.date.format('YYYY-MM-DD') <= endDateYYYYMMDD })
-      .map((entry) => { return entry.date.format('YYYY-MM-DD') });
+  private _updateLabels() {
+    let labels: string[] = this._chartDataService.chartLabels;
     /** If there are too many data points to fit in the horizontal x-axis, not all of the labels will be included. */
     this.lineChartData.labels = labels;
   }
@@ -65,6 +61,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
     this._chartDataService.dataSets$.subscribe({
       next: (datasets) => {
         this._updateLabels();
+        // console.log("Updating datasets:", datasets)
         this.lineChartData.datasets = datasets;
         this.baseChart?.update();
       },
@@ -93,8 +90,10 @@ export class ChartComponent implements OnInit, AfterViewInit {
     this.lineChartOptions = {
       responsive: true,
       onHover: (event, array) => {
+        // console.log("something!!", event, array)
         if (array.length > 0) {
           if (!this._tooltipOpenedFromTimelineItems) {
+            // console.log("tooltip NOT opened from timeline items")
             const timelineItem = this._chartDataService.lookupEventByIndex(array[0].datasetIndex, array[0].index);
             if (timelineItem) {
               this._timelineItemService.selectItem(timelineItem, 'CHART');
@@ -183,6 +182,17 @@ export class ChartComponent implements OnInit, AfterViewInit {
   }
 
   private _tooltipOpenedFromTimelineItems: boolean = false;
+
+  /** 
+   * This is where some wizardry happens.  
+   * In all honesty, it's not clear or well-designed. 
+   * Reluctantly, information is obtained from the DOM to determine location of event circles,
+   * then a mouse event is dispatched on the canvas element, which should trigger an onHover() event on the chart
+   * 
+   * One of the main issues is that the chart is not always in fixed shape or position, as it moves with the client window,
+   * so the calculations must account for this.
+   * 
+   */
   private _openToolTip(item: TimelineEvent) {
     var mouseMoveEvent, meta, point;
     const itemIndex = this._chartDataService.lookupIndexByEvent(item);
@@ -194,32 +204,26 @@ export class ChartComponent implements OnInit, AfterViewInit {
     }
     meta = this.baseChart?.chart?.getDatasetMeta(itemIndex.datasetIndex);
     if (meta) {
-      // console.log(meta.data)
       point = meta.data[itemIndex.itemIndex];
     }
     if (point) {
-      if (this.isListView) {
-        const containerEl = document.getElementById('chartContainer');
-        const chartEl = document.getElementById('chartCanvas')
-        if (containerEl && chartEl) {
-          const gap = (containerEl.clientHeight - chartEl.clientHeight) / 2;
-          mouseMoveEvent = new MouseEvent('mousemove', {
-            clientX: point.x,
-            clientY: point.y + 80 + gap,
-          });
-          this._tooltipOpenedFromTimelineItems = true;
-          this.baseChart?.chart?.canvas.dispatchEvent(mouseMoveEvent);
+      const containerEl = document.getElementById('chartContainer');
+      const chartEl = document.getElementById('chartCanvas')
+      if (containerEl && chartEl) {
+        let clientY = 0;
+        const gap = (containerEl.clientHeight - chartEl.clientHeight) / 2;
+        if (this.isListView) {
+          clientY = point.y + 80 + gap;
+        } else {
+          clientY = point.y + gap;
         }
-
-      } else {
         mouseMoveEvent = new MouseEvent('mousemove', {
           clientX: point.x,
-          clientY: point.y,
+          clientY: clientY,
         });
         this._tooltipOpenedFromTimelineItems = true;
         this.baseChart?.chart?.canvas.dispatchEvent(mouseMoveEvent);
       }
-
     }
   }
 

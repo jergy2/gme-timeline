@@ -64,6 +64,7 @@ export class TimelineEvent{
             if(this._dateYYYYMMDD < '2022-07-21'){
                 this._gmePricePreSplit = preSplit.toFixed(2);
             }
+        }else{
         }
         if(config.specialIdentifier === 'STOCK-SPLIT'){
             this._specialIdentifier = config.specialIdentifier;

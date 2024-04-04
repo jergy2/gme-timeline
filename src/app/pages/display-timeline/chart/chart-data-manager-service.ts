@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ChartDataSetManager } from './chart-dataset-manager.class';
 import { TimelineEventType } from '../timeline-items/timeline-item/timeline-event-type.enum';
-import { TimelineEvent } from '../timeline-items/timeline-item/timeline-event';
+import { TimelineEvent } from '../timeline-items/timeline-item/timeline-event.class';
+import { ChartDataset, ScatterDataPoint } from 'chart.js';
 
 @Injectable({
   providedIn: 'root'
@@ -16,25 +17,31 @@ export class ChartDataManagerService {
     this._dataManager = new ChartDataSetManager([], [], [], -1);
   }
 
-  private _dataSets$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  private _dataSets$: BehaviorSubject<ChartDataset<"line", (number | ScatterDataPoint | null)[]>[]> = new BehaviorSubject<ChartDataset<"line", (number | ScatterDataPoint | null)[]>[]>([]);
+  private _chartLabels: string[] = [];
   private _dataManager: ChartDataSetManager;
-  public get dataSets(): any[] { return this._dataSets$.getValue(); }
-  public get dataSets$(): Observable<any[]> { return this._dataSets$.asObservable(); }
+  public get chartLabels(): string[] { return this._chartLabels; }
+  public get dataSets(): ChartDataset<"line", (number | ScatterDataPoint | null)[]>[] { return this._dataSets$.getValue(); }
+  public get dataSets$(): Observable<ChartDataset<"line", (number | ScatterDataPoint | null)[]>[]> { return this._dataSets$.asObservable(); }
 
   public get viewStartDateYYYYMMDD(): string { return this._dataManager.startDateYYYYMMDD; }
   public get viewEndDateYYYYMMDD(): string { return this._dataManager.endDateYYYYMMDD; }
 
-  public registerDataManager(dataManager: ChartDataSetManager) {
+  /** this value is set one time, provided by AppComponent */
+  public setDataManager(dataManager: ChartDataSetManager) {
+    /** this value is set one time, provided by AppComponent */
     this._dataManager = dataManager;
     // console.log('register data manager')
-    this._dataManager.getAndUpdateDatasets();
+    
     this._dataManager.datasets$.subscribe({
       next: (datasets) => {
+        this._chartLabels = this._dataManager.chartLabels;
         this._dataSets$.next(datasets);
       },
       error: () => { },
       complete: () => { },
     });
+    this._dataManager.getAndUpdateDatasets();
   }
 
   public updateSignificanceValue(value: number) {
@@ -51,14 +58,14 @@ export class ChartDataManagerService {
   }
 
 
-  public clearSearchResults(significance: number, categories: TimelineEventType[], allEvents: TimelineEvent[]){
+  public clearSearchResults(significance: number, categories: TimelineEventType[], allEvents: TimelineEvent[]) {
     this._dataManager.clearSearchResults(significance, categories, allEvents);
   }
 
   public lookupEventByIndex(datasetIndex: number, index: number) {
     return this._dataManager.lookupTimelineItemByIndex(datasetIndex, index);
   }
-  public lookupDataset(datasetIndex: number){
+  public lookupDataset(datasetIndex: number) {
     return this._dataManager.lookupDataset(datasetIndex);
   }
   public lookupIndexByEvent(event: TimelineEvent): { datasetIndex: number, itemIndex: number } {

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TimelineItemsService } from '../../timeline-items/timeline-items.service';
 import { EventSearchService } from '../search/event-search.service';
-import { TimelineEvent } from '../../timeline-items/timeline-item/timeline-event';
+import { TimelineEvent } from '../../timeline-items/timeline-item/timeline-event.class';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
 import { TimelineEventType } from '../../timeline-items/timeline-item/timeline-event-type.enum';
 import { SettingsService } from 'src/app/services/settings.service';

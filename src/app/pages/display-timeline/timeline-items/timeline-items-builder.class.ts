@@ -1,15 +1,10 @@
 import { GmePriceEntry } from "../../../services/gme-price-entry.interface";
 import { TimelineEventConfig } from "./timeline-item/timeline-event-config.interface";
-import { TimelineEvent } from "./timeline-item/timeline-event";
+import { TimelineEvent } from "./timeline-item/timeline-event.class";
 
 export class TimelineItemsBuilder{
-
     public static getTimelineItems(configs :TimelineEventConfig[], gmeData: GmePriceEntry[]): TimelineEvent[] {
-
         let allItemConfigs: TimelineEventConfig[] = [];
-        // configs.forEach(configSet =>{
-        //     allItemConfigs = allItemConfigs.concat(configSet)
-        // });
         allItemConfigs = configs.sort((item1, item2)=>{
             if(item1.dateYYYYMMDD < item2.dateYYYYMMDD){
                 return -1;
@@ -21,16 +16,12 @@ export class TimelineItemsBuilder{
         });
         let itemIndex: number = 0;
         const items = allItemConfigs.map(config => {
-            const gmePriceEntry: GmePriceEntry | undefined = gmeData.find(entry => entry.date.format('YYYY-MM-DD') === config.dateYYYYMMDD);
+            const gmePriceEntry: GmePriceEntry | undefined = gmeData.find(entry => entry.dateYYYYMMDD === config.dateYYYYMMDD);
+            const event: TimelineEvent = new TimelineEvent(config, gmePriceEntry, itemIndex);
             itemIndex++;
-            return new TimelineEvent(config, gmePriceEntry, itemIndex);
+            return event;
             
         });
-        // for(let i=1; i<items.length;i++){
-        //     if(items[i].dateMMMDDYYYY === items[i-1].dateMMMDDYYYY){
-        //         console.log("Match:", items[i].dateYYYYMMDD, items[i].title + " , ", items[i-1].title)
-        //     }
-        // }
         return items;
-    }
+    }   
 }
