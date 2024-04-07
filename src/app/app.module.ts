@@ -41,6 +41,7 @@ import { RedditComponent } from './pages/info-pages/reddit/reddit.component';
 import { DrsComponent } from './pages/info-pages/drs/drs.component';
 import { SandboxComponent } from './pages/sandbox/sandbox.component';
 import { Fy23ProfitabilityComponent } from './pages/info-pages/fy23-profitability/fy23-profitability.component';
+import { LoadingComponent } from './layout/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { Fy23ProfitabilityComponent } from './pages/info-pages/fy23-profitabilit
     RedditComponent,
     DrsComponent,
     SandboxComponent,
-    Fy23ProfitabilityComponent
+    Fy23ProfitabilityComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

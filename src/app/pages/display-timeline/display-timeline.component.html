@@ -24,18 +24,4 @@
     </div>
 </div>
 
-
-<div class="layout-root" style="justify-content: center;" *ngIf="isLoading">
-    <div class="loading-container no-select">
-        <div class="lds-ripple">
-            <div></div>
-            <div></div>
-        </div>
-        <div class="loading-message">
-            {{ loadingMessage }}
-        </div>
-
-    </div>
-</div>
-
-
+<app-loading class="layout-root" style="justify-content: center;" *ngIf="isLoading" [loadingMessage]="loadingMessage"></app-loading>

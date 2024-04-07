@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ScreeSizeService } from 'src/app/services/scree-size.service';
 import { SettingsService } from 'src/app/services/settings.service';
 import { LoadingService } from 'src/app/services/loading.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-display-timeline',
@@ -22,7 +23,7 @@ export class DisplayTimelineComponent implements OnInit{
   public get isLoading(): boolean { return this._loadingService.dataIsLoading; }
   public get loadingMessage(): string { return this._loadingService.loadingMessage; }
 
-  ngOnInit() {
+  async ngOnInit() {
 
     this._sizeService.screenDimensions$.subscribe({
       next: (dimensions)=>{
@@ -30,8 +31,9 @@ export class DisplayTimelineComponent implements OnInit{
         }
       },
     });
-    // await lastValueFrom(timer(100));
-    this._loadingService.loadData$();
+
+    this._loadingService.loadingMessage = "Building chart...";   
+    await this._loadingService.loadData$();
   }
 
 }

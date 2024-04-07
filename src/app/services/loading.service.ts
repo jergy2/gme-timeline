@@ -45,16 +45,17 @@ export class LoadingService {
   public get dataIsLoading$(): Observable<boolean> { return this._dataIsLoading$.asObservable(); }
   public get loadingMessage(): string { return this._loadingMessage; }
 
+  public set loadingMessage(loadingMessage: string) { this._loadingMessage = loadingMessage;}
+  public beginLoading(){ this._dataIsLoading$.next(true); }
+
   private _allDataImported: boolean = false;
 
   public async loadData$() {
     if (this._allDataImported === false) {
       await this._importData$();
-      return this._updateChartData$();
-    } else {
-      this._dataIsLoading$.next(true);
-      return this._updateChartData$();
+      await this._updateChartData$();
     }
+    this._dataIsLoading$.next(false);
   }
 
   private async _updateChartData$() {
@@ -69,7 +70,6 @@ export class LoadingService {
     this._dataManagerService.setDataManager(dataManager);
     this._timelineItemsService.setQuarterlyFinancialResults(this._quarterlyResults);
     this._loadingMessage = '';
-    this._dataIsLoading$.next(false);
     this._allDataImported = true;
   }
 

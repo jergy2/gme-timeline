@@ -1,4 +1,4 @@
-<div class="financials-root">
+<div class="financials-root" *ngIf="!isLoading">
 
     <div class="title">
         GameStop Income Statements
@@ -7,3 +7,6 @@
     <!-- <app-balance-sheet-bar-chart class="bar-chart" style="width: 800px; height: 600px;"></app-balance-sheet-bar-chart> -->
 
 </div>
+
+
+<app-loading class="layout-root" style="justify-content: center;" *ngIf="isLoading" [loadingMessage]="loadingMessage"></app-loading>
