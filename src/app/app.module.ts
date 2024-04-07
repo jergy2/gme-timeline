@@ -40,6 +40,7 @@ import { SuperstonkComponent } from './pages/info-pages/superstonk/superstonk.co
 import { RedditComponent } from './pages/info-pages/reddit/reddit.component';
 import { DrsComponent } from './pages/info-pages/drs/drs.component';
 import { SandboxComponent } from './pages/sandbox/sandbox.component';
+import { Fy23ProfitabilityComponent } from './pages/info-pages/fy23-profitability/fy23-profitability.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { SandboxComponent } from './pages/sandbox/sandbox.component';
     SuperstonkComponent,
     RedditComponent,
     DrsComponent,
-    SandboxComponent
+    SandboxComponent,
+    Fy23ProfitabilityComponent
   ],
   imports: [
     BrowserModule,

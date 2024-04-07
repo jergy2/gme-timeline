@@ -1,6 +1,6 @@
 <div class="app-component-root">
-  <app-layout *ngIf="dataIsLoaded" class="app-layout"></app-layout>
-  <div *ngIf="!dataIsLoaded" class="loading-container no-select">
+  <app-layout class="app-layout"></app-layout>
+  <!-- <div *ngIf="dataIsLoading" class="loading-container no-select">
     <div class="lds-ripple">
       <div></div>
       <div></div>
@@ -9,10 +9,10 @@
       {{ loadingMessage }}
     </div>
     
-  </div>
+  </div> -->
 </div>
 
-<div style="background-color: white;" style="width: 2px; height: 2px; position: fixed;" *ngIf="!dataIsLoaded">
+<!-- <div style="background-color: white;" style="width: 2px; height: 2px; position: fixed;" *ngIf="dataIsLoading">
   <img src="assets/flaticon/story-black-and-white.png" alt="" style="width: 1px; height: 1px;">
   <img src="assets/flaticon/story.png" alt="" style="width: 1px; height: 1px;">
-</div>
+</div> -->

@@ -7,6 +7,7 @@ import { GuideComponent } from './pages/guide/guide.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { ResearchComponent } from './pages/research/research.component';
 import { SandboxComponent } from './pages/sandbox/sandbox.component';
+import { Fy23ProfitabilityComponent } from './pages/info-pages/fy23-profitability/fy23-profitability.component';
 
 const routes: Routes = [
   { path: '*', component: DisplayTimelineComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'research', component: ResearchComponent },
   { path: 'sandbox', component: SandboxComponent },
+  { path: 'fy23-profitability', component: Fy23ProfitabilityComponent },
   { path: '**', redirectTo: 'timeline' }
 ];
 

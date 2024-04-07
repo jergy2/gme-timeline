@@ -1,4 +1,4 @@
-<div class="layout-root">
+<div class="layout-root" *ngIf="!isLoading">
     <div class="container-grid" *ngIf="!isMobile && !showAsList">
         <app-timeline-controls class="app-controls"></app-timeline-controls>
         <app-timeline-items class="app-timeline-items"></app-timeline-items>
@@ -23,4 +23,19 @@
         <app-timeline-items class="app-timeline-items-mobile"></app-timeline-items>
     </div>
 </div>
+
+
+<div class="layout-root" style="justify-content: center;" *ngIf="isLoading">
+    <div class="loading-container no-select">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="loading-message">
+            {{ loadingMessage }}
+        </div>
+
+    </div>
+</div>
+
 
