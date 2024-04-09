@@ -11,4 +11,5 @@ export interface TimelineEventConfig{
     imgSrc?: string;
     specialIdentifier?: string;
     tags: string[];
+    localArticle?: TimelineEventURL | null;
 }

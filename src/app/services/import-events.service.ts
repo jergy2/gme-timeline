@@ -12,7 +12,7 @@ export class ImportEventsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public importEventsFromGoogleSheet$(): Observable<TimelineEventConfig[]>{
+  public importEventsFromGoogleSheet$(): Observable<TimelineEventConfig[]> {
     const eventsSubject: Subject<TimelineEventConfig[]> = new Subject();
     /**
      *  Google Sheet needs to be publish as tsv (tab-separated values) and not csv.
@@ -22,7 +22,7 @@ export class ImportEventsService {
     const eventConfigs: TimelineEventConfig[] = [];
     this.httpClient.get(eventsGoogleSheetTsvUrl, { responseType: 'text' }).subscribe({
       next: (response) => {
-        
+
         let lines = response.split('\n');
         lines = lines.slice(1);
         lines.forEach(line => {
@@ -36,6 +36,7 @@ export class ImportEventsService {
           const tags: string[] = this._getTagsFromSource(tabSplitLine[6]);
           const urls: TimelineEventURL[] = this._getUrlsFromSource(tabSplitLine[7]);
           const types: TimelineEventType[] = this._getEventTypes(tabSplitLine[8]);
+          const localArticle: TimelineEventURL | null = this._getLocalArticle(tabSplitLine[9]);
           const eventConfig: TimelineEventConfig = {
             title: title,
             dateYYYYMMDD: dateYYYYMMDD,
@@ -46,6 +47,7 @@ export class ImportEventsService {
             imgSrc: imgSrc,
             specialIdentifier: specialIdentifier,
             tags: tags,
+            localArticle: localArticle,
           }
           eventConfigs.push(eventConfig);
         });
@@ -59,39 +61,55 @@ export class ImportEventsService {
     return eventsSubject.asObservable();
   }
 
+  private _getLocalArticle(sourceValue: string): TimelineEventURL | null {
+    if (sourceValue === '{}\r') {
+      return null;
+    } else {
+      let localArticle = sourceValue.substring(1, sourceValue.length - 2);
+      let split = localArticle.split('}}');
+      const url = split[0];
+      const label = split[1];
+      return {
+        url: url,
+        type: 'NEWS',
+        label: label,
+      }
+    }
+
+  }
 
   private _getEventTypes(sourceValue: string): TimelineEventType[] {
     const types: TimelineEventType[] = [];
-    sourceValue = sourceValue.substring(1, sourceValue.length-2);
+    sourceValue = sourceValue.substring(1, sourceValue.length - 2);
     let sourceTags = sourceValue.split(";").filter(value => value !== "");
-    sourceTags.forEach(sourceTag =>{
+    sourceTags.forEach(sourceTag => {
       let type: TimelineEventType = TimelineEventType.OTHER;
-      if(sourceTag === 'Media'){
+      if (sourceTag === 'Media') {
         type = TimelineEventType.MEDIA;
-      }else if(sourceTag === 'Corporate'){
+      } else if (sourceTag === 'Corporate') {
         type = TimelineEventType.CORP;
-      }else if(sourceTag === 'Ryan Cohen'){
+      } else if (sourceTag === 'Ryan Cohen') {
         type = TimelineEventType.RC;
-      }else if(sourceTag === 'Social Media'){
+      } else if (sourceTag === 'Social Media') {
         type = TimelineEventType.SOCIAL_MEDIA;
-      }else if(sourceTag === 'DRS'){
+      } else if (sourceTag === 'DRS') {
         type = TimelineEventType.DRS;
       }
       types.push(type);
     })
     return types;
   }
-  private _getTagsFromSource(sourceTags: string): string[]{
+  private _getTagsFromSource(sourceTags: string): string[] {
     const tags: string[] = [];
-    sourceTags = sourceTags.substring(1, sourceTags.length-1);
-    sourceTags.split(";").filter(tag => tag !== '').forEach(tag => {tags.push(tag)});
+    sourceTags = sourceTags.substring(1, sourceTags.length - 1);
+    sourceTags.split(";").filter(tag => tag !== '').forEach(tag => { tags.push(tag) });
     return tags;
   }
 
   private _getUrlsFromSource(sourceValue: string): TimelineEventURL[] {
     const urls: TimelineEventURL[] = [];
     //remove starting character [ and ending character ]
-    sourceValue = sourceValue.substring(1, sourceValue.length-2);
+    sourceValue = sourceValue.substring(1, sourceValue.length - 2);
     let sourceURLs = sourceValue.split(';');
     sourceURLs.forEach(sourceUrl => {
       const splitSource = sourceUrl.split('}}');
@@ -106,34 +124,34 @@ export class ImportEventsService {
     return urls;
   }
 
-  private _getUrlType(sourceUrl: string): 'YOUTUBE' | 'REDDIT' | 'LEMMY' | 'WIKIPEDIA' | 'X-TWITTER' | 'ARCHIVE' | 'NEWS' | 'DOCUMENT' | 'GAMESTOP' | 'OTHER'{
+  private _getUrlType(sourceUrl: string): 'YOUTUBE' | 'REDDIT' | 'LEMMY' | 'WIKIPEDIA' | 'X-TWITTER' | 'ARCHIVE' | 'NEWS' | 'DOCUMENT' | 'GAMESTOP' | 'OTHER' {
     let urlType: 'YOUTUBE' | 'REDDIT' | 'LEMMY' | 'WIKIPEDIA' | 'X-TWITTER' | 'ARCHIVE' | 'NEWS' | 'DOCUMENT' | 'GAMESTOP' | 'OTHER' = 'OTHER';
     sourceUrl = sourceUrl.toLowerCase();
-    if(sourceUrl.includes('youtube.com') || sourceUrl.includes('youtu.be')){
+    if (sourceUrl.includes('youtube.com') || sourceUrl.includes('youtu.be')) {
       urlType = 'YOUTUBE';
     }
-    if(sourceUrl.includes('reddit.com') ){
+    if (sourceUrl.includes('reddit.com')) {
       urlType = 'REDDIT';
     }
-    if(sourceUrl.includes('lemmy.')){
+    if (sourceUrl.includes('lemmy.')) {
       urlType = 'LEMMY';
     }
-    if(sourceUrl.includes('wikipedia.')){
+    if (sourceUrl.includes('wikipedia.')) {
       urlType = 'WIKIPEDIA';
     }
-    if(sourceUrl.includes('//x.com') || sourceUrl.includes('twitter.')){
+    if (sourceUrl.includes('//x.com') || sourceUrl.includes('twitter.')) {
       urlType = 'X-TWITTER';
     }
-    if(sourceUrl.includes('sec.gov')){
+    if (sourceUrl.includes('sec.gov')) {
       urlType = 'DOCUMENT';
     }
-    if(sourceUrl.includes('gamestop.com')){
+    if (sourceUrl.includes('gamestop.com')) {
       urlType = 'GAMESTOP';
     }
-    if(sourceUrl.includes('forbes.com') || sourceUrl.includes('businessinsider.com') || sourceUrl.includes('reuters.com')){
+    if (sourceUrl.includes('forbes.com') || sourceUrl.includes('businessinsider.com') || sourceUrl.includes('reuters.com')) {
       urlType = 'NEWS';
     }
-    if(sourceUrl.includes('web.archive')){
+    if (sourceUrl.includes('web.archive')) {
       urlType = 'ARCHIVE';
     }
     return urlType;

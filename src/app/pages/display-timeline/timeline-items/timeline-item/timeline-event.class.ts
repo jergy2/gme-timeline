@@ -22,6 +22,7 @@ export class TimelineEvent{
     private _gmePricePreSplit: string = '';
     private _specialIdentifier: string = '';
     private _itemIndex: number = -1;
+    private _localArticle: TimelineEventURL | null = null;
     
     private _quarterlyFinancialResult: QuarterlyResult | null = null;
 
@@ -35,9 +36,11 @@ export class TimelineEvent{
     public get significance(): number { return this._significance; }
     public get imgSrc(): string { return this._imgSrc;}
     public get tags(): string[] { return this._tags; }
+    public get localArticle(): TimelineEventURL | null { return this._localArticle;}
 
     public get isSelected(): boolean { return this._isSelected; }
     public get hasImg(): boolean { return this._imgSrc !== ''; }
+    public get hasLocalArticle(): boolean { return this._localArticle !== null;}
 
     public get gmePriceEntry(): GmePriceEntry | undefined { return this._gmePriceEntry;}
     public get gmePrice(): number { return this._gmePrice; }
@@ -72,6 +75,9 @@ export class TimelineEvent{
         this._itemIndex = index;
         if(config.tags){
             this._tags = config.tags;
+        }
+        if(config.localArticle){
+            this._localArticle = config.localArticle;
         }
     }
 

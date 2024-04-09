@@ -6,6 +6,7 @@ import { ScreeSizeService } from 'src/app/services/scree-size.service';
 import { urlType } from './timeline-event-url.interface';
 import { TimelineItemsService } from '../timeline-items.service';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-timeline-item',
@@ -14,7 +15,8 @@ import { ChartDataManagerService } from '../../chart/chart-data-manager-service'
 })
 export class TimelineItemComponent {
 
-  constructor(private _chartDataService: ChartDataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
+  constructor(
+    private _router: Router, private _chartDataService: ChartDataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
 
   private _item: TimelineEvent = new TimelineEvent({
     title: '',
@@ -59,6 +61,11 @@ export class TimelineItemComponent {
       return true;
     }
     return false;
+  }
+
+  public onClickLocalArticle(localArticle: string){
+    console.log("Navigate:", localArticle)
+    this._router.navigate([localArticle]);
   }
 
   public onClickClose(){
