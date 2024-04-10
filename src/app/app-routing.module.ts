@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { FinancialsComponent } from './pages/financials/financials.component';
 import { DisplayTimelineComponent } from './pages/display-timeline/display-timeline.component';
 import { AboutComponent } from './pages/about/about.component';
-import { GuideComponent } from './pages/guide/guide.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { ResearchComponent } from './pages/research/research.component';
 import { SandboxComponent } from './pages/sandbox/sandbox.component';
 import { Fy23ProfitabilityComponent } from './pages/info-pages/fy23-profitability/fy23-profitability.component';
+import { GuideComponent } from './pages/info-pages/guide/guide.component';
+import { RcInterviewComponent } from './pages/info-pages/rc-interview/rc-interview.component';
 
 const routes: Routes = [
   { path: '*', component: DisplayTimelineComponent },
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'research', component: ResearchComponent },
   { path: 'sandbox', component: SandboxComponent },
   { path: 'fy23-profitability', component: Fy23ProfitabilityComponent },
+  { path: 'rc-interview', component: RcInterviewComponent },
+  
   { path: '**', redirectTo: 'timeline' }
 ];
 

@@ -22,8 +22,6 @@ import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.co
 import { TimelineListItemComponent } from './pages/display-timeline/timeline-items/timeline-list-item/timeline-list-item.component';
 import { QuarterlyResultComponent } from './pages/display-timeline/timeline-items/quarterly-result/quarterly-result.component';
 import { EarningsTableComponent } from './pages/financials/earnings-table/earnings-table.component';
-import { GuideComponent } from './pages/guide/guide.component';
-import { InformationPointComponent } from './pages/guide/information-point/information-point.component';
 import { SignificanceControlComponent } from './pages/display-timeline/timeline-controls/significance-control/significance-control.component';
 import { ControlsComponent } from './pages/display-timeline/timeline-controls/timeline-controls.component';
 import { CategoryControlComponent } from './pages/display-timeline/timeline-controls/category-control/category-control.component';
@@ -42,6 +40,10 @@ import { DrsComponent } from './pages/info-pages/drs/drs.component';
 import { SandboxComponent } from './pages/sandbox/sandbox.component';
 import { Fy23ProfitabilityComponent } from './pages/info-pages/fy23-profitability/fy23-profitability.component';
 import { LoadingComponent } from './layout/loading/loading.component';
+import { RcInterviewComponent } from './pages/info-pages/rc-interview/rc-interview.component';
+import { GuideComponent } from './pages/info-pages/guide/guide.component';
+import { InformationPointComponent } from './pages/info-pages/guide/information-point/information-point.component';
+import { NewsArticleComponent } from './pages/info-pages/fy23-profitability/news-article/news-article.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,9 @@ import { LoadingComponent } from './layout/loading/loading.component';
     DrsComponent,
     SandboxComponent,
     Fy23ProfitabilityComponent,
-    LoadingComponent
+    LoadingComponent,
+    RcInterviewComponent,
+    NewsArticleComponent
   ],
   imports: [
     BrowserModule,
