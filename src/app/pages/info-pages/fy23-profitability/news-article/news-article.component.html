@@ -22,9 +22,12 @@
     </div>
 
 </div>
-<div class="news-article" *ngIf="article && !article.isExpanded" [ngClass]="article.ngClass"  (click)="onClick(article)" [ngStyle]="{'cursor': !article.isExpanded ? 'pointer': ''}">
+<div class="news-article slim" *ngIf="article && !article.isExpanded" [ngClass]="article.ngClass"  (click)="onClick(article)" [ngStyle]="{'cursor': !article.isExpanded ? 'pointer': ''}">
     <div class="news-article-headline">
         <div>{{article.title}}</div>
+    </div>
+    <div class="news-article-date" style="font-size:0.8em;">
+        {{article.date}}, by {{ article.author }}
     </div>
 
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ScreeSizeService } from '../services/scree-size.service';
+import { ScreenSizeService } from '../services/screen-size.service';
 import { DisplayService } from '../pages/display-timeline/display.service';
 import { ChartDataManagerService } from '../pages/display-timeline/chart/chart-data-manager-service';
 
@@ -10,7 +10,7 @@ import { ChartDataManagerService } from '../pages/display-timeline/chart/chart-d
 })
 export class LayoutComponent {
 
-  constructor(private _sizeService: ScreeSizeService, private _dataManagerService: ChartDataManagerService, private _displayService: DisplayService) { }
+  constructor(private _sizeService: ScreenSizeService, private _dataManagerService: ChartDataManagerService, private _displayService: DisplayService) { }
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
 

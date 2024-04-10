@@ -9,9 +9,15 @@
     margin-bottom: 5px;
     padding: 15px;
 }
+.slim{
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
 .news-article-headline{
     font-weight: 550;
+    font-size: 1.05em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

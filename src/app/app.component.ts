@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { ScreeSizeService } from './services/scree-size.service';
+import { ScreenSizeService } from './services/screen-size.service';
 import { SettingsService } from './services/settings.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent {
   public get isMobile(): boolean { return this._sizeService.isMobile; }
 
   constructor(
-    private _sizeService: ScreeSizeService,
+    private _sizeService: ScreenSizeService,
     private _router: Router,
     private _settingsService: SettingsService,) {
   }
@@ -25,12 +25,13 @@ export class AppComponent {
     this._sizeService.updateScreenSize(width, height);
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     this._settingsService.getSettings();
     this._router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (event.url === '/') {
           this._router.navigate(['/timeline']);
+        }else{
         }
       }
     });

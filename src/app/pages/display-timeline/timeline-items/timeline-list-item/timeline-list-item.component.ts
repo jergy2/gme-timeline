@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TimelineEvent } from '../timeline-item/timeline-event.class';
 import { TimelineEventType } from '../timeline-item/timeline-event-type.enum';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
-import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { TimelineItemsService } from '../timeline-items.service';
 import { urlType } from '../timeline-item/timeline-event-url.interface';
 
@@ -14,7 +14,7 @@ import { urlType } from '../timeline-item/timeline-event-url.interface';
 export class TimelineListItemComponent {
 
   constructor(private _chartDataService: ChartDataManagerService, 
-    private _sizeService: ScreeSizeService, 
+    private _sizeService: ScreenSizeService, 
     private _itemService: TimelineItemsService){
 
   }

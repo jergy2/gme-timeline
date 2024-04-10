@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TimelineEvent } from './timeline-event.class';
 import { TimelineEventType } from './timeline-event-type.enum';
 import * as dayjs from 'dayjs';
-import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { urlType } from './timeline-event-url.interface';
 import { TimelineItemsService } from '../timeline-items.service';
 import { ChartDataManagerService } from '../../chart/chart-data-manager-service';
@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class TimelineItemComponent {
 
   constructor(
-    private _router: Router, private _chartDataService: ChartDataManagerService, private _sizeService: ScreeSizeService, private _itemService: TimelineItemsService) { }
+    private _router: Router, private _chartDataService: ChartDataManagerService, private _sizeService: ScreenSizeService, private _itemService: TimelineItemsService) { }
 
   private _item: TimelineEvent = new TimelineEvent({
     title: '',

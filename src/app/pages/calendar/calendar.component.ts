@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarMonth } from './year-view-month/calendar.month.class';
 import * as dayjs from 'dayjs';
-import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-calendar',
@@ -9,6 +10,10 @@ import { ScreeSizeService } from 'src/app/services/scree-size.service';
   styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent implements OnInit {
+
+  constructor(private titleService: Title, private _screenService: ScreenSizeService){
+    this.titleService.setTitle('GME Calendar 2024')
+  }
 
   private _startDate = dayjs();
   private _endDate = dayjs(this._startDate).add(12, 'months');
@@ -21,8 +26,6 @@ export class CalendarComponent implements OnInit {
 
   private _months: CalendarMonth[] = [];
   public get months(): CalendarMonth[] { return this._months; }
-
-  constructor(private _screenService: ScreeSizeService) { }
 
   ngOnInit() {
     this._buildMonths();

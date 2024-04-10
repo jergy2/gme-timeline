@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { faQuestion, faSliders, faMagnifyingGlass, faL } from '@fortawesome/free-solid-svg-icons';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
-import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { SettingsService } from 'src/app/services/settings.service';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 import { EventSearchService } from './search/event-search.service';
@@ -46,7 +46,7 @@ import { EventSearchService } from './search/event-search.service';
 export class ControlsComponent implements OnInit {
 
   constructor(
-    private _sizeService: ScreeSizeService,
+    private _sizeService: ScreenSizeService,
     private _settingsService: SettingsService,
     private _timelineItemService: TimelineItemsService,
     private _searchService: EventSearchService) { }

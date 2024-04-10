@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { SettingsService } from 'src/app/services/settings.service';
 import { LoadingService } from 'src/app/services/loading.service';
 import { timer } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-display-timeline',
@@ -12,9 +13,12 @@ import { timer } from 'rxjs';
 export class DisplayTimelineComponent implements OnInit{
 
   constructor(
-    private _sizeService: ScreeSizeService, 
+    private _sizeService: ScreenSizeService, 
     private _settingsService: SettingsService,
-    private _loadingService: LoadingService){}
+    private _loadingService: LoadingService,
+    private titleService: Title){
+      this.titleService.setTitle('GME Interactive Timeline')
+    }
 
   public get isMobile(): boolean { return this._sizeService.isMobile}
   public get showAsList(): boolean { return this._settingsService.chartListIsVertical; }

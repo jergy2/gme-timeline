@@ -46,24 +46,31 @@ html, body {
   flex-direction: column;
   width: 100%;
   max-width: 800px;
+  // padding: 5px;
 }
 .page-title{
   font-size: 1.8em;
   font-weight: 600;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .page-subtitle{
   color: rgb(51, 51, 51);
-
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .page-date{
+  padding-left: 5px;
+  padding-right: 5px;
   color: gray;
   margin-top: 10px;
   font-size: 0.8em;
   margin-bottom: 10px;
 }
 .page-section{
+  padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -81,6 +88,7 @@ html, body {
   justify-content: flex-end;
   font-size: 0.8em;
   color: gray;
+  padding-right: 5px;
 }
 
 .quote-section{

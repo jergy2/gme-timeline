@@ -52,10 +52,17 @@
                 Starting in fiscal year 2017, GameStop began showing reduced profitability, and from FY 2018 through FY
                 2022, was unprofitable.</p>
             <!-- Revenue and Net Income chart from Google Sheets -->
-            <div style="max-width: 800px;">
+            <div style="max-width: 800px;" *ngIf="moreThan800Px">
                 <iframe width="800" height="600" seamless frameborder="0" scrolling="no"
                     src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7n4mmCwtjREaCkJVUkHe_ujHBod7vGtEB5iI_kbYToT5dU9cQSq-d3XO2PuFEZ64GCuU70jVayE0R/pubchart?oid=1937296424&amp;format=interactive"></iframe>
 
+            </div>
+            <div *ngIf="!moreThan800Px" style="max-width: 800px;">
+                <a href="assets/info-pages/fy23-revenue-netincome-by-year.png">
+                    <img src="assets/info-pages/fy23-revenue-netincome-by-year.png" 
+                    alt="GameStop Revenue and Net Income by Fiscal Year" 
+                    style="max-width: 800px; width: 100%;">
+                </a>
             </div>
             <div class="source-link-container">
                 Source:
@@ -140,15 +147,16 @@
                 Failing to mention this important detail is a deliberate decision that reveals a clear bias in the
                 media.
                 It goes beyond just reporting about true negative facts about GameStop. It demonstrates a deliberate
-                effort, by those culpable media outlets, to propagate a specific sentiment about the company that is not
+                effort, by those culpable writers and media outlets, to propagate a specific sentiment about the company that is not
                 allowed to even mention contextually important true positive facts about the company.
 
             </p>
             <p>
-                GameStop was profitable for the first time in 6 years - this is the news headline of GameStop's recent
+                GameStop was profitable for the first time in 6 years - this is the news headline that captures the significance of GameStop's recent
                 earnings report. Yet, an unassuming person who consumes mainstream financial media likely would not even learn about
-                this important fact at all.
+                this important fact at all.  
             </p>
+            <p>Who would benefit from that?</p>
         </div>
 
         <div class="page-section">
@@ -175,15 +183,15 @@
                 Naturally, members of this faction will promote the narrative that supports their financial interest.
             </p>
             <p>If the prospect of GameStop's success was not an ongoing threat to one faction of incumbent market participants, then
-                there would be no reason to deliberately ignore the significance of GameStop's profitability.</p>
+                there would be no reason to deliberately omit the fact of GameStop's profitability, to pretend that it isn't something that even happened at all.</p>
             <p>
                 Recognizing that there is an ongoing financial competition between factions that stand to benefit financially from a
                 particular outcome of the GME share price,
-                which faction benefits when most mainstream financial media articles propagate negative sentiment and deliberately ignore the contextually
+                which faction benefits when most mainstream financial media articles propagate negative sentiment about GameStop and deliberately ignore the contextually
                 significant fact that GameStop was profitable?
             </p>
 
-            <p>It is clear: much of mainstream financial media is actively propagating biased narratives to the benefit of the faction that has a vested financial interest in the demise of GameStop.</p>
+            <p>It is clear: much of mainstream financial media is actively propagating biased narratives to the benefit of the faction that has a vested financial interest in the share price of GME going down.</p>
 
         </div>
 

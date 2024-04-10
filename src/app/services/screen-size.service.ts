@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ScreeSizeService {
+export class ScreenSizeService {
 
   constructor() { this._screenDimensions$ = new BehaviorSubject({width: window.innerWidth, height: window.innerHeight})}
 

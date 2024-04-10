@@ -1,16 +1,22 @@
-<div class="mobile-top-bar-root">
+<div class="mobile-top-bar-root no-select" (click)="onClickTopBar()">
 
-    <div class="mobile-menu-item" (click)="onClickTopBar()">
+    <div class="mobile-menu-item" *ngIf="selectedMenuItem">
         <div *ngIf="selectedMenuItem.iconOrImg === 'ICON'" class="menu-item-icon"><fa-icon
                 [icon]="selectedMenuItem.icon" *ngIf="selectedMenuItem.icon" style="font-size:1.5em;"></fa-icon></div>
         <div *ngIf="selectedMenuItem.iconOrImg === 'IMAGE'" class="menu-item-icon" (click)="onClickImage()">
             <img [src]="selectedMenuItem.imgSrc" style="width: 25px; height: 25px;">
         </div>
-        <div  class="menu-item-label" *ngIf="selectedMenuItem.routerLink !== '/timeline'">
+        <div class="menu-item-label" *ngIf="selectedMenuItem.routerLink !== '/timeline'">
             {{ selectedMenuItem.label }}
         </div>
         <div class="timeline-controls" *ngIf="selectedMenuItem.routerLink === '/timeline'">
             <app-timeline-controls></app-timeline-controls>
+        </div>
+    </div>
+    <div class="mobile-menu-item" *ngIf="!selectedMenuItem">
+        <div class="menu-item-icon"><fa-icon [icon]="faBars" style="font-size:1.5em;"></fa-icon></div>
+        <div class="menu-item-label">
+            Menu
         </div>
     </div>
 

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { TimelineItemsService } from './timeline-items.service';
 import { TimelineEvent } from './timeline-item/timeline-event.class';
-import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { DisplayService } from '../display.service';
 import { SettingsService } from 'src/app/services/settings.service';
 
@@ -14,7 +14,7 @@ import { SettingsService } from 'src/app/services/settings.service';
 export class TimelineItemsComponent implements OnInit, AfterViewInit {
   constructor(
     private _itemService: TimelineItemsService, 
-    private _screenService: ScreeSizeService, 
+    private _screenService: ScreenSizeService, 
     private _displayService: DisplayService,
     private _settingsService: SettingsService) { }
 

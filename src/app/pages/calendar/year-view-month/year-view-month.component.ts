@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CalendarMonth } from './calendar.month.class';
-import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { csBuyDatesYYYYMMDD } from './computershare-buy-dates';
 import * as dayjs from 'dayjs';
 import { DayOfMonth } from './day-of-month.class';

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
-import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -8,6 +8,10 @@ import { trigger, state, style, animate, transition, keyframes, } from '@angular
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
+
+  constructor(private _titleService: Title){
+    this._titleService.setTitle('About gmetimeline.org');
+  }
 
   private _aboutIsExpanded: boolean = false;
   public get aboutIsExpanded(): boolean { return this._aboutIsExpanded; }

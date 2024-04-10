@@ -22,7 +22,7 @@ export const fy23NewsArticles: NewsArticle[] = [
         ],
         -10,
         [
-            "Focus on job cuts, reduced revenue, leans on the opinion of Michael Pachter",
+            "Focuses on job cuts, reduced revenue, leans on the opinion of Michael Pachter",
             "Fails to mention GameStop achieving full-year profitability"
         ],
     ),
@@ -36,7 +36,7 @@ export const fy23NewsArticles: NewsArticle[] = [
         -10,
         [
             "Emphasis on GME share price going down",
-            "Focus on reduced revenue",
+            "Focuses on reduced revenue",
             "Did mention some favorable facts",
             "Fails to mention GameStop achieving full-year profitability"
         ],
@@ -124,7 +124,7 @@ export const fy23NewsArticles: NewsArticle[] = [
         ],
         0,
         [
-            "Focus on reduced revenue, job cuts",
+            "Focuses on reduced revenue, job cuts",
             "Weak mention of GameStop posting a full-year profit of $6.7 million",
             "Generally fair assessment of the struggles faced by GameStop"
         ],
@@ -192,7 +192,8 @@ export const fy23NewsArticles: NewsArticle[] = [
         ],
         0,
         [
-            "Despite any sentiment implied by the headline, this article provides a fair assessment of GameStop's circumstances"
+            "Despite any sentiment implied by the headline, this article provides a mostly neutral assessment of GameStop's circumstances",
+            "Mentions GameStop achieving full-year profitability"
         ],
     ),
 

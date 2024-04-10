@@ -7,7 +7,7 @@ import { TimelineEventType } from '../../timeline-items/timeline-item/timeline-e
 import { SettingsService } from 'src/app/services/settings.service';
 import { TagAssociation } from '../search/tag-association.interface';
 import { TagSearchable } from '../search/tag-searchable.class';
-import { ScreeSizeService } from 'src/app/services/scree-size.service';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { DdEntry } from 'src/app/services/dd-entry.interface';
 
 @Component({
@@ -37,7 +37,7 @@ export class SearchControlComponent {
     private _searchService: EventSearchService,
     private _chartService: ChartDataManagerService,
     private _settingsService: SettingsService,
-    private _sizeService: ScreeSizeService
+    private _sizeService: ScreenSizeService
   ){
   }
 
