@@ -44,6 +44,7 @@ import { RcInterviewComponent } from './pages/info-pages/rc-interview/rc-intervi
 import { GuideComponent } from './pages/info-pages/guide/guide.component';
 import { InformationPointComponent } from './pages/info-pages/guide/information-point/information-point.component';
 import { NewsArticleComponent } from './pages/info-pages/fy23-profitability/news-article/news-article.component';
+import { SneezeComponent } from './pages/info-pages/sneeze/sneeze.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { NewsArticleComponent } from './pages/info-pages/fy23-profitability/news
     Fy23ProfitabilityComponent,
     LoadingComponent,
     RcInterviewComponent,
-    NewsArticleComponent
+    NewsArticleComponent,
+    SneezeComponent
   ],
   imports: [
     BrowserModule,

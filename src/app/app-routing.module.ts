@@ -9,6 +9,8 @@ import { SandboxComponent } from './pages/sandbox/sandbox.component';
 import { Fy23ProfitabilityComponent } from './pages/info-pages/fy23-profitability/fy23-profitability.component';
 import { GuideComponent } from './pages/info-pages/guide/guide.component';
 import { RcInterviewComponent } from './pages/info-pages/rc-interview/rc-interview.component';
+import { DrsComponent } from './pages/info-pages/drs/drs.component';
+import { SneezeComponent } from './pages/info-pages/sneeze/sneeze.component';
 
 const routes: Routes = [
   { path: '*', component: DisplayTimelineComponent },
@@ -21,8 +23,11 @@ const routes: Routes = [
   { path: 'research', component: ResearchComponent },
   { path: 'sandbox', component: SandboxComponent },
   { path: 'fy23-profitability', component: Fy23ProfitabilityComponent },
+  { path: 'rc-interview-november-2022', component: RcInterviewComponent },
   { path: 'rc-interview', component: RcInterviewComponent },
-  
+  { path: 'sneeze', component: SneezeComponent },
+  { path: 'sneeze-january-2021', component: SneezeComponent },
+  { path: 'drs', component: DrsComponent },
   { path: '**', redirectTo: 'timeline' }
 ];
 
