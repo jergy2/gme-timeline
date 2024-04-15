@@ -1,0 +1,21 @@
+
+.timeline-item{
+    list-style-type: disc;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.timeline-item-date{
+    font-weight: 100;
+    font-size: 0.8em;
+    min-width: 150px;
+}
+.timeline-item-body{
+}
+
+@media (min-width:800px){
+    .timeline-item{
+        display:flex;
+        flex-direction: row;
+    }
+}
