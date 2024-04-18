@@ -34,17 +34,9 @@ import { ResearchComponent } from './pages/research/research.component';
 import { MonthComponent } from './pages/calendar/month/month.component';
 import { YearViewMonthComponent } from './pages/calendar/year-view-month/year-view-month.component';
 import { SeoComponent } from './pages/about/seo/seo.component';
-import { SuperstonkComponent } from './pages/info-pages/superstonk/superstonk.component';
-import { RedditComponent } from './pages/info-pages/reddit/reddit.component';
-import { DrsComponent } from './pages/info-pages/drs/drs.component';
 import { SandboxComponent } from './pages/sandbox/sandbox.component';
-import { Fy23ProfitabilityComponent } from './pages/info-pages/fy23-profitability/fy23-profitability.component';
 import { LoadingComponent } from './layout/loading/loading.component';
-import { RcInterviewComponent } from './pages/info-pages/rc-interview/rc-interview.component';
-import { GuideComponent } from './pages/info-pages/guide/guide.component';
-import { InformationPointComponent } from './pages/info-pages/guide/information-point/information-point.component';
-import { NewsArticleComponent } from './pages/info-pages/fy23-profitability/news-article/news-article.component';
-import { SneezeComponent } from './pages/info-pages/sneeze/sneeze.component';
+import { InfoPagesModule } from './info-pages/info-pages.module';
 
 @NgModule({
   declarations: [
@@ -69,8 +61,6 @@ import { SneezeComponent } from './pages/info-pages/sneeze/sneeze.component';
     TimelineListItemComponent,
     QuarterlyResultComponent,
     EarningsTableComponent,
-    GuideComponent,
-    InformationPointComponent,
     SearchControlComponent,
     SettingsControlsComponent,
     ChaptersControlComponent,
@@ -79,15 +69,8 @@ import { SneezeComponent } from './pages/info-pages/sneeze/sneeze.component';
     MonthComponent,
     YearViewMonthComponent,
     SeoComponent,
-    SuperstonkComponent,
-    RedditComponent,
-    DrsComponent,
     SandboxComponent,
-    Fy23ProfitabilityComponent,
     LoadingComponent,
-    RcInterviewComponent,
-    NewsArticleComponent,
-    SneezeComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +78,8 @@ import { SneezeComponent } from './pages/info-pages/sneeze/sneeze.component';
     AppRoutingModule,
     NgChartsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    InfoPagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
