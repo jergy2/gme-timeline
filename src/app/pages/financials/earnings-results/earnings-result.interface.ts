@@ -1,4 +1,4 @@
-export interface FYResultInterface {
+export interface EarningsResultInterface {
     fiscalYear: number;
     filingDateYYYYMMDD: string;
     reportDateYYYYMMDD: string;
@@ -26,4 +26,6 @@ export interface FYResultInterface {
     totalDebt: number;
     totalLiabilities: number;
     stockholdersEquity: number;
+    drs: number;
+    reportingPeriod: 'Q1' | 'Q2' | 'Q3' | 'Q4' | 'FY';
 }

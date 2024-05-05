@@ -15,7 +15,7 @@ import { TimelineItemsBuilder } from '../pages/display-timeline/timeline-items/t
 import { EventSearchService } from '../pages/display-timeline/timeline-controls/search/event-search.service';
 import { DdEntry } from './dd-entry.interface';
 import { GmePriceEntry } from './gme-price-entry.interface';
-import { QuarterlyResult } from '../pages/financials/quarterly-results/quarterly-result.class';
+import { EarningsResult } from '../pages/financials/earnings-results/earnings-result.class';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +37,7 @@ export class LoadingService {
   private _ddEntries: DdEntry[] = [];
   private _allConfigs: TimelineEventConfig[] = [];
   private _priceEntries: GmePriceEntry[] = [];
-  private _quarterlyResults: QuarterlyResult[] = [];
+  private _quarterlyResults: EarningsResult[] = [];
 
   private _dataIsLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private _loadingMessage: string = '';
@@ -79,7 +79,7 @@ export class LoadingService {
     this._ddEntries = await lastValueFrom(this._ddService.loadDDItems$());
     this._loadingMessage = 'Loading earnings data...';
     const fyResults = await lastValueFrom(this._import10KService.load10KData$());
-    this._quarterlyResults = await lastValueFrom(this._import10KService.loadFinancialResults$());
+    this._quarterlyResults = await lastValueFrom(this._import10KService.loadQuarterlyResults$());
     this._loadingMessage = 'Loading GME price data...';
     this._priceEntries = await lastValueFrom(this._gmeDataService.loadGmeData$());
     this._loadingMessage = 'Loading events data...';

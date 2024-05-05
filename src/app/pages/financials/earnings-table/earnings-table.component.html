@@ -23,7 +23,7 @@
             <tr style="font-size:0.9em;font-weight: 500;">
                 <!-- <td style="border-top: none;border-left:none;"></td> -->
                 <td style="width: 70px;">Quarter</td>
-                <td>Filing Date</td>
+                <!-- <td>Filing Date</td> -->
                 <td>Document Date</td>
                 <td>Revenue<br>(billions)</td>
                 <td>Net income<br>(millions)</td>
@@ -38,7 +38,7 @@
                 <tr *ngIf="row.showEarningsRelease && tableRows.indexOf(row) > 0" style="font-size:0.9em;font-weight: 500;">
                     <!-- <td style="border-top: none;border-left:none;"></td> -->
                     <td style="width: 70px;">Quarter</td>
-                    <td>Filing Date</td>
+                    <!-- <td>Filing Date</td> -->
                     <td>Document Date</td>
                     <td>Revenue<br>(billions)</td>
                     <td>Net income<br>(millions)</td>
@@ -50,26 +50,26 @@
                     <td class="earnings-release-cell"></td>
                 </tr>
                 <tr>
-                    <td>{{ row.earningsResult.quarter }} {{ trimmedYear(row.earningsResult.fiscalYear) }}</td>
-                    <td style="font-size: 0.8em;">{{ date(row.earningsResult.filingDateYYYYMMDD) }} </td>
-                    <td style="font-size: 0.8em;">{{ date(row.earningsResult.documentDateYYYYMMDD) }} </td>
+                    <td>{{ row.earningsResult.reportingPeriod }} {{ trimmedYear(row.earningsResult.fiscalYear) }}</td>
+                    <!-- <td style="font-size: 0.8em;">{{ date(row.earningsResult.filingDateYYYYMMDD) }} </td> -->
+                    <td style="font-size: 0.8em;">{{ date(row.earningsResult.reportDateYYYYMMDD) }} </td>
                     <td [style.backgroundColor]="backgroundColor(row.earningsResult, 'REVENUE')">$ {{
-                        ((row.earningsResult.revenue)/1000).toFixed(1) }} </td>
+                        ((row.earningsResult.revenue)/1000000000).toFixed(1) }} </td>
                     <td [style.backgroundColor]="backgroundColor(row.earningsResult, 'NETINCOME')">$ {{
-                        ((row.earningsResult.netIncome)).toFixed(0)}} </td>
+                        ((row.earningsResult.netEarnings/1000000)).toFixed(0)}} </td>
                     <td [style.backgroundColor]="backgroundColor(row.earningsResult, 'ASSETS')">$ {{
-                        ((row.earningsResult.assetsMillions)/1000).toFixed(1)}}</td>
+                        ((row.earningsResult.totalAssets)/1000000000).toFixed(1)}}</td>
                     <td [style.backgroundColor]="backgroundColor(row.earningsResult, 'LIABILITIES')">$ {{
-                        ((row.earningsResult.liabilitiesMillions)/1000).toFixed(1)}}</td>
+                        ((row.earningsResult.totalLiabilities)/1000000000).toFixed(1)}}</td>
                     <td [style.backgroundColor]="backgroundColor(row.earningsResult, 'EQUITY')">$ {{
-                        ((row.earningsResult.stockholderEquityMillions)/1000).toFixed(1)}}</td>
+                        ((row.earningsResult.stockholdersEquity)/1000000000).toFixed(1)}}</td>
                     <td [style.backgroundColor]="backgroundColor(row.earningsResult, 'EPS')">$
-                        {{row.earningsResult.netEarningsLossPerShare.toFixed(2)}}</td>
+                        {{row.earningsResult.netEPS.toFixed(2)}}</td>
                     <td [style.backgroundColor]="backgroundColor(row.earningsResult, 'DRS')">{{
-                        ((row.earningsResult.DRSMillions /
-                        row.earningsResult.sharesOutstandingMillions)*100).toFixed(1)}} %
+                        ((row.earningsResult.drs /
+                        row.earningsResult.weightedAverageSharesOutstanding)*100).toFixed(1)}} %
                     </td>
-                    <td class="earnings-release-cell">
+                    <!-- <td class="earnings-release-cell">
                         <button *ngIf="row.showEarningsRelease" class="earnings-button"
                             (click)="row.clickEarningsRelease()">
                             <fa-icon [icon]="faSquareMinus"></fa-icon>
@@ -78,9 +78,9 @@
                             (click)="row.clickEarningsRelease()">
                             <fa-icon [icon]="faSquarePlus"></fa-icon>
                         </button>
-                    </td>
+                    </td> -->
                 </tr>
-                <tr *ngIf="row.showEarningsRelease">
+                <!-- <tr *ngIf="row.showEarningsRelease">
                     <td colspan="10" style="padding: 0px;">
                         <div *ngIf="row.earningsRelease" class="earnings-content">
                             <div class="earnings-top-bar">
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>

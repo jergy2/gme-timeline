@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Import10KDataService } from '../../../services/import-10k-data.service';
-import { QuarterlyResult } from '../quarterly-results/quarterly-result.class';
 import * as dayjs from 'dayjs';
-import { YearlyResult } from '../quarterly-results/yearly-result.class';
 import { IconDefinition, faNoteSticky, faSquareMinus, faSquarePlus, faLink, faFile } from '@fortawesome/free-solid-svg-icons';
 import { EarningsTableRow } from './earnings-table-row.class';
 import { releaseOverviews } from './release-overview/release-overviews';
+import { EarningsResultInterface } from '../earnings-results/earnings-result.interface';
+import { EarningsResult } from '../earnings-results/earnings-result.class';
 
 @Component({
   selector: 'app-earnings-table',
@@ -31,22 +31,27 @@ export class EarningsTableComponent {
   private _tableRows: EarningsTableRow[] = [];
   public get tableRows(): EarningsTableRow[] { return this._tableRows; }
 
+  private _quarterlyResults: EarningsResult[] = []
+  private _annualResults: EarningsResult[] = [];
+
   ngOnInit() {
+    this._quarterlyResults = this._financialsService.quarterlyResults.filter(item => item.fiscalYear >= 2020);
+    this._annualResults = this._financialsService.annualResults.filter(item => item.fiscalYear >= 2005);
+    // console.log("Quarterly results, annual results", this._quarterlyResults, this._annualResults);
     this._buildTableRows();
   }
 
   private _buildTableRows() {
-    let results: QuarterlyResult[] | YearlyResult[];
     if (this._displayMode === 'QUARTER') {
-      results = this._buildQuarterlyResults();
+      this._tableRows = this._quarterlyResults.map(result => new EarningsTableRow(result, releaseOverviews));
     } else {
-      results = this._buildYearlyResults();
+      this._tableRows = this._annualResults.map(result => new EarningsTableRow(result, releaseOverviews));
     }
-    this._tableRows = results.map(result => new EarningsTableRow(result, releaseOverviews));
+     
   }
 
   private _buildQuarterlyResults() {
-    let quarterlyResults: QuarterlyResult[] = Object.assign([], this._financialsService.quarterlyResults);
+    let quarterlyResults: EarningsResult[] = Object.assign([], this._financialsService.quarterlyResults);
     quarterlyResults = quarterlyResults.sort((item1, item2) => {
       if (item1.filingDateYYYYMMDD > item2.filingDateYYYYMMDD) {
         return -1;
@@ -59,10 +64,10 @@ export class EarningsTableComponent {
     return quarterlyResults;
   }
 
-  private _buildYearlyResults(): YearlyResult[] {
-    let quarterlyResults: QuarterlyResult[] = this._buildQuarterlyResults();
+  private _buildYearlyResults(): EarningsResultInterface[] {
+    let quarterlyResults: EarningsResult[] = this._buildQuarterlyResults();
     let years: number[] = [];
-    const yearlyResults: YearlyResult[] = [];
+    const yearlyResults: EarningsResultInterface[] = [];
     quarterlyResults.map(result => result.fiscalYear).forEach(year => {
       if (years.indexOf(year) === -1) {
         years.push(year);
@@ -70,8 +75,9 @@ export class EarningsTableComponent {
     });
     years.forEach(year => {
       let yearQuarters = quarterlyResults.filter(result => result.fiscalYear === year)
-      const fullYear = new YearlyResult(yearQuarters);
-      yearlyResults.push(fullYear);
+      console.log("Warning - failure to build FY resuls here.")
+      // const fullYear = new FYResult(yearQuarters);
+      // yearlyResults.push(fullYear);
     });
     return yearlyResults;
   }
@@ -94,39 +100,41 @@ export class EarningsTableComponent {
   }
 
   public backgroundColor(
-    quarterResult: QuarterlyResult | YearlyResult,
+    quarterResult: EarningsResult | EarningsResultInterface,
     column: 'REVENUE' | 'NETINCOME' | 'ASSETS' | 'LIABILITIES' | 'EQUITY' | 'OPERATINGLOSSGAIN' | 'EPS' | 'DRS'
   ): string {
     let propertyValue = quarterResult.revenue;
     let minMax: { min: number, max: number } = { min: 0, max: 0 };
 
-    const results: (QuarterlyResult | YearlyResult)[] = this.tableRows.map(row => row.earningsResult);
+    const results: (EarningsResult | EarningsResultInterface)[] = this.tableRows.map(row => row.earningsResult);
 
     if (column === 'REVENUE') {
       propertyValue = quarterResult.revenue;
       minMax = this._getMinMax(results.map(item => item.revenue));
       return this._getColor(0, minMax.max, propertyValue);
     } else if (column === 'NETINCOME') {
-      propertyValue = quarterResult.netIncome;
+      propertyValue = quarterResult.netEarnings;
       return this._getColorZeroBased(propertyValue);
     } else if (column === 'ASSETS') {
-      propertyValue = quarterResult.assetsMillions;
-      return this._getColorZeroBased(propertyValue);
+      propertyValue = quarterResult.totalAssets/1000000;
+      minMax = this._getMinMax(results.map(item => item.totalAssets/1000000));
+      return this._getColor(minMax.min, minMax.max, propertyValue);
     } else if (column === 'LIABILITIES') {
-      propertyValue = quarterResult.liabilitiesMillions;
-      minMax = this._getMinMax(results.map(item => item.liabilitiesMillions));
+      propertyValue = quarterResult.totalLiabilities/1000000;
+      minMax = this._getMinMax(results.map(item => item.totalLiabilities/1000000));
       return this._getColor(minMax.min, minMax.max, propertyValue, true);
     } else if (column === 'EQUITY') {
-      propertyValue = quarterResult.stockholderEquityMillions;
-      return this._getColorZeroBased(propertyValue);
+      propertyValue = quarterResult.stockholdersEquity/1000000;
+      minMax = this._getMinMax(results.map(item => item.stockholdersEquity/1000000));
+      return this._getColor(0, minMax.max, propertyValue);
     } else if (column === 'OPERATINGLOSSGAIN') {
-      propertyValue = quarterResult.operatingLossGainMillions;
+      propertyValue = quarterResult.operatingExpenses/1000000;
       return this._getColorZeroBased(propertyValue);
     } else if (column === 'EPS') {
-      propertyValue = quarterResult.netEarningsLossPerShare;
+      propertyValue = quarterResult.netEPS/1000000;
       return this._getColorZeroBased(propertyValue);
     } else if (column === 'DRS') {
-      return this._getDRSColor(quarterResult.DRSMillions, quarterResult.sharesOutstandingMillions);
+      return this._getDRSColor(quarterResult.drs/1000000, quarterResult.weightedAverageSharesOutstanding/1000000);
     }
     return '';
   }
@@ -136,16 +144,17 @@ export class EarningsTableComponent {
     if (percentage === 0) {
       return 'rgba(148,23,106,0.00)';
     } else if (percentage > 0 && percentage < 20) {
-      return 'rgba(148,23,106,0.15)';
+      return 'rgba(148,23,106,0.2)';
     } else if (percentage >= 20 && percentage < 40) {
-      return 'rgba(148,23,106,0.3)';
+      return 'rgba(148,23,106,0.4)';
     } else if (percentage >= 40 && percentage < 60) {
-      return 'rgba(148,23,106,0.45)';
-    } else if (percentage >= 60 && percentage < 80) {
       return 'rgba(148,23,106,0.6)';
+    } else if (percentage >= 60 && percentage < 80) {
+      return 'rgba(148,23,106,0.8)';
     } else {
-      return 'rgba(148,23,106,0.75)';
+      return 'rgba(148,23,106,0.00)';
     }
+    return 'rgba(148,23,106,0.00)';
   }
 
   private _getMinMax(values: number[]): { min: number, max: number } {
@@ -182,7 +191,7 @@ export class EarningsTableComponent {
 
   }
 
-  private _getColor(min: number, max: number, value: number, reverse: boolean = false) {
+  private _getColor(min: number, max: number, value: number, reverse: boolean = false): string {
     let scale = [
       'rgba(255, 0, 0, 0.07)',
       'rgba(255, 167, 0, 0.07)',
@@ -208,6 +217,11 @@ export class EarningsTableComponent {
     if (valueScale < 0) {
       valueScale = 0;
     }
+
+    if(value === 0){
+      return 'rgba(0,0,0,0)';
+    }
+
     return scale[valueScale];
   }
 

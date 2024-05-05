@@ -3,7 +3,7 @@ import { GmePriceEntry } from "../../../../services/gme-price-entry.interface";
 import { TimelineEventConfig } from "./timeline-event-config.interface";
 import { TimelineEventType } from "./timeline-event-type.enum";
 import { TimelineEventURL } from "./timeline-event-url.interface";
-import { QuarterlyResult } from "src/app/pages/financials/quarterly-results/quarterly-result.class";
+import { EarningsResult } from "src/app/pages/financials/earnings-results/earnings-result.class";
 
 export class TimelineEvent{
 
@@ -24,7 +24,7 @@ export class TimelineEvent{
     private _itemIndex: number = -1;
     private _localArticle: TimelineEventURL | null = null;
     
-    private _quarterlyFinancialResult: QuarterlyResult | null = null;
+    private _quarterlyFinancialResult: EarningsResult | null = null;
 
     public get title(): string { return this._title; }
     public get dateYYYYMMDD(): string { return this._dateYYYYMMDD; }
@@ -48,7 +48,7 @@ export class TimelineEvent{
     public get specialIdentifier(): string { return this._specialIdentifier; }
     public get itemIndex(): number { return this._itemIndex; }
 
-    public get quarterlyFinancialResult():  QuarterlyResult | null { return this._quarterlyFinancialResult; }
+    public get quarterlyFinancialResult():  EarningsResult | null { return this._quarterlyFinancialResult; }
 
     constructor(config: TimelineEventConfig, gmePriceEntry: GmePriceEntry | undefined, index: number){
         this._title = config.title;
@@ -85,7 +85,7 @@ export class TimelineEvent{
     public unselect() { this._isSelected = false;}
 
 
-    public setQuarterlyFinancialResult(result: QuarterlyResult){
+    public setQuarterlyFinancialResult(result: EarningsResult){
         this._quarterlyFinancialResult = result;
     }
 }

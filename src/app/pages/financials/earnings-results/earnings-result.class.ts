@@ -1,8 +1,8 @@
-import { FYResultInterface } from "./fy-result.interface";
+import { EarningsResultInterface } from "./earnings-result.interface";
 
-export class FYResult{
-    private _data: FYResultInterface;
-    constructor(data: FYResultInterface){
+export class EarningsResult{
+    private _data: EarningsResultInterface;
+    constructor(data: EarningsResultInterface){
         this._data = data;
     }
 
@@ -34,5 +34,7 @@ export class FYResult{
     public get totalDebt(): number { return this._data.totalDebt; }
     public get totalLiabilities(): number { return this._data.totalLiabilities; }
     public get stockholdersEquity(): number { return this._data.stockholdersEquity; }
+    public get reportingPeriod(): 'Q1' | 'Q2' | 'Q3' | 'Q4' | 'FY' { return this._data.reportingPeriod; }
+    public get drs(): number { return this._data.drs; }
 
 }
