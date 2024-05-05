@@ -2,11 +2,11 @@
     <div class="toolbar">
         <div>
             <button (click)="onClickQuartersYears('QUARTERS')" class="tool-button"
-                [ngClass]="{'selected-time': showQuarters === true}">
+                [ngClass]="{'selected-time': displayIsQuarter === true}">
                 Quarterly
             </button>
             <button (click)="onClickQuartersYears('YEARS')" class="tool-button"
-                [ngClass]="{'selected-time': showYears === true}">
+                [ngClass]="{'selected-time': displayIsAnnual === true}">
                 Annual
             </button>
         </div>

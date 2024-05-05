@@ -5,7 +5,6 @@ import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
 import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 import { TimelineEvent } from '../timeline-items/timeline-item/timeline-event.class';
-import { HistoricGMEDataService } from 'src/app/services/historic-gme-data.service';
 import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { SettingsService } from 'src/app/services/settings.service';
 
@@ -20,7 +19,6 @@ export class ChartComponent implements OnInit, AfterViewInit {
   @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) { }
 
   constructor(
-    private _historicGMEDataService: HistoricGMEDataService,
     private _chartDataService: ChartDataManagerService,
     private _timelineItemService: TimelineItemsService,
     private _sizeService: ScreenSizeService,

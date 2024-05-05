@@ -7,7 +7,7 @@ import { GmePriceEntry } from './gme-price-entry.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class HistoricGMEDataService {
+export class ImportGmeDataService {
 
   constructor(private _httpClient: HttpClient) { }
   private _priceEntries: GmePriceEntry[] = [];
@@ -18,6 +18,7 @@ export class HistoricGMEDataService {
     /**
      *  Google Sheet needs to be publish as tsv (tab-separated values) and not csv.
      *  TSV output is far more simple to parse. 
+     *  
      */
     /**
      * Data source:  https://www.nasdaq.com/market-activity/stocks/gme/historical

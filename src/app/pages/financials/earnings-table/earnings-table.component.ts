@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FinancialsService } from '../financials.service';
+import { Import10KDataService } from '../../../services/import-10k-data.service';
 import { QuarterlyResult } from '../quarterly-results/quarterly-result.class';
 import * as dayjs from 'dayjs';
 import { YearlyResult } from '../quarterly-results/yearly-result.class';
@@ -14,7 +14,7 @@ import { releaseOverviews } from './release-overview/release-overviews';
 })
 export class EarningsTableComponent {
 
-  constructor(private _financialsService: FinancialsService) { }
+  constructor(private _financialsService: Import10KDataService) { }
 
 
   public get faNoteSticky(): IconDefinition { return faNoteSticky; }
@@ -23,9 +23,10 @@ export class EarningsTableComponent {
   public get faLink(): IconDefinition { return faLink; }
   public get faFile(): IconDefinition { return faFile; }
 
-  private _showQuarters: boolean = true;
-  public get showQuarters(): boolean { return this._showQuarters; }
-  public get showYears(): boolean { return !this._showQuarters; }
+  private _displayMode: 'QUARTER' | 'ANNUAL' = 'ANNUAL';
+  public get displayMode(): 'QUARTER' | 'ANNUAL' { return this._displayMode; }
+  public get displayIsAnnual(): boolean { return this._displayMode === 'ANNUAL'; }
+  public get displayIsQuarter(): boolean { return this._displayMode === 'QUARTER'; }
 
   private _tableRows: EarningsTableRow[] = [];
   public get tableRows(): EarningsTableRow[] { return this._tableRows; }
@@ -34,17 +35,17 @@ export class EarningsTableComponent {
     this._buildTableRows();
   }
 
-  private _buildTableRows(){
+  private _buildTableRows() {
     let results: QuarterlyResult[] | YearlyResult[];
-    if(this._showQuarters){
+    if (this._displayMode === 'QUARTER') {
       results = this._buildQuarterlyResults();
-    }else{
+    } else {
       results = this._buildYearlyResults();
     }
     this._tableRows = results.map(result => new EarningsTableRow(result, releaseOverviews));
   }
 
-  private _buildQuarterlyResults(){
+  private _buildQuarterlyResults() {
     let quarterlyResults: QuarterlyResult[] = Object.assign([], this._financialsService.quarterlyResults);
     quarterlyResults = quarterlyResults.sort((item1, item2) => {
       if (item1.filingDateYYYYMMDD > item2.filingDateYYYYMMDD) {
@@ -76,10 +77,10 @@ export class EarningsTableComponent {
   }
 
   public onClickQuartersYears(value: 'QUARTERS' | 'YEARS') {
-    if(value === 'QUARTERS'){
-      this._showQuarters = true;
-    }else{
-      this._showQuarters = false;
+    if (value === 'QUARTERS') {
+      this._displayMode = 'QUARTER';
+    } else {
+      this._displayMode = 'ANNUAL';
     }
     this._buildTableRows();
   }
@@ -104,29 +105,30 @@ export class EarningsTableComponent {
     if (column === 'REVENUE') {
       propertyValue = quarterResult.revenue;
       minMax = this._getMinMax(results.map(item => item.revenue));
+      return this._getColor(0, minMax.max, propertyValue);
     } else if (column === 'NETINCOME') {
       propertyValue = quarterResult.netIncome;
-      minMax = this._getMinMax(results.map(item => item.netIncome));
+      return this._getColorZeroBased(propertyValue);
     } else if (column === 'ASSETS') {
       propertyValue = quarterResult.assetsMillions;
-      minMax = this._getMinMax(results.map(item => item.assetsMillions));
+      return this._getColorZeroBased(propertyValue);
     } else if (column === 'LIABILITIES') {
       propertyValue = quarterResult.liabilitiesMillions;
       minMax = this._getMinMax(results.map(item => item.liabilitiesMillions));
       return this._getColor(minMax.min, minMax.max, propertyValue, true);
     } else if (column === 'EQUITY') {
       propertyValue = quarterResult.stockholderEquityMillions;
-      minMax = this._getMinMax(results.map(item => item.stockholderEquityMillions));
+      return this._getColorZeroBased(propertyValue);
     } else if (column === 'OPERATINGLOSSGAIN') {
       propertyValue = quarterResult.operatingLossGainMillions;
-      minMax = this._getMinMax(results.map(item => item.operatingLossGainMillions));
+      return this._getColorZeroBased(propertyValue);
     } else if (column === 'EPS') {
       propertyValue = quarterResult.netEarningsLossPerShare;
-      minMax = this._getMinMax(results.map(item => item.netEarningsLossPerShare));
+      return this._getColorZeroBased(propertyValue);
     } else if (column === 'DRS') {
       return this._getDRSColor(quarterResult.DRSMillions, quarterResult.sharesOutstandingMillions);
     }
-    return this._getColor(minMax.min, minMax.max, propertyValue);
+    return '';
   }
 
   private _getDRSColor(DRSMillions: number, sharesTotal: number): string {
@@ -158,6 +160,26 @@ export class EarningsTableComponent {
       }
     });
     return { min: min, max: max };;
+  }
+
+  private _getColorZeroBased(value: number) {
+    /**
+     *  negative numbers: red
+     * 
+     *  zero: white
+     * 
+     *  positive numbers: green
+     * 
+     */
+    if (value < 0) {
+      return 'rgba(255, 0, 0, 0.07)';
+    } else if (value === 0) {
+      return 'rgb(255, 255, 255)';
+    } else if (value > 0) {
+      return 'rgba(44, 186, 0, 0.07)';
+    }
+    return 'rgb(255, 255, 255)';
+
   }
 
   private _getColor(min: number, max: number, value: number, reverse: boolean = false) {

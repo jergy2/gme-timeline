@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { ChartDataSetManager } from '../pages/display-timeline/chart/chart-dataset-manager.class';
 import { ChartDataManagerService } from '../pages/display-timeline/chart/chart-data-manager-service';
-import { HistoricGMEDataService } from './historic-gme-data.service';
+import { ImportGmeDataService } from './import-gme-data.service';
 import { TimelineItemsService } from '../pages/display-timeline/timeline-items/timeline-items.service';
 import { SettingsService } from './settings.service';
 import { BehaviorSubject, Observable, Subject, lastValueFrom, timer } from 'rxjs';
 import { DdImportService } from './dd-import.service';
-import { FinancialsService } from '../pages/financials/financials.service';
+import { Import10KDataService } from './import-10k-data.service';
 import { ImportEventsService } from './import-events.service';
 import { TimelineEventConfig } from '../pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface';
 import { TimelineEvent } from '../pages/display-timeline/timeline-items/timeline-item/timeline-event.class';
@@ -24,11 +24,11 @@ export class LoadingService {
 
   constructor(
     private _dataManagerService: ChartDataManagerService,
-    private _gmeDataService: HistoricGMEDataService,
+    private _gmeDataService: ImportGmeDataService,
     private _timelineItemsService: TimelineItemsService,
     private _settingsService: SettingsService,
     private _ddService: DdImportService,
-    private _financialsService: FinancialsService,
+    private _import10KService: Import10KDataService,
     private _importEventsService: ImportEventsService,
     private _searchService: EventSearchService,
   ) { }
@@ -78,7 +78,8 @@ export class LoadingService {
     this._loadingMessage = 'Loading stuff...';
     this._ddEntries = await lastValueFrom(this._ddService.loadDDItems$());
     this._loadingMessage = 'Loading earnings data...';
-    this._quarterlyResults = await lastValueFrom(this._financialsService.loadFinancialResults$());
+    const fyResults = await lastValueFrom(this._import10KService.load10KData$());
+    this._quarterlyResults = await lastValueFrom(this._import10KService.loadFinancialResults$());
     this._loadingMessage = 'Loading GME price data...';
     this._priceEntries = await lastValueFrom(this._gmeDataService.loadGmeData$());
     this._loadingMessage = 'Loading events data...';

@@ -19,3 +19,22 @@
         flex-direction: row;
     }
 }
+
+
+@media (min-width:960px){
+    .show-if-large{
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+    .hide-if-large{
+        display: none;
+    }
+}
+
+@media (max-width:959px){
+    .hide-if-large{
+        background-color: rgba(0, 0, 255, 0.5);
+    }
+    .show-if-large{
+        display: none;
+    }
+}
