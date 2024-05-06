@@ -15,23 +15,23 @@ export class QuarterlyResultComponent implements OnInit {
   ngOnInit(): void {
   }
   public get eps(){
-    // return Number(this.result?.netEarningsLossPerShare).toFixed(2);
+    return Number(this.result?.netEPS).toFixed(2);
     return 0;
   }
 
   public get isPositive(): boolean { 
-    // if(this.result){
-    //   if(this.result.netEarningsLossPerShare > 0 ){ 
-    //     return true;
-    //   }
-    // }
+    if(this.result){
+      if(this.result.netEPS > 0 ){ 
+        return true;
+      }
+    }
     return false;
   }
 
   public get drsPercent(): string{
-    // if(this.result){
-    //   return ((this.result.DRSMillions / this.result.sharesOutstandingMillions) * 100 ).toFixed(2);
-    // }
+    if(this.result){
+      return ((this.result.drs / this.result.weightedAverageSharesOutstanding) * 100 ).toFixed(2);
+    }
     return '';
   }
 }

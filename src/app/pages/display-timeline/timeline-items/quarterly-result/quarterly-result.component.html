@@ -2,30 +2,30 @@
     <div>
         Quarterly Results
     </div>
-    <!-- <div class="result-row">
+    <div class="result-row">
         <div class="result-title">Fiscal Quarter</div>
-        <div class="result-value"><span>{{ result.quarter }}</span>, <span>{{ result.fiscalYear }} </span></div>
+        <div class="result-value"><span>{{ result.reportingPeriod }}</span>, <span>{{ result.fiscalYear }} </span></div>
     </div>
 
     <div class="result-row">
         <div class="result-title">Assets (millions)</div>
-        <div class="result-value">$ {{ result.assetsMillions }}</div>
+        <div class="result-value">$ {{ result.totalAssets/1000000 }}</div>
     </div>
     <div class="result-row">
         <div class="result-title">Liabilities (millions)</div>
-        <div class="result-value">$ {{ result.liabilitiesMillions }}</div>
+        <div class="result-value">$ {{ result.totalLiabilities/1000000 }}</div>
     </div>
     <div class="result-row">
         <div class="result-title">Stockholder Equity (millions)</div>
-        <div class="result-value">$ {{ result.stockholderEquityMillions }}</div>
+        <div class="result-value">$ {{ result.stockholdersEquity/1000000 }}</div>
     </div>
     <div class="result-row">
         <div class="result-title">Net Sales (millions)</div>
-        <div class="result-value">$ {{ result.revenue }}</div>
+        <div class="result-value">$ {{ result.revenue/1000000 }}</div>
     </div>
     <div class="result-row">
         <div class="result-title">Net Gain / Loss (millions)</div>
-        <div class="result-value">$ {{ result.netIncome }}</div>
+        <div class="result-value">$ {{ result.netEarnings/1000000 }}</div>
     </div>
     <div class="result-row">
         <div class="result-title">Earnings per share</div>
@@ -33,10 +33,10 @@
     </div>
     <div class="result-row">
         <div class="result-title">DRS shares (millions)</div>
-        <div class="result-value">{{ result.DRSMillions }}</div>
+        <div class="result-value">{{ result.drs/1000000 }}</div>
     </div>
     <div class="result-row">
         <div class="result-title">DRS percent of all shares</div>
         <div class="result-value">{{ drsPercent }} %</div>
-    </div> -->
+    </div>
 </div>

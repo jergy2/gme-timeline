@@ -22,7 +22,6 @@ export class ImportEventsService {
     const eventConfigs: TimelineEventConfig[] = [];
     this.httpClient.get(eventsGoogleSheetTsvUrl, { responseType: 'text' }).subscribe({
       next: (response) => {
-
         let lines = response.split('\n');
         lines = lines.slice(1);
         lines.forEach(line => {
@@ -99,6 +98,7 @@ export class ImportEventsService {
     })
     return types;
   }
+  
   private _getTagsFromSource(sourceTags: string): string[] {
     const tags: string[] = [];
     sourceTags = sourceTags.substring(1, sourceTags.length - 1);

@@ -148,7 +148,7 @@ export class Import10KDataService {
           }
         });
         this._quarterlyResults = results;
-        subject$.next([]);
+        subject$.next(this._quarterlyResults);
         subject$.complete();
       },
     });
