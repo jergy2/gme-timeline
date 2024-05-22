@@ -42,6 +42,15 @@ export const chapterConfigs: ChapterInterface[] = [
         description: [],
         subchapters: [],
     },
+    {
+        title: 'Outcomes of pressure and time',
+        yearGroup: '2024',
+        subtitle: 'GameStop was profitable in FY2023.  Roaring Kitty has returned.  The winds are changing.',
+        dateStartYYYYMMDD: '2024-01-01',
+        dateEndYYYYMMDD: '2024-12-31',
+        description: [],
+        subchapters: [],
+    },
     // {
     //     title: 'the sneeze, and immediate aftermath',
     //     subtitle: 'January 2021 to March 2021',

@@ -39,7 +39,7 @@ export class ChaptersControlComponent implements OnInit {
     //   }
     // });
 
-    const groupings = ['2020', '2021', '2022', '2023'].map(year => {
+    const groupings = ['2020', '2021', '2022', '2023', '2024'].map(year => {
       return {year:year, chapters: new Array<Chapter>}
     });
 
