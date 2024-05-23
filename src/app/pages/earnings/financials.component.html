@@ -1,0 +1,22 @@
+<div class="financials-root" *ngIf="!isLoading">
+
+    <div class="title">
+        GameStop Income Statements
+    </div>
+    <div style="max-width: 800px;" *ngIf="true">
+        <iframe width="800" height="600" seamless frameborder="0" scrolling="no"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7n4mmCwtjREaCkJVUkHe_ujHBod7vGtEB5iI_kbYToT5dU9cQSq-d3XO2PuFEZ64GCuU70jVayE0R/pubchart?oid=1937296424&amp;format=interactive"></iframe>
+
+    </div>
+
+    <div style="padding:10px; background-color: rgb(250, 250, 250);">
+        <iframe width="1280" height="720" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7n4mmCwtjREaCkJVUkHe_ujHBod7vGtEB5iI_kbYToT5dU9cQSq-d3XO2PuFEZ64GCuU70jVayE0R/pubchart?oid=1680346632&amp;format=interactive"></iframe>
+
+    </div>
+    <app-earnings-table></app-earnings-table>
+    <!-- <app-balance-sheet-bar-chart class="bar-chart" style="width: 800px; height: 600px;"></app-balance-sheet-bar-chart> -->
+
+</div>
+
+
+<app-loading class="layout-root" style="justify-content: center;" *ngIf="isLoading" [loadingMessage]="loadingMessage"></app-loading>

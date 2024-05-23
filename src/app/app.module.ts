@@ -13,15 +13,14 @@ import { ChartComponent } from './pages/display-timeline/chart/chart.component';
 import { CustomTooltipComponent } from './pages/display-timeline/chart/custom-tooltip/custom-tooltip.component';
 import { TimelineItemsComponent } from './pages/display-timeline/timeline-items/timeline-items.component';
 import { AboutComponent } from './pages/about/about.component';
-import { FinancialsComponent } from './pages/financials/financials.component';
+import { FinancialsComponent } from './pages/earnings/financials.component';
 import { DisplayTimelineComponent } from './pages/display-timeline/display-timeline.component';
-import { OwnershipComponent } from './pages/ownership/ownership.component';
-import { BalanceSheetComponent } from './pages/financials/balance-sheet/balance-sheet.component';
-import { BalanceSheetBarChartComponent } from './pages/financials/balance-sheet-bar-chart/balance-sheet-bar-chart.component';
+import { BalanceSheetComponent } from './pages/earnings/balance-sheet/balance-sheet.component';
+import { BalanceSheetBarChartComponent } from './pages/earnings/balance-sheet-bar-chart/balance-sheet-bar-chart.component';
 import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.component';
 import { TimelineListItemComponent } from './pages/display-timeline/timeline-items/timeline-list-item/timeline-list-item.component';
 import { QuarterlyResultComponent } from './pages/display-timeline/timeline-items/quarterly-result/quarterly-result.component';
-import { EarningsTableComponent } from './pages/financials/earnings-table/earnings-table.component';
+import { EarningsTableComponent } from './pages/earnings/earnings-table/earnings-table.component';
 import { SignificanceControlComponent } from './pages/display-timeline/timeline-controls/significance-control/significance-control.component';
 import { ControlsComponent } from './pages/display-timeline/timeline-controls/timeline-controls.component';
 import { CategoryControlComponent } from './pages/display-timeline/timeline-controls/category-control/category-control.component';
@@ -37,6 +36,7 @@ import { SeoComponent } from './pages/about/seo/seo.component';
 import { SandboxComponent } from './pages/sandbox/sandbox.component';
 import { LoadingComponent } from './layout/loading/loading.component';
 import { InfoPagesModule } from './info-pages/info-pages.module';
+import { SocialMediaComponent } from './pages/social-media/social-media.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,6 @@ import { InfoPagesModule } from './info-pages/info-pages.module';
     CategoryControlComponent,
     FinancialsComponent,
     DisplayTimelineComponent,
-    OwnershipComponent,
     BalanceSheetComponent,
     BalanceSheetBarChartComponent,
     MobileTopBarComponent,
@@ -71,6 +70,7 @@ import { InfoPagesModule } from './info-pages/info-pages.module';
     SeoComponent,
     SandboxComponent,
     LoadingComponent,
+    SocialMediaComponent,
   ],
   imports: [
     BrowserModule,

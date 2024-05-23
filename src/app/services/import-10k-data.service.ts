@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { EarningsResult } from '../pages/financials/earnings-results/earnings-result.class';
-import { EarningsResultInterface } from '../pages/financials/earnings-results/earnings-result.interface';
+import { EarningsResult } from '../pages/earnings/earnings-results/earnings-result.class';
+import { EarningsResultInterface } from '../pages/earnings/earnings-results/earnings-result.interface';
 
 @Injectable({
   providedIn: 'root'

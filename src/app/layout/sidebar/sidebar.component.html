@@ -47,7 +47,7 @@
                         Earnings
                     </div>
                 </div>
-                <a class="sidebar-item" href="https://www.computershared.net" target="_blank">
+                <a class="sidebar-item" [routerLink]="'/ownership'"  [routerLinkActive]="'active-link'">
                     <div class="sidebar-item-icon">
                         <img src="assets/icons/computershared-dot-net.png" alt="computershared.net"
                             style="width: 30px; height: 30px;">
@@ -56,14 +56,15 @@
                         Company Ownership
                     </div>
                 </a>
-                <!-- <a class="sidebar-item" href="https://www.gmehydra.org" target="_blank">
+                <div class="sidebar-item" [routerLink]="'/social-media'" [routerLinkActive]="'active-link'">
                     <div class="sidebar-item-icon">
-                        <img src="assets/icons/purple-hydra.png" alt="gmehydra.org" style="width: 30px; height: 30px;">
+                        <img src="assets/flaticon/social-media.png" alt=""
+                            style="width: 30px; height: 30px;">
                     </div>
                     <div class="sidebar-item-title">
-                        GME Hydra
+                        Social Media
                     </div>
-                </a> -->
+                </div>
                 <div class="sidebar-item" [routerLink]="'/about'" [routerLinkActive]="'active-link'">
                     <div class="sidebar-item-icon">
                         <fa-icon [icon]="faCircleInfo"

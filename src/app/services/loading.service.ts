@@ -15,7 +15,7 @@ import { TimelineItemsBuilder } from '../pages/display-timeline/timeline-items/t
 import { EventSearchService } from '../pages/display-timeline/timeline-controls/search/event-search.service';
 import { DdEntry } from './dd-entry.interface';
 import { GmePriceEntry } from './gme-price-entry.interface';
-import { EarningsResult } from '../pages/financials/earnings-results/earnings-result.class';
+import { EarningsResult } from '../pages/earnings/earnings-results/earnings-result.class';
 
 @Injectable({
   providedIn: 'root'

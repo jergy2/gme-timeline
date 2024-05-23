@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MediaComponent } from './media/media.component';
+import { OwnershipComponent } from './ownership/ownership.component';
 
 
 
@@ -28,7 +29,8 @@ import { MediaComponent } from './media/media.component';
     RcInterviewComponent,
     NewsArticleComponent,
     SneezeComponent,
-    MediaComponent
+    MediaComponent,
+    OwnershipComponent
   ],
   imports: [
     CommonModule,

@@ -33,9 +33,16 @@ export const mobileMenuItems: MobileMenuItem[] = [
     new MobileMenuItem(
         'IMAGE',
         null,
-        'https://www.computershared.net',
+        '/ownership',
         'assets/icons/computershared-dot-net.png',
         'Company Ownership'
+    ),
+    new MobileMenuItem(
+        'IMAGE',
+        null,
+        '/social-media',
+        'assets/flaticon/social-media.png',
+        'Social Media'
     ),
     new MobileMenuItem(
         'ICON',

@@ -3,7 +3,7 @@ import { GmePriceEntry } from "../../../../services/gme-price-entry.interface";
 import { TimelineEventConfig } from "./timeline-event-config.interface";
 import { TimelineEventType } from "./timeline-event-type.enum";
 import { TimelineEventURL } from "./timeline-event-url.interface";
-import { EarningsResult } from "src/app/pages/financials/earnings-results/earnings-result.class";
+import { EarningsResult } from "src/app/pages/earnings/earnings-results/earnings-result.class";
 
 export class TimelineEvent{
 

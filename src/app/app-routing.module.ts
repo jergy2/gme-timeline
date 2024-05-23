@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FinancialsComponent } from './pages/financials/financials.component';
+import { FinancialsComponent } from './pages/earnings/financials.component';
 import { DisplayTimelineComponent } from './pages/display-timeline/display-timeline.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
@@ -12,6 +12,8 @@ import { RcInterviewComponent } from './info-pages/rc-interview/rc-interview.com
 import { SneezeComponent } from './info-pages/sneeze/sneeze.component';
 import { DrsComponent } from './info-pages/drs/drs.component';
 import { MediaComponent } from './info-pages/media/media.component';
+import { OwnershipComponent } from './info-pages/ownership/ownership.component';
+import { SocialMediaComponent } from './pages/social-media/social-media.component';
 
 const routes: Routes = [
   { path: '*', component: DisplayTimelineComponent },
@@ -31,6 +33,8 @@ const routes: Routes = [
   { path: 'media', component: MediaComponent }, 
   { path: 'propaganda', component: MediaComponent }, 
   { path: 'guide', component: GuideComponent },
+  { path: 'ownership', component: OwnershipComponent},
+  { path: 'social-media', component: SocialMediaComponent },
   { path: '**', redirectTo: 'timeline' }
 ];
 

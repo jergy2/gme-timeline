@@ -1,5 +1,5 @@
 import { Component, Input, OnInit} from '@angular/core';
-import { EarningsResult } from 'src/app/pages/financials/earnings-results/earnings-result.class';
+import { EarningsResult } from 'src/app/pages/earnings/earnings-results/earnings-result.class';
 
 @Component({
   selector: 'app-quarterly-result',
