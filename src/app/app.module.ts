@@ -13,10 +13,8 @@ import { ChartComponent } from './pages/display-timeline/chart/chart.component';
 import { CustomTooltipComponent } from './pages/display-timeline/chart/custom-tooltip/custom-tooltip.component';
 import { TimelineItemsComponent } from './pages/display-timeline/timeline-items/timeline-items.component';
 import { AboutComponent } from './pages/about/about.component';
-import { FinancialsComponent } from './pages/earnings/financials.component';
+import { EarningsComponent } from './pages/earnings/earnings.component';
 import { DisplayTimelineComponent } from './pages/display-timeline/display-timeline.component';
-import { BalanceSheetComponent } from './pages/earnings/balance-sheet/balance-sheet.component';
-import { BalanceSheetBarChartComponent } from './pages/earnings/balance-sheet-bar-chart/balance-sheet-bar-chart.component';
 import { MobileTopBarComponent } from './layout/mobile-top-bar/mobile-top-bar.component';
 import { TimelineListItemComponent } from './pages/display-timeline/timeline-items/timeline-list-item/timeline-list-item.component';
 import { QuarterlyResultComponent } from './pages/display-timeline/timeline-items/quarterly-result/quarterly-result.component';
@@ -51,10 +49,8 @@ import { SocialMediaComponent } from './pages/social-media/social-media.componen
     SidebarComponent,
     LayoutComponent,
     CategoryControlComponent,
-    FinancialsComponent,
+    EarningsComponent,
     DisplayTimelineComponent,
-    BalanceSheetComponent,
-    BalanceSheetBarChartComponent,
     MobileTopBarComponent,
     ViewControlComponent,
     TimelineListItemComponent,

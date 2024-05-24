@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FinancialsComponent } from './pages/earnings/financials.component';
+import { EarningsComponent } from './pages/earnings/earnings.component';
 import { DisplayTimelineComponent } from './pages/display-timeline/display-timeline.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: '*', component: DisplayTimelineComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'timeline', component: DisplayTimelineComponent },
-  { path: 'earnings', component: FinancialsComponent },
-  { path: 'financials', component: FinancialsComponent },
+  { path: 'earnings', component: EarningsComponent },
+  { path: 'financials', component: EarningsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'research', component: ResearchComponent },
   { path: 'sandbox', component: SandboxComponent },

@@ -19,6 +19,10 @@ export class MobileTopBarComponent implements OnInit{
   public get faBars(): IconDefinition { return faBars; }
   public get mobileMenuItems(): MobileMenuItem[] { return mobileMenuItems; }
 
+  private _isTimeline: boolean = false;
+
+  public get isTimeline(): boolean { return this._isTimeline; }
+
   private _menuIsExpanded: boolean = false;
   private _selectedMenuItem: MobileMenuItem | null= null;
   public get menuIsExpanded(): boolean { return this._menuIsExpanded;}
@@ -39,11 +43,15 @@ export class MobileTopBarComponent implements OnInit{
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this._setItem(event.url);
+        
     }});
   }
 
+
   private _setItem(url :string){
     let itemFound: boolean = false;
+    console.log("URLski:", url, url === '/')
+    this._isTimeline = false;
     this.mobileMenuItems.forEach(item => item.unselect());
     this.mobileMenuItems.forEach(item => {
       if(item.routerLink === url){
@@ -53,7 +61,17 @@ export class MobileTopBarComponent implements OnInit{
         itemFound = true;
 
       }
+      
     });
+    if(url === '/' || url === '/timeline'){
+      console.log("It's true")
+      this._isTimeline = true;
+      const timelineItem = this.mobileMenuItems.find(item => item.routerLink === '/timeline');
+      if(timelineItem){
+        this._selectedMenuItem = timelineItem;
+        itemFound = true;
+      }
+    }
     if(!itemFound){
       this._selectedMenuItem = null;
       console.log("No menu item")

@@ -49,14 +49,25 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
     })
     this._itemService.itemSelected$.subscribe({
       next: (selected) => {
-        this.displayedTimelineItems.forEach(timelineItem => timelineItem.unselect())
+        
         if(selected.item !== null){
-          selected.item.select();
           const scrollToElement = document.getElementById(this.itemId(selected.item));
           if(!this.isMobile){
+            
+            if(this.isListView){
+              if(selected.source === "CHART"){
+                this.displayedTimelineItems.forEach(timelineItem => timelineItem.unselect());
+              }
+            }else{
+              this.displayedTimelineItems.forEach(timelineItem => timelineItem.unselect());
+            }
+            
+            
+            selected.item.select();
             this._scrollIntoView(scrollToElement);
           }else if(this.isMobile){
-            // scrollToElement?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            selected.item.select();
+            this._scrollIntoView(scrollToElement);
           }
         }else{
         }

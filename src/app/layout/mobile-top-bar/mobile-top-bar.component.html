@@ -6,10 +6,10 @@
         <div *ngIf="selectedMenuItem.iconOrImg === 'IMAGE'" class="menu-item-icon" (click)="onClickImage()">
             <img [src]="selectedMenuItem.imgSrc" style="width: 25px; height: 25px;">
         </div>
-        <div class="menu-item-label" *ngIf="selectedMenuItem.routerLink !== '/timeline'">
+        <div class="menu-item-label" *ngIf="!isTimeline">
             {{ selectedMenuItem.label }}
         </div>
-        <div class="timeline-controls" *ngIf="selectedMenuItem.routerLink === '/timeline'">
+        <div class="timeline-controls" *ngIf="isTimeline">
             <app-timeline-controls></app-timeline-controls>
         </div>
     </div>
@@ -21,7 +21,7 @@
     </div>
 
 </div>
-
+    
 
 
 <div *ngIf="menuIsExpanded" class="expanded-menu shadow">
