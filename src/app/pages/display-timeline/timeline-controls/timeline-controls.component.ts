@@ -87,7 +87,7 @@ export class ControlsComponent implements OnInit {
     if (this._settingsOpen === true) {
       this._settingsOpen = false;
     } else {
-      this._timelineItemService.unselectItem();
+      this._timelineItemService.unselectAll();
       this._settingsOpen = true;
       this._storyChaptersOpen = false;
       this._showSearchResults = false;

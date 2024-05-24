@@ -73,7 +73,7 @@ export class ChartDataItemBuilder {
             tension: 0.5,
             borderColor: 'green',
             backgroundColor: 'rgba(0,255,0,0.075)',
-            borderWidth: 0.8,
+            borderWidth: 1.3,
             pointRadius: 0,
             pointHitRadius: 0,
             pointHoverRadius: 0,

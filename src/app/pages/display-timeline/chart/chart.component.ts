@@ -72,7 +72,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
     this._timelineItemService.itemSelected$.subscribe({
       next: (selected) => {
         if (selected.item) {
-          if (selected.source !== 'CHART') {
+          if (selected.source === 'ITEMS') {
             this._openToolTip(selected.item);
           }
         }

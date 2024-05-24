@@ -16,10 +16,14 @@ export class TimelineItemsService {
     TimelineEventType.CORP, TimelineEventType.SOCIAL_MEDIA, TimelineEventType.DRS, TimelineEventType.MEDIA, TimelineEventType.OTHER, TimelineEventType.RC,
   ];
 
-  private _itemSelected$: Subject<{item: TimelineEvent | null, source: 'CHART' | 'ITEMS' | 'NULL'}> = new Subject();
-  public get itemSelected$(): Observable<{item: TimelineEvent | null, source: 'CHART' | 'ITEMS' | 'NULL'}> { return this._itemSelected$.asObservable(); }
-  public selectItem(item: TimelineEvent, source: 'CHART' | 'ITEMS') { this._itemSelected$.next({item: item, source: source}); }
-  public unselectItem() { this._itemSelected$.next({item: null, source: 'NULL'}); }
+  private _itemSelected$: Subject<{ item: TimelineEvent, source: 'CHART' | 'ITEMS' | 'UNSELECT' }> = new Subject();
+  public get itemSelected$(): Observable<{ item: TimelineEvent, source: 'CHART' | 'ITEMS' | 'UNSELECT' }> { return this._itemSelected$.asObservable(); }
+  private _unselectAll$: Subject<boolean> = new Subject();
+  public get unselectAll$(): Observable<boolean> { return this._unselectAll$.asObservable(); }
+  public selectItem(item: TimelineEvent, source: 'CHART' | 'ITEMS') { this._itemSelected$.next({ item: item, source: source }); }
+  public unselectItem(item: TimelineEvent) { this._itemSelected$.next({ item: item, source: 'UNSELECT' }); }
+
+  public unselectAll() { this._unselectAll$.next(true); }
 
   private _allTimelineItems$: BehaviorSubject<TimelineEvent[]> = new BehaviorSubject<TimelineEvent[]>([]);
   private _displayedTimelineItems$: BehaviorSubject<TimelineEvent[]> = new BehaviorSubject<TimelineEvent[]>([]);
@@ -28,11 +32,11 @@ export class TimelineItemsService {
     this._displayedTimelineItems$.next(items);
   }
 
-  public setDisplayedTimelineEvents(events: TimelineEvent[]){
+  public setDisplayedTimelineEvents(events: TimelineEvent[]) {
     this._displayedTimelineItems$.next(events);
   }
 
-  public resetTimelineEvents(){
+  public resetTimelineEvents() {
     this._displayedTimelineItems$.next(this.allTimelineItems);
   }
 
@@ -51,21 +55,21 @@ export class TimelineItemsService {
     }
   }
 
-  public updateSignificanceValue(value: number){
+  public updateSignificanceValue(value: number) {
     this._significanceValue = value;
     this._update();
   }
-  public updateCategories(categories: TimelineEventType[]){
+  public updateCategories(categories: TimelineEventType[]) {
     this._itemCategories = categories;
     this._update();
   }
 
-  private _update(){
+  private _update() {
     const displayedItems = this.allTimelineItems.filter(item => {
       const showBySignificance: boolean = item.significance >= this._significanceValue;
       let showByCategory: boolean = false;
-      item.types.forEach(type =>{
-        if(this._itemCategories.indexOf(type) > -1){
+      item.types.forEach(type => {
+        if (this._itemCategories.indexOf(type) > -1) {
           showByCategory = true;
         }
       });
@@ -79,10 +83,10 @@ export class TimelineItemsService {
     this._displayedTimelineItems$.next(displayedItems);
   }
 
-  public setQuarterlyFinancialResults(results: EarningsResult[]){
-    this.allTimelineItems.forEach(item =>{ 
-      results.forEach(result =>{
-        if(item.dateYYYYMMDD === result.filingDateYYYYMMDD && item.types.indexOf(TimelineEventType.CORP) > -1){
+  public setQuarterlyFinancialResults(results: EarningsResult[]) {
+    this.allTimelineItems.forEach(item => {
+      results.forEach(result => {
+        if (item.dateYYYYMMDD === result.filingDateYYYYMMDD && item.types.indexOf(TimelineEventType.CORP) > -1) {
           item.setQuarterlyFinancialResult(result);
         }
       });

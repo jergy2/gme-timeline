@@ -47,29 +47,40 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
         this._updateItems();
       }
     })
+
+    
+    this._itemService.unselectAll$.subscribe({
+      next: (isAllUnselected) => {
+        if(isAllUnselected === true){
+          // close all timeline Items if this instruction is received.
+          // e.g., Mobile user clicks on settings buttons, close all open timeline items.
+          this.displayedTimelineItems.forEach(timelineItem => timelineItem.unselect());
+        }
+      }
+    })
     this._itemService.itemSelected$.subscribe({
       next: (selected) => {
-        
-        if(selected.item !== null){
+        if(selected.source !== 'UNSELECT'){
+          // an item was selected.
           const scrollToElement = document.getElementById(this.itemId(selected.item));
           if(!this.isMobile){
-            
+            // if not mobile, 
             if(this.isListView){
+              // if list items are vertical and not horizontal,
               if(selected.source === "CHART"){
+                // in the case that a user is using the chart circles, unselect all selected items.
                 this.displayedTimelineItems.forEach(timelineItem => timelineItem.unselect());
               }
             }else{
+              // in the horizontal view, always unselect all items when opening new item.
               this.displayedTimelineItems.forEach(timelineItem => timelineItem.unselect());
             }
-            
-            
-            selected.item.select();
-            this._scrollIntoView(scrollToElement);
-          }else if(this.isMobile){
-            selected.item.select();
-            this._scrollIntoView(scrollToElement);
           }
-        }else{
+            selected.item.select();
+            this._scrollIntoView(scrollToElement);
+        }else if(selected.source === 'UNSELECT'){
+          // if an item was unselect()ed (e.g. user clicked on X button)
+          selected.item.unselect();
         }
       }
     });

@@ -69,7 +69,7 @@ export class TimelineItemComponent {
   }
 
   public onClickClose(){
-    this._itemService.unselectItem();
+    this._itemService.unselectItem(this.item);
   }
 
   public onClickItem(item: TimelineEvent){
