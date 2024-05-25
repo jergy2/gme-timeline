@@ -15,6 +15,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MediaComponent } from './media/media.component';
 import { OwnershipComponent } from './ownership/ownership.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -38,6 +39,7 @@ import { OwnershipComponent } from './ownership/ownership.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
+    NgChartsModule
   ]
 })
 export class InfoPagesModule { }

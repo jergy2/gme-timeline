@@ -4,6 +4,16 @@
             GameStop Company Ownership
         </div>
         <div class="page-section">
+            <p>GameStop is unique because a significant portion (over 20%) of all issues shares are owned by directly registered shareholders.  No other company in history has had this.</p>
+            <div class="chart-container" id="chartContainer">
+                <canvas baseChart class="chart" id="chartCanvas" [type]="'pie'"
+                [data]="pieChartData"
+                [options]="pieChartOptions"
+                [legend]="pieChartLegend">
+                </canvas>   
+            </div>
+        </div>
+        <div class="page-section">
             <p>
                 Per GameStop's <a href="https://investor.gamestop.com/node/20376/html" target="_blank">fiscal year 2023 10-K filing</a>:<br>
                 As of March 20, 2024 there were 305,873,200 shares of GameStop's Class A common stock (GME) outstanding.
@@ -24,11 +34,15 @@
             <p>
                 In the case of shares of companies traded in the US markets that are not directly registered, "another name" is Cede & Co.
             </p>
+            <p>
+                As of May 24, 2024, GameStop completed an at the market equity offering, and sold 45,000,000 shares, increasing the total amount of shares outstanding to approximately 351,000,000.
+            </p>
         </div>
-        <div class="page-section">
+        <!-- <div class="page-section">
             <div class="section-heading">Computershared.net</div>
             Check out <a href="https://www.computershared.net" target="_blank">Computershared.net</a> for an interactive breakdown of GME shareholders
-        </div>
+        </div> -->
+        
     </div>
 
 
