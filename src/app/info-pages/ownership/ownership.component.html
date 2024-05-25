@@ -5,13 +5,14 @@
         </div>
         <div class="page-section">
             <p>GameStop is unique because a significant portion (over 20%) of all issues shares are owned by directly registered shareholders.  No other company in history has had this.</p>
-            <div class="chart-container" id="chartContainer">
-                <canvas baseChart class="chart" id="chartCanvas" [type]="'pie'"
-                [data]="pieChartData"
-                [options]="pieChartOptions"
-                [legend]="pieChartLegend">
-                </canvas>   
-            </div>
+
+        </div>
+        <div class="chart-container" id="chartContainer" style="max-width: 650px; width: 100%;">
+            <canvas baseChart class="chart" id="chartCanvas" [type]="'pie'" 
+            [data]="pieChartData"
+            [options]="pieChartOptions"
+            [legend]="pieChartLegend">
+            </canvas>   
         </div>
         <div class="page-section">
             <p>
