@@ -33,25 +33,25 @@ export class OwnershipComponent implements OnInit {
     const data = {
       labels: [
         'Held by registered holders at Computershare', 
-        'Held by Cede & Co on behalf of DTC', 
+        'Held by Cede & Co on behalf of DTCC', 
         'DRS', 
         'DSPP', 
         'Insiders', 
         'Institutions', 
         'Mutual Funds', 
         'ETFs',
-        'Remaining',
+        'Remainder',
 
       ],
       datasets: [
         {
           backgroundColor: ['#8f1795','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#ffcc00','#ffcc66','#EEE'],
-          data: [75000000,275000000,0,0,0,0,0,0,0]
+          data: [75300000,275000000,0,0,0,0,0,0,0]
         },
 
         {
           backgroundColor: ['#CCC','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#ffcc00','#ffcc66','#EEE'],
-          data: [0,0,53000000,22000000,39000000,33500000,35000000,30000000,137500000]
+          data: [0,0,53300000,22000000,39000000,33500000,35000000,30000000,137500000]
         },
 
         {
