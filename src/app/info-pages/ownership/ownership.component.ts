@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartDataset, ChartOptions, ScatterDataPoint } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 
 @Component({
   selector: 'app-ownership',
@@ -9,6 +10,7 @@ import { BaseChartDirective } from 'ng2-charts';
 })
 export class OwnershipComponent implements OnInit {
 
+  constructor(private _screenService: ScreenSizeService){}
 
   @ViewChild(BaseChartDirective) public baseChart: BaseChartDirective | undefined;
   @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) { }
@@ -16,6 +18,8 @@ export class OwnershipComponent implements OnInit {
   public pieChartData: ChartConfiguration<'pie'>['data'] = { labels: [], datasets: [] };
   public pieChartOptions: ChartOptions<'pie'> = {};
   public pieChartLegend = true;
+
+  public get isMobile(): boolean { return this._screenService.isMobile;}
 
   ngOnInit() {
     this.pieChartOptions = {
@@ -38,20 +42,17 @@ export class OwnershipComponent implements OnInit {
         'DSPP', 
         'Insiders', 
         'Institutions', 
-        'Mutual Funds', 
-        'ETFs',
         'Remainder',
-
       ],
       datasets: [
         {
-          backgroundColor: ['#8f1795','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#ffcc00','#ffcc66','#EEE'],
+          backgroundColor: ['#8f1795','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#EEE'],
           data: [75300000,275000000,0,0,0,0,0,0,0]
         },
 
         {
-          backgroundColor: ['#CCC','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#ffcc00','#ffcc66','#EEE'],
-          data: [0,0,53300000,22000000,39000000,33500000,35000000,30000000,137500000]
+          backgroundColor: ['#CCC','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#EEE'],
+          data: [0,0,53300000,22000000,39000000,89000000,147700000]
         },
 
         {

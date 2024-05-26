@@ -16,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MediaComponent } from './media/media.component';
 import { OwnershipComponent } from './ownership/ownership.component';
 import { NgChartsModule } from 'ng2-charts';
+import { OwnershipTableComponent } from './ownership/ownership-table/ownership-table.component';
 
 
 
@@ -31,7 +32,8 @@ import { NgChartsModule } from 'ng2-charts';
     NewsArticleComponent,
     SneezeComponent,
     MediaComponent,
-    OwnershipComponent
+    OwnershipComponent,
+    OwnershipTableComponent
   ],
   imports: [
     CommonModule,

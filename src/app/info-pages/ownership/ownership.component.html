@@ -1,8 +1,12 @@
 <div class="page-root">
-    <div class="page-content">
-        <div class="page-title">
+    <div class="page-content" style="width: 100%;">
+        <div class="page-title" stsyle="width:100%;">
             GameStop Company Ownership
         </div>
+        <div class="page-subtitle">
+            As of May 24, 2024
+        </div>
+
         <div class="page-section">
             <p>GameStop is unique because a significant portion (over 20%) of all issued shares are owned by
                 <span style="font-weight: bold; color: #a91cb0;">registered</span> and
@@ -10,11 +14,21 @@
                 publicly traded company in history has had an ownership situation like this.
             </p>
         </div>
+
+
         <div class="chart-container" id="chartContainer" style="max-width: 650px; width: 100%;">
             <canvas baseChart class="chart" id="chartCanvas" [type]="'pie'" [data]="pieChartData"
                 [options]="pieChartOptions" [legend]="pieChartLegend">
             </canvas>
         </div>
+
+
+        <div class="page-section" style="margin: 0px; padding:0px;">
+            <app-ownership-table style="max-width: 100%; margin-top: 30px; " *ngIf="!isMobile"></app-ownership-table>
+        </div>
+        
+
+
         <div class="page-section" style="margin-top: 25px;">
             <div class="section-heading">Held by (holders of record)</div>
             <p>The outer circle represents company ownership by <a
@@ -67,16 +81,18 @@
                 shareholders are able to view GameStop's stockholder list at GameStop headquarters, which does provide
                 information that distinguishes DRS versus DSPP shares.</p>
             <p>
-                The DRS versus DSPP numbers in the chart are an approximation from the data obtained from the 
-                <a href="https://www.drsgme.org/the-stockholder-list-summary" target="_blank"> 2023 viewing of the stockholder list</a>.
+                The DRS versus DSPP numbers in the chart are an approximation from the data obtained from the
+                <a href="https://www.drsgme.org/the-stockholder-list-summary" target="_blank"> 2023 viewing of the
+                    stockholder list</a>.
             </p>
         </div>
 
 
         <div class="page-section">
             <div class="section-heading">Held by Cede & Co on behalf of the DTCC</div>
-            <p>All shares not held by registered holders are held by Cede & Co on behalf of the DTCC. 
-            This includes all shares held in brokerage accounts by retail investors, insiders, institutions, mutual funds, ETFs, and any other types of beneficial ownership.</p>
+            <p>All shares not held by registered holders are held by Cede & Co on behalf of the DTCC.
+                This includes all shares held in brokerage accounts by retail investors, insiders, institutions, mutual
+                funds, ETFs, and any other types of beneficial ownership.</p>
         </div>
 
         <div class="page-section">
