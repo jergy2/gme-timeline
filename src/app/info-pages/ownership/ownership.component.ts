@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ChartConfiguration, ChartDataset, ChartOptions, ScatterDataPoint } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { ScreenSizeService } from 'src/app/services/screen-size.service';
@@ -10,7 +11,9 @@ import { ScreenSizeService } from 'src/app/services/screen-size.service';
 })
 export class OwnershipComponent implements OnInit {
 
-  constructor(private _screenService: ScreenSizeService){}
+  constructor(private _screenService: ScreenSizeService, private titleService: Title){
+    this.titleService.setTitle('GameStop ownership (May 2024)');
+  }
 
   @ViewChild(BaseChartDirective) public baseChart: BaseChartDirective | undefined;
   @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) { }
@@ -47,7 +50,7 @@ export class OwnershipComponent implements OnInit {
       datasets: [
         {
           backgroundColor: ['#8f1795','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#EEE'],
-          data: [75300000,275000000,0,0,0,0,0,0,0]
+          data: [75300000,275600000,0,0,0,0,0,0,0]
         },
 
         {

@@ -14,6 +14,8 @@ import { DrsComponent } from './info-pages/drs/drs.component';
 import { MediaComponent } from './info-pages/media/media.component';
 import { OwnershipComponent } from './info-pages/ownership/ownership.component';
 import { SocialMediaComponent } from './pages/social-media/social-media.component';
+import { RedditComponent } from './info-pages/reddit/reddit.component';
+import { RoaringKittyComponent } from './info-pages/roaring-kitty/roaring-kitty.component';
 
 const routes: Routes = [
   { path: '*', component: DisplayTimelineComponent },
@@ -21,20 +23,28 @@ const routes: Routes = [
   { path: 'timeline', component: DisplayTimelineComponent },
   { path: 'earnings', component: EarningsComponent },
   { path: 'financials', component: EarningsComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'research', component: ResearchComponent },
-  { path: 'sandbox', component: SandboxComponent },
-  { path: 'fy23-profitability', component: Fy23ProfitabilityComponent },
-  { path: 'rc-interview-november-2022', component: RcInterviewComponent },
-  { path: 'rc-interview', component: RcInterviewComponent },
-  { path: 'sneeze', component: SneezeComponent },
-  { path: 'sneeze-january-2021', component: SneezeComponent },
-  { path: 'drs', component: DrsComponent },
-  { path: 'media', component: MediaComponent }, 
-  { path: 'propaganda', component: MediaComponent }, 
-  { path: 'guide', component: GuideComponent },
   { path: 'ownership', component: OwnershipComponent},
   { path: 'social-media', component: SocialMediaComponent },
+  { path: 'about', component: AboutComponent },
+
+
+  { path: 'drs', component: DrsComponent },
+  { path: 'fy23-profitability', component: Fy23ProfitabilityComponent },
+  { path: 'guide', component: GuideComponent },
+  { path: 'media', component: MediaComponent }, 
+  { path: 'propaganda', component: MediaComponent }, 
+  { path: 'rc-interview', component: RcInterviewComponent },
+  { path: 'rc-interview-november-2022', component: RcInterviewComponent },
+  { path: 'reddit', component: RedditComponent },
+  { path: 'roaring-kitty', component: RoaringKittyComponent },
+  { path: 'sneeze', component: SneezeComponent },
+  { path: 'sneeze-january-2021', component: SneezeComponent },
+
+  
+  { path: 'research', component: ResearchComponent },
+  { path: 'sandbox', component: SandboxComponent },
+
+
   { path: '**', redirectTo: 'timeline' }
 ];
 

@@ -17,6 +17,8 @@ import { MediaComponent } from './media/media.component';
 import { OwnershipComponent } from './ownership/ownership.component';
 import { NgChartsModule } from 'ng2-charts';
 import { OwnershipTableComponent } from './ownership/ownership-table/ownership-table.component';
+import { RoaringKittyComponent } from './roaring-kitty/roaring-kitty.component';
+import { DrsTimelineComponent } from './drs/drs-timeline/drs-timeline.component';
 
 
 
@@ -33,7 +35,9 @@ import { OwnershipTableComponent } from './ownership/ownership-table/ownership-t
     SneezeComponent,
     MediaComponent,
     OwnershipComponent,
-    OwnershipTableComponent
+    OwnershipTableComponent,
+    RoaringKittyComponent,
+    DrsTimelineComponent
   ],
   imports: [
     CommonModule,

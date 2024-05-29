@@ -12,7 +12,7 @@ import { ScreenSizeService } from 'src/app/services/screen-size.service';
 export class Fy23ProfitabilityComponent {
 
   constructor(private titleService: Title, private _screenSizeService: ScreenSizeService){
-    this.titleService.setTitle('GameStop was profitable for the first time in 6 years - FY23')
+    this.titleService.setTitle('GameStop was profitable for the first time in 6 years - FY 2023')
   }
   public get newsArticles(): NewsArticle[] { return fy23NewsArticles; }
   public get moreThan800Px(): boolean { return this._screenSizeService.screenDimensions.width >= 800; }
