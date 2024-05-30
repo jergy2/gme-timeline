@@ -16,6 +16,8 @@ import { EventSearchService } from '../pages/display-timeline/timeline-controls/
 import { DdEntry } from './dd-entry.interface';
 import { GmePriceEntry } from './gme-price-entry.interface';
 import { EarningsResult } from '../pages/earnings/earnings-results/earnings-result.class';
+import * as dayjs from 'dayjs';
+import { CalendarService } from '../pages/calendar/calendar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +33,7 @@ export class LoadingService {
     private _import10KService: Import10KDataService,
     private _importEventsService: ImportEventsService,
     private _searchService: EventSearchService,
+    private _calendarService: CalendarService
   ) { }
 
 
@@ -58,6 +61,47 @@ export class LoadingService {
     this._dataIsLoading$.next(false);
   }
 
+  private async _importData$() {
+    this._dataIsLoading$.next(true);
+    this._loadingMessage = 'Loading stuff...';
+    this._ddEntries = await lastValueFrom(this._ddService.loadDDItems$());
+    this._loadingMessage = 'Loading earnings data...';
+
+    const today: dayjs.Dayjs = dayjs();
+    
+    let earningsUpdateNeeded:boolean = true;
+    const latestEarningsDateYYYYMMDD: string | null = this._settingsService.latestEarningsDateYYYYMMDD;
+    if(latestEarningsDateYYYYMMDD){
+      if(latestEarningsDateYYYYMMDD === this._calendarService.prevEarningsDateYYYYMMDD){
+        if(today.format('YYYY-MM-DD') < this._calendarService.nextEarningsDateYYYYMMDD){
+          earningsUpdateNeeded = false;
+        }
+      }
+    }
+
+    let quarterlyResults: EarningsResult[] = [];
+    let annualResults: EarningsResult[] = [];
+    
+    if(earningsUpdateNeeded){
+      // with respect to dates, if earnings data update is needed, get it from the spreadsheet.
+      annualResults = await lastValueFrom(this._import10KService.load10KData$());
+      quarterlyResults = await lastValueFrom(this._import10KService.loadQuarterlyResults$());
+      this._settingsService.setEarningsData(annualResults, quarterlyResults);
+    }else{
+      // otherwise, 
+      annualResults = this._settingsService.annualEarnings;
+      quarterlyResults = this._settingsService.quarterlyEarnings;
+      this._import10KService.setQuarterlyResults(quarterlyResults);
+      this._import10KService.setAnnualResults(annualResults);
+    }
+    this._quarterlyResults = quarterlyResults
+    this._loadingMessage = 'Loading GME price data...';
+    this._priceEntries = await lastValueFrom(this._gmeDataService.loadGmeData$());
+    this._loadingMessage = 'Loading events data...';
+    this._allConfigs = await lastValueFrom(this._importEventsService.importEventsFromGoogleSheet$());
+  }
+
+
   private async _updateChartData$() {
     this._loadingMessage = 'Building chart...';
     await lastValueFrom(timer(100));
@@ -72,20 +116,6 @@ export class LoadingService {
     this._loadingMessage = '';
     this._allDataImported = true;
   }
-
-  private async _importData$() {
-    this._dataIsLoading$.next(true);
-    this._loadingMessage = 'Loading stuff...';
-    this._ddEntries = await lastValueFrom(this._ddService.loadDDItems$());
-    this._loadingMessage = 'Loading earnings data...';
-    const fyResults = await lastValueFrom(this._import10KService.load10KData$());
-    this._quarterlyResults = await lastValueFrom(this._import10KService.loadQuarterlyResults$());
-    this._loadingMessage = 'Loading GME price data...';
-    this._priceEntries = await lastValueFrom(this._gmeDataService.loadGmeData$());
-    this._loadingMessage = 'Loading events data...';
-    this._allConfigs = await lastValueFrom(this._importEventsService.importEventsFromGoogleSheet$());
-  }
-
 
 
 }

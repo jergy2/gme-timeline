@@ -23,9 +23,15 @@ export class ImportGmeDataService {
     /**
      * Data source:  https://www.nasdaq.com/market-activity/stocks/gme/historical
      */
-    const eventsGoogleSheetTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQixUOsD8VuEXI06nXbOqMGsDbQiofVAYlbL9_-fh6xo21SSt84x2e0iqDBqWmj_e--CXKpKtiPbjOq/pub?gid=1551713069&single=true&output=tsv';
+    
+    const gmeDataOverviewTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQixUOsD8VuEXI06nXbOqMGsDbQiofVAYlbL9_-fh6xo21SSt84x2e0iqDBqWmj_e--CXKpKtiPbjOq/pub?gid=1551713069&single=true&output=tsv';
+    const gmeDataRecentTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQixUOsD8VuEXI06nXbOqMGsDbQiofVAYlbL9_-fh6xo21SSt84x2e0iqDBqWmj_e--CXKpKtiPbjOq/pub?gid=394446007&single=true&output=tsv';
+    const gmeDataHistoricalTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQixUOsD8VuEXI06nXbOqMGsDbQiofVAYlbL9_-fh6xo21SSt84x2e0iqDBqWmj_e--CXKpKtiPbjOq/pub?gid=993491134&single=true&output=tsv';
+    
+    
+    
     const priceEntries: GmePriceEntry[] = [];
-    this._httpClient.get(eventsGoogleSheetTsvUrl, { responseType: 'text' }).subscribe({
+    this._httpClient.get(gmeDataOverviewTsvUrl, { responseType: 'text' }).subscribe({
       next: (response) => {
         let lines = response.split('\n');
         lines = lines.slice(1);

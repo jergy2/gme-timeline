@@ -17,6 +17,8 @@ export class Import10KDataService {
   public get quarterlyResults(): EarningsResult[] { return this._quarterlyResults; }
   public get annualResults(): EarningsResult[] { return this._annualResults; }
   
+  public setQuarterlyResults(results: EarningsResult[]){ this._quarterlyResults = results; }
+  public setAnnualResults(results: EarningsResult[]){ this._annualResults = results;}
 
   public load10KData$(): Observable<EarningsResult[]> {
     const subject$ = new Subject<EarningsResult[]>();
@@ -91,7 +93,7 @@ export class Import10KDataService {
 
   public loadQuarterlyResults$(): Observable<EarningsResult[]> {
     const subject$ = new Subject<EarningsResult[]>();
-    const eventsGoogleSheetTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT7n4mmCwtjREaCkJVUkHe_ujHBod7vGtEB5iI_kbYToT5dU9cQSq-d3XO2PuFEZ64GCuU70jVayE0R/pub?gid=452534316&single=true&output=tsv';
+    const earningsDataGoogleSheetTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT7n4mmCwtjREaCkJVUkHe_ujHBod7vGtEB5iI_kbYToT5dU9cQSq-d3XO2PuFEZ64GCuU70jVayE0R/pub?gid=452534316&single=true&output=tsv';
 
     /**
      * This variable indexLimitForFiscalYears is based on the data in the Google spreadsheet.
@@ -102,7 +104,7 @@ export class Import10KDataService {
     */
     const indexLimitForFiscalYears = 48;
  
-    this._httpClient.get(eventsGoogleSheetTsvUrl, { responseType: 'text' }).subscribe({
+    this._httpClient.get(earningsDataGoogleSheetTsvUrl, { responseType: 'text' }).subscribe({
       next: (response) => {
         const results: EarningsResult[] = [];
         let lines = response.split('\n');

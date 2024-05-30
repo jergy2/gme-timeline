@@ -6,6 +6,8 @@ export class EarningsResult{
         this._data = data;
     }
 
+    public get data(): EarningsResultInterface { return this._data;}
+
     public get fiscalYear(): number { return this._data.fiscalYear; }
     //quarter column
     public get filingDateYYYYMMDD(): string { return this._data.filingDateYYYYMMDD; }

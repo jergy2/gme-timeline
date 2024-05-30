@@ -5,7 +5,7 @@ import { csBuyDatesYYYYMMDD } from './computershare-buy-dates';
 import * as dayjs from 'dayjs';
 import { DayOfMonth } from './day-of-month.class';
 import { CalendarEventType } from './calendar-event-type.enum';
-import { earningsDates } from './earnings-dates';
+import { earningsDatesYYYYMMDD } from './earnings-dates';
 
 @Component({
   selector: 'app-year-view-month',
@@ -25,7 +25,7 @@ export class YearViewMonthComponent implements OnInit {
         foundDayOfMonth.setCalendarEvent(CalendarEventType.CS_BUY_DATE);
       }
     });
-    earningsDates.forEach(date => {
+    earningsDatesYYYYMMDD.forEach(date => {
       const foundDayOfMonth = this.month.daysOfMonth.find(day => day.dateYYYYMMDD === date);
       if(foundDayOfMonth){
         foundDayOfMonth.setCalendarEvent(CalendarEventType.EARNINGS_DATE);
