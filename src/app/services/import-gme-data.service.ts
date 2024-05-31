@@ -13,6 +13,8 @@ export class ImportGmeDataService {
   private _priceEntries: GmePriceEntry[] = [];
   public get allPriceEntries(): GmePriceEntry[] { return this._priceEntries; }
 
+  public setGmePriceEntries(entries:GmePriceEntry[]) { this._priceEntries = entries; }
+
   public loadGmeData$(): Observable<GmePriceEntry[]>{
     const gmeSubject$ = new Subject<GmePriceEntry[]>();
     /**

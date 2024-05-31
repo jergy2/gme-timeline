@@ -38,7 +38,7 @@ export class LoadingService {
 
 
   private _ddEntries: DdEntry[] = [];
-  private _allConfigs: TimelineEventConfig[] = [];
+  private _allEventConfigs: TimelineEventConfig[] = [];
   private _priceEntries: GmePriceEntry[] = [];
   private _quarterlyResults: EarningsResult[] = [];
 
@@ -66,22 +66,80 @@ export class LoadingService {
     this._loadingMessage = 'Loading stuff...';
     this._ddEntries = await lastValueFrom(this._ddService.loadDDItems$());
     this._loadingMessage = 'Loading earnings data...';
-
-    const today: dayjs.Dayjs = dayjs();
+    await this._loadEarnings();
+    this._loadingMessage = 'Loading GME price data...';
+    await this._loadGmeData();
+    this._loadingMessage = 'Loading events data...';
+    await this._loadEvents();
     
+  }
+
+  private async _loadEvents(){
+    let needsUpdate: boolean = true;
+
+    if(this._settingsService.eventConfigs.length > 0){
+      let today = dayjs().format('YYYY-MM-DD');
+
+      // console.log(this._settingsService.eventConfigs[0].dateYYYYMMDD)
+      // console.log(this._settingsService.eventConfigs)
+      if(this._settingsService.eventConfigs[0].dateYYYYMMDD <= today){
+        // needsUpdate = false;
+      }
+    }
+    if(needsUpdate){
+      // console.log("Needs update")
+      this._allEventConfigs = await lastValueFrom(this._importEventsService.importEventsFromGoogleSheet$());
+      this._settingsService.setEventsData(this._allEventConfigs);
+    }else{
+      // console.log("dooes not need update")
+      this._allEventConfigs = this._settingsService.eventConfigs
+    }
+  }
+
+  private async _loadGmeData(){
+    let needsUpdate: boolean = true;
+    if(this._settingsService.gmeData.length > 0){
+      const gmeData: GmePriceEntry[] = Object.assign([], this._settingsService.gmeData)
+      let sorted = gmeData.sort((item1, item2) => {
+        if (item1.dateYYYYMMDD > item2.dateYYYYMMDD) {
+
+
+          return -1;
+        } else if (item1.dateYYYYMMDD < item2.dateYYYYMMDD) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      let today = dayjs().format('YYYY-MM-DD');
+      if(sorted[0].dateYYYYMMDD === today){
+        needsUpdate = false;
+      }
+    }
+    if(needsUpdate){
+      this._priceEntries = await lastValueFrom(this._gmeDataService.loadGmeData$());
+      this._settingsService.setGmeData(this._priceEntries);
+    }else{
+      this._priceEntries = this._settingsService.gmeData;
+      this._gmeDataService.setGmePriceEntries(this._priceEntries);
+    }
+  }
+
+  private async _loadEarnings(){
+    const today: dayjs.Dayjs = dayjs();
     let earningsUpdateNeeded:boolean = true;
     const latestEarningsDateYYYYMMDD: string | null = this._settingsService.latestEarningsDateYYYYMMDD;
-    if(latestEarningsDateYYYYMMDD){
+    if(latestEarningsDateYYYYMMDD 
+      && this._settingsService.annualEarnings.length > 0 
+      && this._settingsService.quarterlyEarnings.length > 0){
       if(latestEarningsDateYYYYMMDD === this._calendarService.prevEarningsDateYYYYMMDD){
         if(today.format('YYYY-MM-DD') < this._calendarService.nextEarningsDateYYYYMMDD){
           earningsUpdateNeeded = false;
         }
       }
     }
-
     let quarterlyResults: EarningsResult[] = [];
     let annualResults: EarningsResult[] = [];
-    
     if(earningsUpdateNeeded){
       // with respect to dates, if earnings data update is needed, get it from the spreadsheet.
       annualResults = await lastValueFrom(this._import10KService.load10KData$());
@@ -95,17 +153,13 @@ export class LoadingService {
       this._import10KService.setAnnualResults(annualResults);
     }
     this._quarterlyResults = quarterlyResults
-    this._loadingMessage = 'Loading GME price data...';
-    this._priceEntries = await lastValueFrom(this._gmeDataService.loadGmeData$());
-    this._loadingMessage = 'Loading events data...';
-    this._allConfigs = await lastValueFrom(this._importEventsService.importEventsFromGoogleSheet$());
   }
 
 
   private async _updateChartData$() {
     this._loadingMessage = 'Building chart...';
     await lastValueFrom(timer(100));
-    const timelineItems: TimelineEvent[] = TimelineItemsBuilder.getTimelineItems(this._allConfigs, this._priceEntries);
+    const timelineItems: TimelineEvent[] = TimelineItemsBuilder.getTimelineItems(this._allEventConfigs, this._priceEntries);
     this._timelineItemsService.setAllTimelineEvents(timelineItems);
     this._searchService.setTimelineItems(timelineItems, this._ddEntries);
     this._timelineItemsService.updateSignificanceValue(this._settingsService.significanceValue);

@@ -4,6 +4,8 @@ import { Observable, Subject } from 'rxjs';
 import { EarningsResult } from '../pages/earnings/earnings-results/earnings-result.class';
 import * as dayjs from 'dayjs';
 import { EarningsResultInterface } from '../pages/earnings/earnings-results/earnings-result.interface';
+import { GmePriceEntry } from './gme-price-entry.interface';
+import { TimelineEventConfig } from '../pages/display-timeline/timeline-items/timeline-item/timeline-event-config.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +23,17 @@ export class SettingsService {
   private _annualEarnings: EarningsResult[] = [];
 
   private _latestEarningsDateYYYYMMDD: string | null = null;
+  
+  private _gmeData: GmePriceEntry[] = [];
+  private _eventConfigs: TimelineEventConfig[] = [];
 
 
   public get categories(): TimelineEventType[] { return this._categories; }
   public get significanceValue(): number { return this._significanceValue; }
   public get quarterlyEarnings(): EarningsResult[] { return this._quarterlyEarnings; }
   public get annualEarnings(): EarningsResult[] { return this._annualEarnings; }
+  public get gmeData(): GmePriceEntry[] { return this._gmeData; }
+  public get eventConfigs(): TimelineEventConfig[] { return this._eventConfigs; }
 
   public get latestEarningsDateYYYYMMDD(): string | null { return this._latestEarningsDateYYYYMMDD; }
 
@@ -34,12 +41,31 @@ export class SettingsService {
   public get chartListIsVertical$(): Observable<boolean> { return this._chartListIsVertical$.asObservable(); }
 
   public getSettings() {
-    this._chartListIsVertical = this._getChartListDirection();
-    this._categories = this.getCategories();
-    this._significanceValue = this._getSignificance();
-    this._quarterlyEarnings = this._getQuarterlyEarningsData();
-    this._annualEarnings = this._getAnnualEarningsData();
+    this._chartListIsVertical = this._loadChartListDirectionFromLS();
+    this._categories = this._loadCategoriesFromLS();
+    this._significanceValue = this._loadSignificanceFromLS();
+    this._quarterlyEarnings = this._loadQuarterlyEarningsFromLS();
+    this._annualEarnings = this._loadAnnualEarningsFromLS();
     this._latestEarningsDateYYYYMMDD = this._setLatestEarningsDate();
+    this._gmeData = this._loadGmeDataFromLS();
+    this._eventConfigs = this._loadEventsFromLS();
+  }
+
+  private _loadGmeDataFromLS(): GmePriceEntry[]{
+    let storageValue = localStorage.getItem('gme_data');
+    if (storageValue !== null) {
+      let priceEntries: GmePriceEntry[] = JSON.parse(storageValue);
+      return priceEntries;
+    }
+    return [];
+  }
+  private _loadEventsFromLS(): TimelineEventConfig[]{
+    let storageValue = localStorage.getItem('events_data');
+    if (storageValue !== null) {
+      let events: TimelineEventConfig[] = JSON.parse(storageValue);
+      return events;
+    }
+    return [];
   }
 
   public updateCategories(selectedCategories: TimelineEventType[]) {
@@ -51,7 +77,7 @@ export class SettingsService {
     categoriesString = categoriesString.trimEnd();
     categoriesString = categoriesString.substring(0, categoriesString.length - 1);
     localStorage.setItem('categories', categoriesString);
-    this._categories = this.getCategories();
+    this._categories = this._loadCategoriesFromLS();
   }
   public updateSignificanceValue(value: number) {
     this._significanceValue = value;
@@ -71,6 +97,12 @@ export class SettingsService {
     localStorage.setItem('quarterly_earnings', JSON.stringify(quarterlyResults.map(item => item.data)));
     localStorage.setItem('annual_earnings', JSON.stringify(annualResults.map(item => item.data)));
   }
+  public setGmeData(gmeData: GmePriceEntry[]){
+    localStorage.setItem('gme_data', JSON.stringify(gmeData));
+  }
+  public setEventsData(events: TimelineEventConfig[]){
+    localStorage.setItem('events_data', JSON.stringify(events));
+  }
 
 
   private _setLatestEarningsDate(): string | null{
@@ -85,7 +117,7 @@ export class SettingsService {
   }
 
 
-  private _getQuarterlyEarningsData(): EarningsResult[] {
+  private _loadQuarterlyEarningsFromLS(): EarningsResult[] {
     let storageValue = localStorage.getItem('quarterly_earnings');
     if (storageValue !== null) {
       let config: EarningsResultInterface[] = JSON.parse(storageValue);
@@ -94,7 +126,7 @@ export class SettingsService {
     }
     return [];
   }
-  private _getAnnualEarningsData(): EarningsResult[] {
+  private _loadAnnualEarningsFromLS(): EarningsResult[] {
     let storageValue = localStorage.getItem('annual_earnings');
     if (storageValue !== null) {
       let config: EarningsResultInterface[] = JSON.parse(storageValue);
@@ -104,7 +136,7 @@ export class SettingsService {
     return [];
   }
 
-  private _getSignificance(): number {
+  private _loadSignificanceFromLS(): number {
     const significanceStr = localStorage.getItem('significance');
     let significance: number = 3;
     if (significanceStr !== null) {
@@ -113,7 +145,7 @@ export class SettingsService {
     return significance;
   }
 
-  private _getChartListDirection(): boolean {
+  private _loadChartListDirectionFromLS(): boolean {
     const displayValue = localStorage.getItem('list_display_direction');
     let isVertical: boolean = true;
     if (displayValue !== null) {
@@ -124,7 +156,7 @@ export class SettingsService {
     return isVertical;
   }
 
-  public getCategories(): TimelineEventType[] {
+  private _loadCategoriesFromLS(): TimelineEventType[] {
     const categoriesString = localStorage.getItem('categories');
     const categoriesSplit = categoriesString?.split(", ");
     let categories: TimelineEventType[] = [];
