@@ -23,6 +23,7 @@ export class SettingsService {
   private _annualEarnings: EarningsResult[] = [];
 
   private _latestEarningsDateYYYYMMDD: string | null = null;
+  private _lastEventsCheckedDateYYYYMMDD: string | null = null;
   
   private _gmeData: GmePriceEntry[] = [];
   private _eventConfigs: TimelineEventConfig[] = [];
@@ -36,6 +37,7 @@ export class SettingsService {
   public get eventConfigs(): TimelineEventConfig[] { return this._eventConfigs; }
 
   public get latestEarningsDateYYYYMMDD(): string | null { return this._latestEarningsDateYYYYMMDD; }
+  public get lastEventsCheckedDateYYYYMMDD(): string | null { return this._lastEventsCheckedDateYYYYMMDD; }
 
   public get chartListIsVertical(): boolean { return this._chartListIsVertical; }
   public get chartListIsVertical$(): Observable<boolean> { return this._chartListIsVertical$.asObservable(); }
@@ -46,9 +48,19 @@ export class SettingsService {
     this._significanceValue = this._loadSignificanceFromLS();
     this._quarterlyEarnings = this._loadQuarterlyEarningsFromLS();
     this._annualEarnings = this._loadAnnualEarningsFromLS();
-    this._latestEarningsDateYYYYMMDD = this._setLatestEarningsDate();
+    this._latestEarningsDateYYYYMMDD = this._getLatestEarningsDate();
     this._gmeData = this._loadGmeDataFromLS();
     this._eventConfigs = this._loadEventsFromLS();
+    this._lastEventsCheckedDateYYYYMMDD = this._getLastEventsCheckedDate();
+  }
+
+  private _getLastEventsCheckedDate(): string | null { 
+    let storageValue = localStorage.getItem('latest_events_check_YYYYMMDD');
+    return storageValue;
+  }
+
+  public setLastEventsCheckedDate(dateYYYYMMDD: string){ 
+    localStorage.setItem('latest_events_check_YYYYMMDD', dateYYYYMMDD);
   }
 
   private _loadGmeDataFromLS(): GmePriceEntry[]{
@@ -105,7 +117,7 @@ export class SettingsService {
   }
 
 
-  private _setLatestEarningsDate(): string | null{
+  private _getLatestEarningsDate(): string | null{
     let value: string = '';
     if(this.quarterlyEarnings.length > 0){
       if(this.quarterlyEarnings[0].filingDateYYYYMMDD){

@@ -48,8 +48,8 @@ export class LoadingService {
   public get dataIsLoading$(): Observable<boolean> { return this._dataIsLoading$.asObservable(); }
   public get loadingMessage(): string { return this._loadingMessage; }
 
-  public set loadingMessage(loadingMessage: string) { this._loadingMessage = loadingMessage;}
-  public beginLoading(){ this._dataIsLoading$.next(true); }
+  public set loadingMessage(loadingMessage: string) { this._loadingMessage = loadingMessage; }
+  public beginLoading() { this._dataIsLoading$.next(true); }
 
   private _allDataImported: boolean = false;
 
@@ -71,39 +71,41 @@ export class LoadingService {
     await this._loadGmeData();
     this._loadingMessage = 'Loading events data...';
     await this._loadEvents();
-    
+
   }
 
-  private async _loadEvents(){
+  private async _loadEvents() {
     let needsUpdate: boolean = true;
-
-    if(this._settingsService.eventConfigs.length > 0){
-      let today = dayjs().format('YYYY-MM-DD');
-
-      // console.log(this._settingsService.eventConfigs[0].dateYYYYMMDD)
-      // console.log(this._settingsService.eventConfigs)
-      if(this._settingsService.eventConfigs[0].dateYYYYMMDD <= today){
-        // needsUpdate = false;
+    const today = dayjs().format('YYYY-MM-DD');
+    if (this._settingsService.eventConfigs.length > 0) {
+      const today = dayjs().format('YYYY-MM-DD');
+      if (this._settingsService.eventConfigs[0].dateYYYYMMDD === today) {
+        needsUpdate = false;
       }
     }
-    if(needsUpdate){
+    const lastEventsCheckedDate = this._settingsService.lastEventsCheckedDateYYYYMMDD;
+    if (lastEventsCheckedDate !== null) {
+      if (lastEventsCheckedDate === today) {
+        needsUpdate = false;
+      }
+    }
+    if (needsUpdate) {
       // console.log("Needs update")
       this._allEventConfigs = await lastValueFrom(this._importEventsService.importEventsFromGoogleSheet$());
+      this._settingsService.setLastEventsCheckedDate(today);
       this._settingsService.setEventsData(this._allEventConfigs);
-    }else{
+    } else {
       // console.log("dooes not need update")
       this._allEventConfigs = this._settingsService.eventConfigs
     }
   }
 
-  private async _loadGmeData(){
+  private async _loadGmeData() {
     let needsUpdate: boolean = true;
-    if(this._settingsService.gmeData.length > 0){
+    if (this._settingsService.gmeData.length > 0) {
       const gmeData: GmePriceEntry[] = Object.assign([], this._settingsService.gmeData)
       let sorted = gmeData.sort((item1, item2) => {
         if (item1.dateYYYYMMDD > item2.dateYYYYMMDD) {
-
-
           return -1;
         } else if (item1.dateYYYYMMDD < item2.dateYYYYMMDD) {
           return 1;
@@ -111,41 +113,39 @@ export class LoadingService {
           return 0;
         }
       });
-      let today = dayjs().format('YYYY-MM-DD');
-      if(sorted[0].dateYYYYMMDD === today){
-        needsUpdate = false;
-      }
+      const mostRecentDateYYYYMMDD: string = sorted[0].dateYYYYMMDD;
+      needsUpdate = this._needsGMEUpdate(mostRecentDateYYYYMMDD);
     }
-    if(needsUpdate){
+    if (needsUpdate) {
       this._priceEntries = await lastValueFrom(this._gmeDataService.loadGmeData$());
       this._settingsService.setGmeData(this._priceEntries);
-    }else{
+    } else {
       this._priceEntries = this._settingsService.gmeData;
       this._gmeDataService.setGmePriceEntries(this._priceEntries);
     }
   }
 
-  private async _loadEarnings(){
+  private async _loadEarnings() {
     const today: dayjs.Dayjs = dayjs();
-    let earningsUpdateNeeded:boolean = true;
+    let needsUpdate: boolean = true;
     const latestEarningsDateYYYYMMDD: string | null = this._settingsService.latestEarningsDateYYYYMMDD;
-    if(latestEarningsDateYYYYMMDD 
-      && this._settingsService.annualEarnings.length > 0 
-      && this._settingsService.quarterlyEarnings.length > 0){
-      if(latestEarningsDateYYYYMMDD === this._calendarService.prevEarningsDateYYYYMMDD){
-        if(today.format('YYYY-MM-DD') < this._calendarService.nextEarningsDateYYYYMMDD){
-          earningsUpdateNeeded = false;
+    if (latestEarningsDateYYYYMMDD
+      && this._settingsService.annualEarnings.length > 0
+      && this._settingsService.quarterlyEarnings.length > 0) {
+      if (latestEarningsDateYYYYMMDD === this._calendarService.prevEarningsDateYYYYMMDD) {
+        if (today.format('YYYY-MM-DD') < this._calendarService.nextEarningsDateYYYYMMDD) {
+          needsUpdate = false;
         }
       }
     }
     let quarterlyResults: EarningsResult[] = [];
     let annualResults: EarningsResult[] = [];
-    if(earningsUpdateNeeded){
+    if (needsUpdate) {
       // with respect to dates, if earnings data update is needed, get it from the spreadsheet.
       annualResults = await lastValueFrom(this._import10KService.load10KData$());
       quarterlyResults = await lastValueFrom(this._import10KService.loadQuarterlyResults$());
       this._settingsService.setEarningsData(annualResults, quarterlyResults);
-    }else{
+    } else {
       // otherwise, 
       annualResults = this._settingsService.annualEarnings;
       quarterlyResults = this._settingsService.quarterlyEarnings;
@@ -169,6 +169,34 @@ export class LoadingService {
     this._timelineItemsService.setQuarterlyFinancialResults(this._quarterlyResults);
     this._loadingMessage = '';
     this._allDataImported = true;
+  }
+
+  private _needsGMEUpdate(mostRecentDateYYYYMMDD: string): boolean {
+    let needsUpdate: boolean = true;
+    const today = dayjs().format('YYYY-MM-DD');
+    const todayIsSaturday: boolean = dayjs().day() === 6;
+    const todayIsSunday: boolean = dayjs().day() === 0;
+    const mostRecentIsToday: boolean = mostRecentDateYYYYMMDD === today;
+    let todayIsMondayHoliday: boolean = false;
+    if (mostRecentIsToday) {
+      needsUpdate = false;
+    }
+    if (todayIsSaturday) {
+      if (mostRecentDateYYYYMMDD === dayjs().subtract(1, 'days').format('YYYY-MM-DD')) {
+        needsUpdate = false;
+      }
+    }
+    if (todayIsSunday) {
+      if (mostRecentDateYYYYMMDD === dayjs().subtract(2, 'days').format('YYYY-MM-DD')) {
+        needsUpdate = false;
+      }
+    }
+    if (todayIsMondayHoliday) {
+      if (mostRecentDateYYYYMMDD === dayjs().subtract(3, 'days').format('YYYY-MM-DD')) {
+        needsUpdate = false;
+      }
+    }
+    return needsUpdate;
   }
 
 
