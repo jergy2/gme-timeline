@@ -13,3 +13,18 @@
 .bar-chart{
     border: 1px solid red;
 }
+
+
+.news-report{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 2em;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.news-report:hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-special);
+}
