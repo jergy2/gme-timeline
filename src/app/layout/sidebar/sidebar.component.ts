@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes, } from '@angular/animations';
 import { DisplayService } from 'src/app/pages/display-timeline/display.service';
 import { faCoins, faChartLine, faChartPie, faSliders, faQuestion, faBars, faCircleInfo, faTableList, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { SettingsService } from 'src/app/services/settings.service';
+import { Router } from '@angular/router';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
+import { timer } from 'rxjs';
 
 
 @Component({
@@ -38,9 +41,9 @@ import { SettingsService } from 'src/app/services/settings.service';
     ]),
   ]
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit, AfterViewInit {
 
-  constructor(private _settingsService: SettingsService){}
+  constructor(private _settingsService: SettingsService, private _router: Router, private _renderer: Renderer2, private _screenService: ScreenSizeService) { }
   public get faCoins(): IconDefinition { return faCoins; }
   public get faChartLine(): IconDefinition { return faChartLine; }
   public get faChartPie(): IconDefinition { return faChartPie; }
@@ -51,16 +54,53 @@ export class SidebarComponent {
 
   public get showAsList(): boolean { return this._settingsService.chartListIsVertical; }
 
-  private _isOver: boolean = false;
-  public get isOver(): boolean { return this._isOver; }
-  public onMouseLeave(){
-    this._isOver = false;
+
+
+  ngOnInit(): void {
+    this._renderer.listen('window', 'click', (e: Event) => {
+      if (this.menuButtonElement){
+        if(!this.menuButtonElement.nativeElement.contains(e.target)){
+        }else{
+        }
+      }
+        
+    });
+    this._router.events.subscribe((event)=>{
+    })
   }
-  public onClick(){
-    this._isOver = true;
+
+  public get browser(): string { return this._screenService.browser; }
+  public get browserIsSafari(): boolean { return this._screenService.browserIsSafari; }
+
+  private _message: string = '';
+  public get message(): string { return this._message; }
+
+  ngAfterViewInit() {
   }
-  public onMouseEnter(){
-    this._isOver = true;
+
+  @ViewChild('menu') menuButtonElement: ElementRef | null = null;
+
+  private _menuIsOpen: boolean = false;
+  public get menuIsOpen(): boolean { return this._menuIsOpen; }
+  public onMouseLeave() {
+    this._menuIsOpen = false;
+  }
+  private _clicked = false;
+  public onClick() {
+    if(this._screenService.isLargeScreen){
+      
+    }else{
+      this._menuIsOpen = !this._menuIsOpen;
+      this._clicked = true;
+    }
+  }
+  public onMouseEnter() {
+    if(!this._clicked){
+      this._menuIsOpen = true;
+    }else{
+      this._clicked = false;
+    }
+    
   }
 
 }
