@@ -34,6 +34,8 @@ html, body {
 }
 
 
+
+
 .page-root{
   display:flex;
   flex-direction: column;
@@ -41,6 +43,7 @@ html, body {
   align-items: center;
   // margin: 5px;
 }
+
 .page-content{
   display:flex;
   flex-direction: column;
@@ -48,6 +51,19 @@ html, body {
   max-width: 800px;
   // padding: 5px;
 }
+
+
+
+@media (min-width:1200px){
+  .page-content{
+    display:flex;
+    flex-direction: column;
+    max-width: calc(100% - 400px);
+  }
+}
+
+
+
 .page-title{
   font-size: 1.8em;
   font-weight: 600;

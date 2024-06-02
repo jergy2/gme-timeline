@@ -16,17 +16,26 @@ export class ScreenSizeService {
   public get screenDimensions(): { width: number, height: number } { return this._screenDimensions$.getValue(); }
   public get isMobile(): boolean { return this.screenDimensions.width < 480; }
 
-  public get isLargeScreen(): boolean { return this.screenDimensions.width > 800 && this.screenDimensions.height > 800;}
+
 
   public updateScreenSize(width: number, height: number) {
     this._screenDimensions$.next({ width: width, height: height });
   }
 
+  
+  public get screenWidth(): number { return this.screenDimensions.width; }
+  public get screenHeight(): number { return this.screenDimensions.height; }
+  public get isLargeScreen(): boolean { return this.screenWidth > 800 && this.screenHeight > 800;}
+
+   
+  
+  
   private _browser: string = '';
   public get browser(): string { return this._browser; }
 
   public get browserIsSafari(): boolean { 
     return this._browser.includes('AppleWebKit') && this._browser.includes('Safari') && !this._browser.includes('Chrome');
   }
+
 
 }
