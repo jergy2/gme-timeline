@@ -1,7 +1,7 @@
 <div class="sidebar-column no-select">
 
-    <div class="sidebar-button shadow" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-        <div style="display:flex;flex-direction: row; width: 100%;" *ngIf="!isOver">
+    <div class="sidebar-button shadow" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onClick()">
+        <div style="display:flex;flex-direction: row; width: 100%;" *ngIf="!isOver" >
             <fa-icon [icon]="faBars" style="font-size: 1.9em;"></fa-icon>
         </div>
         <div class="sidebar-expanded" *ngIf="isOver">
