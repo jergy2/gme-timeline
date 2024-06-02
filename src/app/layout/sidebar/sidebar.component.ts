@@ -57,7 +57,7 @@ export class SidebarComponent {
     this._isOver = false;
   }
   public onClick(){
-    this._isOver = !this._isOver;
+    this._isOver = true;
   }
   public onMouseEnter(){
     this._isOver = true;
