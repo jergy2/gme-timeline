@@ -1,7 +1,10 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ChartConfiguration, ChartDataset, ChartOptions, ScatterDataPoint, TooltipItem } from 'chart.js';
+import * as dayjs from 'dayjs';
 import { BaseChartDirective } from 'ng2-charts';
+import { ImportGmeDataService } from 'src/app/services/import-gme-data.service';
+import { LoadingService } from 'src/app/services/loading.service';
 import { ScreenSizeService } from 'src/app/services/screen-size.service';
 
 @Component({
@@ -11,8 +14,8 @@ import { ScreenSizeService } from 'src/app/services/screen-size.service';
 })
 export class OwnershipComponent implements OnInit {
 
-  constructor(private _screenService: ScreenSizeService, private titleService: Title){
-    this.titleService.setTitle('GameStop ownership (May 2024)');
+  constructor(private _loadingService: LoadingService, private _screenService: ScreenSizeService, private titleService: Title, private gmeService: ImportGmeDataService){
+    this.titleService.setTitle('GameStop ownership (May 2024)',);
   }
 
   @ViewChild(BaseChartDirective) public baseChart: BaseChartDirective | undefined;
@@ -23,8 +26,13 @@ export class OwnershipComponent implements OnInit {
   public pieChartLegend = true;
 
   public get isMobile(): boolean { return this._screenService.isMobile;}
+  
+  public get isLoading(): boolean { return this._loadingService.dataIsLoading; }
+  public get loadingMessage(): string { return this._loadingService.loadingMessage; }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this._loadingService.loadData$();
+    
     this.pieChartOptions = {
       responsive: true,
       animation: false,
@@ -57,7 +65,7 @@ export class OwnershipComponent implements OnInit {
           callbacks: {
             label: (context) => { return this._labelContext(context) },
             footer: (context) => { return this._footerContext(context) },
-            title: (context) => { return '' }
+            title: (context) => { return this._titleContext(context) }
           },
         },
       },
@@ -101,11 +109,20 @@ export class OwnershipComponent implements OnInit {
     return "  " + context.label;
   }
 
-  private _footerContext(context: TooltipItem<"pie">[]){
+  private _titleContext(context: TooltipItem<"pie">[]){
     const item = context[0];
     const totalShares = 350900000;
     const percent = Math.round((item.parsed/totalShares)*100);
-    return String(Math.round(item.parsed/1000000)) + " million shares / " + percent + " % of total";
+    return percent + "%, " + String(Math.round(item.parsed/1000000)) + " million shares";
+  }
+
+  private _footerContext(context: TooltipItem<"pie">[]){
+
+    const lastClosePrice = this.gmeService.lastClosePrice;
+    const  marketValue = context[0].parsed * lastClosePrice / 1000000000;
+    const date = dayjs(this.gmeService.allPriceEntries[this.gmeService.allPriceEntries.length-1].dateYYYYMMDD).format('MMMM D, YYYY')
+    return '$' + (marketValue).toFixed(1) + " billion -- market value as of " + date;
+
   }
 
 }

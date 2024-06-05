@@ -32,10 +32,9 @@ import { MonthComponent } from './pages/calendar/month/month.component';
 import { YearViewMonthComponent } from './pages/calendar/year-view-month/year-view-month.component';
 import { SeoComponent } from './pages/about/seo/seo.component';
 import { SandboxComponent } from './pages/sandbox/sandbox.component';
-import { LoadingComponent } from './layout/loading/loading.component';
 import { InfoPagesModule } from './info-pages/info-pages.module';
 import { SocialMediaComponent } from './pages/social-media/social-media.component';
-import { HelpContributeComponent } from './info-pages/help-contribute/help-contribute.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -66,7 +65,6 @@ import { HelpContributeComponent } from './info-pages/help-contribute/help-contr
     YearViewMonthComponent,
     SeoComponent,
     SandboxComponent,
-    LoadingComponent,
     SocialMediaComponent,
   ],
   imports: [
@@ -77,6 +75,7 @@ import { HelpContributeComponent } from './info-pages/help-contribute/help-contr
     HttpClientModule,
     FontAwesomeModule,
     InfoPagesModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

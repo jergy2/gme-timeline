@@ -159,10 +159,10 @@ export class SettingsService {
 
   private _loadChartListDirectionFromLS(): boolean {
     const displayValue = localStorage.getItem('list_display_direction');
-    let isVertical: boolean = true;
+    let isVertical: boolean = false;
     if (displayValue !== null) {
-      if (displayValue === 'HORIZONTAL') {
-        isVertical = false;
+      if (displayValue === 'VERTICAL') {
+        isVertical = true;
       }
     }
     return isVertical;

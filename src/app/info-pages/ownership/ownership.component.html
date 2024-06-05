@@ -1,4 +1,4 @@
-<div class="page-root">
+<div class="page-root" *ngIf="!isLoading">
     <div class="page-content" style="width: 100%;">
         <div class="page-title" stsyle="width:100%;">
             GameStop Company Ownership
@@ -107,3 +107,6 @@
 
 
 </div>
+
+
+<app-loading class="layout-root" style="justify-content: center;" *ngIf="isLoading" [loadingMessage]="loadingMessage"></app-loading>

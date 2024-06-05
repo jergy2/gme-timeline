@@ -13,6 +13,14 @@ export class ImportGmeDataService {
   private _priceEntries: GmePriceEntry[] = [];
   public get allPriceEntries(): GmePriceEntry[] { return this._priceEntries; }
 
+  public get lastClosePrice(): number { 
+    if(this.allPriceEntries.length > 0){
+      return this.allPriceEntries[this.allPriceEntries.length-1].close;
+    }else{
+      return -1;
+    }
+  }
+
   public setGmePriceEntries(entries:GmePriceEntry[]) { this._priceEntries = entries; }
 
   public loadGmeData$(): Observable<GmePriceEntry[]>{

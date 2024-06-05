@@ -20,8 +20,7 @@ import { OwnershipTableComponent } from './ownership/ownership-table/ownership-t
 import { RoaringKittyComponent } from './roaring-kitty/roaring-kitty.component';
 import { DrsTimelineComponent } from './drs/drs-timeline/drs-timeline.component';
 import { MoassComponent } from './moass/moass.component';
-import { AppModule } from '../app.module';
-import { HelpContributeComponent } from './help-contribute/help-contribute.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -42,7 +41,6 @@ import { HelpContributeComponent } from './help-contribute/help-contribute.compo
     RoaringKittyComponent,
     DrsTimelineComponent,
     MoassComponent,
-    HelpContributeComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +49,7 @@ import { HelpContributeComponent } from './help-contribute/help-contribute.compo
     AppRoutingModule,
     FontAwesomeModule,
     NgChartsModule,
+    SharedModule,
   ],
   
 })
