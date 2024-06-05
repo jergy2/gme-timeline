@@ -35,6 +35,7 @@ import { SandboxComponent } from './pages/sandbox/sandbox.component';
 import { LoadingComponent } from './layout/loading/loading.component';
 import { InfoPagesModule } from './info-pages/info-pages.module';
 import { SocialMediaComponent } from './pages/social-media/social-media.component';
+import { HelpContributeComponent } from './info-pages/help-contribute/help-contribute.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,6 @@ import { SocialMediaComponent } from './pages/social-media/social-media.componen
     InfoPagesModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

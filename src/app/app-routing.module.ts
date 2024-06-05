@@ -16,6 +16,7 @@ import { OwnershipComponent } from './info-pages/ownership/ownership.component';
 import { SocialMediaComponent } from './pages/social-media/social-media.component';
 import { RedditComponent } from './info-pages/reddit/reddit.component';
 import { RoaringKittyComponent } from './info-pages/roaring-kitty/roaring-kitty.component';
+import { MoassComponent } from './info-pages/moass/moass.component';
 
 const routes: Routes = [
   { path: '*', component: DisplayTimelineComponent },
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'drs', component: DrsComponent },
   { path: 'fy23-profitability', component: Fy23ProfitabilityComponent },
   { path: 'guide', component: GuideComponent },
-  { path: 'media', component: MediaComponent }, 
+  { path: 'media', component: MediaComponent },
+  { path: 'moass', component: MoassComponent }, 
   { path: 'propaganda', component: MediaComponent }, 
   { path: 'rc-interview', component: RcInterviewComponent },
   { path: 'rc-interview-november-2022', component: RcInterviewComponent },

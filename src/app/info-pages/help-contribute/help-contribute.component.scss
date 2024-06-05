@@ -1,0 +1,43 @@
+
+.container{
+    border: 1px solid rgba(255, 0, 0, 0.185);
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+}
+
+.body:hover{
+    cursor: pointer;
+}
+
+.warning-icon{
+    font-size: 2em;
+    color:rgb(182, 182, 182);
+    margin-right: 20px;
+}
+
+.contact{
+    padding: 5px;
+}
+
+.social-media-icon{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.contact-item{
+    margin-top: 15px;;
+}
+li{
+    margin-top: 10px;;
+}
+
+.item-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

@@ -19,6 +19,9 @@ import { NgChartsModule } from 'ng2-charts';
 import { OwnershipTableComponent } from './ownership/ownership-table/ownership-table.component';
 import { RoaringKittyComponent } from './roaring-kitty/roaring-kitty.component';
 import { DrsTimelineComponent } from './drs/drs-timeline/drs-timeline.component';
+import { MoassComponent } from './moass/moass.component';
+import { AppModule } from '../app.module';
+import { HelpContributeComponent } from './help-contribute/help-contribute.component';
 
 
 
@@ -37,7 +40,9 @@ import { DrsTimelineComponent } from './drs/drs-timeline/drs-timeline.component'
     OwnershipComponent,
     OwnershipTableComponent,
     RoaringKittyComponent,
-    DrsTimelineComponent
+    DrsTimelineComponent,
+    MoassComponent,
+    HelpContributeComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +50,8 @@ import { DrsTimelineComponent } from './drs/drs-timeline/drs-timeline.component'
     BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NgChartsModule
-  ]
+    NgChartsModule,
+  ],
+  
 })
 export class InfoPagesModule { }
