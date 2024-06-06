@@ -7,9 +7,19 @@
     display: flex;
     flex-direction: row;
 }
-
+.body-container{
+    flex-grow: 2;
+}
+.body{
+    flex-grow: 2;
+    width: 100%;
+}
 .body:hover{
     cursor: pointer;
+    .contribute{
+        font-weight: bold;
+        color: var(--color-special);
+    }
 }
 
 .warning-icon{

@@ -128,3 +128,13 @@
   display:flex;
   flex-direction: column;
 }
+
+
+
+.moass-alert{
+  width: 400px;
+  height: 80px;
+  position: fixed;
+  left: calc(50% - 200px);
+  top: 100px;
+}

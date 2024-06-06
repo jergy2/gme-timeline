@@ -45,7 +45,7 @@ export const chapterConfigs: ChapterInterface[] = [
     {
         title: 'Outcomes of pressure and time',
         yearGroup: '2024',
-        subtitle: 'GameStop was profitable in FY2023.  Roaring Kitty has returned.  The winds are changing.',
+        subtitle: 'GameStop was profitable in FY2023 and holds $2 billion in cash and negligible debt.  Roaring Kitty has returned.  Outlook not good for short sellers.',
         dateStartYYYYMMDD: '2024-01-01',
         dateEndYYYYMMDD: '2024-12-31',
         description: [],

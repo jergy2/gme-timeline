@@ -38,6 +38,8 @@ const routes: Routes = [
   { path: 'rc-interview', component: RcInterviewComponent },
   { path: 'rc-interview-november-2022', component: RcInterviewComponent },
   { path: 'reddit', component: RedditComponent },
+  { path: 'DeepFuckingValue', component: RoaringKittyComponent },
+  { path: 'dfv', component: RoaringKittyComponent },
   { path: 'roaring-kitty', component: RoaringKittyComponent },
   { path: 'sneeze', component: SneezeComponent },
   { path: 'sneeze-january-2021', component: SneezeComponent },

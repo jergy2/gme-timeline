@@ -1,9 +1,9 @@
 <div class="container" >
     <fa-icon [icon]="faTriangle" class="warning-icon"></fa-icon>
-    <div>
+    <div class="body-container">
         <div class="no-select body" (click)="onClickContainer()">
             This page needs to be expanded. <br>
-            Interested in contributing? <br>
+            <span class="contribute">Interested in contributing?</span> <br>
         </div>
 
         <div *ngIf="isExpanded" class="contact">
@@ -47,7 +47,7 @@
 
                         
                         r/gme_timeline
-                    </a> or send a message to u/jersan
+                    </a> or send a message to <a href="https://www.reddit.com/u/jersan" target="_blank" class="community-button">u/jersan</a>
                 </div>
 
             </div>

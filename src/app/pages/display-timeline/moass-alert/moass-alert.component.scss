@@ -1,0 +1,43 @@
+.moass-alert-root{
+    border: 1px solid rgba(128, 128, 128, 0.158);;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.116);;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alert-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon-container{
+
+}
+.icon{
+    color: gray;
+    font-size: 2em;
+}
+
+.link-container{
+    font-size: 2em;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.link{
+    text-decoration: none;
+    color: gray;
+}
+
+
+.moass-alert-root:hover{
+    .link{
+        color: red;
+    }
+    .icon{
+        color: red;
+    }
+}

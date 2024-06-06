@@ -35,6 +35,7 @@ import { SandboxComponent } from './pages/sandbox/sandbox.component';
 import { InfoPagesModule } from './info-pages/info-pages.module';
 import { SocialMediaComponent } from './pages/social-media/social-media.component';
 import { SharedModule } from './shared/shared.module';
+import { MoassAlertComponent } from './pages/display-timeline/moass-alert/moass-alert.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { SharedModule } from './shared/shared.module';
     SeoComponent,
     SandboxComponent,
     SocialMediaComponent,
+    MoassAlertComponent,
   ],
   imports: [
     BrowserModule,
