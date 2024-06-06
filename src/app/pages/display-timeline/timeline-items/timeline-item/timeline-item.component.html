@@ -56,7 +56,7 @@
             <img *ngIf="link.type === 'GAMESTOP'" src="assets/icons/gs-logo.png" class="logo" alt="GameStop">
             <img *ngIf="link.type === 'X-TWITTER'" src="assets/icons/x-twitter-logo.png" class="logo" alt="X-TWITTER">
             <a [href]="link.url" *ngIf="link.type !== 'LEMMY'" target="_blank">{{link.label}}</a>
-            <a [href]="link.url" *ngIf="link.type === 'LEMMY' && link.label === ''" target="_blank">Discuss this on Lemmy</a>
+            <a [href]="link.url" *ngIf="link.type === 'LEMMY' && link.label === ''" target="_blank">Thread on Lemmy</a>
             <a [href]="link.url" *ngIf="link.type === 'LEMMY'" target="_blank">{{link.label}}</a>
         </div>
         <div *ngIf="linkTypeIsOther(link.type)" class="link-container">

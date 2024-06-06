@@ -25,7 +25,9 @@ export class ChaptersControlComponent implements OnInit {
   constructor(private _searchService: EventSearchService,
     private _eventService: TimelineItemsService,
     private _chartService: ChartDataManagerService,
-    private _settingsService: SettingsService) { }
+    private _settingsService: SettingsService,
+    private _itemService: TimelineItemsService,
+    private _dataManagerService: ChartDataManagerService) { }
 
   ngOnInit(): void {
     this._chapters = chapterConfigs.map(cc => new Chapter(cc))
@@ -77,12 +79,18 @@ export class ChaptersControlComponent implements OnInit {
   public onClickOverview(){
     const startDateYYYYMMDD = '2020-07-01';
     const endDateDateYYYYMMDD = dayjs().format('YYYY-MM-DD');
-    const overviewEvents = this._searchService.getEventsByDates(startDateYYYYMMDD, endDateDateYYYYMMDD);
+
     const significance = this._settingsService.significanceValue;
+    this._settingsService.updateSignificanceValue(significance);
+    this._dataManagerService.updateSignificanceValue(significance);
+    this._itemService.updateSignificanceValue(significance);
+    let overviewEvents = this._searchService.getEventsByDates(startDateYYYYMMDD, endDateDateYYYYMMDD)
+    overviewEvents = overviewEvents.filter(item => item.significance >= significance);
     // const filteredEvents = overviewEvents.filter(event => event.significance >= significance);
     this._searchService.onClickStoryOverviewButton();
     this._eventService.setDisplayedTimelineEvents(overviewEvents);
     this._chartService.updateDateRange(startDateYYYYMMDD, endDateDateYYYYMMDD);
     this._chartService.updateDisplayedEvents(overviewEvents);
+
   }
 }
