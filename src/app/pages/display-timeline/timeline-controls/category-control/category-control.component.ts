@@ -13,9 +13,10 @@ import { SettingsService } from 'src/app/services/settings.service';
 export class CategoryControlComponent implements OnInit {
 
   constructor(
-    private _dataManagerService: ChartDataManagerService, 
-    private _itemService: TimelineItemsService, 
-    private _settingsService: SettingsService) { }
+    private _dataManagerService: ChartDataManagerService,
+    private _itemService: TimelineItemsService,
+    private _settingsService: SettingsService,
+    private _chartDataService: ChartDataManagerService,) { }
 
   private _buttonManager: CategoryButtonManager = new CategoryButtonManager();
   public get buttonManager(): CategoryButtonManager { return this._buttonManager; }
@@ -25,6 +26,49 @@ export class CategoryControlComponent implements OnInit {
     // const existingCategoriesFilter: TimelineItemType[] = this._dataManagerService.categories;
     const existingCategoriesFilter = this._settingsService.categories;
     this._buttonManager.setCategories(existingCategoriesFilter);
+  }
+
+  public getBackgroundColor(button: CategoryButton): string {
+    const category = button.category;
+    let color = '';
+    if (category !== 'ALL') {
+      color = this._chartDataService.getTypeColor(category, 0.2);
+    }
+    return color;
+  }
+  public getButtonClass(button: CategoryButton, showOrHide: 'show' | 'hide') {
+    let ngClass: string[] = [];
+    if (showOrHide === 'show') {
+      if (button.showActivated) {
+        if (button.category === 'ALL') {
+          ngClass.push('show-all-selected');
+        } else {
+          const type = button.category;
+          if (type === TimelineEventType.CORP) {
+            ngClass.push('corporate-selected');
+          } else if (type === TimelineEventType.MEDIA) {
+            ngClass.push('media-selected');
+          } else if (type === TimelineEventType.RC) {
+            ngClass.push('ryan-cohen-selected');
+          } else if (type === TimelineEventType.SOCIAL_MEDIA) {
+            ngClass.push('social-media-selected');
+          } else if (type === TimelineEventType.OTHER) {
+            ngClass.push('other-selected');
+          } else if (type === TimelineEventType.DRS) {
+            ngClass.push('drs-selected');
+          }
+        }
+      }
+    } else {
+      // if 'hide' 
+
+      if (button.hideActivated) {
+        ngClass.push('hide-selected');
+      }
+    }
+
+
+    return ngClass;
   }
 
   public onClickButtonCategory(button: CategoryButton) {
@@ -40,8 +84,8 @@ export class CategoryControlComponent implements OnInit {
     this._makeUpdates();
   }
 
-  private _makeUpdates(){
-    
+  private _makeUpdates() {
+
     const selectedCategories = this.buttonManager.selectedCategories;
     this._settingsService.updateCategories(selectedCategories);
     this._dataManagerService.updateCategories(selectedCategories);

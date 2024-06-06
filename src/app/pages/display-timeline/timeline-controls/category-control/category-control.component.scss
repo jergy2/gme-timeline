@@ -19,12 +19,50 @@
     border: 2px solid var(--color-special);
 }
 
+td{
+    margin: 0px;
+    border: none;
+}
+.show-all-selected{
+    background-color: rgb(0, 80, 17, 0.2);
+    border: 2px solid rgb(0, 177, 38);
+}
+.corporate-selected{
+    background-color: rgba(128,0,0,0.4);;
+    border: 2px solid rgba(128,0,0);
+}
+.media-selected{
+    background-color: rgba(230,110,0, 0.4);;
+    border: 2px solid rgba(230,110,0);
+}
+.ryan-cohen-selected{
+    background-color: rgba(0,0,255,0.4);
+    border: 2px solid rgba(0,0,255,1);
+}
+.social-media-selected{
+    background-color: rgba(255,0,0,0.4);;
+    border: 2px solid rgba(255,0,0);
+}
+.other-selected{
+    background-color: rgba(128,128,128,0.4);;
+    border: 2px solid rgb(128,128,128);
+}
+.drs-selected{
+    background-color: rgba(204, 82, 165, 0.425);;
+    border: 2px solid var(--color-special);
+}
 .selected{
     background-color: rgba(204, 82, 165, 0.425);;
     border: 2px solid var(--color-special);
 }
-.not-selected{
+.hide-selected{
+    background-color: rgba(128, 128, 128, 0.233);
+    border: 2px solid gray;
+}
 
+.button-category-tr{
+    padding: 5px;
+    margin-bottom: 5px;
 }
 
 .button-category{
