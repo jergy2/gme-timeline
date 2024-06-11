@@ -4,28 +4,28 @@
             GameStop Company Ownership
         </div>
         <div class="page-subtitle">
-            As of May 24, 2024
+            As of June 11, 2024
         </div>
 
         <div class="page-section">
-            <p>GameStop is unique because a significant portion (over 20%) of all issued shares are owned by
-                <a style="font-weight: bold; color: #8f1795; text-decoration: none;" [routerLink]="'/drs'">registered</a> shareholders. No other
-                publicly traded company in history has had an ownership situation like this.
+            <p>As a publicly traded company, GameStop is unique because a significant portion of all issued shares are owned by
+                <a style="font-weight: bold; color: #8f1795; text-decoration: none;"
+                    [routerLink]="'/drs'">registered</a> shareholders.
             </p>
         </div>
 
-
-        <div class="chart-container" id="chartContainer" style="max-width: 650px; width: 100%;">
-            <canvas baseChart class="chart" id="chartCanvas" [type]="'pie'" [data]="pieChartData"
-                [options]="pieChartOptions" [legend]="pieChartLegend">
-            </canvas>
+        <div class="page-section"
+            style="margin: 0px; padding:0px; width: 100%;">
+            <app-ownership-chart style="width: 100%;display:flex;flex-direction:column;align-items: center;" *ngIf="!isMobile" ></app-ownership-chart>
         </div>
+
+
 
 
         <div class="page-section" style="margin: 0px; padding:0px;">
             <app-ownership-table style="max-width: 100%; margin-top: 30px; " *ngIf="!isMobile"></app-ownership-table>
         </div>
-        
+
 
 
         <div class="page-section" style="margin-top: 25px;">
@@ -109,4 +109,5 @@
 </div>
 
 
-<app-loading class="layout-root" style="justify-content: center;" *ngIf="isLoading" [loadingMessage]="loadingMessage"></app-loading>
+<app-loading class="layout-root" style="justify-content: center;" *ngIf="isLoading"
+    [loadingMessage]="loadingMessage"></app-loading>

@@ -21,6 +21,7 @@ import { RoaringKittyComponent } from './roaring-kitty/roaring-kitty.component';
 import { DrsTimelineComponent } from './drs/drs-timeline/drs-timeline.component';
 import { MoassComponent } from './moass/moass.component';
 import { SharedModule } from '../shared/shared.module';
+import { OwnershipChartComponent } from './ownership/ownership-chart/ownership-chart.component';
 
 
 
@@ -41,6 +42,7 @@ import { SharedModule } from '../shared/shared.module';
     RoaringKittyComponent,
     DrsTimelineComponent,
     MoassComponent,
+    OwnershipChartComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ownership-table',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./ownership-table.component.scss']
 })
 export class OwnershipTableComponent {
+
+
 
 }
