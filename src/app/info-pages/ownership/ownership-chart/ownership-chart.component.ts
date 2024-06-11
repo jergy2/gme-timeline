@@ -17,6 +17,8 @@ export class OwnershipChartComponent implements OnInit{
   public pieChartOptions: ChartOptions<'pie'> = {};
   public pieChartLegend = true;
 
+  public get tso(): number { return 426200000; } // updated 2024-06-11
+
   async ngOnInit() {
     await this._loadingService.loadData$();
     
@@ -99,8 +101,7 @@ export class OwnershipChartComponent implements OnInit{
 
   private _titleContext(context: TooltipItem<"pie">[]){
     const item = context[0];
-    const totalShares = 350900000;
-    const percent = Math.round((item.parsed/totalShares)*100);
+    const percent = Math.round((item.parsed/this.tso)*100);
     return percent + "%, " + String(Math.round(item.parsed/1000000)) + " million shares";
   }
 
