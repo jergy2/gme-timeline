@@ -1,6 +1,6 @@
-<div style="width: 100%;" >
+<div style="width: 100%;">
     <div class="section-heading">
-        GME ownership table (as of June 11, 2024)
+        GME ownership table (as of {{lastUpdated}})
     </div>
     <table class="data-table">
 
@@ -16,84 +16,92 @@
             </td>
             <td class="drs-row">DRS</td>
             <td class="drs-row"></td>
-            <td class="number-cell drs-row">61.5 M</td> 
-            <td class="number-cell drs-row">14.4 %</td>
+            <td class="number-cell drs-row">{{drsNumber}} M</td>
+            <td class="number-cell drs-row">{{percent(drsNumber)}} %</td>
         </tr>
         <tr>
             <td class="dspp-row">
                 DSPP
             </td>
             <td class="dspp-row"></td>
-            <td class="number-cell dspp-row">13.1 M</td>
-            <td class="number-cell dspp-row">3.1 %</td>
+            <td class="number-cell dspp-row">{{dsppNumber}} M</td>
+            <td class="number-cell dspp-row">{{percent(dsppNumber)}} %</td>
         </tr>
         <tr>
             <td class="border-bottom drs-row"></td>
             <td class="border-bottom drs-row" style="font-weight: bold;">Total Registered</td>
-            <td class="number-cell border-bottom drs-row" style="font-weight: bold;">74.6 M</td>
-            <td class="number-cell border-bottom drs-row" style="font-weight: bold;">17.5 %</td>
+            <td class="number-cell border-bottom drs-row" style="font-weight: bold;">{{totalRegistered}} M</td>
+            <td class="number-cell border-bottom drs-row" style="font-weight: bold;">{{percent(totalRegistered)}} %</td>
         </tr>
         <tr>
-            <td rowspan="10" class="border-bottom-2 cede-row">
+            <td rowspan="12" class="border-bottom-2 cede-row">
                 Held by Cede & Co on behalf of DTCC
             </td>
-            <td rowspan="3" class="border-bottom insiders-row">Insiders</td>
-            <td class="insiders-row">Ryan Cohen</td>
-            <td class="number-cell insiders-row">36.8 M</td>
-            <td class="number-cell insiders-row">8.6 %</td>
+            
         </tr>
         <tr>
-            <td class="insiders-row">All others</td>
-            <td class="number-cell insiders-row">2.0 M</td>
-            <td class="number-cell insiders-row">0.5 %</td>
+            <td rowspan="3" class="border-bottom insiders-row">Insiders</td>
+            <td class="insiders-row">Ryan Cohen</td>
+            <td class="number-cell insiders-row">{{rcNumber}} M</td>
+            <td class="number-cell insiders-row">{{percent(rcNumber)}} %</td>
+        </tr>
+        <tr>
+            <td class="insiders-row">All other insiders</td>
+            <td class="number-cell insiders-row">{{otherInsiders}} M</td>
+            <td class="number-cell insiders-row">{{percent(otherInsiders)}} %</td>
         </tr>
         <tr>
             <td class="border-bottom total insiders-row">Insiders Total</td>
-            <td class="number-cell border-bottom total insiders-row">38.8 M</td>
-            <td class="number-cell border-bottom total insiders-row">9.1 %</td>
+            <td class="number-cell border-bottom total insiders-row">{{insidersTotal.toFixed(1)}} M</td>
+            <td class="number-cell border-bottom total insiders-row">{{percent(insidersTotal)}} %</td>
         </tr>
-
+        <tr>
+            <td class="rk-row"></td>
+            <td class="rk-row" >Roaring Kitty</td>
+            <td class="number-cell rk-row">{{(rkNumber).toFixed(1)}} M</td>
+            <td class="number-cell rk-row">{{percent(rkNumber)}} %</td>
+        </tr>
         <tr>
             <td rowspan="5" class="border-bottom institutions-row">Institutions</td>
             <td class="institutions-row">Vanguard Group Inc</td>
-            <td class="number-cell institutions-row">25.4 M</td>
-            <td class="number-cell institutions-row">6.0 %</td>
+            <td class="number-cell institutions-row">{{vanguard}} M</td>
+            <td class="number-cell institutions-row">{{percent(vanguard)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">Blackrock Inc</td>
-            <td class="number-cell institutions-row">22.6 M</td>
-            <td class="number-cell institutions-row">5.3 %</td>
+            <td class="number-cell institutions-row">{{blackrock}} M</td>
+            <td class="number-cell institutions-row">{{percent(blackrock)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">State Street Corporation</td>
-            <td class="number-cell institutions-row">8.3 M</td>
-            <td class="number-cell institutions-row">1.9 %</td>
+            <td class="number-cell institutions-row">{{statestreet}} M</td>
+            <td class="number-cell institutions-row">{{percent(statestreet)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">All other institutional</td>
-            <td class="number-cell institutions-row">32.7 M</td>
-            <td class="number-cell institutions-row">7.7 %</td>
+            <td class="number-cell institutions-row">{{otherInst}} M</td>
+            <td class="number-cell institutions-row">{{percent(otherInst)}} %</td>
         </tr>
         <tr>
             <td class="border-bottom total institutions-row">Institutions Total</td>
-            <td class="number-cell border-bottom total institutions-row">89.0 M</td>
-            <td class="number-cell border-bottom total institutions-row">20.9 %</td>
+            <td class="number-cell border-bottom total institutions-row">{{instTotal}} M</td>
+            <td class="number-cell border-bottom total institutions-row">{{percent(instTotal)}} %</td>
         </tr>
         <tr>
             <td class="border-bottom cede-row-2">Remainder</td>
             <td class="border-bottom cede-row-2 total">Remainder total</td>
-            <td class="number-cell border-bottom total cede-row-2">223.8 M</td>
-            <td class="number-cell border-bottom total cede-row-2">52.5 %</td>
+            <td class="number-cell border-bottom total cede-row-2">{{(remainderTotal/ 1000000).toFixed(1)}} M</td>
+            <td class="number-cell border-bottom total cede-row-2">{{percent(remainderTotal/ 1000000)}} %</td>
         </tr>
         <tr>
             <td class="border-bottom-2 cede-row"></td>
             <td class="border-bottom-2 cede-row" style="font-weight: bold;">Total Beneficial</td>
-            <td class="border-bottom-2 number-cell cede-row" style="font-weight: bold;">351.6 M</td>
-            <td class="border-bottom-2 number-cell cede-row" style="font-weight: bold;">82.5 %</td>
+            <td class="border-bottom-2 number-cell cede-row" style="font-weight: bold;">{{(beneficial / 1000000).toFixed(1)}} M</td>
+            <td class="border-bottom-2 number-cell cede-row" style="font-weight: bold;">{{percent(beneficial / 1000000)}} %</td>
         </tr>
         <tr>
             <td colspan="3" class="total-row">Issued shares total</td>
-            <td class="number-cell total-row " style="min-width: 60px;">426.2 M</td>
+            <td class="number-cell total-row " style="min-width: 60px;">{{tso}} M</td>
             <td class="number-cell total-row">100 %</td>
         </tr>
     </table>

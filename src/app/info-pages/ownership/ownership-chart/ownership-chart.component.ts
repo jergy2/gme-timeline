@@ -3,6 +3,7 @@ import { ChartConfiguration, ChartOptions, TooltipItem } from 'chart.js';
 import * as dayjs from 'dayjs';
 import { ImportGmeDataService } from 'src/app/services/import-gme-data.service';
 import { LoadingService } from 'src/app/services/loading.service';
+import { OwnershipData } from '../ownership-data.class';
 
 @Component({
   selector: 'app-ownership-chart',
@@ -17,7 +18,10 @@ export class OwnershipChartComponent implements OnInit{
   public pieChartOptions: ChartOptions<'pie'> = {};
   public pieChartLegend = true;
 
-  public get tso(): number { return 426200000; } // updated 2024-06-11
+  public get tso(): number { return this.ownershipData.tso; } // updated 2024-06-11
+
+  private _ownershipData: OwnershipData = new OwnershipData();
+  public get ownershipData(): OwnershipData { return this._ownershipData; }
 
   async ngOnInit() {
     await this._loadingService.loadData$();
@@ -60,38 +64,8 @@ export class OwnershipChartComponent implements OnInit{
       },
       
     }
-    const data = {
-      labels: [
-        'Held by registered holders at Computershare', 
-        'Held by Cede & Co on behalf of DTCC', 
-        'DRS', 
-        'DSPP', 
-        'Insiders', 
-        'Institutions', 
-        'Remainder',
-      ],
-      datasets: [
-        {
-          backgroundColor: ['#8f1795','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#EEE'],
-          data: [74600000,351600000,0,0,0,0,0,0,0]
-        },
-        {
-          backgroundColor: ['#CCC','#CCC','#8f1795', '#a91cb0','#0066ff', '#ff9900','#EEE'],
-          data: [0,0,61500000,13100000,38800000,89000000,223800000]
-        },
-        {
-          backgroundColor: ['hsl(0, 100%, 60%)', 'hsl(0, 100%, 35%)'],
-          data: [0, 0]
-        },        {
-          backgroundColor: ['hsl(0, 100%, 60%)', 'hsl(0, 100%, 35%)'],
-          data: [0, 0]
-        },        {
-          backgroundColor: ['hsl(0, 100%, 60%)', 'hsl(0, 100%, 35%)'],
-          data: [0, 0]
-        },       
-      ]
-    };
-    this.pieChartData = data;
+    
+    this.pieChartData = this.ownershipData.chartData;
   }
 
 

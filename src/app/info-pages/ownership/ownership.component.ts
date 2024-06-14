@@ -6,6 +6,7 @@ import { BaseChartDirective } from 'ng2-charts';
 import { ImportGmeDataService } from 'src/app/services/import-gme-data.service';
 import { LoadingService } from 'src/app/services/loading.service';
 import { ScreenSizeService } from 'src/app/services/screen-size.service';
+import { OwnershipData } from './ownership-data.class';
 
 @Component({
   selector: 'app-ownership',
@@ -25,6 +26,10 @@ export class OwnershipComponent implements OnInit {
   public get isMobile(): boolean { return this._screenService.isMobile; }
   public get isLoading(): boolean { return this._loadingService.dataIsLoading; }
   public get loadingMessage(): string { return this._loadingService.loadingMessage; }
+
+  public get lastUpdated(): string { 
+    return dayjs((new OwnershipData()).lastUpdateYYYYMMDD).format('MMMM D, YYYY')
+  }
 
   async ngOnInit() {
     await this._loadingService.loadData$();
