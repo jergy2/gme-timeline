@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { OwnershipData } from '../ownership-data.class';
 import * as dayjs from 'dayjs';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 
 @Component({
   selector: 'app-ownership-table',
@@ -8,6 +9,10 @@ import * as dayjs from 'dayjs';
   styleUrls: ['./ownership-table.component.scss']
 })
 export class OwnershipTableComponent {
+
+  constructor(private _screenService: ScreenSizeService){}
+
+  public get isMobile(): boolean { return this._screenService.isMobile; }
 
   public get data(): OwnershipData { return new OwnershipData(); }
 
