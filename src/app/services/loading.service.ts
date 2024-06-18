@@ -125,40 +125,31 @@ export class LoadingService {
     }
   }
 
+
+
+  /*
+    2024-06-18
+    Earnings are now loaded via local .csv file again and not a Google Sheet document
+    reason:  loading from Google sheet took a long time to load earnings.
+    Earnings only changes 4 times a year so it can be done locally at those times 
+    without checking for and loading from Google sheets which takes too long
+  */
   private async _loadEarnings() {
-    const today: dayjs.Dayjs = dayjs();
-    let needsUpdate: boolean = true;
-    const latestEarningsDateYYYYMMDD: string | null = this._settingsService.latestEarningsDateYYYYMMDD;
-    if (latestEarningsDateYYYYMMDD
-      && this._settingsService.annualEarnings.length > 0
-      && this._settingsService.quarterlyEarnings.length > 0) {
-      if (latestEarningsDateYYYYMMDD === this._calendarService.prevEarningsDateYYYYMMDD) {
-        if (today.format('YYYY-MM-DD') < this._calendarService.nextEarningsDateYYYYMMDD) {
-          needsUpdate = false;
-        }
-      }
-    }
+
     let quarterlyResults: EarningsResult[] = [];
     let annualResults: EarningsResult[] = [];
-    if (needsUpdate) {
-      // with respect to dates, if earnings data update is needed, get it from the spreadsheet.
-      annualResults = await lastValueFrom(this._import10KService.load10KData$());
-      quarterlyResults = await lastValueFrom(this._import10KService.loadQuarterlyResults$());
-      this._settingsService.setEarningsData(annualResults, quarterlyResults);
-    } else {
-      // otherwise, 
-      annualResults = this._settingsService.annualEarnings;
-      quarterlyResults = this._settingsService.quarterlyEarnings;
-      this._import10KService.setQuarterlyResults(quarterlyResults);
-      this._import10KService.setAnnualResults(annualResults);
-    }
+    annualResults = await lastValueFrom(this._import10KService.load10KData$());
+    quarterlyResults = await lastValueFrom(this._import10KService.load10QData$());
+    this._settingsService.setEarningsData(annualResults, quarterlyResults);
+    this._import10KService.setQuarterlyResults(quarterlyResults);
+    this._import10KService.setAnnualResults(annualResults);
     this._quarterlyResults = quarterlyResults
   }
 
 
   private async _updateChartData$() {
     this._loadingMessage = 'Building chart...';
-    await lastValueFrom(timer(100));
+    await lastValueFrom(timer(10));
     const timelineItems: TimelineEvent[] = TimelineItemsBuilder.getTimelineItems(this._allEventConfigs, this._priceEntries);
     this._timelineItemsService.setAllTimelineEvents(timelineItems);
     this._searchService.setTimelineItems(timelineItems, this._ddEntries);

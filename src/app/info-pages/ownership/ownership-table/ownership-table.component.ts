@@ -41,9 +41,24 @@ export class OwnershipTableComponent {
   public get remainderTotal(): number { return this.data.remainderTotal;  }
   public get beneficial(): number { return this.data.totalBeneficial; }
   
+  private _showSources: boolean = false;
+  private _buttonLabel: string = 'Show data sources'
+  public get showSources(): boolean { return this._showSources; }
+  public get buttonLabel(): string { return this._buttonLabel; }
+
+  public get recent10Q10Kurl(): string { return 'https://www.sec.gov/Archives/edgar/data/1326380/000132638024000030/gme-20240504.htm'; }
 
 
   public percent(section: number): string{
     return ((section / (this.data.tso/1000000)) * 100).toFixed(1);
+  }
+
+  public onClickShowDataSource(){
+    this._showSources = !this._showSources;
+    if(this._showSources === true){
+      this._buttonLabel = 'Hide data sources';
+    }else{
+      this._buttonLabel = 'Show data sources';
+    }
   }
 }
