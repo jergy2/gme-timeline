@@ -7,7 +7,7 @@
             As of {{ lastUpdated }}
         </div>
 
-        <div class="page-section">
+        <div class="page-section" style="width: 100%; text-align: center;">
             <p>As a publicly traded company, GameStop is unique because a significant portion of all issued shares are owned by
                 <a style="font-weight: bold; color: #8f1795; text-decoration: none;"
                     [routerLink]="'/drs'">registered</a> shareholders.
@@ -54,8 +54,8 @@
 
         <div class="page-section">
             <div class="section-heading">Held by registered holders at Computershare</div>
-            <P>All shares held with GameStop's transfer agent Computershare are considered "registered" which provides title ownership of shares, but of those
-                shares there is a distinction between DRS shares and DSPP shares with implications on possession.
+            <P>All shares held with GameStop's transfer agent Computershare are <a style="font-weight: bold; color: #8f1795; text-decoration: none;"
+                [routerLink]="'/drs'">registered</a> in the name of the shareholder.
 
             </P>
             <!-- <ul>

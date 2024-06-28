@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, forkJoin, lastValueFrom } from 'rxjs';
 import * as dayjs from 'dayjs';
 import { GmePriceEntry } from './gme-price-entry.interface';
 
@@ -13,17 +13,86 @@ export class ImportGmeDataService {
   private _priceEntries: GmePriceEntry[] = [];
   public get allPriceEntries(): GmePriceEntry[] { return this._priceEntries; }
 
-  public get lastClosePrice(): number { 
-    if(this.allPriceEntries.length > 0){
-      return this.allPriceEntries[this.allPriceEntries.length-1].close;
-    }else{
+  public get lastClosePrice(): number {
+    if (this.allPriceEntries.length > 0) {
+      return this.allPriceEntries[this.allPriceEntries.length - 1].close;
+    } else {
       return -1;
     }
   }
 
-  public setGmePriceEntries(entries:GmePriceEntry[]) { this._priceEntries = entries; }
+  public setGmePriceEntries(entries: GmePriceEntry[]) { this._priceEntries = entries; }
 
-  public loadGmeData$(): Observable<GmePriceEntry[]>{
+
+  /**
+   * Most of the GME historic trading data is stored in the assets/data/gme-data-post-2020.csv file
+   */
+  private _loadCSVdata$(): Observable<GmePriceEntry[]> {
+    const subject$ = new Subject<GmePriceEntry[]>();
+    const gmeDatafileName = 'assets/data/gme-data-post-2020.csv';
+    this._httpClient.get(gmeDatafileName, { responseType: 'text' },).subscribe({
+      next: (data) => {
+        const returnValue = this._parseCSV(data);
+        subject$.next(returnValue);
+        subject$.complete();
+      },
+      error: (error) => {
+        console.log("error:", error)
+      },
+      complete: () => {
+        subject$.complete();
+      }
+    }
+    );
+    return subject$.asObservable();
+  }
+
+
+  /** Convert CSV table into an array of objects */
+  private _parseCSV(data: any): GmePriceEntry[] {
+    // console.log(data);
+    const rows = data.split('\n');
+    const headers = rows[0].split(';');
+    const rowCount = rows.length - 1;
+    const priceEntries: GmePriceEntry[] = [];
+    /**
+     * Since there are commas , in the title field of the .csv document,
+     * we cannot use commas , as a delimiter, so we must use some other character.
+     * 
+     * in this case we are using the following curly brace character:  }
+     */
+    const delimiterChar: string = ',';
+    for (let rowIndex = 1; rowIndex < rowCount; rowIndex++) {
+
+      const splitRow: string[] = rows[rowIndex].split(delimiterChar);
+      const cells: string[] = [];
+      splitRow.forEach(cell => {
+        cell = cell.trim();
+        cell = cell.replaceAll("\n", "");
+        let newCell: string = "";
+        for (let charIndex = 0; charIndex < cell.length; charIndex++) {
+          const charValue = cell[charIndex];
+          if (charValue !== "\"") {
+            newCell += charValue;
+          }
+        }
+        cells.push(newCell);
+      });
+      const priceEntry: GmePriceEntry = {
+        dateYYYYMMDD: this._convertToDate(cells[0]),
+        close: this._convertToNumber(cells[1]),
+        volume: this._convertToNumber(cells[2]),
+        open: this._convertToNumber(cells[3]),
+        high: this._convertToNumber(cells[4]),
+        low: this._convertToNumber(cells[5]),
+      }
+      priceEntries.push(priceEntry);
+    }
+    return priceEntries;
+  }
+
+
+  private _loadGoogleSheetData$() {
     const gmeSubject$ = new Subject<GmePriceEntry[]>();
     /**
      *  Google Sheet needs to be publish as tsv (tab-separated values) and not csv.
@@ -33,13 +102,7 @@ export class ImportGmeDataService {
     /**
      * Data source:  https://www.nasdaq.com/market-activity/stocks/gme/historical
      */
-    
     const gmeDataOverviewTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQixUOsD8VuEXI06nXbOqMGsDbQiofVAYlbL9_-fh6xo21SSt84x2e0iqDBqWmj_e--CXKpKtiPbjOq/pub?gid=1551713069&single=true&output=tsv';
-    const gmeDataRecentTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQixUOsD8VuEXI06nXbOqMGsDbQiofVAYlbL9_-fh6xo21SSt84x2e0iqDBqWmj_e--CXKpKtiPbjOq/pub?gid=394446007&single=true&output=tsv';
-    const gmeDataHistoricalTsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQixUOsD8VuEXI06nXbOqMGsDbQiofVAYlbL9_-fh6xo21SSt84x2e0iqDBqWmj_e--CXKpKtiPbjOq/pub?gid=993491134&single=true&output=tsv';
-    
-    
-    
     const priceEntries: GmePriceEntry[] = [];
     this._httpClient.get(gmeDataOverviewTsvUrl, { responseType: 'text' }).subscribe({
       next: (response) => {
@@ -57,14 +120,46 @@ export class ImportGmeDataService {
           }
           priceEntries.push(priceEntry);
         });
-        this._priceEntries = priceEntries;
-        this._sortData();
-        this._fillGaps();
-        gmeSubject$.next(this._priceEntries);
+        // this._priceEntries = priceEntries;
+        // this._sortData();
+        // this._fillGaps();
+        gmeSubject$.next(priceEntries);
         gmeSubject$.complete();
       },
     })
     return gmeSubject$.asObservable();
+  }
+
+  public loadGmeData$(): Observable<GmePriceEntry[]> {
+    const subject$ = new BehaviorSubject<GmePriceEntry[]>([]);
+    // const csvEntries = this._loadCSVdata$()
+    // const sheetEntries = await lastValueFrom(this._loadGoogleSheetData$());
+    // const allEntries = this._mergeEntries(csvEntries, sheetEntries);
+
+
+    forkJoin([this._loadCSVdata$(), this._loadGoogleSheetData$()]).subscribe({
+      next: (bothArrays) => {
+        const mergedValue = this._mergeEntries(bothArrays[0], bothArrays[1]);
+        subject$.next(mergedValue);
+      },
+      error: () => { },
+      complete: () => { subject$.complete(); },
+    })
+    return subject$.asObservable();
+  }
+
+  private _mergeEntries(csvEntries: GmePriceEntry[], sheetEntries: GmePriceEntry[]): GmePriceEntry[] {
+    const allEntries: GmePriceEntry[] = Object.assign([], csvEntries);
+    sheetEntries.forEach(sheetEntry => {
+      const csvDates = allEntries.map(item => item.dateYYYYMMDD);
+      if (!csvDates.includes(sheetEntry.dateYYYYMMDD)) {
+        allEntries.push(sheetEntry);
+      }
+    });
+    this._priceEntries = allEntries;
+    this._sortData();
+    this._fillGaps();
+    return this._priceEntries;
   }
 
   /** The data comes in with date descending, needs to be reverse to ascending */
@@ -94,7 +189,7 @@ export class ImportGmeDataService {
         newEntries.push(this._priceEntries[currentIndex]);
         currentIndex++;
       } else {
-        const prevEntry = this._priceEntries[currentIndex-1]
+        const prevEntry = this._priceEntries[currentIndex - 1]
         newEntries.push({
           dateYYYYMMDD: currentDateYYYYMMDD,
           close: prevEntry.close,

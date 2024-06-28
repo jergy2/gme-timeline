@@ -16,7 +16,7 @@ import { OwnershipData } from './ownership-data.class';
 export class OwnershipComponent implements OnInit {
 
   constructor(private _loadingService: LoadingService, private _screenService: ScreenSizeService, private titleService: Title) {
-    this.titleService.setTitle('GameStop ownership (May 2024)',);
+    this.titleService.setTitle('GameStop ownership (as of '+this.lastUpdated+')',);
   }
 
   @ViewChild(BaseChartDirective) public baseChart: BaseChartDirective | undefined;

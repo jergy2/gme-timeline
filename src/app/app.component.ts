@@ -34,6 +34,10 @@ export class AppComponent {
         }else{
         }
       }
+      const element = document.querySelector('#app-component-root');
+      if(element){
+        element.scrollIntoView();
+      }
     });
   }
 

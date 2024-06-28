@@ -171,6 +171,28 @@ export class LoadingService {
     let todayIsMondayHoliday: boolean = false;
     if (mostRecentIsToday) {
       needsUpdate = false;
+    }else{
+      //e.g. it was yesterday
+      const easternTimeZoneOffset = -4;
+      const localOffset = dayjs().utcOffset()/60;
+      const offsetDifference = Math.abs(easternTimeZoneOffset - localOffset);
+      let waitUntilHour: number = 0;
+      if(localOffset < easternTimeZoneOffset){
+        // in this case, localOffset is less than eastern time zone, therefore to the left (e.g. west coast)
+        waitUntilHour = 16 + offsetDifference;
+      }else if(easternTimeZoneOffset < localOffset){
+        // in this case, easternTimeZone is before the local offset
+        waitUntilHour = 16 - offsetDifference;
+      }else{
+        waitUntilHour = 16;
+      }
+
+      for(let i=-12; i< 12; i++){
+        const diff = easternTimeZoneOffset - i;
+        const hour = (16 + easternTimeZoneOffset) + i;
+        // console.log(i, diff, dayjs().hour(diff).format('YYYY-MM-DD hh:mm:ss a'))
+      }
+
     }
     if (todayIsSaturday) {
       if (mostRecentDateYYYYMMDD === dayjs().subtract(1, 'days').format('YYYY-MM-DD')) {

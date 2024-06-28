@@ -2,6 +2,9 @@ import { ChartConfiguration } from "chart.js";
 
 export class OwnershipData {
     constructor() { }
+    
+    public get tso(): number { return 426200000; }
+    public get lastUpdateYYYYMMDD(): string { return "2024-06-13"; }
 
     public get drs() { return this.data[2]; }
     public get dspp() { return this.data[3]; }
@@ -37,14 +40,14 @@ export class OwnershipData {
         ];
     }
 
-    public get tso(): number { return 426200000; }
+
     public get totalRegistered(): number { return this.drs.value + this.dspp.value; }
     public get totalInsiders(): number { return this.rc.value + this.otherInsiders.value; }
     public get totalInstitutional(): number { return this.otherInstitutional.value + this.vanguard.value + this.blackrock.value + this.statestreet.value; }
 
     public get totalBeneficial(): number { return this.tso - this.totalRegistered; }
     public get remainderTotal(): number { return this.totalBeneficial - (this.totalInsiders + this.totalInstitutional + this.rk.value) }
-    public get lastUpdateYYYYMMDD(): string { return "2024-06-13"; }
+
 
     public get chartData(): ChartConfiguration<'pie'>['data'] {
         const data = {

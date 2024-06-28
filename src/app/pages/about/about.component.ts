@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 
 @Component({
   selector: 'app-about',
@@ -9,7 +10,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class AboutComponent {
 
-  constructor(private _titleService: Title){
+  constructor(private _titleService: Title, private _screenService: ScreenSizeService){
     this._titleService.setTitle('About gmetimeline.org');
   }
 
@@ -25,6 +26,7 @@ export class AboutComponent {
     this._aboutIsExpanded = false;
   }
 
+  public get isMobile(): boolean { return this._screenService.isMobile; }
 
 
 }
