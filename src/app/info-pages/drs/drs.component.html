@@ -19,12 +19,15 @@
 
                     <ul>
                         <li>
-                            As of 1998, Cede & Co. owned 83% of all issued stocks in the United States. Since 1998, this
+                            As of 1998, Cede & Co. owned 83% of all issued stocks in the United States
+                        </li>
+                        <li>
+                            Since 1998, this
                             ownership percentage has not been publicly released again
                         </li>
-                        <li>Any time shares of a company are purchased at a stock broker, the legal owner of those
-                            shares is
-                            Cede & Co.</li>
+                        <li>When shares of a company are purchased at a stock broker, the buyer becomes the beneficial
+                            owner of the shares, but the legal owner of those
+                            shares is Cede & Co.</li>
                         <li>Due to lack of transparency by Cede & Co. and the DTC, the number of share entitlements that
                             exist
                             among stock brokers and other market participants cannot be verified</li>
@@ -45,20 +48,53 @@
                 <li>GameStop's transfer agent is Computershare</li>
 
                 <li>GME shareholders are challenging the status quo by directly registering billions of dollars worth of
-                    shares, owning approximately 14% of GameStop in DRS holdings. No other company in history has had a large portion of
-                    their shares owned by directly registered shareholders</li>
+                    shares
+                    <ul>
+                        <li>
+                            Approximately 177,000 individuals have registered their shares of GME
+                        </li>
+                        <li>
+                            Approximately 61.5 million shares, or 14.4% of all issued shares of GME are held in DRS form
+                        </li>
+                        <li>
+                            Combined, this represents the single largest portion of <a
+                                style="font-weight: bold; color: #8f1795; text-decoration: none;"
+                                [routerLink]="'/ownership'">GME ownership</a>
+                        </li>
+                        <li>
+                            No other publicly traded company in history has had a significant portion of its shares
+                            directly registered by a collective of thousands of individual household investors
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
         <div class="page-section">
-            <div class="section-heading">Held by registered holders at Computershare: DRS versus DSPP</div>
-            <P>All shares held with GameStop's transfer agent Computershare are considered "registered",
-                which means that the individual investor is listed by name on the issuer's (GameStop's) stock ledger (also referred to as
+            <div class="section-heading">Held by registered holders with Computershare: DRS versus DSPP</div>
+            <p>All shares held with GameStop's transfer agent Computershare are considered "registered",
+                which means that the individual investor is listed by name on the issuer's (GameStop's) stock ledger
+                (also referred to as
                 the "register") and is thus known to the company.
-                <br>
-                However, of registered shares, there is a significant distinction between shares held in DRS form versus shares held in DSPP
+            </p>
+            <p>
+                GameStop reports this information in their 10-Q / 10-K filings.<br>
+                For example, in <a
+                    href="https://www.sec.gov/Archives/edgar/data/1326380/000132638024000030/gme-20240504.htm"
+                    target="_blank">
+                    the most recent 10-Q, June 11, 2024:
+                </a>
+            </p>
+            <p style="padding: 15px; border-radius: 5px; background-color: rgb(240, 240, 240); font-size: 0.9em;">
+                ... approximately 74.6 million shares of our Class A common stock were held by registered holders with
+                our
+                transfer agent (or approximately 21% of our outstanding shares) as of June 5, 2024.
+            </p>
+            <p>
+                However, of registered shares, there is a significant distinction between shares held in DRS form versus
+                shares held in DSPP
                 form.
-            </P>
+            </p>
             <ul>
                 <li>
                     <b>DRS</b>
@@ -67,34 +103,38 @@
                         </li>
                         <li>Though the shares are accessed and managed in an account with Computershare, the shares are
                             "held" directly by the shareholder</li>
-                        <li>Directly registered in the shareholder's name on GameStop's stock ledger (or register), in the main class</li>
+                        <li>Directly registered in the shareholder's name on GameStop's stock ledger (or register), in
+                            the main class</li>
                     </ul>
                 </li>
                 <li>
                     <b>DSPP</b>
                     <ul>
                         <li>The direct stock purchase plan (DSPP) is a proprietary Computershare service</li>
-                        <li>Shares held in DSPP are not legally owned and held by the investor
+                        <li>Shares held in the plan are not legally owned and held by the investor
                             <ul>
                                 <li>
-                                    80% to 90% of the shares are legally owned and held by Dingo & Co (Computershare's nominee)
+                                    80% to 90% of the shares are legally owned and held by Dingo & Co (Computershare's
+                                    nominee)
                                 </li>
                                 <li>10% to 20% of the shares are legally owned and held by Cede & Co for operational
                                     efficiency</li>
                             </ul>
                         </li>
                         <li>The investor is a beneficial owner of these shares and not the legal owner</li>
-                        <li>The investor is registered as the (beneficial) owner of the shares in a subclass on the
+                        <li>The investor is registered by name as the (beneficial) owner of the shares in a subclass on the
                             ledger</li>
                     </ul>
                 </li>
             </ul>
         </div>
 
-        <div><a href="https://discord.com/channels/1102309240145707049/1256339671391141928" target="_blank" style="display:flex;flex-direction: row;align-items: center;">
-            
-            <img src="assets/icons/discord-icon.png" style="width: 20px; height: 20px; margin-right: 8px;" alt="DRS Discord">
-            Discuss the
+        <div><a href="https://discord.com/channels/1102309240145707049/1256339671391141928" target="_blank"
+                style="display:flex;flex-direction: row;align-items: center;">
+
+                <img src="assets/icons/discord-icon.png" style="width: 20px; height: 20px; margin-right: 8px;"
+                    alt="DRS Discord">
+                Discuss the
                 DRS versus DSPP distinction</a></div>
 
         <app-drs-timeline></app-drs-timeline>
