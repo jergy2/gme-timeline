@@ -22,6 +22,7 @@ import { DrsTimelineComponent } from './drs/drs-timeline/drs-timeline.component'
 import { MoassComponent } from './moass/moass.component';
 import { SharedModule } from '../shared/shared.module';
 import { OwnershipChartComponent } from './ownership/ownership-chart/ownership-chart.component';
+import { AtmsComponent } from './atms/atms.component';
 
 
 
@@ -43,6 +44,7 @@ import { OwnershipChartComponent } from './ownership/ownership-chart/ownership-c
     DrsTimelineComponent,
     MoassComponent,
     OwnershipChartComponent,
+    AtmsComponent,
   ],
   imports: [
     CommonModule,

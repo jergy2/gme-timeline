@@ -17,8 +17,11 @@ import { SocialMediaComponent } from './pages/social-media/social-media.componen
 import { RedditComponent } from './info-pages/reddit/reddit.component';
 import { RoaringKittyComponent } from './info-pages/roaring-kitty/roaring-kitty.component';
 import { MoassComponent } from './info-pages/moass/moass.component';
+import { AtmsComponent } from './info-pages/atms/atms.component';
 
 const routes: Routes = [
+
+  /** Pages / navigation pages */
   { path: '*', component: DisplayTimelineComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'timeline', component: DisplayTimelineComponent },
@@ -29,6 +32,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
 
 
+  /** Info pages / articles  */
+  { path: '2024-atms', component: AtmsComponent },
   { path: 'drs', component: DrsComponent },
   { path: 'fy23-profitability', component: Fy23ProfitabilityComponent },
   { path: 'guide', component: GuideComponent },
@@ -44,7 +49,8 @@ const routes: Routes = [
   { path: 'sneeze', component: SneezeComponent },
   { path: 'sneeze-january-2021', component: SneezeComponent },
 
-  
+
+  /** Other */
   { path: 'research', component: ResearchComponent },
   { path: 'sandbox', component: SandboxComponent },
 
