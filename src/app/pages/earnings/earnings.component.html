@@ -1,28 +1,63 @@
-<div class="financials-root" *ngIf="!isLoading">
+<div class="financials-root page-root" *ngIf="!isLoading">
 
-    <div class="title">
+    <div class="page-title">
         GameStop Income Statements
     </div>
-    <div class="earnings-chart-container">
-        <div class="earnings-chart-big" *ngIf="screenWidth >= 1280">
-            <iframe width="1280" height="720" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7n4mmCwtjREaCkJVUkHe_ujHBod7vGtEB5iI_kbYToT5dU9cQSq-d3XO2PuFEZ64GCuU70jVayE0R/pubchart?oid=1680346632&amp;format=interactive"></iframe>
-        </div>
-        <div class="earnings-chart-medium" *ngIf="screenWidth >= 800 && screenWidth < 1280">
-            <iframe width="800" height="600" seamless frameborder="0" scrolling="no"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7n4mmCwtjREaCkJVUkHe_ujHBod7vGtEB5iI_kbYToT5dU9cQSq-d3XO2PuFEZ64GCuU70jVayE0R/pubchart?oid=1937296424&amp;format=interactive"></iframe>
+    <div class="page-subtitle">
+        By fiscal year, 2005 to 2023
+    </div>
 
+    <div class="page-content">
+
+
+        <div class="page-section">
+            <div class="section-heading">Revenue and earnings by fiscal year chart</div>
+            <app-earnings-chart class="earnings-chart-container"></app-earnings-chart>
+        </div>
+
+        <div class="page-section">
+            <div class="section-heading">Earnings summary article</div>
+            <div style="font-size:0.9em;color:gray;">April 10, 2024</div>
+            <div class="news-report" [routerLink]="'/fy23-profitability'">
+                <img src="assets/icons/newspaper-icon.png" alt=""
+                    style="margin-right: 10px; height: 30px; width: 30px;">
+                <div>
+                    In fiscal year 2023, GameStop was profitable for the first time in 6 years
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="page-section">
+            <div class="section-heading">GameStop 2024 annual meeting</div>
+            <p>
+                From Ryan Cohen's statements on June 17 from GameStop's 2024 annual meeting:
+            </p>
+            <ul>
+                <li>"With respect to retail operations, we plan to continue reducing costs and focusing on
+                    profitability."</li>
+                <li>"This means a smaller network of stores with an expanded assortment of higher value items that fit
+                    into our trade-in model."</li>
+            </ul>
+        </div>
+
+
+
+        <div class="page-section">
+            <div class="section-heading">Earnings table</div>
+            <app-earnings-table></app-earnings-table>
         </div>
 
     </div>
 
-    <div class="news-report" [routerLink]="'/fy23-profitability'">
-        <img src="assets/icons/newspaper-icon.png" alt="" style="margin-right: 10px; height: 30px; width: 30px;">
-        In fiscal year 2023, GameStop was profitable for the first time in 6 years
-    </div>
 
-    <app-earnings-table></app-earnings-table>
+
+
+
 
 </div>
 
 
-<app-loading class="layout-root" style="justify-content: center;" *ngIf="isLoading" [loadingMessage]="loadingMessage"></app-loading>
+<app-loading class="layout-root" style="justify-content: center;" *ngIf="isLoading"
+    [loadingMessage]="loadingMessage"></app-loading>

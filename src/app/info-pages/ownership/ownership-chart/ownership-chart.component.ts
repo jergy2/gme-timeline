@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartConfiguration, ChartOptions, TooltipItem } from 'chart.js';
+import { Chart, ChartConfiguration, ChartOptions, TooltipItem } from 'chart.js';
 import * as dayjs from 'dayjs';
 import { ImportGmeDataService } from 'src/app/services/import-gme-data.service';
 import { LoadingService } from 'src/app/services/loading.service';
 import { OwnershipData } from '../ownership-data.class';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'app-ownership-chart',
@@ -24,6 +25,7 @@ export class OwnershipChartComponent implements OnInit{
   public get ownershipData(): OwnershipData { return this._ownershipData; }
 
   async ngOnInit() {
+    Chart.unregister(ChartDataLabels)
     await this._loadingService.loadData$();
     
     this.pieChartOptions = {

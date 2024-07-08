@@ -22,6 +22,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "chart.js": "^3.6.0",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "dayjs": "^1.11.9",
     "ng2-charts": "^4.1.1",
     "rxjs": "~7.8.0",

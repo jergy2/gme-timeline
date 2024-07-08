@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartOptions, TooltipItem } from 'chart.js';
+import { Chart, ChartConfiguration, ChartOptions, TooltipItem } from 'chart.js';
 import { ChartDataManagerService } from './chart-data-manager-service';
 import { BaseChartDirective } from 'ng2-charts';
 import * as dayjs from 'dayjs';
@@ -7,6 +7,8 @@ import { TimelineItemsService } from '../timeline-items/timeline-items.service';
 import { TimelineEvent } from '../timeline-items/timeline-item/timeline-event.class';
 import { ScreenSizeService } from 'src/app/services/screen-size.service';
 import { SettingsService } from 'src/app/services/settings.service';
+
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'app-chart',
@@ -36,12 +38,14 @@ export class ChartComponent implements OnInit, AfterViewInit {
   public get chartContainerNgStyle(): any { return this._chartContainerNgStyle; }
 
   ngOnInit() {
+    Chart.unregister(ChartDataLabels)
     // ngOnInit will complete before ngAfterViewInit starts
     // so here we can set values that ngAfterViewInit will be able to assume are available
     this._updateChartContainerStyle()
     this._updateLabels();
     this._setLineChartOptions();
     this.lineChartData.datasets = this._chartDataService.dataSets;
+
   }
 
   private _updateLabels() {

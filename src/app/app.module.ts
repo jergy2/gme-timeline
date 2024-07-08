@@ -36,6 +36,7 @@ import { InfoPagesModule } from './info-pages/info-pages.module';
 import { SocialMediaComponent } from './pages/social-media/social-media.component';
 import { SharedModule } from './shared/shared.module';
 import { MoassAlertComponent } from './pages/display-timeline/moass-alert/moass-alert.component';
+import { EarningsChartComponent } from './pages/earnings/earnings-chart/earnings-chart.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { MoassAlertComponent } from './pages/display-timeline/moass-alert/moass-
     SandboxComponent,
     SocialMediaComponent,
     MoassAlertComponent,
+    EarningsChartComponent,
   ],
   imports: [
     BrowserModule,
