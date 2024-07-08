@@ -27,7 +27,7 @@ export const mobileMenuItems: MobileMenuItem[] = [
         'IMAGE',
         null,
         '/earnings',
-        'assets/flaticon/spreadsheet.png',
+        'assets/flaticon/bar-chart-3.png',
         'Earnings'
     ),
     new MobileMenuItem(

@@ -40,6 +40,15 @@ export class OwnershipData {
         ];
     }
 
+    public getLabel(value: number): string { 
+        const foundItem = this.data.find(item => item.value === value);
+        if(foundItem){
+            return foundItem.label;
+        }else{
+            return '';
+        }
+    }
+
 
     public get totalRegistered(): number { return this.drs.value + this.dspp.value; }
     public get totalInsiders(): number { return this.rc.value + this.otherInsiders.value; }
@@ -68,13 +77,15 @@ export class OwnershipData {
                 {
                     backgroundColor: ['hsl(0, 100%, 60%)', 'hsl(0, 100%, 35%)'],
                     data: [0, 0]
-                }, {
+                }, 
+                {
                     backgroundColor: ['hsl(0, 100%, 60%)', 'hsl(0, 100%, 35%)'],
                     data: [0, 0]
-                }, {
-                    backgroundColor: ['hsl(0, 100%, 60%)', 'hsl(0, 100%, 35%)'],
-                    data: [0, 0]
-                },
+                }, 
+                // {
+                //     backgroundColor: ['hsl(0, 100%, 60%)', 'hsl(0, 100%, 35%)'],
+                //     data: [0, 0]
+                // },
             ]
         };
         return data;

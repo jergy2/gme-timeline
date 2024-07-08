@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Chart, ChartConfiguration, ChartOptions, TooltipItem } from 'chart.js';
-import ChartDataLabels, { Context } from 'chartjs-plugin-datalabels';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
-import { timer } from 'rxjs';
 import { ScreenSizeService } from 'src/app/services/screen-size.service';
 
 @Component({
@@ -31,7 +30,6 @@ export class EarningsChartComponent implements OnInit, AfterViewInit {
       this._setData();
       this._setOptions();
     });
-
   }
 
   public get xAxisLabels(): string[] {
@@ -263,6 +261,9 @@ export class EarningsChartComponent implements OnInit, AfterViewInit {
 
       },
 
+      layout: {
+
+      },
       plugins: {
         datalabels: {
 
@@ -271,6 +272,13 @@ export class EarningsChartComponent implements OnInit, AfterViewInit {
           onClick: (event, array) => {
           },
           position: 'top',
+          labels: {
+            padding: 20,
+            boxPadding: 0,
+            boxWidth: 12,
+            boxHeight: 12,
+          },
+
         },
         tooltip: {
           // backgroundColor: (context) => {
@@ -305,20 +313,20 @@ export class EarningsChartComponent implements OnInit, AfterViewInit {
   }
 
   private _labelContext(context: TooltipItem<"bar">): string {
-    if(context.datasetIndex === 0){
+    if (context.datasetIndex === 0) {
       // revenue
       return "Top line (revenue):  $" + this.numberWithCommas(Number(context.raw));
-    }else if(context.datasetIndex === 1){
+    } else if (context.datasetIndex === 1) {
       // net earnings
       const value = Number(context.raw);
-      if(value >= 0){
+      if (value >= 0) {
         return "Bottom line (net earnings):  $" + this.numberWithCommas(value);
-      }else{
+      } else {
         return "Bottom line (net loss):  $" + this.numberWithCommas(value);
       }
     }
     return '';
-    
+
   }
   private _footerContext(context: TooltipItem<"bar">[]): string {
     const item = context[0];

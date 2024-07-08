@@ -17,7 +17,7 @@ export class OwnershipChartComponent implements OnInit{
 
   public pieChartData: ChartConfiguration<'pie'>['data'] = { labels: [], datasets: [] };
   public pieChartOptions: ChartOptions<'pie'> = {};
-  public pieChartLegend = true;
+  public pieChartLegend = false;
 
   public get tso(): number { return this.ownershipData.tso; } // updated 2024-06-11
 
@@ -25,13 +25,74 @@ export class OwnershipChartComponent implements OnInit{
   public get ownershipData(): OwnershipData { return this._ownershipData; }
 
   async ngOnInit() {
-    Chart.unregister(ChartDataLabels)
+    Chart.unregister(ChartDataLabels);
+    Chart.register(ChartDataLabels);
     await this._loadingService.loadData$();
-    
+    const ownershipData = this.ownershipData;
     this.pieChartOptions = {
       responsive: true,
       animation: false,
       plugins: {
+        datalabels: {
+          color: 'rgba(255,255,255,0.9)',
+          display(context) {
+            /**
+             * datasetIndex, dataIndex:
+             * 0, 0 - held by registered holders at Computershare
+             * 0, 1 - held by Cede & Co
+             * 1, 2 - DRS
+             * 1, 3 - DSPP
+             * 1, 4 - RC
+             * 1, 5 - RK
+             * 1, 6 - Vanguard
+             * 1, 7 - Blackrock
+             * 1, 8 - State Street
+             * 1, 9 - other inst
+             * 1, 10 - remainder
+             * 
+             */
+            const value = context.dataset.data[context.dataIndex];
+            if(value === 0){
+              return false;
+            }
+            // if(context.datasetIndex === 0){
+            //   return false;
+            // }
+            return true;
+          },
+          // align: 'top',
+          // anchor: 'end',
+          backgroundColor: 'rgba(0,0,0,0.3)',
+          borderRadius: 5,
+
+
+          borderColor: function (context) {
+            return 'rgba(0,0,255,0.1)';
+          },
+          borderWidth: 1,
+          formatter: function (value, context) {
+            const dataValue = context.dataset.label
+            const label = ownershipData.getLabel(value);
+            if(context.datasetIndex === 0){
+              if(context.dataIndex === 0){
+                return 'Held by registered holders';
+              }else if(context.dataIndex === 1){
+                return 'Held by Cede & Co';
+              }
+            }else{
+              return label;
+              // return label + ': ' + (value/1000000).toFixed(1) + " M";
+            }
+            return '';
+           
+          },
+          font: {
+            weight: 'bold',
+            size: 12,
+          },
+          padding: 4,
+
+        },
         legend: {
           onClick: (event, array) => {
           },
