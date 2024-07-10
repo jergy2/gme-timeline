@@ -71,7 +71,6 @@ export class LoadingService {
     await this._loadGmeData();
     this._loadingMessage = 'Loading events data...';
     await this._loadEvents();
-
   }
 
   private async _loadEvents() {
@@ -92,7 +91,7 @@ export class LoadingService {
     if (needsUpdate) {
       // console.log("Needs update")
       this._allEventConfigs = await lastValueFrom(this._importEventsService.importEventsFromGoogleSheet$());
-      this._settingsService.setLastEventsCheckedDate(today);
+      this._settingsService.setLastEventsCheckedDate();
       this._settingsService.setEventsData(this._allEventConfigs);
     } else {
       // console.log("dooes not need update")
@@ -101,25 +100,12 @@ export class LoadingService {
   }
 
   private async _loadGmeData() {
-    let needsUpdate: boolean = true;
-    if (this._settingsService.gmeData.length > 0) {
-      const gmeData: GmePriceEntry[] = Object.assign([], this._settingsService.gmeData)
-      let sorted = gmeData.sort((item1, item2) => {
-        if (item1.dateYYYYMMDD > item2.dateYYYYMMDD) {
-          return -1;
-        } else if (item1.dateYYYYMMDD < item2.dateYYYYMMDD) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-      const mostRecentDateYYYYMMDD: string = sorted[0].dateYYYYMMDD;
-      needsUpdate = this._needsGMEUpdate(mostRecentDateYYYYMMDD);
-    }
-    if (needsUpdate) {
+    let needsUpdate: boolean = this._needsGMEUpdate();
+    if(needsUpdate){
       this._priceEntries = await lastValueFrom(this._gmeDataService.loadGmeData$());
       this._settingsService.setGmeData(this._priceEntries);
-    } else {
+      this._settingsService.setLastEventsCheckedDate();
+    }else{
       this._priceEntries = this._settingsService.gmeData;
       this._gmeDataService.setGmePriceEntries(this._priceEntries);
     }
@@ -162,52 +148,23 @@ export class LoadingService {
     this._allDataImported = true;
   }
 
-  private _needsGMEUpdate(mostRecentDateYYYYMMDD: string): boolean {
+  /**
+ * if now is after (previousCheckTime + 24 hours), 
+ *    then check for updates.
+ * else, 
+ *    use what is saved in local storage.
+ */
+  private _needsGMEUpdate(): boolean {
     let needsUpdate: boolean = true;
-    const today = dayjs().format('YYYY-MM-DD');
+    const now = dayjs();
+    const timeLapsed: boolean = this._settingsService.gmeCheckTimeLapsed(now);
+    if (timeLapsed === false) {
+      needsUpdate = false
+    }
     const todayIsSaturday: boolean = dayjs().day() === 6;
     const todayIsSunday: boolean = dayjs().day() === 0;
-    const mostRecentIsToday: boolean = mostRecentDateYYYYMMDD === today;
-    let todayIsMondayHoliday: boolean = false;
-    if (mostRecentIsToday) {
+    if (todayIsSaturday || todayIsSunday) {
       needsUpdate = false;
-    }else{
-      //e.g. it was yesterday
-      const easternTimeZoneOffset = -4;
-      const localOffset = dayjs().utcOffset()/60;
-      const offsetDifference = Math.abs(easternTimeZoneOffset - localOffset);
-      let waitUntilHour: number = 0;
-      if(localOffset < easternTimeZoneOffset){
-        // in this case, localOffset is less than eastern time zone, therefore to the left (e.g. west coast)
-        waitUntilHour = 16 + offsetDifference;
-      }else if(easternTimeZoneOffset < localOffset){
-        // in this case, easternTimeZone is before the local offset
-        waitUntilHour = 16 - offsetDifference;
-      }else{
-        waitUntilHour = 16;
-      }
-
-      for(let i=-12; i< 12; i++){
-        const diff = easternTimeZoneOffset - i;
-        const hour = (16 + easternTimeZoneOffset) + i;
-        // console.log(i, diff, dayjs().hour(diff).format('YYYY-MM-DD hh:mm:ss a'))
-      }
-
-    }
-    if (todayIsSaturday) {
-      if (mostRecentDateYYYYMMDD === dayjs().subtract(1, 'days').format('YYYY-MM-DD')) {
-        needsUpdate = false;
-      }
-    }
-    if (todayIsSunday) {
-      if (mostRecentDateYYYYMMDD === dayjs().subtract(2, 'days').format('YYYY-MM-DD')) {
-        needsUpdate = false;
-      }
-    }
-    if (todayIsMondayHoliday) {
-      if (mostRecentDateYYYYMMDD === dayjs().subtract(3, 'days').format('YYYY-MM-DD')) {
-        needsUpdate = false;
-      }
     }
     return needsUpdate;
   }

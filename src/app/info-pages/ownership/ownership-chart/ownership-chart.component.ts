@@ -17,7 +17,7 @@ export class OwnershipChartComponent implements OnInit{
 
   public pieChartData: ChartConfiguration<'pie'>['data'] = { labels: [], datasets: [] };
   public pieChartOptions: ChartOptions<'pie'> = {};
-  public pieChartLegend = false;
+  public pieChartLegend = true;
 
   public get tso(): number { return this.ownershipData.tso; } // updated 2024-06-11
 

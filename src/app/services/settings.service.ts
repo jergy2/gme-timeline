@@ -51,16 +51,45 @@ export class SettingsService {
     this._latestEarningsDateYYYYMMDD = this._getLatestEarningsDate();
     this._gmeData = this._loadGmeDataFromLS();
     this._eventConfigs = this._loadEventsFromLS();
-    this._lastEventsCheckedDateYYYYMMDD = this._getLastEventsCheckedDate();
+    const lastCheckDate = this._getLastEventsCheckedDate();
+    if(lastCheckDate){
+      this._lastEventsCheckedDateYYYYMMDD = lastCheckDate.format('YYYY-MM-DD');
+    }else{
+
+    }
   }
 
-  private _getLastEventsCheckedDate(): string | null { 
-    let storageValue = localStorage.getItem('latest_events_check_YYYYMMDD');
-    return storageValue;
+  /**
+   * 
+   * @param now current time to compare against previous time
+   * @returns true if an update is required, false to take no action.
+   */
+  public gmeCheckTimeLapsed(now: dayjs.Dayjs): boolean { 
+    let storageValue = localStorage.getItem('latest_events_check_time');
+    if(storageValue){
+      const prevTime = dayjs(storageValue);
+      if(now.isAfter(prevTime.add(24, 'hours'))){
+        return true;
+      }else{
+        return false;
+      }
+    }else{
+      return true;
+    }
   }
 
-  public setLastEventsCheckedDate(dateYYYYMMDD: string){ 
-    localStorage.setItem('latest_events_check_YYYYMMDD', dateYYYYMMDD);
+  private _getLastEventsCheckedDate(): dayjs.Dayjs | null{ 
+    let storageValue = localStorage.getItem('latest_events_check_time');
+    if(storageValue){
+      let timeValue = dayjs(storageValue);
+      return timeValue;
+    }else{
+      return null;
+    }
+  }
+
+  public setLastEventsCheckedDate(){ 
+    localStorage.setItem('latest_events_check_time', dayjs().format());
   }
 
   private _loadGmeDataFromLS(): GmePriceEntry[]{
