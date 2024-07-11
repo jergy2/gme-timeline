@@ -18,6 +18,7 @@ import { RedditComponent } from './info-pages/reddit/reddit.component';
 import { RoaringKittyComponent } from './info-pages/roaring-kitty/roaring-kitty.component';
 import { MoassComponent } from './info-pages/moass/moass.component';
 import { AtmsComponent } from './info-pages/atms/atms.component';
+import { DrsFullTimelineComponent } from './info-pages/drs-full-timeline/drs-full-timeline.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   /** Info pages / articles  */
   { path: '2024-atms', component: AtmsComponent },
   { path: 'drs', component: DrsComponent },
+  { path: 'drs-timeline', component: DrsFullTimelineComponent },
   { path: 'fy23-profitability', component: Fy23ProfitabilityComponent },
   { path: 'guide', component: GuideComponent },
   { path: 'media', component: MediaComponent },

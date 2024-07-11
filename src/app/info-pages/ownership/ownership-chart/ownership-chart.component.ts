@@ -58,7 +58,7 @@ export class OwnershipChartComponent implements OnInit{
             // if(context.datasetIndex === 0){
             //   return false;
             // }
-            return true;
+            return false;
           },
           // align: 'top',
           // anchor: 'end',
