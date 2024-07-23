@@ -24,7 +24,7 @@ export class TimelineListItemComponent {
     urls: [],
     description: '',
     types: [TimelineEventType.OTHER],
-    significance: 0, tags: [],
+    significance: 0, tags: [], expandedUrls: [],
   }, undefined, -1)
   @Input('item') public set item(item: TimelineEvent) { this._item = item; }
   public get item(): TimelineEvent { return this._item; }

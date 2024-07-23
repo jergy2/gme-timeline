@@ -89,7 +89,6 @@ export class LoadingService {
       }
     }
     if (needsUpdate) {
-      // console.log("Needs update")
       this._allEventConfigs = await lastValueFrom(this._importEventsService.importEventsFromGoogleSheet$());
       this._settingsService.setLastEventsCheckedDate();
       this._settingsService.setEventsData(this._allEventConfigs);

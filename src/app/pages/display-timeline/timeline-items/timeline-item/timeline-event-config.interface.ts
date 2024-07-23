@@ -12,4 +12,5 @@ export interface TimelineEventConfig{
     specialIdentifier?: string;
     tags: string[];
     localArticle?: TimelineEventURL | null;
+    expandedUrls: TimelineEventURL[];
 }

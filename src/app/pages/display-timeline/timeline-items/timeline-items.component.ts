@@ -36,7 +36,7 @@ export class TimelineItemsComponent implements OnInit, AfterViewInit {
         return 1;
       }else{
         return 0;
-      }})
+      }});
   }
 
 

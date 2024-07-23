@@ -10,6 +10,7 @@ export class TimelineEvent{
     private _title: string;
     private _dateYYYYMMDD: string;
     private _urls: TimelineEventURL[];
+    private _expandedUrls: TimelineEventURL[];
     private _description: string;
     private _types: TimelineEventType[];
     private _significance: number;
@@ -30,6 +31,7 @@ export class TimelineEvent{
     public get dateYYYYMMDD(): string { return this._dateYYYYMMDD; }
     public get dateMMMDDYYYY(): string { return dayjs(this.dateYYYYMMDD).format('MMM DD, YYYY')}
     public get urls(): TimelineEventURL[] { return this._urls; }
+    public get expandedUrls(): TimelineEventURL[] { return this._expandedUrls; }
     public get description(): string { return this._description; }
     public get mainType(): TimelineEventType { return this._types[0]; }
     public get types(): TimelineEventType[] { return this._types; }
@@ -54,6 +56,7 @@ export class TimelineEvent{
         this._title = config.title;
         this._dateYYYYMMDD = config.dateYYYYMMDD;
         this._urls = config.urls;
+        this._expandedUrls = config.expandedUrls;
         this._types = config.types;
         this._significance = config.significance
         this._description = config.description;

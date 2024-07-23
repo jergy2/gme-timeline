@@ -36,6 +36,7 @@ export class ImportEventsService {
           const urls: TimelineEventURL[] = this._getUrlsFromSource(tabSplitLine[7]);
           const types: TimelineEventType[] = this._getEventTypes(tabSplitLine[8]);
           const localArticle: TimelineEventURL | null = this._getLocalArticle(tabSplitLine[9]);
+          const expandedUrls: TimelineEventURL[] = this._getUrlsFromSource(tabSplitLine[10]);
           const eventConfig: TimelineEventConfig = {
             title: title,
             dateYYYYMMDD: dateYYYYMMDD,
@@ -47,6 +48,7 @@ export class ImportEventsService {
             specialIdentifier: specialIdentifier,
             tags: tags,
             localArticle: localArticle,
+            expandedUrls: [],
           }
           eventConfigs.push(eventConfig);
         });
@@ -61,18 +63,19 @@ export class ImportEventsService {
   }
 
   private _getLocalArticle(sourceValue: string): TimelineEventURL | null {
-    if (sourceValue === '{}\r') {
+    if (sourceValue === '{}') {
       return null;
     } else {
-      let localArticle = sourceValue.substring(1, sourceValue.length - 2);
+      let localArticle = sourceValue.substring(1, sourceValue.length - 1);
       let split = localArticle.split('}}');
       const url = split[0];
       const label = split[1];
-      return {
+      const eventUrl: TimelineEventURL = {
         url: url,
         type: 'NEWS',
         label: label,
-      }
+      };
+      return eventUrl;
     }
 
   }
@@ -98,7 +101,7 @@ export class ImportEventsService {
     })
     return types;
   }
-  
+
   private _getTagsFromSource(sourceTags: string): string[] {
     const tags: string[] = [];
     sourceTags = sourceTags.substring(1, sourceTags.length - 1);
@@ -108,19 +111,26 @@ export class ImportEventsService {
 
   private _getUrlsFromSource(sourceValue: string): TimelineEventURL[] {
     const urls: TimelineEventURL[] = [];
-    //remove starting character [ and ending character ]
-    sourceValue = sourceValue.substring(1, sourceValue.length - 2);
-    let sourceURLs = sourceValue.split(';');
-    sourceURLs.forEach(sourceUrl => {
-      const splitSource = sourceUrl.split('}}');
-      const newUrl: TimelineEventURL = {
-        url: splitSource[0],
-        type: this._getUrlType(splitSource[0]),
-        label: splitSource[1],
-        archiveLink: '',
+    if (sourceValue !== '[]') {
+
+      sourceValue = sourceValue.substring(1, sourceValue.length - 2);
+      //remove starting character [ and ending character ]
+
+      if (sourceValue.length > 0) {
+        let sourceURLs = sourceValue.split(';');
+        sourceURLs.forEach(sourceUrl => {
+          const splitSource = sourceUrl.split('}}');
+          const newUrl: TimelineEventURL = {
+            url: splitSource[0],
+            type: this._getUrlType(splitSource[0]),
+            label: splitSource[1],
+            archiveLink: '',
+          }
+          urls.push(newUrl);
+        });
       }
-      urls.push(newUrl);
-    });
+    }
+    // console.log("Returning URLS", urls)
     return urls;
   }
 
@@ -145,7 +155,7 @@ export class ImportEventsService {
     if (sourceUrl.includes('sec.gov')) {
       urlType = 'DOCUMENT';
     }
-    if (sourceUrl.includes('gamestop.com')) {
+    if (sourceUrl.includes('gamestop.com') || sourceUrl.includes('gamestop.gcs-web.com')) {
       urlType = 'GAMESTOP';
     }
     if (sourceUrl.includes('forbes.com') || sourceUrl.includes('businessinsider.com') || sourceUrl.includes('reuters.com')) {
