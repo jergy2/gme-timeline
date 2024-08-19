@@ -4,7 +4,7 @@ export class OwnershipData {
     constructor() { }
     
     public get tso(): number { return 426200000; }
-    public get lastUpdateYYYYMMDD(): string { return "2024-06-13"; }
+    public get lastUpdateYYYYMMDD(): string { return "2024-06-30"; }
 
     public get drs() { return this.data[2]; }
     public get dspp() { return this.data[3]; }
@@ -24,7 +24,30 @@ export class OwnershipData {
         layer: number,
         color: string,
     }[] {
+        // 2024-06-30
         return [
+
+            { label: 'Held by registered holders with Computershare', value: 74600000, layer: 0, color: '#8f1795', },
+            { label: 'Held by Cede & Co on behalf of DTCC', value: 351600000, layer: 0, color: '#CCC', },
+            { label: 'DRS', value: 61500000, layer: 1, color: '#8f1795', },
+            { label: 'DSPP', value: 13100000, layer: 1, color: '#a91cb0', },
+            { label: 'Ryan Cohen', value: 36800000, layer: 1, color: '#0066ff', },
+            { label: 'All other insiders', value: 800000, layer: 1, color: '#0066ff', },
+            { label: 'Roaring Kitty', value: 9001000, layer: 1, color: '#ff0000', },
+            { label: 'Vanguard Group Inc', value: 29698579, layer: 1, color: '#ff9900', },
+            { label: 'Blackrock Inc', value: 22599419, layer: 1, color: '#ff9900', },
+            { label: 'State Street Corp', value: 8073188, layer: 1, color: '#ff9900', },
+            { label: 'All other institutional', value: 37244635, layer: 1, color: 'rgba(255, 153, 0, 0.5)', },
+            { label: 'Remainder', value: 207400000, layer: 1, color: '#EEE', },
+        ];
+
+        /**
+         * 
+         * 
+         * 2024-06-13
+         * 
+         *         return [
+            
             { label: 'Held by registered holders with Computershare', value: 74600000, layer: 0, color: '#8f1795', },
             { label: 'Held by Cede & Co on behalf of DTCC', value: 351600000, layer: 0, color: '#CCC', },
             { label: 'DRS', value: 61500000, layer: 1, color: '#8f1795', },
@@ -38,6 +61,7 @@ export class OwnershipData {
             { label: 'All other institutional', value: 31200000, layer: 1, color: 'rgba(255, 153, 0, 0.5)', },
             { label: 'Remainder', value: 217600000, layer: 1, color: '#EEE', },
         ];
+         */
     }
 
     public getLabel(value: number): string { 

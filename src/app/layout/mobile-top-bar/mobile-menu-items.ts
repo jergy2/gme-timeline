@@ -34,7 +34,7 @@ export const mobileMenuItems: MobileMenuItem[] = [
         'IMAGE',
         null,
         '/ownership',
-        'assets/icons/ownership.png',
+        'assets/icons/ownership-2024-06-13.png',
         'Company Ownership'
     ),
     new MobileMenuItem(

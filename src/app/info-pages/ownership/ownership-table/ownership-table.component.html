@@ -120,27 +120,27 @@
         <tr>
             <td rowspan="5" class="border-bottom institutions-row">Institutions</td>
             <td class="institutions-row">Vanguard Group Inc</td>
-            <td class="number-cell institutions-row">{{vanguard}} M</td>
+            <td class="number-cell institutions-row">{{vanguard.toFixed(1)}} M</td>
             <td class="number-cell institutions-row">{{percent(vanguard)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">Blackrock Inc</td>
-            <td class="number-cell institutions-row">{{blackrock}} M</td>
+            <td class="number-cell institutions-row">{{blackrock.toFixed(1)}} M</td>
             <td class="number-cell institutions-row">{{percent(blackrock)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">State Street Corporation</td>
-            <td class="number-cell institutions-row">{{statestreet}} M</td>
+            <td class="number-cell institutions-row">{{statestreet.toFixed(1)}} M</td>
             <td class="number-cell institutions-row">{{percent(statestreet)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">All other institutional</td>
-            <td class="number-cell institutions-row">{{otherInst}} M</td>
+            <td class="number-cell institutions-row">{{otherInst.toFixed(1)}} M</td>
             <td class="number-cell institutions-row">{{percent(otherInst)}} %</td>
         </tr>
         <tr>
             <td class="border-bottom total institutions-row">Institutions Total</td>
-            <td class="number-cell border-bottom total institutions-row">{{instTotal}} M</td>
+            <td class="number-cell border-bottom total institutions-row">{{instTotal.toFixed(1)}} M</td>
             <td class="number-cell border-bottom total institutions-row">{{percent(instTotal)}} %</td>
         </tr>
         <tr *ngIf="showSources">
@@ -159,7 +159,7 @@
         </tr>
         <tr>
             <td class="border-bottom-2 cede-row"></td>
-            <td class="border-bottom-2 cede-row" style="font-weight: bold;">Total Beneficial</td>
+            <td class="border-bottom-2 cede-row" style="font-weight: bold;">Total held by Cede & Co</td>
             <td class="border-bottom-2 number-cell cede-row" style="font-weight: bold;">{{(beneficial /
                 1000000).toFixed(1)}} M</td>
             <td class="border-bottom-2 number-cell cede-row" style="font-weight: bold;">{{percent(beneficial /
@@ -287,27 +287,27 @@
         </tr>
         <tr>
             <td class="institutions-row">Vanguard Group Inc</td>
-            <td class="number-cell institutions-row">{{vanguard}} M</td>
+            <td class="number-cell institutions-row">{{vanguard.toFixed(1)}} M</td>
             <td class="number-cell institutions-row">{{percent(vanguard)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">Blackrock Inc</td>
-            <td class="number-cell institutions-row">{{blackrock}} M</td>
+            <td class="number-cell institutions-row">{{blackrock.toFixed(1)}} M</td>
             <td class="number-cell institutions-row">{{percent(blackrock)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">State Street Corporation</td>
-            <td class="number-cell institutions-row">{{statestreet}} M</td>
+            <td class="number-cell institutions-row">{{statestreet.toFixed(1)}} M</td>
             <td class="number-cell institutions-row">{{percent(statestreet)}} %</td>
         </tr>
         <tr>
             <td class="institutions-row">All other institutional</td>
-            <td class="number-cell institutions-row">{{otherInst}} M</td>
+            <td class="number-cell institutions-row">{{otherInst.toFixed(1)}} M</td>
             <td class="number-cell institutions-row">{{percent(otherInst)}} %</td>
         </tr>
         <tr>
             <td class="border-bottom total institutions-row">Institutions Total</td>
-            <td class="number-cell border-bottom total institutions-row">{{instTotal}} M</td>
+            <td class="number-cell border-bottom total institutions-row">{{instTotal.toFixed(1)}} M</td>
             <td class="number-cell border-bottom total institutions-row">{{percent(instTotal)}} %</td>
         </tr>
         <tr *ngIf="showSources">
@@ -323,7 +323,7 @@
             <td class="number-cell border-bottom total cede-row-2">{{percent(remainderTotal/ 1000000)}} %</td>
         </tr>
         <tr>
-            <td class="border-bottom-2 cede-row" style="font-weight: bold;">Total Beneficial</td>
+            <td class="border-bottom-2 cede-row" style="font-weight: bold;">Total held by Cede & Co</td>
             <td class="border-bottom-2 number-cell cede-row" style="font-weight: bold;">{{(beneficial /
                 1000000).toFixed(1)}} M</td>
             <td class="border-bottom-2 number-cell cede-row" style="font-weight: bold;">{{percent(beneficial /
