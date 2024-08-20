@@ -112,10 +112,22 @@
         <tr *ngIf="showSources">
             <td class="rk-row"></td>
             <td colspan="3" class="rk-row source">
-                Source: <a href="https://www.reddit.com/r/Superstonk/comments/1df8jno/gme_yolo_update_june_13_2024/"
+                <!-- Source: <a href="https://www.reddit.com/r/Superstonk/comments/1df8jno/gme_yolo_update_june_13_2024/"
                     target="_blank">
                     GME YOLO update - June 13 2024 on Reddit
-                </a></td>
+                </a></td> -->
+
+                <div>
+                    Source: <a href="https://www.reddit.com/r/Superstonk/comments/1df8jno/gme_yolo_update_june_13_2024/"
+                        target="_blank">
+                        GME YOLO update - June 13 2024 on Reddit
+
+                    </a>
+                </div>
+                <div>
+                    This position is credible as of June 13. However, it is entirely possible that RK could have at any
+                    time after June 13 changed this position without providing this information publicly.
+                </div>
         </tr>
         <tr>
             <td rowspan="5" class="border-bottom institutions-row">Institutions</td>
@@ -209,6 +221,17 @@
                     This number is provided in GameStop's quarterly 10Q / 10K filings.<br>
                     Most recent filing: <a [href]="recent10Q10Kurl" target="_blank">sec.gov - 10Q: June 11, 2024</a>
                 </div>
+
+                <div *ngIf="showSources">
+                    DRS versus DSPP information source: <br>
+
+                    82.4% DRS to 17.6% DSPP ratio of all registered shares, as provided by the <a
+                        href="https://www.drsgme.org/2024-stockholder-list-viewing" target="_blank">
+                        DRSGME.org viewing of the 2024 stockholder list, week of June 5, 2024
+                    </a>
+                </div>
+
+
             </td>
 
 
@@ -280,10 +303,18 @@
         </tr>
         <tr *ngIf="showSources">
             <td colspan="3" class="rk-row source">
-                Source: <a href="https://www.reddit.com/r/Superstonk/comments/1df8jno/gme_yolo_update_june_13_2024/"
-                    target="_blank">
-                    GME YOLO update - June 13 2024 on Reddit
-                </a></td>
+                <div>
+                    Source: <a href="https://www.reddit.com/r/Superstonk/comments/1df8jno/gme_yolo_update_june_13_2024/"
+                        target="_blank">
+                        GME YOLO update - June 13 2024 on Reddit
+
+                    </a>
+                </div>
+                <div>
+                    This position is credible as of June 13. However, it is entirely possible that RK could have at any
+                    time after June 13 changed this position without providing this information publicly.
+                </div>
+            </td>
         </tr>
         <tr>
             <td class="institutions-row">Vanguard Group Inc</td>
